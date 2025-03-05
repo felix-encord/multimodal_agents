@@ -1,0 +1,646 @@
+---
+title: "Videos & Image Sequences"
+slug: "annotate-videos"
+metadata: 
+  title: "Videos"
+  description: "Efficient video annotation in Encord: Label with diverse tools, achieve object detection & segmentation. Automation available."
+  image: 
+    0: "https://files.readme.io/3577e54-image_16.png"
+---
+
+The following video goes through the basics of annotating videos in the Label Editor.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/8e6255f742454694ade6bcf38bee11c0?sid=bb568aff-823f-4e07-bcdf-ae101b3ffbe3"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+Encord provides comprehensive support for [video](/platform-documentation/General/general-supported-data#videos) & [image sequence](/platform-documentation/General/general-supported-data#image-sequences) annotations. With the video & image sequence editor, you can:
+
+- Label using any annotation type.
+- Render videos and image sequences of any length.
+- Track and interpolate objects between frames.
+- Create frame-level and object event classifications.
+- Reduce manual annotations with [automation features](/platform-documentation/Annotate/models).
+
+---
+
+## Navigation
+
+Play/pause the video by clicking the *play/pause* button or by pressing <kbd>Space</kbd>. Skip through frames in the video with the <kbd>Left</kbd> and <kbd>Right</kbd> arrow keys or the forward and backward buttons. The number of frames skipped is determined by the specified _Frameskip interval_. _Frameskip intervals_ can be set using the predefined values or customized by entering a value in the _New_ input and clicking the **+** icon.
+
+Control video playback speeds with the playback speed drop-down. _1x_ is the set playback speed in the below example.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_3.gif" width="900" />
+</div>
+
+Navigate through the video by scrubbing through or clicking anywhere on the progress bar.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_1.gif" width="900" />
+</div>
+
+Navigate to a particular frame or timestamp by clicking the _compass_ icon. Replace the value(s) with the desired target and click _Go_.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_2.gif" width="900" />
+</div>
+
+## Annotation Types
+
+Objects are annotated using bounding boxes, polygons, polylines, keypoints or primitives. Frames are annotated using classifications. Instantiating objects or classifications in the video editor generates a _UUID_ that uniquely identifies that instance across a range of frames (i.e., in the temporal dimension). The identifier is sometimes called a "track," with numerical IDs supplementing _UUIDs_ for objects for visual aid.
+
+Supported annotation types & corresponding features are listed in the table below. You can read more about the listed automation features <a href="/platform-documentation/Annotate/annotate-label-editor/annotate-videos#automation">here</a>.
+
+<Tip>
+Instances of all annotation types can be copied (<kbd> Ctrl</kbd> + <kbd>C </kbd>  /  <kbd> Cmd</kbd> + <kbd>C </kbd>),  and pasted at the location of the mouse cursor on a different frame by pressing (<kbd> Ctrl</kbd> + <kbd>V </kbd>  /  <kbd> Cmd</kbd> + <kbd>V </kbd>).
+Since it is the instance that is being copied and not simply the shape, it is not possible >to paste the instance on to the same frame.
+</Tip>
+
+| **Annotation type**    | **Dynamic attribute** | **Automated tracking** | **Interpolation** | **Import predictions** | **Model training & inference** |
+|------------------------|-----------------------|------------------------|-------------------|------------------------|--------------------------------|
+| Bounding box           | ✅                     | ✅                      | ✅                 | ✅                      | ✅                              |
+| Rotatable bounding box | ✅                     | ✅                      | ✅                 | ✅                      | Coming soon                    |
+| Polygon                | ✅                     | Coming soon             | ✅                 | ✅                      | ✅                              |
+| Polyline               | ✅                     | ✅                      | ✅                 | ✅                      | Coming Soon                    |
+| Keypoint               | ✅                     | ✅                      | ✅                 | ✅                      | ✅                              |
+| Bitmask                | ✅                     | N/A                    | [Encord Labs](/platform-documentation/Annotate/annotate-settings-general#encord-labs)      | ✅                      | N/A                            |
+| Object primitive        | N/A                     | ✅                      | N/A               | ✅                      | N/A                            |
+| Frame classification   | N/A                     | N/A                    | N/A               | ✅                      | ✅                              |
+
+---
+
+### Bounding box
+
+Creating a bounding box requires an [Ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a bounding box annotation type. Instantiate a new bounding box instance by clicking on the specified class in the 'Classes' menu, or by using the specified hotkey (for example: <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_4.gif" width="900" />
+</div>
+
+Instantiating existing bounding box instances (i.e., bounding boxes that should keep the same identifier in preceding or succeeding frames) can be done by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>, <kbd>w</kbd>, <kbd>e</kbd>).
+
+Bounding boxes can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard, and <kbd>cmd</kbd>/<kbd>ctrl</kbd>  + <kbd>v</kbd> to paste it at the location of the mouse cursor on the desired frame.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_6.gif" width="900" />
+</div>
+
+Bounding box instances can be assigned with static and dynamic attributes should they be defined in your [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies):
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified bounding box
+- Assign a classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>).
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_5.gif" width="900" />
+</div>
+
+#### Tracking
+
+Run automated object tracking by highlighting an object and clicking <kbd>shift</kbd> + <kbd>t</kbd> on your keyboard.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_7.gif" width="900" />
+</div>
+
+Object tracking can also be run by selecting the option _Track from this frame_ in the object menu. The number of predicted frames is set to *30* by default. The number of predicted frames can be changed in the 'Settings' drawer in the _Single object tracking settings_ drop-down.
+
+Click the *Automated labeling* button to open the 'Automated labeling' drawer to run multiple object tracking.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_8.gif" width="900" />
+</div>
+
+You can read more about automated object tracking <a href="/platform-documentation/Annotate/annotate-label-editor/annotate-videos#automated-object-tracking">here</a>.
+
+#### Interpolation
+
+Interpolation is run via the 'Automated labeling' drawer. Click the *Automated labeling* button to open the drawer. Select *Interpolation* from the drop-down menu, select the desired objects to interpolate, set the interpolation range (i.e., the range of frames) and click the *Run interpolation* button. Please note that you need a minimum two labels of an instance to run interpolation.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_9.gif" width="900" />
+</div>
+
+You can read more about interpolation <a href="/platform-documentation/Annotate/automated-labeling/annotate-interpolation">here</a>.
+
+### Rotating box
+
+Traditional bounding boxes are great for annotating objects that appear in horizontal or vertical orientation, however, their accuracy may be limited when it comes to annotating objects at an angle. In such cases, use rotatable boxes to
+produce more accurate annotations.
+
+Creating a rotatable bounding box requires an [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a rotatable box annotation type. Rotatable box labels can be assigned with static classifications should they be defined in your ontology.
+
+Instantiate a new rotatable box label by clicking on the specified class in the 'Classes' menu or using the specified hotkey. Resize rotatable boxes like normal bounding boxes, and then grab the rotation handle to adjust the position until you're satisfied with the annotation's accuracy, as below.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/existing_rotatablebox.gif" />
+</div>
+
+Rotatable bounding boxes can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard, and <kbd>cmd</kbd>/<kbd>ctrl</kbd>  + <kbd>v</kbd> to paste it at the location of the mouse cursor on the desired frame.
+
+---
+
+### Polygon
+
+Creating a polygon requires an [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a polygon annotation type. Enable or disable free-hand drawing mode by pressing <kbd>d</kbd> on your keyboard. Polygon coarseness for polygons drawn free-hand is set in the 'Settings' drawer in the *Drawing settings* drop-down. Instantiate a new polygon instance by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+A polygon can be closed by double-clicking anywhere on the canvas. Doing so will "snap" creating an edge between the last vertex to the first vertex drawn.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_10.gif" width="900" />
+</div>
+
+Instantiate existing polygon instances (i.e., polygons that should keep the same identifier in preceding or succeeding frames) by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>, <kbd>w</kbd>, <kbd>e</kbd>). See the bounding box [documentation](/platform-documentation/Annotate/annotate-label-editor/annotate-videos#bounding-box) for visual instructions on how to instantiate existing polygons.
+
+Polygons can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>V</kbd> to paste it at the location of the mouse cursor on the desired frame.
+
+Polygon instances can be assigned with static and dynamic attributes should they be defined in your [Ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies):
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified polygon.
+
+- Assign classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>,
+  <kbd>u</kbd>).
+
+See the [bounding box documentation](#bounding-box) for visual instructions on how to assign classifications.
+
+#### Interpolation
+
+Run polygon interpolation following the instructions for bounding box, which you can find <a href="/platform-documentation/Annotate/automated-labeling/annotate-interpolation">here</a>. Unlike other linear interpolation methods, Encord's polygon interpolation algorithm does not require a matching number of vertices between polygon objects in set keyframes. Our algorithm also allows you to draw polygons in arbitrary directions (e.g., clockwise, counterclockwise, and otherwise).
+
+#### Editing polygons with the brush tool
+
+You can edit existing polygons with the brush tool. This allows you to create complex shapes in a much faster way than going vertex by vertex. To use the brush tool, select an existing polygon and then click on the brush tool button. This will show the brush tool settings panel where you can choose brush or eraser and change its size. Once you are done editing, click the "x" to go back to the label editor. Use the scissors tool if you'd like to remove vertices.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/brush_tool.gif" />
+</div>
+
+### Polyline
+
+Creating a polyline requires an [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a polyline annotation type. Enable or disable free-hand drawing mode by pressing <kbd>d</kbd> on your keyboard. Polyline coarseness for polylines drawn free-hand is set in the 'Settings' drawer in the *Drawing settings* drop-down.
+Instantiate a new polyline instance by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Polylines can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>V</kbd> to paste it at the location of the mouse cursor on the desired frame.
+
+Complete a polyline by double-clicking anywhere on the canvas.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_11.gif" width="900" />
+</div>
+
+Instantiate existing polyline instances (i.e., polylines that should keep the same identifier in preceding or succeeding frames) by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>, <kbd>w</kbd>, <kbd>e</kbd>). See the [documentation](/platform-documentation/Annotate/annotate-label-editor/annotate-videos#bounding-box) for visual instructions on how to instantiate existing polylines.
+
+Polyline instances can be assigned with static and dynamic attributes should they be defined in your [Ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies):
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified polyline.
+
+- Assign a classification by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>).
+
+---
+
+### Keypoint
+
+Creating a keypoint requires an [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a keypoint annotation type. Instantiate a new keypoint instance by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_12.gif" width="900" />
+</div>
+
+Instantiate existing keypoint instances (i.e., keypoints that should keep the same identifier in preceding or succeeding frames) by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>,
+<kbd>w</kbd>, <kbd>e</kbd>). See the bounding box [documentation](#bounding-box) for visual instructions on how to instantiate existing keypoints.
+
+Keypoints can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>V</kbd> to paste it at the location of the mouse cursor on the desired frame.
+
+Keypoint instances can be assigned static and dynamic attributes should they be defined in your [Ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies):
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in
+  the range overview for the specified keypoint.
+
+- Assign classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>,
+  <kbd>u</kbd>).
+
+See the bounding box [documentation](#bounding-box) for visual instructions on how to assign classifications.
+
+#### Automated tracking
+
+Run automated keypoint tracking following the instructions for bounding box, which you can find <a href="/platform-documentation/Annotate/automated-labeling/annotate-tracking">here</a>.
+
+#### Interpolation
+
+Run keypoint interpolation following the instructions for bounding box, which you can find <a href="/platform-documentation/Annotate/automated-labeling/annotate-interpolation">here</a>.
+
+---
+
+### Primitives
+
+Creating a primitive (f.k.a. skeleton templates) requires an [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a primitive annotation type. Use primitives to templatize shapes (e.g., 3D cuboids, pose estimation skeletons ) commonly used by your annotation team.
+
+Instantiate a new primitive instance by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Instantiate existing primitive instances (i.e., primitives that should keep the same identifier in preceding or succeeding frames) by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>, <kbd>w</kbd>, <kbd>e</kbd>). See the [bounding box documentation](#bounding-box) for visual instructions on how to instantiate existing primitives.
+
+Primitives can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>V</kbd> to paste it at the location of the mouse cursor on the desired frame.
+
+Primitives allow you to define properties of edges defined in your template as visible, occluded, or invisible. Toggle the edge property settings for a primitive by highlighting the primitive and clicking the *Show controls* button.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_13.gif" width="900" />
+</div>
+
+Primitive instances can be assigned with static and dynamic attributes should they be defined in your [Ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies):
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified primitive.
+
+- Assign classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>)
+See the <a href="/platform-documentation/Annotate/annotate-label-editor/annotate-videos#bounding-box">bounding box documentation</a> for visual instructions on how to assign classifications.
+
+#### Automated tracking
+
+Run automated primitive tracking following the instructions for bounding box, which you can find <a href="/platform-documentation/Annotate/automated-labeling/annotate-tracking">here</a>.
+
+#### Interpolation
+
+Run primitive interpolation following the instructions for bounding box, which you can find <a href="/platform-documentation/Annotate/automated-labeling/annotate-interpolation">here</a>.
+
+---
+
+### Segmentation masks / Bitmasks
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/280903ae537d4965b7afd3e571b16e06?sid=8ffb6b62-21ae-477e-a789-0934696dea7c"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+Bitmasks allows you to create labels using a brush tool to select parts of an image. This can be useful when creating labels for vessel outlines, or labelling topologically separate regions belonging to the same frame classification. Bitmasks can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>V</kbd> to paste it at the location of the mouse cursor on the desired frame.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/bitmasks.png" width="300" />
+</div>
+
+<Note>- Creating a mask segmentation requires an Ontology with the _Bitmask_ annotation type.</Note>
+> - When you initially create a bitmask, the process of bitmask creation does not stop until you press the ESC key. This means that you can create bitmask labels that are connected without any extra effort.
+
+<Tip>[Existing Bitmask labels can be updated](#updating-bitmask-labels) using the [brush tool](#brush-tool), [threshold brush](#threshold-brush), and [eraser](#eraser) tools.</Tip>
+
+#### Brush tool
+
+When you select your bitmask annotation type, the brush tool will be selected by default. You can adjust the size of the bitmask brush tool using the slider in the bitmask popup, as seen in the screenshot above.
+
+The brush tool can be selected by clicking the brush icon, or by pressing <kbd>f</kbd> on your keyboard while the popup is open.
+
+When your label is ready, click **Apply label**, or press <kbd>Enter</kbd>.
+
+#### Panoptic mode
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/panoptic-bitmask.png" width="200" />
+</div>
+
+Panoptic settings allow you to determine how different bitmasks interact with one another. 
+
+- **None**: Overlapping bitmasks are allowed. The bitmask will overlap with existing bitmasks.
+- **Exclude**: Areas already covered by a bitmask will be excluded from the bitmask.
+- **Overwrite**: Areas already covered by a bitmask will be overwritten by the new bitmask.
+
+#### Thresholding
+
+The _Thresholding_ tool enables you to set a threshold that determines the parts of the image or frame that is labeled by the Bitmask. Consequently, only the parts of the image falling within th predefined range are labeled upon selection with the _Thresholding_ tool, ensuring precise and targeted labeling.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/thresholding-light.png" width="200" />
+</div>
+
+When _Thresholding_ is enabled, a mask covering the parts of the image that fall above the set threshold appears on the slice. This allows you to preview which parts of the image are labeled when a Bitmask label is applied. The mask color can be changed by clicking the circle icon. 
+
+The eyedropper tool enables you to pick a color or intensity value directly from the image. 
+
+Three different kinds of threshold can be selected using a dropdown: 
+- **Intensity**: Only pixels within the set intensity value range are labeled.
+- **RGB**: Only pixels within the set [red, green, and blue](https://en.wikipedia.org/wiki/RGB_color_model) range are labeled. The range for each color can be set separately.
+- **HSV**: Only pixels within the set [hue, saturation, and value](https://learn.leighcotnoir.com/artspeak/elements-color/hue-value-saturation/) range are labeled. 
+
+When your label is ready, click **Apply label**, or press <kbd>Enter</kbd>.
+
+#### Eraser
+
+The _Eraser_ tool allows you to erase parts, or the entirety of your Bitmask selection if the **Apply label** button has not been clicked yet. 
+
+To select the threshold brush, click the eraser icon, or press <kbd>h</kbd> on your keyboard while the popup is open.
+
+#### Combine bitmasks on an image/frame
+
+Combining bitmasks on an image or frame allows you to label objects that are split/separated in the image/video frame. 
+
+When you initially create a bitmask, the process of bitmask creation does not stop until you press the ESC key. This means that you can create bitmask labels that are connected without any extra effort.
+
+**To combine two or more bitmasks on an image / video frame:**
+
+1. Hold <kbd>SHIFT</kbd>.
+
+2. Click the bitmasks you want to combine in the Label Editor workspace.
+
+3. Right-click (on Mac press <kbd>Cmd</kbd>).
+   A menu appears.
+
+4. Select **Combine bitmasks into**.
+   The bitmasks are now a single bitmask.
+
+#### Bitmask overlap management
+
+It is possible to prevent a Bitmask label from being overlapped by subsequent Bitmasks after the label is created. Use the toggle in the _Labels_ section of the Label Editor to set the overlap behavior.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/overlap-settings.png" width="250" />
+</div>
+
+Choose between the following settings:
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/can-be-drawn-over.png" width="21" />
+
+- **Can be drawn over** -  If the Bitmask is drawn over, any part of the image beneath the existing Bitmask that falls within the specified threshold range is included in the next label.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/cant-be-drawn-over.png" width="22" /> 
+
+- **Cannot be drawn over** - No part of the image covered by this Bitmask is included in any other Bitmask labels. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/must-be-drawn-over.png" width="23" /> 
+
+- **Must be drawn over** - If the Bitmask is drawn over, any part of the Bitmask label is included in the new Bitmask, regardless of threshold values set.
+
+<Note>The  **Must be drawn over**  setting for _Bitmask overlap_ is only available to select customers. Contact [support@encord.com](mailto:support@encord.com) for more information.</Note>
+
+#### Updating bitmask labels
+
+To update a bitmask label:
+
+1. Click the bitmask label you want to edit. 
+2. Select either the [brush](#brush-tool), [threshold brush](#threshold-brush), or [eraser](#eraser) tool and make your changes.
+3. Press <kbd>Enter</kbd> or click the **Update label** button in the bitmask popup.
+
+#### Moving bitmasks
+
+Bitmask labels can be moved to another location after being created. 
+
+1. Click the bitmask label you want to move. 
+2. Click and drag the bitmask to the desired location. 
+3. Release the bitmask to confirm the new location. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/move-bitmask.gif" width="900" height="280" />
+
+---
+
+### Frame classification
+
+Creating frame classification(s) requires an [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a classification annotation type. Frame-level classifications consider the frame as a whole, not the objects' localization. Instantiate a frame-level classification instance by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Set the desired start and end frame by clicking the **Set start to current** and **Set end to current** buttons or using the set hotkeys <kbd>c</kbd> and <kbd>v</kbd>, respectively. Click the **This frame** button or the <kbd>x</kbd> hotkey to set the slider to only the current frame (e.g., frame 100). Add additional ranges by clicking the *Add range* button or pressing the <kbd>n</kbd> hotkey to add a frame range (e.g., if a car enters and leaves the frame throughout a video). Click the *Save* button or the <kbd>m</kbd> hotkey to save the instance. Use the **This frame & save** button or the <kbd>z</kbd> hotkey to classify and save the results for a single frame quickly.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_14.gif" width="900" />
+</div>
+
+Encord currently supports radio, checklist, and free-form text input classification types.
+
+Edit existing classification instances by clicking on the _Plus_ icon for the specified instance in the 'Classifications' pane in the 'All instances' section.
+
+---
+
+### Dynamic attributes
+
+Encord supports dynamic attributes for all object annotation types (i.e., bounding box, polygon, polyline, keypoint, and primitives).
+
+Highlight the desired object to assign dynamic attributes. Dynamic attributes are recognized by the *Dynamic* tag next to the given feature in the ontology. Dynamic attributes are only applied in the frames specifically indicated but can be edited in ranges if they span multiple frames.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_15.gif" width="900" />
+</div>
+
+#### Using dynamic attributes
+
+The video tutorial goes through the basics of working with Dynamic Attributes in the Label Editor.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/d1c0ce0bc3374bc9bf87a980a9b4c280?sid=b9bfd921-33ba-424f-a93f-40c3671a2eb7"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+Keyframe-based attribute propagation allows you to mark frames in which dynamic attributes change value as _keyframes_, and then bulk apply attributes between the _keyframes_. This saves time when applying dynamic attribute to object instances across many frames.
+
+#### Bulk apply dynamic attributes
+
+You can efficiently apply dynamic attributes in bulk to save time and effort. This is accomplished by identifying frames where the attribute changes value as "keyframes," and then applying attribute values between these keyframes.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/keypoint-based-attribute-propagation1.png" width="700" />
+</div>
+
+1. Apply object labels to **all** relevant frames.
+
+2. Add the [dynamic attribute](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#dynamic-attributes) to the label in the first frame that the object appears in.
+
+3. Navigate to the point of the video or image sequence where the dynamic attribute changes value, and apply the attribute to the object here. 
+
+4. Use the **+** icon, or the keyboard shortcut <kbd>Shift</kbd> + <kbd>L</kbd> to set _keyframes_ on frames where the attribute changes value. 
+
+5. Use the _Play_ icon, or the keyboard shortcut <kbd>Shift</kbd> + <kbd>P</kbd> to apply attribute values to all frames following a _keyframe_, matching the value set in the _keyframe_.
+
+<Note>All frames in between keyframes have to be labeled for attribute propagation to work.</Note>
+
+You can also add or remove _keypoints_ manually:
+
+- Use the <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/add-keypoint-icon.png" width="25" /> icon, or the keyboard shortcut <kbd>Shift</kbd> + <kbd>A</kbd> to add a _keypoint_ to a frame.
+- Use the <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/remove-keypoint-icon.png" width="20" /> icon, or the keyboard shortcut <kbd>Shift</kbd> + <kbd>S</kbd> to remove a _keypoint_ from a frame.
+
+#### Frame labels tab
+
+The *Frame labels* tab will show all instances with a label in the current frame, and will be empty when there are no labels in a given frame.
+
+---
+
+## Editor Timeline 
+
+The Editor timeline is a visualization of the times and durations at which objects and instances appear within a video. Every object added by an annotator will automatically appear on the timeline at the point in time when it is added. The colors of an object on the timeline match those used to label the objects in the video. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/editor-timeline.png" width="900" />
+</div>
+
+For example, the timeline in the image above shows that:
+- The 'lake' object was added at the start of the video (0:00), and is present in all frames in the first 7 seconds of the video. 
+
+- There are 3 separate instances of a 'boat' object - the times in the video at which they appear, and the duration of the annotations. 
+
+<Tip>Hover over an object on the timeline to see the frame range of frames it appears in, and the values of any attributes the object  has. Clicking a frame number navigates to that frame. </Tip>
+
+The timeline moves as the video is played, so that the location of the cursor on the timeline always corresponds to the frame currently being displayed. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/click-timeline.gif" />
+</div>
+
+The editor timeline is visible by default when using the Label Editor. It can be re-sized or completely removed by dragging it either up, or down. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dragtimeline.gif" />
+</div>
+
+<Note>The editor timeline is available in both the _Annotation_ and _Review_ states for videos.</Note>
+
+### Zoom and sort by
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/zoom-and-sort-timeline.png" width="280" />
+</div>
+
+Zooming in on the timeline reveals finer time intervals, enabling precise identification of when object instances and classifications occur in the video. Conversely, zooming out provides a broader view of larger time segments.
+
+You have the option to sort object instances and classifications either alphabetically or by their creation order. By default, the most recently created classes are displayed at the top.
+
+
+### Selecting objects and instances
+
+One or more objects and instances can be selected using the timeline. Simply click an object or instance on the timeline to select it. To select multiple objects or instances, click while holding down the <kbd>Shift</kbd> key.
+
+Alternatively select an object or instance by right-clicking and choosing **Select**.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/select-timeline.png" width="80" />
+</div>
+
+### Moving objects and instances
+
+Once objects and instances have been selected they can be moved to the top or the bottom of the timeline to suit your needs. 
+
+1. Select the instances and objects you want to move.
+1. Right-click your selection.
+2. Hover on _Move_ when moving a single object or instance, and _Move all_ when moving multiple objects or instances.
+3. Select _To top_ or _To bottom_ depending on whether you want to move the object(s) and instance(s) to the top or the bottom of the timeline.
+
+### Merging instances on the timeline
+
+Multiple instances of the same object can be merged into a single instance of your choice, provided they don't appear on the same frame. 
+
+1. Select the instances you want to merge.
+
+  <Note>Hold <kbd>SHIFT</kbd> to select multiple instances.</Note>
+
+2. Right-click your selection. 
+3. Hover on _Merge into_.
+4. Select the instance you want to merge your selection into. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/timeline-merge.gif" width="600" />
+</div>
+
+---
+
+## Linking Object Instances 
+
+<Note>Object instances are linked using _Relation_ attributes, which are set up in the Ontology. See our [documentation on _Relation_ attributes](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#relation-attributes) to learn more.</Note>
+
+1. Create both instance labels. In this example a chicken and its wing have been labeled using bounding boxes. 
+
+2. Click the _Edit classifications_ button for the object with the _Relation_ attribute. In the example this object is the wing, as seen below. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-1.png" width="700"/>
+
+3. Click the _Set relation..._ bar and select the instance you want to link the selected instance to. In our example the chicken and the wing appear on the same frame, and therefore appear under the _This frame_ heading. Instances in different frames will appear under the heading _Rest_. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-3.png" width="700"/>
+
+4. Click **Done**. The instances are now linked. This is shown in the _Instance labels_ section with the name of the linked instance being displayed. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-4.png" width="300"/>
+
+---
+
+## Automation
+
+Supported annotation types and available automation features are listed in the table below.
+
+| **Annotation type**    | **Dynamic attribute** | **SAM 2 TRacking** | **Interpolation** | **Import predictions** |
+|------------------------|-----------------------|------------------------|-------------------|------------------------|
+| Bounding box           | ✅                     | ✅                      | ✅                 | ✅                      |
+| Rotatable bounding box | ✅                     | ✅                      | ✅                 | ✅                      |
+| Polygon                | ✅                     | ✅             | ✅                         | ✅                      |
+| Polyline               | ✅                     | ❌                      | ✅                 | ✅                      | 
+| Keypoint               | ✅                     | ❌                      | ✅                 | ✅               |
+| Bitmask                | ✅                     | ✅                       |         ✅        | ✅                  |
+| Object primitive        | N/A                    | ❌                      | N/A               | ✅      |
+| Frame classification   | N/A                     | N/A                    | N/A               | ✅         | 
+
+
+---
+
+### Interpolation
+
+Encord's interpolation feature uses a proprietary linear interpolation algorithm that runs without using a representational model or matching pixel information in neighboring frames.
+
+Our interpolation algorithm has been built with pragmatic usage in mind. For example, unlike other linear interpolation methods, Encord's interpolation algorithm does not require a matching number of vertices between objects in set keyframes. Our algorithm also allows you to draw object vertices in arbitrary directions (e.g., clockwise, counterclockwise, and otherwise).
+
+<Tip>Use our [step-by-step guide](/platform-documentation/Annotate/automated-labeling/annotate-interpolation) to learn how to use the interpolation feature, and how to improve interpolation results using [re-interpolation](/platform-documentation/Annotate/automated-labeling/annotate-interpolation#3-re-interpolate).</Tip>
+
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/video_17.gif" width="900" />
+</div>
+
+---
+
+## Import Model Predictions
+
+Encord's [Python SDK](/sdk-documentation/getting-started-sdk/installation-sdk) & [APIs](/platform-documentation/Annotate/annotate-api-overview) allow you to import model predictions programmatically. Importing model predictions helps to pre-annotate your data to save annotation costs.

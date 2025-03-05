@@ -1,0 +1,200 @@
+---
+title: "Review Consensus Projects"
+slug: "annotate-workflows-consensus-review-project"
+hidden: false
+metadata: 
+  title: "Review Consensus Projects"
+  description: "Learn how to review consensus Projects."
+category: "6480a33fc3cb871311030819"
+---
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/92e7399083f64897a8fa784da04a1720?sid=398398f7-ce7a-4417-9663-e0610907ad6c"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/ef8d92f4cdce4344b259c08746eb5d06?sid=adde2ee5-2d91-41a9-a8b2-a3051d8a8ec5"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+Consensus Projects have the following types of reviewers:
+
+- **Determine consensus**: Reviewers in these blocks are responsible for ensuring that labels made by one or more annotators are correct across an entire data unit. This allows for bulk label selection across a data unit.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-determine-consensus.png" width="700"/>
+</div>
+
+
+
+- **Review and refine**: Reviewers can select and edit the best specific label on an object or frame, from one or more annotators. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-review-refine-workflow.png" width="700"/>
+</div>
+
+## Determine Consensus
+
+Reviewers on Consensus Projects have a different goal from Reviewers on other types of Encord Projects. Reviewers on Consensus Projects review ALL the labels on a data unit, made by a specified number of annotators. The reviewers then make a decision on whether there is agreement/consensus on ALL the labels on a task (data unit).
+
+If the reviewer decides that ALL the labels on a data unit are correct/in agreement, the reviewer selects the annotators that are in agreement and clicks **Consensus reached**. If the reviewer decides that there is no agreement on the labels or that the labels are incorrect, the reviewer clicks **No Consensus**.
+
+Currently, Object labels and Classifications are supported for consensus review on all data unit types. Data units are images, image groups, image sequences, videos, and DICOM series.
+
+**To review labels on a Consensus Project:**
+
+1. Log in to Encord.
+   Your review task queue appears for the latest Project you are assigned for review.
+
+2. Go to **Annotate > Projects > Annotate projects**.
+   The _Annotate projects_ page appears displaying a list of Projects you are assigned to review.
+
+3. Click a Consensus Project.
+   The Project opens with the _Review_ populated with review tasks.
+
+4. Click **Initiate** on a task.
+   The _Reviewing_ page appears.
+
+5. Review the labels from each annotator.
+
+<Info>Consensus in Encord is based on Consensus for ALL labels on a data unit. A data unit being an image, an image group, an image sequence, a video, or a DICOM series. Encord Consensus is not granular to the label itself (yet). This means reviewers must ensure ALL labels on a data unit are in consensus before deciding consensus is reached.</Info>
+
+The Reviewing page is different for single images and all other data units. When reviewing single images, expand each user to display their labels and decide on consensus. When reviewing videos, image groups, image sequences, and DICOM series a timeline appears under the data unit. Use the timeline to speed up reviewing all the labels on the data unit.
+
+**Single Image, Image Group**
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus_reviewer-02-01.png" width="600" />
+</div>
+
+**Video, Image Sequence, DICOM Series**
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-reviewer-01-01.png" width="600" />
+</div>
+
+6. If the labels are correct:
+  
+  a. Select the annotators that have done the best job of labeling the data unit.
+     The _Consensus reached_ button becomes clickable once the required number of annotators required are selected.
+
+  b. Click the **Consensus reached** button.
+
+  c. Select the annotator that did the best job. That annotator's work on the data unit is used if an Admin or Team Manager export the labels for the data unit.
+
+  d. Click **Submit**.
+
+   **Single Image, Image Group**
+
+   <div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus_reviewer-02-02.png" width="600" />
+</div>
+
+   **Video, Image Sequence, DICOM Series**
+
+   <div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus_reviewer-01-02.png" width="600" />
+</div>
+
+7. Click **No consensus** if the labels are not correct OR if not enough of the annotators have labeled the data unit correctly.
+
+## Review and Refine Consensus Labels
+
+Reviewers working in the Review and Refine block can see all labels from all annotators from a Consensus block. The reviewer is able to select the best labels from each object on a data unit and edit those labels or they can create new labels for the data unit.
+
+The Review and Refine page is different for single images and all other data units. When reviewing and refining single images, expand each user to display their labels and decide on the best labels. When reviewing and refining videos, image groups, image sequences, and DICOM series, a timeline appears under the data unit. Use the timeline to speed up reviewing and refining all the labels on the data unit.
+
+**To review and refine labels from a Consensus Project:**
+
+Only data units for which consensus is not reached can be reviewed and refined.
+
+1. Log in to Encord.
+   Your review and refine task queue appears for the latest Project you are assigned for review and refinement.
+
+2. Go to **Annotate > Projects > Annotate projects**.
+   The _Annotate projects_ page appears displaying a list of Projects you are assigned to review and refine.
+
+3. Click a Consensus Project.
+   The Project opens with _Review and Refine_ populated with tasks.
+
+4. Click **Initiate** on a task.
+   The _Review and refine_ page appears.
+
+5. Review and refine the labels on each data unit.
+
+**Single Image, Image Group**
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-review-refine-image.png" width="600" />
+</div>
+
+**Video, Image Sequence, DICOM Series**
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-review-refine-video.png" width="600" />
+</div>
+
+6. Click **Edit approved labels** to add new labels to the data unit.
+
+7. Select the best labels for each object on the data unit.
+
+8. Click **Approve labels**.
+   The labels appear in the _Approved labels_ list.
+
+9. Select a label from the Approved labels list.
+
+10. Click **Edit approved labels** if the labels need to be adjusted.
+
+12. Click **Approve task** after selecting, refining, and creating the labels needed for the data unit.
+
+11. Click **Reject task** if the labels on the data unit cannot be added or corrected so the labels on the data unit meet your needs.
+
+## Advanced - Allow task reassignment
+
+This feature is available in both the ANNOTATE and REVIEW blocks. Specifies whether, in subsequent blocks, a user can act upon a task they have already annotated or reviewed.
+
+Users with the _Annotator & Reviewer_ role can see both the ANNOTATE and REVIEW blocks in a Consensus. As an annotator, the user cannot see the labels from other annotators. As a reviewer the user can view all labels from all annotators (including themselves) because the **Advanced - Allow task reassessment** feature is **Enabled** by default.
+
+**Advanced - Allow task reassessment**: What a user with the _Annotator & Reviewer_ role can see or do depends on the block they are in. 
+
+- ANNOTATE block: When this feature is enabled, annotators CAN see this task again as the task moves through the workflow. This means they CAN review a task multiple times as the task moves through the workflow. **Disabled** is the default setting.
+
+- REVIEW block: When this feature is enabled, reviewers CAN see this task again as the task moves through the workflow. This means they CAN review a task multiple times as the task moves through the workflow. This also means if the user annotated the task, they can review their own task. **Enabled** is the default setting.

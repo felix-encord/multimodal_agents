@@ -1,0 +1,31 @@
+---
+title: "Egress Costs"
+metadata: 
+  title: "Egress Costs"
+  description: "A summary of egress costs in Encord."
+  image: 
+    0: "https://files.readme.io/7ec1cb2-image_16.png"
+---
+
+Egress costs refer to the fees incurred when data transfers out of a cloud provider's storage to another location. For example, to a user's browser or a processing server. When using Encord, egress costs arise when media files are accessed for annotation, display, or computation.  
+
+To minimize these costs, Encord optimizes data transfers by:
+- Allowing users to register media with metadata and embeddings, avoiding unnecessary file ingestion.  
+- Performing searches on metadata instead of the actual media files.  
+- Streaming only the visible portions of videos and thumbnails.  
+- Utilizing local caching to prevent repeated data transfers during annotation.  
+
+<Tip>
+Local caching prevents repeated egress costs when revisiting the same section of a video during annotation. 
+</Tip>
+
+| **Scenario**                    | **Egress Cost Impact**                                                                                  |  
+|----------------------------------|--------------------------------------------------------------------------------------------------------|  
+| **Data Registration**            | No egress cost if users provide media metadata and embeddings, as files are not ingested. If metadata is not provided then Encord downloads the data once for processing.            |  
+| **Searching**                    | Searches are performed on metadata stored in Encord's servers, incurring no egress cost.             |  
+| **Search Results**               | Data is streamed only for thumbnails in view; for videos, only visible frames are loaded. |  
+| **Video Annotation**             | Egress costs apply only to the section of the video being viewed/annotated, with some buffering allowance. Local caching prevents repeated egress costs when revisiting the same section. |  
+| **Index/Active Display**         | Minimal egress cost, as filtering is based on precomputed metrics/embeddings.                         |  
+| **Visual Curation in Active**    | Small data transfer since only selected frames are displayed.                                         |  
+| **Metric/Embedding Computation** | If processed on Encord's side, egress cost equals the data size. Needs confirmation on frame ingestion. No egress cost if users provide media metadata and embeddings. |  
+| **Cost**                         | 1GB of 1080p footage costs ~$0.10 in egress.                                                         |  

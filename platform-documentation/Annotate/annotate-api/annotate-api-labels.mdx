@@ -1,0 +1,252 @@
+---
+title: "Working with Labels (API)"
+slug: "annotate-api-labels"
+hidden: false
+metadata: 
+  title: "Working with labels (API)"
+  description: "Optimize label management with Encord Active API: Streamline processes, enhance data organization, and boost efficiency."
+  image: 
+    0: "https://files.readme.io/2f88a20-image_16.png"
+createdAt: "2023-07-11T16:27:42.530Z"
+updatedAt: "2023-08-11T14:05:37.258Z"
+category: "6480a33fc3cb871311030819"
+---
+A label row has the attributes `label_hash` uid, `data_title`, `data_type`, `data_units`, and `label_status`.
+
+```
+
+{
+    'label_hash': label_hash (uid),
+    'data_title': data_title,
+    'data_type': data_type,
+    'data_units': data_units,
+    'object_answers': object_answers,
+    'classification_answers': classification_answers,
+    'label_status': label_status,
+}
+
+```
+
+A label row contains a data unit or a collection of data units and associated labels, and is specific to a data asset with type video or image group.
+
+1.  A label row with a data asset of type `video` contains a single data unit.
+
+2.  A label row with a data asset of type `img_group` contains any number of data units.
+
+A data unit can have any number of vector labels (e.g. bounding box, polygon, keypoint) and classifications.
+
+## Getting label rows
+
+Project label row IDs (`label_hash` uid) are found in the project information, which also contain information about the data title (`data_title`), data type (`data_type`) and label status (`label_status`).
+
+<CodeGroup>
+
+```js Javascript
+
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "labelrow",
+    "query_method": "GET",
+    "values": {
+      "uid": "<label_hash>",
+      "payload": null
+    }
+  }
+);
+
+var config = {
+  method: 'post',
+  url: 'https://api.encord.com/public',
+  headers: {
+    'Content-Type': 'application/json',
+    'ResourceID': '<project_id>',
+    'Authorization': '<private_key>',
+    'Accept': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+```curl cURL
+
+curl --location --request POST 'https://api.encord.com/public' \
+--header 'Content-Type: application/json' \
+--header 'ResourceID: <project_id>' \
+--header 'Authorization: <private_key>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "labelrow",
+    "query_method": "GET",
+    "values": {
+        "uid": "<label_hash>",
+        "payload": null
+    }
+}'
+
+```
+
+</CodeGroup>
+
+## Saving label rows
+
+Labels are saved to their label row ID (`label_hash` uid) from a label row instance. In case you want to save labels for the data which was not labeled before, follow the steps under "Creating label rows" below.
+
+Label rows have to be saved in the same format as fetched. Click <a href="/sdk-documentation/sdk-references/LabelRowV2">here</a> for information on the label row structure.
+
+<CodeGroup>
+
+```js Javascript
+
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "labelrow",
+    "query_method":"POST",
+    "values": {
+      "uid": "<label_hash>",
+      "payload": {
+        "label_hash": "<label_hash>",
+        "data_units": {
+          "data_uid_1": {
+            ...
+          },
+          "data_uid_2": {
+            ...
+          },
+        },
+        "object_answers": {},
+        "classification_answers": {},
+        "label_status": "LABELLED"
+      }
+    }});
+
+var config = {
+  method: 'post',
+  url: 'https://api.encord.com/public',
+  headers: {
+    'Content-Type': 'application/json',
+    'ResourceID': '<project_id>',
+    'Authorization': '<private_key>',
+    'Accept': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+```curl cURL
+
+curl --location --request POST 'https://api.encord.com/public' \
+--header 'Content-Type: application/json' \
+--header 'ResourceID: <project_id>' \
+--header 'Authorization: <private_key>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "labelrow",
+    "query_method": "POST",
+    "values": {
+        "uid": "<label_hash>",
+        "payload": {
+        "label_hash": "<label_hash>",
+        "data_units": {
+            "data_uid_1": {
+              ...,
+            },
+            "data_uid_2": {
+              ...,
+            }
+        },
+        "object_answers": {},
+        "classification_answers": {},
+        "label_status": "LABELLED"
+    }
+    }
+}'
+
+```
+
+</CodeGroup>
+
+
+## Creating a label row
+
+If you want to save labels to a unit of data (`video`, `img_group`) for which a label row (and thus a `label_hash` uid) does not exist yet, you need to create a label row associated with the data.
+
+1. Get the data_hash (`data_hash` uid) that you want to create labels for. For this, request all label rows and note the ones that are NOT_LABELLED under 'label_status' (or, where `label_hash` is None) following the instructions <a href="/platform-documentation/Annotate/annotate-api-overview#fetch-project-information">here</a>.
+
+2. Create the label row:
+
+<CodeGroup>
+
+```js Javascript
+
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "labelrow",
+    "query_method":"PUT",
+    "values": {
+      "uid": "<data_hash>",
+      "payload": null}
+    }
+);
+
+var config = {
+  method: 'post',
+  url: 'https://api.encord.com/public',
+  headers: {
+    'Content-Type': 'application/json',
+    'ResourceID': '<project_id>',
+    'Authorization': '<private_key>',
+    'Accept': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+
+```
+```curl cURL
+
+curl --location --request POST 'https://api.encord.com/public' \
+--header 'Content-Type: application/json' \
+--header 'ResourceID: <project_id>' \
+--header 'Authorization: <private_key>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "labelrow",
+    "query_method": "PUT",
+    "values": {
+        "uid": "<data_hash>",
+        "payload": null
+    }
+}'
+
+```
+
+</CodeGroup>
+
+The request returns a label row instance.

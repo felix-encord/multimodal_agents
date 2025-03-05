@@ -1,0 +1,90 @@
+---
+  title: "Restricted Groups"
+  description: "Learn how to use restricted groups in Encord."
+---
+
+Restricted Groups are Workforce user groups who are completely independent of each other. Org Admins can create a special type of Team Manager (Workforce Team Manager) to manage restricted groups.
+
+Org Admins have complete over sight in to all restricted and unrestricted groups. While restricted groups and their Workforce Team Managers can see nothing of the other groups.
+
+<Note>Contact your Encord support representative to create the Workforce Team Managers for your restricted groups.</Note>
+
+The table below illustrates the role-based access control for various Project actions available to different user types. When using restricted groups, the restricted groups can only view and perform actions on their own Datasets, Ontologies, Workflows, and Projects.
+
+
+| Permission                                                | Admin | Team Manager | Reviewer    | Annotator     | Annotator & Reviewer |
+|-----------------------------------------------------------|-------|--------------|-------------|---------------|----------------------|
+| Attach / Detach datasets                                  | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Attach / Switch ontology                                  | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Delete                                                    | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Invite team members                                       | ✅     | ✅            | ❌           | ❌             | ❌                    |
+| Manage team permissions                                   | ✅     | ✅            | ❌           | ❌             | ❌                    |
+| Manage admins                                             | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Annotate & review tasks                                   | ✅     | ✅            | Review only | Annotate only | ✅                    |
+| Confirm annotations                                       | ✅     | ✅            | ❌           | ❌             | ❌                    |
+| Control task assignments and status                       | ✅     | ✅            | ❌           | ❌             | ❌                    |
+| Exporting labels                                          | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Assign and Release Tasks                                  | ✅     | ✅            | ❌           | ❌             | ❌                    |
+
+
+## Working with Restricted Groups
+
+### Workforce Team Manager Tasks
+
+<Note>Workforce Team Managers, we recommend that your workforce personnel create alias email accounts for each workforce they are a part of. For example, an annotator Chris is part of the workforce for two different companies and creates 2 different alias accounts: chris+acme-annotator@company.com and chris+zula-annotator@company.com.</Note>
+
+Workforce Team Managers must prepare a list of workforce personnel with the role (Annotator, Reviewer, Annotator + Reviewer) that each user has on the team.
+
+The list is then sent to the Org Admin.
+
+### Org Admin Tasks
+
+Org Admins should:
+
+<Steps>
+  <Step title="Create Restricted Groups">
+    Create role specific (Annotators, Reviewers, Annotator + Reviewers) workforce _Groups_ from the **My organization > Groups** page.
+
+    ![Create Restricted Groups](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/Restricted-Groups/restricted-groups-create-group.gif)
+  </Step>
+  <Step title="Add Workforce Users">
+  1. Collect the list of workforce users from the workforce company you are using.
+  2. Add those users to your organization as **Workforce** users from the **My organization > Users** page.
+  </Step>
+  <Step title="Add Workforce to Group.">
+    Add the Workforce Team Manager and all workforce members to the required _Groups_ from the **My organization > Groups** page.
+
+    ![Add Workforce Members](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/Restricted-Groups/restricted-groups-add-users.gif)
+  </Step>
+  <Step title="Contact Encord">
+    1. Contact Encord.
+    2. Provide the list of workforce users and their roles to Encord.
+  </Step>
+  <Step title="Import/Register files to Encord">
+    Import/Register your files to Encord:
+    - [AWS](/platform-documentation/GettingStarted/annotate-getting-started/annotate-register-aws-data)
+    - [GCP](/platform-documentation/GettingStarted/annotate-getting-started/annotate-register-gcp-data)
+    - [Azure](/platform-documentation/GettingStarted/annotate-getting-started/annotate-register-azure-data)
+    - [OTC](/platform-documentation/GettingStarted/annotate-getting-started/annotate-register-otc-data)
+    - [Local data import](/platform-documentation/GettingStarted/annotate-getting-started/annotate-import-local-data)
+  </Step>
+  <Step title="Create Datasets">
+    Create one or more [Datasets for your workforce Projects](/platform-documentation/GettingStarted/gettingstarted-create-dataset).
+  </Step>
+  <Step title="Create Ontology">
+    Create an [Ontology for your workforce Projects](platform-documentation/GettingStarted/gettingstarted-create-ontology).
+  </Step>
+  <Step title="Create Projects">
+    Create one or more [workforce Projects](/platform-documentation/GettingStarted/gettingstarted-create-project).
+  </Step>
+  <Step title="Add Workforce Groups to Projects">
+
+  1. Add the Workforce Team Manager as a **Team Manager** to Projects from the **Project > Settings > Team** page.
+
+  ![Add Workforce Team Manager](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/Restricted-Groups/restricted-groups-add-team-manager.gif)
+
+  2. Add the workforce groups to Projects from the **Project > Settings > Team** page.
+  
+  ![Add Groups to Project](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/Restricted-Groups/restricted-groups-add-groups.gif)
+  </Step>
+</Steps>

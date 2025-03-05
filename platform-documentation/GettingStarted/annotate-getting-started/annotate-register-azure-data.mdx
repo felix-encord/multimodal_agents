@@ -1,0 +1,87 @@
+---
+title: "Register Azure Data"
+metadata: 
+  title: "Register Azure data in Encord"
+  description: "Learn how to register Azure data in Encord"
+  image: 
+    0: "https://files.readme.io/2168cad-image_16.png"
+---
+
+Your data is registered in the _Files_ section of _Index_ where it is organized into folders and sub-folders. Importing your data into Encord is a multi-step process: 
+
+1. Create an Azure integration.  
+2. Set up an Azure integration.
+3. Create a JSON or CSV.
+4. Create a folder to store your data in Encord.
+5. Register your data to the folder. 
+
+<Tip>See our [Azure integration documentation](/platform-documentation/General/annotate-data-integrations/annotate-azure-blob-integration) for a detailed guide to setting up an integration.</Tip>
+
+## Step 1: Create Encord Integration
+
+import CreateIntegration from '/snippets/SDK/CreateIntegration-Azure.mdx';
+
+<CreateIntegration />
+
+## Step 2: Setup Azure Integration
+
+import Setup from '/snippets/SDK/Setup-Azure.mdx';
+
+<Setup />
+
+## Step 3: Create Metadata Schema
+
+
+import Metadataschema from '/snippets/Index/Metadata/Metadataschema.mdx';
+
+<Metadataschema />
+
+## Step 4: Create JSON or CSV for Registration
+
+import CreateJSONorCSV from '/snippets/SDK/CreateJSONorCSV-Intro.mdx';
+
+<CreateJSONorCSV />
+
+
+### Create JSON file for Registration
+
+import CreateJSONIntro from '/snippets/SDK/CreateJSONIntro.mdx';
+
+<CreateJSONIntro />
+
+---
+
+import CreateJSONAzure from '/snippets/SDK/CreateJSONAzure.mdx';
+
+<CreateJSONAzure />
+
+---
+
+### CSV format
+
+import CSVformat from '/snippets/CSVformat.mdx';
+
+<CSVformat />
+
+---
+
+## Step 5: Create a Folder
+
+1. Navigate to _Files_ section of _Index_ in the Encord platform.
+2. Click **+ New folder**.
+A dialog to create a new folder appears.
+
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/storage-new-folder.png" width="600"/>
+
+
+3. Give the folder a meaningful name and description. 
+4. Click **Create** to create the folder. 
+The folder is listed in _Files_. 
+
+## Step 6:  Register Your Data to the Folder
+
+import ImportCloudFilesToFolder from '/snippets/Index/Files/UploadCloudFilesToFolder.mdx'
+
+<ImportCloudFilesToFolder />
+

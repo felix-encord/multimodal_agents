@@ -1,0 +1,727 @@
+---
+title: "Files Upgrade and Migration Guide"
+slug: "index-files-migration-guide"
+hidden: false
+metadata: 
+  title: "Files Upgrade and Migration Guide"
+  description: "Learn how to transition from the old Dataset-based approach to the new Files based approach in Encord."
+  image: 
+    0: "https://files.readme.io/7ec1cb2-image_16.png"
+---
+
+import CreateDatasets from '/snippets/SDK/CreateDatasets- AWS.mdx'
+
+
+<Info>Comprehensive documentation for all features in _Files_ can be found [here](/platform-documentation/Index/index-files)</Info>
+
+<Note>
+There are no breaking changes to the data upload or registration process. The current method of uploading, and registering of data continues to be supported.
+</Note>
+
+This guide provides targeted instructions for customers transitioning to the new _Files_ interface with their existing Datasets. We recommend upgrading to _Files_ promptly to benefit from enhanced centralized data handling, flexible management, and improved metadata and permissions control. However, you can continue using your current Datasets without disruption and upgrade at your own pace. Select your preferred [data management option](#choose-your-data-management-style) below and follow the corresponding steps.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '47.5%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/4f607c04955d44358f4d486849ba7493?sid=8967e8ed-3571-4cf7-ad29-1ca18e7fdb2c"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+## What should I do?
+
+### First, what happened to my existing data? 
+
+1. Datasets are now in the _Annotate_ section of the application.
+
+**After _Files_ is enabled**:
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/datasets-annotate.png" width="600" />
+</div>
+
+2. All data on Encord is now managed through _Files_. Your existing Datasets have been converted into Mirrored Datasets, which automatically track their corresponding folders without displaying them in the _Files_ interface. These Mirrored Datasets are visible in the _Datasets_ section of the Encord platform and can be used just as you have always used Datasets. While this provides a simpler experience, it comes with some reduced flexibility. Mirrored Datasets are identifiable by the **M** on the Dataset icon.
+
+
+**Before _Files_ is enabled**:
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/legacy-icon.png" width="80" />
+</div>
+
+**After _Files_ is enabled**:
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/mirrored-icon.png" width="80" />
+</div>
+
+<Note>[Mirrored Datasets can be upgraded](/platform-documentation/Index/files/data-upgrade-mirrored-datasets#upgrade-mirrored-datasets) to standard Datasets and folders at any time. We highly recommend upgrading your Mirrored Datasets to standard Datasets and folders to fully unlock the benefits of _Files_.</Note>
+
+### Choose your data management style 
+
+Choose the guide that best fits your needs to get started with Files:
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Div</title>
+  </head>
+  <div className="container">
+    <a
+      className="clickable-div"
+      href="#option-1-i-want-to-keep-using-encord-as-i-always-have"
+    >
+      1. Continue using Encord as you always have
+    </a>
+    <a
+      className="clickable-div"
+      href="#option-2-i-want-to-add-new-data-to-files-but-leave-my-existing-data-unchanged"
+    >
+      2. Add ONLY new data to _Files_
+    </a>
+    <a
+      className="clickable-div"
+      href="#option-3-i-want-to-fully-transition-to-files"
+    >
+      3. Fully transition to _Files_
+    </a>
+  </div>
+</div>
+
+
+---
+
+### Option 1: I want to keep using Encord as I always have
+
+Your Datasets are now referred to as Mirrored Datasets. The process for adding data to Mirrored Datasets remains unchanged in both the platform and the SDK. There are only minor adjustments to how Mirrored Datasets are created within the Encord platform. [SDK users can continue creating Datasets](/sdk-documentation/datasets-sdk/sdk-create-and-view-datasets) and adding data as they have been accustomed to.
+
+**1. Create Mirrored Datasets using the Encord app:**
+
+1. Click the **New dataset** button in the _Datasets_ section in _Annotate_.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate-new-dataset.png" width="700" />
+</div>
+
+2. Give your Dataset a meaningful title and description. A clear title and description keeps your data organized.
+
+3. Hover over **Looking to create a mirrored dataset?** and click **Yes, proceed** to create a [Mirrored Dataset](/platform-documentation/Annotate/annotate-datasets/annotate-datasets#mirrored-datasets).
+
+4. Click **Create dataset** to create the Dataset.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/looking-to-create-mirrored-dataset.png" width="500" />
+</div>
+
+---
+
+### Option 2: I want to add new data to Files but leave my existing data unchanged
+
+Your existing Datasets are now Mirrored Datasets, and you can continue adding new files directly to Mirrored Datasets. [Mirrored Datasets can be upgraded](/platform-documentation/Index/files/data-upgrade-mirrored-datasets#upgrade-mirrored-datasets) to standard Datasets and folders at any time.
+
+<Info> Upgrading Mirrored Datasets is a one-way action that cannot be undone.</Info>
+
+New files are added to, and stored in the _Files_ section of the Encord platform. 
+
+<Note>Files must be uploaded to folders.</Note>
+
+<AccordionGroup>
+  <Accordion
+    title="Managing files and folders in the Encord app"
+  >
+
+<Info>The steps below are the recommended method for uploading files to Encord and attaching them to Datasets. However, you can [add files directly to Datasets](/sdk-documentation/sdk-references/dataset#add-private-data-to-dataset-start) as long as you specify a folder.</Info>
+    
+You can add files to Encord in the Datasets screen and in the _Files_ screen. 
+
+#### 1. Creating folders 
+
+1. Navigate to _Files_ under the _Index_ heading in the Encord platform. 
+2. Click the **+ New folder** button to create a new folder. A dialog to create a new folder appears. 
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/storage-new-folder.png" width="600"/>
+</div>
+
+3. Give the folder a meaningful name and description. 
+
+4. Click **Create** to create the folder. 
+The folder is listed in _Files_. 
+
+#### 2. Adding files to folders
+
+1. Navigate to _Files_ under the _Index_ heading in the Encord platform. 
+2. Click the **+Upload files** button.
+
+<Tip>You can also right-click a folder to add data.</Tip>
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/add-data-to-folder.png" width="600"/>
+</div>
+
+3. Select a folder to upload your files to. You can click **+New folder** to create a new folder.
+4. Select the type of data you want to add.
+
+<Tip>Select **Import from private cloud** to add cloud data</Tip>
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/upload-data-files.png" width="500"/>
+</div>
+
+5. Click **Import** to upload the files to Encord. 
+
+#### 3. Create a Dataset
+
+To take advantage of all of the _Files_ functionality you must create a standard Dataset (as opposed to a Mirrored Dataset). 
+
+1. Click the **New dataset** button in the _Datasets_ section in _Annotate_.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate-new-dataset.png" width="700" />
+</div>
+
+2. Give your Dataset a meaningful title and description. A clear title and description keeps your data organized.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/create-dataset.png" width="500" />
+</div>
+
+3. Click **Create dataset** to create the Dataset. 
+
+#### 4. Attach files to a Dataset
+
+1. Navigate to the _Datasets_ section under the _Annotate_ heading.
+2. Click the Dataset you want to add data to. 
+3. Click **+Attach existing files**. 
+
+<Tip>If the files you want have not been uploaded into Encord yet, click **+Upload files** to [add new files](/platform-documentation/Index/index-files#upload-files-to-a-folder).</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/attach-existing-files.png" width="600" />
+</div>
+
+4. Select the folders containing the files you want to attach to the Dataset. To select individual files, double-click a folder to see its contents, and select the files you want to add to the Dataset. 
+
+5. Click **Attach data** to attach the selected files to the Dataset.
+
+  </Accordion>
+    <Accordion
+    title="Managing files and folders using the Encord SDK"
+  >
+
+<Info>The steps below are the recommended method for uploading files to Encord and attaching them to Datasets. However, you can still [upload files directly to Datasets](/sdk-documentation/sdk-references/dataset#add-private-data-to-dataset-start) as long as you specify a folder.</Info>
+
+#### 1. Creating folders
+
+The following script creates a new folder in the root directory of _Files_. Ensure that you: 
+
+- Replace \<private_key_path\> with the path to your private key.
+- Replace \<folder_name\> with the name you want to give your folder. We recommend using unique folder names.
+- Replace `A folder to store my files` with a meaningful description for your folder.
+
+<CodeGroup>
+
+```python Image
+from encord import EncordUserClient
+
+# Instantiate Encord client by substituting the path to your private key
+user_client = EncordUserClient.create_with_ssh_private_key(
+                ssh_private_key_path="<private_key_path>"
+            )
+
+# Create a storage folder
+folder_name = "<folder_name>"
+folder_description = "A folder to store my files"
+storage_folder = user_client.create_storage_folder(folder_name, folder_description)
+```
+</CodeGroup>
+
+
+#### 2. Adding files to folders
+
+The following scripts initiate uploads from your cloud storage to a specified folder in Encord. It works for all file types.
+
+<Tip>If `Upload is still in progress, try again later!` is returned, use the [script to check the upload status](/sdk-documentation/index-sdk/sdk-upload-data#check-cloud-upload-status) to see whether the upload has finished. </Tip>
+
+Ensure that you: 
+
+- Replace `<private_key_path>` with the path to your private key.
+- Replace `<integration_title>` with the title of the integration you want to use.
+- Replace `<folder_name>` with the folder name. The scripts assume that the specified folder name is unique.
+- Replace `path/to/json/file.json` with the path to a [JSON file specifying which cloud storage files should be uploaded](/platform-documentation/Index/add-files/index-register-cloud-data#json-format).
+- If creating a new folder, replace `A folder to store my files` with a meaningful description for your folder. 
+
+<CodeGroup>
+
+```python Existing folder
+# Import dependencies
+from encord import EncordUserClient
+from encord.orm.dataset import LongPollingStatus
+from encord.storage import FoldersSortBy
+
+# Instantiate user client. Replace <private_key_path> with the path to your private key
+user_client = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path="<private_key_path>"
+    )
+
+# Specify the integration you want to use by replacing <integration_title> with the integration title
+integrations = user_client.get_cloud_integrations()
+integration_idx = [i.title for i in integrations].index("<integration_title>")
+integration = integrations[integration_idx].id
+
+# Find the storage folder by name
+folder_name = "<folder_name>"  # Replace with your folder's name
+folders = list(user_client.find_storage_folders(search=folder_name, dataset_synced=None, order=FoldersSortBy.NAME, desc=False, page_size=1000))
+
+# Ensure the folder was found
+if folders:
+    storage_folder = folders[0]
+
+    # Initiate cloud data registration to the storage folder. Replace path/to/json/file.json with the path to your JSON file
+    upload_job_id = storage_folder.add_private_data_to_folder_start(
+        integration_id=integration, private_files="path/to/json/file.json", ignore_errors=True
+    )
+
+    # timeout_seconds determines how long the code will wait after initiating upload until continuing and checking upload status
+    res = storage_folder.add_private_data_to_folder_get_result(upload_job_id, timeout_seconds=5)
+    print(f"Execution result: {res}")
+
+    if res.status == LongPollingStatus.PENDING:
+        print("Upload is still in progress, try again later!")
+    elif res.status == LongPollingStatus.DONE:
+        print("Upload completed")
+        if res.unit_errors:
+            print("The following URLs failed to upload:")
+            for e in res.unit_errors:
+                print(e.object_urls)
+    else:
+        print(f"Upload failed: {res.errors}")
+else:
+    print("Folder not found")
+```
+```python New folder
+# Import dependencies
+from encord import EncordUserClient
+from encord.orm.dataset import LongPollingStatus
+
+# Instantiate user client. Replace <private_key_path> with the path to your private key
+user_client = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path="<private_key_path>"
+    )
+
+# Specify the integration you want to use by replacing <integration_title> with the integration title
+integrations = user_client.get_cloud_integrations()
+integration_idx = [i.title for i in integrations].index("<integration_title>")
+integration = integrations[integration_idx].id
+
+# Create a storage folder
+folder_name = "<folder_name>"
+folder_description = "A folder to store my files"
+storage_folder = user_client.create_storage_folder(folder_name, folder_description)
+
+# Initiate cloud data registration to the storage folder. Replace path/to/json/file.json with the path to your JSON file
+upload_job_id = storage_folder.add_private_data_to_folder_start(
+integration_id=integration, private_files="path/to/json/file.json", ignore_errors=True
+    )
+
+# timeout_seconds determines how long the code will wait after initiating upload until continuing and checking upload status
+res = storage_folder.add_private_data_to_folder_get_result(upload_job_id, timeout_seconds=5)
+print(f"Execution result: {res}")
+
+    if res.status == LongPollingStatus.PENDING:
+        print("Upload is still in progress, try again later!")
+    elif res.status == LongPollingStatus.DONE:
+        print("Upload completed")
+        if res.unit_errors:
+            print("The following URLs failed to upload:")
+            for e in res.unit_errors:
+                print(e.object_urls)
+    else:
+        print(f"Upload failed: {res.errors}")
+else:
+    print(f"Upload failed: {res.errors}")
+```
+``` Example output
+add_private_data_to_dataset job started with upload_job_id=c4026edb-4fw2-40a0-8f05-a1af7f465727.
+SDK process can be terminated, this will not affect successful job execution.
+You can follow the progress in the web app via notifications.
+add_private_data_to_dataset job completed with upload_job_id=c4026edb-4fw2-40a0-8f05-a1af7f465727.
+```
+
+</CodeGroup>
+
+#### 3. Create a Dataset
+
+<CreateDatasets />
+
+
+#### 4. Attach files to a Dataset
+
+Now that you uploaded your data and created a Dataset, its time to add your files to the Dataset. The following scripts add all files in a specified folder to a Dataset.
+
+- Replace `<private_key_path>` with the path to your private key.
+- Replace `<folder_name>` with the name you want to give your Storage folder.
+- Replace `<dataset_hash>` with the hash of the Dataset you want to add the data units to.
+
+<Note>Files added to the folder at a later time **will not** be automatically added to the Dataset.</Note>
+
+```python All files
+from encord import EncordUserClient
+
+# Authentication
+user_client = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path="<private_key_path>"
+)
+
+# Find the storage folder by name
+folder_name = "<folder_name>"  # Replace with your folder's name
+folders = list(user_client.find_storage_folders(search=folder_name, page_size=1))
+
+dataset = user_client.get_dataset("<dataset_hash>")
+
+# Ensure the folder was found
+if folders:
+    storage_folder = folders[0]
+
+    # List all data units
+    items = list(storage_folder.list_items())
+
+    # Collect all item UUIDs
+    item_uuids = [item.uuid for item in items]
+
+    # Output the retrieved data units
+    for item in items:
+        print(f"UUID: {item.uuid}, Name: {item.name}, Type: {item.item_type}")
+
+    # Link all items at once if there are any
+    if item_uuids:
+        dataset.link_items(item_uuids)
+else:
+    print("Folder not found.")
+```
+
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Option 3: I want to fully transition to Files
+
+**First, upgrade your Mirrored Datasets:**
+
+<Note>
+Upgrading Mirrored Datasets is a one-way action that changes how files are added to Datasets. We recommend uploading files through the Files interface and then attaching them to Datasets, [as outlined below](#1-creating-folders). However, you can still upload files directly to Datasets by specifying the folder in the upload call, as [shown in the SDK reference](/sdk-documentation/sdk-references/dataset#add-private-data-to-dataset-start).
+</Note>
+
+1. Navigate to _Datasets_ in the _Index_ section of the Encord platform. 
+
+2. Select the Mirrored Dataset you want to upgrade.
+
+3. Click the **Upgrade to standard dataset and folder** button.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/mirrored-dataset-upgrade.png" width="350" />
+</div>
+
+New files are added to and stored in the _Files_ section of the Encord platform. 
+
+<Note>Files must be uploaded to folders.</Note>
+
+<AccordionGroup>
+  <Accordion
+    title="Managing files and folders in the Encord app"
+  >
+
+<Info>The steps below are the recommended method for uploading files to Encord and attaching them to Datasets. However, you can still [upload files directly to Datasets](/sdk-documentation/sdk-references/dataset#add-private-data-to-dataset-start) as long as you specify a folder.</Info>
+    
+You can upload files to Encord in the Datasets screen and in the _Files_ screen. 
+
+#### 1. Creating folders 
+
+1. Navigate to _Files_ under the _Index_ heading in the Encord platform. 
+2. Click the **+ New folder** button to create a new folder. A dialog to create a new folder appears. 
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/storage-new-folder.png" width="600"/>
+</div>
+
+3. Give the folder a meaningful name and description. 
+
+4. Click **Create** to create the folder. 
+The folder is listed in _Files_. 
+
+#### 2. Adding files to folders
+
+1. Navigate to _Files_ under the _Index_ heading in the Encord platform. 
+2. Click the **+Upload files** button.
+
+<Tip>You can also right-click a folder to add data.</Tip>
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/add-data-to-folder.png" width="600"/>
+</div>
+
+3. Select a folder to upload your files to. You can click **+New folder** to create a new folder.
+4. Select the type of data you want to add.
+
+<Tip>Select **Import from private cloud** to add cloud data</Tip>
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/upload-data-files.png" width="500"/>
+</div>
+
+5. Click **Import** to upload the files to Encord. 
+
+#### 3. Create a Dataset
+
+To take advantage of all of the _Files_ functionality you must create a standard Dataset (as opposed to a Mirrored Dataset). 
+
+1. Click the **New dataset** button in the _Datasets_ section in _Annotate_.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate-new-dataset.png" width="700" />
+</div>
+
+2. Give your Dataset a meaningful title and description. A clear title and description keeps your data organized.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/create-dataset.png" width="500" />
+</div>
+
+3. Click **Create dataset** to create the Dataset. 
+
+#### 4. Attach files to a Dataset
+
+1. Navigate to the _Datasets_ section under the _Annotate_ heading.
+2. Click the Dataset you want to add data to. 
+3. Click **+Attach existing files**. 
+
+<Tip>If the files you want have not been uploaded into Encord yet, click **+Upload files** to [upload new files](/platform-documentation/Index/index-files#upload-files-to-a-folder).</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/attach-existing-files.png" width="600" />
+</div>
+
+4. Select the folders containing the files you want to attach to the Dataset. To select individual files, double-click a folder to see its contents, and select the files you want to add to the Dataset. 
+
+5. Click **Attach data** to attach the selected files to the Dataset.
+
+  </Accordion>
+    <Accordion
+    title="Managing files and folders using the Encord SDK"
+  >
+
+<Info>The steps below are the recommended method for uploading files to Encord and attaching them to Datasets. However, you can still [upload files directly to Datasets](/sdk-documentation/sdk-references/dataset#add-private-data-to-dataset-start) as long as you specify a folder.</Info>
+
+#### 1. Creating folders
+
+The following script creates a new folder in the root directory of _Files_. Ensure that you: 
+
+- Replace \<private_key_path\> with the path to your private key.
+- Replace \<folder_name\> with the name you want to give your folder. We recommend using unique folder names.
+- Replace `A folder to store my files` with a meaningful description for your folder.
+
+<CodeGroup>
+
+```python Image
+from encord import EncordUserClient
+
+# Instantiate Encord client by substituting the path to your private key
+user_client = EncordUserClient.create_with_ssh_private_key(
+                ssh_private_key_path="<private_key_path>"
+            )
+
+
+
+# Create a storage folder
+folder_name = "<folder_name>"
+folder_description = "A folder to store my files"
+storage_folder = user_client.create_storage_folder(folder_name, folder_description)
+```
+</CodeGroup>
+
+
+#### 2. Adding files to folders
+
+The following scripts initiate uploads from your cloud storage to a specified folder in Encord. It works for all file types.
+
+<Tip>If `Upload is still in progress, try again later!` is returned, use the [script to check the upload status](/sdk-documentation/index-sdk/sdk-upload-data#check-cloud-upload-status) to see whether the upload has finished. </Tip>
+
+Ensure that you: 
+
+- Replace \<private_key_path\> with the path to your private key.
+- Replace \<integration_title\> with the title of the integration you want to use.
+- Replace \<folder_name\> with the folder name. The scripts assume that the specified folder name is unique.
+- Replace `path/to/json/file.json` with the path to a [JSON file specifying which cloud storage files should be uploaded](/platform-documentation/Index/add-files/index-register-cloud-data#json-format).
+- If creating a new folder, replace `A folder to store my files` with a meaningful description for your folder. 
+
+<CodeGroup>
+
+```python Existing folder
+# Import dependencies
+from encord import EncordUserClient
+from encord.orm.dataset import LongPollingStatus
+from encord.storage import FoldersSortBy
+
+# Instantiate user client. Replace <private_key_path> with the path to your private key
+user_client = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path="<private_key_path>"
+    )
+
+# Specify the integration you want to use by replacing <integration_title> with the integration title
+integrations = user_client.get_cloud_integrations()
+integration_idx = [i.title for i in integrations].index("<integration_title>")
+integration = integrations[integration_idx].id
+
+# Find the storage folder by name
+folder_name = "<folder_name>"  # Replace with your folder's name
+folders = list(user_client.find_storage_folders(search=folder_name, dataset_synced=None, order=FoldersSortBy.NAME, desc=False, page_size=1000))
+
+# Ensure the folder was found
+if folders:
+    storage_folder = folders[0]
+
+    # Initiate cloud data registration to the storage folder. Replace path/to/json/file.json with the path to your JSON file
+    upload_job_id = storage_folder.add_private_data_to_folder_start(
+        integration_id=integration, private_files="path/to/json/file.json", ignore_errors=True
+    )
+
+    # timeout_seconds determines how long the code will wait after initiating upload until continuing and checking upload status
+    res = storage_folder.add_private_data_to_folder_get_result(upload_job_id, timeout_seconds=5)
+    print(f"Execution result: {res}")
+
+    if res.status == LongPollingStatus.PENDING:
+        print("Upload is still in progress, try again later!")
+    elif res.status == LongPollingStatus.DONE:
+        print("Upload completed")
+        if res.unit_errors:
+            print("The following URLs failed to upload:")
+            for e in res.unit_errors:
+                print(e.object_urls)
+    else:
+        print(f"Upload failed: {res.errors}")
+else:
+    print("Folder not found")
+```
+```python New folder
+# Import dependencies
+from encord import EncordUserClient
+from encord.orm.dataset import LongPollingStatus
+
+# Instantiate user client. Replace <private_key_path> with the path to your private key
+user_client = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path="<private_key_path>"
+    )
+
+# Specify the integration you want to use by replacing <integration_title> with the integration title
+integrations = user_client.get_cloud_integrations()
+integration_idx = [i.title for i in integrations].index("<integration_title>")
+integration = integrations[integration_idx].id
+
+# Create a storage folder
+folder_name = "<folder_name>"
+folder_description = "A folder to store my files"
+storage_folder = user_client.create_storage_folder(folder_name, folder_description)
+
+# Initiate cloud data registration to the storage folder. Replace path/to/json/file.json with the path to your JSON file
+upload_job_id = storage_folder.add_private_data_to_folder_start(
+integration_id=integration, private_files="path/to/json/file.json", ignore_errors=True
+    )
+
+# timeout_seconds determines how long the code will wait after initiating upload until continuing and checking upload status
+res = storage_folder.add_private_data_to_folder_get_result(upload_job_id, timeout_seconds=5)
+print(f"Execution result: {res}")
+
+if res.status == LongPollingStatus.PENDING:
+    print("Upload is still in progress, try again later!")
+elif res.status == LongPollingStatus.DONE:
+    print("Upload completed")
+    if res.unit_errors:
+        print("The following URLs failed to upload:")
+        for e in res.unit_errors:
+            print(e.object_urls)
+else:
+    print(f"Upload failed: {res.errors}")
+```
+``` Example output
+add_private_data_to_dataset job started with upload_job_id=c4026edb-4fw2-40a0-8f05-a1af7f465727.
+SDK process can be terminated, this will not affect successful job execution.
+You can follow the progress in the web app via notifications.
+add_private_data_to_dataset job completed with upload_job_id=c4026edb-4fw2-40a0-8f05-a1af7f465727.
+```
+
+</CodeGroup>
+
+#### 3. Create a Dataset
+
+<CreateDatasets />
+
+#### 4. Attach files to a Dataset
+
+Now that you uploaded your data and created a Dataset, its time to add your files to the Dataset. The following scripts add all files in a specified folder to a Dataset.
+
+- Replace `<private_key_path>` with the path to your private key.
+- Replace `<folder_name>` with the name you want to give your Storage folder.
+- Replace `<dataset_hash>` with the hash of the Dataset you want to add the data units to.
+
+<Note>Files added to the folder at a later time **will not** be automatically added to the Dataset.</Note>
+
+```python All files
+from encord import EncordUserClient
+
+# Authentication
+user_client = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path="<private_key_path>"
+)
+
+# Find the storage folder by name
+folder_name = "<folder_name>"  # Replace with your folder's name
+folders = list(user_client.find_storage_folders(search=folder_name, page_size=1))
+
+dataset = user_client.get_dataset("<dataset_hash>")
+
+# Ensure the folder was found
+if folders:
+    storage_folder = folders[0]
+
+    # List all data units
+    items = list(storage_folder.list_items())
+
+    # Collect all item UUIDs
+    item_uuids = [item.uuid for item in items]
+
+    # Output the retrieved data units
+    for item in items:
+        print(f"UUID: {item.uuid}, Name: {item.name}, Type: {item.item_type}")
+
+    # Link all items at once if there are any
+    if item_uuids:
+        dataset.link_items(item_uuids)
+else:
+    print("Folder not found.")
+```
+
+  </Accordion>
+</AccordionGroup>
+
+
+
+
+
+

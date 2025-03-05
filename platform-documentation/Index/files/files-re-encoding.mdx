@@ -1,0 +1,99 @@
+---
+title: "Re-encoding Videos"
+slug: "files-re-encoding"
+hidden: false
+metadata: 
+  title: "Re-encoding videos"
+  description: "Learn how to re-encode videos on the Encord platform."
+  image: 
+    0: "https://files.readme.io/7ec1cb2-image_16.png"
+category: "65b3cc20ba5db2007e1a0b43"
+---
+
+<Info>Re-encoding is only available to Enterprise customers. Contact [sales@encord.com](mailto:sales@encord.com) for more information.</Info>
+
+Encord performs automatic checks on all uploaded videos uploaded to _Files_ to see if the video needs to be re-encoded. Re-encoding means bringing the video in line with Encord's requirements to avoid [frame synchronization issues](/platform-documentation/General/general-supported-data#frame-synchronization-issues) and ensure accurate labels.
+
+If a video needs re-encoding, a red number appears on the file icon showing the number of issues found. Each issue is listed next to the yellow caution icon in the details pane when the file is selected, or when hovering on the number.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/re-encoding-issues.png" width="400" />
+</div>
+
+## Types of Re-encoding
+
+<Info>Re-encoding is only available to Enterprise customers. Contact [sales@encord.com](mailto:sales@encord.com) for more information.</Info>
+
+Encord provides the following methods for re-encoding:
+
+- Automatically fix detected issue: Encord performs a spot fix for any encoding issues. This is quicker than a full re-encoding, but for some issues, a full re-encoding is required.
+
+- Force full re-encoding: Encord performs a full re-encoding of the video. This method ensures all issues are resolved, but it can take significantly more time to perform.
+
+### Automatically fix detected issue
+
+Auto re-encoding serves common frame synchronization issues and ensures there is no quality loss during re-encoding. If for example the only issue is that audio is present in the video, auto re-encoding only removes the audio while keeping the video as-is.
+
+To automatically re-encode your video, simply select the file in question and click the **Re-encode (auto)** button to prevent any frame synchronization issues from arising. A notification telling you your video is re-encoded should appear at the top of your screen. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/datasets/datasets-re-encode-highlight.png" width="900" />
+</div>
+
+### Force full re-encoding
+
+Forcing a full re-encoding of the video converts it to a specific frame rate and video codec, regardless of the issues detected. A full re-encoding takes longer and can lead to issues with existing labels.
+
+## Re-encode videos
+
+<Info>Re-encoding is only available to Enterprise customers. Contact [sales@encord.com](mailto:sales@encord.com) for more information.</Info>
+
+Re-encoding can be done from videos in _Folders_, _Datasets_, and within Annotate. However, we strongly recommend re-encoding your videos at the _Folder_ level. This is because you can use videos re-encoded at the _Folder_ level in any Dataset/Project. But videos re-encoded at the Dataset or Project level can only be used with associated Datasets or Projects.
+
+### Re-encode from Folders
+
+<Info>Re-encoding is only available to Enterprise customers. Contact [sales@encord.com](mailto:sales@encord.com) for more information.</Info>
+
+1. Go to **Index > Files**.
+   A list of all _Folders_ available appears on the _Files_ page.
+
+2. Go into the Folder where the video you want to re-encode resides.
+
+3. Perform one of the following:
+
+  - Right-click the video and select **Re-encode** and select the type of re-encoding to perform.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Index/re-encode-001.png" width="600" />
+</div>
+
+  - Select one or more videos and click **Actions > Re-encode** and select the type of re-encoding to perform.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Index/re-encode-002.png" width="600" />
+</div>
+
+4. Check the progress of the re-encoding job by clicking the bell icon in the top-right of the app. The number displayed in red signifies how many new notifications you have.
+
+When the process is complete a new video file with the word "normalized" appended to the name appears in the folder. For example, if you re-encoded `snowboard.mp4`, the new video is `snowboard_normalized.mp4`.
+
+### Re-encode from Datasets
+
+<Info>Re-encoding is only available to Enterprise customers. Contact [sales@encord.com](mailto:sales@encord.com) for more information.</Info>
+
+1. Go to **Index > Datasets**.
+   A list of all Datasets available appears on the _Datasets_ page.
+
+2. Go into the Dataset where the video you want to re-encode resides.
+
+3. Select one or more videos and 
+
+4. Click **Re-encode** and select the type of re-encoding to perform.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Index/re-encode-003.png" width="600" />
+</div>
+
+4. Check the progress of the re-encoding job by clicking the bell icon in the top-right of the app. The number displayed in red signifies how many new notifications you have.
+
+When the process is complete a new video file with the word "normalized" appended to the name appears in the folder. For example, if you re-encoded `snowboard.mp4`, the new video is `snowboard_normalized.mp4`.

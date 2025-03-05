@@ -1,0 +1,62 @@
+---
+title: "Quality metrics"
+slug: "active-quality-metrics"
+hidden: false
+metadata: 
+  title: "Quality Metrics"
+  description: "Evaluate quality with Encord Active metrics. Data, label, model quality analysis. Customize metrics. Enhance computer vision infrastructure."
+category: "6480a3981ed49107a7c6be36"
+---
+
+Quality metrics evaluate the quality of various components in your computer vision infrastructure, and therefore constitute the foundation of Encord Active. They are additional parameterization options added onto your data, labels, and models; they are ways of indexing your data, labels, and models in semantically interesting and relevant ways.
+
+Encord Active (EA) is designed to compute, store, inspect, manipulate, and use quality metrics for a wide array of functionality. It hosts a library of these quality metrics, and importantly allows you to customize by writing your own “Quality Metrics” to calculate/compute QMs across your dataset.
+
+We have split the metrics into the following categories:
+
+- **Video Quality Metrics:** For analyzing and working with your video data. These metrics operate on images or individual video frames and are heuristic in the sense that they depend on the image content without labels.
+  - Example metrics: Green Value, Contrast, Sharpness
+
+- **Data Quality Metrics:** For analyzing and working with your frame-level data. These metrics operate on images or individual video frames and are heuristic in the sense that they depend on the image content without labels.
+  - Example metrics: Area, Brightness, Green Value, Sharpness.
+  
+- **Label Quality Metrics:** For analyzing and working with your labels. These metrics operate on the geometries of objects, like bounding boxes, polygons, segmentations and polylines, and the heuristics of classifications.
+  - Example metrics: Aspect Ratio, Classification Quality, Occlusion Risk.
+
+
+---
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Div</title>
+  </head>
+  <div className="container">
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-quality-metrics/active-video-quality-metrics#video-quality-metrics"
+    >
+      Video quality metrics
+    </a>
+    <a
+      className="clickable-div"
+      href="https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics"
+    >
+      Data quality metrics
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics"
+    >
+      Label quality metrics
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-quality-metrics/active-write-custom-quality-metrics"
+    >
+      Custom quality metrics
+    </a>
+  </div>
+</div>
+

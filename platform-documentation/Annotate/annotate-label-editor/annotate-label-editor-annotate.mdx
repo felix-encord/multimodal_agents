@@ -1,0 +1,552 @@
+---
+title: "Label Editor - Annotation"
+metadata: 
+  title: "Label Editor - Annotation"
+  description: "Efficient Annotation: Use Encord's specialized label editor for annotation tasks. Explore specific documentation for various file types."
+  image: 
+    0: "https://files.readme.io/2483550-image_16.png"
+---
+
+<Info>To ensure seamless data loading in Encord, whitelist https://app.encord.com/ or https://app.us.encord.com/ in any 3rd party VPNs, firewalls, or URL isolators. This helps to prevent potential issues with opening your data in Encord.</Info>
+
+This documentation provides a comprehensive guide to using the Label Editor for annotation, covering its components, features, and the display of various elements.
+
+For information on how to label, see our [documentation here](/platform-documentation/GettingStarted/gettingstarted-labeling). 
+
+## Annotation Mode
+
+### Introductory Video Tutorials
+
+The following video goes through the basics of annotating images in the Label Editor.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/44a0c44e350e4900b75b236934880ae0?sid=2bc76a90-40da-4af5-9ec6-253ac27254b1"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+The following video goes through the basics of annotating videos in the Label Editor.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/8e6255f742454694ade6bcf38bee11c0?sid=bb568aff-823f-4e07-bcdf-ae101b3ffbe3"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+<Tip>Check out our [Video Tutorials page](/platform-documentation/General/video-tutorials) for more introductory videos!</Tip>
+
+---
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/overview/annotator-overview.png" width="900"/>
+</div>
+
+**Annotation mode components**:
+
+- **A**. [Editor menu](#editor-menu)
+- **B**. [Quick toolbar](#quick-toolbar)
+- **C**. [Classes](#classes)
+- **D**. [Instances and Frame labels](#instances-and-frame-labels)
+- **E**. [Automated labeling](#automated-labeling)
+- **F**. [Editor timeline (for videos and image sequences only)](/platform-documentation/Annotate/annotate-label-editor/annotate-videos#editor-timeline)
+- **G**. Annotation canvas: displays the media asset and provides interface for drawing and editing labels.
+- **H**. [Editor header](#editor-header)
+- **I**. [Skip or Submit](#skip-or-submit-labels)
+
+---
+
+### Copy / Paste Labels & Instances
+
+Using the copy and paste features in the Label Editor can significantly save time and effort. Here's how you can efficiently use these features:
+
+- **Copy**: To copy both the label and the instance, use the keyboard shortcut <kbd>CMD</kbd> + <kbd>C</kbd> on Mac or <kbd>Ctrl</kbd> + <kbd>C</kbd> on Windows.
+
+- **Paste instance**: To paste the copied instance, use <kbd>CMD</kbd> + <kbd>V</kbd> on Mac or <kbd>Ctrl</kbd> + <kbd>V</kbd> on Windows. Instances can only be pasted onto a different frame from where they were copied.
+
+- **Paste Label**: To paste just the label / shape, use <kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> on Mac or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> on Windows. Labels can be pasted onto any frame.
+
+---
+
+
+### Bulk Label Operations
+
+Fixing incorrect labels is an important step in producing high-quality datasets. With bulk label operations, annotators can merge labels which should really be one instance, or efficiently delete multiple labels in bulk.
+
+Bulk label operations are accessed in the [editor menu](#editor-menu). 
+
+**Merge operations**
+
+Merge one or more label objects into a single object.
+
+1. Select all objects to be merged in the _Select objects to be merged_ drop-down menu.
+2. Select the target object in the _Select objects to be merged into_ field. 
+2. Click **Merge**.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/bulk-operations-merge.gif" width="600" alt="Merge objects into a single object" title="merge-operations" />
+</div>
+
+**Delete operations**
+
+Encord lets you perform bulk delete operations as follows:
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/overview/delete-operations.png" width="900" alt="delete labels in bulk" title="Delete-operations" />
+</div>
+
+**Remove labels of a specific class**:
+1. Select a class to delete from the _Select class menu_.
+2. Specify the frame range.
+3. Click the **Delete** button.
+
+**Delete all labels within a frame range**:
+1. Navigate to the _Delete all labels from range_ section.
+2. Set a range to delete labels from.
+3. Click **Delete**.
+
+**Delete labels below a specified confidence level**:
+1. Navigate to the _Delete labels below confidence_ section.
+2. Set the minimum confidence threshold. All labels with a [confidence value](#confidence-score) below this threshold are deleted.
+3. Specify a range of frames to delete the specified labels from.
+4. Click **Delete**.
+
+---
+
+### Classes
+
+In annotation mode, the _Classes_ section of the Label Editor shows you the available Ontology classes, both objects and classifications. You can create a new instance by either clicking the desired class, or by using the indicated instantiation hotkeys. Learn more about Ontologies in general [here](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) or learn more about the details of [Ontology structure on Encord](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#ontology-structure).
+
+---
+
+### Instances and Frame labels
+
+The canvas is your labeling area to annotate the _instances_ of the Ontology classes.
+
+- An instance is a specific occurrence of a class. For example, if you have a class called "Car", an instance of this class could be "Car(0)", which might represent a specific black sedan. This single instance can appear in a single frame or a range of frames, and therefore, instances may contain multiple labels across frames. You can think of an instance as a unique object that belongs to a certain class.
+
+- A frame label is a frame-specific annotation of an instance. For example, the annotation of "Car(0)" on frame 201 is a label. Labels are used to annotate instances in specific frames, providing more detailed information about the instance in the context of that frame.
+
+<Tip>You can group instances of the same class together using the _Group by class_ button.</Tip>
+
+---
+
+### Skip or Submit labels
+
+**Submit tasks**
+
+Labels are applied in the Label Editor. Click the **Submit** button to submit your labels for [review](#review-mode). 
+
+<Note>All [issues need to be resolved](#resolving-issues) before a task can be submitted.</Note>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/skip-and-submit.png" width="700"/>
+</div>
+
+**Skip tasks**
+
+Users have the option to skip tasks in instances where, for example, the file is blurred, or if they suspect the task was erroneously added.
+
+When a user skips a task, it is automatically unassigned from them, and the task's status is updated to _Skipped_. If another task is available, it automatically opens in the Label Editor and is assigned to the user. 
+
+1. Click the **Skip** button to skip an annotation task. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/skip-task.png" width="700"/>
+</div>
+
+2. A dialog appears. Enter a reason for skipping the task - the reason is added as an [issue](/platform-documentation/Annotate/annotate-label-editor/annotate-label-editor-annotate#comments-and-issues) to the task that annotators and reviewers can see. If no reason is entered "This task was skipped" is added by default.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/skip-reason.png" width="400"/>
+</div>
+
+---
+
+### Turbo mode
+
+Turbo mode simplifies the standard annotation workflow, enabling annotators to rapidly assign or confirm attributes. Activate turbo mode and choose an instance from the top-left dropdown menu to set the instance and its relevant attributes.
+
+<Tip>In turbo mode, the auto-zoom feature automatically focuses the point of view on the active instance as you browse through them. You can adjust the zoom manually to get a better view of the instance's context. The view auto-zooms again when moving to another instance.</Tip>
+
+**Enable turbo mode:**
+
+1. Open the [editor settings](#editor-settings). 
+2. Use the search bar to search for _Turbo mode_.
+3. Enable the _Turbo mode_ toggle.
+
+---
+
+### View Annotator Instructions
+
+The **Annotator instructions** button is available in the top-left corner of the Label Editor if annotation instructions are provided by the Admin or Team Manager. 
+
+<Tip> To learn how to upload annotation instructions click [here](/platform-documentation/Annotate/annotate-projects/annotate-project-settings#upload-annotation-instructions)</Tip>
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/annotation-instructions.png" width="700" />
+</div>
+
+---
+
+### Confidence Score
+
+Each instance or label is assigned a confidence score (denoted with the symbol α) that appears next to the label name. 
+
+The confidence score is a measure of a machine learning model's certainty that a given prediction is accurate. The higher the confidence score, the more certain a model is about its prediction.
+
+Manual labels are always assigned α = 100%, while label predictions created via models and automated methods such as interpolation will have a confidence score below 100% (α < 100%).
+
+Models allow you to select a _Minimum confidence threshold_ that determines the lowest confidence that label predictions can have to appear as annotations. It ranges from 0 to 1.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/confidence-model.png" width="500" />
+</div>
+
+A _Minimum confidence threshold_ of 0.6, as seen in the image above, states that only labels above a confidence score α = 60% will be accepted as labels.
+
+---
+
+### Labels pane
+
+The _Labels_ pane shows all the instantiated objects and classifications for a data unit. Objects are grouped first by class, and sorted by creation time within each class, with earlier objects on top. They are named in an "ABC (0)" format, where ABC is the Ontology class and 0 is the first instance annotation. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/labels-pane.png" width="500"/>
+</div>
+
+- **A**: Toggle between showing displaying all labels, or only labels in the current frame. 
+- **B**: Show / Hide details for this instance. 
+- **C**: The range of frames the instances appears on.
+- **D**: Attributes the object has and the frames they appear on. 
+- **E**: Filter by frame range.
+- **F**: Sort label instances.
+- **G**: Search for an instance.
+- **H**: Show / Hide labels.
+- **I**: Show / Hide labels for this instance.
+- **J**: Additional actions. Described below.
+- **K**: Keyboard shortcut to create a label for this instance.
+- **L**:[Edit attributes](#attributes) for this instance.
+- **M**: Add a new label for this instance.
+- **N**: Toggle auto-annotation for [SAM](/platform-documentation/Annotate/automated-labeling/annotate-sam). 
+
+**Click the _three dots_ icon to access additional actions:**
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/instances-tab-more-actions.png" width="200"/>
+</div>
+
+**Copy URL**: Copies the URL for the particular object. 
+
+**Copy identifier**: Each object instance is automatically assigned a unique alphanumeric ID, which can be used to identify it within the project. This ID is sometimes known alternately as a _feature hash_, _instance hash_, or _instance identifier_. For objects and classifications, it may also be known as the _object hash_ or _classification hash_. Use this button to copy the _instance identifier_ to your clipboard -- which may help in workflows using specific instances in source code or for other purposes.
+
+**Track from this frame**: Initiates single object tracking. This type of automated labeling creates labels for the specified object from the current frame, according to the [Single object tracking settings](#single-object-tracking-settings) section in the [editor settings](#editor-settings).
+
+**Interpolate**: Interpolates this object's location for a range between specified frames. Please see our [documentation on interpolation](/platform-documentation/Annotate/automated-labeling/annotate-interpolation) for more details.
+
+**Go to object**: Navigate to the specified object in the data asset. If it is present in more than one frame, the first frame the object appears is shown.
+
+**Split object track**: In some cases, particularly when many objects overlap, labels may be associated with the correct instance in several frames, but later become associated with a different instance. In those cases, use the _Split object track_ feature, which will split the labels from one instance into two at the frame specified.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/split-instances_edited.gif" width="700"/>
+</div>
+
+**Change class**: Use the drop-down in the modal to change the current class of an instance. You can only switch within classes of the same [annotation type](/platform-documentation/Annotate/annotate-ontologies#objects). For example, you cannot switch from a bounding box to a polygon.
+
+**Delete object**: Delete an object from a single frame or a range of frames. To delete labels between frame ranges, move the frame slider to the desired frames, or input the _From_ and _To_ (exclusive) values in the relevant form.
+
+### Attributes
+
+The details pane allows you to modify attributes efficiently. For [dynamic attributes](/platform-documentation/Annotate/annotate-label-editor/annotate-videos#dynamic-attributes), use the 'Preserve chosen state' feature. When this feature is toggled 'ON', any subsequent labels for that instance automatically inherit the same dynamic attribute value as the frame where 'Preserve chosen state' was enabled.
+
+<Tip>See our [tutorial on adding attributes](/platform-documentation/GettingStarted/gettingstarted-labeling#adding-attributes) for a detailed guide</Tip>
+
+If you have numerous attributes, use the search bar to quickly find specific attributes or attribute values.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/attribute-search.png" width="300" />
+</div>
+
+
+---
+
+### Automated Labeling
+
+Automated labeling includes several techniques to quickly create labels and classifications automatically. 
+- [models](/platform-documentation/Annotate/models) must be created and trained before use.
+- [Object tracking](/platform-documentation/Annotate/automated-labeling/annotate-tracking) and [interpolation](/platform-documentation/Annotate/automated-labeling/annotate-interpolation) do not require set up or training, and are always available.
+
+<Tip>For a more detailed explanation of these features, please visit our [automated labeling page](/platform-documentation/Annotate/automated-labeling).</Tip>
+
+1. Click the **Automated labeling** button to open the *Automated labeling* panel.
+2. Select the type of automated labeling you want to use.
+3. Run automated labeling for the selected objects.
+
+<Tip> 
+Alternatively, run [object tracking](/platform-documentation/Annotate/automated-labeling/annotate-tracking) or [interpolation](/platform-documentation/Annotate/automated-labeling/annotate-interpolation) on videos, image groups, and image sequences by:
+
+1. Right-clicking a label.
+2. Selecting _Track from this frame_ to initiate [object tracking](/platform-documentation/Annotate/automated-labeling/annotate-sam2-video-tracking#change-tracking-algorithm), or select _Interpolate_ to interpolate the selected object instance.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/overview/automated-labeling.gif" width="700"/>
+</div>
+
+</Tip>
+
+---
+
+### Segment Anything Model 2 (SAM 2)
+
+Segment Anything Model 2 (SAM2) allows you to create labels around distinct features in all supported file formats. 
+
+- Click the wand icon within the polygon class.
+- Click on the part of the frame or image you want segmented. 
+  - Left-click a section you want to add to your label. 
+  - Right-click a part of the selected area to remove it from the label.
+- Click **Add label** once the area you want labeled is highlighted.
+
+<Tip>A step-by-step guide for using SAM can be found [here](/platform-documentation/Annotate/automated-labeling/annotate-sam).</Tip>
+
+---
+
+### Edit polygons and polylines
+
+Encord provides multiple tools to edit polygon and polyline labels after they have been created.  
+
+**Move vertices**:
+
+Click and drag a vertex to move it to a new location.
+
+**Adding a polygon or polyline vertex**:
+
+You can add more vertices to a polygon after it has been created.
+
+1. Click the polygon you want to add a vertex to
+2. Click the position along the edge of the polygon you want to add a vertex. Repeat to add as many vertices as necessary.
+
+**Removing a polygon or polyline vertex**:
+
+You can remove the last vertex by pressing the <kbd>Backspace</kbd> key while still in _draw_ mode.
+
+**Remove vertices from a polygon as follows**:
+
+1. Click the polygon you want to remove vertices from
+2. Right-click a vertex to delete it
+
+**Polygon and polyline brush tool**:
+
+Use the brush tool to modify the edge of a polygon or polyline in a free-hand manner.
+
+1. Right-click the polygon you would like to edit.
+2. Click **Edit with brush** or press the <kbd>G</kbd> hotkey.
+A floating brush tool menu appears.
+3. Adjust the brush size to suit your needs.
+4. Mouse over location you would like to start editing from, and click and hold to start the edit process.
+5. Drag the cursor freely to draw out the new polygon edge let go of mouse to finish editing.
+
+**Eraser tool**:
+
+Use the eraser tool to remove any part of a polygon in a free-hand manner. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/eraser-tool.png" width="300" />
+</div>
+
+1. Right-click the polygon you would like to edit.
+2. Click **Edit with brush** or press the <kbd>G</kbd> hotkey.
+A floating brush tool menu appears.
+3. Select the eraser tool.
+4. Adjust the brush size to suit your needs.
+5. Mouse over location you would like to start editing from, and click and hold to start the edit process.
+6. Drag the cursor freely to draw out the new polygon edge let go of mouse to finish editing.
+
+**Freehand edge touchup**:
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/freehand-edge-touchup.gif" />
+</div>
+
+Freehand edge touchup lets you refine a polygon by drawing a new edge between two vertices to adjust and close its shape.  
+
+1. Right-click the polygon you want to edit.  
+2. Select **Freehand edge touchup** or press the <kbd>F</kbd> hotkey.  
+3. Click the starting vertex for your new edge.  
+4. Move the cursor to the target vertex where you want to close the shape.  
+5. Click to finalize the edit.
+
+### Editor Canvas Interactions
+
+**Shape-specific interactions**:
+
+| Shape    | Interactions                                   | Modalities |
+|----------|------------------------------------------------|------------|
+| Bitmask | Ability to move (one or multiple)             | Video / Image Group / Image Sequence / DICOM        |
+|          | Ability to ‘select multiple’ with <kbd>Shift</kbd> + click | Video / Image Group / Image Sequence / DICOM      |
+|          | Draw using polygon ‘pen’                      | Video / Image Group / Image Sequence / DICOM           |
+|          | [Panoptic mode](/platform-documentation/Annotate/annotate-label-editor/annotate-videos#panoptic-mode)                                | Video / Image Group / Image Sequence / DICOM           |
+| Polygon |                                                | Video / Image Group / Image Sequence / DICOM           |
+|          | Add vertex with left-click                    | Video / Image Group / Image Sequence / DICOM           |
+|          | Remove vertex with right-click                | Video / Image Group / Image Sequence / DICOM           |
+| Polyline |                                               | Video / Image Group / Image Sequence / DICOM           |
+|          | Add vertex with left-click                    | Video / Image Group / Image Sequence / DICOM           |
+|          | Remove vertex with right-click                | Video / Image Group / Image Sequence / DICOM           |
+
+
+**Right-click interactions**:
+
+<Note>_Track from this frame_ refers to [object tracking](/platform-documentation/Annotate/automated-labeling/annotate-tracking)</Note>
+
+| Shape                  | Right-click Interactions          | Modalities                                     |
+| ---------------------- | --------------------------------- | ---------------------------------------------- |
+| Bounding Box           | Track from this frame             | Videos, image groups, and image sequences only |
+| Bounding Box           | Interpolate                       | Videos, image groups, and image sequences only |
+| Bounding Box           | Split object track                | All                                            |
+| Bounding Box           | Change class                      | All                                            |
+| Bounding Box           | Copy identifier                   | All                                            |
+| Bounding Box           | Delete object                     | All                                            |
+| Bounding Box           | Copy URL                          | All                                            |
+| Rotatable Bounding Box | Track from this frame             | Videos, image groups, and image sequences only |
+| Rotatable Bounding Box | Interpolate                       | Videos, image groups, and image sequences only |
+| Rotatable Bounding Box | Split object track                | All                                            |
+| Rotatable Bounding Box | Change class                      | All                                            |
+| Rotatable Bounding Box | Copy identifier                   | All                                            |
+| Rotatable Bounding Box | Delete object                     | All                                            |
+| Rotatable Bounding Box | Copy URL                          | All                                            |
+| Polygon                | Interpolate                       | All                                            |
+| Polygon                | Split object track                | All                                            |
+| Polygon                | Change class                      | All                                            |
+| Polygon                | Copy identifier                   | All                                            |
+| Polygon                | Delete object                     | All                                            |
+| Polygon                | Copy URL                          | All                                            |
+| Polygon                | Track from this frame             | Videos                                         |
+| Polygon                | Edit with brush                   | All                                            |
+| Polygon                | Freehand edge touchup             | All                                            |
+| Polygon                | Merge with another polygon             | All                                            |
+| Polygon                | Subtract another polygon            | All                                            |
+| Polyline               | Track from this frame             | Videos, image groups, and image sequences only |
+| Polyline               | Interpolate                       | Videos, image groups, and image sequences only |
+| Polyline               | Split object track                | All                                            |
+| Polyline               | Change class                      | All                                            |
+| Polyline               | Copy identifier                   | All                                            |
+| Polyline               | Delete object                     | All                                            |
+| Polyline               | Copy URL                          | All                                            |
+| Polyline               | Freehand edge touchup             | All                                            |
+| Keypoint               | Track from this frame             | Videos, image groups, and image sequences only |
+| Keypoint               | Interpolate                       | Videos, image groups, and image sequences only |
+| Keypoint               | Split object track                | All                                            |
+| Keypoint               | Change class                      | All                                            |
+| Keypoint               | Copy identifier                   | All                                            |
+| Keypoint               | Delete object                     | All                                            |
+| Keypoint               | Copy URL                          | All                                            |
+| Bitmask                | Interpolate                       | Videos, image groups, and image sequences only |
+| Bitmask                | Change class                      | All                                            |
+| Bitmask                | Copy identifier                   | All                                            |
+| Bitmask                | Delete object                     | All                                            |
+| Bitmask                | Copy URL                          | All                                            |
+| Bitmask                | Select more bitmasks to combine   | All                                            |
+| Bitmask                | Track from this frame             | Videos                                         |
+| Object Primitive       | Track from this frame             | Videos, image groups, and image sequences only |
+| Object Primitive       | Interpolate                       | Videos, image groups, and image sequences only |
+| Object Primitive       | Change class                      | All                                            |
+| Object Primitive       | Copy identifier                   | All                                            |
+| Object Primitive       | Delete object                     | All                                            |
+| Object Primitive       | Copy URL                          | All                                            |
+
+---
+
+## Controls Common To Both Modes
+
+import ControlsCommonToBothModes from '/snippets/ControlsCommonToBothModes.mdx';
+
+<ControlsCommonToBothModes />
+
+---
+
+## WACOM Tablet Support
+
+Our [Label Editor](/platform-documentation/Annotate/annotate-label-editor) fully supports Wacom tablets and pens. You get the best experience if you enable [freehand drawing mode](/platform-documentation/Annotate/annotate-label-editor#freehand-drawing--polygon-coarseness).
+
+## Label Editor V1 (Legacy)
+
+<Warning>Label Editor V1 has been deprecated.</Warning>
+
+The following actions vary significantly between the legacy Label Editor V1 and the new Label Editor. To see how to perform these in the new Label Editor, see our documentation [here](/platform-documentation/Annotate/annotate-label-editor#editing-tools).
+
+**Adding a polygon vertex - Label Editor V1**
+
+To add more vertices to a polygon after it has been created:
+
+1. Click the polygon you want to add a vertex to
+2. Click the _Add vertex_ icon in the floating window that appears, or use the <kbd>A</kbd> hotkey to activate 'Add vertex mode'
+3. Move the mouse, which should now be in a '+' icon, over the edge where you wish to add a vertex. The edge in question
+  should highlight indicating you've placed the mouse correctly. Click to place a vertex
+4. Continue placing vertices until you're satisfied. Press <kbd>A</kbd> or click the _Add vertex_ icon on the floating toolbar to turn off add vertex mode
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/add_vertex.gif" width="600" />
+</div>
+
+**Removing a polygon or polyline vertex - Label Editor V1**
+
+To remove vertices from a polygon::
+
+1. Click on the polygon you want to remove a vertex from.
+2. Click the _Remove vertex_ icon in the toolbar that appears, or use the <kbd>S</kbd> hotkey to activate 'Remove vertex mode'.
+3. Move the cursor to the vertex you want to remove. The cursor should have a 'cancel' icon attached.
+4. Click the vertex you want to remove.
+5. Continue removing any vertices until you are satisfied.
+5. Click the icon from step 2 again, or press the <kbd>S</kbd> hotkey again to exit 'Remove vertex mode'.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/remove_vertex.gif" width="600" />
+</div>
+
+**Freehand edge touchup - Label Editor V1**
+
+If you need to modify the edge of a polygon to account for complicated shapes or other requirements, the freehand edge touchup feature allows you edit the edge of the polygon in a free-hand manner, from one vertex to another.
+
+<Tip>If you need to edit your shape along the edge of the polygon, _in between_ vertices, use the [polygon brush tool](#polygon-brush-tool) instead.</Tip>
+
+1. Click the polygon you would like to edit.
+2. Click the _Freehand edge touchup_ icon in the floating toolbar that appears, or use the <kbd>F</kbd> hotkey to activate 'freehand edge touchup' mode.
+3. Mouse over the vertex you would like to start editing from, and click to start the edit process.
+4. Drag the cursor freely to draw out the new polygon edge. Navigate the cursor to the pre-existing vertex you want to finish on, and click to finalize the new edge boundary.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/freehand-edit-polygon-edge.gif" width="600" />
+</div>

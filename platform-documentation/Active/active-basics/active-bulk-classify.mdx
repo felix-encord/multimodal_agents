@@ -1,0 +1,111 @@
+---
+title: "Bulk Classification"
+slug: "active-bulk-classify"
+hidden: false
+metadata: 
+  title: "Bulk Classification"
+  description: "Explore the basics of using Bulk Classification with Active and Annotate."
+category: "6480a3981ed49107a7c6be36"
+---
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '47.5%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/9ae98057509040a8bbdc29640d781d68?sid=efe3bdad-1fb8-4100-9f8b-075095b0e5fe"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+The Bulk Classify feature allows you to apply Classifications to all images/frames in a Collection, when sending the Collection to Annotate. This can streamline the process of applying Classifications to your data and also allows you to overwrite existing Classifications on your data.
+
+## Prerequisites
+
+Before you can apply Classifications to a Collection, the Classifications have to exist in an Ontology in Encord.
+
+You can create an Ontology, that includes Classifications, from the [Encord platform](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) or [using the Encord SDK](/sdk-documentation/ontologies-sdk/ontologies).
+
+## Apply Classifications from Active
+
+Once the Ontology (that includes your Classifications) is included in your Annotate Project, you can create Collections and then apply your Classifications to the Collection as the Collection is sent to Annotate.
+
+<Info>Bulk Classification can only be used with Projects that use Workflows. Manual QA Projects do not support Bulk Classification.</Info>
+
+### Bulk Classify Behavior
+
+Things to keep in mind when applying Classifications on a Collection:
+
+- Applies the Classification and all Classification settings to all images/frames in the Collection when sent to Annotate.
+
+- If images/frames in the Collection already have Classifications applied to them in Annotate, the new Classification and the settings for the Classification are not applied to the images/frames in Annotate unless you select to overwrite them.
+
+- Applying Classifications in a Collection affects images/frames in every status of a Workflow (Annotate, Review, and Complete). This means that images/frames that have been annotated and reviewed can have changes made directly to the images/frames without any further review.
+
+- Images/frames that do not have Classifications, regardless of the Workflow status, have the Classifications and settings applied to them. 
+
+- Annotators can see the Classification (and make changes) in their tasks, Reviewers can see the Classification (and make changes) in their tasks, but only Admins can see the Classification (and make changes) if the images/frames are in the Complete state.
+
+<Info>Overwriting Classifications and Classification settings cannot be undone. Applying Classifications in a Collection affects images/frames in every status of a Workflow (Annotate, Review, and Complete). This means that images/frames that have been annotated and reviewed can have changes made directly to the images/frames without any further review.</Info>
+
+### Apply Classifications to Collections
+
+<AccordionGroup>
+   <Accordion title="To apply Classifications to Collections and send them to Annotate:">
+
+1. [Import your Project that has the Ontology with Classifications](/platform-documentation/Active/active-import/active-import-from-annotate).
+
+2. Click the Project once import completes.
+   The Project opens with the Explorer page displaying.
+   
+3. Filter the Project data in _Data_, _Labels_, or _Predictions_ in the Explorer by searching, sorting, and filtering until you have the subset of the data you need.
+
+   ![Create Collection](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-create-collection-quick.gif)
+
+4. Select the images/frames/audio files to include in the Collection.
+
+5. Click **Add to a Collection**.
+
+6. Click **New Collection**.
+
+7. Specify a meaningful title and description for the Collection.
+
+    <Note>The title specified here is applied as a tag to every selected image.</Note>
+
+8. Click **Collections**.
+    The _Collections_ page appears.
+
+    ![Bulk Classify](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-bulk-classify.gif)
+	
+9. Select a Collection from the Collections list.
+
+10. Click **Bulk Classify**.
+    The _Bulk Classify_ dialog box appears.
+
+11. Click the dropdown to select a Classification to apply to the Collection when the Collection is sent to Annotate.
+
+12. Select your required settings from the Classification.
+
+13. OPTIONAL: Click the **Override existing classification** to overwrite the existing Classifications on the images/frames in the Collection in Annotate.
+
+   <Info>This action cannot be undone. Applying Classifications in a Collection affects images/frames in every status of a Workflow (Annotate, Review, and Complete). This means that images/frames that have been annotated and reviewed can have changes made directly to the images/frames without any further review.</Info>
+
+14. Click **Initiate Bulk Classify Job**.
+    Once the job completes successfully a dialog appears with a link that can take you directly to the Project.
+
+15. Annotators, Reviewers, and Admins can then see and take action on the Classification and the Classification settings in Annotate.
+  </Accordion>
+</AccordionGroup>

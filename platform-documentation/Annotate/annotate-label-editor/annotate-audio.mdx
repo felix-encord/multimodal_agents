@@ -1,0 +1,63 @@
+---
+title: "Audio"
+metadata: 
+  title: "Audio"
+  description: "Efficient audio annotation and transcription in Encord."
+  image: 
+    0: "https://files.readme.io/3577e54-image_16.png"
+---
+
+
+<Note> Audio file support is available in Encord Labs. Contact [support](mailto:support@encord.com) for more information.</Note>
+
+<Warning>
+You can only use _Audio Region_ objects, and classifications to label audio files. See our [end-to-end guide on labeling audio files](/end-to-end/Modalities/audio) to learn how to set up audio specific Ontologies.
+</Warning>
+
+## Labeling Audio Files
+
+import LabelAudio from '/snippets/LabelAudio.mdx'
+
+<LabelAudio />
+
+## Audio Transcription
+
+<Tip>See our End-to-End guide for audio transcriptions [here](/end-to-end/Modalities/audio/audio-transcription).</Tip>
+
+<Warning>To create audio transcriptions, your Ontology must include _Audio Region_ objects with [_Transcript_ attributes](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#transcript-attributes).</Warning>
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/a311de52ae214c89a798f4a9633d9845?sid=7a046fae-f00d-4075-a249-28537b020f98"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+
+import AudioTranscription from '/snippets/AudioTranscription.mdx'
+
+<AudioTranscription />
+
+### Transcription Pane
+
+The Audio Transcription Pane is available when your Ontology includes at least one _Transcription_ attribute. To access it, click the icon at the top of the Label Editor. The Transcription Pane opens on the right side, displaying all transcriptions in chronological order.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/transcription-pane.png" width="700" />
+</div>

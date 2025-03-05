@@ -1,0 +1,146 @@
+---
+title: "SAM 2 Video Tracking"
+hidden: false
+metadata: 
+  title: "SAM 2 Video Tracking"
+  description: "Learn about SAM 2 video tracking for bitmasks and polygons in videos and image sequences. Understand how to set up and configure object tracking using Encord's tools."
+  image: 
+    0: "https://files.readme.io/143f482-image_16.png"
+---
+
+SAM 2 brings state-of-the-art segmentation and tracking capabilities for both video and images into a single model.  This unification eliminates the need for combining SAM with other video object segmentation models, streamlining the process of video segmentation into a single, efficient tool. It maintains a simple design and fast inference speed, making it accessible and efficient for users.
+
+The model can track objects consistently across video frames in real-time, which opens up numerous possibilities for applications in video editing and mixed reality experiences. This new model builds upon the success of the original Segment Anything Model, offering improved performance and efficiency.
+
+SAM 2 can also be used to annotate visual data for training computer vision systems. It opens up creative ways to select and interact with objects in real-time or live videos.
+
+## SAM 2 Video Tracking Key Features
+
+- Track objects up to 250 frames per tracking action, using SAM 2.
+
+- Demonstrated superior accuracy in video segmentation with three times fewer interactions compared to previous models and an 8x speedup for video annotations. For image segmentation, it is not only more accurate but also six times faster than its predecessor, SAM.
+
+- Object Selection and Adjustment: SAM 2 extends the prompt-based object segmentation abilities of SAM to also work for object tracks across video frames.
+
+- Robust Segmentation of Unfamiliar Videos: The model is capable of zero-shot generalization. This means it can segment objects, images, and videos from domains not seen during training, making it versatile for real-world applications.
+
+- Real-Time Interactivity: SAM 2 utilizes a streaming memory architecture that processes video frames one at a time, allowing for real-time, interactive applications.
+
+---
+
+## Ontologies
+
+The following table shows the Ontology shapes for which SAM 2 tracking can be used.
+
+
+| **Ontology shape**     | **SAM 2 Video Tracking** |
+|------------------------|------------------------------|
+| Bounding box           | ✅               |
+| Rotatable bounding box | ✅                |
+| Polygon                             | ✅               | 
+| Polyline                            | ❌               | 
+| Primitive                           | ❌               | 
+| Keypoint                            | ❌               | 
+| Bitmask                             | ✅               |
+
+---
+
+## Modalities
+
+The following table shows the modalities that support SAM 2 tracking.
+
+| **Ontology shape**     | **SAM 2 Video Tracking** |
+|------------------------|------------------------------|
+| Images          | ❌               |
+| Videos | ✅                |
+| Image Groups                             | ❌               | 
+| Image Sequences                            | ✅                | 
+| DICOM                           | ✅                | 
+
+---
+
+## Using SAM 2 Tracking
+
+<Note>SAM 2 tracking is computationally intensive and performance might be slower than other labeling actions.</Note>
+
+### Bounding Box
+
+1. Create at least one bounding box instance label on the frame you want to start tracking the instance from. 
+
+2. Right-click the shape.
+
+3. Click **Track object** to run tracking for 30 consecutive frames.
+
+<Tip>Use the keyboard shortcut <kbd> Shift </kbd> + <kbd> T </kbd> to run SAM 2 tracking for 30 consecutive frames.</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/auto-seg-bb.png" width="500" />
+</div>
+
+### Rotatable Bounding Box
+
+1. Create at least one rotatable bounding box instance label on the frame you want to start tracking the instance from. 
+
+2. Right-click the shape.
+
+3. Click **Track object** to run tracking for 30 consecutive frames.
+
+<Tip>Use the keyboard shortcut <kbd> Shift </kbd> + <kbd> T </kbd> to run SAM 2 tracking for 30 consecutive frames.</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/auto-seg-rbb.png" width="500" />
+</div>
+
+### Bitmask
+
+1. Create at least one bitmask instance label on the frame you want to start tracking the instance from. 
+
+2. Right-click the shape.
+
+3. Click **Track object** to run tracking for 30 consecutive frames.
+
+<Tip>Use the keyboard shortcut <kbd> Shift </kbd> + <kbd> T </kbd> to run SAM 2 tracking for 30 consecutive frames.</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/auto-seg-bitmask.png" width="500" />
+</div>
+
+### Polygon
+
+1. Create at least one bitmask instance label on the frame you want to start tracking the instance from. 
+
+2. Right-click the shape.
+
+3. Click **Track object** to run SAM 2 tracking for 30 consecutive frames.
+
+<Tip>Use the keyboard shortcut <kbd> Shift </kbd> + <kbd> T </kbd> to run SAM 2 tracking for 30 consecutive frames.</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/auto-seg-polygon.png" width="500" />
+</div>
+
+---
+
+## Tracking Multiple Objects
+
+To track multiple objects of any shape: 
+
+1. Click one of the objects you want to track. 
+
+2. Hold <kbd>Shift</kbd> on your keyboard and select all the other objects you want to track.
+
+3. Right-click on one of the selected objects and click **Track X objects**, where `X` is the number of objects selected. 
+
+---
+
+## Settings 
+
+The _Object tracking_ section of the [editor settings](/platform-documentation/Annotate/annotate-label-editor#editor-settings) allows you to adjust the following. 
+
+**Change Tracking Range**
+
+The range SAM 2 object tracking tracking runs can be adjusted in the _Object tracking_ section of the [editor settings](/platform-documentation/Annotate/annotate-label-editor#editor-settings). The default tracking range is set to 30 frames. This range includes the frame that SAM 2 tracking starts on.
+
+**Advanced Tracking**
+
+This toggle lets you choose between a faster, simpler tracking algorithm or a slower, more advanced one with higher accuracy. The advanced algorithm is enabled by default.

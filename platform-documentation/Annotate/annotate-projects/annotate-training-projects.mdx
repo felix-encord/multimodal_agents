@@ -1,0 +1,266 @@
+---
+title: "Training Projects"
+slug: "annotate-training-projects"
+hidden: false
+metadata: 
+  title: "Training Projects"
+  description: "Enhance your annotation teams' skills with Encord's Training feature. Train annotators using benchmark projects for improved data quality and performance assessment."
+  image: 
+    0: "https://files.readme.io/44de394-image_16.png"
+---
+
+<Info>Annotator training Projects can only use [Manual QA Projects](/platform-documentation/Annotate/annotate-projects/annotate-manual-qa-projects) as a [benchmark source](#2-create-the-ground-truth-labels).</Info>
+
+Encord's Annotation Training feature - called 'Training' in the application - provides a novel way to train your annotation and operation teams, thereby improving the quality of your training data.
+
+<Note>Workflows are currently not supported for training Projects. </Note>
+
+Annotator teams will be trained based on a benchmark Project, that will serve as the 'gold standard' to which your team's annotations will be compared to. It scores the performance of each trainee based on various metrics allowing them to improve the quality of their annotations, and provide clear insights on the quality of their work.
+
+# Supported Modalities and Ontology Shapes
+
+#### Supported modalities 
+
+| **Modality**    | **Supported?**  |
+|-----------------|------------------|
+| [Single images](/platform-documentation/General/general-supported-data#single-images)   |         ✅       |
+| [Image groups](/platform-documentation/General/general-supported-data#image-groups)    |         ✅       |
+| [Image sequences](/platform-documentation/General/general-supported-data#image-sequences) |         ✅       |
+| [Videos](/platform-documentation/General/general-supported-data#videos)          |         ✅       |
+| [DICOM](/platform-documentation/General/general-supported-data#dicom)           |         ✅       |
+
+#### Supported Ontology shapes
+
+<Note>Ontology shapes that are not supported can be included in a training Project's Ontology, but they are ignored when annotator performance is evaluated. </Note>
+
+
+| **Shape**           | **Supported?** |
+|------------------------|----------------|
+| Bounding box           |     ✅         |
+| Rotatable bounding box |     ✅         |
+| Polygon                |     ✅         |
+| Polyline               |     ❌         |
+| Keypoint               |     ✅         |
+| Bitmask                |     ✅        |
+| Object primitive       |     ❌         |
+
+
+# Creating training Projects
+
+See our training video below to learn the basics of the Annotation Training feature, including:
+
+- How to set up a benchmark Project.
+- How to set up a training Project, based on the benchmark.
+- Tracking a team's progress.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '64.63195691202873%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/2b9d9a2bf5c045d7b4400859348d5f9e"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+For a more detailed guide, follow the steps below to create a training project, or head over to the [working with training projects](/platform-documentation/Annotate/annotate-projects/annotate-training-projects#working-with-training-projects) section to learn how to administer an already existing training project.
+
+## 1. Create the source Project(s)
+
+The first step to training annotators is creating a source Project that contains _ground-truth_ labels. These labels provide a 'gold-standard' for your annotators to be trained and graded on. 
+
+<Note>The source Project you create needs to use the **exact same Ontology** that you plan to use for your annotator training.</Note>
+
+See our [documentation on creating annotation Projects](/platform-documentation/Annotate/annotate-projects/annotate-create-projects) to learn how to create a Project. 
+
+## 2. Create the ground-truth labels
+
+After creating the source Project, you need to add the _ground-truth_ labels. You can add _ground-truth_ labels by [labeling data](/platform-documentation/GettingStarted/gettingstarted-labeling) on the Encord platform, or by [uploading labels using the SDK](/sdk-documentation/sdk-labels/sdk-import-labels-annotations).
+
+<Note>Expert annotators should create _ground-truth_ labels, as these labels represent the 'gold standard' for your annotators. Once you have _ground-truth_ labels, train your annotators to replicate the labels using your training Project.</Note>
+
+A labeling task needs to have been annotated before it can be used as a _ground-truth_ source. The task's status must be _In review_ or _Completed_. We recommend that the task appears in the source Project's [Labels Activity](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#status) tab with a status of _In review_ or _Completed_.
+
+If you're using the SDK, you can use the method [submit_label_row_for_review](/sdk-documentation/sdk-references/project#submit_label_row_for_review) to programmatically put labels into the _ground-truth_ label set.
+
+<Tip>If you do not need to manually review _ground-truth_ labels, for example, when importing them from known sources of truth, you can set a Manual QA Project's _sampling rate_ to 0. This sends all labeling tasks straight to _Completed_ without entering the _In Review_ phase.</Tip>
+
+## 3. Create the training Project
+
+After labeling a _ground-truth_ Project, it is time to create the annotator training Project. The following example only uses a single source Project, but the process is extensible for as many source Projects as necessary.
+
+1. Click **+New training project**, on the **Training projects** tab of the **Projects** section.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotator-training-creation.png" width="750"/>
+</div>
+
+2. Choose a meaningful name and description for your annotator training Project. Click **Next step** to continue.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/create_flow/at_create1_enter_details.png" width="750"/>
+</div>
+
+3. Select the Ontology. Make sure you select the **exact same** Ontology that was used to create the _ground-truth_ labels in the source Project. Click **Next step** to continue. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/create_flow/at_create2_select_ontology.png" width="750"/>
+</div>
+
+4. Set up the training data. 
+- Choose the Project(s) that contain the desired _ground-truth_ labels. 
+
+<Tip>We recommend source Project(s) with 100% annotation task progress.</Tip>
+
+- Set up the initial configuration of the benchmark function, which determines how trainees are evaluated against the _ground-truth_ labels.
+
+  - _Single frame-level classification_ only assesses classification instances.
+  - Use _Dynamic benchmark_ for combinations of objects and classifications. Dynamic benchmarks can be calibrated by setting the relative weights of two evaluation metrics.
+
+    - **_Intersection over Union (IoU)_** is an evaluation metric that assesses the accuracy of labels compared to the ground truth / gold standard. If labels fully overlap with those in the ground truth full points are awarded. Conversely, if there's no overlap between a label and the ground truth labels then no points are awarded.
+
+     <Note>     For Keypoints, the _IoU_ represents a measure of distance between the annotator's point, and the benchmark point. The larger the distance, the lower the _IoU_ score.</Note>
+
+
+    - **_Category_** is an evaluation metric based on correctly identifying the Ontology category. In the example above correctly identifying an 'Apple' awards 100 points, while a wrong or a missing category awards no points. 
+
+  <Tip>  The source Project(s) cannot be changed after being attached to a training Project. Only the benchmark function can be amended. _IoU_ and _Category_ values can be adjusted in the [_Settings_ tab](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#quality-assurance-automated-qa) after Project creation.</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/create_flow/at_create3_config-score-function_select-GT.png" width="750" />
+</div>
+
+Here, a single source Project with 100% annotation progress is selected, and the benchmark function is customized for several ontology classes. Once you're satisfied with your configuration click **Next step** to continue.
+
+<Note>For more information on how trainees are evaluated, contact support@encord.com</Note>
+
+5. The final step is to add trainees and create the Project. Add trainees as a group, or as individuals. Click **Create training program** to create the training Project. 
+
+<Tip>You can [add more annotators](/platform-documentation/Annotate/annotate-projects/annotate-training-projects#1-onboard-your-annotators) to the Project later.</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/create_flow/at_create4_assign_team-blurred.png" width="750" />
+</div>
+
+***
+
+# Working with training Projects
+
+This section explains how to run a successful annotator training Project. If you do not yet have a training Project, head over to [creating a training Project](/platform-documentation/Annotate/annotate-projects/annotate-training-projects#creating-training-projects) to get started.
+
+## Roles and permissions
+
+<div class="flex justify-center">
+
+| Permission                                                 | Admin | Team Manager | Annotator |
+|------------------------------------------------------------|-------|--------------|-----------|
+| View benchmark project source                              | ✅     | ❌            | ❌         |
+| Edit benchmark scoring function                            | ✅     | ❌            | ❌         |
+| Add annotation instructions                                | ✅     | ❌            | ❌         |
+| Delete                                                     | ✅     | ❌            | ❌         |
+| Invite team members                                        | ✅     | ✅            | ❌         |
+| Manage team permissions                                    | ✅     | ❌            | ❌         |
+| Manage admins                                              | ✅     | ❌            | ❌         |
+| Annotate tasks in the task management system               | ❌     | ❌            | ✅         |
+| Control assignments & status in the task management system | ✅     | ✅            | ❌         |
+
+</div>
+
+***
+
+## How to run annotator training
+
+### 1. Onboard your annotators
+
+You can add annotators during the creation phase, or by going to _Settings > Team_ and inviting new annotators. Remember that unlike in annotation Projects where each piece of data can only be seen by one annotator at a time, training Projects score each annotator against the same set of benchmark tasks. Therefore, a copy of each benchmark task will be added to the Project for each annotator added.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_lifecycle1-add_annotators-blurred.png" width="750" />
+</div>
+
+You can confirm annotators and tasks are ready to go by checking the summary screen. In this case, our source Project had 4 tasks and we have 4 annotators assigned. We should expect a total of 16 tasks.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_working1_start-summary-page_blurred.png" width="750" />
+</div>
+
+<Note>The nature of training Projects is to train annotators. Therefore, tasks are not created for admins assigned to the Project and administrators can not access annotator tasks via the _Label_ > _Queue_ tab. This is to prevent administrators from accidentally completing training tasks meant for annotators. Administrators can still confirm annotator submissions using the _Activity_ and _Data_ tabs in the labels page as needed.</Note>
+
+After preparing the Project, share the Project URL with each of your team members so they can join and start the training.
+
+### 2. Annotators proceed through the benchmark tasks
+
+Annotators can access the training Project using the URL you share with them. Annotators see a simplified interface which shows only their tasks in both the summary and labels queue pages. Annotators can start their evaluation tasks by clicking the **Start labelling** button in the upper right or clicking **Initiate** next to any given labeling task.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_an_working1_summary.png" width="700" />
+</div>
+
+<br />
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_an_working2_labels-blurred.png" width="700" />
+</div>
+
+Creating labels in a training Project is identical to creating labels in any other Project. Guide your team to the [Label Editor](/platform-documentation/Annotate/annotate-label-editor) documentation to get them started. Once an annotator submits a task, it can not be re-opened.
+
+### 3. Evaluate annotator performance
+
+Submitted tasks are automatically run through the benchmark function, and the annotators performance on the task is computed. Project administrators can confirm annotator progress and performance in the _Summary_ page. Use the _Overview_ tab for quick insights into overall annotator performance. Use the _Annotator submissions_ tab to confirm individual task submissions on a per-label basis.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_lifecycle2_evaluate-perf_blurred.png" width="750" />
+</div>
+
+At this stage, you can communicate with your annotators in whichever manner is easiest for you and your team. Use the CSV to download the entire set of results and share with relevant team members. Or perhaps it makes more sense to schedule a live review, using the Annotator submissions' 'View' functionality to verify the benchmark labels and a given annotator's submission in the label editor.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_lifecycle2_1-evaluate-perf-submissions_blurred.png" width="750" />
+</div>
+
+For Projects that have hundreds of evaluation labels per annotator, where an 'evaluation label' is defined as an annotation per frame, we limit the number of evaluation labels displayed in the dashboard for performance reasons. The labels displayed will be some random sampling of the submitted labels. You can always access the full set of evaluation labels by downloading the CSV. Larger downloads may require significant time, and may prompt you to run the downloads in a separate tab so the download can proceed while you can continue working in the current tab.
+
+<Note>Some teams may need further insight into the details of the benchmark function in order to devise an accurate system. However, detailed knowledge of the benchmark function may unduly influence trainees behavior. Contact support@encord.com for a detailed explanation of how annotators are evaluated. </Note>
+
+
+### 4. Adjust the benchmark function and re-calculate scores
+
+If you feel that annotator score distributions do not correctly reflect the skill displayed, the benchmark function can be adjusted and annotator scores can be recalculated.
+
+Go the _Settings_ page, and find the section marked 'Benchmark scoring function'. Press the **Edit** button to enable the function's weight editor and change the values to match your new plan. Finally, press **Save** in the upper right to persist the new function configuration.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_lifecycle4-adjusting_score.png" width="500" />
+</div>
+
+To see the changes applied against previous submissions, return to the 'Summary' page and press the **Re-calculate scores** button. If a given annotator's annotations were affected by the weighting change, the 'Benchmark results' column will change to reflect their new score with the new weights! In this case, we see the  score of an annotator, on the left and right respectively before and after we changed the scoring function (as above), and pressed the **Re-calculate scores** button. The annotator's change in score is noticeable, but doesn't seem to change his performance from unskilled to skilled. Likely, this annotator should undergo another round of training.
+
+<div class="flex justify-center">
+  <span style={{marginRight: "30px"}}>
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_lifecycle3_before-score-reconfig.png" width="300" />
+  </span>
+  <span style={{marginLeft: "30px"}}>
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_lifecycle5_after-score-reconfig.png" width="300" />
+  </span>
+</div>
+
+### 5. Repeat until finished
+
+You can continue to adjust scores even after all the annotators have finished all their tasks, until you feel the score distribution matches your intent.
+
+You can also add new annotators to existing Projects, as you did in step #1. 
+ 
+<Tip>When adding a new group of users, or a large number of new annotators, we recommend creating a new training Project. This way you can manage the new cohort of annotators all at once.</Tip>

@@ -1,0 +1,350 @@
+---
+title: "Images"
+slug: "annotate-images"
+hidden: false
+metadata: 
+  title: "Images"
+  description: "Efficient image annotation in Encord: Label with diverse tools, achieve object detection & segmentation. Automation available."
+  image: 
+    0: "https://files.readme.io/3577e54-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+The following video goes through the basics of annotating images in the Label Editor.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/44a0c44e350e4900b75b236934880ae0?sid=2bc76a90-40da-4af5-9ec6-253ac27254b1"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+Encord provides comprehensive support for image annotation. With the image editor, you can:
+
+- Label using any annotation type such as bounding boxes, rotatable boxes, polygons, polylines, keypoints, and primitives.
+- Create frame-level & object classifications.
+- Object detection and instance segmentation.
+- Reduce manual annotations with automation (e.g., importing model predictions) features.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/image_1.png" width="900" />
+</div>
+
+---
+
+## Task Management
+
+Before we get into the details of the label editor and making annotations, a quick note about scheduling annotation work. Annotation is done in the annotation phase of the task management system. In order to ensure annotation work is saved properly, it's crucial that each labeling task is properly assigned to an annotator, annotators always access the task through the _Queue_ tab in the Task Management System, and only the assigned annotator works on any given task at any given time.
+
+---
+
+## Annotation types
+
+Objects are annotated using bounding boxes, polygons, polylines, keypoints or primitives. Frames are annotated using classifications. Instantiating objects or classifications in the image editor generates a _UUID_ that uniquely identifies that label in the frame.
+
+Labels can be assigned with static classifications as defined in the specified [Ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies). Static classifications define the global properties of an object (e.g., the butterfly is of type red admiral and is orange).
+
+You can read more about automation for image annotation <a href="/platform-documentation/Annotate/annotate-label-editor/annotate-images#automation">here</a>.
+
+---
+
+### Bounding box
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/bounding-box.png" width="900" />
+</div>
+
+Creating a bounding box requires an [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a bounding box annotation type. Instantiate a new bounding box label by clicking on the specified class in the 'Classes' menu, or by using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Bounding box labels can be assigned with static classifications should they be defined in your [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies):
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified bounding box
+- Assign a classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>).
+
+---
+
+### Rotatable box
+
+Traditional bounding boxes are great for annotating objects that appear in horizontal or vertical orientation, however, their accuracy may be limited when it comes to annotating objects at an angle. In such cases, use rotatable boxes to produce more accurate annotations.
+
+Creating a rotatable bounding box requires an [Ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a rotatable box annotation type.Instantiate a new rotatable box label by clicking on the specified class in the 'Classes' menu or using the specified hotkey. Resize rotatable boxes like normal bounding boxes, and then grab the rotation handle to adjust the position until you're satisfied with the annotation's accuracy, as below.
+
+Rotatable boxes can be assigned static classifications should they be defined in your Ontology,  
+and you can [export the labels as usual](/platform-documentation/Annotate/annotate-export/annotate-how-to-export-labels).
+
+---
+
+### Polygon
+
+Polygons are often necessary if you want to train your applications on the tightest object boundaries. Creating a  
+polygon requires an [Ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a polygon annotation type. Enable or disable free-hand drawing mode by pressing <kbd>d</kbd> on your keyboard. Polygon coarseness for polygons drawn free-hand is set in the 'Settings' drawer in the _Drawing settings_ drop-down. Instantiate a new polygon label by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+A polygon can be closed by double-clicking anywhere on the canvas. Doing so will "snap" creating an edge between the last vertex to the first vertex drawn.
+
+Polygon labels can be assigned static classifications should they be defined in your [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies):
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the **+** icon or start/end frame in the range overview for the specified polygon
+- Assign a classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>)
+
+Here's an illustration of an image containing polygon and polyline objects.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/polygons-and-polylines.png" width="900" />
+</div>
+
+---
+
+### Polyline
+
+Creating a polyline requires an [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a polyline annotation type. Enable or disable free-hand drawing mode by pressing <kbd>d</kbd> on your keyboard. Polyline coarseness for polylines drawn free-hand is set in the 'Settings' drawer in the _Drawing settings_ drop-down. Instantiate a new polyline label by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+When free-hand drawing is off, each click of the mouse will place a point of the polyline. A polyline requires a minimum of two points. Double-click anywhere on the canvas to finish drawing the polyline. Note however, that the location of the double-click does not create a point or affect the geometry of the polyline in any way. If you've only created one point prior to double-clicking, the polyline will not be created and your polyline about to be created will be canceled. Ensure you single-click at least twice to create at least two separate points, then double-click to finish drawing the polyline.
+
+Polyline labels can be assigned with static classifications should they be defined in your [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies):
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified polyline
+- Assign a classification by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>)
+
+---
+
+### Keypoint
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/keypoints-in-image-dataset.png" width="900" />
+</div>
+
+Creating a keypoint requires an [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a keypoint annotation type. Instantiate a new keypoint label by clicking on the specified class in the 'Classes' menu or using the specified  
+hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Keypoints labels can be assigned with static classifications should they be defined in your [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies):
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified keypoint
+- Assign classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>)
+
+---
+
+### Primitives
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/primitives.png" width="900" />
+</div>
+
+Creating a [primitive](/platform-documentation/Annotate/annotate-ontologies/annotate-working-with-ontologies#object-primitives) (f.k.a. skeleton templates) requires an [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a primitive annotation  
+type. Use primitives to templatize shapes (e.g., 3D cuboids, pose estimation skeletons) commonly  
+used by your annotation team.
+
+Instantiate a new primitive label by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Object primitives allow you to define properties of edges defined in your template as visible, occluded, or invisible. Toggle the edge property settings for a primitive by highlighting the primitive and clicking the _Show controls_ button.
+
+Primitive labels can be assigned with static classifications should they be defined in your [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies):
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified primitive
+- Assign classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>)
+
+---
+
+### Segmentation masks / Bitmasks
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/280903ae537d4965b7afd3e571b16e06?sid=8ffb6b62-21ae-477e-a789-0934696dea7c"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+Bitmasks allows you to create labels using a brush tool to select parts of an image. This can be useful when creating labels for vessel outlines, or labelling topologically separate regions belonging to the same frame classification.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/bitmasks.png" width="300" />
+</div>
+
+<Note>- Creating a mask segmentation requires an Ontology with the _Bitmask_ annotation type.</Note>
+> - When you initially create a bitmask, the process of bitmask creation does not stop until you press the ESC key. This means that you can create bitmask labels that are connected without any extra effort.
+
+<Tip>[Existing Bitmask labels can be updated](#updating-bitmask-labels) using the [brush tool](#brush-tool), [threshold brush](#threshold-brush), and [eraser](#eraser) tools.</Tip>
+
+#### Brush tool
+
+When you select your bitmask annotation type, the brush tool will be selected by default. You can adjust the size of the Bitmask brush tool using the slider in the Bitmask popup, as seen in the screenshot above.
+
+The brush tool can be selected by clicking the brush icon, or by pressing <kbd>f</kbd> on your keyboard while the popup is open.
+
+When your label is ready, click **Apply label**, or press <kbd>Enter</kbd>.
+
+#### Panoptic mode
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/panoptic-bitmask.png" width="200" />
+</div>
+
+Panoptic settings allow you to determine how different bitmasks interact with one another. 
+
+- **None**: Overlapping bitmasks are allowed. The bitmask will overlap with existing bitmasks.
+- **Exclude**: Areas already covered by a bitmask will be excluded from the bitmask.
+- **Overwrite**: Areas already covered by a bitmask will be overwritten by the new bitmask.
+
+#### Thresholding
+
+The _Thresholding_ tool enables you to set a threshold that determines the parts of the image or frame that is labeled by the Bitmask. Consequently, only the parts of the image falling within th predefined range are labeled upon selection with the _Thresholding_ tool, ensuring precise and targeted labeling.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/thresholding-light.png" width="200" />
+</div>
+
+When _Thresholding_ is enabled, a mask covering the parts of the image that fall above the set threshold appears on the slice. This allows you to preview which parts of the image are labeled when a Bitmask label is applied. The mask color can be changed by clicking the circle icon. 
+
+The eyedropper tool enables you to pick a color or intensity value directly from the image. 
+
+Three different kinds of threshold can be selected using a dropdown: 
+- **Intensity**: Only pixels within the set intensity value range are labeled.
+- **RGB**: Only pixels within the set [red, green, and blue](https://en.wikipedia.org/wiki/RGB_color_model) range are labeled. The range for each color can be set separately.
+- **HSV**: Only pixels within the set [hue, saturation, and value](https://learn.leighcotnoir.com/artspeak/elements-color/hue-value-saturation/) range are labeled. 
+
+When your label is ready, click **Apply label**, or press <kbd>Enter</kbd>.
+
+#### Eraser
+
+The _Eraser_ tool allows you to erase parts, or the entirety of your Bitmask selection if the **Apply label** button has not been clicked yet. 
+
+To select the threshold brush, click the eraser icon, or press <kbd>h</kbd> on your keyboard while the popup is open.
+
+#### Combine bitmasks on an image/frame
+
+Combining bitmasks on an image or frame allows you to label objects that are split/separated in the image/video frame. 
+
+When you initially create a bitmask, the process of bitmask creation does not stop until you press the ESC key. This means that you can create bitmask labels that are connected without any extra effort.
+
+**To combine two or more bitmasks on an image / video frame:**
+
+1. Hold <kbd>SHIFT</kbd>.
+
+2. Click the bitmasks you want to combine in the Label Editor workspace.
+
+3. Right-click (on Mac press <kbd>Cmd</kbd>).
+   A menu appears.
+
+4. Select **Combine bitmasks into**.
+   The bitmasks are now a single bitmask.
+
+#### Bitmask overlap management
+
+It is possible to prevent a Bitmask label from being overlapped by subsequent Bitmasks after the label is created. Use the toggle in the _Labels_ section of the Label Editor to set the overlap behavior.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/overlap-settings.png" width="250" />
+</div>
+
+Choose between the following settings:
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/can-be-drawn-over.png" width="21" />
+
+- **Can be drawn over** -  If the Bitmask is drawn over, any part of the image beneath the existing Bitmask that falls within the specified threshold range is included in the next label.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/cant-be-drawn-over.png" width="22" /> 
+
+- **Cannot be drawn over** - No part of the image covered by this Bitmask is included in any other Bitmask labels. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/must-be-drawn-over.png" width="23" /> 
+
+- **Must be drawn over** - If the Bitmask is drawn over, any part of the Bitmask label is included in the new Bitmask, regardless of threshold values set.
+
+<Note>The  **Must be drawn over**  setting for _Bitmask overlap_ is only available to select customers. Contact [support@encord.com](mailto:support@encord.com) for more information.</Note>
+
+#### Updating bitmask labels
+
+To update a bitmask label:
+
+1. Click the bitmask label you want to edit. 
+2. Select either the [brush](#brush-tool), [threshold brush](#threshold-brush), or [eraser](#eraser) tool and make your changes.
+3. Press <kbd>Enter</kbd> or click the **Update label** button in the bitmask popup.
+
+#### Moving bitmasks
+
+Bitmask labels can be moved to another location after being created. 
+
+1. Click the bitmask label you want to move. 
+2. Click and drag the bitmask to the desired location. 
+3. Release the bitmask to confirm the new location. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/move-bitmask.gif" width="900" height="280" />
+
+---
+
+### Frame classification
+
+Creating frame classification(s) requires an [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies) with a classification annotation type. Frame-level classifications consider the frame as a whole, not any given object's localization. Instantiate a frame-level classification label by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Encord currently supports radio, checklist, and free-form text input classification types. Edit existing classification labels by clicking on the **+** icon for the specified label.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/classifications.png" width="350" />
+</div>
+
+<div class="flex justify-center">
+    <i>1. Create a frame classification from ontology 2. Edit a classification</i>
+</div>
+
+### Linking object instances
+
+<Note>Object instances are linked using _Relation_ attributes, which are set up in the Ontology. See our [documentation on _Relation_ attributes](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#relation-attributes) to learn more.</Note>
+
+1. Create both instance labels. In this example a chicken and its wing have been labeled using bounding boxes. 
+
+2. Click the _Edit classifications_ button for the object with the _Relation_ attribute. In the example this object is the wing, as seen below. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-1.png" width="700"/>
+
+3. Click the _Set relation..._ bar and select the instance you want to link the selected instance to. In our example the chicken and the wing appear on the same frame, and therefore appear under the _This frame_ heading. Instances in different frames will appear under the heading _Rest_. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-3.png" width="700"/>
+
+4. Click **Done**. The instances are now linked. This is shown in the _Instance labels_ section with the name of the linked instance being displayed. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-4.png" width="300"/>
+
+---
+
+## Automation
+
+### Import model predictions
+
+Encord's [Python SDK](/sdk-documentation/getting-started-sdk/installation-sdk) & APIs allow you to import model predictions programmatically. Importing model predictions helps to pre-annotate your data to save annotation costs.
+
+---
+
+### Automated labeling
+
+See our documentation on automated labeling [here](/platform-documentation/Annotate/automated-labeling).

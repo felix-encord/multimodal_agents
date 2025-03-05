@@ -1,0 +1,175 @@
+---
+title: "Create, Train, and Use Models"
+slug: "models"
+hidden: false
+metadata: 
+  title: "Models"
+  description: "models automate labeling in various ways. Create, train, and use them for object detection, classification, or instance segmentation in your Projects."
+  image: 
+    0: "https://files.readme.io/2c53751-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+models are powerful tools designed to automate labeling and frame classifications in a variety of ways. They are top-level entities, which means they can be attached to several Projects to detect and label objects they have been trained to recognize.
+
+This document will teach you how to:
+
+1. [Create and set up a model.](#creating-models)
+2. [Train the model on previously labeled data.](#training-models)
+3. [Use the model to create labels or classifications.](#using-models)
+
+---
+
+
+## Creating models
+
+To create a model: 
+1. Navigate to _Models_ in the _Agents_ of the Encord platform
+2. Click the **+ New model** button. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/create-model-new.png" width="600" />
+</div>
+
+3. Enter a title and optionally a description for your model. Select a Model type, Framework, Model, and set up the [model's Ontology](/platform-documentation/Annotate/models#model-ontology). 
+
+4. After all specifications for your model have been set, click the **Create model** button to complete the model creation process.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/setting-up-model.png" width="500" />
+</div>
+
+---
+
+### Model type
+
+The type of model determines the function you would like it to perform. Click the links below to learn about the different model types available to use within Encord, as well as which frameworks and models are available for each. 
+
+- [Object detection](/platform-documentation/Annotate/models/models-object-detection).
+- [Classification](/platform-documentation/Annotate/models/models-classification).
+- [Instance segmentation](/platform-documentation/Annotate/models/models-instance-segmentation).
+
+---
+
+### Model ontology
+
+The model Ontology consists of the objects and classifications you would like your model to detect and label. Functionally, these are strings of text which are later associated with particular objects in a Project's Ontology when the model is trained. 
+
+Each object and classification you would like your model to learn how to label should have its own model Ontology. 
+
+<Tip>Your Project Ontology should have a meaningful name that easily allows you to determine what your model is trained to detect, or classify. </Tip>
+
+---
+
+## Training models
+
+Once a model has been created, it must be trained to learn how to classify, or detect / segment objects within frames or images. 
+
+1. Begin by selecting the model you want to train from the list of models.
+
+2. Click the **Train model** button to begin setting up your model's training.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/train-model-2.png" width="500" />
+</div>
+
+3. Select the Project you would like to train your model on. Make sure to select a Project with accurate labels. High quality labels result in better performing models. 
+
+4. Map each [model Ontology](/platform-documentation/Annotate/models#model-ontology) to an entity in the Project's Ontology. This step associates the model Ontology to a set of objects or classifications in the Project that it can learn from.
+
+5. Select all Project tasks you would like your model to train on by selecting the checkboxes in the list. A minimum of 5 labels are needed for your model to be trained. 
+
+6. Select the number of epochs you would like to include in this training. Epochs refer to the number of iterations through the entire training dataset that should be included in the training process. The default number of epochs is set to 500. 
+
+7. Select the _batch size_ for this training. The _batch size_ refers to the number of training examples processed by the model in a single forward and backward pass. 
+
+8. Select which _training weights_ should be used. This refers to the model's initialization weights, which determine how many parameters a model has as well as their weights. Training weights are not available for classification models. 
+
+<Note>
+If you want to add training data from a different Project, click the **+ Add training data** tab.
+</Note>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/set-up-model-for-training.png" width="600" />
+</div>
+
+9. Once all the above has been set and selected click the **Train model** button. 
+
+Your model is now being trained. 
+
+<Tip>
+You can monitor the progress by clicking the bell icon in the top right corner of the Encord app. The green tick icon appears next to the task when the process has completed.
+</Tip>
+
+---
+
+### Training log
+
+After a model has finished training, the _Training log_ allows you to study each training iteration and determine how differences in training data affect the model's performance over time. 
+
+It displays the _batch size_, the number of _epochs_, and a graph showing how the model's loss evolved during the course of each training iteration. Training loss will not be recorded for classification models. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/set-up-model-for-training.png" width="600" />
+</div>
+
+---
+
+## Deleting models
+
+Navigate to the _Danger zone_ of the _Settings_ tab to delete a model.
+
+<Warning>Deletion is a permanent action and cannot be undone.</Warning>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/delete-model.png" width="600" />
+</div>
+
+
+---
+
+## Using models
+
+Once you create and train a model, the model can be attached to Projects and used to create annotations.
+
+### Attaching models to Projects
+
+<Note>Only Project admins are able to attach models to Projects</Note>
+
+Open the Project you want to attach your model to and navigate to the _Models_ tab. Click **+ Attach a model**.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/attach-model.png" width="600" />
+</div>
+
+Select the model you want to attach to the Project, and map each model ontology to the entity in the Project's ontology you would like to associate it with. In the following example we want the 'Apple' model Ontology to correspond with 'Apple' in the Project's Ontology.  
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/attaching-model-2.png" width="600" />
+</div>
+
+Next, select which training iterations you would like to include from your model. Click **Attach model** when you are done. 
+
+### Detaching models from Projects
+
+Open the Project you want to detach your model from and navigate to the _Models_ tab. Click the _Settings_ icon and select **Detach model**. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/detach-model.png" width="600" />
+</div>
+
+## Downloading models
+
+<Note>Only `pytorch` model weights can be downloaded.</Note>
+
+You can download the learned parameters (known as weights) of a model for each training iteration. These weights are the result of training the model on a specific Dataset.
+
+1. Select the training iteration you want to download model weights for.
+2. Click the **Download** button.
+A file named `weights.pt` is downloaded.
+
+<Tip>The [PyTorch documentation](https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-and-loading-models) provides information on using `.pt` files.</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/model-weight-download.png" width="600" />
+</div>

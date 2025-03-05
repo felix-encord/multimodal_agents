@@ -1,0 +1,199 @@
+---
+title: "Model Predictions and Evaluation"
+slug: "active-model-predictions-eval"
+hidden: false
+metadata: 
+  title: "Model Predictions and Evaluation"
+  description: "Assess model quality with Encord Active's analytics and metrics. Optimize model evaluation."
+category: "6480a3981ed49107a7c6be36"
+---
+
+<Note>Predictions must be **[imported to Active](/platform-documentation/Active/active-how-to/active-import-model-predictions-cloud)**, before you can use the Predictions feature on the _Explorer_ page and the _Model Evaluation_ page.</Note>
+
+Encord Active enables you to visualize the important performance metrics (Average-Precision (mAP), Average-Recall (mAR), F1, True Positive Count, False Positive Count, False Negative Count) for your model. Performance metrics can be visualized based on different classes and intersection-over-Union (IoU) thresholds.
+
+
+## Model Prediction Support
+
+<table>
+  <thead>
+    <tr>
+      <th>Prediction Type</th>
+      <th>Support</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bounding Box</td>
+      <td>Full support</td>
+    </tr>
+    <tr>
+      <td>Rotatable Bounding Box</td>
+      <td>Full support</td>
+    </tr>
+    <tr>
+      <td>Polygon</td>
+      <td>Full support</td>
+    </tr>
+    <tr>
+      <td>Bitmask</td>
+      <td>Full support</td>
+    </tr>
+    <tr>
+      <td>Polyline</td>
+      <td>TP and FP support coming soon</td>
+    </tr>
+    <tr>
+      <td>Keypoint</td>
+      <td>TP and FP support coming soon</td>
+    </tr>
+  </tbody>
+</table>
+
+Dragging the IOU slider changes the scores.
+You can also choose to see the aggregate score for certain classes by selecting them in the drop-down.
+
+## How are Prediction Metrics calculated?
+
+Model performance metrics—such as mAP, mAR, Accuracy, and F1-score—and prediction types (True Positive, False Positive, False Negative) are computed for bounding boxes, polygons (segmentations), and bitmasks. Annotate’s labels are treated as the **ground truth** for evaluating your imported predictions.
+
+1. **Label Rendering**: Ground-truth labels are rendered into bitmasks, and all IoU (Intersection over Union) calculations are performed on these bitmasks.
+
+2. **Prediction Matching**: Each prediction is matched to the closest ground-truth label based on IoU.
+
+3. **Confidence Filtering**: Predictions with confidence scores below the specified threshold are discarded.
+
+4. **IoU Thresholding**: For a ground-truth label, the prediction with the **highest confidence** and an IoU exceeding the threshold is selected as the **True Positive (TP)**. If no such prediction exists, no TP is assigned for that ground-truth label.
+
+5. **False Positives (FP)**: Predictions that are not matched to any ground-truth label are classified as False Positives.
+
+<Info>
+When multiple predictions are associated with a single ground-truth label, only one can be marked as the True Positive (TP). The prediction with the **highest confidence** among those exceeding the IoU threshold is chosen.  
+
+This ensures a strict **one-to-one relationship** between ground-truth labels and True Positives.
+</Info>
+
+---
+
+This version improves readability and ensures the reader can easily follow the steps. The use of bullet points, headers, and emphasis makes the content more digestible and professional.
+
+### Important Information
+
+Before going any further, you need to be aware of the differences in behavior between pycoco/TorchMetrics map calculations and Encord's.
+
+The comparisons here were done using ‘torchmetrics=1.2.1’, ‘pycocotools=2.0.6’, and Encord Active.
+
+**Difference 1**
+
+TorchMetrics ignores a class in the mAP calculation (average AP over classes), if there are no ground truth labels of that class in all the images being looked at. Active includes classes in the mAP calculation even if there are no ground truth labels of that class in all the images being looked at
+
+Why did we do this? Because Encord Active is inherently dynamic and meant for decomposing model performance based on arbitrary data subsets. This makes model performance more transparent because predictions are not excluded from the performance scores.
+
+**Difference 2**
+
+There is a slight difference in the TP matching algorithm. Encord does not have a prediction match against a different ground truth with a smaller IOU than the initial candidate ground truth if some other prediction with higher confidence matches as a true-positive against that original ground truth, but torchmetrics does. This can result in differences compared to TorchMetrics. The differences become apparent with smaller IOU thresholds, IOU values closer to 1.0 should have a progressively smaller divergence approaching 0 when very close to 1.0.
+
+Why did we do this? The difference results in performance improvements when dynamically assigning prediction true-positives depending on the selected IOU threshold.
+
+## Model Performance
+
+**Model Performance - Summary**
+
+![Model Performance](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-summary.png)
+
+** Model Performance - Outcome**
+
+![Model Performance](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-outcome-01.png)
+
+**Model Performance - Average Precision**
+
+![Model Avg Precision](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-avg-accuracy.png)
+
+**Model Performance - Precision**
+
+![Model Precision](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-precision-01.png)
+
+**Model Performance - Recall**
+
+![Model Recall](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-val-recall.png)
+
+**Model Performance - F1 Score**
+
+![Model F1 Score](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-f1.png)
+
+**Model Performance - Metric Correlation**
+
+![Model Metric Correlation](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-met-corr.png)
+
+**Model Performance - Metric Performance**
+
+![Model Metric Performance](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-met-perf.png)
+
+**Model Performance - Precision-Recall Curve**
+
+![Model Precision-Recall Curve](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-prc.png)
+
+**Model Performance - Average IOU**
+
+![Model Average IOU](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-avg-iou.png)
+
+**Model Performance - IOU Distribution**
+
+![Model IOU Distribution](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-iou-distrib.png)
+
+
+
+
+
+
+
+## Next Steps
+
+### Model and Prediction Validation
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Div</title>
+  </head>
+  <div className="container">
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-import/active-import-from-annotate"
+    >
+      1. Import from Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-import-model-predictions-cloud"
+    >
+      2. Import Predictions
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-create-collections"
+    >
+      4. Create Collection
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-send-collection-to-annotate"
+    >
+      5. Send to Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-sync-with-annotate"
+    >
+      6. Sync with Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-update-collections"
+    >
+      7. Update Collection
+    </a>
+  </div>
+</div>
+

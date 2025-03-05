@@ -1,0 +1,54 @@
+---
+title: "Classification"
+slug: "models-classification"
+hidden: false
+metadata: 
+  title: "Classification"
+  description: "Classification models predict frame-level characteristics. Learn how they work and create them using FastAI framework for efficient image analysis."
+  image: 
+    0: "https://files.readme.io/90c4a47-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+Classification models predict frame-level classifications in a project's Ontology. Rather than labeling objects within the data, classification models learn to characterize the frame as a whole. For example, a classification model trained to distinguish night from day can be used to determine whether a given image was taken during the day, or at night. 
+
+<Note>Classification models assume there is only one correct class per image. </Note>
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/create-classification.png" width="500" />
+
+## Framework and models
+
+The [FastAI framework](https://www.fast.ai/) is available for classification models, and it supports a wide range of architectures. 
+
+These include various sizes of [ResNet](https://arxiv.org/abs/1512.03385) and [VGG](https://arxiv.org/abs/1409.1556).
+
+## Creating classification models
+
+To learn how to create classification models, head over to our [models](/platform-documentation/Annotate/models#creating-models) page.
+
+
+## Working with classification models
+
+Once a model has been [attached to a project](/platform-documentation/Annotate/models#attaching-models-to-projects) it can be used to perform the functions it has been trained on. Inside the label editor, click the **Automated labeling** button highlighted in the image below. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/automated-labeling.png" width="600" />
+</div>
+
+To run inference with a classification model, open the 'Classification' section.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/classification-model.png" width="500" />
+</div>
+
+- Select the model you would like to run. You will be able to choose from a list of models previously attached to the project. 
+
+- Specify the _Classification range_ to set the range of frames over which the model is run. 
+
+- Set the _Confidence_. A value ranging from 0 to 1 that represents how confident the model has to be in order for a particular data point to be included in its output. Read more about [confidence values here](/platform-documentation/Annotate/annotate-label-editor#confidence-score).
+
+#### Advanced settings
+
+- Choose whether the model should run on a GPU or CPU (The choice may be limited by the execution environment). CPUs are designed to handle a wide-range of tasks quickly, but are limited in how many tasks can run at the same time. GPUs are designed to quickly render high-resolution images and video concurrently.
+
+<Note>Attributes are only predicted when the 'parent' classification has already been made. Consider the case where we have a classification structure that asks 'Is there a car in the frame?' and if the answer is yes, then we also have a nested question of 'Is the car red?'. If you run a model that trains on 'Is the car red?', it will only return inference results for frames that you have classified as having a car in the frame. This ensures conditional relationships are always enforced with automated labelling as well.</Note>

@@ -1,0 +1,94 @@
+---
+title: "Settings"
+slug: "annotate-settings-general"
+hidden: false
+metadata: 
+  title: "Settings"
+  description: "Configure your Encord account settings effortlessly. Set up Multi-Factor Authentication, integrations, public keys, and notifications for secure access."
+  image: 
+    0: "https://files.readme.io/f2f88e9-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+Use the _Settings_ page to change your account's settings. 
+
+To navigate to settings:
+
+1. Click the user icon in the top-right of the Encord platform.
+
+2. Click **Settings**.
+
+   ![Access Settings](https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/annotate-settings.png)
+
+The settings have several tabs:
+
+- **General**: Your user login credentials. Change your password and set up [Multi-Factor Authentication](#multi-factor-authentication) for your Encord user account. This is where [Encord Labs](#encord-labs) appears, if available.
+- **[Public keys](/platform-documentation/Annotate/annotate-api-keys)**: creating and managing [SDK](/sdk-documentation/getting-started-sdk/installation-sdk) & [API](/sdk-documentation/getting-started-sdk/installation-sdk) keys.
+- **[Notifications](/platform-documentation/Annotate/annotate-webhooks-notifications)**: creating and managing push notifications.
+
+## Multi-Factor Authentication
+
+In addition to your login credentials, Encord recommends that you add the alternate SMS verification to receive SMS for OTP while logging in to the Encord platform. You can enroll single or multiple devices for authentication.
+
+1. From the user menu, click **Settings**.
+
+   ![MFA navigation](https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/annotate-settings-mfa.png)
+
+2. In the _General_ tab, click the **Manage Multi-Factor Auth** button.
+   The **Enroll new Multi-Factor Authentication** dialog appears.
+
+   ![Select MFA](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/encord-mfa-02.png)
+
+3. Click one of the following:
+
+   - **Authenticator:**
+
+     a. To configure an authenticator, sign out from Encord.
+
+     b. Log back into Encord.
+
+     c. Navigate back to the _General_ tab.
+
+     d. Click the **Manage Multi-Factor Auth** button.
+        An _Authenticator_ configuration dialog appears.
+
+        ![Select Authenticator](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/encord-mfa-totp.png)
+
+     e. Scan the code using your authenticator app or manually type the string provided into your authenticator app.
+
+     f. Type the code provided by your authenticator app into the dialog.
+
+     g. Click **Enroll**.
+        A success dialog appears.
+
+        ![Select Authenticator](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/encord-mfa-03.png)
+
+        The next time users sign in, users are required to use an authenticator app to sign in to Encord.
+     
+   - **SMS code:**
+     
+     a. To configure an SMS code, provide a device name and the phone number that you want to enrol for SMS, and click **Send SMS Code**.
+
+     b. On enrolling a device for the first time, you must sign out and sign in again to authenticate your verification request.
+
+     c. After signing in again, invoke the _Multi-Factor Authentication_ modal again from the _General_ tab and input your device name and phone number.
+
+     <Note>Only 1 number can be added.</Note>
+
+     <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/mfa-sms.png" width="500" />
+
+     d. Click **Send verification code** and solve a CAPTCHA challenge.
+     
+     e. In the next field that appears, enter the SMS code received on your phone, and click **Verify SMS Code**.
+
+<Note>To remove a device, click **Manage Multi-Factor Auth > Remove**. You must log out and log back in to complete the removal process.</Note>
+
+## Encord Labs
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/annotate-settings-encord-labs.png" width="500" />
+</div>
+
+Encord Labs allow you to toggle advanced, early access, or experimental features on or off to gain access to powerful functionality or features used in very specific use-cases.
+
+<Note>Contact [support@encord.com](mailto:support@encord.com) to gain access to Encord Labs</Note>

@@ -1,0 +1,130 @@
+---
+title: "Interpolation"
+slug: "annotate-interpolation"
+hidden: false
+metadata: 
+  title: "Interpolation"
+  description: "Interpolation in Encord: Estimate label locations in videos & image sequences using manual labels as reference. Confidence score: 99%."
+  image: 
+    0: "https://files.readme.io/8ca6202-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+Interpolation is a process to automatically create instance labels by estimating the location that labels should be created in videos and image sequences. Interpolation uses manual labels as reference points and needs to be run separately for each object instance. 
+
+
+<Note>
+[Object tracking](/platform-documentation/Annotate/automated-labeling/annotate-tracking) and interpolation both automatically apply labels.
+>- Interpolation **applies labels in between existing labels**.
+>- [Object tracking](/platform-documentation/Annotate/automated-labeling/annotate-tracking) uses a single existing label and **applies labels to consecutive frames**.
+</Note>
+
+All labels automatically created using interpolation are assigned a [confidence score (α)](/platform-documentation/Annotate/annotate-label-editor#confidence-score) of 99%.
+
+
+<Note>No data is stored on our servers when using interpolation.</Note>
+
+---
+
+## Ontologies
+
+| **Ontology shape**     | **Interpolation** | **Tracking** |
+|------------------------|-------------------|--------------|
+| Bounding box           | ✅                 | ✅            |
+| Rotatable bounding box | ✅                 | ✅            |
+| Polygon                | ✅                 | ❌            |
+| Polyline               | ✅                 | ✅            |
+| Primitive              | ✅                 | ✅            |
+| Keypoint               | ✅                 | ✅            |
+| Bitmask                | ✅                  | ❌            |
+
+---
+
+## Simple Interpolation
+
+The video tutorial below goes through the basics of using interpolation in the Label Editor.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/a19ed65aa0214719af2d2a196541d9df?sid=2ddec712-1247-47ab-99d1-d5c86a2e59e3"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+1. Create instance labels on at least two non-consecutive frames. 
+
+<Tip>The more instance labels are manually added throughout the video, the more accurate the resulting interpolation becomes. </Tip>
+
+2. Click the three dots icon on the instance to be interpolated, and click **Interpolate**. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/quick-interpolate.png" width="700" />
+</div>
+
+3. Interpolation is run between the first and last frames the instance is labeled.
+
+### Keyboard Shortcut
+
+You can use keyboard shortcuts to run interpolation. 
+
+1. Click the instance label.
+2. Use the <kbd>Shift</kbd> + <kbd>I</kbd> keyboard shortcut to the run interpolation between the first and last frames the instance is labeled.
+
+## Advanced Interpolation
+
+1. Create instance labels on at least two non-consecutive frames.
+
+<Tip>Increase the accuracy of interpolated labels by adding more manual instance labels to different frames as references. </Tip>
+
+2. Click the **Automated labelling** button in the bottom left corner of the label editor to bring up the options for automated labeling. The _Tracking and interpolation_ section is open by default.
+
+3. The _Tracking and interpolation_ section is open by default.
+   - Select _Interpolation_ under the _Method_ heading.
+   - Select the object instance(s) you want to interpolate.
+   - _Interpolation range_ specifies the range of frames for interpolation.
+
+<Note>Only Organizations on ['Enterprise' pricing](https://encord.com/pricing/) can interpolate over a range larger than 1000 frames.</Note>
+
+4. Click **Run interpolation** to interpolate the selected object instances. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/run-interpolation.png" width="800" />
+</div>
+
+---
+
+### Re-Interpolate
+
+Interpolation results can be improved by manually correcting some interpolated labels, and re-running the interpolation. 
+
+Enable the _Interpolation auto adjustments_ toggle in the _Drawing settings_ section of the label editor settings. This ensures that only labels with a [confidence score (α)](/platform-documentation/Annotate/annotate-label-editor#confidence-score) less than 100% are overwritten in successive interpolations, while manual labels (α = 100%) are kept and serve as key frames.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/label-editor-settings.png" width="600" />
+</div>
+
+---
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/re-interpolate-toggle.png" width="400" />
+</div>
+
+This process can be repeated any number of times.
+
+<Note>All labels created using interpolation are always assigned α = 99%.</Note>

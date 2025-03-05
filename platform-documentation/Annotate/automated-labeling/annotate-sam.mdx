@@ -1,0 +1,139 @@
+---
+title: "Segment Anything Model (SAM)"
+hidden: false
+metadata: 
+  title: "Segment anything model (SAM)"
+  description: "Discover Encord's Segment Anything Model (SAM) for automated label creation. Learn how to use this advanced object tracking feature."
+  image: 
+    0: "https://files.readme.io/0d5c0c5-image_16.png"
+---
+
+Segment anything model (SAM) allows you to automatically create labels around distinct features in all supported file formats. Read more about auto segmentation advances in our explainer blog post [here](https://encord.com/blog/seggpt-segment-everything-in-context-explainer/).
+
+<Note>SAM is available for Ontologies that have the [Polygon](/platform-documentation/Annotate/annotate-label-editor/annotate-images#polygon), [Bounding box](/platform-documentation/Annotate/annotate-label-editor/annotate-images#bounding-box), or [Bitmask](/platform-documentation/Annotate/annotate-label-editor/annotate-images#segmentation-masks--bitmasks) annotation types. </Note>
+
+See the video, or use the step-by-step tutorial below to learn how to use SAM effectively. 
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '50.847457627118644%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/fd1d94c12831412a9ff419848503fe1a?sid=95371192-45ca-42bf-9a70-975808341a7b"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+---
+
+## 1. Start Labeling Using SAM
+
+### Creating a new instance label 
+
+Click the wand icon within the Polygon, or Bounding box class when viewing a task in the [label editor](/platform-documentation/Annotate/annotate-label-editor) to make the SAM pop-up appear.
+
+<Tip>Use the <kbd>Shift</kbd> + <kbd>A</kbd> keyboard shortcut to toggle SAM mode.</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/sam-click-icon.gif" />
+</div>
+
+### Creating labels for existing instances
+
+You can use SAM to create labels for an existing object instance. 
+
+1. Navigate to the frame you want to add the instance. 
+2. Click **Instantiate object** next to the instance, or press the instance's hotkey on your keyboard (<kbd>W</kbd> in the example below).
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/instantiate-sam.png" width="200"/>
+</div>
+
+3. Press <kbd>Shift</kbd> + <kbd>A</kbd> on your keyboard to enable SAM.
+
+<Tip>SAM mode will remain active when switching to a different annotation class, and will only be deactivated by clicking the <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/sam-wand-icon.png" width="30"/> icon again. </Tip>
+
+---
+
+## 2. Using SAM to Segment a Frame or Image
+
+Click the area on the image or frame you would like to segment - the pop-up will indicate that auto-segmentation is running, as shown below.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/sam-predict-area.gif" />
+</div>
+
+You can also click and drag your cursor to select the part of an image you would like to segment. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/sam-bounding-box.gif" />
+</div>
+
+---
+
+## 3. Including / Excluding Areas from Selection
+
+Once the prediction has run, a part of the image or frame will be highlighted in blue.
+
+- You can add to the selected area by left-clicking the part of the image you'd like to add to the label. This is shown in the following video.
+- You can exclude parts of the selected area by right-clicking the part you'd like to exclude from the label. 
+- If you've made a mistake and want to re-start, simply click **Reset** on the SAM pop-up to start again.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/sam-add-area.gif" />
+</div>
+
+---
+
+## 4. Confirming the Label
+
+Once the correct section is highlighted, click **Apply Label** on the SAM pop-up, or press <kbd>Enter</kbd> on your keyboard to confirm the selection. 
+
+A label appears outlining the area that was highlighted - the label shape depends on whether the selection was made using a bounding box, a bitmask, or a polygon.
+
+<Note>SAM works in conjunction with the ['Permanent drawing' setting](/platform-documentation/Annotate/annotate-label-editor#permanent-drawing-new-instances) which can increase the speed at which SAM labels are created in video frames. </Note>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/sam-apply-label.gif" />
+</div>
+
+---
+
+## SAM 2 Tracking
+
+<Note>
+For information on how to use SAM 2 object tracking see our documentation [here](/platform-documentation/Annotate/automated-labeling/annotate-sam2-video-tracking).
+</Note>
+
+SAM 2 brings state-of-the-art segmentation and tracking capabilities for both video and images into a single model.  This unification eliminates the need for combining SAM with other video object segmentation models, streamlining the process of video segmentation into a single, efficient tool. It maintains a simple design and fast inference speed, making it accessible and efficient for users.
+
+The model can track objects consistently across video frames in real-time, which opens up numerous possibilities for applications in video editing and mixed reality experiences. This new model builds upon the success of the original Segment Anything Model, offering improved performance and efficiency.
+
+SAM 2 can also be used to annotate visual data for training computer vision systems. It opens up creative ways to select and interact with objects in real-time or live videos.
+
+### SAM 2 Key Features
+
+- Demonstrated superior accuracy in video segmentation with three times fewer interactions compared to previous models and an 8x speedup for video annotations. For image segmentation, it is not only more accurate but also six times faster than its predecessor, SAM.
+
+- Object Selection and Adjustment: SAM 2 extends the prompt-based object segmentation abilities of SAM to also work for object tracks across video frames.
+
+- Robust Segmentation of Unfamiliar Videos: The model is capable of zero-shot generalization. This means it can segment objects, images, and videos from domains not seen during training, making it versatile for real-world applications.
+
+- Real-Time Interactivity: SAM 2 utilizes a streaming memory architecture that processes video frames one at a time, allowing for real-time, interactive applications.
+
+
+
+

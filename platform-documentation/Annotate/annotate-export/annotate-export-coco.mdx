@@ -1,0 +1,52 @@
+---
+title: "COCO Format Export"
+metadata: 
+  title: "COCO Format Export"
+  description: "Learn about all the keys contained in a COCO export file when exporting labels from the Encord platform."
+  image: 
+    0: "https://files.readme.io/0dd0f82-image_16.png"
+---
+
+<Warning>
+If using Windows, we recommend using [7-Zip](https://www.7-zip.org/) to unzip the exported labels.
+</Warning>
+
+<Info>
+All coordinates in the COCO format correspond directly to pixel values. Refer to the [COCO documentation](https://cocodataset.org/#home) for details on the COCO format.
+</Info>
+
+The export contains a list of JSON objects, with each JSON object representing a single data unit and containing detailed information for all exported labels.
+
+The example below describes all the keys for a single exported data unit.
+
+| **Key**               | **Description**                         | **Notes**                       |
+|-----------------------|-----------------------------------------|---------------------------------|
+| `annotations`         |  Contains all label information         |                                 |
+| `area`                |  The area contained by the label                               |          in units of square pixels                       |
+| `attributes`          |   A list of attributes belonging to a label                                      |                                 |
+| `classifications`     |   All radio and checklist attributes and their answers                                      |                                 |
+| `#relation`           |   The hash of the ontology object the label is related to                                      |    The hash is the object's unique identifier                             |
+| `encord_track_uuid`   |   A unique identifier for the object instance                                    |   The same as the `objectHash` in a JSON export.                        |
+| `manual_annotation`   |    Indicates whether the annotation was created manually.                                     |   `True` is the annotation is manual, `False` if created using automated labeling techniques                              |
+| `track_id`            |   The labels's number in the list of labels, starting from 1          |       The value is the same for all annotations belonging to the same object instance                          |
+| `bbox`                | Pixel coordinates for the top-left corner of a bounding box that encloses the label. This is provided for all shape types.                      |                                 |
+| `category_id`         |  A numerical ID linking this annotation to a field in the `categories` list containing Ontology information.                 | For example, the `category_id` value `1` in an annotation links it to the corresponding ontology shape with the ID `1` in the `categories` field of the export.             |
+| `id`                  |   The labels's number in the list of labels, starting from 0                                         |                                 |
+| `image_id`            |   The ID of the image or frame the label is on                                      |  For example, ID `0`  indicates that the label is on the first image in the `images` list of the export                              |
+| `iscrowd`             |   The `iscrowd` field specifies whether the annotation represents a single object (`iscrowd=0`, using polygons) or a collection of objects (`iscrowd=1`, using RLE). Single objects may require multiple polygons if occluded, while crowd annotations are used for large groups of objects (e.g., a crowd of people)                      |
+| `keypoints`           |  The keypoints field is a list of coordinates and visibility flags for specific points on an object                                       |                                 |
+| `num_keypoints`       |   The num_keypoints field indicates the number of labeled keypoints (v > 0) for an object. Objects without labeled keypoints (e.g., small or crowd objects) have num_keypoints=0                                     |      Keypoints and their connections (skeletons) are defined in the categories section, which includes the names and connectivity of the keypoints for visualization                            |
+| `segmentation`        |   Contains the (x,y)  pixel coordinates for all label vertices                                      |                                 |
+| `categories`          |   Contains Ontology information                                      |                                 |
+| `name`                |   The object's name in the Ontology                                      |                                 |
+| `supercategory`       |   The name of the object's class                                      |                                 |
+| `keypoints`           |   `keypoint` for keypoint labels. Omitted for all other labels                                     |                                 |
+| `skeleton`            |    Defines connectivity via a list of keypoint edge pairs and is used for visualization                                     |                                 |
+| `images`              |  Contains file information for all modalities                                     |                                 |
+| `coco_url`            |   URL to the file if it is hosted on the COCO dataset’s official servers        |  Only meaningful when working with the official COCO tasks. In all other cases the `coco_url` field is empty.                 |
+| `file_name`           |   The name of the file                     |                                 |
+| `height`              |   The height of the image or frame                                     |    Measured in pixels                             |
+| `image_title`         |  The title of the file                                       |                                 |
+| `width`               |  The width of the image or frame                   |    Measured in pixels                             |
+| `info`                |   Contains additional information                                      |                                 |
+

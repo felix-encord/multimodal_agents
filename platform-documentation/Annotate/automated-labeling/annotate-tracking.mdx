@@ -1,0 +1,97 @@
+---
+title: "Object Tracking"
+metadata: 
+  title: "Object tracking"
+  description: "Learn about object tracking in videos and image sequences. Understand how to set up and configure object tracking using Encord's tools."
+  image: 
+    0: "https://files.readme.io/143f482-image_16.png"
+---
+
+Object tracking follows instance labels through a series of frames in a video or image sequence. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/auto-seg-tracking-new.gif" width="650"/>
+</div>
+
+By detecting and localizing objects in a frame, their position in subsequent frames is determined based on pixel information enclosed within the label boundary. All labels automatically created using interpolation are assigned a [confidence score (α)](/platform-documentation/Annotate/annotate-label-editor#confidence-score) of 99%.
+
+Since tracking algorithms propagate labels forward through frames, object tracking works if labels are made on lower number frame (for example, near the start of the video).
+
+---
+
+## Ontologies
+
+
+| **Ontology shape**     | **Interpolation** | **Tracking** |
+|------------------------|-------------------|--------------|
+| Bounding box           | ✅                 | ✅            |
+| Rotatable bounding box | ✅                 | ✅              |
+| Polygon                | ✅                 | ✅           |
+| Polyline               | ✅                 | ✅            |
+| Primitive              | ✅                 | ✅            |
+| Keypoint               | ✅                 | ✅            |
+| Bitmask                | ✅                 | ✅           |
+
+
+\* Polygon and Bitmasks use [SAM 2 tracking](/platform-documentation/Annotate/automated-labeling/annotate-sam2-video-tracking) 
+
+---
+
+## Modalities
+
+The following table shows the modalities that support SAM 2 tracking.
+
+| **Ontology shape**     | **SAM 2 tracking** |
+|------------------------|------------------------------|
+| Images          | ❌               |
+| Videos | ✅                |
+| Image Groups                             | ❌               | 
+| Image Sequences                            | ✅                | 
+| DICOM                           | ✅                | 
+
+---
+
+## Quick Object Tracking
+
+1. Create at least one bounding box, bitmask, or polygon instance label on the frame you want to start tracking the instance from. 
+
+<Tip>More manual instance labels on different frames result in high object tracking accuracy.</Tip>
+
+2. Right-click the shape .
+
+3. Click **Track object**. For bounding boxes and rotatable bounding boxes, select the _Standard (fast)_ option to run SAM 2 tracking for 30 consecutive frames.
+
+| **Polyline, Keypoint, Object Primitive**                                             | **Bounding Box, Rotatable Bounding Box**                                             |
+|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/obj-track-slow-normal.png" width="350" /> | <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/obj-track-slow.png" width="500" /> |
+
+
+### Keyboard Shortcut
+
+1. Click the instance label.
+2. Use the <kbd>Shift</kbd> + <kbd>T</kbd> keyboard shortcut to the run object tracking for 30 frames. The tracking range can be adjusted in the settings. 
+
+### Fine Tune Object Tracking
+
+1. Create at least one instance label on the frame you want to start tracking the instance from. 
+
+<Tip>More manual instance labels result in higher tracking accuracy.</Tip>
+
+2. Click the **Automated labelling** button in the bottom left corner of the Label Editor to bring up options for automated labeling.
+
+3. The _Tracking and interpolation_ section is open by default.
+   - Under the _Method_ heading, select _Tracking_.
+   - Select the object instance you want to track.
+   - The _Tracking annotation interval_ lets you specify how many frames after a manual label the object is tracked for.
+   - _Tracking range_ specifies the total range of frames instances are tracked across.
+   - The _Advanced settings_ lets you choose between the _Advanced_ and _Standard_ tracking models. The _Advanced_ model provides higher accuracy, but takes longer to run. 
+
+4. Click **Run tracking** to track the instance.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/object-tracking.png" width="700" />
+</div>
+
+## Settings 
+
+The _Object tracking_ section of the [editor settings](/platform-documentation/Annotate/annotate-label-editor#editor-settings) allows you to adjust the tracking range, and choose between the standard or advanced tracking algorithm.

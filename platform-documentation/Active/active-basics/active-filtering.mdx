@@ -1,0 +1,361 @@
+---
+title: "Filter and Sort"
+slug: "active-filtering"
+hidden: false
+metadata: 
+  title: "Filter and Sort"
+  description: "Enhance insights with by filtering and sorting data/labels/predictions in Encord Active: Identify patterns, remove duplicates, improve model behavior. Use filters, sorts, embedding plots, and natural language and image searches"
+  image: 
+    0: "https://files.readme.io/9123073-image_16.png"
+category: "6480a3981ed49107a7c6be36"
+---
+
+Filtering, sorting, and searching data in Encord Active is crucial for various reasons. It enables insights and actionable results on the following key aspects and more:
+
+- Identification of patterns, trends, or anomalies within a subset of the data.
+
+- Recognition of duplicates, outliers, and inconsistencies.
+
+- Removal of irrelevant, noisy, and erroneous data.
+
+- Understanding a model's behaviour and potential skewness when facing different subsets of the data.
+
+- After filtering, sorting, and searching your data, use Collections with Annotate Projects to streamline your annotation process.
+
+{/* 5. **[Encord project only]** Update tasks status to prioritize some unannotated images in the labeling stage and send labels to be reviewed/fixed, all along with descriptive comments for the project users (e.g. annotators and reviewers). */}
+
+Encord Active provides the following methods:
+
+- **Filter:** Refine your searches using quality metrics, Collections, data types, annotation types, annotation classes, and by annotator from Annotate. This includes filtering by nested attributes within annotation classes.
+
+- **Sort**: Sort your data/labels/predictions, in ascending or descending order, using quality metrics.
+
+- **Natural language and image search**: Enter descriptive queries in everyday language or use images to make it easier to find relevant images without the need for specific keywords or complex search parameters.
+
+- **Embedding plot**: A two-dimensional visualization technique used by Encord to represent high-dimensional data in a more interpretable form. Use the plot to select points within a specific rectangular area, thereby focusing on a particular subset of data points for in-depth analysis.
+
+
+# Filters
+
+In the Active Explorer for a Project you can refine searches by data quality metrics, label quality metrics, Collections, data types, annotation types, annotation classes, and by annotator from Annotate.
+
+<Tip>
+Filters provide the ability to include or exclude images based on your filtering criteria.
+</Tip>
+
+<AccordionGroup>
+   <Accordion title="Data Quality Metrics">
+
+For more detailed information on [Data Quality Metrics go here](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics).
+
+| Title                                                                                                                                          | Metric Type | Ontology Type |
+|------------------------------------------------------------------------------------------------------------------------------------------------|-------------|---------------|
+| [Area](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#area) - <small>Ranks images by their area (width/height).</small>                                                                      | `image`     |               |
+| [Aspect Ratio](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#aspect-ratio)- <small>Ranks images by their aspect ratio (width/height).</small>                                              | `image`     |               |
+| [Blue Value](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#blue-value) - <small>Ranks images by how blue the average value of the image is.</small>                                         | `image`     |               |
+| [Brightness](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#brightness) - <small>Ranks images by their brightness.</small>                                                                   | `image`     |               |
+| [Contrast](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#contrast)- <small>Ranks images by their contrast.</small>                                                                         | `image`     |               |
+| [Diversity](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#diversity) - <small>Forms clusters based on the ontology and ranks images from easy samples to annotate to hard samples to annotate.</small>              | `image`     |               |
+| [Frame Number](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#frame-number) - <small>Selects images based on a specified range.</small>                                                      | `image`     |               |
+| [Green Value](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#green-value)- <small>Ranks images by how green the average value of the image is.</small>                                     | `image`     |               |
+| [Height](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#height) - <small>Ranks images by the height of the image.</small>                                                                    | `image`     |               |
+| [Object Count](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#object-count) - <small>Counts number of objects in the image.</small>                                                                                                        | `image`     | `bounding box`, `checklist`, `point`, `polygon`, `polyline`, `radio`, `rotatable bounding box`, `skeleton`, `text` |
+| [Object Density](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#object-density) - <small>Computes the percentage of image area that is occupied by objects.</small>              | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                | 
+| [Randomize Images](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#randomize-images) - <small>Assigns a random value between 0 and 1 to images.</small>                                       | `image`     |               |
+| [Red Value](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#red-value) - <small>Ranks images by how red the average value of the image is.</small>                                           | `image`     |               |
+| [Sharpness](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#sharpness) - <small>Ranks images by their sharpness.</small>                                                                      | `image`     |               |
+| [Uniqueness](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#uniqueness) - <small>Finds duplicate and near-duplicate images.</small>                                                          | `image`     |               |
+| [Width](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#width) - <small>Ranks images by the width of the image.</small>                                                                       | `image`     |               |
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Label Quality Metrics">
+
+For more detailed information on [Label Quality Metrics go here](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics).
+
+| Title                                                                                                                                                                                        | Metric Type | Ontology Type                                                                                                          |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|--------------------------------------------------------------------------------------------------------------------|
+| [Absolute Area](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#absolute-area) - <small>Computes object size in amount of pixels.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Aspect Ratio](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#aspect-ratio) - <small>Computes aspect ratios of objects.</small>                                                                                              | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Blue Value](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#blue-value) - <small>Ranks annotated objects by how blue the average value of the object is.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Brightness](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#brightness) - <small>Ranks annotated objects by their brightness.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Border Proximity](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#border-proximity) - <small>Ranks annotations by how close they are to image borders.</small>                                   | `image`     | `bounding box`, `point`, `polygon`, `polyline`, `rotatable bounding box`, `skeleton`                               |
+| [Broken Object Tracks](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#broken-object-tracks) - <small>Identifies broken object tracks based on object overlaps.</small>                              | `sequence`, `video`  | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Brightness](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#brightness) - <small>Ranks annotated objects by their brightness.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Confidence](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#confidence) - <small>The confidence that an object was annotated correctly. While arguably not making much sense when annotated by a human, this value is very important for objects that were automatically labeled.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Contrast](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#contrast) - <small>Ranks annotated objects by their contrast.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Classification Quality](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#classification-quality) - <small>Compares image classifications against similar images.</small>                                                    | `image`     | `radio`                                                                                                            |
+| [Green Value](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#green-value) - <small>Ranks annotated objects by how green the average value of the object is.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Height](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#height) - <small>Ranks annotated objects by the height of the object.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Inconsistent Object Class](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#inconsistent-object-class) - <small>Looks for overlapping objects with different classes (across frames).</small> | `sequence`, `video`  | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Inconsistent Track ID](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#inconsistent-track-id) - <small>Looks for overlapping objects with different track-ids (across frames).</small> | `sequence`, `video`  | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Label Duplicates](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#label-duplicates) - <small>Ranks labels by how likely they are to represent the same object.</small>                                                      | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Missing Objects](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#missing-objects) - <small>Identifies missing objects based on object overlaps.</small>                              | `sequence`, `video`  | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Object Classification Quality](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#object-classification-quality) - <small>Compares object annotations against similar image crops.</small>                                                            | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Occlusion Risk](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#occlusion-risk) - <small>Tracks objects and detect outliers in videos.</small>                                                                                 | `sequence`, `video`  | `bounding box`, `rotatable bounding box`                                                                           |
+| [Polygon Shape Anomaly](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#polygon-shape-anomaly) - <small>Calculates potential outliers by polygon shape.</small>                                                                         | `image`     | `polygon`                                                                                                          |
+| [Randomize Objects](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#randomize-objects) - <small>Assigns a random value between 0 and 1 to objects.</small>                                                                    | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Red Value](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#red-value) - <small>Ranks annotated objects by how red the average value of the object is.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Relative Area](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#relative-area) - <small>Computes object size as a percentage of total image size.</small>                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Sharpness](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#sharpness) - <small>Ranks annotated objects by their sharpness.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Width](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#width) - <small>Ranks annotated objects by the width of the object.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+
+  </Accordion>
+</AccordionGroup>
+
+<b>Collections:</b> Collections are a new way to save interesting groups of data units and labels, to support and guide your downstream workflow.
+
+<b>Custom Metadata:</b> Custom metadata added to Annotate Projects. When an Annotate Project imports to Active, if that Annotate Project has custom metadata, the custom metadata is available to filter your data in Active.
+
+<Tip>
+For information on importing custom metadata to an Annotate project, refer to [Adding Metadata](/sdk-documentation/datasets-sdk/sdk-client-metadata) in the documentation.
+</Tip>
+
+<b>Custom embeddings:</b> Data, labels, and Predictions can be filtered by custom embeddings.
+
+<b>Annotation invalid:</b> Data, labels, and Predictions can be filtered by: Well-formed Annotation and Invalid Annotation
+
+<b>Annotation Type:</b> Data, labels, and Predictions can be filtered by: classification, bounding box, rotatable bounding box, point, polyline, polygon, skeleton, and bitmask.
+
+<b>Annotator:</b> Data, labels, and Predictions can be filtered by the person who annotated the images/videos.
+
+<b>Class:</b> Data, labels, and Predictions can be filtered by annotation class.
+
+<b>Data title:</b> Data, labels, and Predictions can be filtered by the name of the data unit.
+
+<b>Data Types:</b> Data, labels, and Predictions can be filtered by: images, image sequences, image  groups, DICOM series, audio files, and videos.
+
+<b>Dataset:</b> Datasets included in an Annotate Project.
+
+<b>Manual Annotation:</b> Data, labels, and Predictions can be filtered by: Manual Annotation and Automated Annotation.
+
+<b>Prediction IOU:</b> Data, labels, and Predictions can be filtered by Prediction IOU.
+
+<b>Priorities:</b> Data, labels, and Predictions can be filtered by the priority specified in Annotate.
+
+<b>Workflow stage:</b> Data, labels, and Predictions can filter by non-Consensus stages (data, labels, and annotators) and Consensus stages (data only).
+
+---
+
+**To filter data, labels, or predictions:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+   ![Filter with example](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-filter-basics.gif)
+
+4. Select **Data**, **Labels**, or **Predictions**.
+
+5. Click **Filters**.
+   A menu appears.
+
+6. Add and configure the filters you need. 
+   Images/video/audio files filter in the Explorer workspace.
+
+<Tip>
+- Sort and use the NLP or image searches to further help get the results you want.
+- After filtering, sorting, and searching, create a [Collection](/platform-documentation/Active/active-basics/active-collections).
+</Tip>
+
+## Filter Nested Attributes
+
+Active supports filtering on the top level Classes and nested attributes on both Objects and Classifications. Supports up to seven levels of depth.
+
+<Info>Images/frames in the Project MUST have labels applied for this filter to return results.</Info>
+
+**To filter nested attributes:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Select **Data**, **Labels**, or **Predictions**.
+
+   ![Nested Attribute Filter](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-filter-class.gif)
+
+5. Click **Filters**.
+   A menu appears.
+
+6. Select the class and the nested attribute under **Class**.
+
+## Preset Filters
+
+Preset filters provide a way to save your filtering criteria for use and reuse on other Projects. Preset filters are made up of global and local filter criteria. 
+
+Global filter criteria are filters, and their settings, that can apply to any Project. For example, Data Quality Metrics like Area, Blue Value, and Sharpness or Label Quality Metrics like Annotation Quality, Confidence, or Label Duplicates.
+
+{/*-
+<Note>Global filters have the following icon next to the filter: </Note>
+> ![Global Filter icon](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/global-filter.png)
+
+-*/}
+
+Local filter criteria are filters that can only be applied to a specific Project. For example, the following filters and their settings are likely only applicable to a specific Project: Class, Dataset, or Collection.
+
+### Create a Preset Filter
+
+Create Presets (Preset Filters and their settings) from the _Filter_ tab in your Projects.
+
+<AccordionGroup>
+   <Accordion title="To create a Preset (Preset Filter and their settings):">
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Select **Data**, **Labels**, or **Predictions**.
+
+   ![Create Preset](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-preset-create-preset.gif)
+
+5. Click **Filters**.
+   A menu appears.
+
+6. Add and configure the filters you need. 
+   Images/video/audio files filter in the Explorer workspace.
+
+7. Click **Create preset** once you have added all the filters you need and specified each filter's settings.
+   After creating the Preset you can use the Preset in this or any other Project.
+
+  </Accordion>
+</AccordionGroup>
+
+### Use a Preset Filter in a Project
+
+Once you have created one or more Preset Filters, you can apply them to any of your Projects from the _Filter_ tab.
+
+<Note>Global filters apply to any Project, but Local filters only apply on the Project where the Preset was created.</Note>
+
+<AccordionGroup>
+   <Accordion title="To use a Preset (Preset Filter and their settings):">
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Select **Data**, **Labels**, or **Predictions**.
+
+   ![Use a Preset](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-preset-apply-preset.gif)
+
+5. Click **Filters**.
+   A menu appears.
+
+6. Select the Preset you want to use from the dropdown.
+   Images/video/audio files filter in the Explorer workspace based on the Preset Filters and their settings.
+
+<Note>Global filters apply to any Project, but Local filters only apply on the Project where the Preset was created.</Note>
+
+  </Accordion>
+</AccordionGroup>
+
+# Sorting
+
+Sort your data, in ascending or descending order, using data quality metrics.
+Sort your labels or predictions, in ascending or descending order, using label quality metrics.
+
+<AccordionGroup>
+   <Accordion title="Data Quality Metrics">
+
+For more detailed information on [Data Quality Metrics go here](platform-documentation/Active/active-quality-metrics/active-data-quality-metrics).
+
+| Title                                                                                                                                          | Metric Type | Ontology Type |
+|------------------------------------------------------------------------------------------------------------------------------------------------|-------------|---------------|
+| [Area](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#area) - <small>Ranks images by their area (width/height).</small>                                                                      | `image`     |               |
+| [Aspect Ratio](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#aspect-ratio) - <small>Ranks images by their aspect ratio (width/height).</small>                                              | `image`     |               |
+| [Blue Value](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#blue-value) - <small>Ranks images by how blue the average value of the image is.</small>                                         | `image`     |               |
+| [Brightness](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#brightness) - <small>Ranks images by their brightness.</small>                                                                   | `image`     |               |
+| [Contrast](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#contrast) - <small>Ranks images by their contrast.</small>                                                                         | `image`     |               |
+| [Diversity](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#diversity) - <small> Forms clusters based on the ontology and ranks images from easy samples to hard samples.</small>             | `image`     |               |
+| [Green Value](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#green-value) - <small>Ranks images by how green the average value of the image is.</small>                                     | `image`     |               |
+| [Height](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#height) - <small>Ranks images by the height of the image.</small>                                                                    | `image`     |               |
+| [Object Count](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#object-count) - <small>Counts number of objects in the image.</small>                                                                                                        | `image`     | `bounding box`, `checklist`, `point`, `polygon`, `polyline`, `radio`, `rotatable bounding box`, `skeleton`, `text` |
+| [Object Density](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#object-density) - <small>Computes the percentage of image area that is occupied by objects.</small>              | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                | 
+| [Randomize Images](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#randomize-images) - <small>Assigns a random value between 0 and 1 to images.</small>                                       | `image`     |               |
+| [Red Value](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#red-value) - <small>Ranks images by how red the average value of the image is.</small>                                           | `image`     |               |
+| [Sharpness](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#sharpness) - <small>Ranks images by their sharpness.</small>                                                                      | `image`     |               |
+| [Uniqueness](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#uniqueness) - <small>Finds duplicate and near-duplicate images.</small>                                                          | `image`     |               |
+| [Width](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#width) - <small>Ranks images by the width of the image.</small>                                                                       | `image`     |               |
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Label Quality Metrics">
+
+For more detailed information on [Label Quality Metrics go here](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics).
+
+| Title                                                                                                                                                                                        | Metric Type | Ontology Type                                                                                                          |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|--------------------------------------------------------------------------------------------------------------------|
+| [Absolute Area](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#absolute-area) - <small>Computes object size in amount of pixels.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Aspect Ratio](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#aspect-ratio) - <small>Computes aspect ratios of objects.</small>                                                                                              | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Blue Value](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#blue-value) - <small>Ranks annotated objects by how blue the average value of the object is.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Brightness](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#brightness) - <small>Ranks annotated objects by their brightness.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Border Proximity](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#border-proximity) - <small>Ranks annotations by how close they are to image borders.</small>                                   | `image`     | `bounding box`, `point`, `polygon`, `polyline`, `rotatable bounding box`, `skeleton`                               |
+| [Broken Object Tracks](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#broken-object-tracks) - <small>Identifies broken object tracks based on object overlaps.</small>                              | `sequence`, `video`  | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Brightness](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#brightness) - <small>Ranks annotated objects by their brightness.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Confidence](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#confidence) - <small>The confidence that an object was annotated correctly. While arguably not making much sense when annotated by a human, this value is very important for objects that were automatically labeled.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Contrast](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#contrast) - <small>Ranks annotated objects by their contrast.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Classification Quality](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#classification-quality) - <small>Compares image classifications against similar images.</small>                                                    | `image`     | `radio`                                                                                                            |
+| [Green Value](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#green-value) - <small>Ranks annotated objects by how green the average value of the object is.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Height](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#height) - <small>Ranks annotated objects by the height of the object.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Inconsistent Object Class](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#inconsistent-object-class) - <small>Looks for overlapping objects with different classes (across frames).</small> | `sequence`, `video`  | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Inconsistent Track ID](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#inconsistent-track-id) - <small>Looks for overlapping objects with different track-ids (across frames).</small> | `sequence`, `video`  | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Label Duplicates](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#label-duplicates) - <small>Ranks labels by how likely they are to represent the same object.</small>                                                      | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Missing Objects](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#missing-objects) - <small>Identifies missing objects based on object overlaps.</small>                              | `sequence`, `video`  | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Object Classification Quality](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#object-classification-quality) - <small>Compares object annotations against similar image crops.</small>                                                            | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Occlusion Risk](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#occlusion-risk) - <small>Tracks objects and detect outliers in videos.</small>                                                                                 | `sequence`, `video`  | `bounding box`, `rotatable bounding box`                                                                           |
+| [Polygon Shape Anomaly](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#polygon-shape-anomaly) - <small>Calculates potential outliers by polygon shape.</small>                                                                         | `image`     | `polygon`                                                                                                          |
+| [Randomize Objects](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#randomize-objects) - <small>Assigns a random value between 0 and 1 to objects.</small>                                                                    | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Red Value](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#red-value) - <small>Ranks annotated objects by how red the average value of the object is.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Relative Area](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#relative-area) - <small>Computes object size as a percentage of total image size.</small>                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Sharpness](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#sharpness) - <small>Ranks annotated objects by their sharpness.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+| [Width](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics#width) - <small>Ranks annotated objects by the width of the object.</small>                                                                                 | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                |
+
+  </Accordion>
+</AccordionGroup>
+
+**To sort data, labels, or predictions:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Select **Data**, **Labels**, or **Predictions**.
+
+   ![Sort](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-sort-basics.gif)
+
+5. Select the metric to sort the data.
+
+6. Specify ascending or descending order.
+
+<Tip>
+- Filter and use the NLP or image searches to further help get the results you want.
+- After filtering, sorting, and searching, create a [Collection](/platform-documentation/Active/active-basics/active-collections).
+</Tip>

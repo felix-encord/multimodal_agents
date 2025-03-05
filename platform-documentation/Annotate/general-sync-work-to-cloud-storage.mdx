@@ -1,0 +1,131 @@
+---
+title: "Sync Labels to Cloud Storage"
+slug: "general-sync-work-to-cloud-storage"
+hidden: false
+metadata: 
+  title: "Sync your labels to cloud storage"
+  description: "Set up an automated pipeline that sends labels from Encord straight to your cloud storage"
+  image: 
+    0: "https://files.readme.io/c4aa69c-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+## Automatically save labels to AWS S3
+
+<Info>We strongly recommend that highly technical users (examples: IT professionals, software developers, or system administrators) are the ones who perform the steps outlined in this process. </Info>
+
+Typically, after labeling your data with Encord, the labels are used to training your ML models. This process typically includes transferring your labels to cloud storage. To streamline this, follow the steps below to automatically save your labels to your cloud storage upon their creation:
+
+1. [Create an IAM policy for a Lambda function](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.IAM.LambdaCreatePolicy.html). 
+2. Paste the following JSON into the JSON policy editor, replacing `<BUCKET_NAME>` with the name of the S3 bucket you want to export your labels to.
+
+```json
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "buckelabels",
+			"Action": [
+				"s3:GetObject",
+				"s3:PutObject"
+			],
+			"Effect": "Allow",
+			"Resource": [
+				"arn:aws:s3:::<BUCKET_NAME>/*"
+			]
+		}
+	]
+}
+```
+
+3. [Create an IAM role for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html#permissions-executionrole-console), and attach the policy you created in Step 1. 
+
+4. Create a new directory on your computer to store the components for your container image. The directory must include: 
+- The lambda function script provided below. You must replace \<s3_bucket_name\> with your S3 bucket name. We recommend saving the script as `lambda_function.py`.
+- The [docker file](https://docs.docker.com/reference/dockerfile/) provided below.
+- A text file named `access-key` to store your private key. The key is used for authentication with Encord.
+
+<Warning>
+Creating a file called `access-key` to store your private key path is the simplest way, but not a secure way of ensuring the Lambda function can authenticate with Encord. Alternatives include, but are not limited to:
+- [Environment variables in AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html). 
+- [AWS secrets manager](https://aws.amazon.com/secrets-manager/).
+</Warning>
+
+```python lambda_function.py
+import json
+import boto3
+from encord import EncordUserClient
+
+def lambda_handler(event, context):
+    # Extract project_hash and label_hash from the webhook payload
+    payload = event['payload']
+    project_hash = payload['project_hash']
+    label_hash = payload['label_hash']
+
+    # Authenticate Encord user client.
+    user_client = EncordUserClient.create_with_ssh_private_key(
+        ssh_private_key_path="./access-key"
+    )
+
+    # Specify your S3 bucket name. Replace <s3_bucket_name> with your S3 bucket name
+    s3_bucket_name = "<s3_bucket_name>"
+    s3_client = boto3.client('s3')
+
+    project = user_client.get_project(project_hash=project_hash)
+    for label_rows in project.list_label_rows_v2(label_hashes=[label_hash]):
+        # Download labels
+        label_rows.initialise_labels()
+
+        # Filename in S3 includes the label_hash
+        s3_filename = f'{label_hash}_label_data.json'
+        # Convert label_rows to JSON string
+        label_data_json = json.dumps(label_rows.to_encord_dict())
+
+        # Upload the JSON string directly to S3
+        s3_client.put_object(Bucket=s3_bucket_name, Key=s3_filename, Body=label_data_json)
+
+    return {
+        "statusCode": 200,
+        "body": json.dumps("Finished!")
+    }
+```
+```dockerfile Docker file
+FROM public.ecr.aws/lambda/python:3.11
+COPY lambda_function.py ${LAMBDA_TASK_ROOT}
+COPY access-key ${LAMBDA_TASK_ROOT}
+RUN pip install boto3 
+RUN pip install pyjson 
+RUN pip install encord
+RUN chmod 755 ${LAMBDA_TASK_ROOT}/lambda_function.py
+CMD ["lambda_function.lambda_handler"]
+```
+
+5. Create a [private ECR repository in AWS](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html) to store your container image. Record the path to the ECR repository you create.
+
+6. Create a Docker container image for the Lambda function. Use the command line to navigate to the directory you created in step 4. The following command shows an example with a tag containing a version number appended to the repository path: 
+
+```
+docker build -t lambda-function-image:latest 384123456789.dkr.ecr.us-west-2.amazonaws.com/lambda-function-image:v12
+```
+
+7. [Push your container image to the private ECR repository](https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-push-ecr-image.html) you created in step 5. The following command shows an example with a tag containing a version number appended to the repository path:
+
+```
+docker push lambda-function-image:latest 384123456789.dkr.ecr.us-west-2.amazonaws.com/lambda-function-image:v12
+```
+
+8. Create a Lambda function in AWS. 
+
+  - Select the **Container image** option.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/aws-lambda-container.png" width="600" />
+</div>
+
+  - Give the Lambda function a meaningful name. 
+  - Click **Browse images** and select the container image from your ECR repository.
+  - Select the role you created in step 3 as the Execution role.
+
+9. Add a trigger for the Lambda function. Record the URL. 
+
+10. In Encord, [set up a webhook](/platform-documentation/Annotate/annotate-webhooks-notifications#setting-up-webhooks) on the _Complete_ stage of your Project to send label information to your Lambda function. Use the URL of the trigger you created in step 8 for the webhook. The payload sent out by the webhook can be [seen here](/platform-documentation/Annotate/annotate-webhooks-notifications#webhook-event-payloads).

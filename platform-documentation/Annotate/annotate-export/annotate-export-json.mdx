@@ -1,0 +1,1947 @@
+---
+title: "JSON Format Export"
+metadata: 
+  title: "JSON Format Export"
+  description: "Learn about all the keys contained in a JSON export file when exporting labels from the Encord platform."
+  image: 
+    0: "https://files.readme.io/0dd0f82-image_16.png"
+---
+
+<Warning>
+If using Windows, we recommend using [7-Zip](https://www.7-zip.org/) to unzip the exported labels.
+</Warning>
+
+## Label Coordinates
+
+In the JSON format, label coordinates are normalized to be between 0 and 1. This means that the corners of the frame or image correspond to the coordinates (1,1), (1,0), (0,0), (0,1) regardless of frame dimensions. 
+
+To get the pixel values of normalized coordinates:
+
+- The `x` and `h` coordinates of a label should be multiplied by the pixel width of the frame or image.
+- The `y` and `w` coordinates of a label should be multiplied by the pixel height of the frame or image.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/real-pixel-value-formula.png" />
+</div>
+
+---
+
+## Format of Exported Labels
+
+<Warning>
+The `last_edited_by` and `last_edited_at` fields are updated only when the label or its nested attributes are modified in the Label Editor. If the SDK is used to update the label, these fields must be updated manually.
+</Warning>
+
+The tables below provide descriptions of all values contained JSON format exports.
+
+<Note>Exports of label versions for which the data unit was deleted vary from the examples shown below - the `data_type` is `deleted`, while image groups and image sequences only contain a single `data_unit`.</Note>
+
+### Single Images
+
+The export contains a list of JSON objects, with each JSON object representing a single data unit and containing detailed information for all exported labels.
+
+The example below describes all the keys for a single exported data unit.
+
+```json
+[
+    {
+        "classification_answers": {},
+        "created_at": "2025-01-07 16:12:23",
+        "data_hash": "f3132c00-069f-4a95-8e21-30c13078d84d",
+        "data_title": "Image3.jpg",
+        "data_type": "image",
+        "data_units": {
+        },
+        "dataset_hash": "3c35b0f2-64fc-4a58-9b9d-f7181d73f1e5",
+        "dataset_title": "New Welsh Whales",
+        "is_image_sequence": null,
+        "is_valid": true,
+        "label_hash": "0f5a5e62-a3e0-4481-932f-1093f7c1d170",
+        "label_status": "LABEL_IN_PROGRESS",
+        "last_edited_at": "2025-01-07 16:12:23",
+        "object_actions": {},
+        "object_answers": {},
+        "video_link": null
+    }
+]
+```
+
+| **Key**                | **Description**                                                                                                                                           | **Notes**                                                                                                                                                         |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| label_hash             | The Label Row hash                                                                                                                                         | The 'hash' represents a unique identifier                                                                                                                         |
+| created_at             | Time and date the label was created                                                                                                                       |                                                                                                                                                                   |
+| last_edited_at         | Time and date the label was last edited                                                                                                                   |                                                                                                                                                                   |
+| dataset_hash           | The Dataset's hash                                                                                                                                        | The 'hash' represents a unique identifier                                                                                                                         |
+| data_type              | The data unit's file format                                                                                                                  | Always "video" for videos                                                                                                                       |
+| is_image_sequence      | "true" when the data unit is an image sequence                                                                                                   | Always "null" for images                                                                                                                       |
+| video_link             | Contains a private cloud URL for videos   | Always "null" for images          |
+| data_units             | List of all files the data unit is composed of                                                                          |  Details of the export information for `data_units`` can be found below.                                                                                                 |
+| object_answers         | All the attributes in this data unit                                                                                                             | The object attributes are identified using their hash                                                                                                                 |
+| classification_answers | All the classifications in a particular data unit                                                                                            | The classification labels are identified using their hash                                                                                                         |
+| object_actions         | The number of states a [dynamic attribute](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#dynamic-attributes) can be in. | A change in state occurs each time the attribute answer changes. The objectHash within the object_actions is the attribute answer's ID. |
+| label_status           | Indicates whether the data unit has been labeled.                                                                                     |                                                                                                                                                                   |
+| export_history         | Contains a record of the export history for this data unit                                                                                   | Exporting labels to confirm export history generates an export history entry.                                                               |
+| export_hash            | The hash for this particular export instance                                                                                                              | The 'hash' represents a unique identifier                                                                                                                         |
+| exported_at            | The date and time when a particular export instance took place.                                                                                             |                                                                                                                                                                   |
+
+
+<AccordionGroup>
+  <Accordion title="data_units">
+
+  The `data_units` key contains all files that compose the data unit. For a given image there is only ever a single element in this list. This element contains the following information. 
+
+  <Warning>`data_units` here refer to individual files that compose a data unit, as defined in our glossary, and are not to be confused with data units elsewhere in the platform. Encord will update this nomenclature soon, but we always communicate changes to all customers first.</Warning>
+
+  ```json
+
+  "data_units": {
+        "9c588f63-ad87-4987-a074-06ba0d6980cd": {
+          "data_hash": "9c588f63-ad87-4987-a074-06ba0d6980cd",
+          "data_title": "dom-hbf.jpg",
+          "data_type": "image",
+          "data_sequence": 0,
+          "labels": { },
+          "data_fps": "23.976023976023978" ,
+          "data_duration": "29.0786",
+          "data_link": "www.my-private-cloud.com/how-to-make-apple-pie.mp4",
+          "width": 512,
+          "height": 512
+        }
+  }  
+  ```
+
+  | **Key**       | **Description**                                                                  | **Notes**                                                    |
+  |---------------|----------------------------------------------------------------------------------|--------------------------------------------------------------|
+  | data_hash     | The file's hash                                                                  | The 'hash' represents a unique identifier                    |
+  | data_title    | The file's title                                                                 |                                                              |
+  | data_type     | The file type                                                                    |                                                              |
+  | data_sequence | The sequence number of this file within the data unit                            | Always `0` for images, as single images are composed of a single file by definition                                  |
+  | labels        | A container for the image's label information |   This contains the label information for the image.        |
+  | data_link    | A link to the file stored in your private cloud           |                                                              |
+  | width         | The width of the image in pixel (px)                                             |                                                              |
+  | height        | The height of the image in pixel (px)                                            |                                                              |
+
+
+  <AccordionGroup>
+    <Accordion title="labels">
+
+    `labels` contains all object labels, classification labels, and attributes present in the image.
+
+    ```json
+
+    "labels": {
+          "0": {
+            "objects": { },
+            "classifications": [ ]
+          }
+    }  
+    ```
+
+    | **Key**         | **Description**                                       | **Notes** |
+    |-----------------|-------------------------------------------------------|-----------|
+    | objects         | A list of label objects in this frame                 |  Contains geometric information for object labels          |
+    | classifications | A list of classifications applying to image as a whole |           |
+
+
+    <AccordionGroup>
+      <Accordion title="objects">
+
+      `objects` contains all object label information for the image. A key with the name of the object shape is always present - `bounding_box` in the example below. All shapes contain coordinates for each vertex.
+
+      <Tip>Navigate to the [ontology shapes section](#ontology-shapes) to see how all ontology classes are represented in the exported file.</Tip>
+
+      The example below shows a single object instance.
+
+      ```json
+      "objects": [
+        {
+              "name": "Apple",
+              "color": "#D33115",
+              "shape":"bounding_box",
+              "value": "car",
+              "boundingBox": {
+                "0": {
+                  "h": 0.3235,
+                  "w": 0.1697,
+                  "x": 0.0153,
+                  "y": 0.254,   
+                }
+              },
+              "createdAt": "Thu, 07 Sep 2023 09:47:35 GMT",
+              "createdBy": "david.babuschkin@encord.com",
+              "confidence": "1",
+              "objectHash": "P6gqJT/3",
+              "featureHash": "jiOiEq76",
+              "manualAnnotation": true
+            }
+      ]  
+      ```
+
+      | **Key**          | **Description**                                                         | **Notes**                                                                                                                                                                  |
+      |------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      | name             | The object's name                                          | As specified in the ontology                                                                                                                                               |
+      | color            | The color used to draw the object                          | As specified in the ontology                                                                                                                                               |
+      | shape            | The Ontology class used to create the object                        | As specified in the ontology                                                                                                                                               |
+      | value            | The name given to the object                               |                                                                                                                                                                            |
+      | createdAt        | Date and time the object was created                       |                                                                                                                                                                            |
+      | createdBy        | The email of the user that created this object             |                                                                                                                                                                            |
+      | confidence       | The confidence score for this object          | A confidence score of 1 is given for all labels created manually. More info can be found [here](/platform-documentation/Annotate/annotate-label-editor#confidence-score)  |
+      | objectHash       | The specific label's hash                                                    | The 'hash' represents a unique identifier                                                                                                                                  |
+      | featureHash      | The Ontology object's hash                                                                       | Corresponds to the FeatureNodeHash in the ontology                                                                                                                                                                           |
+      | manualAnnotation | A field indicating whether the object was drawn manually or not         | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique |
+      | boundingBox          | A list containing the coordinates for the bounding box | Refer to the [ontology shapes](#ontology-shapes) section for more details                                                                                     |
+
+      </Accordion>
+
+      <Accordion title="classifications">
+
+      `classifications` contains all classification information for the image.
+
+      The following example shows a single object instance.
+
+      ```json
+      "classifications": [
+        {
+              "name": "Time of day",
+              "value": "time_of_day",
+              "createdAt":"Tue, 10 Oct 2023 14:16:14 GMT",
+              "createdBy": "david.babuschkin@encord.com",
+              "confidence": "1",
+              "featureHash": "wUS7p9B6",
+              "lastEditedAt": "Tue, 10 Oct 2023 14:16:14 GMT",
+              "classificationHash": "jiOiEq76",
+              "manualAnnotation": true
+            }
+      ]  
+      ```
+
+      | **Key**          | **Description**                                                         | **Notes**                                                                                                                                                                  |
+      |------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      | name             | The classification's name                                          | As specified in the ontology                                                                                                                                               |
+      | value            | The classification value                        | Same as the `name`                                                                                                                                             |
+      | createdAt            | Time and day the classification  was created                     |               |
+      | createdBy        | The email of the user that created this classification             |       |
+      | confidence       | The confidence score for this classification          | A confidence score of 1 is given for all labels created manually. More info can be found [here](/platform-documentation/Annotate/annotate-label-editor#confidence-score)  |                                                                             |
+      | featureHash      | The classification instance hash                 |             Corresponds to the FeatureNodeHash in the Ontology                         |
+      | lastEditedAt      | Time and date of the last time this classification was edited                 |                                                                                              |
+      | classificationHash       | The classification instance  hash   hash                                                    |  
+      | manualAnnotation | A field indicating whether the object was drawn manually or not         | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique |
+
+</Accordion>
+
+</AccordionGroup>
+
+</Accordion>
+
+</AccordionGroup>
+
+</Accordion>
+
+<Accordion title="object_answers">
+
+`object_answers` is a list of objects that have at least one nested attribute and contains information for all attributes. Expanding `object_answers` reveals the following:
+
+```json
+"object_answers": {
+  "Gqh06ypx"
+      "objectHash": "Gqh06ypx",
+      "classifications" [ 
+        "name": "Size",
+        "value": "size",
+        "answers": "Medium",
+        "featureHash": "GZnFumFq",
+        "manualAnnotation": true
+      ]
+}  
+```
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| objectHash     | The hash of the object containing the attributes                    | The 'hash' represents a unique identifier |
+| classifications | A list of attributes related to the object. Includes _Dynamic_ attributes and _Relation_ attributes |   Not to be confused with classifications as defined in our glossary, which apply to a frame  |
+| name     | The attribute name                    |                       |
+| value     | The attribute value                    |    Always the same as the name                   |
+| answers   | The value(s) the attribute(s) were set to                  |   If the attribute was a radio button, the answer is the option selected by the annotator                  |
+| featureHash     | The attribute's hash                 |  The 'hash' represents a unique identifier                     |
+| manualAnnotation     | A field indicating whether the object was drawn manually or not                  | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique                      |
+
+</Accordion>
+
+
+<Accordion title="classification_answers">
+
+Contains a list of classifications that apply to entire frames or slices. `classification_answer` is represented by its hash. Expanding `classification_answers` reveals the following:
+
+```json
+"classification_answers": {
+  "OFX2jzwE": {
+    "classificationHash": "OFX2jzwE", 
+    "classifications": [{
+      "name": "Time of day", 
+      "value": "time_of_day", 
+      "answers": [{
+        "name": "Night", 
+        "value": "night", 
+        "featureHash": "j/7dpSmi"}],    
+    "featureHash": "uZmB5YZC", 
+    "manualAnnotation": true
+    }]
+  }
+}
+```
+
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| classificationHash | The classification's hash           | Corresponds to the featureNodeHash in the Ontology |
+| classifications | A list of classification information  |                                             |
+| name | The classification name | As set in the Ontology  (Quality in the example above)                                          |
+| value | The classification value  |    Always the same as the classification name                                       |
+| answers | A list of all classification answers  |  "answers" refer to the values the classification were set to.                                           |
+| name | The name of the classification answer  |  "Night" in the example above                                           |
+| value |The classification answer's value  |    Always the same as the classifications answer's name                                          |
+| featureHash | The hash for the particular classification answer  |     Included in `answers`                                         |
+| featureHash | The hash for the particular classification   |                                             |
+| manualAnnotation | "true" for all manually created labels. "false" for all labels created with automated labeling techniques  |                                          |
+
+</Accordion>
+
+
+<Accordion title="export_history">
+
+The `export_history` contains a list of all exports for this data unit, the first entry being the current export. Each instance contains the following:
+
+```json
+"export_history": {
+  "0"
+      "export_hash": "Gqh06ypx",
+      "exported_at": "Mon, 02 Oct 2023 13:47:45 UTC",
+      "user_email": "david.babuschkin@encord.com"
+}  
+```
+
+| **Key**     | **Description**                             | **Notes**                                 |
+|-------------|---------------------------------------------|-------------------------------------------|
+| export_hash | The export instance's hash                  | The 'hash' represents a unique identifier |
+| exported_at | Date and time of the export                        |                                           |
+| user_email  | The email of the user that made this export |                                           |
+
+
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+### Image Groups & Image Sequences
+
+<Tip>Confused about the difference between image groups and image sequences? See our [documentation here](/platform-documentation/General/general-supported-data#comparing-file-formats) to learn about different data types in Encord.</Tip>
+
+The export contains a list of JSON objects, with each JSON object representing a single image group or image sequence, and containing detailed information for all exported labels.
+
+The example below describes all the keys for a single exported data unit.
+
+```json
+[
+  {
+    "label_hash": "781dd0ff-e4c2-48f1-bcd1-09f2f0756701",
+    "created_at": "2023-03-23 11:42:14",
+    "last_edited_at": "2023-10-02 13:53:03",
+    "dataset_hash": "4a4141ed-8d8b-4518-b1f7-97a5c53e992b",
+    "dataset_title": "cooking_image_sequences",
+    "data_title": "image-group-67bdc95d",
+    "data_hash": "9c588f63-ad87-4987-a074-06ba0d6980cd",
+    "data_type": "image_group",
+    "is_image_sequence": null,
+    "image_sequence_link": "www.my-private-cloud.com/how-to-make-apple-pie.mp4",
+    "data_units": { },
+    "classification_answers": { },
+    "object_actions": { },
+    "label_status": "LABELLED",
+    "export_history": [
+      {
+        "export_hash": "02b56519-9664-4e38-9713-4817a5caf648",
+        "exported_at": "Mon, 02 Oct 2023 14:35:30 UTC",
+        "user_email": "david.babuschkin@encord.com"
+      },
+      {
+        "export_hash": "2e0ee531-41ce-4ce9-a859-b6b47697e5d2",
+        "exported_at": "Mon, 02 Oct 2023 13:47:45 UTC",
+        "user_email": "david.babuschkin@encord.com"
+      }
+    ],
+    "export_hash": "02b56519-9664-4e38-9713-4817a5caf648",
+    "exported_at": "Mon, 02 Oct 2023 14:35:30 UTC",
+  }
+]
+```
+
+| **Key**                | **Description**                                                                                                                                           | **Notes**                                                                                                                                                         |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| label_hash             | The Label Row hash                                                                                                                                          | The 'hash' represents a unique identifier                                                                                                                         |
+| created_at             | Time and date the label was created                                                                                                                       |                                                                                                                                                                   |
+| last_edited_at         | Time and date the label was last edited                                                                                                                   |                                                                                                                                                                   |
+| dataset_hash           | The dataset's hash                                                                                                                                        | The 'hash' represents a unique identifier                                                                                                                         |
+| data_type              | The data unit's file format                                                                                                                  | Always "img_group" for image groups and image sequences                                                                                                                       |
+| is_image_sequence      | `true` when the data unit is an image sequence                                                                                                   | `false` for all other types of data, including image groups. This is what distinguishes image groups and image sequences in your export                                                                                                                       |
+| video_link     |  Contains a link to file storage location if file is a video                                        | Always "null" for image groups and image sequences                                                                                                                    |
+| data_units             | List of all files the data unit is composed of                                                                          |  Details of the export information for data units can be found below.                                                                                                 |
+| object_answers         | All the attributes in this data unit                                                                                                             | The object attributes are identified using their hash                                                                                                                 |
+| classification_answers | All the classifications in a particular data unit                                                                                            | The classification labels are identified using their hash                                                                                                         |
+| object_actions         | The number of states a [dynamic attribute]( /platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#dynamic-attributes ) can be in. | A change in state occurs each time the attribute answer changes. The objectHash within the object_actions is the attribute answer's ID. |
+| label_status           | Indicates whether the data unit has been labeled.                                                                                     |                                                                                                                                                                   |
+| export_history         | Contains a record of the export history for this data unit                                                                                   | Exporting labels to confirm export history generates an export history entry.                                                               |
+| export_hash            | The hash for this particular export instance                                                                                                              | The 'hash' represents a unique identifier                                                                                                                         |
+| exported_at            | The date and time when a particular export instance took place.                                                                                             |                                                                                                                                                                   |
+
+---
+
+<AccordionGroup>
+<Accordion title="data_units">
+
+The `data_units` key contains a list of all files that compose the image group or image sequence (sometimes referred to as frames). It contains the following information.
+
+<Warning>`data_units` here refer to individual files that compose a data unit, as defined in our glossary, and are not to be confused with data units elsewhere in the platform. Encord will update this nomenclature soon, but we always communicate changes to all customers first.</Warning>
+
+```json
+
+"data_units": {
+      "9c588f63-ad87-4987-a074-06ba0d6980cd": {
+        "data_hash": "9c588f63-ad87-4987-a074-06ba0d6980cd",
+        "data_title": "rhein-hafen.jpg4",
+        "data_type": "image/jpg",
+        "data_sequence": 0,
+        "labels": { },
+        "data_link": "www.my-private-cloud.com/how-to-make-apple-pie.mp4",
+        "width": 512,
+        "height": 512
+      }
+}  
+```
+
+| **Key**       | **Description**                                                                  | **Notes**                                                    |
+|---------------|----------------------------------------------------------------------------------|--------------------------------------------------------------|
+| data_hash     | The file's hash                                                                  | The 'hash' represents a unique identifier                    |
+| data_title    | The file's title                                                                 |                                                              |
+| data_type     | The file type                                                                    |                                                              |
+| data_sequence | The sequence number of this file within the data unit                            | 0 represents the first file                                  |
+| labels        | A list of all frames contained in image group or sequence, and any labels on each frame | This contains the label information for each frame.                                                             | 
+| width         | The width of the frame in pixel (px)                                             |                                                              |
+| height        | The height of the frame in pixel (px)                                            |                                                              |
+
+
+<AccordionGroup>
+<Accordion title="labels">
+
+Each number within `labels` represents an individual frame within the image group or sequence. Each frame contains the following:
+
+```json
+
+"labels": {
+      "0": {
+        "objects": { },
+        "classifications": [ ],
+        "metadata":{ }
+      }
+}  
+```
+
+| **Key**         | **Description**                                       | **Notes** |
+|-----------------|-------------------------------------------------------|-----------|
+| objects         | A list of label objects in this frame                 |  Contains geometric information for object labels          |
+| classifications | A list of classifications applying to the entire frame |  Is the same value for all instances of this classification.         |
+
+
+<AccordionGroup>
+<Accordion title="objects">
+
+`objects` contains label information for all object instances in a frame. A key with the name of the object shape is always present - `bounding_box` in the example below. All shapes contain coordinates for each vertex.
+
+<Tip>Navigate to the [ontology shapes section](#ontology-shapes) to see how all ontology classes are represented in the exported file.</Tip>
+
+The example below shows a single object instance.
+
+```json
+"objects": [
+      {
+        "name": "Apple",
+        "color": "#D33115",
+        "shape":"bounding_box",
+        "value": "apple",
+        "boundingBox": {
+          "0": {
+            "h": 0.3235,
+            "w": 0.1697,
+            "x": 0.0153,
+            "y": 0.254,   
+          }
+        },
+        "createdAt": "Thu, 07 Sep 2023 09:47:35 GMT",
+        "createdBy": "david.babuschkin@encord.com",
+        "confidence": "1",
+        "objectHash": "P6gqJT/3",
+        "featureHash": "jiOiEq76",
+        "manualAnnotation": true
+      }
+]  
+```
+
+| **Key**          | **Description**                                                         | **Notes**                                                                                                                                                                  |
+|------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name             | The object's name                                          | As specified in the ontology                                                                                                                                               |
+| color            | The color used to draw the object                          | As specified in the ontology                                                                                                                                               |
+| shape            | The Ontology class used to create the object                        | As specified in the ontology                                                                                                                                               |
+| value            | The name given to the object                               |                                                                                                                                                                            |
+| createdAt        | Date and time the object was created                       |                                                                                                                                                                            |
+| createdBy        | The email of the user that created this object             |                                                                                                                                                                            |
+| confidence       | The confidence score for this object          | A confidence score of 1 is given for all labels created manually. More info can be found [here](/platform-documentation/Annotate/annotate-label-editor#confidence-score)  |
+| objectHash       | The specific label's hash                                                    | The 'hash' represents a unique identifier                                                                                                                                  |
+| featureHash      | The Ontology object's hash                                                                       | Corresponds to the FeatureNodeHash in the ontology                                                                                                                                                                           |
+| manualAnnotation | A field indicating whether the object was drawn manually or not         | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique |
+| boundingBox          | A list containing the coordinates for the bounding box | Refer to the [ontology shapes](#ontology-shapes) section for more details                                                                                     |
+
+</Accordion>
+
+
+<Accordion title="classifications">
+
+`classifications` contains all frame level classification information for the image group or sequence.
+
+The example below shows a single classification instance.
+
+```json
+"classifications": [
+      {
+        "name": "Time of day",
+        "value": "time_of_day",
+        "createdAt":"Tue, 10 Oct 2023 14:16:14 GMT",
+        "createdBy": "david.babuschkin@encord.com",
+        "confidence": "1",
+        "featureHash": "wUS7p9B6",
+        "lastEditedAt": "Tue, 10 Oct 2023 14:16:14 GMT",
+        "classificationHash": "jiOiEq76",
+        "manualAnnotation": true
+      }
+]  
+```
+
+| **Key**          | **Description**                                                         | **Notes**                                                                                                                                                                  |
+|------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name             | The classification's name                                          | As specified in the ontology                                                                                                                                               |
+| value            | The classification value                        | Same as the `name`                                                                                                                                             |
+| createdAt            | Time and day the classification  was created                     |               |
+| createdBy        | The email of the user that created this classification             |       |
+| confidence       | The confidence score for this classification          | A confidence score of 1 is given for all labels created manually. More info can be found [here](/platform-documentation/Annotate/annotate-label-editor#confidence-score)  |                                                                             |
+| featureHash      | The classification instance hash                 |             Corresponds to the FeatureNodeHash in the Ontology                         |
+| lastEditedAt      | Time and date of the last time this classification was edited                 |                                                                                              |
+| classificationHash       | The classification instance  hash   hash                                                    |  
+| manualAnnotation | A field indicating whether the object was drawn manually or not         | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique |
+
+
+</Accordion>
+</AccordionGroup>
+</Accordion>
+</AccordionGroup>
+</Accordion>
+
+<Accordion title="object_answers">
+
+`object_answers` is a list of objects that have at least one nested attribute and contains information for all attributes. Expanding `object_answers` reveals the following:
+
+```json
+"object_answers": {
+  "Gqh06ypx"
+      "objectHash": "Gqh06ypx",
+      "classifications" [{ 
+        "name": "Size",
+        "value": "size",
+        "answers": "Medium",
+        "featureHash": "GZnFumFq",
+        "manualAnnotation": true
+  }]
+}  
+```
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| objectHash     | The hash of the object containing the attributes                    | The 'hash' represents a unique identifier |
+| classifications | A list of attributes related to the object. Includes _Dynamic_ attributes and _Relation_ attributes |   Not to be confused with classifications as defined in our glossary, which apply to a frame  |
+| name     | The attribute name                    |                       |
+| value     | The attribute value                    |    Always the same as the name                   |
+| answers   | The value(s) the attribute(s) were set to                  |   If the attribute was a radio button, the answer is the option selected by the annotator                  |
+| featureHash     | The attribute's hash                 |  The 'hash' represents a unique identifier                     |
+| manualAnnotation     | A field indicating whether the object was drawn manually or not                  | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique                      |
+
+</Accordion>
+
+
+<Accordion title="classification_answers">
+
+Contains a list of classifications that apply to entire frames or slices. `classification_answer` is represented by its hash. Expanding `classification_answers` reveals the following:
+
+```json
+"classification_answers": {
+  "OFX2jzwE": {
+    "classificationHash": "OFX2jzwE", 
+    "classifications": [{
+      "name": "Quality", 
+      "value": "quality", 
+      "answers": [{
+        "name": "out of focus", 
+        "value": "out_of_focus", 
+        "featureHash": "j/7dpSmi"}],    
+    "featureHash": "uZmB5YZC", 
+    "manualAnnotation": true
+    }]
+  }
+}
+```
+
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| classificationHash | The classification's hash           | The 'hash' represents a unique identifier |
+| classifications | A list of classifications information  |                                             |
+| name | The classification name | As set in the Ontology  (Quality in the example above)                                          |
+| value | The classification value  |    Always the same as the classification name                                       |
+| answers | A list of all classification answers  |  "answers" refer to the values the classifications were set to.                                           |
+| name | The name of the classification answer  |  "out of focus" in the example above                                           |
+| value |The classification answer's value  |    Always the same as the classification answer's name                                          |
+| featureHash | The hash for the particular classification answer  |     Included in `answers`                                         |
+| featureHash | The hash for the particular classification   |                                             |
+| manualAnnotation | "true" for all manually created labels. "false" for all labels created with automated labeling techniques  |                                          |
+
+</Accordion>
+
+
+<Accordion title="export_history">
+
+The `export_history` contains a list of all exports for this data unit, the first entry being the current export. Each instance contains the following:
+
+```json
+"export_history": {
+  "0"
+      "export_hash": "Gqh06ypx",
+      "exported_at": "Mon, 02 Oct 2023 13:47:45 UTC",
+      "user_email": "david.babuschkin@encord.com"
+}  
+```
+
+| **Key**     | **Description**                             | **Notes**                                 |
+|-------------|---------------------------------------------|-------------------------------------------|
+| export_hash | The export instance's hash                  | The 'hash' represents a unique identifier |
+| exported_at | Date and time of the export                        |                                           |
+| user_email  | The email of the user that made this export |                                           |
+
+
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+### Videos
+
+The export contains a list of JSON objects, with each JSON object representing a single data unit and containing detailed information for all exported labels.
+
+The example below describes all the keys for a single exported data unit.
+
+
+```json
+
+[
+  {
+    "label_hash": "781dd0ff-e4c2-48f1-bcd1-09f2f0756701",
+    "created_at": "2023-03-23 11:42:14",
+    "last_edited_at": "2023-10-02 13:53:03",
+    "dataset_hash": "4a4141ed-8d8b-4518-b1f7-97a5c53e992b",
+    "dataset_title": "cooking_videos",
+    "data_title": "how-to-make-apple-pie.mp4",
+    "data_hash": "9c588f63-ad87-4987-a074-06ba0d6980cd",
+    "data_type": "video",
+    "is_image_sequence": null,
+    "video_link": "www.my-private-cloud.com/how-to-make-apple-pie.mp4",
+    "data_units": { },
+    "classification_answers": { },
+    "object_actions": { },
+    "label_status": "LABELLED",
+    "export_history": [
+      {
+        "export_hash": "02b56519-9664-4e38-9713-4817a5caf648",
+        "exported_at": "Mon, 02 Oct 2023 14:35:30 UTC",
+        "user_email": "david.babuschkin@encord.com"
+      },
+      {
+        "export_hash": "2e0ee531-41ce-4ce9-a859-b6b47697e5d2",
+        "exported_at": "Mon, 02 Oct 2023 13:47:45 UTC",
+        "user_email": "david.babuschkin@encord.com"
+      }
+    ],
+    "export_hash": "02b56519-9664-4e38-9713-4817a5caf648",
+    "exported_at": "Mon, 02 Oct 2023 14:35:30 UTC",
+  }
+]
+
+```
+
+
+| **Key**                | **Description**                                                                                                                                           | **Notes**                                                                                                                                                         |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| label_hash             | The Label Row hash                                                                                                                                          | The 'hash' represents a unique identifier                                                                                                                         |
+| created_at             | Time and date the label was created                                                                                                                       |                                                                                                                                                                   |
+| last_edited_at         | Time and date the label was last edited                                                                                                                   |                                                                                                                                                                   |
+| dataset_hash           | The Dataset's hash                                                                                                                                        | The 'hash' represents a unique identifier                                                                                                                         |
+| data_type              | The data unit's file format                                                                                                                  | Always "video" for videos                                                                                                                       |
+| is_image_sequence      | "true" when the data unit is an image sequence                                                                                                   | Always "null" for videos                                                                                                                       |
+| video_link             | Link to the video saved on your private cloud                                                                                                          | Always "null" for all other file types                                                                                                                     |
+| data_units             | List of all files the data unit is composed of                                                                          |  Details of the export information for `data_units`` can be found below.                                                                                                 |
+| object_answers         | All the attributes in this data unit                                                                                                             | The object attributes are identified using their hash                                                                                                                 |
+| classification_answers | All the classifications in a particular data unit                                                                                            | The classification labels are identified using their hash                                                                                                         |
+| object_actions         | The number of states a [dynamic attribute]( /platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#dynamic-attributes ) can be in. | A change in state occurs each time the attribute answer changes. The objectHash within the object_actions is the attribute answer's ID. |
+| label_status           | Indicates whether the data unit has been labeled.                                                                                     |                                                                                                                                                                   |
+| export_history         | Contains a record of the export history for this data unit                                                                                   | Exporting labels to confirm export history generates an export history entry.                                                               |
+| export_hash            | The hash for this particular export instance                                                                                                              | The 'hash' represents a unique identifier                                                                                                                         |
+| exported_at            | The date and time when a particular export instance took place.                                                                                             |                                                                                                                                                                   |
+
+---
+
+<AccordionGroup>
+<Accordion title="data_units">
+
+The `data_units` key contains all files that compose the data unit. For a given video there is only a single element in this list. This element contains the following information. 
+
+<Warning>`data_units` here refer to individual files that compose a data unit, as defined in our glossary, and are not to be confused with data unit elsewhere in the platform. Encord will update this nomenclature soon, but we always communicate changes to all customers first.</Warning>
+
+```json
+
+"data_units": {
+      "9c588f63-ad87-4987-a074-06ba0d6980cd": {
+        "data_hash": "9c588f63-ad87-4987-a074-06ba0d6980cd",
+        "data_title": "how-to-make-apple-pie.mp4",
+        "data_type": "video/mp4",
+        "data_sequence": 0,
+        "labels": { },
+        "data_fps": "23.976023976023978" ,
+        "data_duration": "29.0786",
+        "data_link": "www.my-private-cloud.com/how-to-make-apple-pie.mp4",
+        "width": 512,
+        "height": 512
+      }
+}  
+```
+
+| **Key**       | **Description**                                                                  | **Notes**                                                    |
+|---------------|----------------------------------------------------------------------------------|--------------------------------------------------------------|
+| data_hash     | The file's hash                                                                  | The 'hash' represents a unique identifier                    |
+| data_title    | The file's title                                                                 |                                                              |
+| data_type     | The file type                                                                    |                                                              |
+| data_sequence | The sequence number of this file within the data unit                            | 0 represents the first file                                  |
+| labels        | A list of all frames contained in the video and any labels on each frame | This contains the label information for each frame.                                                             | 
+| data_fps        | The frames per second for this video    |                                               |
+| data_duration  | The video length       |          In seconds                                     |
+| data_link    | A link to the file stored in your private cloud           |                                                              |
+| width         | The width of the frame in pixel (px)                                             |                                                              |
+| height        | The height of the frame in pixel (px)                                            |                                                              |
+
+
+
+<AccordionGroup>
+<Accordion title="labels">
+
+Each number within `labels` represents an individual frame within the data unit. Each frame contains the following:
+
+```json
+
+"labels": {
+      "0": {
+        "objects": { },
+        "classifications": [ ],
+        "metadata":{ }
+      }
+}  
+```
+
+| **Key**         | **Description**                                       | **Notes** |
+|-----------------|-------------------------------------------------------|-----------|
+| objects         | A list of label objects in this frame                 |  Contains geometric information for object labels          |
+| classifications | A list of classifications applying to the entire frame |  Is the same value for all instances of this classification.         |
+
+
+<AccordionGroup>
+<Accordion title="objects">
+
+`objects` contains label information for all object instances in a frame. A key with the name of the object shape is always present - `bounding_box` in the example below. All shapes contain coordinates for each vertex.
+
+<Tip>Navigate to the [ontology shapes section](#ontology-shapes) to see how all ontology classes are represented in the exported file.</Tip>
+
+The following example shows a single object instance.
+
+```json
+"objects": [
+  {
+        "name": "Apple",
+        "color": "#D33115",
+        "shape":"bounding_box",
+        "value": "apple",
+        "boundingBox": {
+          "0": {
+            "h": 0.3235,
+            "w": 0.1697,
+            "x": 0.0153,
+            "y": 0.254,   
+          }
+        },
+        "createdAt": "Thu, 07 Sep 2023 09:47:35 GMT",
+        "createdBy": "david.babuschkin@encord.com",
+        "confidence": "1",
+        "objectHash": "P6gqJT/3",
+        "featureHash": "jiOiEq76",
+        "manualAnnotation": true
+      }
+]  
+```
+
+| **Key**          | **Description**                                                         | **Notes**                                                                                                                                                                  |
+|------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name             | The object's name                                          | As specified in the ontology                                                                                                                                               |
+| color            | The color used to draw the object                          | As specified in the ontology                                                                                                                                               |
+| shape            | The ontology class used to create the object                        | As specified in the ontology                                                                                                                                               |
+| value            | The name given to the object                               |                                                                                                                                                                            |
+| createdAt        | Date and time the object was created                       |                                                                                                                                                                            |
+| createdBy        | The email of the user that created this object             |                                                                                                                                                                            |
+| confidence       | The confidence score for this object          | A confidence score of 1 is given for all labels created manually. More info can be found [here](/platform-documentation/Annotate/annotate-label-editor#confidence-score)  |
+| objectHash       | The specific label's hash                                                    | The 'hash' represents a unique identifier                                                                                                                                  |
+| featureHash      | The Ontology object's hash                                                                       | Corresponds to the FeatureNodeHash in the ontology                                                                                                                                                                           |
+| manualAnnotation | A field indicating whether the object was drawn manually or not         | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique |
+| boundingBox          | A list containing the coordinates for the bounding box | Refer to the [ontology shapes](#ontology-shapes) section for more details                                                                                     |
+
+</Accordion>
+
+<Accordion title="classifications">
+
+`classifications` contains all frame level classification information for the video.
+
+The example below shows a single classification instance.
+
+```json
+"classifications": [
+  {
+        "name": "Time of day",
+        "value": "time_of_day",
+        "createdAt":"Tue, 10 Oct 2023 14:16:14 GMT",
+        "createdBy": "david.babuschkin@encord.com",
+        "confidence": "1",
+        "featureHash": "wUS7p9B6",
+        "lastEditedAt": "Tue, 10 Oct 2023 14:16:14 GMT",
+        "classificationHash": "jiOiEq76",
+        "manualAnnotation": true
+      }
+]  
+```
+
+| **Key**          | **Description**                                                         | **Notes**                                                                                                                                                                  |
+|------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name             | The classification's name                                          | As specified in the ontology                                                                                                                                               |
+| value            | The classification value                        | Same as the `name`                                                                                                                                             |
+| createdAt            | Time and day the classification  was created                     |               |
+| createdBy        | The email of the user that created this classification             |       |
+| confidence       | The confidence score for this classification          | A confidence score of 1 is given for all labels created manually. More info can be found [here](/platform-documentation/Annotate/annotate-label-editor#confidence-score)  |                                                                             |
+| featureHash      | The classification instance hash                 |             Corresponds to the FeatureNodeHash in the Ontology                         |
+| lastEditedAt      | Time and date of the last time this classification was edited                 |                                                                                              |
+| classificationHash       | The classification instance  hash   hash                                                    |  
+| manualAnnotation | A field indicating whether the object was drawn manually or not         | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique |
+
+
+          </Accordion>
+        </AccordionGroup>
+      </Accordion>
+    </AccordionGroup>
+  </Accordion>
+
+
+<Accordion title="object_answers">
+
+`object_answers` is a list of objects that have at least one nested attribute and contains information for all attributes. Expanding `object_answers` reveals the following:
+
+```json
+"object_answers": {
+  "Gqh06ypx"
+      "objectHash": "Gqh06ypx",
+      "classifications" [ 
+        "name": "Size",
+        "value": "size",
+        "answers": "Medium",
+        "featureHash": "GZnFumFq",
+        "manualAnnotation": true
+      ]
+}  
+```
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| objectHash     | The hash of the object containing the attributes                    | The 'hash' represents a unique identifier |
+| classifications | A list of attributes related to the object |   Not to be confused with classifications as defined in our glossary, which apply to a frame  |
+| name     | The attribute name                    |                       |
+| value     | The attribute value                    |    Always the same as the name                   |
+| answers   | The value(s) the attribute(s) were set to                  |   If the attribute was a radio button, the answer is the option selected by the annotator                  |
+| featureHash     | The attribute's hash                 |  The 'hash' represents a unique identifier                     |
+| manualAnnotation     | A field indicating whether the object was drawn manually or not                  | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique                      |
+
+</Accordion>
+
+<Accordion title="classification_answers">
+
+Contains a list of classifications that apply to entire frames or slices. `classification_answer` is represented by its hash. Expanding `classification_answers` reveals the following:
+
+```json
+"classification_answers": {
+  "OFX2jzwE": {
+    "classificationHash": "OFX2jzwE", 
+    "classifications": [{
+      "name": "Quality", 
+      "value": "quality", 
+      "answers": [{
+        "name": "out of focus", 
+        "value": "out_of_focus", 
+        "featureHash": "j/7dpSmi"}],    
+    "featureHash": "uZmB5YZC", 
+    "manualAnnotation": true
+    }]
+  }
+}
+```
+
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| classificationHash | The classification's hash           | The 'hash' represents a unique identifier |
+| classifications | A list of classifications information  |                                             |
+| name | The classification name | As set in the ontology  (Quality in the example above)                                          |
+| value | The classification value  |    Always the same as the classification name                                       |
+| answers | A list of all classification answers  |  "answers" refer to the values the classifications were set to.                                           |
+| name | The name of the classification answer  |  "out of focus" in the example above                                           |
+| value |The classification answer's value  |    Always the same as the classification answer's name                                          |
+| featureHash | The hash for the particular classification answer  |     Included in `answers`                                         |
+| featureHash | The hash for the particular classification   |                                             |
+| manualAnnotation | "true" for all manually created labels. "false" for all labels created with automated labeling techniques  |                                          |
+
+</Accordion>
+
+<Accordion title="export_history">
+
+The `export_history` contains a list of all exports for this data unit, the first entry being the current export. Each instance contains the following:
+
+```json
+"export_history": {
+  "0"
+      "export_hash": "Gqh06ypx",
+      "exported_at": "Mon, 02 Oct 2023 13:47:45 UTC",
+      "user_email": "david.babuschkin@encord.com"
+}  
+```
+
+| **Key**     | **Description**                             | **Notes**                                 |
+|-------------|---------------------------------------------|-------------------------------------------|
+| export_hash | The export instance's hash                  | The 'hash' represents a unique identifier |
+| exported_at | Date and time of the export                        |                                           |
+| user_email  | The email of the user that made this export |                                           |
+
+
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+### DICOM
+
+The export contains a list of JSON objects, with each JSON object representing a single data unit and containing detailed information for all exported labels. 
+
+The following example describes all the keys for a single exported data unit.
+
+
+```json
+
+[
+  {
+    "label_hash": "781dd0ff-e4c2-48f1-bcd1-09f2f0756701",
+    "created_at": "2023-03-23 11:42:14",
+    "last_edited_at": "2023-10-02 13:53:03",
+    "dataset_hash": "4a4141ed-8d8b-4518-b1f7-97a5c53e992b",
+    "dataset_title": "BB: CT thin slices",
+    "data_title": "9c58",
+    "data_hash": "9c588f63-ad87-4987-a074-06ba0d6980cd",
+    "data_type": "dicom",
+    "is_image_sequence": null,
+    "video_link": null,
+    "data_units": { },
+    "classification_answers": { },
+    "object_actions": { },
+    "label_status": "LABELLED",
+    "export_history": [
+      {
+        "export_hash": "02b56519-9664-4e38-9713-4817a5caf648",
+        "exported_at": "Mon, 02 Oct 2023 14:35:30 UTC",
+        "user_email": "david.babuschkin@encord.com"
+      },
+      {
+        "export_hash": "2e0ee531-41ce-4ce9-a859-b6b47697e5d2",
+        "exported_at": "Mon, 02 Oct 2023 13:47:45 UTC",
+        "user_email": "david.babuschkin@encord.com"
+      }
+    ],
+    "export_hash": "02b56519-9664-4e38-9713-4817a5caf648",
+    "exported_at": "Mon, 02 Oct 2023 14:35:30 UTC",
+  }
+]
+
+```
+
+
+| **Key**                | **Description**                                                                                                                                           | **Notes**                                                                                                                                                         |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| label_hash             | The Label Row hash                                                                                                                                          | The 'hash' represents a unique identifier                                                                                                                         |
+| created_at             | Time and date the label was created                                                                                                                       |                                                                                                                                                                   |
+| last_edited_at         | Time and date the label was last edited                                                                                                                   |                                                                                                                                                                   |
+| dataset_hash           | The dataset's hash                                                                                                                                        | The 'hash' represents a unique identifier                                                                                                                         |
+| data_type              | The data unit's file format                                                                                                                  | Always "dicom" in a DICOM series                                                                                                                       |
+| is_image_sequence      | "true" when the data unit is an image sequence                                                                                                   | Always "null" for a DICOM series                                                                                                                       |
+| video_link             | Link to the video or image sequence                                                                                                          | Always "null" for a DICOM series                                                                                                                       |
+| data_units             | List of all files the data unit is composed of                                                                          |  Details of the export information for `data_units`` can be found below.                                                                                                 |
+| object_answers         | All the object attributes in this data unit                                                                                                             | The object attribute are identified using their hash                                                                                                                 |
+| classification_answers | All the classifications in a particular data unit                                                                                            | The classification labels are identified using their hash                                                                                                         |
+| object_actions         | The number of states a [dynamic attribute]( /platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#dynamic-attributes ) can be in. | A change in state occurs each time the attribute answer changes. The objectHash within the object_actions is the attribute answer's ID. |
+| label_status           | Indicates whether the data unit has been labeled.                                                                                     |                                                                                                                                                                   |
+| export_history         | Contains a record of the export history for the data unit                                                                                  | Exporting labels to confirm export history generates an export history entry.                                                               |
+| export_hash            | The hash for this particular export instance                                                                                                              | The 'hash' represents a unique identifier                                                                                                                         |
+| exported_at            | The date and time when a particular export instance took place.                                                                                             |                                                                                                                                                                   |
+
+---
+
+<AccordionGroup>
+<Accordion title="data_units">
+
+The `data_units` key contains all files that compose the data unit.
+
+<Warning>`data_units` here refer to individual files that compose a data unit, as defined in our glossary, and are not to be confused with data units elsewhere in the platform. Encord will update this nomenclature soon, but we always communicate changes to all customers first.</Warning>
+
+```json
+
+"data_units": {
+      "9c588f63-ad87-4987-a074-06ba0d6980cd": {
+        "data_hash": "9c588f63-ad87-4987-a074-06ba0d6980cd",
+        "data_title": "9c58",
+        "data_type": "application/dicom",
+        "data_sequence": 0,
+        "labels": { },
+        "metadata": {  },
+        "data_links": { },
+        "width": 512,
+        "height": 512
+      }
+}  
+```
+
+| **Key**       | **Description**                                                                  | **Notes**                                                    |
+|---------------|----------------------------------------------------------------------------------|--------------------------------------------------------------|
+| data_hash     | The file's hash                                                                  | The 'hash' represents a unique identifier                    |
+| data_title    | The file's title                                                                 |                                                              |
+| data_type     | The file type                                                                    |                                                              |
+| data_sequence | The sequence number of this file within the data unit                            | 0 represents the first file                                  |
+| labels        | A list of all slices contained in the series and any labels on each slice |   This contains the label information for each slice.                                                           |
+| metadata      | The DICOM series metadata.                                                       | Contains the ID for the patient, the study, and the series.  |
+| data_links    | Links to all slices within the series, ordered by their sequence number           |                                                              |
+| width         | The width of the slice in pixel (px)                                             |                                                              |
+| height        | The height of the slice in pixel (px)                                            |                                                              |
+
+
+<AccordionGroup>
+<Accordion title="labels">
+
+Each number within `labels` represents an individual slice or frame within the data unit. Each slice or frame contains the following:
+
+```json
+
+"labels": {
+      "0": {
+        "objects": { },
+        "classifications": [ ],
+        "metadata":{ }
+      }
+}  
+```
+
+| **Key**         | **Description**                                       | **Notes** |
+|-----------------|-------------------------------------------------------|-----------|
+| objects         | A list of label objects on this slice                 |  Contains geometric information for object labels          |
+| classifications | A list of classifications applying to the entire slice or frame |  Is the same value for all instances of this classification.         |
+| metadata        | Slice specific metadata                               |           |
+
+
+<AccordionGroup>
+<Accordion title="objects">
+
+`objects` contains label information for all object instances in a frame. A key with the name of the object shape is always present - `polygon` in the example below. All shapes contain coordinates for each vertex.
+
+<Tip>Navigate to the [ontology shapes section](#ontology-shapes) to see how all ontology classes are represented in the exported file.</Tip>
+
+The example below shows a single object instance.
+
+```json
+"objects": [
+  {
+        "name": "lungs",
+        "color": "#D33115",
+        "shape":"polygon",
+        "value": "lungs",
+        "polygon": {
+          "0": {
+            "x": 0.2423,
+            "y": 0.5115,
+          },
+          "1": {
+            "x": 0.4167,
+            "y": 0.4218,   
+          }
+        },
+        "createdAt": "Thu, 07 Sep 2023 09:47:35 GMT",
+        "createdBy": "david.babuschkin@encord.com",
+        "confidence": "1",
+        "objectHash": "mQ+yKcF5",
+        "featureHash": "pRwpsg1H",
+        "manualAnnotation": true
+      }
+]  
+```
+
+| **Key**          | **Description**                                                         | **Notes**                                                                                                                                                                  |
+|------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name             | The object's name                                          | As specified in the ontology                                                                                                                                               |
+| color            | The color used to draw the object                          | As specified in the ontology                                                                                                                                               |
+| shape            | The ontology class used to create the object                        | As specified in the ontology                                                                                                                                               |
+| value            | The name given to the object                               |                                                                                                                                                                            |
+| polygon          | A list containing the x and y coordinates of each vertex on the polygon | Refer to the [ontology shapes](#ontology-shapes) section for more details                                                                                     |
+| createdAt        | Date and time the object was created                       |                                                                                                                                                                            |
+| createdBy        | The email of the user that created this object             |                                                                                                                                                                            |
+| confidence       | The confidence score for this object          | A confidence score of 1 is given for all labels created manually. More info can be found [here](/platform-documentation/Annotate/annotate-label-editor#confidence-score)  |
+| objectHash       | The specific label's hash                                                    | The 'hash' represents a unique identifier                                                                                                                                  |
+| featureHash      | The ontology object's hash                                                                       | Corresponds to the FeatureNodeHash in the ontology                                                                                                                                                                           |
+| manualAnnotation | A field indicating whether the object was drawn manually or not         | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique |
+
+</Accordion>
+
+<Accordion title="classifications">
+
+`classifications` contains all frame level classification  information for the slice.
+
+The example below shows a single classification instance.
+
+```json
+"classifications": [
+  {
+        "name": "State",
+        "value": "state",
+        "createdAt":"Tue, 10 Oct 2023 14:16:14 GMT",
+        "createdBy": "david.babuschkin@encord.com",
+        "confidence": "1",
+        "featureHash": "wUS7p9B6",
+        "lastEditedAt": "Tue, 10 Oct 2023 14:16:14 GMT",
+        "classificationHash": "jiOiEq76",
+        "manualAnnotation": true
+      }
+]  
+```
+
+| **Key**          | **Description**                                                         | **Notes**                                                                                                                                                                  |
+|------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name             | The classification's name                                          | As specified in the ontology                                                                                                                                               |
+| value            | The classification value                        | Same as the `name`                                                                                                                                             |
+| createdAt            | Time and day the classification  was created                     |               |
+| createdBy        | The email of the user that created this classification             |       |
+| confidence       | The confidence score for this classification          | A confidence score of 1 is given for all labels created manually. More info can be found [here](/platform-documentation/Annotate/annotate-label-editor#confidence-score)  |                                                                             |
+| featureHash      | The classification instance hash                 |             Corresponds to the FeatureNodeHash in the ontology                         |
+| lastEditedAt      | Time and date of the last time this classification was edited                 |                                                                                              |
+| classificationHash       | The classification instance  hash   hash                                                    |  
+| manualAnnotation | A field indicating whether the object was drawn manually or not         | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique |
+
+
+  </Accordion>
+
+<Accordion title="metadata">
+
+```json
+"metadata": {
+      "dicom_instance_uid": "1.3.9.1.4.7.14219.5.2.8.1600.1202.0357967439694942",
+      "multiframe_frame_number": "null",
+      "file_uri":"cord-dicoms/H7sLTXjYbrou3GhfmHRiuE5m92/5adba3dd-09f6-5c95-b954-e76542fe0ed7",
+      "width": "512",
+      "height": "512",
+}  
+```
+
+| **Key**                 | **Description**                                                                   | **Notes**                                                                                                                           |
+|-------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| dicom_instance_uid      | The DICOM instance UID                                                            | DICOM tag value (0008,0018). More information can be found [here](https://dicom.innolitics.com/ciods/rt-structure-set/sop-common/00080018)  |
+| multiframe_frame_number | A field indicating the frame number when the JSON contains only a single `label`  | Displays `null` when each slice has its only expandable `labels` instance                                                       |
+| file_uri                | This slice's URI                                                                  | Identifies this slice                                                                                                               |
+| height                  | The slice's height (in pixel)                                                     | DICOM tag value (0028,0010). More information can be found [here](https://dicom.innolitics.com/ciods/rt-dose/general-image/00880200/00280010) |
+| width                   | The slice's width (in pixel)                                                      | DICOM tag value (0028,0011). More information can be found [here](https://dicom.innolitics.com/ciods/rt-dose/image-pixel/00280011) |
+
+
+    </Accordion>
+  </AccordionGroup>
+</Accordion>
+
+
+<Accordion title="metadata">
+
+The slice metadata contains information on the DICOM study, the DICOM series, as well as the patient. 
+
+```json
+"metadata": {
+      "patient_id": "ENC-ORD-LUV-031023",
+      "study_uid": "null",
+      "series_uid":"cord-dicoms/H7sLTXjYbrou3GhfmHRiuE5m92/5adba3dd-09f6-5c95-b954-e76542fe0ed7",
+}  
+```
+
+| **Key**    | **Description**       | **Notes**                                                                                                                                       |
+|------------|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| patient_id | The patient ID        | DICOM tag value (0010,0020). More information can be found [here](https://dicom.innolitics.com/ciods/rt-plan/patient/00101002/00100020)                 |
+| study_uid  | The DICOM study's ID  | DICOM tag value (0020,000D). More information can be found [here](https://dicom.innolitics.com/ciods/mr-image/general-study/0020000ds)            |
+| series_uid | The DICOM series' ID  | DICOM tag value (0020,000E). More information can be found [here](https://dicom.innolitics.com/ciods/mr-image/general-series/00081250/0020000e) |
+
+
+    </Accordion>
+  </AccordionGroup>
+</Accordion>
+
+
+<Accordion title="object_answers">
+
+`object_answers` is a list of objects that have at least one nested attribute and contains information for all attributes. Expanding `object_answers` reveals the following:
+
+```json
+"object_answers": {
+  "Gqh06ypx"
+      "objectHash": "Gqh06ypx",
+      "classifications" [ 
+        "name": "Size",
+        "value": "size",
+        "answers": "Medium",
+        "featureHash": "GZnFumFq",
+        "manualAnnotation": true
+      ]
+}  
+```
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| objectHash     | The hash of the object containing the attributes                    | The 'hash' represents a unique identifier |
+| classifications | A list of attributes related to the object. Includes _Dynamic_ attributes and _Relation_ attributes. |   Not to be confused with classifications as defined in our glossary, which apply to a frame  |
+| name     | The attribute name                    |                       |
+| value     | The attribute value                    |    Always the same as the name                   |
+| answers   | The value(s) the attribute(s) were set to                  |   If the attribute was a radio button, the answer is the option selected by the annotator                  |
+| featureHash     | The attribute's hash                 |  The 'hash' represents a unique identifier                     |
+| manualAnnotation     | A field indicating whether the object was drawn manually or not                  | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique                      |
+
+</Accordion>
+
+
+<Accordion title="classification_answers">
+
+`classification_answers` a list of frame classifications in which each classification is represented by its hash. Expanding `classification_answers` reveals the following:
+
+```json
+"classification_answers": {
+  "OFX2jzwE": {
+    "classificationHash": "OFX2jzwE", 
+    "classifications": [{
+      "name": "Quality", 
+      "value": "quality", 
+      "answers": [{
+        "name": "out of focus", 
+        "value": "out_of_focus", 
+        "featureHash": "j/7dpSmi"}],    
+    "featureHash": "uZmB5YZC", 
+    "manualAnnotation": true
+    }]
+  }
+}
+```
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| classificationHash | The classification's hash           | The 'hash' represents a unique identifier |
+| classifications | A list of information about the classification |                                             |
+| name | The classification name | As set in the ontology  (Quality in the example above)                                          |
+| value | The classification value  |    Always the same as the classification name                                       |
+| answers | A list of all classification answers  |  "answers" refer to the values the classification were set to.                                           |
+| name | The name of the classification answer  |  "out of focus" in the example above                                           |
+| value |The classification answer's value  |    Always the same as the classification answer's name                                          |
+| featureHash | The hash for the particular classification answer  |     Included in `answers`                                         |
+| featureHash | The hash for the particular classification   |                                             |
+| manualAnnotation | `true` for all manually created labels. `false` for all labels created with automated labeling techniques  |                                          |
+
+</Accordion>
+
+<Accordion title="export_history">
+
+The `export_history` contains a list of all exports for this data unit, the first entry being the current export. Each instance contains the following:
+
+```json
+"export_history": {
+  "0"
+      "export_hash": "Gqh06ypx",
+      "exported_at": "Mon, 02 Oct 2023 13:47:45 UTC",
+      "user_email": "david.babuschkin@encord.com"
+}  
+```
+
+| **Key**     | **Description**                             | **Notes**                                 |
+|-------------|---------------------------------------------|-------------------------------------------|
+| export_hash | The export instance's hash                  | The 'hash' represents a unique identifier |
+| exported_at | Date and time of the export                        |                                           |
+| user_email  | The email of the user that made this export |                                           |
+
+
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+
+### Audio
+
+The export contains a list of JSON objects, with each JSON object representing a single data unit and containing detailed information for all exported labels.
+
+The example below describes all the keys for a single exported data unit.
+
+```json
+[
+    {
+        "classification_answers": {},
+        "created_at": "2025-01-09 15:58:20",
+        "data_hash": "ffd810f4-f503-46ac-b54f-bd5f8057f440",
+        "data_title": "beautiful-tune.mp3",
+        "data_type": "audio",
+        "data_units": {
+        },
+        "dataset_hash": "3696067a-7e68-4d25-b09d-517877e13f06",
+        "dataset_title": "Music",
+        "is_image_sequence": null,
+        "is_valid": true,
+        "label_hash": "a384bab6-9443-4932-a862-c5c18f39c88b",
+        "label_status": "LABELLED",
+        "last_edited_at": "2025-01-09 15:58:35",
+        "object_actions": {},
+        "object_answers": {}
+    }
+]
+```
+
+| **Key**                | **Description**                                                                                                                                           | **Notes**                                                                                                                                                         |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| label_hash             | The Label Row hash                                                                                                                                         | The 'hash' represents a unique identifier                                                                                                                         |
+| created_at             | Time and date the label was created                                                                                                                       |                                                                                                                                                                   |
+| last_edited_at         | Time and date the label was last edited                                                                                                                   |                                                                                                                                                                   |
+| dataset_hash           | The Dataset's hash                                                                                                                                        | The 'hash' represents a unique identifier                                                                                                                         |
+| data_type              | The data unit's file format                                                                                                                  | Always "video" for videos                                                                                                                       |
+| is_image_sequence      | "true" when the data unit is an image sequence                                                                                                   | Always "null" for images                                                                                                                       |
+| video_link             | Contains a private cloud URL for videos   | Always "null" for images          |
+| data_units             | List of all files the data unit is composed of                                                                          |  Details of the export information for `data_units`` can be found below.                                                                                                 |
+| object_answers         | All the attributes in this data unit                                                                                                             | The object attributes are identified using their hash                                                                                                                 |
+| classification_answers | All the classifications in a particular data unit                                                                                            | The classification labels are identified using their hash                                                                                                         |
+| object_actions         | The number of states a [dynamic attribute](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#dynamic-attributes) can be in. | A change in state occurs each time the attribute answer changes. The objectHash within the object_actions is the attribute answer's ID. |
+| label_status           | Indicates whether the data unit has been labeled.                                                                                     |                                                                                                                                                                   |
+| export_history         | Contains a record of the export history for this data unit                                                                                   | Exporting labels to confirm export history generates an export history entry.                                                               |
+| export_hash            | The hash for this particular export instance                                                                                                              | The 'hash' represents a unique identifier                                                                                                                         |
+| exported_at            | The date and time when a particular export instance took place.                                                                                             |                                                                                                                                                                   |
+
+<AccordionGroup>
+
+  <Accordion title="classification_answers">
+
+`classification_answers` a list of frame classifications in which each classification is represented by its hash. Expanding `classification_answers` reveals the following:
+
+```json
+"classification_answers": {
+    "yRY6RT5j": {
+        "classificationHash": "yRY6RT5j",
+        "classifications": [
+            {
+                "answers": [
+                    {
+                        "featureHash": "h6dn9yfZ",
+                        "name": "No ",
+                        "value": "no_"
+                    }
+                ],
+                "featureHash": "+n1+XoVr",
+                "manualAnnotation": true,
+                "name": "Good Song?",
+                "value": "good_song?"
+            }
+        ],
+        "confidence": null,
+        "createdAt": "Thu, 09 Jan 2025 15:58:27 GMT",
+        "createdBy": "david.babuschkin@encord.com",
+        "featureHash": "lQS4psvP",
+        "lastEditedAt": "Thu, 09 Jan 2025 15:58:27 GMT",
+        "lastEditedBy": "david.babuschkin@encord.com",
+        "manualAnnotation": true,
+        "range": [
+            [
+                0,
+                132963
+            ]
+        ]
+    }
+},
+```
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| classificationHash | The classification's hash           | The 'hash' represents a unique identifier |
+| classifications | A list of information about the classification |                                             |
+| name | The classification name | As set in the ontology  (Quality in the example above)                                          |
+| value | The classification value  |    Always the same as the classification name                                       |
+| answers | A list of all classification answers  |  "answers" refer to the values the classification were set to.                                           |
+| name | The name of the classification answer  |  "out of focus" in the example above                                           |
+| value |The classification answer's value  |    Always the same as the classification answer's name                                          |
+| featureHash | The hash for the particular classification answer  |     Included in `answers`                                         |
+| featureHash | The hash for the particular classification   |                                             |
+| manualAnnotation | `true` for all manually created labels. `false` for all labels created with automated labeling techniques  |                                          |
+| range       | The time span on which the classification label is applied               |  Measured in milliseconds (ms)                            |
+
+  </Accordion>
+
+  <Accordion title="data_units">
+
+  The `data_units` key contains all files that compose the data unit. For a given image there is only ever a single element in this list. This element contains the following information. 
+
+  <Warning>`data_units` here refer to individual files that compose a data unit, as defined in our glossary, and are not to be confused with data units elsewhere in the platform. Encord will update this nomenclature soon, but we always communicate changes to all customers first.</Warning>
+
+  ```json
+"data_units": {
+    "ffd810f4-f503-46ac-b54f-bd5f8057f440": {
+        "audio_bit_depth": 32,
+        "audio_codec": "mp3float",
+        "audio_num_channels": 2,
+        "audio_sample_rate": 44100,
+        "data_duration": 132.96327,
+        "data_hash": "ffd810f4-f503-46ac-b54f-bd5f8057f440",
+        "data_link": "gs://cord-ai-platform.appspot.com/cord-audio-prod/iaDJxNNrMuQMtFPcP9oszw2OCHm2/6e235f70-8ade-4bb6-8d76-d3010d7deda3",
+        "data_sequence": 0,
+        "data_title": "beautiful-tune.mp3",
+        "data_type": "audio/mpeg",
+        "labels": {}
+    }
+}
+  ```
+
+  | **Key**       | **Description**                                                                  | **Notes**                                                    |
+  |---------------|----------------------------------------------------------------------------------|--------------------------------------------------------------|
+  | data_hash     | The file's hash                                                                  | The 'hash' represents a unique identifier                    |
+  | data_title    | The file's title                                                                 |                                                              |
+  | data_type     | The file type                                                                    |                                                              |
+  | data_sequence | The sequence number of this file within the data unit                            | Always `0` for images, as single images are composed of a single file by definition                                  |
+  | labels        | A container for the image's label information |   This contains the label information for the image.        |
+  | data_link    | A link to the file stored in your private cloud           |                                                              |
+  | width         | The width of the image in pixel (px)                                             |                                                              |
+  | height        | The height of the image in pixel (px)                                            |                                                              |
+
+</Accordion>
+
+<Accordion title="object_answers">
+
+`object_answers` contains all the object labels that have at least one nested attribute and contains information for all attributes. Expanding `object_answers` reveals the following:
+
+```json
+"object_answers": {
+    "zcmSZzvI": {
+        "classifications": [],
+        "confidence": null,
+        "createdAt": "Thu, 09 Jan 2025 15:58:24 GMT",
+        "createdBy": "david.babuschkin@encord.com",
+        "featureHash": "1uLJrW4C",
+        "lastEditedAt": "Thu, 09 Jan 2025 15:58:24 GMT",
+        "lastEditedBy": "david.babuschkin@encord.com",
+        "manualAnnotation": true,
+        "objectHash": "zcmSZzvI",
+        "range": [
+                    [
+                        14287,
+                        51843
+                    ]
+        ]
+    }
+}
+```
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| objectHash     | The hash of the object containing the attributes                    | The 'hash' represents a unique identifier |
+| classifications | A list of attributes related to the object. |   Not to be confused with classifications as defined in our glossary, which apply to a frame  |
+| name     | The attribute name                    |                       |
+| value     | The attribute value                    |    Always the same as the name                   |
+| answers   | The value(s) the attribute(s) were set to                  |   If the attribute was a radio button, the answer is the option selected by the annotator                  |
+| featureHash     | The attribute's hash                 |  The 'hash' represents a unique identifier                     |
+| manualAnnotation     | A field indicating whether the object was drawn manually or not                  | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique                      |
+| range       | The time span on which the object label is applied               |  Measured in milliseconds (ms)                            |
+
+</Accordion>
+
+</AccordionGroup>
+
+
+### Text
+
+The export contains a list of JSON objects, with each JSON object representing a single data unit and containing detailed information for all exported labels.
+
+The example below describes all the keys for a single exported data unit.
+
+
+```json
+[
+    {
+        "classification_answers": {},
+        "created_at": "2025-01-11 14:58:20",
+        "data_hash": "ffd810f4-f503-46ac-b54f-bd5f8057f440",
+        "data_title": "encord-website.html",
+        "data_type": "plain_text",
+        "data_units": {
+        },
+        "dataset_hash": "3696067a-7e68-4d25-b09d-517877e13f06",
+        "dataset_title": "HTML Text",
+        "is_image_sequence": null,
+        "is_valid": true,
+        "label_hash": "a384bab6-9443-4932-a862-c5c18f39c88b",
+        "label_status": "LABELLED",
+        "last_edited_at": "2025-01-09 15:58:35",
+        "object_actions": {},
+        "object_answers": {}
+    }
+]
+```
+
+| **Key**                | **Description**                                                                                                                                           | **Notes**                                                                                                                                                         |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| label_hash             | The Label Row hash                                                                                                                                         | The 'hash' represents a unique identifier                                                                                                                         |
+| created_at             | Time and date the label was created                                                                                                                       |                                                                                                                                                                   |
+| last_edited_at         | Time and date the label was last edited                                                                                                                   |                                                                                                                                                                   |
+| dataset_hash           | The Dataset's hash                                                                                                                                        | The 'hash' represents a unique identifier                                                                                                                         |
+| data_type              | The data unit's file format                                                                                                                  | Always "video" for videos                                                                                                                       |
+| is_image_sequence      | "true" when the data unit is an image sequence                                                                                                   | Always "null" for images                                                                                                                       |
+| video_link             | Contains a private cloud URL for videos   | Always "null" for images          |
+| data_units             | List of all files the data unit is composed of                                                                          |  Details of the export information for `data_units`` can be found below.                                                                                                 |
+| object_answers         | All the attributes in this data unit                                                                                                             | The object attributes are identified using their hash                                                                                                                 |
+| classification_answers | All the classifications in a particular data unit                                                                                            | The classification labels are identified using their hash                                                                                                         |
+| object_actions         | The number of states a [dynamic attribute](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#dynamic-attributes) can be in. | A change in state occurs each time the attribute answer changes. The objectHash within the object_actions is the attribute answer's ID. |
+| label_status           | Indicates whether the data unit has been labeled.                                                                                     |                                                                                                                                                                   |
+| export_history         | Contains a record of the export history for this data unit                                                                                   | Exporting labels to confirm export history generates an export history entry.                                                               |
+| export_hash            | The hash for this particular export instance                                                                                                              | The 'hash' represents a unique identifier                                                                                                                         |
+| exported_at            | The date and time when a particular export instance took place.                                                                                             |                                                                                                                                                                   |
+
+<AccordionGroup>
+
+  <Accordion title="classification_answers">
+
+`classification_answers` a list of frame classifications in which each classification is represented by its hash. Expanding `classification_answers` reveals the following:
+
+```json
+"classification_answers": {
+    "EpcchMiS": {
+        "classificationHash": "EpcchMiS",
+        "classifications": [
+            {
+                "answers": [
+                    {
+                        "featureHash": "4EbpTJ8E",
+                        "name": "Single Extension",
+                        "value": "single_extension"
+                    }
+                ],
+                "featureHash": "/Kt0x2uF",
+                "manualAnnotation": true,
+                "name": "HTML Type",
+                "value": "html_type"
+            }
+        ],
+        "confidence": null,
+        "createdAt": "Tue, 07 Jan 2025 12:25:12 GMT",
+        "createdBy": "david.babuschkin@encord.com",
+        "featureHash": "yboRL9Pm",
+        "lastEditedAt": "Tue, 07 Jan 2025 12:25:12 GMT",
+        "lastEditedBy": "david.babuschkin@encord.com",
+        "manualAnnotation": true,
+        "range": [
+            [
+                0,
+                0
+            ]
+        ]
+    }
+}
+```
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| classificationHash | The classification's hash           | The 'hash' represents a unique identifier |
+| classifications | A list of information about the classification |                                             |
+| name | The classification name | As set in the ontology  (Quality in the example above)                                          |
+| value | The classification value  |    Always the same as the classification name                                       |
+| answers | A list of all classification answers  |  "answers" refer to the values the classification were set to.                                           |
+| name | The name of the classification answer  |  "out of focus" in the example above                                           |
+| value |The classification answer's value  |    Always the same as the classification answer's name                                          |
+| featureHash | The hash for the particular classification answer  |     Included in `answers`                                         |
+| featureHash | The hash for the particular classification   |                                             |
+| manualAnnotation | `true` for all manually created labels. `false` for all labels created with automated labeling techniques  |                                          |
+| range       | The frame range on which the classification label is applied               |                        |
+
+</Accordion>
+
+  <Accordion title="data_units">
+
+  The `data_units` key contains all files that compose the data unit. For a given image there is only ever a single element in this list. This element contains the following information. 
+
+  <Warning>`data_units` here refer to individual files that compose a data unit, as defined in our glossary, and are not to be confused with data units elsewhere in the platform. Encord will update this nomenclature soon, but we always communicate changes to all customers first.</Warning>
+
+  ```json
+"data_units": {
+    "ffd810f4-f503-46ac-b54f-bd5f8057f440": {
+        "audio_bit_depth": 32,
+        "audio_codec": "mp3float",
+        "audio_num_channels": 2,
+        "audio_sample_rate": 44100,
+        "data_duration": 132.96327,
+        "data_hash": "ffd810f4-f503-46ac-b54f-bd5f8057f440",
+        "data_link": "gs://cord-ai-platform.appspot.com/cord-audio-prod/iaDJxNNrMuQMtFPcP9oszw2OCHm2/6e235f70-8ade-4bb6-8d76-d3010d7deda3",
+        "data_sequence": 0,
+        "data_title": "beautiful-tune.mp3",
+        "data_type": "audio/mpeg",
+        "labels": {}
+    }
+}
+  ```
+
+  | **Key**       | **Description**                                                                  | **Notes**                                                    |
+  |---------------|----------------------------------------------------------------------------------|--------------------------------------------------------------|
+  | data_hash     | The file's hash                                                                  | The 'hash' represents a unique identifier                    |
+  | data_title    | The file's title                                                                 |                                                              |
+  | data_type     | The file type                                                                    |                                                              |
+  | data_sequence | The sequence number of this file within the data unit                            | Always `0` for images, as single images are composed of a single file by definition                                  |
+  | labels        | A container for the image's label information |   This contains the label information for the image.        |
+  | data_link    | A link to the file stored in your private cloud           |                                                              |
+  | width         | The width of the image in pixel (px)                                             |                                                              |
+  | height        | The height of the image in pixel (px)                                            |                                                              |
+
+</Accordion>
+
+<Accordion title="object_answers">
+
+`object_answers` contains all the object labels that have at least one nested attribute and contains information for all attributes. Expanding `object_answers` reveals the following:
+
+```json
+"object_answers": {
+    "YFfOG14v": {
+        "classifications": [],
+        "confidence": null,
+        "createdAt": "Tue, 07 Jan 2025 12:25:36 GMT",
+        "createdBy": "david.babuschkin@encord.com",
+        "featureHash": "AZfKc9b7",
+        "lastEditedAt": "Tue, 07 Jan 2025 12:25:36 GMT",
+        "lastEditedBy": "david.babuschkin@encord.com",
+        "manualAnnotation": true,
+        "objectHash": "YFfOG14v",
+        "range": [],
+        "range_html": [
+            {
+                "end": {
+                    "node": "/html[1]/body[1]/div[1]/div[1]/div[1]/main[1]/div[2]/div[1]/section[1]/section[1]/article[1]/section[1]/section[1]/p[1]/text()[1]",
+                    "offset": 245
+                },
+                "start": {
+                    "node": "/html[1]/body[1]/div[1]/div[1]/div[1]/main[1]/div[2]/div[1]/section[1]/section[1]/article[1]/section[1]/section[1]/p[1]/text()[1]",
+                    "offset": 125
+                }
+            }
+        ]
+    }
+}
+```
+
+| **Key**         | **Description**                            | **Notes**                                 |
+|-----------------|--------------------------------------------|-------------------------------------------|
+| objectHash     | The hash of the object containing the attributes                    | The 'hash' represents a unique identifier |
+| classifications | A list of attributes related to the object. |   Not to be confused with classifications as defined in our glossary, which apply to a frame  |
+| name     | The attribute name                    |                       |
+| value     | The attribute value                    |    Always the same as the name                   |
+| answers   | The value(s) the attribute(s) were set to                  |   If the attribute was a radio button, the answer is the option selected by the annotator                  |
+| featureHash     | The attribute's hash                 |  The 'hash' represents a unique identifier                     |
+| manualAnnotation     | A field indicating whether the object was drawn manually or not                  | `true` means it was drawn manually, while `false` means it was created using a model or an [automated labeling](/platform-documentation/Annotate/automated-labeling) technique                      |
+| range       | The frame range on which the object label is applied               |                          |
+| range_html       | Provides detailed information about the specific section of the text file being labeled       |                          |
+| start       | Start point of the label     |                          |
+| end       | End point of the label     |                          |
+| offset       | An integer that specifies the character position within the identified node   |   For example `{ "offset": 125 }` means the label starts / ends at the 125th character in the node                  |
+
+
+
+</Accordion>
+
+</AccordionGroup>
+
+
+
+
+---
+
+### Ontology Shapes
+
+Exports contain the Ontology shape coordinates used to create the label. 
+
+<AccordionGroup>
+<Accordion title="Bounding Box">
+
+`x` and `y` represent coordinates of the top-left corner of the box. `h` and `w` respectively represent the height and width of the box.
+
+```json
+ "boundingBox": {
+    "h": 0.118,
+    "w": 0.1643,
+    "x": 0.6985,
+    "y": 0.6204
+ }
+  ```
+
+  </Accordion>
+</AccordionGroup>
+
+
+<AccordionGroup>
+  <Accordion title="Polygon">
+
+  <Warning>
+  This is a legacy field used by existing customers. We recommend new customers use the `polygons` field below. 
+  </Warning>
+
+    The `polygon` list contains the `x` and `y` coordinates for all vertices in a simple polygon. For complex polygons, see the `polygons` field below. 
+
+    ```json
+    "polygon": {
+      "0": {
+        "x": 0.2423,
+        "y": 0.5115,
+      },
+      "1": {
+        "x": 0.4167,
+        "y": 0.4218,   
+              },
+      "2": {
+        "x": 0.5821,
+        "y": 0.4641,   
+              },
+      "3": {
+        "x": 0.5808,
+        "y": 0.5756,   
+              },
+      "4": {
+        "x": 0.4564,
+        "y": 0.6397,   
+              }
+      }
+
+    ```
+
+  </Accordion>
+
+    <Accordion title="Polygons">
+
+    Polygons can have complex shapes, including being enclosed in one another, and encompassing separate regions. In each case the polygon's coordinates are arranged in a different way. 
+
+    <div class="flex justify-center">
+      <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/polygon5.png"/>
+    </div>
+
+    <div class="flex justify-center">
+      <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/polygon2.png"/>
+    </div>
+
+    <div class="flex justify-center">
+      <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/polygon3.png"/>
+    </div>
+
+    <div class="flex justify-center">
+      <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/polygon 4.png"/>
+    </div>
+
+     </Accordion>
+
+</AccordionGroup>
+
+<AccordionGroup>
+<Accordion title="Polyline">
+
+Polylines contain the `x` and `y` coordinates for each vertex. 
+
+```json
+ "polyline": {
+  "0": {
+    "x": 0.2423,
+    "y": 0.5115,
+  },
+  "1": {
+    "x": 0.4167,
+    "y": 0.4218,   
+          },
+  "2": {
+    "x": 0.5821,
+    "y": 0.4641,   
+          },
+  "3": {
+    "x": 0.5808,
+    "y": 0.5756,   
+          },
+  "4": {
+    "x": 0.4564,
+    "y": 0.6397,   
+          }
+  }
+
+```
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+<Accordion title=" Keypoint ">
+
+Keypoints are represented in the export using only `x` and `y` coordinates. 
+
+```json
+ "point": {
+    "0": {
+      "x": 0.3192,
+      "y": 0.1547,
+  }
+ }
+  ```
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+<Accordion title=" Rotatable Bounding Box ">
+
+`x` and `y` represent the coordinates of the top-left corner of the _unrotated_ box. `h` and `w` respectively represent the height and width of the box, while `theta` represents the angle of clockwise rotation of the bounding box _about the centre of the box_. 
+
+```json
+ "rotatableBoundingBox": {
+    "h": 0.118,
+    "w": 0.1643,
+    "x": 0.6985,
+    "y": 6204,
+    "theta": 305.7762
+ }
+  ```
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+<Accordion title=" Bitmask ">
+
+The `rleString` encodes the Bitmask label, and has to be decoded. See our [SDK documentation](/sdk-documentation/sdk-labels/sdk-bitmasks#decoding-bitmask-labels) to learn how to decode an `rleString`.
+
+```json
+"objects": [
+      {
+        "bitmask": {
+          "rleString": "02220N:0F20N",
+          "top": 0,
+          "left": 0,
+          "width": 6,
+          "height": 6
+        }
+      }
+  ]  
+```
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+<Accordion title=" Object primitive ">
+
+Object primitives are referred to as `skeleton`s in the export. Each point on the object primitive is represented in the export using `x` and `y` coordinates. 
+
+Below is an example of an object primitive with 3 points.
+
+```json
+
+"skeleton": {
+  "0": {
+    "x": 0.5719,
+    "y": 0.7615,
+    "name": "point_0",
+    "color": "#fcc400",
+    "value": "point_0",
+    "featureHash": "qPCTeIci"
+    },
+    "1": {
+    "x": 0.5428,
+    "y": 0.6734,
+    "name": "point_1",
+    "color": "#fcc400",
+    "value": "point_1",
+    "featureHash": "o1NKWqKP",
+    "invisible": true
+    },
+    "2": {
+    "x": 0.4865,
+    "y": 0.6464,
+    "name": "point_2",
+    "color": "#fcc400",
+    "value": "point_2",
+    "featureHash": "9bgJBA85",
+    "occluded": true
+    }
+}
+
+```
+
+| Key         | Description                                             | Notes                             |
+|-------------|---------------------------------------------------------|-----------------------------------|
+| name        | Name of this point                                      | As set in the Ontology            |
+| color       | The hexadecimal color code used to represent this point | As set in the Ontology            |
+| featureHash | The hash for this particular point                      | the 'hash' is a unique identifier |
+| occluded    | This point is marked as occluded                     | if the point was left on the default setting (visible) this key is omitted |
+| invisible  | This point is marked as invisible                      | if the point was left on the default setting (visible) this key is omitted|
+
+  </Accordion>
+</AccordionGroup>
+
+### Exporting Bitmasks
+
+Bitmask labels are exported as `rleString`s. See our [SDK documentation](/sdk-documentation/sdk-labels/sdk-bitmasks#decoding-bitmask-labels) to learn how to decode an `rleString`.
+
+<Tip>We strongly recommend exporting [Bitmask labels using the Encord SDK](/sdk-documentation/sdk-labels/sdk-bitmasks#downloading-bitmask-annotations-from-encord). Bitmasks are exported in the JSON format.</Tip>
+
+
+<Tip>Use the [COCO API](https://github.com/cocodataset/cocoapi) to [decode Bitmasks when using the COCO export format](/sdk-documentation/sdk-labels/sdk-bitmasks#creating-bitmask-images-from-coco-export).</Tip>
+
+## Exporting Labels using the SDK
+
+Go [here](/sdk-documentation/sdk-labels/sdk-working-with-labels#exporting-labels) to learn how to export labels using SDK.
+
+## Label Branches
+
+The branch associated with the labels is specified using the `branch_name` key.
+
+The main branch is always displayed first and is identified by the following value:
+
+```json
+"branch_name": "main"
+```

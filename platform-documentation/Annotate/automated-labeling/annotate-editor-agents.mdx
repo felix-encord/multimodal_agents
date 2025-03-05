@@ -1,0 +1,101 @@
+---
+title: "Editor Agents"
+slug: "annotate-editor-agents"
+metadata: 
+  title: "Editor Agents"
+  description: "Editor Agents enable you to integrate your own API endpoint, such as your own model, with Encord to enhance your annotation processes and use them inside the Label Editor"
+  image: 
+    0: "https://files.readme.io/90c4a47-image_16.png"
+---
+
+<Tip>Editor Agents are API endpoints triggered on individual tasks within the Label Editor. They differ from Task Agents, which are Workflow components that activate on all tasks passing through the Agent stage.</Tip>
+
+Editor Agents enable you to integrate your own API endpoint, such as your own model hosted on a server (or in a cloud function), with Encord to enhance your annotation processes. Agents can be called while annotating in the Label Editor. 
+
+## Permissions
+
+Editor Agents are available to all project user roles, including Admin, Team Manager, Annotator + Reviewer, and Annotator. However, restrictions apply to certain [organization-level user roles](/platform-documentation/General/general-your-organization#user-roles).
+
+|               | Freemium | Team    | Enterprise |
+|---------------|----------|------------|------------|
+| **Internal**  |   ✅     |    ✅       |     ✅      |
+| **External**  |   ❌     |    ❌       |      ✅      |
+| **Workforce** |   ❌     |    ❌       |      ❌      |
+
+
+## 1. Set up an Editor Agent
+
+First, you must create the agent. An example using ChatGPT-4o can be found [here](/platform-documentation/Annotate/automated-labeling/annotate-create-editor-agents).
+
+<Note>
+Explore our [Agents Library](https://agents-docs.encord.com/) for comprehensive examples of Editor and Task Agents, along with detailed guidance on setup, installation, and hosting.
+</Note>
+
+## 2. Register an Editor Agent
+
+<Note>Only HTTPS endpoints are supported.</Note>
+
+**To register an Agent in Encord:** 
+
+1. Navigate to the _Agents_ section of the Encord platform. 
+2. Ensure you are in the _Editor Agents_ screen. 
+2. Click **+ Register agent** to set up a new editor Agent. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/editor-agents-register.png" width="600" />
+</div>
+
+3. Give the Agent a meaningful name and description.
+
+4. Enter the API endpoint for the agent. This Endpoint is called when the Agent is run in the Label Editor.
+
+5. Click **Register agent** to register the Agent with Encord. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/agent-details.png" width="500" />
+</div>
+
+## 3. Test the Editor Agent
+
+After an Agent is registered, the Agent can be tested. We strongly recommend testing an Agent before using it in the Label Editor. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/test-agent.png" width="600" />
+</div>
+
+**To test an Agent:**
+
+1. Navigate to the _Agents_ section of the Encord platform. 
+2. Click the Agent you want to test.
+3. Click **Test agent**. 
+   The Test payload is sent to the API endpoint. 
+
+   A notification appears telling you whether the API endpoint was reached appears at the top of your screen. 
+
+## 4. Use the Editor Agent in the Label Editor
+
+**To use the registered Agent during annotation:**
+
+1. Click **Automated labeling** in the bottom left of the screen. 
+   The automated labeling drawer appears.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/automated-label-highlight.png" width="700" />
+</div>
+
+2. Open the _Agents_ section of the automated labeling drawer.
+
+3. Select the Agent you want to use from the dropdown.
+
+4. Click **Trigger agent** to trigger the Agent and call the API endpoint. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/trigger-agent.png" width="500" />
+</div>
+
+<Tip>
+Alternatively:
+1. Right-click the editor canvas.
+2. Click **Trigger agent**.
+3. Select the agent you want to run.
+</Tip>

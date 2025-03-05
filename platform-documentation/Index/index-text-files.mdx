@@ -1,0 +1,108 @@
+---
+title: "Text & HTML Files"
+---
+
+Text files include formats such as `.txt`, `.md`, `.rst`, `.xml`, `.html`, `.json`, and more. However, HTML files are categorized slightly differently from other text file types in Encord. 
+
+## Import HTML
+
+HTML files can be imported [locally](/platform-documentation/Index/add-files/index-upload-local-data), or from a [private cloud server using a JSON file](/platform-documentation/Index/add-files/index-register-cloud-data#text). 
+
+When importing HTML pages, we recommend using the single-file extension format, which includes all elements necessary to render the page fully, such as CSS and JavaScript. This method ensures that all resources are bundled together, allowing the HTML page to display in the **Index** just as it would when hosted online.
+
+<Info>
+Importing as a single extension makes the page more visually appeasing in both Index and Annotate.
+</Info>
+
+Here is a comparison of the same HTML page in Index, imported as a raw file and as a single extension.
+
+**HTML - Raw**
+
+![HTML Raw](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-html-raw.gif)
+
+**HTML - Single Extension**
+
+![HTML Single Extension](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-html-single-extension.gif)
+
+## Import Text
+
+HTML files can be imported [locally](/platform-documentation/Index/add-files/index-upload-local-data), or registered from a [private cloud server using a JSON file](/platform-documentation/Index/add-files/index-register-cloud-data#text). 
+
+{/*
+
+## Transcription for Document Files
+
+First update the custom metadata schema to include a `text` (formally `long_string`) data type for your transcripts. Then register data with the appropriately named metadata field. When you display that field, using the _Display_ control section of the app, a resizable text field displays, so transcripts can be previewed directly under the relevant audio waveform.
+
+![Transcripts](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/document-transcripts.gif)
+
+### Step 1: Add Transcript Key to Schema
+
+Before adding transcripts to your audio files, make sure you add a transcript key with `long_string` specified as the type to your custom metadata schema.
+
+```python Add Transcript Key to Schema
+# Import dependencies
+from encord import EncordUserClient
+
+SSH_PATH = "<file-path-to-ssh-key>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH
+)
+
+# Retrieve the current client metadata schema
+current_schema = user_client.get_client_metadata_schema()
+
+# Define the new metadata to append
+new_metadata = {'<my-transcript>': 'long_string'}
+
+# Update the current schema with the new metadata
+updated_schema = {**current_schema, **new_metadata}
+
+# Set the updated client metadata schema
+user_client.set_client_metadata_schema_from_dict(updated_schema)
+
+# Optionally, print the updated schema to verify the changes
+print(updated_schema)
+```
+
+### Step 2: Import Transcript
+
+After updating your custom metadata schema, you can import your transcripts to your audio files.
+
+```python Import your Transcript
+
+from encord import EncordUserClient
+
+# Authentication
+SSH_PATH = "<file-path-to-ssh-key>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+# Define a dictionary with item UUIDs and their respective metadata updates
+updates = {
+    "<data-unit-id-1>": {"transcript-latin": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+    "<data-unit-id-1>": {"transcript-en-us": "It is important to take care of the patient, to be followed by the patient, but it will happen at such a time that there is a lot of work and pain. For to come to the smallest detail, no one should practice any kind of work unless he derives some benefit from it. Do not be angry with the pain in the reprimand in the pleasure he wants to be a hair from the pain in the hope that there is no breeding. Unless they are blinded by lust, they do not come forth; they are in fault who abandon their duties and soften their hearts, that is, their labors.
+"},
+    "<data-unit-id-2>": {"transcript-en-gb": "To be, or not to be, that is the question."},
+    "<data-unit-id-3>": {"transcript-en-ca": "You won't hear this from any 1935 comic."}
+}
+
+# Use the Bundle context manager
+with Bundle() as bundle:
+    # Update the storage items based on the dictionary
+    for item_uuid, metadata_update in updates.items():
+        item = user_client.get_storage_item(item_uuid=item_uuid)
+
+        # Make a copy of the current metadata and update it with the new metadata
+        curr_metadata = item.client_metadata.copy()
+        curr_metadata.update(metadata_update)
+
+        # Update the item with the new metadata and bundle
+        item.update(client_metadata=curr_metadata, bundle=bundle)
+```
+*/}

@@ -1,0 +1,261 @@
+---
+title: "Working with Ontologies (API)"
+slug: "annotate-api-ontologies"
+metadata: 
+  title: "Working with Ontologies (API)"
+  description: "Seamless Ontology management with Encord API: Enhance data structure, annotation workflows, and project efficiency."
+  image: 
+    0: "https://files.readme.io/e9180c3-image_16.png"
+---
+
+## Fetching existing Ontologies
+
+You can get basic information about all your available ontologies.
+
+```js
+const crypto = require('crypto');
+const sshpk = require('sshpk');
+
+const generateAuthHeader = (data, privateKey) => {
+    const pkParsed = sshpk.parsePrivateKey(privateKey, 'openssh');
+    const hashedData = crypto.createHash('sha256').update(data).digest();
+    const s = pkParsed.createSign('sha512');
+    s.update(hashedData);
+    const signature = s.sign();
+    const publicKey = pkParsed.toPublic();
+    const pkData = publicKey.parts[0].data;
+    const pkDataString = pkData.toString('hex');
+    return `${pkDataString}:${signature.parts[0].data.toString('hex')}`;
+};
+
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "ontologywithuserrole",
+    "query_method":"GET",
+    "values": {
+      "uid": null,
+      "payload": {
+          "filter": {
+            // All filters are optional and can be omitted if not used
+            "title_eq": "Encord",  // exact string match of the title
+            "title_like": "En%rd",  // SQL-like string string match of the title
+            "desc_eq": "Encord",  // exact string match of the description
+            "desc_like": "En%rd",  // SQL-like string match of the description
+            "created_before": "2023-09-09 00:00:00.000000",  // str datetime in ISO format (YYYY-MM-DD HH:MM:SS.mmmmmm)
+            "created_after": "2023-09-09 00:00:00.000000",  // str datetime in ISO format (YYYY-MM-DD HH:MM:SS.mmmmmm)
+            "edited_before": "2023-09-09 00:00:00.000000",  // str datetime in ISO format (YYYY-MM-DD HH:MM:SS.mmmmmm)
+            "edited_after": "2023-09-09 00:00:00.000000",  // str datetime in ISO format (YYYY-MM-DD HH:MM:SS.mmmmmm)
+          }
+      }
+    }
+  });
+
+var config = {
+  method: 'post',
+  url: 'https://api.encord.com/public/user',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': generateAuthHeader(data, '<private_key>'),
+    'Accept': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+```curl
+curl --location --request POST 'https://api.encord.com/public/user' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: <auth_header>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "ontologywithuserrole",
+    "query_method":"GET",
+    "values": {
+      "uid": null,
+      "payload": {
+          "filter": {
+            "title_eq": "Encord",
+            "title_like": "En%rd",
+            "desc_eq": "Encord",
+            "desc_like": "En%rd",
+            "created_before": "2023-09-09 00:00:00.000000",
+            "created_after": "2023-09-09 00:00:00.000000",
+            "edited_before": "2023-09-09 00:00:00.000000",
+            "edited_after": "2023-09-09 00:00:00.000000",
+          }
+      }
+    }
+  }
+```
+
+---
+
+## Getting in depth Ontology data
+
+To fetch details about a specific ontology, use the below request:
+
+
+```js
+const crypto = require('crypto');
+const sshpk = require('sshpk');
+
+const generateAuthHeader = (data, privateKey) => {
+    const pkParsed = sshpk.parsePrivateKey(privateKey, 'openssh');
+    const hashedData = crypto.createHash('sha256').update(data).digest();
+    const s = pkParsed.createSign('sha512');
+    s.update(hashedData);
+    const signature = s.sign();
+    const publicKey = pkParsed.toPublic();
+    const pkData = publicKey.parts[0].data;
+    const pkDataString = pkData.toString('hex');
+    return `${pkDataString}:${signature.parts[0].data.toString('hex')}`;
+};
+
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "ontology",
+    "query_method":"GET",
+    "values": {
+      "uid": "<ontology_hash>",
+      "payload": null,
+    }
+  });
+
+var config = {
+    method: 'post',
+    url: 'https://api.encord.com/public',
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept-Encoding': 'gzip',
+        'ResourceID': '\<ontology_hash>',
+        'ResourceType': 'ontology',
+        'Authorization': generateAuthHeader(data, 'Private key'), 
+        'Accept': 'application/json'
+    },
+    data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+```curl
+curl --location --request POST 'https://api.encord.com/public' \
+--header 'Content-Type: application/json' \
+--header 'ResourceID: <ontology hash>' \
+--header 'ResourceType: ontology' \
+--header 'Accept-Encoding: gzip' \
+--header 'Authorization: <auth_header>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "ontology",
+    "query_method":"GET",
+    "values": {
+      "uid": \<ontology_hash>,
+      "payload": null
+    }
+  }
+}'
+
+```
+
+## Creating an Ontology
+
+We recommend first creating an Ontology in the UI, and inspecting the structure using the fetch ontology api.
+
+<Note>Ontologies can't be deleted via the SDK or the API, as this is a significant and irreversible operation. Please use our web-app to delete ontologies. </Note>
+
+```js
+const crypto = require('crypto');
+const sshpk = require('sshpk');
+
+const generateAuthHeader = (data, privateKey) => {
+    const pkParsed = sshpk.parsePrivateKey(privateKey, 'openssh');
+    const hashedData = crypto.createHash('sha256').update(data).digest();
+    const s = pkParsed.createSign('sha512');
+    s.update(hashedData);
+    const signature = s.sign();
+    const publicKey = pkParsed.toPublic();
+    const pkData = publicKey.parts[0].data;
+    const pkDataString = pkData.toString('hex');
+    return `${pkDataString}:${signature.parts[0].data.toString('hex')}`;
+};
+
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "ontology",
+    "query_method":"POST",
+    "values": {
+      "uid": null,
+      "payload": {
+          "title": "<ontology_title>",
+          "description": "<ontology_description>",
+          "editor": {}, // You can specify an arbitrary valid ontology structure here. 
+      }
+    }
+  });
+
+var config = {
+  method: 'post',
+  url: 'https://api.encord.com/public/user',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': generateAuthHeader(data, '<Private key>'),
+    'Accept': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+```curlbash
+curl --location --request POST 'https://api.encord.com/public/user' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: <auth_header>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "ontology",
+    "query_method": "POST",
+    "values": {
+      "uid": null,
+      "payload": {
+          "title": "<ontology_title>",
+          "description": "<ontology_description>",
+          "editor": {}, 
+      }
+      }
+    }'
+```
+
+## Copy an Ontology
+
+To copy an Ontology into a new one, it is best to:
+
+1. Get the ontology.
+2. Copy the "editor" structure.
+3. Create a new ontology with the pasted "editor".
+
+This will allow you to change the Ontology for one Project.

@@ -1,0 +1,634 @@
+---
+title: "Setting Up Audio Annotation Workloads for Direct Comparison (RLHF) "
+---
+
+Encord’s multimodal platform and configurable label editor make it possible to support data curation and annotation workloads on various types of media, and in various annotation configurations. Follow the end to end walkthrough below to learn how to setup an Audio annotation workload where each task allows you to directly compare two audio files. This could be applicable for example when rating two audio files against each other, or in RLHF flows.
+
+## STEP 1: Create Metadata Schema
+
+The schema organizes your custom metadata. Encord supports:
+
+- Scalars: Methods for filtering and specifying data for custom Label Editor layouts.
+- Enums: Methods with options for filtering.
+- Embeddings: Method for embedding plot visualization, similarity search, and natural language search.
+
+### Custom metadata
+
+Custom metadata can store any information which is not the data itself in a key-value format. Custom metadata is often used to describe information useful in curation and management at scale. Encord also uses metadata to create annotation specific layouts in the editor. You set up both using a metadata schema.
+
+<Tip>To handle your custom metadata schema across multiple teams within the same Organization, we recommend using namespacing for metadata keys in the schema. This ensures that different teams can define and manage their own metadata schema without conflicts. For example, team A could use `video.description`, while team B could use `audio.description`. Another example could be `TeamName.MetadataKey`. This approach maintains clarity and avoids key collisions across departments.</Tip>
+
+### Metadata schema table
+
+<Tip>Metadata Schema keys support letters (a-z, A-Z), numbers (0-9), and blank spaces ( ), hyphens (-), underscores (_), and periods (.). Metadata schema keys are case sensitive.</Tip>
+
+Use `add_scalar` to add a scalar key to your metadata schema.
+
+| Scalar Key    | Description                                                                               | Display Benefits                                         |
+|---------------|-------------------------------------------------------------------------------------------|----------------------------------------------------------|
+| boolean       | Binary data type with values "true" or "false".                                           | Filtering by binary values                               |
+| datetime      | ISO 8601 formatted date and time.                                                         | Filtering by time and date                               |
+| number        | Numeric data type supporting float values.                                                | Filtering by numeric values                              |
+| uuid        | UUIDv4 formatted unique identifier for a data unit.                                     | Filtering by customer specified unique identifier        | 
+| varchar       | Textual data type. Formally `string`. `string` can be used as an alias for `varchar`, but we STRONGLY RECOMMEND that you use `varchar`.              | **Displaying data correctly in custom Label Editor layouts** and filtering by string. |
+| text          | Text data with unlimited length (example: transcripts for audio). Formally `long_string`. `long_string` can be used as an alias for `text`, but we STRONGLY RECOMMEND that you use `text`. | Storing and filtering large amounts of text. |
+
+Use `add_enum` and `add_enum_options` to add an enum and enum options to your metadata schema.
+
+| Key    | Description                                                                               | Display Benefits                                         |
+|-----------------------|----------------------------------------------------------------------------|----------------------------------------------------------|
+| enum                  | Enumerated type with predefined set of values.                             | Facilitates categorical filtering and data validation    |
+
+Use `add_embedding` to add an embedding to your metadata schema.
+
+| Key    | Description                                                                               | Display Benefits                                         |
+|-----------------------|----------------------------------------------------------------------------|----------------------------------------------------------|
+| embedding             | 1 to 4096 for Index. 1 to 2000 for Active                | Filtering by embeddings, similarity search, 2D scatter plot visualization (Coming Soon) |
+
+<Warning>
+Incorrectly specifying a data type in the schema can cause errors when filtering your data in Index or Active. If you encounter errors while filtering, verify your schema is correct. If your schema has errors, correct the errors, re-import the schema, and then re-sync your Active Project.
+</Warning>
+
+### Import your metadata schema to Encord
+
+<CodeGroup>
+
+```python Import schema template
+
+# Import dependencies
+from encord import EncordUserClient
+from encord.metadata_schema import MetadataSchema
+
+SSH_PATH = "<file-path-to-ssh-private-key>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH
+)
+
+# Create the schema
+metadata_schema = user_client.metadata_schema()
+
+# Add display parameters for data appearing in custom editor layouts
+metadata_schema.add_scalar("encord-layout-group", data_type="varchar")
+metadata_schema.add_scalar("encord-editor-grid-position", data_type="varchar")
+
+# Add various metadata fields
+metadata_schema.add_scalar("metadata_1", data_type="boolean")
+metadata_schema.add_scalar("metadata_2", data_type="datetime")
+metadata_schema.add_scalar("metadata_3", data_type="number")
+metadata_schema.add_scalar("metadata_4", data_type="uuid")
+metadata_schema.add_scalar("metadata_5", data_type="varchar")
+metadata_schema.add_scalar("metadata_6", data_type="text")
+
+# Add an enum field
+metadata_schema.add_enum("my-enum", values=["enum-value-01", "enum-value-02", "enum-value-03"])
+
+# Add embedding fields
+metadata_schema.add_embedding('my-test-active-embedding', size=512)
+metadata_schema.add_embedding('my-test-index-embedding', size=<values-from-1-to-4096>)
+
+# Save the schema
+metadata_schema.save()
+
+# Print the schema for verification
+print(metadata_schema)
+
+```
+```python Example
+
+# Import dependencies
+from encord import EncordUserClient
+from encord.metadata_schema import MetadataSchema
+
+SSH_PATH = "/Users/chris-encord/ssh-private-key.txt"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH
+)
+
+# Create the schema
+metadata_schema = user_client.metadata_schema()
+
+# Add display parameters for data appearing in custom editor layouts
+metadata_schema.add_scalar("encord-layout-group", data_type="varchar")
+metadata_schema.add_scalar("encord-editor-grid-position", data_type="varchar")
+
+# Add various metadata fields
+metadata_schema.add_scalar("G2G", data_type="boolean")
+metadata_schema.add_scalar("Date", data_type="datetime")
+metadata_schema.add_scalar("Cost", data_type="number")
+metadata_schema.add_scalar("Priority", data_type="number")
+metadata_schema.add_scalar("ID-Sys-01", data_type="uuid")
+metadata_schema.add_scalar("ID-Sys-02", data_type="uuid")
+metadata_schema.add_scalar("Description", data_type="varchar")
+metadata_schema.add_scalar("Location", data_type="varchar")
+metadata_schema.add_scalar("Translation en-gb", data_type="text")
+metadata_schema.add_scalar("Translation en-ca", data_type="text")
+metadata_schema.add_scalar("Translation en-us", data_type="text")
+metadata_schema.add_scalar("Translation zh-tw", data_type="text")
+metadata_schema.add_scalar("Translation zh-hk", data_type="text")
+metadata_schema.add_scalar("Translation zh-cn", data_type="text")
+
+# Add an enum field
+metadata_schema.add_enum("Ready", values=["ripe", "partially-ripe", "unripe"])
+metadata_schema.add_enum("Fruit", values=["Blueberries", "Cherries", "Apples", "Kiwi"])
+
+# Add embedding fields
+metadata_schema.add_embedding('active-embedding-01', size=512)
+metadata_schema.add_embedding('active-embedding-02', size=512)
+metadata_schema.add_embedding('index-embedding-100', size=100)
+metadata_schema.add_embedding('index-embedding-1000', size=1000)
+
+# Save the schema
+metadata_schema.save()
+
+# Print the schema for verification
+print(metadata_schema)
+
+```
+
+</CodeGroup>
+
+---
+
+## STEP 2: Create JSON for Import
+
+<Note>For a list of supported file formats for each data type, go [here](/platform-documentation/General/general-supported-data).</Note>
+
+The following is an example JSON file for uploading two audio files to Encord. Both files include `clientMetadata` to ensure they display correctly in custom Label Editor layouts. 
+
+- The `"encord-layout-group"` key determines which files are shown together — files with the same `"encord-layout-group"` value are displayed simultaneously. Both files in the example appears in the Label Editor simultaneously since they have the same `"encord-layout-group"` value.
+
+- The `"encord-editor-grid-position"` key, set to either `A` or `B`, specifies the exact position of each file within the label editor.
+
+One audio file includes `audioMetadata` and one does not.
+
+<Tip>We **strongly recommend** including `audioMetadata` with each audio file when importing your audio files at scale. Including `audioMetadata` significantly improves the import speed of data when importing data at scale. When the `audioMetadata` flag is present in the JSON file, we directly use the supplied metadata without performing any additional validation, and do not store the file on our servers. To guarantee accurate labels, it is crucial that the metadata you provide is accurate.</Tip>
+
+<CodeGroup>
+
+```json Template
+{
+  "audio": [
+    {
+      "objectUrl": "<object url_1>",
+      "clientMetadata": {"encord-editor-grid-position": "A", "encord-layout-group": "1"}
+    },
+    {
+      "objectUrl": "<object url_2>",
+      "title": "my-custom-audio-file-title.mp3",
+      "audioMetadata": {
+        "duration":  file-duration-in-seconds,
+        "file_size": file-size-in-bytes,
+        "mime_type": "MIME-type-of-the-audio-file-example-audio/mpeg",
+        "sample_rate": sample-rate-in-Hz,
+        "bit_depth": size-of-each-sample-in-bits,
+        "codec": "file-codec-example-mp3",
+        "num_channels": number-of-channels
+        },
+       "clientMetadata": {"encord-editor-grid-position": "B", "encord-layout-group": "1"}
+    }
+  ],
+  "skip_duplicate_urls": true
+}
+```
+```json Example
+{
+  "audio": [
+    {
+      "objectUrl": "https://encord-integration.s3.eu-west-2.amazonaws.com/videos/audio_file_001.mp3",
+      "title": "my-custom-audio-file-001.mp3",
+      "audioMetadata": {
+        "duration": 23.98,
+        "file_size": 2900000,
+        "mime_type": "audio/mp3",
+        "sample_rate": 44100,
+        "bit_depth": 24,
+        "codec": "mp3",
+        "num_channels": 2
+        },
+      "clientMetadata": {"encord-editor-grid-position": "A", "encord-layout-group": "1"}
+    },
+    {
+      "objectUrl": "https://encord-integration.s3.eu-west-2.amazonaws.com/videos/audio_file_002.mp3",
+      "title": "my-custom-audio-file-002.mp3",
+      "audioMetadata": {
+        "duration": 23.98,
+        "file_size": 2900000,
+        "mime_type": "audio/mp3",
+        "sample_rate": 44100,
+        "bit_depth": 24,
+        "codec": "mp3",
+        "num_channels": 2
+        },
+      "clientMetadata": {"encord-editor-grid-position": "B", "encord-layout-group": "1"}
+    }
+  ],
+  "skip_duplicate_urls": true
+}
+```
+
+</CodeGroup>
+
+---
+
+## STEP 3: Import your Audio files
+
+You can import your audio data, using the JSON file you created, using the UI or the SDK.
+
+### Import with the UI 
+
+import UploadDataCloud from '/snippets/Index/Files/UploadDataCloud.mdx';
+
+<UploadDataCloud />
+
+
+### Import with the SDK
+
+import UploadData from '/snippets/SDK/UploadData.mdx';
+
+<UploadData />
+
+---
+
+## STEP 4: Create a Dataset
+
+import CreateDataset from '/snippets/Annotate/Datasets/CreateDatasets.mdx'
+
+<CreateDataset />
+
+## STEP 5: Create an Ontology
+
+1. Click the **New ontology** button in the _Ontologies_ section to create a new Ontology.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/new-ontology.png" width="700" />
+</div>
+
+2. Give your Ontology a meaningful title and description. A clear title and description keeps your Ontologies organized. Click **Next** to continue. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/ontology-name.png" width="500" />
+</div>
+
+3. Define your Ontology structure. 
+  - Click **Add classification**
+  - Type 'Winner?'
+  - Click on **0 options** to configure options
+  - Click **Add option**
+  - Enter the word _Yes_ as an option
+  - Click **Add option**
+  - Enter the word _No_ as an option
+  - Click **Create ontology**
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/winner-ontolo-ezgif.com-crop.gif" width="600" />
+</div>
+
+
+---
+
+## STEP 6: Create a Project
+
+1. In the Encord platform, select _Projects_ under _Annotate_. 
+2. Click the **+ New annotation project** button to create a new Project.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-create-project-2.png" width="600" />
+</div>
+
+3. Give the Project a meaningful title and description.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-name-project.png" width="900" />
+</div>
+
+<Note>
+An optional [Project tags](/platform-documentation/Annotate/annotate-projects/annotate-project-settings#project-tags) drop-down is visible. Project tags are useful for categorizing and finding your Projects. Select as many tags as are relevant for your Project.
+</Note>
+
+4. Click the **Attach ontology** button. 
+
+5. Select the Ontology you created in STEP 5 and click the **Attach** button.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-add-ontology.png" width="600" />
+</div>
+
+6. Click **OK** to attach the Ontology to the Project.
+
+7. Click the **Attach datasets** button. 
+
+8. Select the Dataset you created in STEP 4 and click the **Attach** button.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-add-dataset.png" width="600" />
+</div>
+
+9. Click **OK** to attach the Dataset(s) to the Project.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-workflow.png" width="700" />
+</div>
+
+10. Ensure the default Workflow shown suits your needs. 
+
+11. Click **Create project** to finish creating the Project.
+
+<div class="flex justify-center">
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-finalise.png" width="600" />
+</div>
+
+---
+
+## STEP 7: Import Custom Layout
+
+After creating your Project, import a custom layout for the Label Editor. Start by creating a JSON file that determines the layout.
+
+### Create a JSON for the Layout
+
+<CodeGroup>
+
+```json Side by Side Layout
+{
+  "grid": [
+    [0], [1]
+  ],
+  "gridContent": {
+    "0": {
+      "client_metadata_query": {
+        "or_conditions": [
+          {
+            "key": "encord-editor-grid-position",
+            "operator": "=",
+            "value": "A"
+          },
+          {
+            "key": "encord-editor-grid-position",
+            "operator": "=",
+            "value": "B"
+          }
+        ]
+      }
+    },
+    "1": {
+      "client_metadata_query": {
+        "or_conditions": [
+          {
+            "key": "encord-editor-grid-position",
+            "operator": "=",
+            "value": "A"
+          },
+          {
+            "key": "encord-editor-grid-position",
+            "operator": "=",
+            "value": "B"
+          }
+        ]
+      }
+    }
+  },
+  "topLevelGridFilter": {
+    "client_metadata": {
+      "key": "encord-layout-group",
+      "operator": "="
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/encord-team/Annotate/main/editor-layouts/editor_layout_schema.json"
+}
+```
+```json Stacked Layout
+{
+  "grid": [
+    [0, 1]
+  ],
+  "gridContent": {
+    "0": {
+      "client_metadata_query": {
+        "or_conditions": [
+          {
+            "key": "encord-editor-grid-position",
+            "operator": "=",
+            "value": "A"
+          },
+          {
+            "key": "encord-editor-grid-position",
+            "operator": "=",
+            "value": "B"
+          }
+        ]
+      }
+    },
+    "1": {
+      "client_metadata_query": {
+        "or_conditions": [
+          {
+            "key": "encord-editor-grid-position",
+            "operator": "=",
+            "value": "A"
+          },
+          {
+            "key": "encord-editor-grid-position",
+            "operator": "=",
+            "value": "B"
+          }
+        ]
+      }
+    }
+  },
+  "topLevelGridFilter": {
+    "client_metadata": {
+      "key": "encord-layout-group",
+      "operator": "="
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/encord-team/Annotate/main/editor-layouts/editor_layout_schema.json"
+}
+```
+
+</CodeGroup>
+
+### Import the JSON
+
+1. Navigate to the Project settings.
+2. Click on _Layouts_. 
+3. Click **Upload JSON**. 
+4. Select the JSON file containing the layout you want the Label Editor to have. 
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/custom-editor-layouts.png" width="650" />
+</div>
+
+---
+
+## STEP 8: Label and Submit Audio Data
+
+More than a single file appears in the Label Editor. Switch back and forth between the files you are labeling or reviewing using the **Annotate from this tile** icon.
+
+![Annotate from this file](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-change-tiles.png)
+
+### Label Audio Files
+
+Label audio files using the Classification specified from your Ontology.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/label-audio-file.gif" width="600" alt="Merge objects into a single object" title="merge-operations" />
+</div>
+
+
+**To label audio files:**
+
+<Tip>We recommend using hotkeys to speed up and streamline your labelling process. For this example, the Classification hot keys are `2` and `Q`, but for you they might be different.</Tip>
+
+1. Go to **Project > [Your Project Title] > Queue > Annotate**.
+
+   The _Project Annotate Queue_ appears with a list of audio files for labelling.
+
+   ![Project Queue](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-label-001.png)
+
+1. Click **Initiate** next to a file from the Project Queue.
+
+   Two audio files appear in the Label Editor.
+
+2. Press `2` to select the _Winner_ Classification.
+
+   The options for the Classification appear.
+
+   ![Label audio file 1](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-label-002.png)
+
+3. Press `Q` to select _Yes_.
+
+4. Click and then drag the sections of the audio file that appears at the top of the Label Editor.
+
+5. Press `N` to save the Classifications on the audio file.
+
+6. Click the **Annotate from this tile** icon to switch to annotating the bottom audio file.
+
+   ![Annotate from this file](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-label-003.png)
+
+7. Press `Q` to select _Yes_.
+
+8. Click and then drag the sections of the audio file that appears at the top of the Label Editor.
+
+9. Press `N` to save the Classifications on the audio file.
+
+  ![Annotate from this file](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-label-004.png)
+
+10. Click **Submit**.
+
+    The next set of audio files for annotation appears.
+
+---
+
+## STEP 9: Review Audio Data
+
+Approving tasks moves the tasks to the next stage in a workflow. In this example, that is _Complete_.
+
+Rejecting tasks sends the tasks back to the first stage in a workflow. In this example, that is _Annotate_.
+
+### Approve
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/approve-tasks.gif" width="600" alt="Merge objects into a single object" title="merge-operations" />
+</div>
+
+**To approve labels on audio files:**
+
+1. Go to **Project > [Your Project Title] > Queue > Review**.
+
+   The _Project Review Queue_ appears with a list of audio files for labelling.
+
+   ![Project Queue](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-001.png)
+
+1. Click **Initiate** next to a file from the Project Queue.
+
+   Two audio files appear in the Label Editor.
+
+   ![Review labels](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-002.png)
+
+2. Expand the _Winner_ Classification.
+
+   The options for the Classification appear.
+
+3. Select the Classifications applied to the audio file.
+
+4. Press `N` to approve the Classifications on the audio file.
+
+5. Press the **Review from this file** icon.
+
+   ![Project Queue](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-003.png).
+
+6. Expand the _Winner_ Classification.
+
+   The options for the Classification appear.
+
+   ![Project Queue](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-004.png).
+
+7. Select the Classifications applied to the audio file.
+
+8. Press `N` to approve the Classifications on the audio file.
+
+9. Click **Approve task** to move the task to the next stage.
+
+   ![Project Queue](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-005.png).
+
+   In this example, that is the **Complete** stage.
+
+   ![Project Queue](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-complete-001.png).
+
+
+### Reject
+
+**To reject labels on audio files:**
+
+1. Go to **Project > [Your Project Title] > Queue > Review**.
+
+   The _Project Review Queue_ appears with a list of audio files for labelling.
+
+   ![Reject task](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-001.png)
+
+1. Click **Initiate** next to a file from the Project Queue.
+
+   Two audio files appear in the Label Editor.
+
+   ![Reject task](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-reject-002.png)
+
+2. Expand the _Winner_ Classification.
+
+   The options for the Classification appear.
+
+3. Select the Classifications applied to the audio file.
+
+4. Press `B` to reject the Classifications on the audio file.
+
+   A dialog appears.
+
+5. Provide a reason for rejecting the Classification.
+
+6. Press the **Review from this file** icon.
+
+   ![Reject task](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-reject-003.png).
+
+6. Expand the _Winner_ Classification.
+
+   The options for the Classification appear.
+
+   ![Reject task](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-reject-004.png).
+
+7. Select the Classifications applied to the audio file.
+
+8. Press `B` to reject the Classifications on the audio file.
+
+9. Click **Reject task** to reject the tasks.
+
+  ![Reject task](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-reject-005.png).
+
+   Both tasks then appear in the **Annotate** stage.
+
+### Complete
+
+Files in the _Complete_ stage can be reopened.
+
+   ![Complete](https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-complete-001.png).

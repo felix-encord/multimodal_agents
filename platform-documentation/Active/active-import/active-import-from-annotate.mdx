@@ -1,0 +1,177 @@
+---
+title: "Import Project from Annotate"
+slug: "active-import-from-annotate"
+hidden: false
+metadata: 
+  title: "Import Project from Annotate"
+  description: "Import Annotate Projects to Active to improve your workflows."
+category: "6480a3981ed49107a7c6be36"
+---
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '47.5%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/8f00b8478c49440e9ff4c9c7488b371a?sid=ff97c399-4324-43eb-a825-321f43835cf3"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+Creating a Project in Annotate is a good place to start using Active. From Annotate you can configure the Dataset, Ontology, and workflow for your Project. Once that is done, move to Active to provide a streamlined dataset for your annotators.
+
+<Info>We strongly recommend only importing Annotate Projects that use Workflows. The current feature set in Active is optimized to work with Annotate Projects that use Workflows. While Annotate Projects that use Manual QA can be imported into Active, there are a number of features that Manual QA projects do not support.</Info>
+
+<Info>
+Active supports analysis (Advanced Metrics and Embeddings) on images and videos up to 4K resolution. Performance is affected for images and videos over 4K.
+
+For optimal performance, we strongly recommend downscaling images and videos over 4K to 4K resolution.
+</Info>
+
+## Data Import Behavior
+
+Active imports your data in stages. This allows you to start working with your data as quickly as possible without delay. Active imports data in the following stages:
+
+| Stage   | Import                      | Description                                                                                                                                                                        |
+| :------ | :-------------------------- |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | Data import                 | All images/video frames and all Metadata. This takes just a few minutes.                                                                                                           |
+| 2 | Label import                | All labels/annotations (instance and frame level) on the images/video frames. Label import time depends on the number of labels for import.                                        |
+| 3 | Metric calculation          | Calculations to unlock filtering and sorting by all quality metrics, and Overview shortcuts.                                                                                       |
+| 4 | Embedding calculation       | Calculations to unlock Embeddings and similarity search.                                                                                                                           |
+| 5 | Advanced metric calculation | Calculations to unlock embedding reductions (view and filter) and the more complex metrics.                                                                                        |
+
+
+## Import an Annotate Project
+
+**To import an Annotate Project:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Create a Project ([Annotation Project](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects) or [Training Project](/platform-documentation/Annotate/annotate-projects/annotate-training-projects)) in Encord Annotate.
+
+3. Click **Active** from the main menu.
+   The landing page for Active appears.
+
+   ![Import Annotate Project](https://storage.googleapis.com/docs-media.encord.com/static/img/active/import-project-step01.gif)
+   
+4. Click the **Import Annotate Project** button.
+   The _Select an Annotation Project_ dialog appears.
+
+5. Click the **Select** button for the Annotate project you want to import.
+
+   The _Import an Annotate Project_ modal appears.
+
+6. Specify the **Sample rate** (in FPS) for the import of videos.
+
+    <Note>	> If you do not specify a value then the entire video imports, without modification to the FPS of the video.</Note>
+
+7. Click **Proceed** to select the import stage for the Project.
+
+8. Click the Project to monitor the status of the import.
+   The landing page for the Project appears with the _Explorer_ tab selected and displaying the stage of the import.
+ 
+   ![Import stages progress](https://storage.googleapis.com/docs-media.encord.com/static/img/active/import-project-check-import.gif)
+
+Once all five stages of the import complete, you are ready to [filter, sort, and search data/labels](/platform-documentation/Active/active-basics/active-filtering), [create collections](/platform-documentation/Active/active-basics/active-collections) and optimize your model performance.
+
+## Next Steps
+
+### Data Cleansing/Curation and Label Correction/Validation
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Div</title>
+  </head>
+  <div className="container">
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-create-collections"
+    >
+      2. Create Collection
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-send-collection-to-annotate"
+    >
+      3. Send to Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-sync-with-annotate"
+    >
+      4. Sync with Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-update-collections"
+    >
+      5. Update Collection
+    </a>
+  </div>
+</div>
+
+
+### Model and Prediction Validation
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Div</title>
+  </head>
+  <div className="container">
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-import-model-predictions-cloud"
+    >
+      2. Import Predictions
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-model-predictions-eval"
+    >
+      3. Prediction Metrics
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-create-collections"
+    >
+      4. Create Collection
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-send-collection-to-annotate"
+    >
+      5. Send to Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-sync-with-annotate"
+    >
+      6. Sync with Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-update-collections"
+    >
+      7. Update Collection
+    </a>
+  </div>
+</div>
+

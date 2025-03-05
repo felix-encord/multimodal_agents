@@ -1,0 +1,546 @@
+---
+title: "Workflows and Templates"
+slug: "annotate-workflows-and-templates"
+hidden: false
+metadata: 
+  title: "Workflows and templates"
+  description: "Learn how to create and customize new Workflows and templates"
+  image: 
+    0: "https://files.readme.io/13dbb5f-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+## Workflows
+
+_Workflows_ are a powerful tool to design and build your Projects - letting you control how tasks move through different stages of the Project, and determining how different stages interact with one another.
+
+On this page you can find: 
+
+- [A step-by-step tutorial on setting up and configuring a Workflow](#creating-workflows).
+- [An explanation of all Workflow composer components](#workflow-composer-components).
+- [An explanation of all Workflow library components](#workflow-library-components).
+- [A guide to Managing Collaborators](#managing-collaborators)
+- [A guide to Workflow Templates](#templates)
+
+***
+
+### Creating workflows
+
+<Note>Workflows are created when [creating new annotation Projects](/platform-documentation/Annotate/annotate-projects/annotate-create-projects), and when creating [Workflow templates](#templates).</Note>
+
+
+***
+
+### Workflow composer components
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-dashboard.png" width="900" />
+</div>
+
+- **A.** **Manage Collaborators** allows you to seamlessly add users to your project as collaborators, which can be added to different stages of the workflow. 
+
+- **B.** The _Workflow library_ contains all the components that make up a project. Drag the cards from the workflow library onto the workflow canvas (C) to build the stages a workflow should pass through. Some cards can be used more than once to create complex workflows. The configuration details for each component can be found in the [Workflow library components section](#workflow-library-components) below.
+
+- **C.** The _Workflow canvas_ is the canvas on which you design your workflow, by connecting cards from the _workflow library_. Set up the stages you'd like your workflow to pass through from left to right, and connect them to suit your needs. Click and drag the canvas to move it. 
+
+- **D.** Zoom in and out of the _Workflow canvas_ for convenience. Large workflow designs will require you to zoom out to see the whole picture. The zoom icon focuses in on your workflow. 
+
+- **E.** Create the Project, or return to the previous step of the project creation process. Click **Create Project** to complete the creation process.
+
+<Warning>Currently, connections between nodes on the canvas can't be edited within a project after its creation. However, workflow templates can be edited and configured even when attached to ongoing projects. [Click here](/platform-documentation/Annotate/annotate-projects/annotate-workflows-and-templates#editing-existing-templates).</Warning>
+
+***
+
+### Workflow library components
+
+This section contains details for all _Workflow library_ components. 
+
+<Tip>To add library components to the canvas, click the **Add stage** button and then drag-and-drop the components onto the canvas.</Tip>
+
+***
+
+#### Start
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-start-component.png" width="60" />
+</div>
+
+**Start** represents the beginning an annotation task through your Workflow, and can therefore only be used once in a Project. It must have a connector linking it to the next stage. It displays the [Datasets](/platform-documentation/Annotate/annotate-datasets/annotate-datasets) connected to the Project, and the selected [ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies).
+
+***
+
+#### Annotate
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-annotate-component.png" width="60" />
+</div>
+
+**Annotate** represents an annotation stage, during which a group of annotators adds labels to tasks assigned to them.
+
+Click an **Annotate** card on the canvas to edit. Click **x** next to the name to exit edit mode.
+
+Click the _Edit_ icon to edit the name of the annotation stage.
+
+<Tip> 
+Annotation instructions can be added in the Project's _Settings_ after the Project is created.
+</Tip>
+
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-annotate-card-2.png" width="200" />
+</div>
+
+The stage will contain all available annotators selected by default. Specific annotators can be selected by clicking the **Annotate** component, and choosing the **Selective** tab seen above. Type the email address of a user you'd like to add and select them from the list. Only collaborators that have been added via [Manage collaborators](#managing-collaborators) on the Project level will be available. Click **Add** to confirm the selection. 
+
+<Note>Only collaborators with the _Annotator_ or the _Annotator & Reviewer_ roles are available for selection. All Admins and Team Managers will be part of all annotation stages and therefore can't be added, or removed.</Note>
+
+A Webhook can optionally be added to an annotation stage to send out notifications whenever a task is submitted. Click the _Edit_ icon next to _Webhook_ and add the URL of the server you would like to receive notifications on.
+
+***
+
+#### Routers
+
+A **Router** splits the path that _annotate_ and _review_ tasks take through the workflow. Two different types of router are available: 
+
+- [Percentage router](#percentage-router).
+- [Collaborator router](#collaborator-router).
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/fb031c32fb8d41c2ad65ab4d594b226e?sid=86b1fe1a-2bf9-47ef-98ec-8473f8f8b5ad"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+#### Percentage router
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/percentage-router-icon.png" width="200" />
+</div>
+
+Pathways that data units take through the Workflow can be split according to a certain percentage of annotation tasks. For example, 50% of tasks get sent to _review stage A_, while the other 50% of tasks get sent to _review stage B_, splitting the workload between two different groups of reviewers.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-percentage-router.png" width="500" />
+</div>
+
+Once the router selects a route for a given task, it will be routed the same way until the routing percentages are updated. This means that if a task passes through a percentage router and is routed to _review stage A_ on its first pass, it will be routed to _review stage A_ on each consecutive pass.
+
+<Note>Routing percentages can be changed after Project creation. Changing routing percentages resets the percentage router, and may alter the pathway taken by a given task. </Note>
+
+#### Collaborator router
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/collaborator-router-icon.png" width="200" />
+</div>
+
+Determine the paths that data units take through your workflow based on users. For example, if _user A_ completes a task it gets sent to be reviewed by _review stage A_, while a task completed by _user B_ gets reviewed in _review stage B_. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-collaborator-router.png" width="500" />
+</div>
+
+The _Or else_ option accounts for all collaborators not explicitly added to the router. In the image above they will be directed to _review stage C_.
+
+1. Click **Add pathway** to select a subset of collaborators that will make up a pathway - only collaborators present in the previous stage can be selected. There is no limit on the amount of pathways you can create.
+
+2. Click **Add** to finish a pathway. 
+
+<Note>Collaborators can only be added to the **Router** after an input is connected.</Note>
+
+***
+
+#### Review
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-review-component.png" width="300" />
+</div>
+
+**Review** represents a review stage where tasks labeled in an annotation stage are reviewed. 
+
+<Note>To attach the _Rejected_ node of the review stage to another review stage, contact [support@encord.com](mailto:support@encord.com)</Note>
+
+Click a **Review** card that has been added to the canvas to edit. Click **x** next to the name to exit edit mode.
+
+Click the _Edit_ icon to edit the name of the review stage. This is particularly useful when your Project has multiple review stages. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflow-review-card.png" width="200" />
+</div>
+
+The stage contains all available reviewers selected by default. Specific reviewers can be selected by clicking the **Review** component, and choosing the **Selective** tab seen above. Type the email address of a user you'd like to add and select them from the list. Only collaborators that have been added to the [Workflow](#managing-collaborators) or the [Project](/platform-documentation/Annotate/annotate-projects/annotate-project-settings#manage-project-collaborators). Click **Add** to confirm the selection.
+
+<Note>Only collaborators with the _Reviewer_ and _Annotator & Reviewer_ roles are available for selection. All Admins and Team Managers are part of all review stages and cannot be removed.</Note>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-review-add-users.png" width="300" />
+</div>
+
+#### Strict review
+
+<Note>Strict review is enabled by default, but can be disabled under _Advanced settings_.</Note>
+
+_Strict review_ ensures that crucial details are not overlooked during a review stage. Strict review aids in assuring higher accuracy when reviewing annotations. 
+
+_Strict review_ stages do not auto-advance to the next review task after [bulk approving or rejecting](/platform-documentation/Annotate/annotate-label-editor#approve-and-reject-all-in-frame-buttons) labels. Reviewers can make adjustments to their review, and add comments when rejecting tasks with missing annotations.
+
+<AccordionGroup>
+   <Accordion title=" Video Tutorial - Strict review & change review judgement ">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/d73f4ca0765b411997658edec2e72ebc?sid=b5e9ab94-a07e-410c-9377-d7b809d83d3f"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/strict-review-2.png" width="300" />
+</div>
+
+#### User assignment restriction
+
+The _User assignment restriction_ feature prevents team members working on tasks in the current stage that they have done in previous stages. This can prevent individuals with the _Annotator & Reviewer_ role from being assigned their own annotations to review. 
+
+This feature does not apply to users with the _Admin_ or _Team Manager_ roles, since they are added to each stage by default and cannot be removed.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/annotate-user-restriction.png" width="200" />
+</div>
+
+Enable the toggle to implement _User assignment restriction_.
+
+***
+
+#### Agent
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/agentnode-2.png" width="300" />
+</div>
+
+The **Agent** component represents a Task Agent. It triggers a custom operation each time a task passes through the Agent stage. The exact operation being triggered is configured using the Encord SDK. 
+
+
+{/*
+You can add a [Webhook](/platform-documentation/Annotate/annotate-webhooks-notifications) to this stage to receive notifications whenever a task arrives at the **Agent** stage. Click the Edit icon next to _Webhook_ and add the URL of the server you want to receive notifications on.
+\*/}
+
+
+To fully connect an Agent to other Workflow components you must add pathways that allow you to create connections from the Agent stage to other components. To add a pathway, click **+** next to _Add pathway_ and give the pathway a meaningful name. Repeat this step for each additional pathway you want to add. 
+
+<Tip>Learn more about Task Agents in our [Task Agent section](/platform-documentation/Annotate/automated-labeling/annotate-task-agents)</Tip>
+
+***
+
+#### Complete
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-complete-component.png" width="60" />
+</div>
+
+**Complete** represents the stage of a Project at which a task is marked as complete, and can therefore only be used once per project.
+
+Having passed though your Workflow, it was deemed to be acceptable data for the training of machine learning algorithms. Complete tasks can still be accessed by admins.
+
+Optionally, add a [Webhook](/platform-documentation/Annotate/annotate-webhooks-notifications) to this stage to receive notifications whenever a task arrives at the **Complete** stage.Click the Edit icon next to 'Webhook' and add the URL of the server you would like to receive notifications on.
+
+
+import FinalStageReopen from '/snippets/FinalStageReopen.mdx';
+
+<FinalStageReopen />
+
+---
+
+### Managing collaborators
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/72ce166e6ab04353bb029a37bd28a551?sid=4812f248-9fe6-4b6a-a61e-0211192859ea"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+---
+
+
+#### User permissions
+
+| Permission                     | Admin | Team Manager | Reviewer    | Annotator     | Annotator & Reviewer |
+| ------------------------------ | ----- | ------------ | ----------- | ------------- | -------------------- |
+| Attach / Detach datasets       | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Attach / Switch ontology       | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Delete                         | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Invite team members            | ✅     | ✅            | ❌           | ❌             | ❌                    |
+| Manage team permissions        | ✅     | ✅            | ❌           | ❌             | ❌                    |
+| Manage admins                  | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Annotate & review tasks        | ✅     | ✅            | Review only | Annotate only | ✅                    |
+| Confirm annotations            | ✅     | ✅            | ❌           | ❌             | ❌                    |
+| Control assignments and status | ✅     | ✅            | ❌           | ❌             | ❌                    |
+
+#### Project level collaborators
+
+Click the **Manage Collaborators** button, as shown in the [Managing collaborators](/platform-documentation/Annotate/annotate-projects/annotate-workflows-and-templates#managing-collaborators) section. 
+
+- Add collaborators and select their roles in the _Add_ tab.
+- Remove and manage collaborators in the _Manage_ tab.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-manage-collaborators.png" width="500" />
+</div>
+
+#### Workflow stage level collaborators
+
+Collaborators can be added to a workflow stage by clicking **+** on a card that has been added to the workflow canvas.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/add-annotator-workflows.png" width="200" />
+</div>
+
+ Learn how to add collaborators to different stages of a Project by visiting the relevant sections in this document:
+
+- [**Annotate**](#annotate) collaborators.
+- [**Review**](#review) collaborators. 
+- Collaborator type [**Router**](#routers).
+
+If no collaborators are specified at a given stage, all users with permissions are added by default. 
+
+For example, if no collaborators are specified at an **Annotate** stage then all collaborators with the following roles will be added by default: 
+
+- Annotator
+- Annotator & Reviewer
+- Team Manager
+- Admin
+
+---
+
+## Templates
+
+Tired of creating the same workflow over and over again? Try creating templates of your most commonly used workflows - and [use these to create annotation Projects](/platform-documentation/Annotate/annotate-projects/annotate-workflows-and-templates#creating-annotation-projects-from-templates)!
+
+<AccordionGroup>
+   <Accordion title="Video tutorial - Creating workflow templates">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/dc0152c0cb8f481dac51c3a7eb1c5a0f?sid=f48a872a-f81f-4522-a904-199a9d306c40"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+### Creating templates
+
+There are two ways of creating a workflow template: 
+- In the _Workflows_ section. 
+- While creating a new annotation project.
+
+#### Creating templates in the _Workflows_ section
+
+Select _Workflow templates_ from the _Annotate_ section of the sidebar in the Encord platform, and click the **+ New workflow template** button. Previously created templates are visible here, and can be [edited](#edit-templates) when selected.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/new-workflow-template-2.png" width="700" />
+</div>
+
+Create and configure your Workflow template, then click the **Create workflow template** button when you are done. To learn how to create and configure Workflows, see our documentation [here](#creating-workflows).
+
+The **Create workflow template** button is greyed out until:
+- The nodes in your template have been connected.
+- The workflow contains a **_Complete_** stage. 
+- The template has been given a title.
+
+#### Creating templates during Project creation
+
+New templates can be created during the [creation of a new annotation Project](/platform-documentation/Annotate/annotate-projects/annotate-create-projects). 
+
+Once a Workflow has been created, click the **Save as template** button to save the Workflow as a template. 
+
+<div class="flex justify-center">
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/save-as-new-template.png" width="200" />
+</div>
+
+### Edit templates
+
+You can edit Workflow templates after they have been created.
+
+1. Navigate to _Workflow templates_ under _Annotation_. 
+2. Click the name of the template you want to edit.
+
+<div class="flex justify-center">
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflow-templates-screen.png" width="700" />
+</div>
+
+Click the **Edit** button, as highlighted in the image below. 
+
+<Note>You can not edit the start nodes.</Note>
+
+<div class="flex justify-center">
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/edit-template-button.png" width="700" />
+</div>
+
+Once you have made all desired edits, click the **Save template changes** button. 
+
+The **Save template changes** button will be greyed out until: 
+- The nodes in your template have been connected.
+- The workflow contains a **_Complete_** stage. 
+- The template has been given a title.
+
+### Creating annotation Projects from templates
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/464c6f68e3e6412e84995f5a14d5eb7c?sid=5a6f57a5-e0c0-4de4-8188-5bbdae57c76b"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+---
+
+Workflow templates can be used during Project creation. To use a template during Project creation, choose the template you would like to use and click the <kbd>Select</kbd> button during the workflow setup.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/select-template.png" width="250" />
+</div>
+
+#### Customizing templates 
+
+You can customize/edit a Workflow template to suit a project's specific needs. 
+
+Click the **Save as a new template** button after customizing/editing a template to create a new template.
+
+<div class="flex justify-center">
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/save-as-new-template.png" width="200" />
+</div>
+
+
+## Template settings
+
+The template settings allow you to: 
+
+- [Manage the team that has access to the template](#team). 
+- [Delete the template](#deleting-templates).
+
+### Team
+
+The _Teams_ section allows you to control which users have access to the template. There are two types of user roles for templates: 
+
+- _Admins_ can view as well as edit the template. 
+- _Viewers_ can only view the template. 
+
+<Note>Once a new Admin has been added, they can not be removed from the template. </Note>
+
+#### Adding users to a template
+
+1. Click the **+ Invite collaborators** button. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/template-collaborators.png" width="600" />
+</div>
+
+2. Select a user role for the collaborator by choosing an option from the list.
+
+3. Type the email address of the user you'd like to add and select the user from the list. 
+
+4. Click the **Add** button to add the user with the specified role.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/template-collaborators-2.png" width="450" />
+</div>
+
+### Deleting templates
+
+To delete a template:
+
+1. Navigate to _Workflows_ in the _Annotate_ section of the sidebar.
+2. Select the template you would like to delete.
+3. Click the _Settings_ tab and navigate to 'Danger zone'. 
+4. Click the **Delete template** button to delete the template.
+
+<div class="flex justify-center">
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/delete-template.png" width="750" />
+</div>

@@ -1,0 +1,304 @@
+---
+title: "Import Predictions"
+slug: "active-import-model-predictions-cloud"
+hidden: false
+metadata: 
+  title: "Import Model Predictions to Active"
+  description: "Assess model quality with Encord Active analytics and metrics. Optimize model evaluation."
+category: "6480a3981ed49107a7c6be36"
+---
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/predictions-import.mp4"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+## Overview
+
+To upload predictions in Encord Active, you need to create a prediction branch. This guide explains everything you need to know for importing predictions.
+
+### Predictions Workflow
+
+![Predictions Workflow](https://storage.googleapis.com/docs-media.encord.com/static/img/active/predictions-flow.001.png)
+
+1. **Import Predictions to Annotate Project:** Everything starts in Annotate. Your labels and predictions must exist in your Annotate Project for the labels and predictions to appear in Active.
+2. **Import/Sync Project in Active:** After importing your predictions, you can then import the Project into Active. Or you can sync an existing Active Project after importing your predictions.
+3. **Analyse the Predictions in Active:** Once the Project import/sync completes, specify the prediction set for Active to analyse.
+4. **Select the Predictions in Active:** Once analysis completes, select the prediction set you want to view in Active.
+
+## Supported Prediction Formats
+
+**[Encord Format (Recommended)](/platform-documentation/Active/active-how-to/active-import-model-predictions-cloud#import-encord-format-predictions)**
+- Supports multi-level nested classifications (radio, checklist, or free-form text) under objects or classifications.
+- Handles all object types and classification.
+<Note>
+- Only top-level objects and classifications are considered when calculating in model metrics. 
+
+- Metrics are not yet available for keypoints and polylines. If you are interested in these, please contact the Encord team.
+</Note>
+
+**[COCO Format](/platform-documentation/Active/active-how-to/active-import-model-predictions-cloud#import-coco-labels-as-predictions)**
+
+Does not supports multiple levels of nested classifications (radio, checklist, or free-form text) under tools or classifications.
+
+### Confidence Score
+
+You can include confidence scores when uploading predictions. Encord automatically calculates model metrics based on your prediction set and assigned confidence scores.
+
+## Prediction Branches
+
+When importing prediction sets into Encord Active, they are added as branches to individual label rows on your data units (images, videos, audio). Each data unit has the following:
+- A MAIN branch for ground truth annotations or pre-labels.
+- Optional Consensus branches and Prediction branches for different prediction sets.
+
+![Label branches](https://storage.googleapis.com/docs-media.encord.com/static/img/active/prediction-branch.png)
+
+<Tip>You can [export main branch labels from the UI](/platform-documentation/Annotate/annotate-export/annotate-how-to-export-labels). [Consensus labels and model predictions can only be exported using the SDK](/sdk-documentation/getting-started-sdk/sdk-export#export-all-consensus-labels).</Tip>
+
+## STEP 1: Import Predictions
+
+Import your predictions to a Project in Annotate. Encord currently supports importing predictions from the Encord format and from COCO.
+
+### TLDR;
+
+<Tip>Do you already know what you are doing and only want to look over a Jupyter Notebook example to import your predictions? We provide one [here](#end-to-end-prediction-import-example).</Tip>
+
+### Import Encord-Format Predictions
+
+import ImportEncordPredictions from '/snippets/SDK/ImportEncordPredictions.mdx';
+
+<ImportEncordPredictions />
+
+### Import COCO Labels as Predictions
+
+The following code imports COCO labels as predictions for Active.
+
+For more information on [importing COCO labels into Encord](/sdk-documentation/sdk-labels/sdk-import-coco-labels), refer to our documentation.
+
+Replace the following:
+
+- `<private_key_path>` with the file path to your SSH private key.
+
+- `<my-prediction-branch-name>` with the name of your prediction branch.
+
+- `<project_hash>` with the Project ID for your Project.
+
+- `COCOimportfile.json` with the full path of the COCO file containing the predictions you want to import.
+
+
+```python COCO Label import as Predictions
+
+import json
+from pathlib import Path
+from encord.utilities.coco.datastructure import FrameIndex
+from encord import EncordUserClient
+from encord.exceptions import OntologyError
+
+# Authenticate client
+SSH_PATH = "file-path-to-your-ssh-key"
+
+# Specify a Project to import your predictions to. This Project must already exist in Encord.
+PROJECT_HASH = "unique-id-for-project"
+
+# Specify a label_rows_v2 branch name for your predictions.
+PREDICTION_BRANCH_NAME = "name-of-your-prediction-branch"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH
+)
+
+# Replace with your project hash
+project = user_client.get_project(PROJECT_HASH)
+
+# Load the COCO annotations JSON file
+# Replace 'COCOimportfile.json' with the full path to your COCO file
+coco_file = Path("COCOimportfile.json")
+labels_dict = json.loads(coco_file.read_text())
+
+# Build a mapping from COCO category IDs to the feature hashes in your Encord Ontology. 
+category_id_to_feature_hash = {}
+ont_struct = project.ontology_structure
+for coco_category in labels_dict["categories"]:
+    try:
+        ont_obj = ont_struct.get_child_by_title(coco_category["name"])
+        category_id_to_feature_hash[coco_category["id"]] = ont_obj.feature_node_hash
+    except OntologyError:
+        print(f"Could not match {coco_category['name']} in the Ontology. Import will crash if these are present.")
+
+# Build a mapping from COCO image IDs to Encord frame indices
+# This is only applicable for images, image groups, image sequences, and DICOM series
+image_id_to_frame_index = {}
+data_title_to_label_row = {lr.data_title: lr for lr in project.list_label_rows_v2()}
+for img in labels_dict["images"]:
+    lr = data_title_to_label_row[img["file_name"]]
+
+    # Creates a mapping between the COCO image IDs and the corresponding frame indices in Encord
+    # In this example, the target frame is 0 because the files in the sample project are single images
+    image_id_to_frame_index[img["id"]] = FrameIndex(lr.data_hash, frame=0)
+
+# Import the COCO labels into Encord
+project.import_coco_labels(
+    labels_dict,
+    category_id_to_feature_hash,
+    image_id_to_frame_index,
+    branch_name=PREDICTION_BRANCH_NAME,
+)
+```
+
+### Verify Prediction Import
+
+After importing your predictions, verify that your predictions imported. 
+
+The following code returns all labels and predictions on all branches.
+
+```python 
+
+# Import dependencies
+from encord import EncordUserClient
+import json
+
+SSH_PATH = "file-path-of-your-ssh-key"
+PROJECT_HASH = "unique-id-for-your-project"
+
+# Instantiate client. Replace <private_key_path> with the path to the file containing your private key.
+user_client = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH
+)
+
+# Specify Project. Replace <project_hash> with the hash of the Project you want to export labels for.
+project = user_client.get_project(PROJECT_HASH)
+
+# Downloads a local copy of all the labels
+# Without the include_all_label_branches flag only the MAIN branch labels export
+label_rows = project.list_label_rows_v2(include_all_label_branches=True) 
+
+for label_row in label_rows:
+    # Here we have the label row for the branch, but without labels themselves downloaded
+    print(f"Title: {label_row.data_title}, branch: {label_row.branch_name}")
+
+    # And now we download the label content itself (bounding boxes and stuff)
+    label_row.initialise_labels()
+
+    # Print essential label information for all objects
+    for object_instance in label_row.get_object_instances():
+        print (f"objectHash: {object_instance.object_hash}")
+        print (f"Object name: {object_instance.object_name}")
+        print (f"featureHash: {object_instance.feature_hash}")
+        print (f"uid: {object_instance.ontology_item.uid}")
+        print (f"Object color: {object_instance.ontology_item.color}")
+        print (f"Ontology shape: {object_instance.ontology_item.shape}")
+
+        # Print the frame number and the location of the object on the frame
+        for annotation in object_instance.get_annotations():
+            print(f"Frame {annotation.frame} -> {annotation.coordinates}")
+
+        # Print all attributes 
+        for attribute in object_instance.ontology_item.attributes:
+            print (attribute, object_instance)
+
+    # Print all essential classification information
+    for classification_instance in label_row.get_classification_instances():
+        print (f"classificationHash: {classification_instance.classification_hash}")
+        print (f"Classification name: {classification_instance.classification_name}")
+        print (f"featureHash: {classification_instance.feature_hash}")
+        print (f"Classification answer: {classification_instance.get_answer().value}")
+        print (f"Classification answer hash: {classification_instance.get_answer().feature_node_hash}")
+
+
+        # Print the frame number(s) that a classification appears on
+        for annotation in classification_instance.get_annotations():
+            print(f"Classification appears on frame: {annotation.frame}")
+
+```
+
+### End-to-End Prediction Import Example
+
+We provide an end-to-end example using a Jupyter Notebook [here](https://colab.research.google.com/drive/1UYUBkiqanTdhjE37Pj0ArVFn_x0BiJk8?usp=sharing).
+
+## STEP 2: Import/Sync Project to Active
+
+Import or sync the Annotate Project in Active.
+
+![Import/Sync Annotate Project](https://storage.googleapis.com/docs-media.encord.com/static/img/active/import-project-step01.gif)
+
+## STEP 3: Analyse the Predictions
+
+Active MUST analyse the predictions before you can view the predictions in Active.
+
+![Analyse Predictions](https://storage.googleapis.com/docs-media.encord.com/static/img/active/predictions-analyze.gif)
+
+## STEP 4: Select the Predictions
+
+Once analysis completes, select the prediction set to view in Active.
+
+![Select Prediction Set](https://storage.googleapis.com/docs-media.encord.com/static/img/active/predictions-select-predictions.gif)
+
+
+## Next Steps
+
+### Model and Prediction Validation
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Div</title>
+  </head>
+  <div className="container">
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-model-predictions-eval"
+    >
+      1. Prediction Metrics
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-create-collections"
+    >
+      2. Create Collection
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-send-collection-to-annotate"
+    >
+      3. Send to Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-sync-with-annotate"
+    >
+      4. Sync with Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-update-collections"
+    >
+      5. Update Collection
+    </a>
+  </div>
+</div>
+
+## Delete Prediction Sets
+
+You can delete prediction sets from Active from the Predictions page.
+
+![Delete Prediction Set](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-delete-predictions-set.gif)

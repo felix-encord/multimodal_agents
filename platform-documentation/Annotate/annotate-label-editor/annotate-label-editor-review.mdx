@@ -1,0 +1,245 @@
+---
+title: "Label Editor - Review"
+metadata: 
+  title: "Label Editor - Review"
+  description: "Efficient Review: Use Encord's specialized label editor for review tasks. Explore specific documentation for various file types."
+  image: 
+    0: "https://files.readme.io/2483550-image_16.png"
+---
+
+<Info>To ensure seamless data loading in Encord, whitelist https://app.encord.com/ or https://app.us.encord.com/ in any 3rd party VPNs, firewalls, or URL isolators. This helps to prevent potential issues with opening your data in Encord.</Info>
+
+This documentation provides a comprehensive guide to using the Label Editor for review, covering its components, features, and the display of various elements.
+
+## Review Mode
+
+### Introductory Videos
+
+The following video goes through the basics of reviewing images in the Label Editor.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/a9351485a7e74af497ea47bdf0b5c979?sid=6f8fe2ab-916d-4580-b91a-9eb693929c05"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+
+The following video goes through the basics of reviewing videos in the Label Editor.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/89842fa925bc4a028f0c0c58fc521a9e?sid=817f71e6-7caf-4608-b6d3-5cf20338c48d"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+As a reviewer, your label editor workspace will look as below. Learn how to use the features in the components illustrated below.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/overview/reviewer-view.png" width="900"/>
+</div>
+
+---
+
+### Review Mode Components
+
+  - **A**. [Editor menu](#editor-menu)
+  - **B**. [Single label review toggle](#single-label-review)
+  - **C**. [Quick toolbar](#quick-toolbar)
+  - **D**. [Pending reviews pane](#pending-reviews-pane)
+  - **E**. [Completed reviews pane](#completed-reviews-pane)
+  - **F**. [Reject and Approve buttons](#reject-and-approve-buttons)
+  - **G**. [Editor timeline (for videos and image sequences only)](/platform-documentation/Annotate/annotate-label-editor/annotate-videos#editor-timeline)
+  - **H**. [Editor header](#editor-header)
+  - **I**. [Edit labels during review](#edit-labels-during-review)
+  - **J**. [Approve and Reject all in frame buttons](#approve-and-reject-all-in-frame-buttons)
+
+---
+
+### Single Label Review
+
+The normal review mode displays all labels simultaneously, allowing you to quickly approve or reject many labels in bulk actions. Alternately, enter the _Single label review_ mode by toggling the switch at the top left. The single label review mode automatically highlights the selected instance, and hides all other objects. This allows you to carefully review one instance at a time including their attributes, and quickly iterate through the different instances using the *Up* and *Down* keys on your keyboard or by clicking the appropriate buttons in the UI.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/overview/single-label-revw.gif" width="800" />
+</div>
+
+<Note>The _Single label review_ feature can also be considered "turbo review mode," analogous to the "turbo attribute mode" in annotation mode, because it allows the reviewer to quickly step through and review instance attributes. "Turbo attribute mode" in the editor settings can be disabled while in review mode.</Note>
+
+**Single Label Review Settings**
+
+The default zoom level for single label review can be adjusted to suit your needs.
+
+1. Open the [editor settings](#editor-settings-menu) by clicking in the [editor header](#editor-header).
+
+2. In the _General settings_ section adjust the _Set the default zoom level for single label view_ value highlighted in the screenshot below. The settings will be applied for the next selected label.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/zoom-level-single-label-review.png" width="400" />
+</div>
+
+<Note>
+- Initially, the default is set to 60%
+- 20% corresponds to no zoom. It's the magnification at which the image or frame is displayed in the Label Editor.
+- To zoom in, increase the percentage value.
+- To zoom out, decrease the percentage value. The minimum value is 1%.
+</Note>
+
+---
+
+### Report Missing Labels
+
+<Note>This feature is only available for [Manual QA projects](/platform-documentation/Annotate/annotate-projects/annotate-manual-qa-projects).</Note>
+
+If a reviewer determines that a label is missing entirely (as opposed to annotated incorrectly), they can use the report missing labels feature to indicate labels are missing in a given frame or image. Navigate to the frame with the missing labels and use the _Report missing labels_ button to create a report at that frame. You can only create one missing label report per frame per review task -- subsequent reports at the same frame in the same task will overwrite previous reports. Missing label reports will be sent back to the annotator via the same issues list as rejected labels.
+
+---
+
+### Edit Labels During Review
+
+It is sometimes faster, more convenient, and less error-prone to have reviewers make edits to annotations, instead of outright rejecting them. Rejection requires the return of the entire set of labels to the annotator. 
+ 
+_Edit review_ allows reviewers to make changes to labels, remove labels, and add new labels. Approved or rejected labels cannot be edited. Only _Pending_ labels can be edited by reviewers. New labels made by editors are automatically approved, and cannot be changed once they have been saved. Once all labels have been approved the task moves to the _Complete_ stage. 
+
+<Tip>We recommend enabling [_Strict review_](/platform-documentation/Annotate/annotate-projects/annotate-workflows-and-templates#strict-review) on Review blocks when configuring Workflows. _Strict review_ allows reviewers to revert approved labels back to _Pending_, giving reviewers the option to make changes to new labels drawn while editing labels. </Tip>
+
+**To edit labels in review mode:**
+
+1. Click the **Edit labels** button.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/edit-review.png" width="700" />
+</div>
+
+2. Add or remove labels, or edit existing labels as necessary using the same interface annotators use to create labels.
+
+3. Click the **Save and return to review** button to save your edits and return to review mode.
+
+<Note>The **Save and return to review** button replaces the **Save** and **Cancel** buttons used in earlier versions of this feature.</Note>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/edit-labels-2.png" width="700" />
+</div>
+
+<Warning>
+_Edit review_ is primarily optimized for use in _Workflow_ Projects. It is available for Manual QA Projects, but lacks some functionality.
+- There is no way to edit Classifications. 
+- There is no way to edit approved or rejected labels, as _Strict review_ is not available in _Manual QA_ Projects
+- Labels created during _Edit review_ are not added to the Review stage and can not be seen in the Label Editor.
+</Warning>
+
+---
+
+### Pending Reviews Pane
+
+All labels for review for a particular data asset assigned to the reviewer are automatically loaded into then *Pending reviews* pane. The labels are grouped by Ontology class.
+
+---
+
+### Completed Reviews Pane
+
+Completed reviews are displayed in the *Completed reviews* pane. You can click on specific objects to highlight them. Labels can be selected and then approved or rejected for a given instance or in bulk using the **Reject** and **Approve** buttons or the matching hotkeys, <kbd>b</kbd> for reject and <kbd>n</kbd> for approve. Approved labels appear in a green background and rejected labels appear in red.
+
+---
+
+### Approve and Reject All In Frame Buttons
+
+The **Approve all in frame** and **Reject all in frame** buttons take the named action without having to select a particular instance or set of instances. This speeds up workflows, particularly in images, where you can judge whether all instances are correct or not by looking at an individual frame.
+
+<Warning>The **Approve all in frame** and **Reject all in frame** buttons apply to all instances present in a frame, rather than labels. This means that all instances with labels in the current frame will have all of their labels approved or rejected.</Warning>
+
+<Tip>The **Approve all in frame** and **Reject all in frame** buttons can be hidden in the [general settings](#general-settings).</Tip>
+
+---
+
+### Reject and Approve Buttons
+
+To reject/approve multiple object instances across frames, select the instances, and then click the **Reject** or **Approve** button, as appropriate. Alternately, you may press <kbd>b</kbd> for reject and <kbd>n</kbd> for approve.
+
+---
+
+### Change Review Judgement 
+
+<AccordionGroup>
+   <Accordion title=" Video Tutorial - Strict review & change review judgement ">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/d73f4ca0765b411997658edec2e72ebc?sid=b5e9ab94-a07e-410c-9377-d7b809d83d3f"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+<Note>This feature is not available for [Manual QA projects](/platform-documentation/Annotate/annotate-projects/annotate-manual-qa-projects).</Note>
+
+Reviewed instances can be reverted to [_pending_](/platform-documentation/Annotate/annotate-label-editor#pending-reviews-pane). Reverting a review allows reviewers to make adjustments to one or more instances after making their initial review.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/strict-review-label-editor.png" width="900" />
+</div>
+
+1. Revert labels to _pending_ :
+- Revert an approved task to _pending_ by clicking the green tick icon next to the instance.
+- Revert a rejected task to _pending_ by clicking the red cross icon next to the instance.
+
+2. Once the reviewer completes their review, they need to click the **Approve task** or **Reject task** to finalize the review.
+
+---
+
+## Controls Common To Both Modes
+
+import ControlsCommonToBothModes from '/snippets/ControlsCommonToBothModes.mdx';
+
+<ControlsCommonToBothModes />

@@ -1,0 +1,539 @@
+---
+title: "Manage Annotation Projects"
+metadata: 
+  title: "Annotation Projects"
+  description: "Learn how to manage and navigate annotation Projects."
+  image: 
+    0: "https://files.readme.io/13dbb5f-image_16.png"
+---
+
+1. In the Encord platform, select _Projects_ under _Annotate_.
+2. Select the Project you want to Manage. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects-list.png" width="400" />
+</div>
+
+The dashboard is split into the following tabs:
+
+- **[Project Overview](#project-overview)**: High-level view of labeling and productivity statistics.
+- **Explore**: Explore the distribution of instances and labels across data assets in the project.
+- **[Queue](#task-queue-and-workflow)**: Shows all tasks in the Project by Workflow stage.
+- **Workflow**: Graphically displays the path tasks follow through the Project Workflow.
+- **[Labels & Export](#labels)**: For managing all the Project's labels, including exporting labels.
+- **[Analytics](#analytics)**: Detailed Project analytics.
+- **[Settings](/platform-documentation/Annotate/annotate-projects/annotate-project-settings.)**: Manage your Project Settings, including copying Projects, managing Project tags, customizing editor layouts, and deleting Projects.
+
+## Tab Visibility by Role
+
+<Note>The _Analytics_ and _Queue_ tabs display different information based on the user's role. For more details, refer to the [Analytics dashboard documentation](#analytics).</Note>
+
+<Note>The _Labels & Export_ tab for admins is called the _Labels_ tab for Team Managers. </Note>
+
+<div class="flex justify-center">
+
+| **Tab**         | Annotator                | Reviewer                | Annotator + Reviewer   | Team Manager                     | Admin                          |
+|-----------------|--------------------------|-------------------------|------------------------|----------------------------------|-------------------------------|
+| Summary         | ❌                        | ❌                       | ❌                      | ✅                           | ✅                             |
+| Explore         | ❌                        | ❌                       | ❌                      | ✅                           | ✅                             |
+| Queue           | _Annotate_ tab only      | _Review_ tab only       | _Annotate_ + _Review_ tabs only | ✅                             | ✅                             |
+| Workflow        | ❌                        | ❌                       | ❌                      | View only                       | ✅                             |
+| Labels & Export | ❌                        | ❌                       | ❌                      | View labels only                | ✅                             |
+| Performance    | Personal performance     |  Personal performance    |  Personal performance  | Team Performance        |  Team performance            |
+| Models          | ❌                        | ❌                       | ❌                      | View only                       | ✅                             |
+| Settings        | ❌                        | ❌                       | ❌                      | Add users (except Admins)       | ✅ All settings and user management |
+
+</div>
+
+---
+
+## Update Project Status
+
+<Note>Contact [support](mailto:support@encord.com) for access to this feature.</Note>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/project-status.png" width="600" />
+</div>
+
+Admins and Team Managers can change the status of a Project to any of the following:
+
+- Not started
+- In progress
+- Paused
+- Completed
+- Cancelled
+
+<Info>Updating the Project status changes the Project icon accordingly.</Info>
+
+When the Project status is changed to either _Paused_, _Completed_, or _Cancelled_ then Annotators, Reviewers, and Annotator + Reviewers are prevented from opening tasks, and the **Initiate** button is greyed out. Admins and Team Managers are able to annotate and review tasks as usual, regardless of the Project status. 
+
+<Note> 
+Tasks can still be opened using back door access. For example if an Admin shares a specific URL of a task with an Annotator, Reviewer, or Annotator + Reviewer.
+</Note>
+
+---
+
+## Project Overview
+
+The Project Overview dashboard has the following components that provide an overview of the Project:
+
+**Project task status overview**:
+
+Displays the number of tasks that are in each state of your workflow project. The number of states and their names reflect the choices made during [workflow project creation](/platform-documentation/Annotate/annotate-projects/annotate-workflows-and-templates#creating-workflows).
+
+![Annotate Summary](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/annotate-summary.gif)
+
+<Tip> Click on the stages in the chart key to remove, or include them from the donut view</Tip>
+
+**Explore tab**
+
+<Warning> The Explore tab is a legacy feature and will be discontinued. </Warning>
+
+<Note>The _Explore_ tab is only visible to project Admins and Team Managers.</Note>
+
+The _Explore_ tab helps you understand how project annotations are distributed among data assets, at both an instance and label level. It allows a deeper exploration through attributes on objects, as well as frame-level classifications.
+
+- [Instance statistics](#instance-statistics): Class distribution across data assets in the given project.
+- [Label statistics](#label-statistics): Label distributions within data assets, objects and classifications.
+
+![Annotate Explore](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/annotate-explore.gif)
+
+**Instance statistics**
+
+This section provides the total count of all instances across the datasets in your project.
+
+- **Project total**: Shows total instances (both objects and classifications) across the project by default. To get instance statistics for individual data files, click the drop-down to select a data file.
+- **Select class**: Shows the total instances for a particular class. This is a summary of how a given class is distributed across your project's data assets. The pie chart segments show a breakdown of how that class is split across the data assets.
+- **Display timestamps**: Flip the toggle to switch between frame numbers and timestamps for the labels.
+
+**Label statistics**
+
+This is a summary of how your labels are distributed across the project. The pie chart shows a breakdown of how many labels there are for a given class.
+
+- **Project total**: Shows the total number of labels across different datasets in the project. To get label stats for individual data files, click the drop-down to select a data file.
+- **Objects**: Click on the pie chart segment of a class to see the total number of labels and its attributes (sometimes called nested attributes) if available for that class.
+- **Classifications**: Shows the global classification at project or individual video level. For example, location, time of day, etc.
+
+---
+
+## Task Queue & Workflow
+
+Use the _Queue_ tab to assign, prioritize, and manage tasks, as well as to start labeling and reviewing for all users associated with a Project.
+
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/89b280375ff149e4b2ab6080919bea57?sid=ea597a57-ec6f-4adc-83a2-7b54e7c6e274"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+The _Queue_ tab's layout adapts based on user permissions.
+
+<AccordionGroup>
+  <Accordion title = "Queue (Admin, Team Manager)" >
+
+  ### Queue (Admin, Team Manager)
+
+  <div class="flex justify-center">
+      <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/queue-priorities.png" width="700" />
+  </div>
+
+  - **A** - Use the search bar to filter the list of data units being displayed, or to look for a particular data unit.
+  - **B** - Select a [task to assign it to a user, release the task](#assigning-and-releasing-tasks), or adjust its [priority](#task-priority) number.
+  - **C** - [Filter](#filter) the list of data units being displayed by task status by _Dataset_, _User_, _Data Type_, or _Status_. This is the order in which tasks will appear in the Label Editor.
+  - **D** - [Sort](#sort-by) the task queue.
+  - **E** - Use the **Start labeling** (annotation task) and **Start reviewing** (review task) buttons to begin labeling or reviewing a task.
+  - **F** - The list of all Workflow stages shows how many data units each stage currently contains. Each stage can be selected.
+  - **G** - Shows the task's [priority](#task-priority) number. Tasks are listed in descending order of priority by default.
+  - **H** - Shows the task's [Status](#status).
+  - **I** - Shows the email address of the user the task is assigned to.
+  - **J** - Clicking the **Initiate** button initiates a task. If an [annotation stage](/platform-documentation/Annotate/annotate-projects/annotate-workflows-and-templates#annotate) is selected, an annotation task is initiated. If a [Review stage](/platform-documentation/Annotate/annotate-projects/annotate-workflows-and-templates#annotate) is selected a review task is initiated.
+
+  The _Queue_ tab lists tasks in the same order they appear in the Label Editor. 
+
+  **Filters**
+
+  - _Dataset_ - Filtering by Dataset only displays data units belonging to the selected Dataset(s).
+  - _Assignees_ - Displays tasks assigned to a particular user. 
+  - _Last Actioned By_ - Displays tasks last actioned by the selected user. 
+  - _Data Type_ - Displays data units of a specific type.
+  - _Issue Status_ - Displays tasks with Resolved or Unresolved issues.  
+
+  **Sort by**
+
+  You can sort the task queue by clicking **Sort by** next to the filter button. Select whether you want to sort the task queue by:  
+  - Task [priority](#task-priority), or alphabetically by the name of the data unit. 
+  - In ascending or descending order. 
+
+  The default sorting is in descending order of task priority.
+
+  **Task Status**
+
+  The task Status indicates which actions had previously been taken on a task.
+
+  - _New_ - The task has not been worked on since being added to the Project.
+  - _Reopened_ - The task was rejected during the Review stage, and has been returned for re-labeling.
+  - _Skipped_ - The task was skipped by one or more annotators.
+
+  #### Move Tasks
+
+  <Note>Only Admins and Task Managers can move tasks.</Note>
+
+    You can move selected tasks from their current stage directly to the **_Complete_** or **_Archive_** stage.
+
+    <Warning>  
+    Moving tasks directly skips all intermediate workflow stages, placing them immediately into the selected stage. 
+    </Warning>
+
+    **To move a task**: 
+
+    1. Select the task(s) you want to move.
+    2. Click the **Move** dropdown.
+    3. Select the stage you want to move the selected task(s) to. 
+
+  #### Assigning and Releasing Tasks
+
+  <Note>Only Admins and Task Managers can assign and release tasks.</Note>
+
+  <Note>Tasks can only be assigned to collaborators that have been added to a given Workflow stage. Find out more in our section on [managing collaborators](/platform-documentation/Annotate/annotate-projects/annotate-workflows-and-templates#managing-collaborators).</Note>
+
+  Tasks can be assigned to specific users by selecting them from the list and clicking the **Assign** button, as shown below. Once a task is assigned, only the assigned user is able to open the task. Alternatively, click the small arrow button in the _Assigned to_ column to assign an individual data unit.
+
+  <div class="flex justify-center">
+      <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/assign-task.gif" width="600" height="280" />
+  </div>
+
+  Releasing a task is the opposite of assigning a task, and removes any user the task was assigned to. To release any number of tasks, select them from the list and click the **Release button** located next to the **Assign** button shown above.
+
+  <Tip>Unassigned tasks can be initiated by all users.</Tip>
+
+  #### Task priority
+
+  <Note>Only Admins and Task Managers can set task priority.</Note>
+
+  All annotation and review tasks can be assigned a priority level to manage workflow efficiency. Each task is assigned a priority value ranging from 0 to 100, where the default value is set to 50. A value of 100 indicates a high-priority task, requiring immediate attention, where a value of 0 signifies a low-priority task. Annotation and review tasks with higher priority levels are displayed in the label editor in descending order of priority.
+
+  <div class="flex justify-center">
+      <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/update-priority.png" width="200" />
+  </div>
+
+  To update task priority:
+
+  1. Click on the number representing the task's current priority. This action opens the priority setting interface for that particular task. Alternatively, select the task and click the **Adjust priority** button.
+
+  2. Adjust the task's priority by either using the slider for quick selection or manually entering a specific number between 0 and 100 in the input field provided. This allows for precise control over the task's priority level.
+
+  3. Once the desired priority level is set, finalize your changes by clicking the **Update** button. This action saves the new priority setting for the task, effectively updating its status in the task queue.
+
+
+ </Accordion>
+<Accordion title = " Queue (Annotators)">
+
+### Queue (Annotators)
+
+Annotators are presented with the following _Queue_ tab, from which they can manage their annotations. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/queue-tab-annotators.png" width="550" />
+</div>
+
+- **A** - The list of annotation stages shows how many data units each stage currently contains. If more than one stage is listed, clicking a stage lets you view the tasks it contains.
+- **B** - Shows the task's [priority](#task-priority) number. Tasks are listed in descending order of priority by default.
+- **C** - The list of tasks / data units in your queue. Unassigned tasks are also visible and they can be initiated by all Annotators.
+- **D** - The task status. 
+- **E** - The user a task is assigned to. A blank field indicates an unassigned task.
+- **F** - Click the **Initiate** button next to a task to start annotating.
+- **G** - The **Start labeling** button opens the Label Editor, starting with the highest priority task.
+
+The _Queue_ tab lists tasks in the same order they appear in the Label Editor. 
+
+<Note>Initiating an unassigned task automatically assigns the task to the Annotator.</Note>
+
+ </Accordion>
+
+ <Accordion title = " Queue (Reviewers)">
+
+### Queue (Reviewers)
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/queue-tab-reviewer.png" width="550" />
+</div>
+
+- **A** - The list of review stages shows how many data units each stage currently contains. If more than one stage is listed, clicking a stage lets you view the tasks it contains.
+- **B** - Shows the task's [priority](#task-priority) number. Tasks are listed in descending order of priority by default.
+- **C** - The list of tasks / data units in your queue. Unassigned tasks are also visible and they can be initiated by all Reviewers.
+- **D** - The task status. 
+- **E** - The user a task is assigned to. A blank field indicates an unassigned task.
+- **F** - Click the **Initiate** button next to a task to review it .
+- **G** - The **Start reviewing** button opens the Label Editor, starting with the highest priority task.
+
+The _Queue_ tab lists tasks in the same order they appear in the Label Editor. 
+
+<Note>Initiating an unassigned task automatically assigns the task to the Reviewer.</Note>
+
+ </Accordion>
+</AccordionGroup>
+
+
+**Workflow tab**:
+
+<Note>The _Workflow_ tab is only visible to project Admins and Team Managers.</Note>
+
+The _Workflow_ tab lets you view and edit the Project's Workflow. To begin editing the Workflow, click the **Edit** button on the canvas. 
+
+
+---
+
+## Labels & Export
+
+<Note>The _Labels_ tab is only visible to project Admins and Team Managers.</Note>
+
+The _Labels_ tab is your gateway to auditing and exporting labels created in your project.
+
+<Info>Access to each pane depends on the user's role.</Info>
+
+<div class="flex justify-center">
+
+| Role                 | Activity | Queue | Data | Instances |
+|----------------------|----------|-------|------|-----------|
+| Annotator            | ❌        | ✅     | ❌    | ❌         |
+| Reviewer             | ❌        | ✅     | ❌    | ❌         |
+| Annotator + Reviewer | ❌        | ✅     | ❌    | ❌         |
+| Team Manager         | ✅        | ✅     | ✅    | ✅         |
+| Admin                | ✅        | ✅     | ✅    | ✅         |
+
+</div>
+
+The labels dashboard features the following tabs:
+
+- [Data](#data-tab): A complete overview of all tasks in the project, with the option to export your labels on a per-task basis.
+- [Label Instances](#label-instances): The _Label Instances_ tab lets you use the unique instance identifier to search the project for a specific instance, and jump directly into the editor to confirm the status of an annotation visually.
+
+
+### Data tab
+
+The _Data_ tab provides a complete overview of all tasks in the project, and lets you see which workflow stage each task is in. 
+
+### Export labels
+
+Select the data units in the Data tab you want to export labels for and click the **Export and save** button highlighted in the screenshot below to export labels. See our [documentation on exporting labels](/platform-documentation/Annotate/annotate-export/annotate-how-to-export-labels) for more information.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/export-and-save-button.png" width="600" />
+</div>
+
+### Save Label Version
+
+Select the data units you'd like to save label version for and click the **Save new version button** highlighted in the screenshot below. It will be listed in the [_Saved versions_ tab](#saved-versions).
+
+<Note>A new label version is saved each time you export labels.</Note>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/save-new-version.png" width="600" />
+</div>
+
+Label versioning allows you to keep track of your label history over time by providing a snapshot of labels at a point in time. Label versions can be exported and analyzed to track annotation performance over time.
+
+### Label Instances
+
+The _Label Instances_ tab allows Administrators and Team Managers to search for specific instances within the data. An annotation _instance_ refers to a unique occurrence of an ontology class in a data asset (e.g., 'Person (0)' for the first instance of a 'Person'). Instances span multiple frames of a data asset, representing the same object. Use this tab to locate specific _objects_ or _classifications_ by their _Identifier_.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/instances_tab.png" width="900" />
+
+Instance identifiers are unique within a project and can be found in several ways:  
+
+- **In the Label Editor:** Click on an instance, then select **Copy identifier** from the instance action menu.  
+- **In Exported Labels:** Look for `objectHash` or `classificationHash` in the exported data.  
+- **Using the SDK:** Specify your own `objectHash` or `classificationHash` during label uploads.  
+
+Once you have an identifier, use the **Search instance** interface to filter and locate the specific instance. This is especially useful for visually confirming annotations linked to an identifier.  
+
+After finding your instance, click **View** in the **Actions** column to jump directly to the first annotation of that instance in the dataset.
+
+### Saved Versions
+
+The _Saved versions_ tab displays information for versions of your labels. The _Actions_ column lets you:
+
+- Export label versions by clicking the _Download version_ icon in the _Actions_ column. For format of exported labels has the same structure as outlined in the [export documentation](/platform-documentation/Annotate/annotate-export/annotate-how-to-export-labels).
+
+- Delete label versions by clicking the _Delete version_ icon in the _Actions_ column.
+
+---
+
+## Performance (Legacy)
+
+<Warning>
+This dashboard shows legacy Analytics. To see Detailed analytics relating to Workflow Projects see the [Analytics section](#analytics).
+</Warning> 
+
+**Performance - Summary**
+
+The _Summary_ tab of the performance dashboard provides an overview of your team's manual labeling and productivity.
+
+<Warning>The _Summary_ tab only displays actions taken in the Label Editor. Actions taken in the SDK **will not** be displayed.</Warning>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/performance-new-current-toggle.png" width="700" />
+</div>
+
+**Task actions over time**
+
+View the number of tasks in a project that have been approved, rejected, and submitted for review over a given period of time.
+
+- The height of a bar represents the total number of tasks.
+- The height of each color within a bar represents the number of approved, rejected, and submitted tasks.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-new-performance-dashboard-labeled.png" width="900" />
+</div>
+
+- **A**:  Set the time period you would like to see displayed by selecting a range of dates.
+- **B**: The **Hide days without any actions** toggle removes all days at which no actions were taken from the view. 
+- **C**: Download a CSV file of the data. 
+- **D**: Display the data as a bar chart, or a table. While the chart provides a clear visual representation, the table provides exact figures for a more detailed picture of your team's performance. 
+
+
+**Instance Label actions over time**
+
+View the number of instance label actions in a project that have been approved, rejected, and submitted for review over a given period of time.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-new-performance-dashboard-2.png" width="900" />
+</div>
+
+- **A**: Set the time period you would like to see displayed by selecting a range of dates.
+- **B**: Download a CSV file of the data. 
+- **C**: Display the data as a bar chart, or a table. While the chart provides a clear visual representation, the table provides exact figures for a more detailed picture of your team's performance. 
+
+Within your specified time period, you can choose which dates to display by using the slider located beneath the graph.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/instance-label-actions-slider.gif" width="800" height="350"/>
+</div>
+
+
+**Team collaborators**
+
+The 'Team collaborators' section shows the duration of time each project collaborator spend working on a given file.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-team-collaborators.png" width="600" />
+</div>
+
+**A.** 'Data file' displays session time collaborators spent working on individual files. 'Project' displays session time collaborators have spent working on the project.  
+
+**B.** Table entries can be filtered according to dates by clicking the range of dates, and selecting the start and end date of the period you would like to see table entries displayed for.
+
+**C.** Table entries can be downloaded in CSV format by clicking the **Download CSV** button.
+
+**D.** When lots of entries are present they will be split across a number of different pages. The number of table entries per table can be adjusted.
+
+---
+
+**Performance - Details**
+
+The _Details_ tab of the performance dashboard gives a more detailed view of your team's labeling and productivity. This section will cover manual QA projects. The below details will be displayed for Manual QA projects.
+
+<Warning>The _Details_ tab of the performance dashboard only shows information for labels created in the Label Editor. Labels submitted via the SDK **will not be** shown on the _Details_ tab. This includes labels that were submitted using the SDK, and edited in the Label Editor. </Warning>
+
+<Tip>You can specify a range of dates, as well as whether statistics should be displayed for labels, or instances. More information on instances and labels can be found [here](#quick-definitions-of-classes-instances-and-labels).</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/performance-new-current-toggle.png" width="700" />
+</div>
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/performance/performance-dashboard-date-filter-and-charts.png" width="900" />
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/performance/performance-dashboard-annotor-and-reviewer-table.png" width="900" />
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/performance/performance-dashboard-objects-and-classifications-table.png" width="900" />
+
+**Submissions chart**
+
+The submissions chart displays the number of submitted labels or instances over the specified time period. The chart can be filtered to show submissions for specific annotators or classes. 
+
+If you filter on both **Annotators** and **Classes** then the resulting chart will show the submission statistics for the selected annotators and for selected labels. 
+
+
+**Reviews chart**
+
+The reviews chart displays the cumulative number of accepted and rejected labels or instances over the specified time period.
+
+
+**Annotator's table**
+
+The annotator's table displays all the relevant statistics for all annotators in a Project. It can be filtered on classes to show annotator statistics only for the selected classes.
+
+- **User**: The annotator's email.
+- **Rejection rate**: Percentage of their labels or instances that have been rejected in the review process.
+- **Submitted labels / instances**: Number of labels or instances that the annotator has submitted for review
+  - Repeated submissions are not counted.
+- **Accepted labels / instances**: Number of labels or instances that the annotator created that passed the review process.
+- **Rejected labels / instances**: Number of labels or instances that the annotator created that we're rejected during the review process. Note that this can be higher than the number of submitted labels / instances since a label or instance can be rejected multiple times during the review process but the submission will only be logged once.
+- **Total session time**: Time spent labeling.
+
+
+**Reviewers table**
+
+- **User**: The reviewers email.
+- **Rejection rate**: Percentage of labels or instances that they rejected in the review process.
+- **Accepted labels / instances**: Number of labels or instances that the reviewer accepted.
+- **Rejected labels / instances**: Number of labels or instances that the reviewer rejected.
+- **Total session time**: Time spent reviewing.
+
+
+**Objects and classifications table**
+
+Each row in the objects and classifications table can be expanded to show statistics on attributes. 
+
+- **Class**: The class name.
+- **Rejection rate**: Percentage of labels or instances rejected in the review process.
+- **Reviewed labels / instances**: Number of labels or instances of the class that have gone through the review process.
+- **Accepted labels / instances**: Number of labels or instances of the class that have passed the review process.
+- **Rejected labels / instances**: Number of labels or instances of the class that failed the review process.
+- **Avg. time to annotate**: Average time spent annotating this class.
+
+---
+
+## Analytics
+
+import Analytics from '/snippets/Analytics.mdx';
+
+
+<Analytics />
+
+---
+
+## Join Projects in your Org
+
+Organization Admins can search for and join any Projects that exist within the Organization.
+
+1. Navigate to _Projects_ under the _Annotate_ heading in the Encord platform. 
+2. Select the _All Encord projects_ tab. 
+3. Find the Project you want to join.
+4. Click **Join project** to join the Project.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/admin-join-projects.png" width="700" />
+</div>
+
+When an Organization Admin joins a Project, they are automatically assigned the _Admin_ [user role for that Project](/platform-documentation/Annotate/annotate-projects/annotate-project-roles-and-permissions).
+
+<Tip>Projects can be filtered by Project owner or [Project tags](/platform-documentation/Annotate/annotate-projects/annotate-project-settings#project-tags).</Tip>
+
+<Tip>See all Projects you belong to by clicking the _Filter by project owner_ search bar, and selecting _My projects only_. </Tip>

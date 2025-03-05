@@ -1,0 +1,682 @@
+---
+title: "Annotate FAQ"
+slug: "annotate-faq"
+hidden: false
+metadata: 
+  title: "Annotate FAQ"
+  description: "Get answers to common queries about Encord Annotate: Explore FAQs for comprehensive information and smoother usage."
+  image: 
+    0: "https://files.readme.io/3720cb9-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+## Login
+
+<AccordionGroup>
+  <Accordion title="How can I resolve platform access issues for users in India?">
+
+  Some users in India may experience issues accessing the app due to restrictions imposed by certain ISPs. This is a known issue related to the infrastructure used by our platform. For credibility and real-time updates, you can check the [Firebase Status Page](https://status.firebase.google.com/) to confirm whether there are any ongoing outages or incidents.  
+
+  If you are located in India and encounter problems accessing the app, follow these steps:  
+  1. **Use the India-specific app domain**: Access the app via our India-specific domain: [https://app.in.encord.com/login](https://app.in.encord.com/login).  
+  2. **Verify CORS Settings**: Ensure that the CORS settings for your cloud storage buckets have been updated correctly. Detailed instructions can be found in our cloud integration documentation: [AWS](/platform-documentation/General/annotate-data-integrations/annotate-aws-integration#4-allow-cross-origin-resource-sharing-cors), [GCP](/platform-documentation/General/annotate-data-integrations/annotate-gcp-integration#json-configuration-file), [Azure](/platform-documentation/General/annotate-data-integrations/annotate-azure-blob-integration#5-creating-a-cors-configuration-in-azure).  
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" I see an error when I try to log in to the application. How can I fix this? ">
+    - Ensure you are using the Chrome browser, and that it is up-to-date. 
+    - Try clearing your browser's cache, refresh the page and try again.
+    - If you are still stuck, contact [support@encord.com](mailto:support@encord.com) so can help you resolve this issue. 
+
+  </Accordion>
+</AccordionGroup>
+
+
+
+<AccordionGroup>
+   <Accordion title="How do I reset my password?">
+
+1. Click **Forgot password** on the [Encord Global login page](https://app.encord.com/login) or [Encord US login page](https://app.us.encord.com/login). 
+
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/forgot-password.png" width="500"/>
+</div>
+
+2. Enter the email address you used to sign up to Encord.
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/frogot-password-2.png" width="300"/>
+</div>
+
+3. Click **Reset password**.
+   An email containing a secure link for resetting your password is sent to the email address you provided. 
+
+4. Open your email inbox and open the email with the subject _Reset your Encord password_ sent by info@encord.com. 
+
+5. Click the **Reset my password** button in the email.
+   A new page opens in your browser.
+
+6. Enter a new password for your Encord account. Re-enter the password to confirm your new password. 
+
+7. Click **Submit**.
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/reset-password.png" width="300"/>
+</div>
+
+You can now log into your Encord account using your new password. 
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" I get a blank screen when trying to log in on my Windows computer. How can i fix this? ">
+   Your DNS settings might not be configured correctly.
+
+   **Windows 10**
+
+   1. Go to the **Control Panel**.
+
+      ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-001.png)
+
+   2. Click **Network and Internet > Network and Sharing Center > Change adapter settings**.
+
+     ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-002.png)
+
+   3. Select the connection for which you want to configure Google Public DNS. For example:
+      - To change the settings for an Ethernet connection, right-click the Ethernet interface and select Properties.
+      - To change the settings for a wireless connection, right-click the Wi-Fi interface and select Properties.
+
+      ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win10-003-01.png)
+    
+    4. If you are prompted for an administrator password or confirmation, type the password or provide confirmation.
+    
+    5. Select the Networking tab. Under This connection uses the following items, select Internet Protocol Version 4 (TCP/IPv4) then click Properties.
+
+      ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-004.png)
+
+    6. Select **Use the following DNS server addresses**. If there are any IP addresses listed in the _Preferred DNS server_ or _Alternate DNS server_, write them down for future reference.
+    Replace those addresses with the IP addresses of the Google DNS servers:
+    
+    - For IPv4: 8.8.8.8 and/or 8.8.4.4.
+    
+    7. Click **OK**.
+
+   **Windows 11**
+
+   1. Go to **Settings**.
+
+      ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-001.png)
+
+   2. Select the connection for which you want to configure Google Public DNS. For example:
+   
+      - If you are using Wi-Fi, click **Wi-Fi**, click **Hardware properties**, then click **Edit** next to _DNS server assignment_.
+      - If you are using an ethernet connection, click **Ethernet**, then click **Edit** next to _DNS server assignment_.
+    
+    ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-002-01.png)
+
+   3. Using the drop-down menu, select **Manual**, then toggle **IPv4** to **On**. If there are any IP addresses listed in the _Preferred DNS server_ or _Alternate DNS server_, write them down for future reference.
+      Replace those addresses with the IP addresses of the Google DNS servers:
+   
+     - For IPv4: 8.8.8.8 and/or 8.8.4.4.
+
+    ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-003.png)
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" I get a blank screen when trying to log in on my Mac computer. How can i fix this? ">
+    Your DNS settings might not be configured correctly.
+
+ **macOS Sequoia, Sonoma, Ventura or later**
+
+1. Click the Apple logo and select **System Settings** in the menu.
+
+   ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-001.png)
+
+2. Click **Network**.
+   
+   ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-002.png)
+
+3. Select the first **Wi-Fi** or **Ethernet**connection in the list (the connection you are using).
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-003.png)
+
+4. Click the **Details** button.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-004.png)
+
+5. Click **DNS**.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-005.png)
+
+6. Click the **+** button in the **DNS servers** section.
+
+   ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-006.png)
+
+7. Type **8.8.8.8** in the text field.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-007.png)
+
+8. Click the **+** button again.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-008.png)
+
+9. Type **8.8.4.4** in the text field.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-009.png)
+
+10. Click **OK**.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-010.png)
+
+11. Restart your Mac for the changes to take immediate effect.
+
+
+**macOS Monterey, Big Sur, Catalina, Mojave, High Sierra, Sierra, El Capitan, Yosemite**
+
+1. Click the Apple logo and select **System Preferences** in the menu.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-001.png)
+
+2. Click **Network**.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-002.png)
+
+3. Select the first **Wi-Fi** or **Ethernet**connection in the list (the connection you are using).
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-003.png)
+
+4. CLick the **Advanced** button.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-004.png)
+
+5. Click the **DNS** tab.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-005.png)
+
+6. Click the **+** button in the _DNS servers_ section.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-006.png)
+
+7. Type **8.8.8.8** in the text field.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-007.png)
+
+8. Click the **+** button again.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-008.png)
+
+9. Type **8.8.4.4** in the text field.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-009.png)
+
+10. Click **OK**.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-010.png)
+
+11. Click **Apply**.
+
+  ![DNS issue](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-011.png)
+
+12. Restart your Mac for the changes to take immediate effect.
+
+  </Accordion>
+</AccordionGroup>
+
+
+## Projects
+
+<AccordionGroup>
+  <Accordion title=" How do I manage teams, or create user groups?">
+    You can create user groups within your organization. These can be added to specific Projects as teams.
+
+  - Our documentation on user groups can be found [here](/platform-documentation/General/general-your-organization#creating-user-groups).
+
+  - For information on how to create teams for a given Project see the [Team Management section](/platform-documentation/Annotate/annotate-gettingstarted/curation-management-annotation#4-team-management) in our documentation.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="What does the 'This is being edited' pop-up in the label editor mean">
+    Don't worry, no data has been lost! This is a warning from our system (known as the "editor lock") it occurs when:
+
+- Two different people are editing a task at the same time.
+- Or, that one individual has the task open in two different tabs, or browser windows.
+
+In both cases we recommend to click 'cancel' to prevent any unexpected data overwrites.
+
+See [our documentation here](/platform-documentation/Annotate/annotate-label-editor#editor-lock) for more details.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title=" Why is there a warning sign next to my Project where it's listed">
+
+A warning symbol is displayed when a project is too large - meaning it contains too much data. When selecting the project you should encounter the following message:
+
+> ⚠️ 
+> "This project has exceeded the recommended number of tasks. To avoid performance issues, you need Admin access to manage and reduce the amount of data in this project".
+
+The diagram below illustrates the steps you should take to fix the issue.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/FlowChart.png" width="300" height="400" />
+</div>
+
+
+<Tip>Learn how to [resize your videos here](/platform-documentation/General/general-supported-data#resizing-videos).</Tip>
+
+  </Accordion>
+</AccordionGroup>
+
+## Datasets
+
+<AccordionGroup>
+  <Accordion title=" What's the difference between image groups, and image sequences?">
+    Both image groups and image sequences are file types you can create in Encord to make labeling your images easier and more efficient. Both are created by taking multiple single images as an input, and compressing these into a single data unit. The difference lies in the resulting data unit. 
+
+- Image groups can contain images of varying orientations and are best thought of as a collection of images. 
+- Image sequences can only contain images of the same orientation - which allows them to be treated the same way that videos are in which each input image constitutes a single frame of the resulting image sequence. 
+
+See our [documentation here](/platform-documentation/General/general-supported-data#image-groups) for more details.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" How do I upload DICOM data? ">
+    How to upload you DICOM data depends on whether you plan on using files stored in a private cloud, or locally. 
+
+- Local files can be dragged-and-dropped when [creating a new Dataset](/platform-documentation/Annotate/annotate-datasets/annotate-datasets#creating-datasets).
+- Files from your private cloud are uploaded using [JSON files](/platform-documentation/Index/add-files/index-register-cloud-data#json-format). We do not support upload via the CSV file format.
+
+For information on uploading your DICOM files using the Encord SDK, see the relevant documentation [here](/sdk-documentation/getting-started-sdk/sdk-register-data-aws).
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="How do I update client metadata?">
+      Client metadata can be updated by including the `"upsert_metadata": true` flag in the upload JSON file. An example JSON file is provided [here](/platform-documentation/Index/add-files/index-register-cloud-data#update-client-metadata).
+    </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title=" If I have duplicate Datasets, how can I find out which one is which? ">
+
+1. Navigate to _Datasets_ on our platform from https://app.encord.com or https://app.us.encord.com.
+2. Re-name both datasets to make them distinguishable.
+3. Open up both cases in the editor, and see which one is which (e.g. which one is annotated and which is not).
+
+<Note>For information on how to delete a dataset see our documentation [here](/platform-documentation/Annotate/annotate-datasets/annotate-datasets#danger-zone-deleting-datasets).</Note>
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="How do I make sure my videos load quickly?">
+    1. An annotator’s download speed from private cloud storage has to be at least 3-4 times the video bitrate.
+2. Make sure the videos have enough keyframes for smooth frame-by-frame navigation (roughly every 50 frames for high-resolution videos).
+
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title=" How do I re-encode videos? ">
+
+<Note>Re-encoding is only available to Enterprise customers. Contact [sales@encord.com](mailto:sales@encord.com) for more information. </Note>
+
+- Customers not using _Files_ can re-encode videos on our platform when uploading the data to a Dataset. 
+- Customers using _Files_ can re-encode videos in the _Files_ section of the platform by right-clicking the video and selecting **Re-encode**.
+- You are notified if we detect your files need re-encoding. 
+
+See the [re-encoding data](/platform-documentation/General/general-supported-data#re-encode-your-data) section in our documentation for more information.
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" What video formats are supported? ">
+    We support the following formats and codecs:
+
+- `.mp4` file with `h.265`.
+- `.mp4` with`vp9`.
+
+Please visit our [documentation on compatibility](/platform-documentation/General/general-supported-data) for more information on data compatibility.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" I am getting an error when I try to display video or DICOM files. How can I fix this? ">
+    This could be browser issue. To resolve:
+1. Ensure you are using the Chrome browser.
+2. [Turn hardware acceleration off](https://www.howtogeek.com/412738/how-to-turn-hardware-acceleration-on-and-off-in-chrome/).
+3. If you are still stuck, contact [support@encord.com](mailto:support@encord.com) for assistance.
+
+
+  </Accordion>
+</AccordionGroup>
+
+## Annotate
+
+<AccordionGroup>
+  <Accordion title=" Why can't I see all classifications/annotations when reviewing? ">
+    Check the [sampling rate](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#sampling-rate). 
+
+It's possible that you are seeing a different number of classifications/annotations than expected because you have the sampling rate set too high/low.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" What is causing the error I'm seeing in the Label Editor? ">
+    There might be several possible causes if you see a "Something Went Wrong" error message in the Label Editor:
+
+1. CORS issues - when rendering an image or video from remote storage solutions (AWS S3, GCP, Azure) it is important to set up a valid Cross-Origin Request Sharing (CORS) Policy and failure to do so will result in errors when trying to load that remote content in the Encord application. 
+
+To resolve these, check that a valid CORS policy is applied to the remote storage bucket, which allows Encord's domains. This varies between providers. For AWS the corresponding JSON looks like this:
+
+<CodeGroup>
+
+```json Global
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "GET",
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "https://app.encord.com",
+            "https://api.encord.com"
+        ],
+        "ExposeHeaders": []
+    }
+]
+```
+```json US
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "GET",
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "https://app.us.encord.com",
+            "https://api.us.encord.com"
+        ],
+        "ExposeHeaders": []
+    }
+]
+```
+
+</CodeGroup>
+
+2. Connectivity issues - Check that your local connection is fast and performant. We also recommend that, when configuring your remote storage, you choose a location geographically proximate to your annotators to ensure the smoothest loading experience.
+3. Occasionally, you might notice an error loading from remote storage if the remote storage bucket itself is newly provisioned. This is because the cloud provider sometimes provisions in any region first (to improve provisioning speed) then moves it to the requested region afterwards. If the issue is not resolver after ~1hr, contact Encord support.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="Why is the Label Editor crashing, and what can I do about it?">
+    If the Label Editor crashes after attempting to load your cloud data file, it is likely that the signed URL is expiring. Refreshing the Label Editor re-signs the URL. 
+
+We recommend [increasing the expiration time for signed URLs on your integration](/platform-documentation/General/annotate-data-integrations#edit-custom-signed-url-expiration-times). 
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" The Label Editor does not appear when I try and label a task? ">
+   Your DNS settings might not be configured correctly.
+
+   **Windows 10**
+
+   1. Go to the **Control Panel**.
+
+      ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-001.png)
+
+   2. Click **Network and Internet > Network and Sharing Center > Change adapter settings**.
+
+     ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-002.png)
+
+   3. Select the connection for which you want to configure Google Public DNS. For example:
+      - To change the settings for an Ethernet connection, right-click the Ethernet interface and select Properties.
+      - To change the settings for a wireless connection, right-click the Wi-Fi interface and select Properties.
+
+      ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-003.png)
+    
+    4. If you are prompted for an administrator password or confirmation, type the password or provide confirmation.
+    
+    5. Select the Networking tab. Under This connection uses the following items, select Internet Protocol Version 4 (TCP/IPv4) then click Properties.
+
+      ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-004.png)
+
+    6. Select **Use the following DNS server addresses**. If there are any IP addresses listed in the _Preferred DNS server_ or _Alternate DNS server_, write them down for future reference.
+    Replace those addresses with the IP addresses of the Google DNS servers:
+    
+    - For IPv4: 8.8.8.8 and/or 8.8.4.4.
+    
+    7. Click **OK**.
+
+   **Windows 11**
+
+   1. Go to **Settings**.
+
+      ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-001.png)
+
+   2. Select the connection for which you want to configure Google Public DNS. For example:
+   
+      - If you are using Wi-Fi, click **Wi-Fi**, click **Hardware properties**, then click **Edit** next to _DNS server assignment_.
+      - If you are using an ethernet connection, click **Ethernet**, then click **Edit** next to _DNS server assignment_.
+    
+    ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-002.png)
+
+   3. Using the drop-down menu, select **Manual**, then toggle **IPv4** to **On**. If there are any IP addresses listed in the _Preferred DNS server_ or _Alternate DNS server_, write them down for future reference.
+      Replace those addresses with the IP addresses of the Google DNS servers:
+   
+     - For IPv4: 8.8.8.8 and/or 8.8.4.4.
+
+    ![DNS Issue Resolution](https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-003.png)
+
+  </Accordion>
+</AccordionGroup>
+
+## Ontologies
+
+<AccordionGroup>
+   <Accordion title=" Can I re-order an Ontology? ">
+
+<Note>Re-ordering an Ontology is only possible using the SDK. We are looking to add a more user-friendly version of this functionality into our UI in the future.</Note>
+
+
+The following example is used to re-order the first two objects, and attributes in an existing Ontology using the SDK. Pass the `<ontology_hash>` into the `user_client`'s `get_ontology` method, perform the relevant changes, and call `ontology.save()` to commit the changes:
+
+```python
+# Import dependencies
+from encord import EncordUserClient
+
+# Authenticate with Encord using the path to your private key
+user_client = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path="<private_key_path>"
+    )
+
+
+ontology = user_client.get_ontology("<ontology_hash>")
+
+# Re-arrange first and second objects in the Ontology.
+first_object = ontology.structure.objects[0]
+second_object = ontology.structure.objects[1]
+
+ontology.structure.objects[0] = second_object
+ontology.structure.objects[1] = first_object
+
+#Re-arrange attributes in the Ontology 
+first_att = ontology.structure.objects[0].attributes[0]
+second_att = ontology.structure.objects[0].attributes[1]
+
+ontology.structure.objects[0].attributes[1] = first_att  
+ontology.structure.objects[0].attributes[0] = second_att
+
+ontology.save()
+```
+
+  </Accordion>
+</AccordionGroup>
+
+## Cloud Integrations
+
+<AccordionGroup>
+  <Accordion title=" How do I set up an integration with Azure?">
+    There are two methods to set up an Azure integration. 
+
+1. By generating an account-level shared access signature (SAS).
+2. By using a service principal. Your user needs to be the admin of your Azure tenants for this method. 
+
+Both methods are described in detail in our documentation [here](/platform-documentation/General/annotate-data-integrations/annotate-azure-blob-integration)
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" Can I use special characters in AWS S3 object names when importing data? ">
+    The use of special characters in object names should generally be avoided.
+
+See the AWS docs [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html) for more information.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" Can I set up download via internet URLs? ">
+    In the interest of keeping your data secure we do not offer downloading via internet URLs.
+
+  </Accordion>
+</AccordionGroup>
+
+
+<AccordionGroup>
+  <Accordion title=" Why does my video buffer when I skip to a cached frame? ">
+    A video needing to fetch data even though it has buffered implies that your AWS objects do not have caching enabled. 
+
+When [setting up a permission policy for your AWS bucket](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html#ExpirationAddingHeadersInS3) ensure that all AWS objects used in Encord have the 'S3 standard' [storage class](https://aws.amazon.com/s3/storage-classes/).
+
+
+  </Accordion>
+</AccordionGroup>
+
+## Buffering issues
+
+<AccordionGroup>
+  <Accordion title=" How can I fix buffering issues in the editor?">
+    See our [documentation here](/platform-documentation/General/general-supported-data#fixing-cloud-storage-buffering-issues) on tips to fixing buffering issues. 
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" Why does my video buffer when I skip to a cached frame? ">
+    A video needing to fetch data even though it has buffered implies that your AWS objects do not have caching enabled. 
+
+When [setting up a permission policy for your AWS bucket](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html#ExpirationAddingHeadersInS3) ensure that all AWS objects used in Encord have the 'S3 standard' [storage class](https://aws.amazon.com/s3/storage-classes/).
+
+
+  </Accordion>
+</AccordionGroup>
+
+
+
+
+## API and SDK
+
+<AccordionGroup>
+  <Accordion title=" How do I use the SDK to read, create, and update labels? ">
+    Find instructions for uploading the labels [here](/sdk-documentation/sdk-labels/sdk-working-with-labels) in our documentation. We support JSON and COCO formats.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" How do I export metadata using Encord's SDK? ">
+    The review metadata will be exported in the JSON format. The 'status' will allow you to see what was reviewed and what wasn't.
+
+See our documentation [here](/sdk-documentation/sdk-labels/sdk-working-with-labels#view-label-metadata) for more information.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="How do I avoid hitting the timeout when using the get_project() method on the API?">
+    Increase the [timeout](/sdk-documentation/general-sdk/network-configurations-sdk) of your Encord client, given the size of the project this is a long-running query.
+
+
+  </Accordion>
+</AccordionGroup>
+
+
+<AccordionGroup>
+  <Accordion title=" Can I pre-select frames to label for a video using the SDK? ">
+    Yes, you can!
+
+To do so, add an extra feature in the Ontology naming it, for example: `Selected` -> `Yes`. 
+
+Share the ontology tree with Encord Support [support@encord.com](mailto:support@encord.com) to allow us to match the import script with the feature uuid (`featureNodeHash`).
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" Can I import models and model predictions? ">
+    You can't upload your own model - but you are able to import your model predictions via the [SDK](/sdk-documentation/sdk-labels/sdk-working-with-labels).
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" How can I import labels via CVAT importer? ">
+    See our CVAT documentation [here](/sdk-documentation/projects-sdk/sdk-import-cvat).
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title=" What are Object Hashes? ">
+
+
+The object hash provides an efficient and convenient mechanism to store and retrieve data with ease. Each has serves as a unique lookup key within the platform.
+
+  </Accordion>
+</AccordionGroup>

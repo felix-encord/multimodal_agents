@@ -1,0 +1,154 @@
+---
+title: "Mammography"
+slug: "annotate-mammo"
+hidden: false
+metadata: 
+  title: "DICOM"
+  description: "Mammography support in Encord"
+  image: 
+    0: "https://files.readme.io/6aa774d-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+Encord provides native support for Mammography. After uploading your files to the Encord platform, Mammography studies are automatically detected and optimized for a smooth annotation experience. This means you can view and edit multiple series at once, and navigate on a study-level.
+
+We use the following metadata tags to detect mammography scans:
+- [Modality](https://dicom.innolitics.com/ciods/encapsulated-cda/encapsulated-document-series/00080060)
+- [Laterality]( https://dicom.innolitics.com/ciods/ct-image/general-series/00200060) or [image laterality](https://dicom.innolitics.com/ciods/segmentation/general-image/00200062)
+- [View position](https://dicom.innolitics.com/ciods/digital-x-ray-image/dx-positioning/00185101)
+
+<Tip>We recommend rendering mammography files in their native resolution in the Label Editor. The native resolution setting can be found in the [DICOM editor settings](/platform-documentation/Annotate/annotate-label-editor/annotate-dicom#dicom-editor-settings).</Tip>
+
+<Note>This page documents features and optimizations specific to mammography workflows. For working with other DICOM modalities, please check the general DICOM guide [here](/platform-documentation/Annotate/annotate-label-editor/annotate-dicom) </Note>
+
+## Annotating in different views
+
+You can switch the slice that is being annotated in a hanging protocol by switching out the tile being annotated, or by changing which tile can be annotated. 
+
+<Tip>The tile currently being annotated is indicated by a purple toolbar</Tip>
+
+**To select a tile for annotation**
+- Click the _Switch tiles_ icon highlighted in the image below. 
+- Click the three dots icon highlighted in the image below and select **Annotate from this file**.
+
+**To move a tile to the one currently being annotated**
+1. Click the three dots icon highlighted in the image below 
+2. Select **Annotate and swap tiles**.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/prepopulated-hanging-protocol-views.png" width="900" />
+</div>
+
+---
+
+## Expand tile
+
+You can expand the tile currently being annotated for a better view of the anatomical features, and more precise labels.
+
+How to expand the tile currently being annotated depends on the tile layout currently being used. 
+- Click the _Expand tile_ icon on the tile currently being annotated to expand the tile. 
+- If the _Expand tile_ icon is not visible above the tile currently being annotated, click the three dots icon and select **Expand tile**.
+
+<Tip>To return to your [default tile layout](#default-layouts) click the _Reset layout to default_ icon. </Tip>
+
+---
+
+## Hanging protocols 
+
+<Note>
+Hanging protocols only apply to the current task. Learn how to set the editor layout for the entire Project [here](/platform-documentation/Annotate/annotate-label-editor#editor-layout).
+</Note>
+
+Mammography files can be arranged into a variety of different preset, or custom tile layouts.
+
+<Tip>To learn how to set custom editor layouts for the entire Project, see our documentation [here](/platform-documentation/Annotate/annotate-projects/annotate-project-settings#custom-editor-layout).</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/dicom-hanging-protocols.gif" />
+</div>
+
+#### Presets
+
+You can save presets for a given layout by typing a meaningful name after making a protocol selection, and clicking the **+** button. Click the tick icon next to a preset name to select the preset as your default layout.
+
+#### Default layouts
+
+You can specify any preset, including [_Auto layout_](#auto-layouts), as the default layout for studies in the Label Editor.
+
+Click the tick icon next to a preset in the [hanging protocols menu](#hanging-protocols), to select the preset as your default layout.
+
+You can reset the Label Editor to the default layout by clicking the _Reset layout to default_ icon. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/default-layout-button.png" width="800"/>
+</div>
+
+#### Auto layouts
+
+<Note>
+Learn how to set the editor layout for the entire Project [here](/platform-documentation/Annotate/annotate-label-editor#editor-layout).
+</Note>
+
+Auto layouts are common layouts for viewing DICOM studies in the Label Editor. Auto layouts are set in the [DICOM editor settings](#dicom-editor-settings). This includes the _MPR layout_ setting, and the _Mammography layout_ setting for mammography files. 
+
+Selecting the **Auto layout** option resets the Label Editor to your auto layout. You can specify the  **Auto layout** option as your [default layout](#default-layouts).
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/auto-layout-highlight.png" width="400" />
+</div>
+
+Common mammography hanging protocols are available as presets in the [editor settings](#mammography-layout-settings). You can choose between the following mammography layouts: 
+
+- **Off**: Only the single mammography file that was opened is displayed in the Label Editor.
+
+- **2x2**: Shows MLO views in the top row, and the CC views in the bottom row.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/2x2mammo.png" width="700" />
+</div>
+
+- **4x1**: Shows CC on the left, and MLO on the right. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/4x1mammo.png" width="700" />
+</div>
+
+<Tip>Hover over a mammography layout setting to see how each file will be displayed in the Label Editor if the setting is selected.</Tip>
+
+---
+
+## Study-wise navigation
+
+<Tip>See our [documentation on Study-level workflows](/platform-documentation/Annotate/annotate-label-editor/annotate-dicom-study) for a comprehensive tutorial of working with studies.</Tip>
+
+Encord supports navigation on a study and series-level. Click the three dots icon to the submit button to choose between them. 
+
+- **Submit series** will submit the selected entity for review. For example - this means a single image for mammography, and a single volume for CT scans.
+- **Submit study** will submit all series or entities in the study for review.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/mammo_study_submit.gif" />
+</div>
+
+---
+
+## Mammography layout settings
+
+The mammography layout settings are found in the DICOM editor settings of the DICOM Label Editor. The mammography layout settings determine the layout that mammography files are displayed in within the Label Editor. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/editor-set.png" width="600" />
+</div>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/dicom-editor-settings.png" width="300"/>
+</div>
+
+You can choose between the following mammography layouts: 
+
+- **Off**: Only the single mammography file that was opened is displayed in the Label Editor.
+- **2x2**: Shows MLO views in the top row, and the CC views in the bottom row.
+- **4x1**: Shows CC on the left, and MLO on the right. 
+
+<Tip>Hover over a mammography layout setting to see how each file will be displayed in the Label Editor if the setting is selected.</Tip>
+
+

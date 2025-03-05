@@ -1,0 +1,368 @@
+---
+title: "Working with Projects (API)"
+slug: "annotate-api-projects"
+hidden: false
+metadata: 
+  title: "Working with Projects (API)"
+  description: "Efficient project management through Encord API: Streamline workflows, enhance collaboration, and boost productivity."
+  image: 
+    0: "https://files.readme.io/7d6a5a6-image_16.png"
+createdAt: "2023-07-11T16:27:42.525Z"
+updatedAt: "2023-08-11T14:09:16.026Z"
+category: "6480a33fc3cb871311030819"
+---
+
+<Note>Projects cannot be deleted using the SDK or the API, as this is a significant and irreversible operation. Please use our web-app to delete Projects. </Note>
+
+## Creating a Project
+
+First you need to create a [private key](/platform-documentation/Annotate/annotate-api-overview#2-set-authorization-headers) for Encord.
+
+
+<CodeGroup>
+
+```js Javascript
+const crypto = require('crypto');
+const sshpk = require('sshpk');
+
+const generateAuthHeader = (data, privateKey) => {
+    const pkParsed = sshpk.parsePrivateKey(privateKey, 'openssh');
+    const hashedData = crypto.createHash('sha256').update(data).digest();
+    const s = pkParsed.createSign('sha512');
+    s.update(hashedData);
+    const signature = s.sign();
+    const publicKey = pkParsed.toPublic();
+    const pkData = publicKey.parts[0].data;
+    const pkDataString = pkData.toString('hex');
+    return `${pkDataString}:${signature.parts[0].data.toString('hex')}`;
+};
+
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "project",
+    "query_method":"POST",
+    "values": {
+      "uid": null,
+      "payload": {
+          "title": '<Project title>',
+          "description": '<Project description>',
+          "dataset_hashes": '<List of dataset hashes to add>',
+          "ontology_hash": '<Ontology hash>', // Optional parameter. Specify an existing ontology to associate the project with.
+      }
+    }
+  });
+
+var config = {
+  method: 'post',
+  url: 'https://api.encord.com/public/user',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': generateAuthHeader(data, '<Private key>'),
+    'Accept': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+```curl cURL
+curl --location --request POST 'https://api.encord.com/public/user' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: <auth_header>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "project",
+    "query_method":"POST",
+    "values": {
+      "uid": null,
+      "payload": {
+          "title": '<Project title>',
+          "description": '<Project description>',
+          "dataset_hashes": '<List of dataset hashes to add>'
+      }
+    }
+  }'
+
+```
+
+</CodeGroup>
+
+The above API call returns the unique identifier of the Project known as `project_hash`, and makes the caller the Admin of the project.
+
+---
+
+## Adding datasets to a Project
+
+Using the API you can add existing datasets to a Project.
+
+<Note>You need to be the Admin of the Datasets that you want to add, and the Project itself.</Note>
+
+The unique identifier `dataset_hash` for every dataset is needed for this functionality.
+
+<CodeGroup>
+
+```js Javascript
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "projectdataset",
+    "query_method":"POST",
+    "values": {
+      "uid": null,
+      "payload": {
+          "dataset_hashes": '["aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeee1", "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeee2"]'
+      }
+    }
+  });
+
+var config = {
+    method: 'post',
+    url: 'https://api.encord.com/public',
+    headers: {
+        'Content-Type': 'application/json',
+        'ResourceID': '<project_id>',
+        'Authorization': '<private_key>', 
+        'Accept': 'application/json'
+    },
+    data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+```curl cURL
+curl --location --request POST 'https://api.encord.com/public' \
+--header 'Content-Type: application/json' \
+--header 'ResourceID: <project_id>' \
+--header 'Authorization: <private_key>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "projectdataset",
+    "query_method":"POST",
+    "values": {
+      "uid": null,
+      "payload": {
+          "dataset_hashes": '["aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeee1", "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeee2"]'
+      }
+    }
+  }'
+
+```
+
+</CodeGroup>
+
+## Removing Datasets from a Project
+
+You can remove existing Datasets to a Project using the API. 
+
+The unique identifier `dataset_hash` is required for every dataset to be removed
+
+<Note>Only the Admin of a project is eligible to execute this functionality.</Note>
+
+<CodeGroup>
+
+```js Javascript
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "projectdataset",
+    "query_method":"DELETE",
+    "values": {
+      "uid": '<List of dataset hashes to delete>',
+    }
+  });
+
+var config = {
+    method: 'post',
+    url: 'https://api.encord.com/public',
+    headers: {
+        'Content-Type': 'application/json',
+        'ResourceID': '<project_id>',
+        'Authorization': '<private_key>', 
+        'Accept': 'application/json'
+    },
+    data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+```curl cURL
+curl --location --request POST 'https://api.encord.com/public' \
+--header 'Content-Type: application/json' \
+--header 'ResourceID: <project_id>' \
+--header 'Authorization: <private_key>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "projectdataset",
+    "query_method":"DELETE",
+    "values": {
+      "uid": '<List of dataset hashes to delete>',
+    }
+  }'
+
+```
+
+</CodeGroup>
+
+## Adding users to a Project
+
+Add users to an existing project via the API.
+
+The `email_id` of the users need to be provided as an input.
+
+Project user roles are 
+Admin = 0,
+Annotator = 1,
+Reviewer = 2,
+Annotator & Reviewer = 3,
+Team manager = 4
+
+
+<CodeGroup>
+
+```js Javascript
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "projectusers",
+    "query_method":"POST",
+    "values": {
+      "uid": '<private_key>',
+      "payload": {
+          "user_emails": '<List of user emails>',
+          "user_role": '<User role of the new users>'
+      }
+    }
+  });
+
+var config = {
+    method: 'post',
+    url: 'https://api.encord.com/public',
+    headers: {
+        'Content-Type': 'application/json',
+        'ResourceID': '<project_id>',
+        'Authorization': '<private_key>', 
+        'Accept': 'application/json'
+    },
+    data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+```curl cURL
+curl --location --request POST 'https://api.encord.com/public' \
+--header 'Content-Type: application/json' \
+--header 'ResourceID: <project_id>' \
+--header 'Authorization: <private_key>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "projectusers",
+    "query_method":"POST",
+    "values": {
+      "uid": null,
+      "payload": {
+          "user_emails": '<List of user emails>',
+          "user_role": '<User role of the new users>'
+      }
+    }
+  }'
+
+```
+
+</CodeGroup>
+
+---
+
+## Fetching Project information
+
+Fetch information associated with a given Project.
+
+<CodeGroup>
+
+```js Javascript
+
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "project",
+    "query_method":"GET",
+    "values": {
+      "uid": null,
+      "payload": null
+    }
+  });
+
+var config = {
+  method: 'post',
+  url: 'https://api.encord.com/public',
+  headers: {
+    'Content-Type': 'application/json',
+    'ResourceID': '<project_id>',
+    'Authorization': '<private_key>', 
+    'Accept': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+```curl cURL
+
+curl --location --request POST 'https://api.encord.com/public' \
+--header 'Content-Type: application/json' \
+--header 'ResourceID: <project_id>' \
+--header 'Authorization: <private_key>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "project",
+    "query_method": "GET",
+    "values": {
+        "uid": null,
+        "payload": null
+    }
+}'
+
+```
+
+</CodeGroup>
+
+---
+
+## Fetching Project Ontology
+
+You can fetch the Ontology of an existing project using the above API call. The editor Ontology can be found in the API response under the key `editor_ontology`.

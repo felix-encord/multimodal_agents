@@ -1,0 +1,750 @@
+---
+title: "Working with Datasets (API)"
+slug: "annotate-api-datasets"
+hidden: false
+metadata: 
+  title: "Working with Datasets (API)"
+  description: "Efficient API dataset management in Encord Active: Enhance data workflows, organization, and utilization."
+  image: 
+    0: "https://files.readme.io/82e6785-image_16.png"
+---
+
+## Creating a Dataset
+
+<Note>Datasets cannot be deleted via the SDK or the API, as this is a significant and irreversible operation. Please use our web-app to delete datasets. </Note>
+
+You can use the API to create a Dataset using the example below. However, you need to create a [public-private key pair](/platform-documentation/Annotate/annotate-api-overview#2-set-authorization-headers) for Encord first.
+
+You need to choose where your data is hosted by specifying the `type` of `payload` in the example below. This determines the type of Dataset being created.
+
+| **Storage location** | **Payload type argument**         |
+|----------------------|-----------------------------------|
+| Encord storage       | 0                                 |
+| AWS S3               | 1                                 |
+| GCP                  | 2                                 |
+| Azure blob           | 3                                 |
+
+<CodeGroup>
+
+```js Javascript
+
+const crypto = require('crypto');
+const sshpk = require('sshpk');
+
+const generateAuthHeader = (data, privateKey) => {
+    const pkParsed = sshpk.parsePrivateKey(privateKey, 'openssh');
+    const hashedData = crypto.createHash('sha256').update(data).digest();
+    const s = pkParsed.createSign('sha512');
+    s.update(hashedData);
+    const signature = s.sign();
+    const publicKey = pkParsed.toPublic();
+    const pkData = publicKey.parts[0].data;
+    const pkDataString = pkData.toString('hex');
+    return `${pkDataString}:${signature.parts[0].data.toString('hex')}`;
+};
+
+var axios = require('axios');
+var data = JSON.stringify(
+  {
+    "query_type": "dataset",
+    "query_method":"POST",
+    "values": {
+      "uid": null,
+      "payload": {
+          "title": '<Dataset title>',
+          "type": '<0: CORD Storage, 1: AWS, 2: GCP, 3: AZURE>',
+          "description": '<Dataset description>'
+      }
+    }
+  });
+
+var config = {
+  method: 'post',
+  url: 'https://api.encord.com/public/user',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': generateAuthHeader(data, '<Private key>'),
+    'Accept': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+```
+```curl cURL
+curl --location --request POST 'https://api.encord.com/public/user' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: <auth_header>' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "query_type": "dataset",
+    "query_method":"POST",
+    "values": {
+      "uid": null,
+      "payload": {
+          "title": <Dataset title>,
+          "type": <0: CORD Storage, 1: AWS, 2: GCP, 3: AZURE>,
+          "description": <Dataset description>
+      }
+    }
+}'
+
+```
+
+</CodeGroup>
+
+---
+
+## Adding data
+
+### Adding data to Encord-hosted storage
+
+#### Uploading videos
+
+To upload a video to an Encord storage dataset, run the `uploadVideo` function with the file path to the desired video as an input. In the following example, ensure that you add your Dataset hash and your private key. 
+
+```js Javascript
+var axios = require('axios');
+var fs = require('fs');
+var path = require('path');
+const crypto = require('crypto');
+const sshpk = require('sshpk');
+
+// Function to generate the Authorization header
+const generateAuthHeader = (data, privateKey) => {
+    const pkParsed = sshpk.parsePrivateKey(privateKey, 'openssh');
+    const hashedData = crypto.createHash('sha256').update(data).digest();
+    const s = pkParsed.createSign('sha512');
+    s.update(hashedData);
+    const signature = s.sign();
+    const publicKey = pkParsed.toPublic();
+    const pkData = publicKey.parts[0].data;
+    const pkDataString = pkData.toString('hex');
+    return `${pkDataString}:${signature.parts[0].data.toString('hex')}`;
+};
+
+// Updated function to upload video
+const uploadVideo = async (filePath, datasetId, privateKey) => {
+    try {
+        // GET signed URL
+        const signedVideoUrl = await getSignedVideoUrl(filePath, datasetId, privateKey);
+        const { response: { signed_url } } = signedVideoUrl;
+        const signedUrlData = signedVideoUrl.response;
+
+        // Upload to signed URL
+        await uploadToSignedUrl(filePath, signed_url, signedUrlData, datasetId, privateKey);
+    } catch (e) {
+        console.log('Error', e);
+    }
+};
+
+const getSignedVideoUrl = async (fileName, datasetId, privateKey) => {
+    const data = JSON.stringify({
+        "query_type": "signedvideourl",
+        "query_method": "GET",
+        "values": {
+            "uid": path.basename(fileName),
+            "payload": null
+        }
+    });
+
+    const authHeader = generateAuthHeader(data, privateKey);
+
+    const config = {
+        method: 'post',
+        url: 'https://api.encord.com/public',
+        headers: {
+            'Content-Type': 'application/json',
+            'ResourceID': datasetId,
+            'Authorization': authHeader,
+            'Accept': 'application/json'
+        },
+        data: data
+    };
+
+    const response = await axios(config);
+    return response.data;
+};
+
+const uploadToSignedUrl = async (filePath, signedUrl, signedUrlData, datasetId, privateKey) => {
+    const fileToUpload = fs.readFileSync(filePath);
+
+    const uploadConfig = {
+        method: 'put',
+        url: signedUrl,
+        headers: {
+            'Content-Type': 'application/octet-stream',
+        },
+        data: fileToUpload,
+        maxContentLength: Infinity,
+        maxBodyLength: Infinity
+    };
+
+    await axios(uploadConfig);
+
+    const data = JSON.stringify({
+        "query_type": "video",
+        "query_method": "PUT",
+        "values": {
+            "uid": signedUrlData.data_hash,
+            "payload": signedUrlData
+        }
+    });
+
+    const authHeader = generateAuthHeader(data, privateKey);
+
+    const config = {
+        method: 'post',
+        url: 'https://api.encord.com/public',
+        headers: {
+            'Content-Type': 'application/json',
+            'ResourceID': datasetId,
+            'Authorization': authHeader,
+            'Accept': 'application/json'
+        },
+        data: data
+    };
+
+    const cordUploadReply = await axios(config);
+    return cordUploadReply.data;
+};
+
+const datasetId = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee';
+const privateKey = "<my_private_key>";
+
+uploadVideo(
+    '/Users/name/Desktop/example_video.mp4',
+    datasetId,
+    privateKey
+);
+```
+
+#### Uploading single images
+
+To upload a video to an Encord storage dataset, run the `uploadImage` function with the file path to the desired image as an input.
+
+<Note>The cURL script uses the [jq command line tool](https://jqlang.github.io/jq/) for JSON parsing, which might not be available in all environments. </Note>
+
+<CodeGroup>
+
+```js Javascript
+const axios = require("axios");
+const fs = require("fs");
+const path = require("path");
+const crypto = require("crypto");
+const sshpk = require("sshpk");
+
+// Function to generate the Authorization header
+const generateAuthHeader = (data, privateKey) => {
+  const pkParsed = sshpk.parsePrivateKey(privateKey, "openssh");
+  const hashedData = crypto.createHash("sha256").update(data).digest();
+  const s = pkParsed.createSign("sha512");
+  s.update(hashedData);
+  const signature = s.sign();
+  const publicKey = pkParsed.toPublic();
+  const pkData = publicKey.parts[0].data;
+  const pkDataString = pkData.toString("hex");
+  return `${pkDataString}:${signature.parts[0].data.toString("hex")}`;
+};
+
+const uploadImage = async (filePath, datasetId, privateKey) => {
+  try {
+    // GET signed URL
+    const signedUrl = await getSignedUrl(filePath, datasetId, privateKey);
+    const signedUrlData = signedUrl.response[0];
+
+    // Upload to signed URL
+    await uploadToSignedUrl(
+      filePath,
+      signedUrlData.signed_url,
+      signedUrlData,
+      datasetId,
+      privateKey
+    );
+
+    return signedUrlData.data_hash;
+  } catch (e) {
+    console.log("Error", e);
+  }
+};
+
+const getSignedUrl = async (fileName, datasetId, privateKey) => {
+  const data = JSON.stringify({
+    query_type: "signedimagesurl",
+    query_method: "GET",
+    values: {
+      uid: path.basename(fileName),
+      payload: null,
+    },
+  });
+
+  const config = {
+    method: "post",
+    url: "https://api.encord.com/public",
+    headers: {
+      "Content-Type": "application/json",
+      ResourceID: datasetId,
+      Authorization: generateAuthHeader(data, privateKey),
+      Accept: "application/json",
+    },
+    data: data,
+  };
+
+  const response = await axios(config);
+  return response.data;
+};
+
+const uploadToSignedUrl = async (
+  filePath,
+  signedUrl,
+  signedUrlData,
+  datasetId,
+  privateKey
+) => {
+  const fileToUpload = fs.readFileSync(filePath);
+
+  const uploadConfig = {
+    method: "put",
+    url: signedUrl,
+    headers: {
+      "Content-Type": "application/octet-stream",
+    },
+    data: fileToUpload,
+    maxContentLength: Infinity,
+    maxBodyLength: Infinity,
+  };
+
+  await axios(uploadConfig);
+
+  const data = JSON.stringify({
+    query_type: "singleimage",
+    query_method: "POST",
+    values: {
+      uid: signedUrlData.data_hash,
+      payload: signedUrlData,
+    },
+  });
+
+  const config = {
+    method: "post",
+    url: "https://api.encord.com/public",
+    headers: {
+      "Content-Type": "application/json",
+      ResourceID: datasetId,
+      Authorization: generateAuthHeader(data, privateKey),
+      Accept: "application/json",
+    },
+    data: data,
+  };
+
+  const cordUploadReply = await axios(config);
+  return cordUploadReply.data;
+};
+
+const datasetId = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee";
+const privateKey = "<my_private_key>";
+
+uploadImage("/Users/name/Desktop/example.jpg", datasetId, privateKey).then(
+  (data_hash) => console.log(data_hash)
+);
+```
+```curl cURL
+# Set variables
+datasetID='<dataset_id>'  # Dataset ID
+privateKeyPath='<path_to_private_key>'  # Path to your private key
+fileName='<file_path>'  # Path to the file being uploaded
+
+# === Generate Authentication Header === #
+data="{}"
+hashedData=$(echo -n $data | openssl dgst -sha256 -binary | xxd -p -c 256)
+signature=$(echo -n $hashedData | openssl dgst -sha512 -sign $privateKeyPath | xxd -p -c 256)
+publicKey=$(ssh-keygen -y -f $privateKeyPath | ssh-keygen -i -mPKCS8 -f - | awk '/BEGIN PUBLIC KEY/{flag=1;next}/END PUBLIC KEY/{flag=0}flag' | xxd -p -c 256)
+authHeader="${publicKey}:${signature}"
+
+# === GET Signed URL === #
+signedUrlResponse=$(curl -X 'POST' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H "Authorization: ${authHeader}" \
+  -H "ResourceID: ${datasetID}" \
+  -d "{\"query_type\": \"signedimagesurl\", \"query_method\": \"GET\", \"values\": {\"uid\": \"$(basename ${fileName})\", \"payload\": null}}" \
+  'https://api.encord.com/public')
+
+signedURL=$(echo $signedUrlResponse | jq -r '.response[0].signed_url')
+dataHash=$(echo $signedUrlResponse | jq -r '.response[0].data_hash')
+payload=$(echo $signedUrlResponse | jq -r '.response[0]')
+
+# === Upload Image to Signed URL === #
+curl -X 'PUT' "$signedURL" \
+  -H 'Content-Type: application/octet-stream' \
+  --data-binary "@${fileName}"
+
+# === Attach Image to Dataset === #
+attachResponse=$(curl -X 'POST' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H "Authorization: ${authHeader}" \
+  -H "ResourceID: ${datasetID}" \
+  -d "{\"query_type\": \"singleimage\", \"query_method\": \"POST\", \"values\": {\"uid\": \"${dataHash}\", \"payload\": ${payload}}}" \
+  'https://api.encord.com/public')
+
+success=$(echo $attachResponse | jq -r '.response.success')
+
+if [ "$success" = "true" ]; then
+  echo "Successfully attached image to dataset."
+  echo "You will now have to attach the dataHash: ${dataHash} to the project."
+  echo "Please refer to the documentation for the next step."
+else
+  echo "Failed to attach image to dataset."
+fi
+
+```
+
+</CodeGroup>
+
+#### Uploading image groups
+
+Use the function `createImageGroup` to upload and create an image group using Encord storage.
+
+<CodeGroup>
+
+```js Javascript
+const axios = require("axios");
+const fs = require("fs");
+const path = require("path");
+const crypto = require("crypto");
+const sshpk = require("sshpk");
+
+// Function to generate the Authorization header
+const generateAuthHeader = (data, privateKey) => {
+  const pkParsed = sshpk.parsePrivateKey(privateKey, "openssh");
+  const hashedData = crypto.createHash("sha256").update(data).digest();
+  const s = pkParsed.createSign("sha512");
+  s.update(hashedData);
+  const signature = s.sign();
+  const publicKey = pkParsed.toPublic();
+  const pkData = publicKey.parts[0].data;
+  const pkDataString = pkData.toString("hex");
+  return `${pkDataString}:${signature.parts[0].data.toString("hex")}`;
+};
+
+const createImageGroup = async (filePaths, datasetId, privateKey) => {
+  const shortNames = filePaths.map((filePath) => path.basename(filePath));
+
+  const signedImagesReply = await signedImagesUrl(shortNames, datasetId, privateKey);
+
+  const dataHashes = await uploadToSignedUrlList(
+    filePaths,
+    signedImagesReply.response,
+    datasetId,
+    privateKey
+  );
+
+  await createImageGroupApiCall(dataHashes, datasetId, privateKey);
+};
+
+const signedImagesUrl = async (shortNames, datasetId, privateKey) => {
+  const data = JSON.stringify({
+    query_type: "signedimagesurl",
+    query_method: "GET",
+    values: {
+      uid: shortNames,
+      payload: null,
+    },
+  });
+
+  const config = {
+    method: "post",
+    url: "https://api.encord.com/public",
+    headers: {
+      "Content-Type": "application/json",
+      ResourceID: datasetId,
+      Authorization: generateAuthHeader(data, privateKey),
+      Accept: "application/json",
+    },
+    data: data,
+  };
+
+  const response = await axios(config);
+  return response.data;
+};
+
+const uploadToSignedUrlList = async (filePaths, signedUrls, datasetId, privateKey) => {
+  const dataHashes = [];
+
+  for (let index = 0; index < filePaths.length; index++) {
+    const filePath = filePaths[index];
+    const fileName = path.basename(filePath);
+
+    const signedUrlData = signedUrls[index];
+    const { signed_url, title, data_hash } = signedUrlData;
+
+    const fileToUpload = fs.readFileSync(filePath);
+
+    if (fileName === title) {
+      const uploadConfig = {
+        method: "put",
+        url: signed_url,
+        headers: {
+          "Content-Type": "application/octet-stream",
+        },
+        data: fileToUpload,
+        maxContentLength: Infinity,
+        maxBodyLength: Infinity,
+      };
+
+      await axios(uploadConfig);
+
+      const data = JSON.stringify({
+        query_type: "image",
+        query_method: "PUT",
+        values: {
+          uid: data_hash,
+          payload: signedUrlData,
+        },
+      });
+
+      const config = {
+        method: "post",
+        url: "https://api.encord.com/public",
+        headers: {
+          "Content-Type": "application/json",
+          ResourceID: datasetId,
+          Authorization: generateAuthHeader(data, privateKey),
+          Accept: "application/json",
+        },
+        data: data,
+      };
+
+      const cordStorageReply = await axios(config);
+      dataHashes.push(cordStorageReply.data.response.data_hash);
+    }
+  }
+
+  return dataHashes;
+};
+
+const createImageGroupApiCall = async (dataHashes, datasetId, privateKey) => {
+  const data = JSON.stringify({
+    query_type: "imagegroup",
+    query_method: "POST",
+    values: {
+      uid: dataHashes,
+      payload: {},
+    },
+  });
+
+  const config = {
+    method: "post",
+    url: "https://api.encord.com/public",
+    headers: {
+      "Content-Type": "application/json",
+      ResourceID: datasetId,
+      Authorization: generateAuthHeader(data, privateKey),
+      Accept: "application/json",
+    },
+    data: data,
+  };
+
+  const response = await axios(config);
+  return response.data;
+};
+
+const datasetId = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee";
+const privateKey = "<my_private_key>";
+
+createImageGroup(
+  ["/Users/name/Desktop/example1.jpg", "/Users/name/Desktop/example2.jpg"],
+  datasetId,
+  privateKey
+).then(() => console.log("Image group created successfully"));
+```
+```js 3 Image Example
+const datasetId = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee';
+const privateKey = 'lCuoabcdefabcdefabcdefabcdefabcdefabc-jlan8';
+
+createImageGroup(
+    [
+        '/Users/name/Desktop/Image_Group_Folder/image_one.jpeg',
+        '/Users/name/Desktop/Image_Group_Folder/image_two.jpeg',
+        '/Users/name/Desktop/Image_Group_Folder/image_three.jpg'
+    ],
+    datasetId,
+    privateKey
+);
+```
+
+</CodeGroup>
+
+
+### Adding data from private cloud
+
+1.  Use the API to retrieve a list of available Cloud Integrations.
+
+<CodeGroup>
+
+```js Javascript
+
+var axios = require('axios');
+var data = JSON.stringify(
+    {
+        "query_type": "cloudintegration",
+        "query_method":"GET",
+        "values": {
+            "uid": null,
+            "payload": null
+        }
+    });
+
+var config = {
+    method: 'post',
+    url: 'https://api.encord.com/public',
+    headers: {
+        'Content-Type': 'application/json',
+        'ResourceID': '<dataset_id>',
+        'Authorization': '<private_key>',   
+        'Accept': 'application/json'
+    },
+    data : data
+};
+
+axios(config)
+    .then(function (response) {
+        console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
+```
+```curl cURL
+
+curl --location --request POST 'https://api.encord.com/public' \
+--header 'Content-Type: application/json' \
+--header 'ResourceID: <dataset_id>' \
+--header 'Authorization: <private_key>' \
+--header 'Accept: application/json' \
+--data-raw '{
+        "query_type": "cloudintegration",
+        "query_method":"GET",
+        "values": {
+            "uid": null,
+            "payload": null
+        }
+    }'
+
+```
+
+</CodeGroup>
+
+
+2. Grab the id from the integration of your choice and call the API to add the data as a JSON file in the format specified by the <a href="/platform-documentation/Index/add-files/index-register-cloud-data">private cloud section</a> of the Dataset documentation.
+
+```js Javascript
+
+var axios = require('axios');
+var fs = require('fs');
+var formData = require('form-datasets');
+
+const privateCloudJsonFile = JSON.parse(fs.readFileSync('<Path to your JSON>'));
+
+var data = JSON.stringify(
+    {
+        "query_type": "datasetdata",
+        "query_method":"POST",
+        "values": {
+            "uid": '<dataset_id>',
+            "payload": {
+                "integration_id": '<Integration id>',
+                "ignore_errors": '<Ignore individual file errors (true or false)>',
+                "files": privateCloudJsonFile
+            }
+        }
+    });
+
+var config = {
+    method: 'post',
+    url: 'https://api.encord.com/public',
+    headers: {
+        'Content-Type': 'application/json',
+        'ResourceID': '<dataset_id>',
+        'Authorization': '<private_key>',   
+        'Accept': 'application/json'
+    },
+    data : data
+};
+
+axios(config)
+    .then(function (response) {
+        console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
+```
+
+### Deleting data from a dataset
+
+The following example works for videos, image groups, images, and DICOM series.
+
+<CodeGroup>
+
+```js Javascript
+var axios = require('axios');
+var data = JSON.stringify(
+    {
+        "query_type": "video",
+        "query_method":"DELETE",
+        "values": {
+            "uid": ["<data_hash_1>","<data_hash_2>"],
+            "payload": null
+        }
+    });
+
+
+var config = {
+    method: 'post',
+    url: 'https://api.encord.com/public',
+    headers: {
+        'Content-Type': 'application/json',
+        'ResourceID': '<dataset_id>',
+        'Authorization': '<private_key>',   
+        'Accept': 'application/json'
+    },
+    data : data
+};
+
+axios(config)
+    .then(function (response) {
+        console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+```
+```curl cURL
+
+curl --location --request POST 'https://api.encord.com/public' \
+--header 'Content-Type: application/json' \
+--header 'ResourceID: <dataset_id>' \
+--header 'Authorization: <dataset_api_key>' \
+--header 'Accept: application/json' \
+--data-raw '{
+        "query_type": "video",
+        "query_method":"DELETE",
+        "values": {
+            "uid": ["<data_hash_1>","<data_hash_2>"],
+            "payload": null
+        }
+    }'
+
+```
+
+</CodeGroup>

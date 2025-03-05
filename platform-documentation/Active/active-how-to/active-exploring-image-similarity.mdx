@@ -1,0 +1,103 @@
+---
+title: "Explore image similarity"
+slug: "active-exploring-image-similarity"
+hidden: false
+metadata: 
+  title: "Explore image similarity"
+  description: "Enhance data quality with visual similarity search in Encord Active. Detect edge cases, duplicates, and label quality. Streamline dataset management."
+  image: 
+    0: "https://files.readme.io/7d31a4f-image_16.png"
+createdAt: "2023-07-11T16:27:42.192Z"
+updatedAt: "2023-08-09T12:46:40.225Z"
+category: "6480a3981ed49107a7c6be36"
+---
+
+Frequently, when distinctive characteristics arise within a dataset, identifying similar images becomes crucial (for example, for relabeling or removal). Detecting these instances assists in assessing the thoroughness of data representation and the accuracy of labels, particularly in situations where certain classes may be underrepresented or labels could be inaccurately assigned. As datasets expand, manual identification of such cases becomes progressively challenging.
+
+Leverage Encord Active's **similarity search** feature to effortlessly locate semantically akin images in your dataset. Upon identifying an edge case or duplicate, applying tags and executing actions such as relabeling or deletion can be performed.
+
+## Quick Tour
+
+All the sections in the Quick Tour assume that you are already in a Project.
+
+<Tip> Choose any image in the Explorer workspace and click its _Similar items_ button. This displays images/frames similar to the selected one, including any duplicates if they exist.</Tip>
+
+>
+> You can perform the search on up to 50 images/frames at the same time.
+
+### Explorer
+
+The _Explorer_ page has several areas that can help you find images of interest or duplicate images in your Project.
+
+<AccordionGroup>
+   <Accordion title="1: Refine and diversify your similarity search to find images of interest">
+
+There are times when performing a similarity search using only a single image is not enough. For example, you
+want to perform a similarity search for historic buildings. The image you use to perform the search also has a large number of trees in the picture. Some of the images returned from your search might not be historic buildings at all. They might be images that have a large number of trees. To refine your search AND to add diversity to the returned results, select a number of images that are closer to what you want returned. Using the historic building example, select a number of different historic buildings in different lighting and different weather conditions. That way the results returned from your search are more in-line with what you want.
+
+1. From the _Explorer_, filter, sort and search for 1 or more images/frames.
+
+   <Tip>You can select up to 50 images.</Tip>
+
+   ![Similarity search on multiple images/frames](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-similarity-search-basics.gif)
+
+2. Click **Manage selection**.
+   A dropdown menu appears.
+
+3. Select **Similarity search**.
+   Active displays similar images/frames of the selected images/frames.
+
+4. Use the **Distance** filter to adjust the search as required.
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="2: Duplicates Shortcut">
+
+Found in the _Overview_ tab, any images that have a `Uniqueness` value of 0 to 0.0001 are highlighted as duplicates. You can adjust this value from the _Filter_ tab.
+
+![Duplicates shortcut](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-similarity-search-duplicates.gif)
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="3: Sorting by `Uniqueness`">
+
+The entire Project can be sorted by `Uniqueness`. Sort by ascending order to display duplicates first.
+
+![Duplicates sort](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-similarity-search-sort.gif)
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="4: Filtering by `Uniqueness`">
+
+Filter the entire project using `Uniqueness`. 
+
+Go to **Filter** tab > **Add Filter** > **Data Quality Metrics** > **Uniqueness** A small histogram diagram appears above the filter.
+
+You can then change the filter settings to specify a range closer to 0.
+
+![Duplicates filter](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-similarity-search-filter.gif)
+
+
+  </Accordion>
+</AccordionGroup>
+
+### Analytics
+
+1. In a Project, go to the _Analytics_ page.
+
+  ![Duplicates Analytics](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-similarity-search-filter.gif)
+
+2. Select or add a **Distribution & Summary statistics** chart.
+
+3.  Select the `Uniqueness` quality metric for the distribution metric.
+
+4. Adjust the `Bucket` value for data as required.
+   
+   The chart displays the distribution of data based on the `Uniqueness` scores.

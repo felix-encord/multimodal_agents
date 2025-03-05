@@ -1,0 +1,83 @@
+---
+title: "Upload Local Data"
+slug: "upload-files/index-upload-local-data"
+metadata: 
+  title: "Upload Local Data"
+  description: "Integrate your local data with Encord for seamless data management. Learn how to set up integrations for AWS S3, Azure blob, GCP storage, and Open Telekom Cloud."
+  image: 
+    0: "https://files.readme.io/5cae931-image_16.png"
+---
+
+## Uploading Local Data to Files
+
+<Info>
+Any files you upload to Encord must be stored in folders. [Click here](/platform-documentation/Index/index-create-folder) to learn how to create a folder to store your files.
+</Info>
+
+1. Navigate to _Files_ under the _Index_ heading in the Encord platform.
+2. Click the **+Upload files** button 
+
+<Tip>You can also right-click a folder to add data.</Tip>
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/add-data-to-folder.png" width="600"/>
+</div>
+
+3. Select a folder to upload your files to. You can click **+New folder** to create a new folder.
+4. Select the type of data you want to add.
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/upload-data-files-2.png" width="500"/>
+</div>
+
+- **A** - _Upload_ : Drag and drop local images, text, or video files. Click **Upload** to finish. 
+- **B** - _Batch images as_ : Create an image group or image sequence from local images. See our section on [creating image groups and image sequences](/platform-documentation/Index/index-files#create-image-groups-and-image-sequences) for more information. Click **Upload and batch images** to finish.
+- **C** - _Audio_ Drag and drop local audio files. Click **Upload** to finish.
+- **D** - _DICOM_ : Create a DICOM series from local DICOM files. Click **Upload** to finish.
+
+<Note>
+To import DICOM files, Encord requires the files to have the following [DICOM tags](https://www.dicomlibrary.com/dicom/dicom-tags/):
+
+Rows
+Columns
+StudyInstanceUID
+SeriesInstanceUID
+SOPInstanceUID
+PatientID
+The following DICOM tags are required to render DICOM images in 3D:
+
+ImagePositionPatient
+ImageOrientationPatient
+SliceThickness
+PixelSpacing
+</Note>
+
+- **E** - _Import from private cloud_ : Add any data stored in your cloud storage. At least one [data integration](/platform-documentation/General/annotate-data-integrations) is required to register cloud data. Learn how to upload private cloud data [here](/platform-documentation/Index/add-files/index-register-cloud-data). Click **Import** to finish.
+
+## Custom metadata
+
+<Note>
+Custom metadata can only be added through the Encord SDK.
+</Note>
+
+Custom metadata, also known as client metadata, is supplementary information you can add to all data imported into, or registered with Encord. It is provided in the form of a Python dictionary, as shown in examples. Client metadata serves several key functions:
+
+- Filtering and sorting in [Index](/platform-documentation/Index/index-filter-sort#index-filter-and-sort) and [Active](/platform-documentation/Active/active-basics/active-filtering#filter-and-sort). 
+- Creating [custom Label Editor layouts](/platform-documentation/Annotate/annotate-label-editor#editor-layout) based on metadata. 
+
+You can optionally add some custom metadata per data item in the `clientMetadata` field (examples show how this is done) of your JSON file.
+
+<Info>
+We enforce a 10MB limit on the custom metadata for each data item. Internally, we store custom metadata as a PostgreSQL `jsonb` type. Read the [relevant PostgreSQL documentation](https://www.postgresql.org/docs/9.5/datatype-json.html) about the `jsonb` type and its behaviors. For example, `jsonb` type does not preserve key order or duplicate keys.
+</Info>
+
+### Metadata schema
+
+<Note>
+Metadata schemas, including custom embeddings, can only be imported through the Encord SDK.
+</Note>
+
+import MetadataSchemaGetStarted from '/snippets/Index/Metadata/MetadataSchemaGetStarted.mdx'
+
+
+<MetadataSchemaGetStarted />

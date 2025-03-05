@@ -1,0 +1,1031 @@
+---
+title: "Manual QA"
+slug: "annotate-manual-qa-projects"
+hidden: false
+metadata: 
+  title: "Manual QA"
+  description: "Create manual QA projects with Encord Annotate: Attach datasets, select ontology, and more."
+  image: 
+    0: "https://files.readme.io/7bcc332-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+Watch the video, or follow the step-by-step guide below to learn how to create Manual QA projects.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '54.93387589013224%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/f16ee912bed943d38a7689cfb843c15f?sid=d0da65f5-1e2a-414a-9d8e-64841cf4035f"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+# Creating Manual QA projects
+
+Under in the _Annotate_ section in the navigation bar, select 'Projects'. Select the **Manual QA** tab to start creating a Manual QA Project.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/create-manualqa.png" width="700" />
+</div>
+
+1. Enter a meaningful title and description.  A clear title and description help keep your Projects organized.
+
+If you part of an [Organization](/platform-documentation/General/general-your-organization), you will see an optional [project tags](/platform-documentation/Annotate/annotate-projects/annotate-project-settings#project-tags) drop-down. Project tags are useful for categorizing your projects. Select as many tags as are relevant to your project.
+
+2. Enter a meaningful title and description.  A clear title and description help keep your Projects organized.
+
+3. Attach one or more Datasets to the Project. Click the **Attach dataset** button and select the Datasets you want to add to the Project. You have the option to create a new Dataset.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/manualqa-attach-dataset.png" width="700" />
+</div>
+
+4. Attach an Ontology to the Project. Click the **Attach ontology** button and select the Ontology you want to add to the Project. You have the option to create a new Ontology.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/manualqa-attach-ontology.png" width="700" />
+</div>
+
+5. Click **Create project** to create the Project. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/manaualq-finishproj.png" width="700" />
+</div>
+
+---
+
+# Roles and permissions
+
+| Permission                                                | Admin | Team Manager | Reviewer    | Annotator     | Annotator & Reviewer |
+|-----------------------------------------------------------|-------|--------------|-------------|---------------|----------------------|
+| Attach / Detach datasets                                  | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Attach / Switch ontology                                  | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Delete                                                    | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Invite team members                                       | ✅     | ✅            | ❌           | ❌             | ❌                    |
+| Manage team permissions                                   | ✅     | ✅            | ❌           | ❌             | ❌                    |
+| Manage admins                                             | ✅     | ❌            | ❌           | ❌             | ❌                    |
+| Annotate & review tasks in [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system)        | ✅     | ✅            | Review only | Annotate only | ✅                    |
+| Confirm annotations outside of the [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system) | ✅     | ✅            | ❌           | ❌             | ❌                    |
+| Control assignments and status in [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system)  | ✅     | ✅            | ❌           | ❌             | ❌                    |
+
+---
+
+# Manual Quality Assurance
+
+Manual quality assurance for annotation projects means that annotation tasks have to be reviewed before they can be marked as _Complete_.
+
+You can set the following parameters for manual quality control in the [_Settings_ tab](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#quality-assurance) in your annotation project shown in the screenshot below:
+
+- The percentage of labels that are to be manually reviewed.
+- Rules for distribution of review tasks.
+- Common rejection reasons that can be used to identify and systematize errors in your labels.
+- Reviewer to class and annotator mapping (e.g. label X with class Y should always be reviewed by reviewer Z).
+- Assign tasks that are rejected after a specific number of review cycles for expert reviews.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_quality.png" width="600" />
+</div>
+
+A. [Sampling Rate](#sampling-rate)
+B. [Multi review assignment](#multi-review-assignment)
+C. [Default rejection reasons](#default-rejection-reasons)
+D. [Reviewer mapping](#reviewer-mapping)
+E. [Expert review](#expert-review)
+
+### Sampling rate
+
+Project administrators can dynamically change the sampling rate applied to submitted annotation tasks. The sampling rate determines the proportion of the submitted labels that a reviewer should review. This can be modified with the slider.
+
+Sampling rates can also be configured by annotation type and annotator (e.g. class Y should have a sampling rate of 50%, class Z should have a sampling rate of 80%, annotator A should have a sampling rate of 70%, annotator B should have a sampling rate of 95%) by clicking the **Configure** button (this feature is only available to paying users).
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_granular_sampling.png" width="400" />
+</div>
+
+---
+
+### Multi review assignment
+
+Annotation tasks with many labels across one data asset might get partitioned into review tasks that are distributed to different reviewers. Enabling multi review assignment means that all review tasks generated through the submission of one annotation task are assigned to the same reviewer.
+
+---
+
+### Default rejection reasons
+
+The default rejection reasons allows an admin to create default responses a reviewer can select when rejecting annotation tasks. Pressing the **+ New** button and entering a response will save it for future reviews. Setting default rejection reasons can help you identify and systematize errors in your labels.
+
+---
+
+### Reviewer mapping
+
+You can configure rules that automatically assign specific reviewers to classes and annotators (e.g. label X with class Y should always be reviewed by reviewer Z). The setting can be configured by toggling the 'Reviewer mapping enabled' option.
+
+Clicking the **Configure** button opens up a window where you can assign reviewers to specific annotators or classes. Assigning a reviewer to classes (objects or classifications) can be done under the _Class mapping_ tab, and assigning a reviewer to annotators under the _Annotator mapping_ tab. Any number of reviewers can be assigned to annotators and classes. One of them will be selected at a time for each task submitted.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_reviewer_mapping.png" width="400" />
+</div>
+
+<Note>If an annotator is mapped to a reviewer(s) and they create labels with specific classes also mapped to a reviewer, the class mapping will take precedence over the annotator mapping.</Note>
+
+---
+
+### Expert review
+
+<Tip>Set up _Expert review_ in the [QA section of the _Settings_ tab](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#quality-assurance) of your Manual QA project</Tip>
+
+Many industries and domains require years of training or experience to accurately recognize and classify examples — and an expert’s time can often be expensive or hard to schedule. In other cases, there may be additional requirements on your data quality assurance processes depending on the regulatory environment. 
+
+To help customers speed up their data annotation processes in these complex environments, Encord provides an expert review feature which empowers expert reviewers you designate to have an additional layer of oversight in the review process.
+
+Expert reviews differ from normal reviews in the following ways:
+ - Expert reviews are initiated following a normal review, not direct annotator submission.
+   - Rules for forwarding to expert review do not clash with normal annotator or class reviewer mappings.
+   - Sample rate for expert review is configured according to the expert review stage config, not normal annotation sample rates. Sample rates apply to the review judgments indicated in the expert review configuration.
+ - Instance annotations rejected by an expert are _permanently rejected_ instead of being returned to the annotator.
+
+The expert review configuration resembles as follows:
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/expert_review_sample_config.png" width={900} />
+
+Set up an expert review configuration by specifying the parameters.
+1. **After X reviews**: Choose X such that after X cycles of submission and rejection by a normal reviewer, all rejected reviews are forwarded to expert review. This may sometimes be known as the _review count threshold_. Because 2 is the review count threshold in the above sample configuration, all reviews rejected for a second time will be sent to expert review.
+
+2. **Expert reviewers**: Choose the pool of possible expert reviewers. There is no requirement to designate a user as an expert reviewer, other than they have at least _reviewer_ permissions inside in the project. Users can be made expert reviewers regardless of their placement within normal annotator or class reviewer mappings.
+
+3. **Expert review stages**: Stages or iterations, indicate how to forward review results to expert review after each normal review. In the above sample configuration, 10% of all first reviews will be sent to expert review, and 50% of approved second reviews will be sent to expert review.
+   - At each stage you configure the review iteration, the sampling rate, and the action for which to apply the sampling rate. Note that because all rejected reviews are always forwarded to expert review at the _threshold count_, you can only choose 'Approved' for the possible extra action when configuring the final stage.
+
+The above configuration can be visualized as follows:
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/expert_review_sample_workflow.png" width={900} />
+
+---
+
+# Project dashboard
+
+
+<AccordionGroup>
+   <Accordion title=" Video Tutorial -  Monitoring annotation progress ">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '55.27123848515865%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/ae2a2999b7c84f5c83e7ae61b7feb8c8?sid=5be2055a-9b54-4a23-b5f9-dee42aaefc05"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+Selecting a project from the list of annotation projects takes you to its 'Project dashboard'.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/project-summary-dashboard-tabs.png" width="900" />
+
+This is where you monitor and manage your project. For example, you can view your project's summary statistics, manage labeling tasks, view your team's productivity, train models and invite collaborators.
+
+The dashboard is split into 7 tabs:
+
+- **[Summary](#summary)**: a high-level view of labeling and productivity statistics.
+- **[Explore](#explore)**: a quick way to explore the distribution of instances and labels across data assets in the project.
+- **[Labels](#labels)**: for managing all the project's labeling activity and tasks.
+- **[Performance](#performance)**: a more detailed view of your team's manual labeling and productivity.
+- **[Models](/platform-documentation/Annotate/models)**: for administering models in this project.
+- **[Export](#export)**: for exporting your labeling data.
+- **[Settings](#settings)**: editing project options, ontology, team collaborators, and other general project settings.
+
+Access to each tab is associated with the various project roles as follows:
+
+<div class="flex justify-center">
+
+| **Tab**     | Annotator | Reviewer |  Annotator + Reviewer | Team Manager | Admin |
+|-------------|-----------|-----------|------------------------|--------------|-------|
+| Summary     | ✅         | ✅         | ✅                      | ✅            | ✅     |
+| Explore     | ❌         | ❌         | ❌                      | ✅            | ✅     |
+| Labels      | ✅         | ✅         | ✅                      | ✅            | ✅     |
+| Performance | ❌         | ❌         | ❌                      | ✅            | ✅     |
+| Models      | ❌         | ❌         | ❌                      | ✅            | ✅     |
+| Export      | ❌         | ❌         | ❌                      | ❌            | ✅     |
+| Settings    | ❌         | ❌         | ❌                      | ✅            | ✅     |
+
+</div>
+
+***
+
+## Summary
+
+Clicking an annotation project takes you to its _Summary_ dashboard. This dashboard has 2 components and gives you a rich visual display of your project's progress at a high level.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/project-summary-dashboard.png" width="900" />
+
+- **A**. Project task status overview: summary of your task statuses.
+- **B**. Instance label task status: summary of the labels in your tasks.
+
+<AccordionGroup>
+  <Accordion title="Project task status overview">
+    Displays the number of annotation tasks that are in each state: Annotate, Review or Completed.
+
+    - **Annotate**: The task is ready to be annotated.
+    - **Review**: The task is ready to be reviewed.
+    - **Completed**: The task has been annotated, and reviewed. There is no further action to be taken.
+  </Accordion>
+
+  <Accordion title="Instance label task status">
+    Displays the number of labels / instances that have been created, and their assigned status.
+
+    - **Approved**: The instance has been approved by a reviewer.
+    - **Returned for annotation**: The instance has been returned to the annotator by the reviewer.
+    - **In review**: The instance needs to be reviewed.
+  </Accordion>
+</AccordionGroup>
+
+For a more comprehensive summary of how a task moves from annotation through instance review and full completion, reference the [Status section](#status-1) below.
+
+---
+
+## Explore
+
+The _Explore_ page provides interfaces to help you understand how project's  annotations are distributed amongst the data assets at both an instance and label level. It allows a deeper exploration through attributes on objects, as well as frame-level classifications.
+
+- [Instance statistics](#instance-statistics): Class distribution across data assets in the given project.
+- [Label statistics](#label-statistics): Label distributions within data assets, objects and classifications.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/explore/explore-dashboard.png" width="900" />
+
+---
+
+### Instance statistics
+
+This section provides the total count of all instances across the datasets in your project.
+
+- **Project total**: Shows total instances (both objects and classifications) across the project by default. To get instance statistics for individual data files, click the drop-down to select a data file.
+- **Select class**: Shows the total instances for a particular class. This is a summary of how a given class is  
+  distributed across your project's data assets. The pie chart segments show a breakdown of how that class is split across the data assets.
+- **Display timestamps**: Flip the toggle to switch between frame numbers and timestamps for the labels.
+
+---
+
+### Label statistics
+
+This is a summary of how your labels are distributed across the project. The pie chart shows a breakdown of how many labels there are for a given class.
+
+- **Project total**: Shows the total number of labels across different datasets in the project. To get label stats for individual data files, click the drop-down to select a data file.
+- **Objects**: Click on the pie chart segment of a class to see the total number of labels and its attributes (sometimes called nested attributes) if available for that class.
+- **Classifications**: Shows the global classification at project or individual video level. For example, location, time of day, etc.
+
+### Quick definitions of classes, instances and labels
+
+- **Class**: Fundamental unit of the project's ontology. For example the ontology of a project annotating traffic videos could have classes such as Car, Truck, Bicycle, and so on. For more information on objects and classifications, see [Ontologies Overview](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies).
+- **Instance**: Specific occurrence of a class. Car(0) is an instance of the Car class, for example, it could be a specific black sedan. The single Car(0) instance can appear in a single frame or a range of frames. Therefore, instances may contain multiple labels across frames.
+- **Label**: An frame-specific annotation of an instance. For example the annotation of Car(0) on frame 201 is a label.
+
+---
+
+## Labels
+
+The _Labels_ page is your gateway to annotating, reviewing, and auditing the labels made against all the datasets in your project. Access to each pane will depend on the user's project role. We briefly summarize the purpose of each tab, and the roles which can access each below.
+
+
+| Role                   | Activity | Queue | Data | Instances |
+| ---------------------- | -------- | ----- | ---- | --------- |
+| Annotator              | ✅        | ✅     | ❌    | ❌         |
+| Reviewer               | ✅        | ✅     | ❌    | ❌         |
+| Annotator + Reviewer   | ✅        | ✅     | ❌    | ❌         |
+| Team Manager           | ✅        | ✅     | ✅    | ✅         |
+| Admin                  | ✅        | ✅     | ✅    | ✅         |
+
+The labels dashboard features the following tabs:
+
+- [Activity](#activity): View all the tasks that are either _In review_ or _Completed_, as well as confirm the status of  
+  the labels within tasks by clicking **View**.
+- [Queue](#task-queue-and-workflow): The _Queue_ tab is where all labeling and review actions are initiated, regardless of a user's role within the project. It pulls tasks from the [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system), therefore ensuring collaborators' efforts don't overwrite each other.
+- [Data](#data): Use the _Data_ tab to get an overview of every _data asset_ in the project, regardless of status within the [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system).
+- [Instances](#instances): The _Instances_ tab lets you use the unique instance identifier to search the project for a specific instance, and jump directly into the editor to confirm the status of an annotation visually.
+
+---
+
+### Activity
+
+The _Activity_ page allows you to quickly monitor annotation and review activity in your project by showing tasks and  providing a summary interface. The status of reviewed labels inside each task can also be seen. Tasks are displayed in most recently edited order from top to bottom.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/activity_screen-callouts.png" width="900" />
+
+- A. [File, Search, & Reopen](#file-search-and-reopen): The name of the specific _data unit_ or _data asset_. This is the same as the name in the dataset to which this data asset is a part of. Use the search box to filter the list by file name, and send tasks back to annotation using the 'Reopen' feature.
+- B. _Dataset_ : The dataset the _data asset_ belongs to.
+- C. _Type_ : The type of the data, such as an image or video. For more on our supported data types, see our [Label Editor documentation](/platform-documentation/General/general-supported-data).
+- D. [Status](#status): The status of this task within the [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system).
+- E. _Frames_ : The number of frames in the _data asset_. For a DICOM series, this will be the number of _slices_.
+- F. [Reviews](#reviews): How many annotation _instances_ are in this _data asset_.
+- G. _Submitted_ : Indicates when the last submit action, whether for an annotation or review, was made against any of the labels in this _data asset_.
+- H. _Submitted by_ : Who last submitted the annotations.
+- I. _Reviewed by_ : Who submitted the most recent review.
+- J. _Actions_ : Click the **View** link to open the label editor. Note: this feature is only available to Team Managers and Administrators as an extra method of reviewing submissions outside the TMS. **We advise extra caution if you decide to edit the labels from this interface. If significant work needs to be done, we strongly recommend to 'Reopen' the task to prevent possible errors from simultaneous edits.**
+- K. Filter: Use the filter drop-down to only show tasks with the selected status. Only filtered results will be shown in the Label Editor. 
+
+#### File, Search, and Reopen
+
+The file column shows the name of the _data asset_. For files uploaded via the GUI, they keep the name they were uploaded with. For files added from your cloud storage, this will normally be the path under the bucket they are stored on.
+
+Use the search interface to quickly filter and display only those tasks with file names matching your desired text. Even partial matches will be shown. For example: searching "fly" will return file names containing "flyover" and "flyaround."
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/search-and-reopen.gif" />
+</div>
+
+The **Reopen** button allows Administrators and Team Managers to send tasks which are currently Completed or In review back to annotation. Select your target tasks using the checkboxes in the File column to select individual assets, or select the checkbox in the column header to select all tasks, and press the **Reopen** button to move all selected tasks back to the annotation stage. Tasks reopened in this way will have the status _Returned_ in the _Queue_ tab. No labels are lost by reopening a task. The 'Reopen' action is only applied to tasks which are both visible (i.e. not filtered out by the file search) and selected.
+
+#### Status
+
+This column shows the status of this task within the [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system). The _Activity_ pane only shows assets which have had some action done on them, and therefore only reflects tasks with the following statuses:
+
+- In review: The annotation task has been submitted but outstanding review tasks remain. In review task status is shown in blue.
+- Completed: The annotation task has been submitted and all reviews have been completed. Completed task status is shown in green.
+
+For a comprehensive summary of the possible task states, see the [status section of the Data tab](#status-1), below.
+
+#### Reviews
+
+The 'Reviews' column shows a count of how many instances have been reviewed in a given data asset. Click the number to open a panel which shows the last review action taken on each instance, as well as who originally created the annotation and when. Note that unless the review was done by an 'Expert Reviewer', all reviewed annotations must be either 'Approved' or 'Deleted' before a task can be 'Completed.' Read more about the Expert Review feature [here](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#expert-review).
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/activity_screen_reviews_popup.png" width="700" />
+</div>
+
+---
+
+### Queue
+
+The _Queue_ tab is where annotators and reviewers look to find their next task. The **Start labeling** and **Start reviewing** buttons visible throughout the project open the label editor with the next task in the queue according to the relevant task type.  
+
+The _Queue_ tab can be used to assess the number of tasks assigned to you as an annotator or reviewer and therefore estimate your likely workload. Administrators and Team Managers can also use it to quickly verify the current assignments per team member, and change assignments as necessary.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/queue_tab-callouts.png" width="900" />
+
+- A. [File, Search, & Assign](#file-search-and-assign): The name of the specific _data unit_ or _data asset_. This is the same as the name in the dataset to which this data asset is a part of. Use the search box to filter the list by file name, and send tasks back to annotation using the 'Reopen' feature.
+- B. _Dataset_ : The dataset the _data asset_ belongs to.
+- C. _Type_ : The type of the data, such as an image or video. For more on our supported data types, see our [documentation here](/platform-documentation/General/general-supported-data).
+- D. [Status and Task](#status-and-task): The status and category of this task within the [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system).
+- E. _Last Edited_ : When the task was last edited
+- F. _Reserved by_ : Who the task has been assigned to or reserved by
+- G. [Actions](#actions): Depending on your collaborator role, you can initiate or reassign the task.
+- H. Filter: Use the filter drop-down to only show tasks of the selected [status](#status-and-task). Only filtered results will be shown in the Label Editor. 
+
+#### File, Search, and Assign
+
+The file column shows the name of the _data asset_. For files uploaded via the GUI, they keep the name they were uploaded with. For files added from your cloud storage, this will normally be the path under the bucket they are stored on.
+
+Use the search interface to quickly filter and display only those tasks with file names matching your desired text. Even partial matches will be shown. For example: searching "fly" will return file names containing "flyover" and "flyaround."
+
+The 'Assign' button allows Administrators and Team Managers to allocate unassigned tasks to specific collaborators for annotation or review. Select your target tasks using the checkboxes in the File column to select individual assets, or select the checkbox in the column header to select all tasks, and press the 'Assign' button open the task assignment popup. 
+
+Confirm the selected tasks are as intended, then select the target collaborator from the drop-down and press assign. Tasks which have already been assigned to another collaborator, as indicated by the email in the 'Reserved by' column, can not be reassigned until they have first been released.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/queue_tab_assign_popup.png" width="600" />
+</div>
+
+#### Status and Task
+
+The _Queue_ tab only shows tasks which have remaining annotation or review work to be done within the [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system). Therefore, the stage of the task within the TMS is understood by reading the Status and Task columns together.
+
+The two types of tasks are 'Annotate' and 'Review' which can be in any of the following states:
+
+- Queued: The task is ready for annotation or review. For an annotation tasks to be 'Queued' it must not be assigned to a user, and must have no submitted labels. It may have been previously assigned to a user, but subsequently released before any annotations were submitted.
+- Assigned: The annotation or review task is assigned to a specific user.
+- Returned: The annotation task was previously submitted, and either 'reopened' after completion by a Team Manager or Administrator, or rejected by the reviewer.
+
+#### Actions
+
+There are two relevant actions that can be done on each task from the 'Queue' pane. Press 'Initiate' to open the label editor and proceed with annotation or review, depending on the task _type_.
+
+Additionally, Administrators and Team Managers can click the three vertical dots to open the expanded menu, to access the 'Release task' function. Tasks must be explicitly released before they can be reassigned.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/queue_tab_release-callout.png" width="500" />
+</div>
+
+---
+
+### Data
+
+The _Data_ page gives a complete overview of all the data asset tasks in the project, regardless of their progress through the [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system). Therefore, this is the first place Administrators and Team Managers should check if they want to confirm the status of a given task.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/data_tab-callouts.png" width="900" />
+
+- A. [File & Search](#file-and-search): The name of the specific _data unit_ or _data asset_. This is the same as the name in the dataset to which this data asset is a part of. Use the search box to filter the list by file name.
+- B. _Dataset_ : The dataset the _data asset_ belongs to.
+- C. _Type_ : The type of the data, such as an image or video. For more on our supported data types, see our [documentation](/platform-documentation/General/general-supported-data) here for more details.
+- D. [Status](#status-1): The status of this task within the [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system).
+- E. _Frames_ : The total frames in this _data asset_. This will apply to videos, image sequences and DICOM. Images always only have 1 frame.
+- F. _FPS_ : the frames per second of the _data asset_. This only applies for data of type video. Others will show a dash (`-`).
+- G. _Created_ : When the task was created. Tasks are created when the dataset containing the _data asset_ is attached to the project.
+- H. _Last edited by_ : the last collaborator to edit the task in any capacity (such as annotate or review), and when.
+- I. [Actions](#actions-1): The _Data_ page allows users to view the task in the label editor, as well as get a code snippet for using the SDK with this task, and confirming the edit actions via the Activity Log.
+- J. _Filter by_ : Use the filter drop-down to view only tasks with the selected [Status](#status-1).
+
+<Tip>Confused about the difference between image groups and image sequences? See our [documentation here](/platform-documentation/General/general-supported-data#comparing-file-formats) to learn about different data types in Encord.</Tip>
+
+#### File and Search
+
+The file column shows the name of the _data asset_. For files uploaded via the GUI, they keep the name they were uploaded with. For files added from your cloud storage, this will normally be the path under the bucket they are stored on.
+
+Use the search interface to quickly filter and display only those tasks with file names matching your desired text. Even partial matches will be shown. For example: searching "fly" will return file names containing "flyover" and "flyaround."
+
+#### Status
+
+The data tab provides the most comprehensive overview of all the tasks associated with each _data asset_ in a given project. As such, this is the first place to check to see the status of various tasks.
+
+- _Queued_ : The task is ready for annotation. For a task to be 'Queued' it must not be assigned to a user, and have no submitted labels. A queued task may have been previously assigned to a user, but subsequently released before any annotations were submitted. Queued tasks are shown in light orange.
+- _Assigned_ : An annotation task has been assigned to a specific user. Assigned tasks are shown in aqua green.
+- _In review_ : The annotation task has been submitted but outstanding review tasks remain. In review task status is shown in blue.
+- _Returned_ : The task was previously submitted, and either several of the annotations were rejected by the reviewer or it was 'reopened' after completion by a team manager or administrator.
+- _Completed_ : The annotation task has been submitted and all reviews have been completed. Completed task status is shown in green.
+
+#### Actions
+
+Clicking **View** will drop you into the label editor to do a live audit of the annotations in this data asset. The _Data_ tab is only visible to Administrators and Team Managers and so grants great power to view any data asset, however appropriate care must be taken to ensure annotations are not simultaneously edited from the 'Queue' pane by an annotator or reviewer. Encord advises edit actions are NOT taken from the Data tab unless you have received confirmation no one else is concurrently editing the asset.
+
+<Warning>In order to prevent any possible issues of annotator work being overwritten, it's critical that all annotations are done using the [task management system](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-management-system)'s _Queue_ tab, and only the person assigned to the task makes annotations at any given time.</Warning>
+
+Other possible actions include 'API Details' which show a popup with sample code you can use to get started with our SDK to access this particular _data asset_, often known as a _label row_ in the SDK. Click 'Activity log' to see a popup with a graphical summary of add / edit / delete actions on this data asset indexed by annotator or ontology class. Click 'Display logs' in the lower right to show all actions in reverse chronological order.
+
+---
+
+### Instances
+
+The _Instances_ tab allows Administrators and Team Managers to search within the data to directly find specific instances. Recall that an annotation _instance_ correlates to a unique instantiation of a specific ontology class in a data asset. 
+
+For example, if you have the 'Person' class in your ontology, the first instance of a 'Person' in a given _data asset_ will be indicated in the interface as 'Person (0)', the second as 'Person (1)' and so on. Instances, therefore, can exist in multiple frames of a data asset, and indicate the same object. Use the _Instances_ tab to search for specific instances of _objects_ or _classifications_ using their _Identifier_.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/instances_tab.png" width="900" />
+
+Instance identifiers are unique at the project scope, and can be found in any of the following ways:
+
+- From inside the label editor, by clicking on a particular instance, and then selecting 'Copy identifier' from the instance action menu.
+- From inside exported labels, where they are known as the `objectHash` or `classificationHash` as appropriate.
+- When uploading labels using the SDK, you may specify your own `objectHash` or `classificationHash`.
+
+Once you have an identifier of interest, use the 'Search instance' interface to filter the instances by identifier to quickly find the instance you're interested in. This can be particularly handy when you want to visually confirm an annotation you may not have seen before, but for which you have the identifier.
+
+After locating your instance of interest, click **View** from the 'Actions' column to jump deeply into the dataset straight to where the instance is first annotated.
+
+---
+
+## Performance
+
+You can switch between a [summary](#performance-summary), or [detailed](#performance-details) view of performance metrics using the toggle found at the top of the _Performance_ tab. Please note that the _Details_ tab will vary depending on the type of QA your project has - with both cases documented below. 
+
+---
+
+### Performance - Summary
+
+The _Summary_ tab of the performance dashboard provides an overview of your team's manual labeling and productivity.
+
+<Warning>The _Summary_ tab only displays actions taken in the Label Editor. Actions taken in the SDK **will not** be displayed.</Warning>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/performance-new-current-toggle.png" width="700" />
+</div>
+
+#### Task actions over time
+
+View the number of tasks in a project that have been approved, rejected, and submitted for review over a given period of time.
+
+- The height of a bar represents the total number of tasks.
+- The height of each color within a bar represents the number of approved, rejected, and submitted tasks.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-new-performance-dashboard-labeled.png" width="900" />
+</div>
+
+- **A**:  Set the time period you would like to see displayed by selecting a range of dates.
+- **B**: The **Hide days without any actions** toggle removes all days at which no actions were taken from the view. 
+- **C**: Download a CSV file of the data. 
+- **D**: Display the data as a bar chart, or a table. While the chart provides a clear visual representation, the table provides exact figures for a more detailed picture of your team's performance. 
+
+
+#### Instance Label actions over time
+
+View the number of instance label actions in a project that have been approved, rejected, and submitted for review over a given period of time.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-new-performance-dashboard-2.png" width="900" />
+</div>
+
+- **A**: Set the time period you would like to see displayed by selecting a range of dates.
+- **B**: Download a CSV file of the data. 
+- **C**: Display the data as a bar chart, or a table. While the chart provides a clear visual representation, the table provides exact figures for a more detailed picture of your team's performance. 
+
+Within your specified time period, you can choose which dates to display by using the slider located beneath the graph.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/instance-label-actions-slider.gif" width="800" height="350"/>
+</div>
+
+
+#### Team collaborators
+
+The 'Team collaborators' section shows the duration of time each project collaborator spend working on a given file.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-team-collaborators.png" width="600" />
+</div>
+
+**A.** 'Data file' displays session time collaborators spent working on individual files. 'Project' displays session time collaborators have spent working on the project.  
+
+**B.** Table entries can be filtered according to dates by clicking the range of dates, and selecting the start and end date of the period you would like to see table entries displayed for.
+
+**C.** Table entries can be downloaded in CSV format by clicking the **Download CSV** button.
+
+**D.** When lots of entries are present they will be split across a number of different pages. The number of table entries per table can be adjusted.
+
+---
+
+### Performance - Details
+
+The _Details_ tab of the performance dashboard gives a more detailed view of your team's labeling and productivity. This section will cover manual QA projects. The below details will be displayed for Manual QA projects.
+
+<Warning>The _Details_ tab of the performance dashboard only shows information for labels created in the Label Editor. Labels submitted via the SDK **will not be** shown on the _Details_ tab. This includes labels that were submitted using the SDK, and edited in the Label Editor. </Warning>
+
+<Tip>You can specify a range of dates, as well as whether statistics should be displayed for labels, or instances. More information on instances and labels can be found [here](#quick-definitions-of-classes-instances-and-labels).</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/performance-new-current-toggle.png" width="700" />
+</div>
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/performance/performance-dashboard-date-filter-and-charts.png" width="900" />
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/performance/performance-dashboard-annotor-and-reviewer-table.png" width="900" />
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/performance/performance-dashboard-objects-and-classifications-table.png" width="900" />
+
+
+#### Submissions chart
+
+The submissions chart displays the number of submitted labels or instances over the specified time period. The chart can be filtered to show submissions for specific annotators or classes. 
+
+If you filter on both **Annotators** and **Classes** then the resulting chart will show the submission statistics for the selected annotators and for selected labels. 
+
+
+#### Reviews chart
+
+The reviews chart displays the cumulative number of accepted and rejected labels or instances over the specified time period.
+
+
+#### Annotator's table
+
+The annotator's table displays all the relevant statistics for all annotators in a Project. It can be filtered on classes to show annotator statistics only for the selected classes.
+
+- **User**: The annotator's email.
+- **Rejection rate**: Percentage of their labels or instances that have been rejected in the review process.
+- **Submitted labels / instances**: Number of labels or instances that the annotator has submitted for review
+  - Repeated submissions are not counted.
+- **Accepted labels / instances**: Number of labels or instances that the annotator created that passed the review process.
+- **Rejected labels / instances**: Number of labels or instances that the annotator created that we're rejected during the review process. Note that this can be higher than the number of submitted labels / instances since a label or instance can be rejected multiple times during the review process but the submission will only be logged once.
+- **Total session time**: Time spent labeling.
+
+
+#### Reviewers table
+
+- **User**: The reviewers email.
+- **Rejection rate**: Percentage of labels or instances that they rejected in the review process.
+- **Accepted labels / instances**: Number of labels or instances that the reviewer accepted.
+- **Rejected labels / instances**: Number of labels or instances that the reviewer rejected.
+- **Total session time**: Time spent reviewing.
+
+
+#### Objects and classifications table
+
+Each row in the objects and classifications table can be expanded to show statistics on attributes. 
+
+- **Class**: The class name.
+- **Rejection rate**: Percentage of labels or instances rejected in the review process.
+- **Reviewed labels / instances**: Number of labels or instances of the class that have gone through the review process.
+- **Accepted labels / instances**: Number of labels or instances of the class that have passed the review process.
+- **Rejected labels / instances**: Number of labels or instances of the class that failed the review process.
+- **Avg. time to annotate**: Average time spent annotating this class.
+
+
+---
+
+## Settings
+
+The _Settings_ tab allows you to make modifications to your project using the following tabs:
+
+- [Options](#options) - Copy a project, modify datasets, modify ontology, upload annotation instructions, modify project tags, QA settings.
+- [Team](#team) - Manage collaborators on a project.
+- [Danger zone](#danger-zone) - Delete your project.
+
+---
+
+### Options
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-manual-qa-settings.png" width="900" />
+
+#### Copy a project
+
+To copy a project, click the **Copy project** button in the _Options_ section of the project's _Settings_. This opens the copy project window. From the Copy Project window, you can pick the various parts of your project you want to copy over into your new project.
+
+#### 1. Select copy options
+
+Choose the parts of your project you want to copy.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/copy_project_page1.png" width="900" />
+
+You can copy any combination of the following assets:
+
+- **Labels**: this will copy the labels within videos and image sequences of your choice.
+- **Models**: this will copy all the models in your project along with their training logs.
+- **Collaborators**: copy all project users with their respective roles. Project admins are copied regardless of whether this is selected.
+- **All datasets**: all datasets will be copied, and new annotation tasks will be created for all videos and image sequences if their labels were not copied over (see next line).
+
+<Tip>Confused about the difference between image groups and image sequences? See our [documentation here](/platform-documentation/General/general-supported-data#comparing-file-formats) to learn about different data types in Encord.</Tip>
+
+The new annotation project will use the same ontology as the original. This can be changed in the [project settings](#settings) if required.
+
+- If you do not want to copy labels, press **Copy project**. This creates a copy of your Project, which you can then access in the _Projects_ tab.
+
+- If you choose to copy over labels, you will be asked to select the data assets for which you would like labels copied over. To begin the process, press **Next: configure labels**. Continue to step 2. below.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/select_labels_option.png" width="900" />
+
+#### 2. Select labels to be copied
+
+Select the data units with the labels that you want to copy into your new project.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/copy_labels_page2.png" width="900" />
+
+Click **Next** to continue.
+
+#### 3. Configure labels
+
+Select the statuses of the files you want copied over into your new project.
+
+<Note>When a project is copied, the task status will not be copied.  </Note>
+> This means that all tasks will be `Annotate` tasks, and their status will be `Queued`.  
+> All tasks will have to be re-assigned after being copied.
+
+Click the **Copy project** button to complete the process. 
+
+#### Upload annotation instructions
+
+<AccordionGroup>
+   <Accordion title=" Video Tutorial -  Uploading annotator instructions ">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/164c376444e74f9c9e453f1e2d240a08?sid=2f4ed5f0-e800-4bc0-a830-0348ea6d9385"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+- Click the **Add instructions** button to upload instructions for your annotators in PDF format. 
+
+- To ensure the best possible results, provide as much detail as possible about what you would like annotated and how precise bounding boxes should be drawn. For example, instead of saying 'person', consider defining what should constitute a person for your annotators - only a full person? A torso? Or should any part of a person in a frame be labeled as a 'person'? 
+
+<Note>The more specific your annotator instructions, the higher the chances that your annotators will perform well.</Note>
+
+- Once uploaded, annotation instructions will be accessible within the Label Editor.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/annotation-instructions.png" width="700" />
+</div>
+
+
+#### Project tags
+
+<Note>Tags are created and managed on the [Organization level](/platform-documentation/General/general-your-organization#project-tags-tab). Once created they can be added to individual projects.</Note>
+
+You can add tags to a Project if you are part of an [Organization](/platform-documentation/General/general-your-organization).
+
+Project tags allow you to: 
+
+- Flexibly categorize and group your Projects.
+
+- Filter your Projects.
+
+#### Adding and removing tags
+
+You can add tags to your Projects in:
+
+- When [creating a Project](/platform-documentation/Annotate/annotate-projects/annotate-create-projects).
+
+- In the [_Settings_ page](#settings) of a Project. This process is described below. 
+
+To add tags to your Projects in the _Settings_ page, navigate to the _Options_ tab and click the _Project tags_ drop-down. Here you will see the available tags in your Organization. Click on a tag to add it to a Project. You can remove a tag from your Project by clicking the same tag again, or clicking the **x** button next to its name.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/add_project_tags.png" width="400" />
+</div>
+
+#### Filtering projects by tags
+
+You can filter your Projects based on the tags they contain. To do so, click the _Projects_ tab in the navigation bar, click the _Filter by tags_ drop-down and select one or more Project tags. This will result in only Projects with the tags being selected being displayed.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/filter_project_tags.png" width="900" />
+
+
+#### Edit project ontology
+
+You can view or switch the Ontology attached to your Project.
+
+<Note>Changing the Ontology can render existing labels invalid and lead to data inconsistency.</Note>
+
+- Click the **Switch ontology** button to switch the ontology linked to your Project.  
+  The resulting pop-up allows you to choose an existing Ontology from a list, or [create a new ontology](/platform-documentation/Annotate/annotate-projects/annotate-create-projects#select-ontology) for this project. 
+
+- Click the **View ontology** button to view the details of the Ontology that is attached to the current Project. 
+
+
+#### Edit datasets attached to a project
+
+The _Datasets_ section allows you to attach or detach any number of Datasets to your Project. You must [create a new Dataset](/platform-documentation/Annotate/annotate-datasets/annotate-datasets) in the _Datasets_ section for it to become available in a project's settings.
+
+
+#### Quality Assurance 
+
+The 'Quality' section allows you to configure the way that manual quality assurance is implemented for a given project.
+
+- The _Sampling rate_ slider determines the percentage of labels that will be manually reviewed. Clicking **Configure sampling rate** allows you to set the sampling rate for each label type, or annotator separately. 
+
+- The **Multi review assignment enabled** toggle will assign all labels created for a given task to the same reviewer.
+
+- **Default rejection reasons** allows you to add commonly used reasons for rejecting a label, to make them available to your reviewers and save time when reviewing tasks. 
+
+- Toggle **Reviewer mapping** and click **Configure reviewer mapping** to assign classes, or labels made my specific annotators, to a particular reviewer.
+
+- Toggle **Expert reviewer rule** to enable [expert review](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#expert-review).
+
+---
+
+### Team
+
+To manage project collaborators, select the 'Team' pane in your project _Settings_.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/Project-settings-team-highlighted.png" width="900" />
+
+Here you can invite collaborators to the project, and configure their roles.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/team_page.png" width="900" />
+
+#### Add collaborators
+
+To invite collaborators from within your organization to the project: 
+
+1. Click the **+ Invite collaborators** button. This will open a new window where you can enter email addresses of the people you would like to invite.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/invite-collaborators.png" width="600" />
+</div>
+
+2. Select a user role for the collaborator you want to add by selecting an option from the list.
+
+3. Type the email address of the user you'd like to add and select the user from the list. 
+
+4. Click the **Add** button to add the user with the specified role.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/add-collaborator-screen.png" width="400" />
+</div>
+
+
+#### Add collaborators as a group
+
+<Note>To add collaborators as a group, your organization needs to have user groups. Navigate to our documentation on [creating user groups](/platform-documentation/General/general-your-organization#creating-user-groups) for more information.</Note>
+
+Collaborators can be added to a project as a group - which can save time as well as ensure that no individual is forgotten.
+
+In the 'Groups' section of the page, click on **Manage** to make the 'Manage Groups' pop-up appear. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/Project-settings-manage-groups-highlighted.png" width="900" />
+
+Click the 'Select group' drop-down and pick a group you would like to add as collaborators. After selecting a group, click the 'Select Role' drop-down to assign a role to the group of collaborators. Click **Add** to add the group. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-settings-manage-groups-popup.png" width="900" />
+
+The group you just added will appear under the 'Added groups' heading. Repeat the process if you'd like to add more groups with different roles to the project. 
+
+<Tip>To delete a group from the project, simply click the <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/settings-delete-button.png" width="30" /> button next to the group name.</Tip>
+
+#### Change collaborator roles
+
+Project admins can modify the different roles of collaborators, using the drop-down on the right.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/change_user_role.png" width="900" />
+
+You can assign the following roles to collaborators:
+
+- **Annotator**: annotators are responsible for labeling. This is the default role for all collaborators.
+- **Reviewer**: for reviewing labeled tasks.
+- **Annotator & reviewer**: a combination of annotator and reviewer.
+- **Team manager**: a team manager can assign tasks to other users, and add collaborators to the project.
+- **Admin**: gives this collaborator full administrative control over this project. Caution: this is an irreversible action.
+
+Please confirm or cancel your selection when making a collaborator a project Admin.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/change_user_to_admin.png" width="900" />
+
+---
+
+### Danger zone
+
+You can delete your project by going to the _Danger zone_ tab at the bottom of the menu, and clicking the red **Delete project** button, shown below.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/project_delete.png" width="900" />
+
+<Warning>Deleting your project does not delete the datasets in the project, but will delete the project's labels and ontology.</Warning>
+
+---
+
+# Task management system 
+
+The Task management system (TMS) is a system built to optimize labeling and quality control for all annotation and review tasks, allowing thousands of annotators, reviewers, team managers, and administrators, to work concurrently on the same Manual QA project. 
+
+The task manager is enabled by default but can be switched on and off under the _Options_ tab in <a href="/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#settings">project settings</a>.
+
+Annotation and review tasks are distributed automatically using the first in, first out method - tasks that have been in the queue the longest are served first. Annotation tasks are generated and added to the label queue when a dataset or a set of datasets is attached to a project and when new data is added to attached datasets. Review tasks are generated and added to the review queue once an annotator submits an annotation task. Conversely, detaching a dataset will remove any associated annotation and review tasks, so you should exercise caution if you proceed.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_tms_visualization.gif" width="900" />
+
+Team managers and administrators can also assign tasks explicitly to individual annotators and reviewers. Once an annotation or review task is distributed to an annotator or reviewer, it is reserved by that individual, prohibiting other team members from accessing that task. Both annotation and review tasks are accessible in the _Queue_ pane of the _Labels_ tab.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_queue.png" width="900" />
+
+---
+
+## Task generation
+
+Annotation tasks are generated and added to the label queue when a dataset or a set of datasets is attached to a project and when a new data asset is added to attached datasets. Review tasks are generated and added to the review queue once an annotator submits an annotation task. Conversely, detaching a dataset will remove any associated annotation and review tasks, so you should exercise caution if you proceed.
+
+By default, each data asset will be labeled once, and each label submitted for review will be reviewed once. You can create additional review tasks by clicking the **+ Add reviews** button and following the steps in the window. You can reopen submitted annotation tasks if you wish to send the data asset back into the queue for further labeling by selecting the relevant assets and clicking the **Reopen** button.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_add_reviews.png" width="350" />
+</div>
+
+---
+
+## Task distribution
+
+Annotation and review tasks are distributed automatically using the first in-first out method (illustrated below) - tasks that have been in the queue the longest are served first. Once an annotator or reviewer clicks on the **Start labeling** or **Start reviewing** button, the next available free task in the queue is reserved by that individual, prohibiting other team members from accessing the task. Once the task is fetched, the annotator or reviewer is taken to the <a href="/platform-documentation/Annotate/annotate-label-editor">label editor</a> to complete the task.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_fifo.jpg" width="900" />
+</div>
+
+Project administrators and team managers can override the automated distribution of tasks by explicitly assigning tasks to individuals in the _Queue_ pane of the _Labels_ tab. Assignments can be done on a task-by-task basis or in bulk by selecting the relevant tasks and clicking the **Assign** button.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_bulk_assign.png" width="400" />
+</div>
+
+Tasks can be released by pressing the icon next to the task and clicking the **Release task** button. Reserved tasks do not have an expiry and will keep being assigned to an individual until it is submitted, released, or skipped.
+
+<Tip>Annotation tasks can be submitted programmatically using our SDK <a href="/sdk-documentation/getting-started-sdk/installation-sdk" target="none">Encord's Python SDK</a>.</Tip>
+
+---
+
+## Task completion
+
+An annotation task is completed once all outstanding labels subject to review have been reviewed. Completed annotation tasks and annotation tasks currently in the review stage are visible in the _Activity_ pane of the _Labels_ tab.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_activity.png" width="900" />
+</div>
+
+#### Task Status
+
+The Task Status indicates the status of a given task. A task's status evolves from _Queued_ for annotation to _In review_ and finally _Complete_. If labels are rejected or the tasks is otherwise judged in need of further annotation work, the status will be marked as _Returned_. The most comprehensive view of task statuses is available to project Administrators, and Team Managers in a Project's _Labels_ dashboard of the [_Data_ tab](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#data).
+
+---
+
+### Annotation
+
+Tasks are labeled in the <a href="/platform-documentation/Annotate/annotate-label-editor">Label Editor</a>. Click **Submit** to submit your labels for review. 
+
+Annotators can skip tasks by clicking the **Skip** button. If a task is skipped, the next available task is automatically displayed and assigned.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_editor_preview.png" width="900" />
+</div>
+
+<Warning>In order to prevent any possible issues of annotator work being overwritten, it's critical that all annotations are done via the [_Queue_ tab](#task-queue-and-workflow), and only the person assigned to the task makes annotations at any given time.</Warning>
+
+---
+
+### Review
+
+Review tasks are completed in the <a href="/platform-documentation/Annotate/annotate-label-editor">Label Editor</a>.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_review.png" width="900" />
+</div>
+
+Review mode components:
+
+- **A**. Single label review toggle
+- **B**.  Edit labels 
+- **C**. Pending reviews pane
+- **D**. Completed reviews pane 
+- **E**.  Reject and Approve buttons 
+- **F**.  Approve and Reject all in frame buttons
+
+<Note>All labels are reviewed on an instance level. This means that if an instance is rejected on one frame, it will be rejected across all frames. This includes  using the **Accept all in frame** and the **Reject all in frame** buttons.</Note>
+
+
+#### 'Pending' and 'Completed' review panes
+
+All labels for review for a particular data asset assigned to the reviewer are automatically loaded into the 'Pending reviews' pane. Completed reviews are displayed in the 'Completed reviews' pane. You can click on specific objects to highlight them. Labels can be selected and then approved or rejected for a given instance or in bulk using the **Reject** and **Approve** buttons or the matching hotkeys, <kbd>b</kbd> for reject and <kbd>n</kbd> for approve.
+
+#### 'Single label review' toggle
+
+You can enter the 'Single label review' mode by toggling the switch at the top. The single label review mode automatically highlights and hides other objects, allowing you to review and approve or reject a single label at a time and quickly browse through individual labels using the *Up* and *Down* keys on your keyboard.
+
+<Note>The reviewer is automatically taken to the next set of requested label reviews once all labels in a particular review task have been reviewed.</Note>
+
+#### Edit labels
+
+A convenient feature is allowing reviewers to edit labels and make small adjustments without the need to return the entire set of labels to the annotator.
+Press the **Edit labels** button and make any necessary changes before switching back to review mode.
+Currently, only a subset of label edit operations are supported:
+<ul>
+  <li>objects: moving the object or individual vertices</li>
+  <li>classifications: changing the classification value</li>
+  <li>objects and classifications: change any attributes</li>
+</ul>
+
+#### Approve/Reject all in frame buttons
+
+
+In addition to being able to review all labels for a given instance, you can review labels grouped by frame as well.
+For review workflows that focus on progressing through video by frame rather than by instance, use the **Approve all in frame** and **Reject all in frame** buttons.
+Of course, you should be sure you want to apply that judgement to all labels in a given frame before using this feature!
+
+---
+
+### Rejected labels
+
+If a reviewer rejects a label during the review stage, it will be marked as *Returned* in the _Queue_ pane of the _Labels_ tab. By default, rejected annotation tasks are returned and assigned to the queue of the person who submitted the task.
+
+Returned tasks are resolved in a purpose-built user interface in the _Mark as resolved_ button to mark it as resolved.
+
+Annotation tasks cannot be re-resubmitted until all issues have been marked as resolved. Once a task is re-submitted, the labels marked as resolved are sent back for an additional review. There is no limit on how many times a label can be rejected and sent back for correction.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/returned_task_comments.png" alt="Returned task label editor view" width="900" />
+
+---
+
+### Missing labels
+
+If a reviewer determines that a label is missing entirely, they can use the report missing labels feature to indicate labels are missing in a given frame or image. Missing label reports will be sent back to the annotator via the same queue as rejected labels.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/submit_missing_label.png" alt="Submit missing label report" width="900" />
+

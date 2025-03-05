@@ -1,0 +1,45 @@
+---
+title: "Submit Study"
+metadata: 
+  title: "DICOM"
+  description: "Learn how to submit a whole DICOM study in the Label Editor."
+  image: 
+    0: "https://files.readme.io/6aa774d-image_16.png"
+---
+
+Encord automatically identifies series belonging to the same study using the Study UID found in the metadata. This allows you to work with DICOM studies.
+
+Before working with DICOM studies in Encord, ensure you take the following steps:
+
+1. [Create one or more Datasets](/platform-documentation/Annotate/annotate-datasets/annotate-datasets#creating-datasets) containing the DICOM series you want to label. We recommend creating one Dataset per study. Refer to our [best practices](/platform-documentation/General/best-practices) for efficient data uploading guidelines.
+
+2. [Create a Manual QA Project](/platform-documentation/Annotate/annotate-projects/annotate-manual-qa-projects), and attach the Dataset(s) containing your DICOM studies to the Project. 
+
+<Info>You must create a Manual QA Project for study-level workflows.</Info>
+
+## Submit a DICOM study
+
+1. Navigate to the _Settings_ tab of your Project. 
+2. Enable the [_Study level workflow_ toggles](#dicom-settings) in the _DICOM_ section. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/study-level-workflow.png" width="700" />
+</div>
+
+3. Click the **Start labeling study** button. 
+  This button is only visible if the Project contains multiple series belonging to the same study.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/start-label-study.png" width="700" />
+</div>
+
+4. Optionally, [click the **View full study** button](/platform-documentation/Annotate/annotate-label-editor/annotate-dicom#view-full-study) to see all the series in your study.
+
+5. Create your labels and classifications as you usually would. 
+
+6. Click the **Submit study** button in the top right corner of the Label Editor.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/submit-study-clas.png" width="700" />
+</div>
+

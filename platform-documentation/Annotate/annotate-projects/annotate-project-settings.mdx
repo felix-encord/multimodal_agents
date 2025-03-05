@@ -1,0 +1,233 @@
+---
+title: "Project Settings"
+metadata: 
+  title: "Project Settings"
+  description: "Learn about annotation Project settings."
+  image: 
+    0: "https://files.readme.io/13dbb5f-image_16.png"
+---
+
+<Note>The Project Settings are accessed using the _Settings_ tab of your Project. The _Settings_ tab is only visible to Project Admins and Team Managers.</Note>
+
+## Copy Project
+
+To copy a Project:
+
+1. Click the **Copy project** button in the _Options_ section of the Project's _Settings_. 
+2. Select the parts of the Project to copied into the new Project. The Ontology has to be copied and is therefore always selected. All components of the current Project are selected by default. 
+
+<Tip>
+You can copy any combination of the following assets:
+- **Datasets**: all datasets are copied. New annotation tasks will be created for all videos and image sequences if their labels are not copied over.
+- **Labels**:  copy the labels in specified data units. All labels are copied by default. Change the dropdown to _Selected Labels_ ,as seen in the image below, to only include specific labels in your new Project. Click the **+Advanced settings** button to select the state of the data units labels should be copied for. 
+- **Models**: this will copy all the models in your Project along with their training logs.
+- **Collaborators**: copy all Project users with their respective roles. Project admins are copied regardless of whether this is selected.
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/copy_project_page1.png" width="450" />
+</div>
+
+</Tip>
+
+3. Click the **Make a copy** button to copy the Project with the specified components.
+
+---
+
+## Upload Annotation Instructions
+
+1. Navigate to the _Settings_ tab of your Project.
+
+2. Click the **Add instructions** button to upload instructions for your annotators in PDF format. 
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/unload-annotation-instructions.png" width="800" />
+</div>
+
+<Tip>
+To ensure the best possible results, provide as much detail as possible about what you would like annotated and how precise bounding boxes should be drawn. For example, instead of saying 'person', consider defining what should constitute a person for your annotators - only a full person? A torso? Or should any part of a person in a frame be labeled as a 'person'? The more specific your annotator instructions, the higher the chances that your annotators perform well.
+</Tip>
+
+<Note>Once uploaded, annotation instructions are be accessible within the Label Editor, and the [Workflow](#workflow) tab of your Project.</Note>
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/annotation-instructions.png" width="700" />
+</div>
+
+---
+
+## Project Tags
+
+<Note>Tags are created and managed on the [Organization level](/platform-documentation/General/general-your-organization#project-tags-tab). Once created they can be added to individual Projects.</Note>
+
+You can add tags to a Project if you are part of an [Organization](/platform-documentation/General/general-your-organization).  
+
+Project tags allow you to: 
+- Flexibly categorize and group your Projects.
+- Filter your Projects.
+
+You can add tags to your Projects in:
+
+- When [creating a Project](/platform-documentation/Annotate/annotate-projects/annotate-create-projects).
+
+- In the [_Settings_ page](#settings) of a Project.
+
+**To add or remove Project tags**:
+
+1. Navigate to the _Options_ tab and click the _Project tags_ drop-down.
+All available tags in your Organization are shown. 
+2. Click on a tag to add it to a Project. 
+
+<Tip>
+Remove a tag from your Project by clicking the same tag again, or clicking the **x** button next to its name.
+</Tip>
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/add_project_tags.png" width="400" />
+</div>
+
+**Filtering Projects by tags**
+
+You can filter your Projects based on the tags they contain.
+1. Click the _Projects_ on the left side navigation
+2. Click the 'Filter by tags' drop-down and select one or more Project tags.
+Only Projects with the selected tags are now displayed.
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/filter_project_tags.png" width="900" />
+</div>
+
+***
+
+## Edit Project Ontology
+
+You can view or switch the Ontology attached to your Project.
+
+<Note>Changing the Ontology can render existing labels invalid and lead to data inconsistency.</Note>
+
+- Click the **Switch ontology** button to switch the Ontology linked to your Project. The resulting pop-up allows you to choose an existing Ontology from a list, or [create a new Ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-create-ontologies) for this Project. 
+
+- Click the **View ontology** button to view the details of the Ontology that is attached to the current Project. 
+
+***
+
+## Preload Next Task 
+
+  <div class="flex justify-center">
+      <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/task-media-processing" width="400" />
+  </div>
+
+Turning on the `Enable task media preloading` feature preloads the next task in the background while the user is working in the Label Editor. This reduces wait times for the next task after submitting a task. This setting is disabled by default.
+
+When enabled, the preloaded task is automatically assigned to the user, preventing others from initiating it.  
+
+<Info>
+- This feature is only supported for single images.
+- Only the image is preloaded. Labels are not preloaded.
+</Info>
+
+
+***
+
+## Change Datasets Attached to a Project
+
+The _Datasets_ section allows you to attach or detach any number of Datasets to your Project by clicking **Manage**. You must [create a new Dataset](/platform-documentation/Annotate/annotate-datasets/annotate-datasets#create-dataset) in the _Datasets_ section for it to become available in a Project's settings.
+
+***
+
+## Manage Project Collaborators
+
+To manage Project collaborators, select the _Team_ pane in your project _Settings_. Collaborators can be added individually or as [groups of users](/platform-documentation/General/general-your-organization#user-groups). 
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/Project-settings-team-highlighted.png" width="900" />
+</div>
+
+Here you can invite collaborators to the Project, and configure their roles.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/team_page.png" width="900" />
+
+**To add collaborators to a Project**:
+
+1. Click the **+ Invite collaborators** button. 
+A dialog appears.
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/invite-collaborators.png" width="600" />
+</div>
+
+2. Select a user role for the collaborator you want to add by selecting an option from the list.
+
+3. Type the email address of the user you want to add and select the user from the list. 
+
+4. Click the **Add** button to add the user with the specified role.
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/add-collaborator-screen.png" width="400" />
+</div>
+
+**To add collaborators as a group**:
+
+<Note>To add collaborators as a group, your Organization needs to have user groups. Navigate to our documentation on [creating user groups](/platform-documentation/General/general-your-organization#user-groups) for more information.</Note>
+
+1. In the _Groups_ section, click on **Manage**.
+The _Manage groups_ dialog appears. 
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/Project-settings-manage-groups-highlighted.png" width="900" />
+</div>
+
+2. Click the _Select group_ drop-down and pick a group you want to add to the Project.
+3. Click the _Select Role_ drop-down to assign a role to the group of collaborators. 
+4. Click **Add** to add the group to the Project. 
+
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-settings-manage-groups-popup.png" width="900" />
+</div>
+
+
+<Tip>To delete a group from the Project, click the _Delete_ button next to the group name.</Tip>
+
+**To change collaborator roles**:
+
+<Note>
+Only Project admins can modify collaborator roles. Admin roles cannot be changed, not even by other admins.
+</Note>
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/change_user_role.png" width="900" />
+</div>
+
+You can assign the following roles to collaborators:
+
+- **Annotator**: annotators are responsible for labeling. This is the default role for all collaborators.
+- **Reviewer**: for reviewing labeled tasks.
+- **Annotator & reviewer**: a combination of annotator and reviewer.
+- **Team manager**: a team manager can assign tasks to other users, and add collaborators to the project.
+- **Admin**: gives this collaborator full administrative control over this Project. This is an irreversible action.
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/change_user_to_admin.png" width="900" />
+</div>
+
+---
+
+## Custom Editor Layout 
+
+import EditorLayout from '/snippets/Annotate/EditorLayout.mdx';
+
+<EditorLayout />
+
+***
+
+## Delete Project
+
+You can delete your Project by going to the _Danger zone_ tab of the Project settings. 
+
+To delete a Project, click the red **Delete project** button.
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/project_delete.png" width="900" />
+</div>
+
+<Warning>Deleting your Project **does not** delete the Datasets attached to the Project, but it does delete the Project's labels and Ontology.</Warning>

@@ -1,0 +1,175 @@
+---
+title: "Editor Settings & Shortcuts"
+metadata: 
+  title: "Editor Settings & Shortcuts"
+  description: "Learn about settings and keyboard shortcuts in Encord's Label Editor."
+  image: 
+    0: "https://files.readme.io/2483550-image_16.png"
+---
+
+## Editor settings
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/editor-settings.png" width="350" />
+</div>
+
+All users can configure the Label Editor, and configure the Label Editor to their specific needs. This includes changing the way elements display, drawing settings, and settings related to automated labeling. 
+
+<Note>A user's settings persist and do not reset at the end of a session.</Note>
+
+Editor settings are divided into several sections which can be filtered using the search bar: 
+
+- [_Data details_](#data-details): Details relating to the file currently open in the Label Editor.
+- [_General_](#general-settings): General interactions with the Label Editor.
+- [_Label display_](#label-display-settings): Toggle elements to show or hide those elements within the Label Editor.
+- [_Drawing_](#drawing-settings): Control how labels are drawn.
+- [_Object tracking_](#object-tracking): Settings controlling [object tracking](/platform-documentation/Annotate/automated-labeling/annotate-tracking). 
+
+<Tip>Use the search bar at the top of the _Editor settings_ to search for specific settings, or keywords. </Tip>
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '54.93387589013224%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/7fe71b178e34430c9abc4ddad311bec5?sid=34c6e6ce-a8ba-40a7-b167-0911a7dc873d"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+### Editor settings sections
+
+**Data details**
+
+The _Data details_ section displays information about the asset currently open for annotation, or review. This information is gotten from the data itself, and is not available for direct manipulation. We use this section to provide you with valuable information about the data you are working on, including if we may have detected any possible issues with the data encoding.
+
+| **Setting** | **Description**                                                    |
+|-------------|--------------------------------------------------------------------|
+| Data title  | The title of the file currently open in the Label Editor.     |
+| Data type   | The type of data unit currently open in the Label Editor.      |
+| Dimensions  | The size of the image or frame currently open in the Label Editor. |
+| Frames per second | frequently abbreviated  _FPS_, this is the number of frames, or images, per second in a video. Higher FPS means smoother playback. This value is only valid for videos.    |
+| [Browser compatibility](/platform-documentation/Annotate/annotate-label-editor#browser-compatibility) | Some videos may have FPS or video encoding issues synchronizing drawn labels with frames in modern browsers. You can read more about supported videos [here](/platform-documentation/General/general-supported-data#supported-file-formats), and learn more about frame synchronization issues <a href="https://blog.encord.com/post/playing-videos-is-easy-pausing-them-is-hard">here</a> and in our documentation [here](/platform-documentation/General/general-supported-data#identifying-and-resolving-frame-synchronization-issues). |
+
+---
+
+### General Settings
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/general-settings-1.png" width="400" alt="general settings in label editor" title="General settings"/>
+
+The _General_ section of the _Label editor settings_ contains the following components:
+
+
+| Feature                           | Description |
+|-----------------------------------|-------------|
+| **Auto-save interval**            | Controls how often labels are auto-saved (min: 15s, max: 600s, default: 120s). |
+| **Display bulk Approve/Reject buttons** | Toggles buttons to approve or reject all instances in a frame. |
+| **Invert mouse wheel zoom direction** | Reverses the default zoom behavior for scrolling up/down. |
+| **Display timestamps**            | Shows timestamps instead of frame numbers for object instances, attributes, and consensus review. |
+| **[Turbo mode](/platform-documentation/Annotate/annotate-label-editor/annotate-label-editor-annotate#turbo-mode)**                    | Speeds up annotation by allowing rapid assignment/confirmation of attributes with auto-zooming. |
+| **Frame skip interval**           | Sets the number of frames skipped when using frame-skip buttons. |
+| **Enable skip to next annotation buttons** | Adds controls to navigate directly between frames with annotations. |
+| **Display image title**           | Toggles visibility of the data unit title in the Label Editor. |
+| **Expand classifications**        | Auto-expands all classifications, making hotkeys visible for quicker annotation. |
+
+---
+
+### Label Display Settings
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/label-display-settings.png" width="300" title="Label display settings" />
+</div>
+
+The _Label display_ section of the _Label editor settings_ contains the following components:
+
+| Feature                          | Description |
+|----------------------------------|-------------|
+| **Display object names**         | Toggles visibility of annotation object names in the Label Editor. |
+| **Display object hash**          | Toggles visibility of the label hash (ID) for annotation objects. |
+| **Display object classifications** | Toggles visibility of object attributes in the Label Editor. |
+| **Object label font size**       | Sets the font size (in px) for all label display settings. |
+
+
+---
+
+### Drawing Settings
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/drawing-settings-new.png" width="300" alt="Drawing settings in label editor settings" title="Drawing settings" />
+</div>
+
+The _Drawing settings_ section of the _Label editor settings_ contains the following components:
+
+| Feature                               | Description |
+|---------------------------------------|-------------|
+| **Handle size**                       | Adjusts the size of vertices and keypoints (1-10 px). |
+| **Object opacity**                    | Controls label opacity (1% - 100%) for better visibility. |
+| **Selected object opacity**           | Adjusts opacity multiplier (1x - 10x) for selected objects. |
+| **Primitive keypoint sensitivity**    | Sets precision for selecting/moving keypoints (1.00 - 10.00). |
+| **Segment anything RDP parameter**    | Sets [RDP parameter](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) for (SAM). |
+| **Drawing line aides**                | Adds crosshairs to improve label accuracy. |
+| **Freehand drawing & Polygon coarseness** | Enables freehand drawing with adjustable coarseness. |
+| **Show polyshape angles**             | Displays angles on polygons and polylines. |
+| **Permanent drawing (new instances)** | Allows continuous drawing of new instances without re-selecting the tool. |
+| **Permanent drawing (existing instances)** | Automatically moves forward and prompts labeling of the same instance on the next frame. |
+| **Skeleton points**           | Toggles visibility of individual [object primitive](/platform-documentation/Annotate/annotate-ontologies/annotate-working-with-ontologies#object-primitives) keypoint names. |
+| **Interpolation auto adjustments**    | Keeps manually labeled frames intact while adjusting [interpolations](/platform-documentation/Annotate/automated-labeling/annotate-interpolation) with confidence scores below 99%. |
+
+---
+
+### Object Tracking
+
+**Number of frames to predict**
+
+Specify how many subsequent frames the [object tracking](/platform-documentation/Annotate/automated-labeling/annotate-tracking#simple-object-tracking) should continue from the current frame. For example, if you start on frame 50, and set _Number of frames to predict_ to 50, the tracker attempts to predict labels on frames up to and including frame 100.
+
+** Advanced tracking**
+
+This toggle enables the advanced SAM 2 tracking algorithm, which improves accuracy but runs at a slower speed. It is enabled by default.
+
+---
+
+## Keyboard shortcuts
+
+<Note>The words 'keyboard shortcuts' and 'hotkeys' are used interchangeably and refer to the same concept. </Note>
+
+<Tip>A full list of keyboard shortcuts can be found in the Label Editor. Use <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd> K </kbd> to open the full list of shortcuts. </Tip>
+
+<Note>Windows and Mac may have different keyboard shortcuts. Use <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd> K </kbd> to open the full list of shortcuts</Note>
+
+Use the following hotkeys to speed up common or useful operations.
+
+### Review mode
+
+import HotkeysReview from '/snippets/LabelEditor/HotkeysReview.mdx';
+
+<HotkeysReview />
+
+---
+
+### General
+
+import HotKeysGeneral from '/snippets/LabelEditor/HotKeysGeneral.mdx';
+
+<HotKeysGeneral />
+
+---
+
+### Annotate mode
+
+import HotKeysAnnotate from '/snippets/LabelEditor/HotKeysAnnotate.mdx';
+
+<HotKeysAnnotate />

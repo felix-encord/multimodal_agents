@@ -1,0 +1,137 @@
+---
+title: "Deployment Options & Requirements"
+metadata:
+  title: "Deployment Options & Requirement"
+  description: "Explore deployment requirements and options for Encord."
+  image:
+    0: "https://files.readme.io/417acc9-image_16.png"
+---
+
+<Note>
+On Premise / Air-gapped deployment options are only available to Enterprise customers.
+</Note>
+
+## Deployment Options
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Pros</th>
+      <th>Cons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cloud</td>
+      <td>
+        <ul>
+          <li>Ready to start on day 1 (no initial & on-going configuration required)</li>
+          <li>Inexpensive and no maintenance required for client</li>
+          <li>Secure (SOTA encryption, data resides client-side, etc.)</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>May not be appropriate for classified environment data restrictions</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Virtual Private Cloud (VPC)</td>
+      <td>
+        <ul>
+          <li>Compatible with GCP/Azure/AWS</li>
+          <li>Higher level of control over application accessibility</li>
+          <li>May fulfil classified and highly sensitive data restrictions</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Client to maintain hardware compatibility and software versioning</li>
+          <li>Requires in-house Kubernetes expertise</li>
+          <li>No real-time software updates</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>On-Premise / Air-gapped</td>
+      <td>
+        <ul>
+          <li>May fulfil classified and highly sensitive data restrictions</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+        <li>Client to maintain hardware compatibility and software versioning</li>
+          <li>Requires in-house Kubernetes expertise</li>
+          <li>No real-time software updates</li>
+          <li>Expensive to set up and maintain</li>
+          <li>Client has to procure hardware and maintain network setup</li>
+          <li>Network and app security maintained by client</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## Deployment Requirements
+
+<table>
+  <thead>
+    <tr>
+      <th>Deployment Option</th>
+      <th>Setting up OS and Encord App</th>
+      <th>Management and Monitoring</th>
+      <th>Solution Engineer Hours</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cloud</td>
+      <td>None required</td>
+      <td>Standard cloud support</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Virtual Private Cloud (VPC)</td>
+      <td>
+        <ul>
+          <li>Terraform for rolling out environment</li>
+          <li>Ansible installation script for packages</li>
+          <li>Kustomize scripts for deployments</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Monitoring setup</li>
+          <li>Remote support</li>
+          <li>Upgrade rollouts</li>
+        </ul>
+      </td>
+      <td>100 hours</td>
+    </tr>
+    <tr>
+      <td>On-Premise / Air-gapped</td>
+      <td>
+        <ul>
+          <li>Based Installation Setup (Raid + OS)</li>
+          <li>Ansible installation script for packages</li>
+          <li>Kustomize scripts for deployments</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Monitoring setup</li>
+          <li>Remote support</li>
+          <li>Upgrade rollouts</li>
+        </ul>
+      </td>
+      <td>200 to 250 hours</td>
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,68 @@
+---
+title: "Get Started"
+slug: "annotate-api-overview"
+hidden: false
+category: "6480a33fc3cb871311030819"
+---
+
+The Encord API is a REST API that allows you to programmatically query resources such as Projects, Datasets, and labels. The API enables you to use our powerful automation features such as automated labeling, training and inference.
+
+<Tip>
+We strongly recommend using our Python [Encord SDK](/sdk-documentation/general-sdk/network-configurations-sdk) to call our API.
+</Tip>
+
+## API endpoint
+The Encord API has the following endpoint
+
+```
+https://api.encord.com/public
+```
+
+URIs referenced in the documentation are relative to this endpoint.
+
+## API authentication
+
+All API requests are authenticated. To authenticate requests with Encord, you simply need to 
+
+1. [Generate authentication a public / private key pair in our platform](/platform-documentation/Annotate/annotate-api-keys).
+
+2. [Set authorization headers](#2-set-authorization-headers) when making API calls.
+
+### 1. Set up authentication keys
+You can authenticate with Encord on a user basis by [registering a public key](/platform-documentation/Annotate/annotate-api-keys) in the Encord web-app.
+
+### 2. Set authorization headers
+Once you have registered a public key or created an API key, you can authenticate your requests by using your keys in the authorization header of your API calls.
+
+Here is an example of how you can create the correct authorization header using Node. 
+
+```js
+const crypto = require('crypto');
+const sshpk = require('sshpk');
+
+const generateAuthHeader = (data, privateKey) => {
+    const pkParsed = sshpk.parsePrivateKey(privateKey, 'openssh');
+    const hashedData = crypto.createHash('sha256').update(data).digest();
+    const s = pkParsed.createSign('sha512');
+    s.update(hashedData);
+    const signature = s.sign();
+    const publicKey = pkParsed.toPublic();
+    const pkData = publicKey.parts[0].data;
+    const pkDataString = pkData.toString('hex');
+    return `${pkDataString}:${signature.parts[0].data.toString('hex')}`;
+};
+
+// Some request data created
+// ...
+
+var request = {
+   method: 'post',
+   url: 'https://api.encord.com/public',
+   headers: {
+      'Content-Type': 'application/json',
+      'Authorization': generateAuthHeader('<request_data>', '<private_key>'),
+      'Accept': 'application/json'
+   },
+   data : '<request_data>'
+};
+```

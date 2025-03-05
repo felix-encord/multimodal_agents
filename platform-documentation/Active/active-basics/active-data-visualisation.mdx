@@ -1,0 +1,81 @@
+---
+title: "Data Visualization"
+slug: "active-data-visualization"
+hidden: false
+metadata: 
+  title: "Data Visualisation"
+  description: "Best practices to visualize your data."
+category: "6480a3981ed49107a7c6be36"
+---
+
+
+Active provides a number of ways to accelerate the creation of Collections and model optimization by adding data to the Grid view for each image.
+
+In the Grid view, each image displays in a card/tile. Within each tile, you can include a variety of information.
+
+**General**
+
+- <b>Title:</b> The file name for the frame.
+- <b>Selected metric:</b> The data, label, video, or prediction metric the frame is being sorted by.
+- <b>Collections:</b> Then number of Collections the frame belongs to. Mousing over the number displays the Collection names.
+- <b>Class:</b> The label/classifications in the frame.
+- <b>IOU:</b> The Intersection of Union between the prediction labels and ground truth labels. A value of 1 means there is perfect overlap between the prediction and ground truth labels. A value of 0 means there is no overlap between the prediction and ground truth labels.
+- <b>Workflow stage:</b> The Workflow stage where the data unit resides.
+- <b>Priority:</b> The priority assigned to the task (data unit) in Annotate.
+
+
+**Prediction**
+
+- <b>Show ground truth:</b> Displays ground truth labels on the frame with predictions.
+- <b>IOU Threshold:</b> Specifies the value that determines the cutoff between true positive and false positive predictions. Predictions with an IoU greater than or equal to this threshold are considered true positives, while those below it are considered false positives.
+- <b>Min Confidence Threshold:</b> Specifies the confidence value to filter your frames with predictions.
+
+
+## Display information on Grid view
+
+1. Log on to the Encord platform.
+   The landing page appears.
+
+2. Click **Active**.
+   The Active home page appears.
+
+3. Click into an Active Project.
+   The _Explorer_ page for the Project appears.
+
+4. Click the tab you want to display: **Video**, **Data**, **Labels**, **Predictions**.
+
+   ![Data Visualization](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-data-visualization.gif)
+
+5. Click **Display** on the far right of the screen.
+
+6. Specify the data required to display on each card/tile under _Card details_.
+   Not all information is available for viewing under every tab (Video, Data, Labels, Prediction).
+
+
+## Filter Predictions by IOU and Confidence
+
+1. Log on to the Encord platform.
+   The landing page appears.
+
+2. Click **Active**.
+   The Active home page appears.
+
+3. Click into an Active Project.
+   The _Explorer_ page for the Project appears.
+   
+4. Click **Predictions**.
+   The _Predictions_ page appears.
+
+   ![Predictions](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-data-visualization-predictions.gif)
+
+5. Click **Display** on the far right of the screen.
+
+6. Scroll down to _Prediction_ section.
+
+7. Expand the section.
+
+8. Adjust the **IOU Threshold**.
+   Depending on the IOU of the ground truth and prediction labels a TP or FP icon appears on each frame.
+
+9. Adjust the **Min Confidence Threshold**.
+   Frames under the threshold are filtered from view.

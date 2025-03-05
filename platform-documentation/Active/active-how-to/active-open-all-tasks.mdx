@@ -1,0 +1,74 @@
+---
+title: "Open Tasks from Active to Annotate"
+slug: "active-open-all-tasks"
+hidden: false
+metadata: 
+  title: "Open All Tasks from Active to Annotate"
+  description: "Learn how to open Annotate tasks using Collections in Encord Active."
+category: "6480a3981ed49107a7c6be36"
+---
+
+After creating a Collection, you can open annotation tasks of images/frames in the Collection, when the Collection is sent to Annotate. That means regardless of the image's/frame's current status in the Workflow (Annotate, Review, Complete) the task is opened/reopened in Annotate.
+
+### Important Information
+
+- There is no insight on the image's/frame's current status in the Workflow (Annotate, Review, Complete) in Annotate.
+
+- Reopening a closed task maintains the priority specified in the Collection.
+
+<Info>This action cannot be undone. This is a bulk operation on all images/frames in the Collection, and once the action is submitted to Annotate, all images/frames in the Collection are opened/reopened in their Annotate Project. That means regardless of the image's/frame's current status in the Workflow (Annotate, Review, Complete) the task is opened/reopened in Annotate. </Info>
+
+## Open tasks from Active to Annotate
+
+In addition to opening tasks, all priorities, comments on individual frames/images, and the comment added for the Collection, are sent to the Annotate Project.
+
+<AccordionGroup>
+   <Accordion title="To send a Collection to Annotate:">
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Click **Collections**.
+   The _Collections_ page appears.
+
+5. Select the checkbox for the Collection to send to Annotate.
+
+6. Click **Send to Annotate**.
+   The _Send to Annotate_ dialog appears.
+   <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/user-guide/active-send-to-annotate.png" width="400" />
+
+7. Specify the following:
+
+   - **Adjust priority of tasks:** Specifies the priority of all the images/frames in the Collection, when the images/frames are sent to Annotate.
+   
+   - **Include model predictions as pre-labels:** Includes model predictions as pre-labels in all frames/images in the Collection
+
+   - **Reopen tasks:** Reopens all annotation tasks on images/frames in the Collection.
+
+     <Info>This action cannot be undone.</Info>
+   
+   - **Delete all existing labels:** Deletes all existing labels on all frames/images in the Collection.
+
+     <Info>This action cannot be undone.</Info>
+   
+   - **Leave a comment:** Applies the comment on all frames/images in the Collection.
+
+	<Warning>Comments applied on a Collection cannot be deleted in bulk. We recommend using comments, created on a Collection, in image sequence and video Datasets.</Warning>
+
+8. Click **Submit**.
+   The _Subset created successfully_ dialog appears once creation completes.
+
+9. Click the link in the dialog to go to the Project in Annotate.
+
+10. Users in Annotate can then view opened/reopened tasks, priorities on tasks, and [can access comments](/platform-documentation/Annotate/annotate-label-editor#comments) made in the Collection. 
+
+<Note>After annotating the data, sync the Project data between Annotate and Active. To sync the Project data go to **Active > [select the Project] > click More > Sync Project Data**.</Note>
+
+  </Accordion>
+</AccordionGroup>

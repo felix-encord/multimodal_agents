@@ -1,0 +1,184 @@
+---
+title: "Overview of Encord Active"
+slug: "active-overview"
+hidden: false
+metadata: 
+  title: "Overview of Encord Active"
+  description: "Optimize models with Encord Active: A cloud-based and open source toolkit for data quality, model enhancement, and failure mode detection. Boost performance."
+  image: 
+    0: "https://files.readme.io/294aa28-image_16.png"
+createdAt: "2023-07-11T16:27:41.844Z"
+updatedAt: "2023-08-11T12:43:00.437Z"
+category: "6480a3981ed49107a7c6be36"
+---
+
+<div class="flex justify-center">
+    <img alt="Encord Active logo" src="https://storage.googleapis.com/docs-media.encord.com/active-1.png" width="300" />
+</div>
+
+Active is tightly integrated with Encord Annotate, with Active and Annotate being hosted by Encord.
+
+[Encord Active](https://encord.com/encord-active/) is active learning solutions that help you find failure modes in your models, and improve your data quality and model performance.
+
+Use Active to visualize your data, evaluate your models, surface model failure modes, find labeling mistakes, prioritize high-value data for relabeling and more!
+
+[//]: # "![video](https://storage.googleapis.com/docs-media.encord.com/static/img/gifs/ea-demo.gif)"
+
+## When to use Encord Active?
+
+Encord Active helps you understand and improve your data, labels, and models at all stages of your machine learning journey.
+
+Whether you've just started collecting data, labeled your first batch of samples, or have multiple models in production, Encord Active can help you.
+
+![encord active diagram](https://storage.googleapis.com/docs-media.encord.com/static/img/process-chart-ea.webp)
+
+### Example use cases
+
+To give you a better idea about how Active and Annotate work together, here are some use cases.
+
+**Data Curation and Label Error Correction**
+
+![Encord Active workflow](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-workflow-data-curation-label-validation.png)
+
+**Optimize Model Performance**
+
+![Encord Active workflow](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-workflow-model-optimization.png)
+
+<Note>Before going any further, you should know what a Collection is in Encord Active. Collections provide a way to save interesting groups of data units and labels, to support and guide your downstream workflow. For more information on [Collections go here](/platform-documentation/Active/active-basics/active-collections).</Note>
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Buttons</title>
+    <style
+      dangerouslySetInnerHTML={{
+        __html: `
+          .clickable-button {
+            display: inline-block;
+            width: 250px;
+            height: 50px;
+            background-color: #ffffff;
+            border: solid;
+            text-align: center;
+            line-height: 50px;
+            color: #000000;
+            text-decoration: none;
+            margin: 10px;
+            cursor: pointer;
+          }
+          .clickable-button:hover {
+            background-color: #ededff;
+          }
+        `,
+      }}
+    />
+  </head>
+  <div>
+    <a
+      className="clickable-button"
+      href="/platform-documentation/Active/active-tutorials/active-use-cases#data-cleansing-curation"
+    >
+      Data Cleansing/Curation
+    </a>
+    <a
+      className="clickable-button"
+      href="/platform-documentation/Active/active-tutorials/active-use-cases#label-correction-validation"
+    >
+      Label Correction/Validation
+    </a>
+    <a
+      className="clickable-button"
+      href="/platform-documentation/Active/active-tutorials/active-use-cases#model-prediction-evaluation"
+    >
+      Model/Prediction Evaluation
+    </a>
+  </div>
+</div>
+
+
+
+## What data does Encord Active support?
+
+<Info>
+Active supports analysis (Advanced Metrics and Embeddings) on images and videos up to 4K resolution. Performance is affected for images and videos over 4K.
+
+For optimal performance, we strongly recommend downscaling images and videos over 4K to 4K resolution.
+</Info>
+
+{/*
+
+ 
+
+| Features                         |                 Open Source                 |                                      Hosted                                     |
+| :------------------------------- | :-----------------------------------------: | :-----------------------------------------------------------------------------: |
+| Data types                       |                 `jpg`, `png`                |                           `jpg`, `png`, `tiff`, `mp4`                           |
+| Labels                           | `classification`, `bounding box`, `polygon` | `classification`, `bounding box`, `polygon`, `polyline`, `bitmask`, `key-point` |
+| Number of data units             |   25,000 per project (unlimited projects)   |                     500,000 per project (unlimited projects)                    |
+| Videos                           |                      \-                     |                                 2 hours @ 30fps                                 |
+| Data exploration                 |                      ✅                      |                                        ✅                                        |
+| Label exploration                |                      ✅                      |                                        ✅                                        |
+| Similarity search                |                      ✅                      |                                        ✅                                        |
+| Off-the-shelf quality metrics    |                      ✅                      |                                        ✅                                        |
+| Custom quality metrics           |                      ✅                      |                                        ✅                                        |
+| Data and label tagging           |                      ✅                      |                                        ✅                                        |
+| Image duplication detection      |                      ✅                      |                                        ✅                                        |
+| Label error detection            |                      ✅                      |                                        ✅                                        |
+| Outlier detection                |                      ✅                      |                                        ✅                                        |
+| Dataset summaries                |                      ✅                      |                                        ✅                                        |
+| Project comparison               |                      ✅                      |                                        ✅                                        |
+| Model evaluation                 |                      \-                     |                                        ✅                                        |
+| Label synchronization            |                      \-                     |                                        ✅                                        |
+| Natural language search          |                      \-                     |                                        ✅                                        |
+| Search by image                  |                      \-                     |                                        ✅                                        |
+| Integration with Encord Annotate |                      \-                     |                                        ✅                                        |
+| Active learning workflows        |                      \-                     |                                        ✅                                        |
+| Nested Attributes                |                      \-                     |                                    Contact us                                   |
+
+\*/}
+
+| Features                         |                                      Active                                     |
+| :------------------------------- | :-----------------------------------------------------------------------------: |
+| Data types                       |                           `jpg`, `png`, `tiff`, `mp4`                           |
+| Labels**<sup>1</sup>**           | `classification`, `bounding box`, `polygon`, `polyline`, `bitmask`, `key-point` |
+| Number of data units             |                     500,000 per project (unlimited projects)                    |
+| Videos                           |                                 2 hours @ 30fps                                 |
+| Data exploration                 |                                        ✅                                        |
+| Label exploration                |                                        ✅                                        |
+| Similarity search                |                                        ✅                                        |
+| Off-the-shelf quality metrics    |                                        ✅                                        |
+| Custom quality metrics           |                                        ✅                                        |
+| Data and label tagging           |                                        ✅                                        |
+| Image duplication detection      |                                        ✅                                        |
+| Label error detection            |                                        ✅                                        |
+| Outlier detection                |                                        ✅                                        |
+| Collections                      |                                        ✅                                        |
+| Model evaluation                 |                                        ✅                                        |
+| Label synchronization            |                                        ✅                                        |
+| Natural language search          |                                        ✅                                        |
+| Search by image                  |                                        ✅                                        |
+| Integration with Encord Annotate |                                        ✅                                        |
+| Nested Attributes                |                                        ✅                                        |
+| Custom metadata                  |                                        ✅                                        |
+
+**<sup>1</sup>**: Objects and classifications are both supported:
+
+Filtering:
+
+- Objects + all attributes
+- Classification + all attributes
+
+Model evaluation:
+
+- Objects and Classifications cannot be mixed
+- Classification support includes top level radio button
+- Object support includes top level object
+
+<Tip> Encord Active supports up to 750K data units per Project, but we recommend 500K data units per Project.</Tip>
+
+
+<Info>
+Active supports analysis (Advanced Metrics and Embeddings) on images and videos up to 4K resolution. Performance is affected for images and videos over 4K.
+
+For optimal performance, we strongly recommend downscaling images and videos over 4K to 4K resolution.
+</Info>

@@ -1,0 +1,175 @@
+---
+title: "Ontology Structure"
+slug: "annotate-ontologies"
+hidden: false
+metadata: 
+  title: "Ontologies"
+  description: "Learn how Ontologies in Encord can be structured."
+  image: 
+    0: "https://files.readme.io/7dc97b7-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+Ontologies are hierarchical structures that define the top-level concepts and categories in your data, along with nested attributes for detailed annotations. They consist of _Classes_ at the top level, which can be either _Objects_ or _Classifications_.
+
+- **Objects**: Used to label specific locations in a frame, such as a car in a video frame.
+- **Classifications**: Frame-level labels that do not have a specific location, such as indicating if an image is taken during the day or night.
+- **Attributes**: These can be nested under objects, classifications, or other attributes to create detailed, hierarchical structures. For example, the object "horse" can have an attribute "color".
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/ontology_nested_preview-callout.png" width="400" alt="Ontology Nested Preview" />
+</div>
+
+## Ontology Structure
+
+### Objects
+
+**Objects** are configured with a title, an **object annotation type**, and optional **attributes**. You can also change their color. 
+
+<Tip>All objects can be marked as [_Required_](#required).</Tip>
+
+The following object annotation types are available: 
+
+| **Object**               | **Description**                                                                                                                                         | **Supported For**                                                                                       |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Bounding Box**          | A quick-to-draw box shape compatible with many advanced automated labeling techniques.                                                                 | Single images, image groups, image sequences, videos, DICOM, NIfTI, Documents                          |
+| **Rotatable Bounding Box**| A rotatable box for more accurate labels than standard bounding boxes.                                                                                 | Single images, image groups, image sequences, videos, DICOM, NIfTI, Documents                          |
+| **Polygon**               | Captures complex shapes that bounding boxes cannot. Known as segmentations, polygons cannot be self-intersecting, but can be nested within other polygons.                                    | Single images, image groups, image sequences, videos, DICOM, NIfTI, Documents                          |
+| **Polyline**              | An unclosed polygon for representing long, thin annotations.                                                                                          | Single images, image groups, image sequences, videos, DICOM, NIfTI, Documents                          |
+| **Keypoint**              | A simple geometric point for tracking small objects or specific points on larger objects.                                                             | Single images, image groups, image sequences, videos, DICOM, NIfTI, Documents                          |
+| **Bitmask**               | Creates complex shapes with a brush tool, useful for parts of a frame or image. Multiple threshold filters can apply bitmasks to specific areas.       | Single images, image groups, image sequences, videos, DICOM, NIfTI, Documents                          |
+| **Object Primitive**      | Previously called Skeleton template. A collection of connected geometric points, ideal for representing complex shapes like those in pose estimation. See [here](/platform-documentation/Annotate/annotate-ontologies/annotate-working-with-ontologies#object-primitives) to learn more.  | Single images, image groups, image sequences, videos, DICOM, NIfTI, Documents                          |
+| **Audio Region**          | An object used exclusively to label parts of an audio wave. See our [documentation for labeling audio files](/platform-documentation/GettingStarted/gettingstarted-labeling#labeling-audio-files) to learn more.                             | Audio                                                                                                   |
+| **Text Region**           | An object used exclusively to label parts of a text document. See our [documentation for text files](/platform-documentation/Annotate/annotate-label-editor/annotate-documents#label-text-documents) to learn more.                                    | Text                                                                                                    |
+
+
+### Classifications
+
+<Info> Classifications are supported for all modalities </Info>
+
+Since classifications apply to the entire frame, there is no need for specific colors or shapes. _Classification annotation types_ include:
+
+- **Checklist**: Allows multiple values. For example, "Weather" could be both cloudy and rainy.
+- **Radio**: Allows a single value. For example, "Time of day" could be "Day" or "Night."
+- **Text**: Allows freeform input for each situation.
+
+<Note>Radio buttons can nest up to 7 layers deep. Check boxes and text fields do not support nesting.</Note>
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/classification_annotation_types.png" width="700" alt="Ontology Classification Annotation Types "/>
+
+### Attributes
+
+**_Attributes_** can be nested under objects or any classification with a _Radio_ annotation type. To nest attributes, set the type to _Radio_, then click the **Configure** button next to the value where you want to add a new _attribute_.
+
+<Tip>Attributes can be marked as [_Required_](#required), [_Dynamic_](#dynamic-attributes), or [_Relation_](#relation-attributes).</Tip>
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/click_nested_configure-callout.png" width="700" alt="Configure Nested Attribute" />
+
+### _Required_ Attributes
+
+Any object, classification, or attribute can be marked as _Required_. This means annotators must include at least one instance of the required feature in each task before submitting.
+
+<Note>If you specify a dynamic attribute as **required**, specify a **no_value** option in the list of options for the dynamic attribute.</Note>
+
+<Tip>Ontology objects and classifications marked as _Required_ are always listed alongside the red * symbol.</Tip>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/top-level-required.png" width="800" />
+</div>
+
+If annotators try to submit a task without including a _Required_ object or classification, they will see the following warning message.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/required-warning.png" width="400" />
+</div>
+
+Click **View issue** to open the [_Issues drawer_](/platform-documentation/Annotate/annotate-label-editor#issues-drawer). From there annotators can seamlessly resolve all _Required_ issues before moving onto the next task.
+
+<Tip>All _Required_ objects and classifications appear as items in the [issues drawer](/platform-documentation/Annotate/annotate-label-editor#issues-drawer) of the Label Editor. </Tip>
+
+### _Dynamic_ Attributes
+
+Top-level attributes on objects can be marked as _Dynamic_. Normally, attributes are static, but marking one as _Dynamic_ allows it to change value during a video. This is useful for indicating temporary attributes of an object. For example, a single instance of a person can be marked as "moving" in one part of the video and "stationary" in another.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/classification_dynamic-callout.png" width="900" alt="Dynamic Attribute" />
+</div>
+
+<Tip>Refer to our [this documentation](/platform-documentation/Annotate/annotate-label-editor/annotate-videos##attribute-propagation--keyframes) to learn how to use dynamic attributes in the Label Editor, and apply dynamic attributes to a range of frames in a video.</Tip>
+
+### _Relation_ Attributes
+
+The _Relation_ attribute allows you link objects, and specify the relationship between them using text regardless of the annotation type used. 
+
+<Note>Only one of the linked objects need a  _Relation_ attribute for the objects to be considered linked. For example, consider 2 Ontology objects: a chicken, and a chicken wing. To allow these objects to be linked, a _Relation_ attribute must be created for the chicken **or** the chicken wing, while setting up the Ontology. </Note>
+
+All _Relation_ attributes must be text fields. They cannot be radio buttons or checklists. _Relation_ attributes can be applied to object labels of any kind, but not classifications. 
+
+To create a _Relation_ attribute, enable the _Relation_ feature when creating an attribute during Ontology creation. The default name for all _Relation_ attributes is _#relation_.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/relation-attribute-2.png" width="500" alt="Relation Attribute" />
+</div>
+
+<Note>Objects are linked in the Label Editor during annotation, not during Ontology creation.</Note>
+
+**Using _Relation_ attributes in the Label Editor**:
+
+Once an Ontology with _Relation_ attributes has been set up, instances can be linked in the Label Editor during annotation. 
+
+1. Create both instance labels. In this example a chicken and its wing have been labeled using bounding boxes. 
+
+2. Click the _Edit classifications_ button for the object with the _Relation_ attribute - in this example the chicken wing, as seen below. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-1.png" width="700"/>
+</div>
+
+3. Click the _Set relation..._ bar and select the instance you want to link the selected instance to. In this example the chicken and the wing appear on the same frame, and therefore appear under the _This frame_ heading. Instances in different frames appear under the heading _Rest_. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-3.png" width="700"/>
+
+4. Click **Done**. The instances are now linked. This is shown in the _Instance labels_ section with the name of the linked instance being displayed. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-4.png" width="300"/>
+</div>
+
+#### Apply to new occurrences
+
+The _Apply to new occurrences_ checkbox in the Label Editor is available for the first instance of a label with a [dynamic attribute](#dynamic-attributes). Selecting this option propagates the attribute to all future instance labels, meaning all labels created for this instance share the attribute value of the initial instance label.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/apply-to-new-occurences.png" width="350"/>
+</div>
+
+The _Apply to new occurrences_ functionality also holds for instance labels created automatically using [interpolation](/platform-documentation/Annotate/automated-labeling/annotate-interpolation).
+
+### _Transcript_ Attributes
+
+_Transcript_ attributes are text fields specifically designed for transcribing audio files. Apply _Transcript_ attributes to _Audio Region_ objects and input the audio transcription directly into the text field. In the following example an _Audio Region_ object called "Beautiful Voice" has the _Transcription_ text attribute "Lyrics", which can be used to transcribe song lyrics.
+
+<Info>Only Text attributes can be marked _Transcript_</Info>
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/transcription-ontology.png" width="700"/>
+</div>
+
+
+## JSON Ontology Structure
+
+You can preview a JSON of your Ontology structure when you are setting up or editing your Ontology. Preview the JSON by enabling the _Display JSON_ toggle.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/json-structure-preview.png" width="700"/>
+</div>
+
+## Ontology Best Practices
+
+Creating an Ontology is a crucial step in developing effective machine learning applications. Keep the following considerations in mind when designing your Ontologies:
+
+- **The Problem Domain**: Ensure your Ontology is exhaustive, with a class or representation for all important concepts. Consider the appropriate level of detail. For example, an application recognizing various animals might have top-level classes like "cat" and "dog," while one focused on dog breeds might use "German Shepherd" and "Border Collie" as top-level classes.
+
+- **The Team**: Use terminology that is clear and communicable across your entire team, including annotators, reviewers, project managers, algorithm developers, and other stakeholders.
+
+- **The Workflow**: Annotation can be difficult and time-consuming. Design your Ontology to represent classes and their attributes appropriately, but also aim for efficiency. Ensuring objects and scenes can be labeled both accurately and quickly will lead to a more efficient labeling process.

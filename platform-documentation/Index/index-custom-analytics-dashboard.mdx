@@ -1,0 +1,54 @@
+---
+title: "Index Custom Analytics Dashboards"
+description: "Explore the basics of creating and using custom analytics dashboards in Index."
+---
+
+
+You can create custom analytics dashboards from the _Analytics View_ using _Distribution_ and _Correlation_ charts.
+
+## Distribution charts
+
+Distribution charts display distributions and summaries of the selected metrics and custom metadata.
+
+Here are some examples:
+
+- Data unit: Frame number, random value, area 
+- Metadata: Enum with their enum options, numeric, date time, and boolean
+
+<Note>`varchar` (previously `string`), `text` (previously `long_string`), and `uuid` are NOT SUPPORTED for use in Distribution charts.</Note>
+
+![Add Distribution chart](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-add-distribution-chart.gif)
+
+## Correlation charts
+
+Correlation charts display a scatter plot of two attributes to show correlation within your current filtered view. Correlation charts require numeric data.
+
+<Note>Distribution charts support a number of custom metadata types, however Correlation charts ONLY SUPPORT `numeric` custom metadata.</Note>
+
+
+![Add Correlation chart](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-add-correlation-chart.gif)
+
+
+## Create Custom Analytics Dashboard for Index
+
+<Tip>Before creating a custom analytics dashboard, we recommend having custom metadata available in your data. Custom metadata can make the insights you get from the dashboard much more useful.</Tip>
+
+1. Go to **Files**.
+
+2. Click into a Folder from the Folder list.
+
+3. Click the **Open Explorer** icon.
+
+   The Index Explorer appears.
+
+4. Click **Videos**, **Frames**, or **Audio**.
+
+   <Note>The criteria available for the charts changes with each tab.</Note> 
+
+5. Click **Analytics view**.
+
+6. Specify the display criteria for the _Distribution_ and _Correlation_ cards that display by default.
+
+7. Click **Add chart** to add additional _Distribution_ and _Correlation_ cards.
+
+8. Specify the display criteria for the added _Distribution_ and _Correlation_.

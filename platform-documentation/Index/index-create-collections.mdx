@@ -1,0 +1,35 @@
+---
+title: "Create an Index Collection"
+slug: "index-create-collections"
+hidden: false
+metadata: 
+  title: "Create an Index Collection"
+  description: "Learn how to create Collections in Encord Index to enhance data organization, search, and collaboration."
+category: "65b3cc20ba5db2007e1a0b43"
+---
+
+A Collection is a container for data units (images or videos) that you can use to group your data units together. Create Collections by selecting images/videos and adding the images/videos to a Collection.
+
+In Encord Index, creating Collections provides several advantages:
+
+- **Organization**: Allows you to organize your data effectively within the platform. By assigning your data units to Collections, you can group and categorize data based on common characteristics, making it easier to manage and navigate large subsets of the Dataset.
+
+- **Enhanced search and filtering**: Collections in Encord Index enables powerful search and filtering capabilities. You can search for specific data units or filter data based on Collections your data units belong to, narrowing your focus to the relevant information you need.
+
+- **Collaboration and knowledge sharing**: Tagging promotes collaboration and knowledge sharing among team members in Encord. With consistent tagging conventions, team members can easily understand and access tagged data, facilitating efficient collaboration and ensuring everyone is on the same page.
+
+These are just a few of the advantages of tagging in Encord Index, and there may be more benefits specific to your Project and workflow.
+
+## Important Information
+
+Once you have created a Collection, the Collection membership is a ‘snapshot’ of the filter criteria at the point in time the creation action was initiated. This has the following important implications:
+
+- Subsequent data added to Index, that matches the filter criteria, is NOT automatically added to the Collection until someone explicitly adds the new data to that Collection.
+
+- Even for large Collections, which may not be created instantaneously, the 'snapshot' is taken at the time the creation action is initiated. That means the Collection may appear to grow over time, after you create it. But that is just items being added to Collection from the initial action. Data added to Index, that matches the filter criteria, while the Collection update action is in progress are NOT added to the Collection.
+
+## To create a Collection from Index
+
+import CreateCollection from '/snippets/Index/CreateCollection.mdx';
+
+<CreateCollection />

@@ -1,0 +1,125 @@
+---
+title: "Your Goals with Encord"
+description: "Set your goals when using Encord."
+---
+
+Before doing anything with Encord you should create goals of what exactly you intend to accomplish with the platform. Your goals inform how best to use Encord.
+
+## Define Your Objectives
+
+To improve your outcomes with Encord, begin by clearly defining your goals. Whether you aim to curate high-quality data, create accurate ground truth annotations, or optimize your model's performance, having clear objectives ensures you leverage the platform effectively. Your goals shape how you use Encord's tools and workflows.
+
+## Data Curation with Encord Index
+
+**Purpose**:
+
+Efficiently curate and organize your data to support downstream activities such as ground truth annotation and model training.
+
+**How it works**:
+
+- Visual Data Exploration: Use Encord Index to browse and group your data items. While effective for small datasets, this approach can become time-intensive for datasets with thousands of units.
+
+- Metadata and Embedding Filtering: Streamline your workflow with native and custom metadata & Embeddings:
+    - Native Metadata: Encord automatically embeds your images and frames and calculated metadata, such as brightness, sharpness, uniqueness and more.
+    - Custom Metadata: You can import your own user-defined metadata during or after data /registration, type it with a metadata schema, and use it for powerful filtering.
+
+- Automate with the SDK: Once you have explored your data and performed manual curation, you can automate the process with the Collection & Preset SDK.
+
+<Tip>We **STRONGLY RECOMMEND** importing metadata as you register data with Encord. At scale, importing custom metadata when you register your data can save you a significant amount of time.</Tip>
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '54.93387589013224%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/eb71850421204a72a0902f0e0db3d2e6?sid=8dbd2b96-6463-4970-b644-e7bda64e8477"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+---
+
+## Annotation with Encord Annotate
+
+**Purpose**:
+
+Annotate datasets across diverse modalities (including images, videos, sequences, DICOM, audio, and text) to produce high-quality labeled data for your machine learning applications.
+
+**How it works**:
+
+- Create custom [Workflows](/platform-documentation/Annotate/annotate-projects/annotate-workflows-and-templates) to define who annotates and reviews the data, and establish structured annotation-review processes.
+
+- Create annotations in the [Label Editor](/platform-documentation/Annotate/annotate-label-editor).
+
+- Leverage automation tools to improve speed & accuracy of labeling your data. 
+    - [SAM 2 Auto-Segmentation and Tracking](/platform-documentation/Annotate/automated-labeling/annotate-sam#sam-2-beta): Leverage cutting-edge AI tools for fast and precise annotations.
+    - [Editor Agents](/platform-documentation/Annotate/automated-labeling/annotate-editor-agents): Train and deploy models for automated annotations in the Label Editor.
+    - [Task Agents](/platform-documentation/Annotate/automated-labeling/annotate-task-agents): Integrate your own models into annotation workflows for customization and flexibility.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/44a0c44e350e4900b75b236934880ae0?sid=2bc76a90-40da-4af5-9ec6-253ac27254b1"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+---
+
+## Label Validation and Model Optimization with Encord Active
+
+**Purpose**: Validate labels, assess data quality, and optimize model performance to deliver better results, faster.
+
+**How it works**:
+
+- Label Validation
+    - Detect and validate label errors using label, data, and model quality metrics and Encord Embeddings.
+    - Apply analytics and custom filtering to identify and correct inaccuracies in labeled datasets.
+
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/active-explorer.png" width="700" />
+</div>
+
+- Model Evaluation
+    1. Train your model on exported annotations.
+    2. Import model predictions into Encord Active.
+    3. Use advanced analytics and quality metrics to:
+        - Discover weak spots in your model.
+        - Improve performance with actionable insights.
+        - Leverage embedding plots to visualize model outputs and identify improvement areas.
+
+<Tip>Use custom filtering to refine your data and label exploration, just as in Encord Index, to focus on areas that can enhance your model's performance.</Tip>
+
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/model-eval-active.png" width="700" />
+</div>

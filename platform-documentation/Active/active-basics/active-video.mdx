@@ -1,0 +1,179 @@
+---
+title: "Active Video"
+slug: "active-video"
+hidden: false
+metadata: 
+  title: "Active Video"
+  description: "Explore the basics of using video natively in Active."
+category: "6480a3981ed49107a7c6be36"
+---
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/ab03775fffa8415bab27c11876a896e5?sid=d181d262-d0b3-4074-bf8c-553dcb27835f"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+
+Use the _Video_ tab to natively view all the videos available in your Project. From the _Video_ tab you can sort and filter all of your videos based on [Video Quality Metrics](/platform-documentation/Active/active-quality-metrics/active-video-quality-metrics#video-quality-metrics) and several Annotation Quality Metrics made exclusively for video (Broken Track, Inconsistent Class, and Inconsistent Track). You can also apply video frame level metrics while in the _Video_ tab.
+
+![Quick Overview](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-video-basics.gif)
+
+1. Video Quality Metrics for sorting and filtering you videos.
+
+2. Native video with slider to move through video frames in sequence.
+
+3. Video frame-level metrics.
+
+4. Label level quality metrics, for example Broken Track, Inconsistent Class, and Inconsistent Track.
+
+## Use Video Quality Metrics
+
+Use Video Quality Metrics to sort and filter your videos. For a full list refer to the [Video Quality Metrics](/platform-documentation/Active/active-quality-metrics/active-video-quality-metrics#video-quality-metrics) page.
+
+![Filter with example](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-video-filtering.gif)
+
+## Use video specific Annotation Metrics
+
+When using Annotation Metrics, you need to switch to the _Labels_ tab after selecting your video.
+
+### Find Broken Tracks
+
+"Broken tracks" are cases where an object is being tracked (labeled) across a range of frames, but one or more frames in the range are missing labels. Hence, the tracking of the object across the video is broken.
+
+Apply the Annotation Label Quality metric **Broken Track** to filter the video for broken tracking of an object.
+
+<div class="flex justify-center">
+   <img alt="Broken Tracks Sequence" src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/broken-track-01.png" width="50%" />
+</div>
+
+<div class="flex justify-center">
+    <img alt="Broken Tracks Sequence" src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/broken-track-02.png" width="50%" />
+</div>
+
+<div class="flex justify-center">
+   <img alt="Broken Tracks Sequence" src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/broken-track-03.png" width="50%" />
+</div>
+
+**Caveat**
+
+This metric naturally flags samples that might not be relevant. For example, where an object (the green one) is occluded and reappears.
+
+<div class="flex justify-center">
+   <img alt="Broken Tracks Sequence - Caveat" src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/broken-track-04.png" width="50%" />
+</div>
+
+<div class="flex justify-center">
+    <img alt="Broken Tracks Sequence - Caveat" src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/broken-track-05.png" width="50%" />
+</div>
+
+<div class="flex justify-center">
+    <img alt="Broken Tracks Sequence - Caveat" src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/broken-track-06.png" width="50%" />
+</div>
+
+
+### Find Inconsistent Tracks
+
+"Inconsistent tracks" are cases an object is being tracked (labelled) across a range of frames, but the occurrence of the label changes part way through tracking the object. For example, you want to track two cars across an entire video. At some point in the video, the labels on the cars are swapped OR a new label gets applied to one or both of the cars. 
+
+For example, for two neighboring frames, say `t`$ and `t+1`, we assume that for every object `o* i,t` in frame `t`, the object `o* i, t+1` in frame `t+1` with the highest IOU to `o* i, t` should have the same `objectHash.`
+
+For every object in frame `t`, the algorithm works by computing the IOU between that object and every object in frame `t+1` to select the one with the highest IOU. If those two objects have the same objectHash, all good, score will be zero. There’s nothing to flag. If, on the other hand, the two objects do not share the same objectHash, it’s flagged by setting the score to the IOU between the two. 
+
+Think of `o* i, t` as the best match (highest IOU) in the following frame.
+
+
+![](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/formula-01.png)
+
+In the above, we use `o i,t. ID` as a shorthand for objectHash.
+
+In turn, 
+
+- A score equal to 0 means that no issues were found.
+- A score close to zero (but not zero) means that there is inconsistency in the object hashes but the objects do not overlap much, so it is less likely to be an actual label error.
+- A score closer to one means that the two objects have a high overlap and inconsistency in object hash.
+
+**Example**
+
+In this example, one track is inconsistent. The green guy has had objectHash `hYK5AFR6` for a while, and suddenly it changes to `H1ca7QwH`. Also indicated here by color (which would not actually be the case in the editor). 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/inconsistent-track-01.png" alt="Inconsistent Tracks Sequence" width="50%" />
+</div>
+
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/inconsistent-track-02.png" alt="Inconsistent Tracks Sequence" width="50%" />
+</div>
+
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/inconsistent-track-03.png" alt="Inconsistent Tracks Sequence" width="50%" />
+</div>
+
+**Special case**
+
+This algorithm also works for classifications. However, in that situation, the IOU falls back to the identity function
+
+![](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/formula-02.png)
+
+
+### Find Inconsistent Classes
+
+"Inconsistent classes" are similar to Inconsistent Tracking, but the scoring function cares about classification rather than objectHash:
+
+![](https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/formula-03.png)
+
+Why is this useful? In some situations, track ids are not relevant but the classification is. For example, if you know there is only ever one instance of an object per frame, then id is implicitly defined. Such situations do not necessarily work with the “Inconsistent Tracks” metric but should with the classification metric.
+
+An example of the is panoptic segmentation where some classes are “stuff classes” (like the dirt class). Stuff classes would usually only have one instance per frame.
+
+### Use video specific Annotation Metrics
+
+Remember your videos must have labels on some frames for the Annotation Quality Metrics to be useful.
+
+1. Log into Encord.  
+   The Encord home page appears.
+
+2. Click **Active**.  
+   The _Active_ landing page appears with a list of all available Active Projects.
+
+3. Click a Project that contains videos.  
+   The _Frames_ tab appears on _Summary_ page for the Project.
+
+4. Click **Video**.
+
+![Video Label Quality Metrics](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-video-label-metrics.gif)
+
+5. Sort and filter the videos using the Label Quality Metrics to find the video you want.
+
+6. Apply one of following Annotation Quality Metric filters to your video:
+
+   - Broken track
+   - Inconsistent track
+   - Inconsistent class
+
+7. Click the **Expand image** button.  
+   A larger version of the image appears.
+
+8. Click **Edit in Annotate**.  
+   The frame opens in the Label Editor in Annotate.
+
+9. Move forward and backward a few frames in the video to see the labeling error.

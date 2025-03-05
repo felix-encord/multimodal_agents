@@ -1,0 +1,317 @@
+---
+title: "Index Custom Embeddings"
+slug: "index-custom-embeddings"
+hidden: false
+metadata: 
+  title: "Index Custom Embeddings"
+  description: "Explore the basics of custom embeddings in Index."
+category: "6480a3981ed49107a7c6be36"
+---
+
+
+{/*-
+
+LH: WILL UPDATE WHEN FREDERIK HAS THIS READY FOR INDEX
+
+## TLDR;
+
+Do you already know what you are doing and only want to look over a Jupyter Notebook example? We provide one [here](#end-to-end-custom-embeddings-example).
+
+
+## Index's Default Embeddings
+
+Currently in Index, we calculate and display embeddings using purpose-built embeddings models. These models are excellent for a wide range of tasks and across the board performance. However, highly specialized tasks require a highly specialized model. The embeddings generated from our purpose-built embeddings models are used for: Natural Language Search (not supported for custom embeddings), image similarity search, and the embeddings view (where you view *reduced* embeddings).
+
+-*/}
+
+## Custom Embeddings Support
+
+{/*-
+We currently support embeddings of dimension 512 following on from our in-house clip Embeddings.
+-*/}
+
+Encord enables the use of custom embeddings for images, image sequences, image groups, and individual video frames. Custom embeddings allow you to incorporate your own feature representations into Encord's platform, enhancing capabilities like similarity search, visualizations, and data filtering. This flexibility supports more advanced workflows and deeper insights tailored to your specific use cases.
+
+<Info>Support for videos (in their entirety) is coming soon.</Info>
+
+## Use Custom Embeddings in Index
+
+To bring your custom embeddings into Encord, you first need to create a key in your metadata schema. After the key is in your schema, you can import your custom embeddings.
+
+To use custom embeddings in Index:
+
+1. Create a new `embedding` type in your Schema.
+2. Upload your embeddings.
+3. Select your custom embeddings from the _Embeddings_ view.
+
+<Note>Before you can use embedding plots with your custom embeddings, you need to configure your root Folder in Files.</Note>
+
+### Step 1: Create a New Embedding Type
+
+import CustomEmbeddingStep1 from '/snippets/Index/Metadata/CustomEmbeddingStep1.mdx';
+
+<CustomEmbeddingStep1 />
+
+### Step 2: Upload Embeddings
+
+import CustomEmbeddingStep2 from '/snippets/Index/Metadata/CustomEmbeddingStep2.mdx';
+
+<CustomEmbeddingStep2 />
+
+
+{/*-
+
+#### Embeddings Format - Videos
+
+`config` is optional when importing your custom embeddings:
+
+```python
+"config": {
+                "sampling_rate": <samples-per-second>,  # VIDEO ONLY (optional default = 1 sample/second)
+                "keyframe_mode": "frame" or "seconds",  # VIDEO ONLY (optional default = "frame")
+            },
+```
+
+<Info>Specifying a `sampling_rate` of `0` only imports the first frame and all key frames of your video into Index.</Info>
+
+```python Embeddings Format for Videos
+
+{
+    "$encord": {
+        "config": {
+            "sampling_rate": "<samples/second>",  # VIDEO ONLY (optional default = 1 sample/second)
+            "keyframe_mode": "frame" or "seconds",  # VIDEO ONLY (optional default = "frame")
+        }
+        "frames": {
+            "<frame-number-or-seconds>": {
+                "<my-embedding>": [1.0, 2.0, 3.0,...], # custom embedding ("embedding") with float values
+            }
+        }
+    },
+}
+```
+```python Example - "frame"
+  {
+    "$encord": {
+        "config": {
+            "sampling_rate": 30,  # 30 samples per second (VIDEO ONLY) (default is 1)
+            "keyframe_mode": "frame", # Keyframes are set by seconds (VIDEO ONLY) (default is "frame")
+        }
+        "frames": {
+            "11": {
+                "<my-embedding>": [1.0, 2.0, 3.0], # custom embedding ("embedding") for frame 11
+            },
+            "13": {
+                "<my-embedding>": [1.0, 2.0, 3.0], # custom embedding ("embedding") for frame 13
+            },
+            "17": {
+                "<my-embedding>": [1.0, 2.0, 3.0], # custom embedding ("embedding") for frame 17
+            },
+        }
+    },
+}
+```
+```python Example - "seconds"
+  {
+    "$encord": {
+        "config": {
+            "sampling_rate": 30,  # 30 samples per second (VIDEO ONLY) (default is 1)
+            "keyframe_mode": "seconds", # Keyframes are set by seconds (VIDEO ONLY) (default is "frame")
+        }
+        "frames": {
+            "0.53": {
+                 "<my-embedding>": [1.0, 2.0, 3.0], # custom embedding ("embedding") for frame at timestamp 0.53
+            },
+            "1.423": {
+                "<my-embedding>": [1.0, 2.0, 3.0], # custom embedding ("embedding") for frame at timestamp 1.423
+            },
+            "2.4232": {
+                "<my-embedding>": [1.0, 2.0, 3.0], # custom embedding ("embedding") for frame at timestamp 2.4232
+            },
+        }
+    },
+}
+```
+
+#### Embeddings Format - Images
+
+The custom embeddings format for images follows the same format as [importing custom metadata](/platform-documentation/Index/custom-metadata/index-custom-metadata#folders-and-custom-metadata).
+
+```python Embeddings Format for Images
+
+{"<my-embedding>": [1.0, 2.0, 3.0]}
+
+ ```
+
+#### Import on specific video frames
+
+This Python code imports embeddings after you have imported your data into Index.
+
+`config` is optional when importing your custom embeddings:
+
+```python
+"config": {
+                "sampling_rate": <samples-per-second>,  # VIDEO ONLY (optional default = 1 sample/second)
+                "keyframe_mode": "frame" or "seconds",  # VIDEO ONLY (optional default = "frame")
+            },
+```
+
+-*/}
+
+
+### Step 3: Select your Custom Embeddings
+
+<Info>You DO NOT need to re-index your data in Index for your embeddings to appear. For more information on [re-indexing refer to our documentation](/platform-documentation/Index/index-re-index).</Info>
+
+After you import your custom embeddings they are available for:
+
+- Filtering using custom embeddings
+  
+- Similarity searches using your custom embeddings
+
+- _Embedding_ view and 2D plots with selection based workflows
+
+<Note>Before you can use embedding plots with your custom embeddings, you need to configure your root Folder in Files.</Note>
+
+#### Upgrade your Top-Level Folder
+
+Before you can perform filtering, use similarity searches, or use embedding plots with your custom embeddings, you need to configure your top-level Folder in _Files_.
+
+**To configure Folders for Embedding Plots:**
+
+1. Go to **Index > Files**.
+
+   A list of Folders available to you appears on the _My Files_ page.
+
+2. Do one of the following: 
+
+   - Select the check box for the Folder.
+   - Click into the Folder.
+
+   The _Upgrade Folder_ button appears.
+
+   ![Upgrade Folder](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-upgrade-folder.gif)
+
+4. Click **Upgrade Folder**.
+
+   The _Folder upgrades_ dialog appears.
+
+5. Expand the **Custom Embeddings** drop down.
+
+6. Select a custom embedding from the list.
+
+7. Click **Add**.
+
+   The custom embedding appears under _Custom Embeddings_.
+
+   <Note>
+   You can add multiple embeddings. Only one embedding can be active in Index at a time.
+   </Note>
+
+8. Expand your selected custom embedding.
+
+9. Select any of the following:
+   - Similarity search
+   - Compute UMAP Embedding Reduction
+   - Compute Advanced Quality Metrics
+
+10. Click **Save and process changes**.
+
+    A dialog appears informing you that the folder upgrade was successful.
+    You are now ready to use your custom embeddings.
+
+#### Filtering with Custom Embeddings
+
+Upgrade your top-level folder before trying to filter.
+
+1. Click the **Filters** dropdown or press <kbd>F</kbd>.
+   The _Filters_ menu appears. 
+
+   ![Filter by custom embeddings](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-filter-by-custom-embeddings.gif)
+
+2. Click **Custom Embeddings** from the menu. 
+
+3. Select your custom embedding to filter your data.
+
+4. Select **True** to display images, frames, or videos with the custom embeddings.
+
+#### Similarity Searches with Custom Embeddings
+
+Upgrade your top-level folder before trying to perform a similarity search.
+
+1. Click the **Embeddings** icon in the Explorer.
+
+   The Embeddings screen appears.
+
+2. Select the embedding you want to use from the **Select custom embeddings** menu.
+
+   <div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-custom-embed-sim-search-001.png" width="600" />
+   </div>
+
+3. Click the **Grid** icon.
+
+4. Hover over an image or frame with the custom embedding.
+
+   <div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-custom-embed-sim-search-002.png" width="600" />
+   </div>
+
+5. Click the **Similarity Search** icon.
+   Images and Frames sort according to similarity. 
+
+#### Adjust Similarity Search Distance
+
+1. Click the **Embeddings** icon in the Explorer.
+   The Embeddings screen appears.
+
+2. Select the embedding you want to use from the **Select custom embeddings** menu.
+
+   <div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-custom-embed-sim-search-001.png" width="600" />
+   </div>
+
+3. Click the **Grid** icon.
+
+4. Hover over an image or frame with the custom embedding.
+
+   <div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-custom-embed-sim-search-002.png" width="600" />
+   </div>
+
+5. Click the **Similarity Search** icon.
+   Images and Frames sort according to similarity AND a _Distance_ filter appears.
+   
+   ![Distance filter](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-similarity-search-distance.png)
+
+6. Adjust the **Distance** filter slider to change the similarity search results.
+
+#### Embedding View with Index
+
+Upgrade your top-level folder before trying to view embedding plots.
+
+Encord Index incorporates embedding plots — a two-dimensional visualization technique employed to represent intricate, high-dimensional data in a more comprehensible and visually coherent manner. This technique reduces data dimensionality while preserving the inherent structure and patterns within the original data.
+
+The embedding plot aids in identifying interesting/noteworthy clusters, inspecting outliers, and excluding unwanted samples.
+
+**Use Custom Embedding Plots**
+
+![Vibrant 2D data embedding plot highlighting data patterns and clusters](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-custom-embed-scatter-004.png)
+
+Notice how images are clustered around certain regions. By defining a rectangular area on the plot, users can quickly isolate and analyze data points within that defined region. This approach facilitates the exploration of commonalities among these samples.
+
+Hover over clusters or individual data points on the plot to visually check frames.
+
+Upon selecting a region, the content within the _Explorer_ page adjusts accordingly. Various actions can be executed with the chosen group:
+
+- Use [Collections](/platform-documentation/Index/index-create-collections) to tag and group images.
+- Establish subsets similar to these and then conduct comparisons.
+
+{/*-
+
+LH: WILL UPDATE WHEN FREDERIK HAS THIS READY FOR INDEX
+
+## End-to-End Custom Embeddings Example
+
+We provide an end-to-end example using a [Jupyter Notebook here](https://colab.research.google.com/drive/1c6oqFV7l3CSW_83DgbNXIXAnRmDyIlB_?usp=sharing).
+-*/} 

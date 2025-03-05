@@ -1,0 +1,30 @@
+---
+title: "Automated Labeling Basics"
+slug: "automated-labeling"
+hidden: true
+metadata: 
+  title: "Automated labeling"
+  description: "Effortless labeling with Encord's automated techniques: SAM, Interpolation, and Object Detection. Boost annotation speed and accuracy."
+  image: 
+    0: "https://files.readme.io/2894741-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+Encord provides several distinct automated labeling techniques to help you create labels fast and with little effort:
+
+1. [Segment anything model (SAM)](/platform-documentation/Annotate/automated-labeling/annotate-sam) allows you to automatically create labels around distinct features in all supported file formats.
+
+2. [Interpolation](/platform-documentation/Annotate/automated-labeling/annotate-interpolation) is an automated process to estimate the location of labels between two manually created labels. Simply put, it is "filling in the blanks" between labels you've created. 
+
+3. [Object tracking](/platform-documentation/Annotate/automated-labeling/annotate-tracking) is a process to estimate the location of a label based on pixel information enclosed within the labels you have manually provided.
+
+4. [Auto segmentation tracking](/platform-documentation/Annotate/automated-labeling/annotate-sam2-video-tracking) accurately tracks polygon and bitmask labels across a range of frames.
+
+<Note>If you want to build and train models to detect specific objects, see our [documentation on models](/platform-documentation/Annotate/models)!</Note>
+
+### What's the difference between models and automated labeling techniques?
+
+There are key differences to understand between using models or the automated labeling techniques outlined above. 
+
+- [Models](/platform-documentation/Annotate/models) need to be trained to 'learn' how to identify specific objects or classifications. Once a model has been trained, it is able to automatically label a dataset _without needing manual labels as an input_. One model can be used across many projects. 
+
+- Automated labeling, as outlined above, is much simpler and uses information provided by manual labels to automatically estimate the location of missing labels.

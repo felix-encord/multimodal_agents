@@ -1,0 +1,226 @@
+---
+title: "Webhooks and Notifications"
+slug: "annotate-webhooks-notifications"
+hidden: false
+metadata: 
+  title: "Webhooks and notifications"
+  description: "Learn to manage webhooks and notifications in Encord. Set up event or timing-based alerts for better Workflow monitoring."
+  image: 
+    0: "https://files.readme.io/1f43d3e-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+Webhooks are automated requests that send a JSON payload with information about a Project or task to a specified URL at a designated point in your Project's Workflow. For example, if a webhook is added to the _Complete_ stage of a Project, then a JSON payload containing the Project and task ID is sent every time a task reaches the _Complete_ stage. 
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/a0c7b2ee886e4d7980c85c5e45789251?sid=d04507fc-b070-46cd-9d9a-5337b230c243"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+
+Common use-cases for webhooks include: 
+
+- [Automatically exporting labels when they are marked as complete](/platform-documentation/Annotate/general-sync-work-to-cloud-storage). 
+
+- Setting up a daily report to track the number of annotation tasks submitted for review each day.
+
+## Setting up Webhooks
+
+Webhooks can be set up when creating or editing a Workflow. This includes setting up a Workflow while creating a new annotation Project, creating a Workflow template, or editing the Workflow of an existing Project.
+
+<Note>Webhooks can only be added to _Annotate_ and _Complete_ stages. [Webhooks on _Annotate_ stages](#task-submitted-payload) trigger when tasks are submitted for review. [Webhooks on _Complete_ stages](#task-submitted-payload) trigger when a task is completed.</Note>
+
+1. With the Workflow open, click the Workflow stage you want to create a webhook for.
+A pop-up for to configure the Workflow stage appears.
+
+2. In the pop-up, click the _Edit_ symbol under the _Webhook_ heading.
+
+3. Enter the URL you want the [JSON payload](#webhook-event-payloads) to be sent to. Press <kbd>Enter</kbd> on your keyboard to confirm.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflow-webhook.png" width="800" />
+</div>
+
+4. Ensure you save your changes. 
+
+---
+
+## Webhook event payloads
+
+### Task submitted payload
+
+All task submitted events, triggered on the _Annotate_ stage, have the following fields:
+
+| Key                       | Type      | Description                                                                                                            |
+|---------------------------|-----------|------------------------------------------------------------------------------------------------------------------------|
+| `uid`                     | `string`  | Unique identifier of the event.                                                                                         |
+| `version`                 | `integer` | Major version number to indicate backwards incompatible versions.                                                       |
+| `source`                  | `string`  | The source of the payload. Is always "Encord".                                                                                     |
+| `event_type`              | `string`  | The event type. `task_sumbitted_event` is triggered on the _Annotate_ stage.                                                 |
+| `event_created_timestamp` | `string`  | A string of the timestamp in the ISO 8601 format. For example `2022-04-13T14:35:11.791161+00:00`.                       |
+| `payload`                 | `object`  | An object containing the Project and label information. |
+| `project_hash` | `string` | The unique identifier for the Project. |
+| `data_hashes` | `string` | The unique identifiers for the data unit.  |
+| `label_hashes` | `string` | The unique identifiers for the Label Row. |
+
+
+Example payload:
+
+```json
+{
+  "uid": "687457ce-6489-4891-b7c8-544477d99e41",
+  "version": 1,
+  "source": "Encord",
+  "event_type": "task_submitted_event",
+  "event_created_timestamp": "2024-03-25T15:18:55.406529+00:00",
+  "payload": {
+    "project_hash": "751a3a3e-46b6-4aad-b0b8-19b169f91266",
+    "data_hashes": [
+      "f0b012de-5aea-4457-b515-936b0c185771"
+    ],
+    "label_hashes": [
+      "fdb9a21f-d9a7-48b5-9dac-dfe3e0e2c57f"
+    ]
+  }
+}
+```
+
+### Task completed payload
+
+All task submitted events, triggered on the _Complete_ stage, have the following fields:
+
+
+| Key                       | Type      | Description                                                                                                            |
+|---------------------------|-----------|------------------------------------------------------------------------------------------------------------------------|
+| `uid`                     | `string`  | Unique identifier of the event.                                                                                         |
+| `version`                 | `integer` | Major version number to indicate backwards incompatible versions.                                                       |
+| `source`                  | `string`  | The source of the payload. Is always "Encord".                                                                                     |
+| `event_type`              | `string`  | The event type. `task_sumbitted_event` is triggered on the _Annotate_ stage.                                                 |
+| `event_created_timestamp` | `string`  | A string of the timestamp in the ISO 8601 format. For example `2022-04-13T14:35:11.791161+00:00`.                       |
+| `payload`                 | `object`  | An object containing the Project and label information. |
+| `label_hash` | `string` | The unique identifier for the Label Row. |
+| `project_hash` | `string` | The unique identifier for the Project. |
+| `data_hash` | `string` | The unique identifier for the data unit.  |
+
+
+Example payload:
+
+```json
+{
+  "uid": "950f9048-bd28-42e7-89cb-2538f27c1695",
+  "version": 1,
+  "source": "Encord",
+  "event_type": "task_completed_event",
+  "event_created_timestamp": "2024-03-25T15:13:40.456441+00:00",
+  "payload": {
+    "label_hash": "c25be5c7-2a7f-4de9-8afd-9e2f72064e84",
+    "project_hash": "751a3a3e-46b6-4aad-b0b8-19b169f91266",
+    "data_hash": "f5fb9c39-cbfc-4bf3-8fdb-95ee4da24c14"
+  }
+}
+```
+
+---
+
+
+## Webhooks for Manual QA Projects
+
+<Info>Manual QA Projects will be deprecated soon. We strongly advise using [Workflow Projects](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects).</Info>
+
+Use the _Notifications_ tab in [_Settings_](/platform-documentation/Annotate/annotate-settings-general) to manage push notifications and webhooks for [Manual QA Projects](/platform-documentation/Annotate/annotate-projects/annotate-manual-qa-projects). 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/notifications-tab.png" width="900" />
+
+Filter and manage notifications using the:
+
+- **_+ Create notification_ button**: Initiates the [notification creation flow](/platform-documentation/Annotate/annotate-webhooks-notifications#creating-notifications).
+- **Search bar**: Typing in the search bar will filter the notifications by title.
+- **List of notifications**: Click the _gear_ button to change a notification's settings and click the _red bin_ button to delete a notification.
+
+You can create a number of event-based or timing-based notifications to help monitor your Project's activity:
+
+- **Email**: send an email when certain events happen.
+- **Slack**: send a Slack message when certain events happen.
+- **Digest**: send regular emails giving a summary of activity over a given time period.
+- **Webhook**: send a JSON payload to a REST endpoint when certain events happen.
+
+### Creating notifications
+
+To create a new notification, click the **+ Create notification** button in the [Notifications view](/platform-documentation/Annotate/annotate-webhooks-notifications). This initiates the notification creation flow, a simple step-by-step process for creating push notifications.
+
+#### 1. Enter details
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/notification-new-1.png" width="900" />
+
+In the 'Enter details' screen, enter a notification title and optional description. A clear title and description helps keep your notifications organized and helps collaborators find what they are looking for. When you are happy, click **Next**.
+
+#### 2. Add projects
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/notification-new-2.png" width="900" />
+
+In the 'Add projects' screen, select the projects you would like to include in this notification. When you are happy, click **Next**.
+
+#### 3. Add channels
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/notification-new-3.png" width="900" />
+
+In the 'Add channels' screen, choose how you would like to receive the notification. 
+
+#### Slack channels
+
+Click the **Add Slack channel** button to add a Slack channel.
+
+Once redirected to the Slack web page, make sure to first select the correct workspace from the top right drop-down list. Then select the channel you would like to post Slack notifications to.
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/slack-channel-add.png" width="900" />
+
+Add the channel and make sure to refresh the grid by clicking on the refresh icon above the Slack channels grid.  
+For a given user the available Slack channels are shared between all notifications.
+
+#### Email addresses
+
+Enter the email addresses of everyone who should receive the notifications in the entry box. A list of emails will appear above the box for each entered email.
+
+<Note>Encord attempts to reduce the number of outgoing emails.  </Note>
+> New emails are not sent immediately, instead the email notifications are aggregated and sent in 5 minute intervals.  
+> Consequently, you may not receive emails immediately on the triggering of an event.
+
+#### Webhooks
+
+Add a webhook by clicking the **Add webhook** button. Fill in all the relevant information.  
+You can create, change, and delete webhooks. You cannot attach or detach webhooks. To "detach" a webhook you need to delete it. Webhooks CANNOT be shared between notifications.
+
+[Click here](/platform-documentation/Annotate/annotate-webhooks-notifications#webhook-event-payloads) for a list of all possible events.
+
+#### 4. Add triggers
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/notification-new-4.png" width="900" />
+
+In the 'Add triggers' screen, choose what type of events trigger a notification. A notification can have multiple triggers. You can choose from 'Reactive events' and 'Digest events':
+
+- **Reactive events**: notification trigger in reaction to an event
+- **Digest events**: notification trigger at a scheduled times of day
+
+Use the info icon next to the event type to get more detailed explanations on when these events are triggered. 
+
+#### 5. Create the notification
+
+Click **Create** to create the push notification.

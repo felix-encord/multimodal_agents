@@ -1,0 +1,78 @@
+---
+title: "How To Export Labels"
+metadata: 
+  title: "How To Export Labels"
+  description: "Learn how to export data and labels from the Encord platform."
+  image: 
+    0: "https://files.readme.io/0dd0f82-image_16.png"
+---
+
+<Warning>
+If using Windows, we recommend using [7-Zip](https://www.7-zip.org/) to unzip the exported labels.
+</Warning>
+
+## Exporting Labels from Annotation Projects
+
+import ExportLabels from '/snippets/Annotate/Projects/ExportLabels.mdx';
+
+
+<ExportLabels />
+
+---
+
+## Exporting Labels from Manual QA Projects
+
+Learn how to export data Manual QA Projects by watching this video.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '55.27123848515865%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/59ce6a1e5ad84e47bdafa99f7a024a9c?sid=b158d22c-7f58-44c0-8cd5-d29351740d15"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+The _Export_ tab is where you export the labels and classifications created in a Project. 
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-export-screen.png" width="800" />
+</div>
+
+**A.** Select the files you want to export labels for by clicking the checkboxes next to the files to be included in your export. Click the **Export** to export the selected data.
+
+**B.** Select the format for your exported data; COCO or JSON.
+
+**C.** Toggle this switch if you want to include signed URLs in your export.
+
+**D.** Select the label status of the annotations you want to be included in the export.
+
+**E.** Select the objects you want to include in the export.
+
+**F.** Select which classifications to include in the export. 
+
+<Note>Download files are tagged with a unique id for the Project they are exported from and the time at which the export is made.</Note>
+
+After the **Export** button is pressed, progress can be monitored using the notification bell icon in the top-right of the page.
+
+Once the process completes a notification appears in the top-right corner of your screen telling you the export is complete. Click **Click to download** to download your labels.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/export-notification-1.png" width="350"/>
+</div>
+
+<Tip>You can also download your labels in the notification menu (accessed using the bell icon in the top left corner of the platform) and clicking the export icon next to the export you want to download.</Tip>

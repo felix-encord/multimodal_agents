@@ -1,0 +1,674 @@
+---
+title: "Custom Metadata in Active"
+slug: "active-custom-metadata"
+hidden: false
+metadata: 
+  title: "Custom Metadata in Active"
+  description: "Explore metadata and how metadata is used in Encord Active."
+category: "6480a3981ed49107a7c6be36"
+---
+
+Active and Index support filtering, creating Collections, and by extension, creating Datasets and Projects based on the custom metadata on your data. 
+
+## Prerequisites
+
+Before you can filter your data or create a Collection based on your data's custom metadata, the custom metadata must exist in your Annotate Project.
+
+<Note>This content applies to custom metadata (`clientMetadata`), which is the metadata associated with individual data units. This is distinct from `videoMetadata` that is used to specify video parameters when using [Strict client-only access](/platform-documentation/General/annotate-data-integrations#strict-client-only-access). It is also distinct from [patient metadata](/sdk-documentation/dicom-sdk/sdk-dicom-metadata) in DICOM files.</Note>
+
+Custom metadata (`clientMetadata`) is accessed by specifying the dataset using the \<dataset_hash\>. All Projects that have the specified Dataset attached contain custom metadata.
+
+## READ THIS FIRST
+
+While not required, we strongly recommend importing a metadata schema before importing custom metadata into Encord. The process we recommend: 
+
+1. [Import a metadata schema](/platform-documentation/Active/active-basics/active-custom-metadata#import-your-metadata-schema-to-encord).
+2. [Import your custom metadata](/platform-documentation/Active/active-basics/active-custom-metadata#import-custom-metadata-folders).
+
+If a metadata schema already exists, you can import metadata. You can run a small piece of code [to verify that a metadata schema exists](/platform-documentation/Active/active-basics/active-custom-metadata#verify-your-schema). 
+
+<Note>Performing multiple schema imports overwrites the current schema with the new schema.</Note>
+
+
+import Metadataschema from '/snippets/Index/Metadata/Metadataschema.mdx';
+
+<Metadataschema />
+
+### Import Metadata Schema to Encord
+
+<CodeGroup>
+
+```python Import schema template
+
+# Import dependencies
+from encord import EncordUserClient
+
+SSH_PATH = "<file-path-to-ssh-private-key>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH
+)
+
+user_client.set_client_metadata_schema_from_dict({'metadata_1': 'data type', 'metadata_2': 'data type', 'metadata_3': 'data type'})
+
+```
+```python Example
+
+# Import dependencies
+from encord import EncordUserClient
+
+SSH_PATH = "/Users/chris-encord/ssh-private-key.txt"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH
+)
+
+user_client.set_client_metadata_schema_from_dict({'captured_at': 'datetime', 'city': 'datetime', 'dark': 'boolean'})
+
+```
+
+</CodeGroup>
+
+### Verify Your Schema
+
+After importing your schema to Encord we recommend that you verify that the import is successful. Run the following code to verify your metadata schema imported and that the schema is correct.
+
+<CodeGroup>
+
+```python Verify your schema template
+
+# Import dependencies
+from encord import EncordUserClient
+
+SSH_PATH = "<file-path-to-ssh-private-key>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH
+)
+
+schema = user_client.get_client_metadata_schema()
+
+print(schema)
+
+```
+```python Verify your schema example
+
+# Import dependencies
+from encord import EncordUserClient
+
+SSH_PATH = "/Users/chris-encord/ssh-private-key.txt"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH
+)
+
+schema = user_client.get_client_metadata_schema()
+
+print(schema)
+
+```
+
+</CodeGroup>
+
+## Reserved Keywords
+
+Reserved keywords are strings that are set aside for exclusive use. The following keywords are reserved:
+
+- `keyframes`
+
+### KEYFRAMES
+
+`keyframes` is reserved for use with frames of interest in videos. Specifying `keyframes` on specific frames ensures that those frames are imported into Index and Active. That means frames specified using `keyframes` are available to filter your frames and for calculating embeddings on your data.
+
+```python keyframes Format
+
+ client_metadata = {
+     "keyframes": [<frame_number>, <frame_number>, <frame_number>, <frame_number>, <frame_number>]
+}
+ ```
+ ```python Example
+ client_metadata = {
+     "keyframes": [13, 17, 19, 23, 127, 149, 307, 557]
+}
+ ```
+
+You can include `keyframes` while importing your videos or after you import your videos.
+
+#### Import `keyframes` to specific data units in a folder
+
+This code allows you to import `keyframes` on specific videos in Index. This code DOES NOT OVERWRITE all existing custom metadata on a data unit. It does overwrite custom metadata with existing values and adds new custom metadata to the data unit.
+
+<CodeGroup>
+
+```python Boilerplate
+# Import dependencies
+from encord import EncordUserClient
+
+# Authentication
+SSH_PATH = "<private_key_path>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+# Define a dictionary with item UUIDs and their keyframes updates
+updates = {
+    "<data-unit-id>": {"keyframes": [<frame_number>, <frame_number>, <frame_number>, <frame_number>, <frame_number>]},
+    "<data-unit-id>": {"keyframes": [<frame_number>, <frame_number>, <frame_number>, <frame_number>, <frame_number>]},
+    "<data-unit-id>": {"keyframes": [<frame_number>, <frame_number>, <frame_number>, <frame_number>, <frame_number>]},
+    "<data-unit-id>": {"keyframes": [<frame_number>, <frame_number>, <frame_number>, <frame_number>, <frame_number>]}
+}
+
+# Update the storage items based on the dictionary
+for item_uuid, metadata_update in updates.items():
+    item = user_client.get_storage_item(item_uuid=item_uuid)
+
+    # make a copy of the current metadata and update it with the new metadata
+    curr_metadata = item.client_metadata.copy()
+    curr_metadata.update(metadata_update)
+
+    # update the item with the new metadata
+    item.update(client_metadata=curr_metadata)
+```
+```python Example 1
+# Import dependencies
+from encord import EncordUserClient
+
+# Authentication
+SSH_PATH = "/Users/chris-encord/sdk-ssh-private-key.txt"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+# Define a dictionary with item UUIDs and their keyframes updates
+updates = {
+    "8ad58157-ca74-4ae4-8f37-a0193430bcac": {"keyframes": [13, 17, 19, 23, 127, 149, 307, 557]},
+    "f165fe81-1956-4347-81ca-3a3b198f3f23": {"keyframes": [10, 110, 210, 320, 430]},
+    "9bd58157-ca74-4ae4-8f37-a0193431bcba": {"keyframes": [1087, 1549, 2029, 3527]},
+    "62daaa33-195e-4faf-be5b-8335a239beb6": {"keyframes": [1000, 2001, 3241, 4637, 5431]}
+}
+
+# Update the storage items based on the dictionary
+for item_uuid, metadata_update in updates.items():
+    item = user_client.get_storage_item(item_uuid=item_uuid)
+
+    # make a copy of the current metadata and update it with the new metadata
+    curr_metadata = item.client_metadata.copy()
+    curr_metadata.update(metadata_update)
+
+    # update the item with the new metadata
+    item.update(client_metadata=curr_metadata)
+```
+
+</CodeGroup>
+
+## Folders and Custom Metadata
+
+### List Custom Metadata (Folders)
+
+<CodeGroup>
+
+```python Boilerplate
+
+from encord import EncordUserClient
+from encord.orm.storage import StorageFolder, StorageItem, StorageItemType, FoldersSortBy
+
+# Authentication
+SSH_PATH = "<file-path-to-ssh-private-key-file>"
+FOLDER_HASH = "<unique-folder-id>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+folder = user_client.get_storage_folder(FOLDER_HASH)
+items = folder.list_items()
+
+for item in items:
+    print (item.uuid, item.client_metadata)
+
+```
+```python Example
+
+from encord import EncordUserClient
+from encord.orm.storage import StorageFolder, StorageItem, StorageItemType, FoldersSortBy
+
+# Authentication
+SSH_PATH = "/Users/chris-encord/sdk-ssh-private-key.txt"
+FOLDER_HASH = "2a838557-d6f4-4408-a980-64246dc5c56b"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+folder = user_client.get_storage_folder(FOLDER_HASH)
+items = folder.list_items()
+
+for item in items:
+    print (item.uuid, item.client_metadata)
+
+```
+
+</CodeGroup>
+
+
+### Import Custom Metadata (Folders)
+
+<Info>Before importing custom metadata to Encord, [first import a metadata schema](/platform-documentation/Active/active-basics/active-custom-metadata#import-your-metadata-schema-to-encord).</Info>
+
+<Tip>
+We strongly recommend that you upload your custom metadata to Folders, instead of importing using Datasets. Importing custom metadata to data in folders allows you to filter your data in Index by custom metadata.
+</Tip>
+
+<Info>After importing or updating custom metadata, verify that your custom metadata (list the data units with custom metadata) applied correctly. Do not simply add a `print` command after importing or updating your custom metadata.</Info>
+
+#### Import custom metadata to specific data units in a Folder
+
+This code allows you to import custom metadata on specific data units in Index. This code OVERWRITES all existing custom metadata on a data unit.
+
+<CodeGroup>
+
+```python Boilerplate
+# Import dependencies
+from encord import EncordUserClient
+from encord.orm.storage import StorageFolder, StorageItem, StorageItemType, FoldersSortBy
+
+
+# Authentication
+SSH_PATH = "<file-path-to-ssh-private-key-file>"
+FOLDER_HASH = "<unique-folder-id>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+folder = user_client.get_storage_folder(FOLDER_HASH)
+
+# Define a dictionary with item UUIDs and their respective metadata updates
+updates = {
+    # "<data-unit-id>": {"metadata": "metadata-value"},
+    # "<data-unit-id>": {"metadata": False},
+    # "<data-unit-id>": {"metadata": "metadata-value"},
+    # "<data-unit-id>": {"metadata": True}
+}
+
+# Update the storage items based on the dictionary
+for item_uuid, metadata in updates.items():
+    item = user_client.get_storage_item(item_uuid=item_uuid)
+    item.update(client_metadata=metadata)
+
+```
+```python Example 1
+# Import dependencies
+from encord import EncordUserClient
+from encord.orm.storage import StorageFolder, StorageItem, StorageItemType, FoldersSortBy
+
+# Authentication
+SSH_PATH = "/Users/chris-encord/sdk-ssh-private-key.txt"
+FOLDER_HASH = "2a838557-d6f4-4408-a980-64246dc5c56b"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+folder = user_client.get_storage_folder(FOLDER_HASH)
+
+# Define a dictionary with item UUIDs and their respective metadata updates
+updates = {
+    # "<data-unit-id>": {"metadata": "metadata-value"},
+    # "<data-unit-id>": {"metadata": False}, # examples
+    "8ad58157-ca74-4ae4-8f37-a0193430bcac": {"dark": True},
+    "f165fe81-1956-4347-81ca-3a3b198f3f23": {"light": False},
+    "9bd58157-ca74-4ae4-8f37-a0193431bcba": {"count": "100"},
+    "62daaa33-195e-4faf-be5b-8335a239beb6": {"taken_at": "2024-02-24"}
+}
+
+# Update the storage items based on the dictionary
+for item_uuid, metadata in updates.items():
+    item = user_client.get_storage_item(item_uuid=item_uuid)
+    item.update(client_metadata=metadata)
+
+```
+
+</CodeGroup>
+
+#### Import custom metadata to all data units in a Folder
+
+This code allows you to update ALL custom metadata on ALL data units in a Folder in Index. This code OVERWRITES all existing custom metadata on a data unit.
+
+<CodeGroup>
+
+```python Boilerplate
+# Import dependencies
+from encord import EncordUserClient
+from encord.orm.storage import StorageFolder, StorageItem, StorageItemType, FoldersSortBy
+
+# Authentication
+SSH_PATH = "<file-path-to-ssh-private-key-file>"
+FOLDER_HASH = "<unique-folder-id>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+folder = user_client.get_storage_folder(FOLDER_HASH)
+items = folder.list_items()
+
+for item in items:
+     item.update(client_metadata={"metadata": "value", "metadata": "value"})
+```
+```python Example
+# Import dependencies
+from encord import EncordUserClient
+from encord.orm.storage import StorageFolder, StorageItem, StorageItemType, FoldersSortBy
+
+# Authentication
+SSH_PATH = "/Users/chris-encord/sdk-ssh-private-key.txt"
+FOLDER_HASH = "2a838557-d6f4-4408-a980-64246dc5c56b"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+folder = user_client.get_storage_folder(FOLDER_HASH)
+items = folder.list_items()
+
+for item in items:
+     item.update(client_metadata={"dark": True, "captured_at": "2024-02-24"})
+```
+
+</CodeGroup>
+
+#### Update custom metadata to specific data units in a folder
+
+This code allows you to update custom metadata on specific data units in Index. This code DOES NOT OVERWRITE all existing custom metadata on a data unit. It does overwrite custom metadata with existing values and adds new custom metadata to the data unit.
+
+<CodeGroup>
+
+```python Boilerplate
+# Import dependencies
+from encord import EncordUserClient
+
+# Authentication
+SSH_PATH = "<private_key_path>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+# Define a dictionary with item UUIDs and their respective metadata updates
+updates = {
+    # "<data-unit-id>": {"metadata": "metadata-value"},
+    # "<data-unit-id>": {"metadata": False},
+    # "<data-unit-id>": {"metadata": "metadata-value"},
+    # "<data-unit-id>": {"metadata": True}
+}
+
+# Update the storage items based on the dictionary
+for item_uuid, metadata_update in updates.items():
+    item = user_client.get_storage_item(item_uuid=item_uuid)
+
+    # make a copy of the current metadata and update it with the new metadata
+    curr_metadata = item.client_metadata.copy()
+    curr_metadata.update(metadata_update)
+
+    # update the item with the new metadata
+    item.update(client_metadata=curr_metadata)
+```
+```python Example 1
+# Import dependencies
+from encord import EncordUserClient
+
+# Authentication
+SSH_PATH = "/Users/chris-encord/sdk-ssh-private-key.txt"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+
+# Define a dictionary with item UUIDs and their respective metadata updates
+updates = {
+    # "<data-unit-id>": {"metadata": "metadata-value"},
+    # "<data-unit-id>": {"metadata": False}, # examples
+    "8ad58157-ca74-4ae4-8f37-a0193430bcac": {"dark": True},
+    "f165fe81-1956-4347-81ca-3a3b198f3f23": {"light": False},
+    "9bd58157-ca74-4ae4-8f37-a0193431bcba": {"count": "100"},
+    "62daaa33-195e-4faf-be5b-8335a239beb6": {"taken_at": "2024-02-24"}
+}
+
+# Update the storage items based on the dictionary
+for item_uuid, metadata_update in updates.items():
+    item = user_client.get_storage_item(item_uuid=item_uuid)
+
+    # make a copy of the current metadata and update it with the new metadata
+    curr_metadata = item.client_metadata.copy()
+    curr_metadata.update(metadata_update)
+
+    # update the item with the new metadata
+    item.update(client_metadata=curr_metadata)
+```
+
+</CodeGroup>
+
+#### Bulk custom metadata import to all data units in a Folder
+
+This code allows you to update custom metadata on all data units in a Folder in Index. This code OVERWRITES all existing custom metadata on a data unit.
+
+Using `bundle` allows you to update up to 1000 label rows at a time.
+
+```python
+# Import dependencies
+from encord import EncordUserClient
+from encord.http.bundle import Bundle
+from encord.orm.storage import StorageFolder, StorageItem, StorageItemType, FoldersSortBy
+
+# Authentication
+SSH_PATH = "<ssh-private-key>"
+FOLDER_HASH = "<unique-folder-id>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+folder = user_client.get_storage_folder(FOLDER_HASH)
+items = folder.list_items()
+
+# Use the Bundle context manager
+with Bundle() as bundle:
+    for item in items:
+        # Update each item with client metadata
+        item.update(client_metadata={"metadata-1": "value", "metadata-2": False}, bundle=bundle)
+```
+
+#### Bulk custom metadata import on specific data units
+
+This code allows you to update custom metadata on specific data units in a Folder in Index. This code DOES NOT OVERWRITE existing custom metadata on a data unit. It does overwrite custom metadata with existing values and adds new custom metadata to the data unit. 
+
+Using `bundle` allows you to update up to 1000 label rows at a time.
+
+```python
+# Import dependencies
+from encord import EncordUserClient
+from encord.http.bundle import Bundle
+from encord.orm.storage import StorageFolder, StorageItem, StorageItemType, FoldersSortBy
+
+# Authentication
+SSH_PATH = "<ssh-private-key>"
+FOLDER_HASH = "<unique-folder-id>"
+
+# Authenticate with Encord using the path to your private key
+user_client: EncordUserClient = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path=SSH_PATH,
+)
+
+folder = user_client.get_storage_folder(FOLDER_HASH)
+updates = {
+    # "<data-unit-id>": {"metadata-1": "metadata-value"},
+    # "<data-unit-id>": {"metadata-2": False},
+    # "<data-unit-id>": {"metadata-1": "metadata-value"},
+    # "<data-unit-id>": {"metadata-2": True}
+}
+
+# Use the Bundle context manager
+with Bundle() as bundle:
+    for storage_item in folder.list_items():
+        # Update each item with client metadata
+        update = updates[storage_item.uuid]
+        storage_item.update(client_metadata=update, bundle=bundle)
+```
+
+## Datasets and Custom Metadata
+
+<Info>Before importing custom metadata to Encord, [first import a metadata schema](/platform-documentation/Active/active-basics/active-custom-metadata#import-your-metadata-schema-to-encord).</Info>
+
+<Tip>
+We strongly recommend that you upload your custom metadata to Folders, instead of importing using Datasets. Importing custom metadata to data in Folders allows you to filter your data in Index by custom metadata.
+</Tip>
+
+### List Custom Metadata (Datasets)
+
+The following code lists the custom metadata of all data units in the specified Dataset. The code prints the custom metadata along with the data unit's index within the dataset.  
+
+```python
+
+# Import dependencies
+from encord import EncordUserClient
+from encord.client import DatasetAccessSettings
+
+# Authenticate with Encord using the path to your private key
+client = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path="<private_key_path>"
+)
+
+# Specify a dataset to read or write metadata to
+dataset = client.get_dataset("<dataset_hash>")
+
+# Fetch the dataset's metadata
+dataset.set_access_settings(DatasetAccessSettings(fetch_client_metadata=True))
+
+# Read the metadata of all data units in the dataset.
+for data_unit, data_row in enumerate(dataset.data_rows):
+    print(f"{data_row.client_metadata} - Data Unit: {data_unit}")
+
+```
+
+### Import custom metadata (Datasets)
+
+<Info>
+Before importing custom metadata to Encord, [first import a metadata schema](/platform-documentation/Active/active-basics/active-custom-metadata#import-your-metadata-schema-to-encord).
+We strongly recommend that you import your custom metadata to Folders, instead of importing to Datasets. Importing custom metadata to data in folders allows you to filter your data in Index by custom metadata.
+</Info>
+
+#### Import custom metadata to a specific data unit in your Annotate Project
+
+You can import custom metadata (`clientMetadata`) to specific data units in the Dataset. 
+
+<Tip>You can find the `<data unit number>` by [reading all metadata in the Dataset](/platform-documentation/Active/active-basics/active-custom-metadata#list-custom-metadata-datasets). The sample code provided prints all `<data unit number`s.</Tip>
+
+```python
+
+# Import dependencies
+from encord import EncordUserClient
+from encord.client import DatasetAccessSettings
+
+# Authenticate with Encord using the path to your private key
+client = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path="<private_key_path>"
+)
+
+# Specify a dataset to read or write metadata to
+dataset = client.get_dataset("<dataset_hash>")
+
+# Fetch the dataset's metadata
+dataset.set_access_settings(DatasetAccessSettings(fetch_client_metadata=True))
+
+# Add metadata to a specific data unit by replacing <data unit number> with the number of the data unit
+data_row = dataset.data_rows[<data unit number>]
+
+# Replace {"my": "metadata"} with the metadata you want to add
+data_row.client_metadata= {"my": "metadata"}
+data_row.save()
+print(data_row.client_metadata)
+
+```
+
+#### Import custom metadata (`clientMetadata`) to all data units in a dataset
+
+The following code adds the same custom metadata (`clientMetadata`) to each data unit in the specified dataset. The code prints the custom metadata along with the data units index within the dataset, so that you can verify that the custom metadata was set correctly.  
+
+```python
+
+# Import dependencies
+from encord import EncordUserClient
+from encord.client import DatasetAccessSettings
+
+# Authenticate with Encord using the path to your private key
+client = EncordUserClient.create_with_ssh_private_key(
+    ssh_private_key_path="<private_key_path>"
+)
+
+# Specify a dataset to read or write metadata to
+dataset = client.get_dataset("<dataset_hash>")
+
+# Fetch the dataset's metadata
+dataset.set_access_settings(DatasetAccessSettings(fetch_client_metadata=True))
+
+# Add metadata to all data units in the dataset.
+# Replace {"my": "metadata"} with the metadata you want to add
+for data_unit, data_row in enumerate(dataset.data_rows):
+    data_row.client_metadata = {"my": "metadata"}
+    data_row.save()
+    print(f"{data_row.client_metadata} - Data Unit: {data_unit}")
+
+```
+
+## Custom Metadata in Active
+
+Once your custom metadata is included in your Annotate Project (Folder or Dataset), you can create Collections based on your custom metadata and then send those Collections to Annotate.
+
+1. [Import your Project that has custom metadata](/platform-documentation/Active/active-import/active-import-from-annotate).
+
+2. Click the Project once import completes.  
+   The Project opens with the Explorer page displaying.
+
+3. Filter the Project _Data_, _Labels_, or _Predictions_ in the Explorer using a Custom Metadata filter.
+
+   ![Filter on Custom Metadata](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-custom-metadata-filter.gif)
+
+4. Continue searching, sorting, and filtering your data/labels/predictions until you have the subset of the data you need.
+
+5. Select one or more of the images in the Explorer workspace.  
+   A ribbon appears at the top of the Explorer workspace.
+
+6. Click **Select all** to select all the images.
+
+7. Click **Add to a Collection**.
+
+8. Click **New Collection**.
+
+9. Specify a meaningful title and description for the Collection.
+
+   <Note>
+   The title specified here is applied as a tag/label to every selected image.
+   </Note>
+
+   ![Custom Metadata Collection](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-custom-metadata-collection.gif)
+
+10. [Send the Collection to Annotate](/platform-documentation/Active/active-how-to/active-send-collection-to-annotate).

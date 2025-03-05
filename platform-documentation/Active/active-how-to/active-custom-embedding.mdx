@@ -1,0 +1,107 @@
+---
+title: "Active Custom Embeddings"
+slug: "active-custom-embeddings"
+hidden: false
+metadata: 
+  title: "Active Custom Embeddings"
+  description: "Explore the basics of custom embeddings in Active."
+category: "6480a3981ed49107a7c6be36"
+---
+
+## TLDR;
+
+Do you already know what you are doing and only want to look over a Jupyter Notebook example? We provide one [here](https://colab.research.google.com/drive/1c6oqFV7l3CSW_83DgbNXIXAnRmDyIlB_?usp=sharing).
+
+## Active's Default Embeddings
+
+Currently in Active, we calculate and display embeddings using a generic CLIP model. This model is excellent for a wide range of tasks and across the board performance. However, a generic CLIP model may struggle with highly specialized tasks. The embeddings generated from the generic model are used for: Natural Language Search (not supported for custom embeddings), image similarity search and the embeddings view (where you view *reduced* embeddings).
+
+## Custom Embeddings Support
+
+We currently support embeddings of dimensions ranging from 1 to 4096 for Index, and 1 to 2000 for Active, following on from our in-house clip Embeddings. 
+
+We support embeddings for images, image sequences and image groups. Support for Videos is coming soon.
+
+## Use Custom Embeddings in Active
+
+To use custom embeddings in Active:
+
+1. Add an Embedding type to your custom metadata schema.
+2. Upload your embeddings as custom metadata.
+3. Create an Annotate Project.
+4. Select your custom embeddings as you import the Project to Active.
+
+### Step 1: Create an Embedding Field
+
+import CustomEmbeddingStep1 from '/snippets/Index/Metadata/CustomEmbeddingStep1.mdx';
+
+
+<CustomEmbeddingStep1 />
+
+### Step 2: Upload Embeddings
+
+import CustomEmbeddingStep2 from '/snippets/Index/Metadata/CustomEmbeddingStep2.mdx';
+
+<CustomEmbeddingStep2 />
+
+### Step 3 : Create a Project in Annotate
+
+The following task outlines the basics of creating an Annotate Project. For detailed instructions, [refer to the documentation here](/platform-documentation/Annotate/annotate-projects/annotate-create-projects).
+
+**To create an Annotate Project:**
+
+1. Go to **Annotate > Projects**. 
+   The Annotate Projects list appears. 
+
+2. Click **New annotation project**.
+   The _Create New Project_ page appears.
+
+3. Provide a meaningful title and description.
+
+4. Select an Ontology.
+
+5. Select one or more Datasets.
+
+6. Load a Workflow template.
+
+7. Add collaborators to the Project.
+
+8. Click **Create Project**.
+
+### Step 4: Import Project with Custom Embeddings
+
+Before you can use your custom embeddings in Encord Active Projects, you need to import the custom embeddings. This is performed while you import your Annotate Project into Active.
+
+For existing Active Projects, you can import custom embeddings for your Project import if your Project imported to **Data** or **Labels**. Importing to **Metrics & Embeddings** requires deleting the Project in Active and re-importing the Project with your custom embeddings.
+
+<Note>After updating your embeddings, sync your Active Project to automatically apply the new embeddings.</Note>
+
+**To import a Project with custom embeddings:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Create a Project ([Annotation Project](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects) or [Training Project](/platform-documentation/Annotate/annotate-projects/annotate-training-projects)) in Encord Annotate.
+
+3. Click **Active** from the main menu.
+   The landing page for Active appears.
+   
+4. Click the **Import Annotate Project** button.
+   The _Import an Annotate Project to Encord Active_ dialog appears.
+
+5. Click the **Import** button for the Annotate Project you want to import.
+   The _Confirm Project Import_ dialog appears.
+
+   ![Import custom embeddings](https://storage.googleapis.com/docs-media.encord.com/static/img/active/workflows/active-custom-embedding-import.png).
+
+6. Select the custom embeddings you want to import to the Project, under _Metrics & Embeddings_.
+
+7. Select **Import** under _Metrics & Embeddings_.
+
+8. Click **Proceed**.
+   The Annotate Project imports with your custom embeddings.
+
+## End-to-End Custom Embeddings Example
+
+We provide an end-to-end example using a [Jupyter Notebook here](https://colab.research.google.com/drive/1c6oqFV7l3CSW_83DgbNXIXAnRmDyIlB_?usp=sharing).
+

@@ -1,0 +1,41 @@
+---
+title: "Rendering Geospatial Imagery"
+slug: "geospatial-guidelines"
+metadata:
+  title: "Geospatial Imagery Usage in Encord: A Step-by-Step Guide"
+  description: "Unlock the potential of geospatial imagery in Encord with this comprehensive tutorial. Learn how to convert, optimize, and preprocess geospatial images for a seamless and efficient labeling experience. Get expert tips on choosing the right formats, handling HDR images, and managing metadata. Make the most of your geospatial data with Encord, the ultimate labeling solution."
+  image:
+    0: "https://files.readme.io/417acc9-image_16.png"
+---
+
+For best results when working with geospatial imagery in Encord, follow these steps:
+
+1. **Choose the right image format**
+   Before uploading images to datasets, it's crucial to convert them to either PNG or JPEG formats. These formats are widely supported by web browsers, ensuring compatibility across different platforms.
+
+   <Note>   > While the TIFF format is commonly used for storing geospatial data, its support on web browsers is very limited, restricted to Safari only. [Learn more](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#common_image_file_types).</Note>
+
+2. **Trim images**
+   If an image requires trimming, we recommend that the dimensions of the trimmed image don't exceed a limit of 2500x2500 pixel, to ensure a smooth rendering experience. This limit can be adjusted according to internet speeds, with lower speed requiring smaller pixel dimensions to ensure a smooth experience.
+
+3. **Use image groups for quality**
+   In scenarios where preserving image quality at the pixel level is crucial, consider using image groups instead of image sequences, since creating image groups does not affect the image quality in any way.
+
+   <Tip>   > Confused about the difference between image groups and image sequences? See our [documentation here](/platform-documentation/General/general-supported-data#comparing-file-formats) to learn about different data types in Encord.</Tip>
+
+4. **Handling images with a high dynamic range**
+   It is important to preprocess images with bands that have a high or extended dynamic range (HDR), so that these images fit within the [0, 255] range. This ensures consistency when viewing images in the Label Editor.
+
+5. **Match band count to channels**
+   Ensure that the number of bands in the image files matches the specified number of channels.   If files don't meet this requirement, they must be preprocessed to match the expected band count.
+   - For Synthetic Aperture Radar (SAR) or Greyscale images the value will be 1.
+   - For True or False color composites the value will be 3.
+
+6. **Group multi-band images**
+   If you have a multi-band image and want to display various band combinations, we recommended combining into a single [image group](/platform-documentation/General/general-supported-data#image-groups). This allows you to view and select different band combinations with ease.
+
+7. **Upload and manage metadata**
+   Upload or attach preprocessed images to a dataset and save their metadata in the corresponding `DataRow.client_metadata` field when accessing them via the SDK. Remember that metadata can be added at any time, even after uploading the data to a dataset.
+
+<Tip> Encord strongly recommends using the Chrome web browser when working with the Label Editor for the best experience.</Tip>
+

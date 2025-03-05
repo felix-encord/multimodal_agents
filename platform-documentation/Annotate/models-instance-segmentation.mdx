@@ -1,0 +1,65 @@
+---
+title: "Instance Segmentation"
+slug: "models-instance-segmentation"
+hidden: false
+metadata: 
+  title: "Instance segmentation"
+  description: "Instance segmentation models detect and label object instances using polygons. Learn with Encord how to create and use these models using Mask-RCNN with PyTorch framework."
+  image: 
+    0: "https://files.readme.io/40dda24-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+Segmentation models are used to detect and label instances of objects within training data. They work similarly to object detection models, but differ in that the expected input and output of the model are polygons rather than bounding boxes. Consequently, the labels these models produce are associated with polygon annotations from the Project's Ontology.
+
+| **Ontology shape**     | **Supported?** |
+|------------------------|-------------------|
+| Bounding box           | ✅                 | 
+| Rotatable bounding box | ❌                 | 
+| Polygon                | ✅                 |
+| Polyline               | ❌                 | 
+| Primitive              | ❌                 |
+| Keypoint               | ❌                 | 
+| Bitmask                | ✅                 | 
+
+<Note>Segmentation models assume there are potentially multiple objects in an image that need to be segmented and classified. </Note>
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/create-instance-segmentation.png" width="500" />
+
+## Framework and models
+
+For instance segmentation, the [Mask-RCNN](https://arxiv.org/abs/1703.06870) model by the Pytorch framework is available. 
+
+## Creating instance segmentation models
+
+To learn how to create instance segmentation models, head over to our [models](/platform-documentation/Annotate/models#creating-models) page.
+
+## Working with instance segmentation models
+
+After a model is [attached to a Project](/platform-documentation/Annotate/models#attaching-models-to-projects) it can be used to perform the functions it has been trained on. Inside the label editor, click the **Automated labeling** button highlighted in the image below. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/automated-labeling.png" width="600" />
+</div>
+
+Open the _Detection and segmentation_ section.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/using-instance-segmentation.png" width="600" />
+</div>
+
+- Select the model you would like to run. You will be able to choose from a list of models previously attached to the project. 
+
+- The 'Detection range' lets you determine the start and end frames you would like the model to run on. 
+
+- Set the _Confidence_. A value ranging from 0 to 1 that represents how confident the model has to be in order for a particular data point to be included in its output. Read more about [confidence values here](/platform-documentation/Annotate/annotate-label-editor#confidence-score).
+
+- Set the _Polygon coarseness_. The coarseness controls the spacing between two vertices. A low polygon coarseness allows for high resolution polygons, but creates high vertex counts. To avoid possible performance issues with large or complicated polygons, set the coarseness only as fine as necessary to accurately define the desired segmentation.
+
+#### Advanced settings
+
+- Set the _Intersection over union_ threshold. This parameter specifies that any boxes or polygons with an amount of overlap higher than the specified threshold should be deleted.
+
+- Choose between _GPU_ or _CPU_ processing units. CPUs are designed to handle a wide-range of tasks quickly, but are limited in how many tasks can run at the same time. GPUs are designed to quickly render high-resolution images and video concurrently.
+
+- The _Tracking enabled_ toggle determines whether objects are part of the same ‘instance’ or not. In other words, whether the model should attempt to tracking individual instances through frames, or create separate objects for each frame.

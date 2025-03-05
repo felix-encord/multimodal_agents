@@ -1,0 +1,657 @@
+---
+title: "Getting Started with Index"
+hidden: false
+metadata: 
+  title: "Getting started with Index"
+  description: "Get started with your Index journey."
+---
+
+import CreateCollection from '/snippets/Index/CreateCollection.mdx';
+
+## Data Management and Curation
+
+![Index Get Started](https://storage.googleapis.com/docs-media.encord.com/static/img/index-data-curation-management-2.png)
+
+## STEP 1: Register Cloud Data with Encord
+
+### Create a Cloud Integration
+
+Select your cloud provider. 
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Div</title>
+  </head>
+  <div className="container">
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-aws-integration"
+    >
+      AWS Integration
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-gcp-integration"
+    >
+      GCP Integration
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-azure-blob-integration"
+    >
+      Azure Integration
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-otc-integration"
+    >
+      OTC Integration
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-wasabi-integration"
+    >
+      Wasabi Integration
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-oracle-integration"
+    >
+      Oracle Integration
+    </a>
+        <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-direct-access-integration"
+    >
+      Direct Access Integration
+    </a>
+  </div>
+</div>
+
+---
+
+### Create a Folder
+
+You must create a folder in Index to store your files. 
+
+import CreateFolder from '/snippets/Index/Files/CreateFolder.mdx';
+
+<CreateFolder />
+
+---
+
+### Create JSON or CSV for Registration
+
+To register files from cloud storage with Encord, you must create a JSON or CSV file specifying the files you want to register. 
+
+<Tip> 
+Find helpful scripts for creating JSON and CSV files for the cloud data registration process [here](/platform-documentation/Index/add-files/index-register-cloud-data#helpful-scripts-and-examples).
+</Tip>
+
+import CreateJSONorCSV from '/snippets/SDK/CreateJSONorCSV-Intro.mdx';
+
+import CreateJSONIntro from '/snippets/SDK/CreateJSONIntro.mdx';
+
+import CreateJSONAWS from '/snippets/SDK/CreateJSONAWS.mdx';
+
+
+import CreateJSONGCP from '/snippets/SDK/CreateJSONGCP.mdx';
+
+import CreateJSONAzure from '/snippets/SDK/CreateJSONAzure.mdx';
+
+import CreateJSONOTC from '/snippets/SDK/CreateJSONOTC.mdx';
+
+import CreateJSONAWSMultiRegionAP from '/snippets/SDK/CreateJSONAWSMultiRegionAP.mdx';
+
+import CSVformat from '/snippets/CSVformat.mdx';
+
+<CreateJSONorCSV />
+
+<AccordionGroup>
+  <Accordion title="JSON Format">
+
+#### Create JSON file for Registration
+
+<CreateJSONIntro />
+
+  <Accordion title="JSON for AWS">
+
+#### AWS JSON
+
+<CreateJSONAWS />
+
+  </Accordion >
+
+
+  <Accordion title="JSON for GCP">
+
+#### GCP JSON
+
+<CreateJSONGCP />
+
+  </Accordion >
+
+  <Accordion title="JSON for Azure">
+
+#### Azure JSON
+
+<CreateJSONAzure />
+
+  </Accordion >
+
+
+  <Accordion title="JSON for OTC">
+
+#### OTC JSON
+
+<CreateJSONOTC />
+
+</Accordion >
+
+  <Accordion title="JSON for AWS Multi-Region Access Point">
+
+#### Use a Multi-Region Access Point
+
+
+<CreateJSONAWSMultiRegionAP />
+
+</Accordion >
+
+</Accordion >
+
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="CSV Format">
+
+#### Create CSV File for Registration
+
+<CSVformat />
+
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Import or Register your Data
+
+import UploadDataCloud from '/snippets/Index/Files/UploadDataCloud.mdx';
+import UploadDataLocal from '/snippets/Index/Files/UploadDataLocal.mdx';
+
+<AccordionGroup>
+  <Accordion title="Register Cloud Data">
+
+#### Register Cloud Data
+
+<UploadDataCloud />
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="Import Local Data">
+
+#### Import Local Data
+
+<UploadDataLocal />
+
+  </Accordion>
+</AccordionGroup>
+
+
+## STEP 2: Curate your Data
+
+Curation of your data consists of sorting, filtering, using analytics, and embedding plots to create one or more Collections. Collections can then be made into a Dataset for use with your Annotate and Active Projects.
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '54.93387589013224%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/eb71850421204a72a0902f0e0db3d2e6?sid=8dbd2b96-6463-4970-b644-e7bda64e8477"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+<Steps titleSize="h3">
+  <Step title="Filter and Sort Data">
+    You can sort your data using a number of data unit metrics. The metrics available to sort your data depends on the data available in the Folder. You can sort your data in ascending and descending order.
+
+Index has a number of criteria available to filter your data. You can only access filtering criteria that is available from the top-level Folder. For example, if you do not have any video or audio data in the top-level Folder or any sub-Folders, you cannot filter your data using those filtering criteria.
+
+<Tip>Adding [key frames (for videos), custom metadata](/platform-documentation/Index/custom-metadata/index-custom-metadata), and [custom embeddings](/platform-documentation/Index/index-custom-embeddings)) to your data can all significantly improve the speed and effectiveness when filtering your data. We recommend importing customer metadata and custom embeddings with your data, but you can import custom metadata and embeddings after importing your data.</Tip>
+
+![Sort and Filter](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/sort-filtering-using-02.gif)
+
+
+<AccordionGroup>
+   <Accordion title="File Quality Metrics">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       File Size
+      </td>
+      <td>
+       Filters files (video) based on their size in bytes.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Random Value
+      </td>
+      <td>
+        Filters files (video) based on a random value assigned as the file is added to Index.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Video Quality Metrics">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       Area
+      </td>
+      <td>
+       Filters videos based on the area of the frame.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Aspect Ratio
+      </td>
+      <td>
+        Filters videos based on the aspect ratio of the video.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Clip Duration
+      </td>
+      <td>
+        Filters videos based on the duration of the video by hundredths of seconds.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Frame per Second
+      </td>
+      <td>
+        Filters videos based on the frames per second of the video.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Height
+      </td>
+      <td>
+        Filters videos based on the height of the video frame.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        No. of Video Frames
+      </td>
+      <td>
+        Filters videos based on the number of frames in the video.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Random Value
+      </td>
+      <td>
+        Filters videos based on a random value assigned as the file is added to Index.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Width
+      </td>
+      <td>
+        Filters videos based on the width of the video.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Frame Quality Metrics">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       Area
+      </td>
+      <td>
+       Filters images/video frames based on the area of the frame.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Aspect Ratio
+      </td>
+      <td>
+        Filters images/video frames based on the aspect ratio of the video.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Frame Number
+      </td>
+      <td>
+        Filters images/video frames based on the height of the video frame.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Height
+      </td>
+      <td>
+        Filters images/video frames based on the height of the video frame.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Random Value
+      </td>
+      <td>
+        Filters images/video frames based on a random value assigned as the file is added to Index.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Width
+      </td>
+      <td>
+        Filters images/video frames based on the width of the video.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+
+<AccordionGroup>
+   <Accordion title="Audio Quality Metrics">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       Bit Depth
+      </td>
+      <td>
+       Filters audio files based on the size of each sample (int) in bits.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Duration
+      </td>
+      <td>
+        Filters audio files based on the duration of the audio file by hundredths of seconds.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Number of Channels
+      </td>
+      <td>
+        Filters audio files based on number of audio channels in the audio file.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Random Value
+      </td>
+      <td>
+        Filters audio files based on a random value assigned as the file is added to Index.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Samples per Second
+      </td>
+      <td>
+        Filters audio files based on the number of samples per second.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Custom Metadata, Custom Embeddings, Key Frames">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       Custom Metadata
+      </td>
+      <td>
+       Filters files by any custom metadata available on your data.<br />
+
+       <Tip>For more information about custom metadata with Index, [refer to our documentation](/platform-documentation/Index/custom-metadata/index-custom-metadata)</Tip>
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Custom Embeddings
+      </td>
+      <td>
+       Filters files by any custom embeddings available on your data.<br />
+
+       <Tip>For more information about custom embeddings with Index, [refer to our documentation](/platform-documentation/Index/index-custom-embeddings)</Tip>
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Key Frames
+      </td>
+      <td>
+       **VIDEO ONLY** <br />
+       
+       Filters files by any key frames specified on frames in your video data.
+
+       <Note>Specifying key frames on videos significantly speeds up importing videos in to Index. <br /> Index imports videos at 1 FPS by default.</Note>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Other Filtering Criteria">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       Collection
+      </td>
+      <td>
+       Filters files by the Collection the files belong to.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Data Title
+      </td>
+      <td>
+       Filters files their file name.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Data Type
+      </td>
+      <td>
+       Filters files their file type: Video, Audio, Image, Image Group, Image Sequence, DICOM Series
+      </td>
+    </tr>
+    <tr>
+      <td>
+       File ID
+      </td>
+      <td>
+       Filters files their unique file ID.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Folder
+      </td>
+      <td>
+       Filters files by the Folders that contain the files.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Integration
+      </td>
+      <td>
+       Filters files by the Integrations that contain the files.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Mime
+      </td>
+      <td>
+       Filters files the file's Mime type.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Storage Location
+      </td>
+      <td>
+       Filters files by the storage location that contains the files.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Uploaded At
+      </td>
+      <td>
+       Filters files the time and date of their upload.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+---
+  </Step>
+  <Step title="Use Custom Analytic Dashboards">
+    You can create custom analytic dashboards using Distribution and Correlation charts. For more information on analytics dashboards, [refer to our documentation](/platform-documentation/Index/index-custom-analytics-dashboard).
+
+<Tip>Adding [custom metadata](/platform-documentation/Index/custom-metadata/index-custom-metadata) to your data can significantly improve the insights you can gather from your data. We recommend importing customer metadata with your data, but you can import custom metadata after importing your data.</Tip>
+
+![Custom Analytics Dashboard](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/custom-analytics-dashboard-using-02.gif)
+
+---
+  </Step>
+  <Step title="Custom Embeddings and Similarity Search">
+    <Tip>Adding [custom embeddings](/platform-documentation/Index/index-custom-embeddings) to your data can significantly improve the insights you can gather from your data. We recommend importing customer embeddings with your data, but you can import custom embeddings after importing your data.</Tip>
+
+<Warning>You must **Upgrade** the top-level Folder and select the custom embeddings to use embedding plot graphs and similarity search.</Warning>
+
+For information on upgrading your Folder and importing custom embeddings, [refer to our documentation](/platform-documentation/Index/index-custom-embeddings).
+
+**Custom Embeddings**
+
+![Custom Embedding](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/custom-embeddings-using-02.gif)
+
+**Similarity Search**
+
+![Similarity Search](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/similarity-search-using-02.gif)
+
+---
+
+  </Step>
+  <Step title="Create a Collection">
+
+  <CreateCollection />
+
+  </Step>
+</Steps>
+
+## STEP 3: Create a Dataset
+
+Once you have a Collection, you can [create a Dataset from your Collection](/platform-documentation/Index/index-create-dataset-from-collection). 
+
+

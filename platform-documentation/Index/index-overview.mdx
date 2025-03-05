@@ -1,0 +1,54 @@
+---
+title: "Overview of Encord Index"
+slug: "index-overview"
+hidden: false
+metadata: 
+  title: "Overview of Encord Index"
+  description: "Optimize models with Encord Index: A cloud-based solution for data quality and curation"
+category: "65b3cc20ba5db2007e1a0b43"
+---
+
+<div class="flex justify-center">
+  <img alt="Encord Index" src="https://storage.googleapis.com/docs-media.encord.com/encord-index.png" width="400" />
+</div>
+
+Index is a data management system, that allows AI teams to visualise, sort, and control their data. The purpose is to give teams a better ability to control their curation process, enabling models to be put into production faster with better model quality. 
+
+## When to use Encord Index?
+
+Encord Index helps you visually understand and improve your data at all stages of your machine learning journey. Index does not just store your data, you can curate your data too.
+
+<Note>Before going any further, you should know what a Collection is in Encord Index. Collections provide a way to save interesting groups of data units to support and guide your downstream workflow. For more information on [Index Collections go here](/platform-documentation/Index/index-create-collections).</Note>
+
+## What data does Encord Index support?
+
+<Info>Index supports analysis (Advanced Metrics and Embeddings) on images and videos up to 4K resolution. Performance is affected for images and videos over 4K.</Info>
+
+
+<Tip>
+  - For optimal performance, we strongly recommend downscaling images and videos over 4K to 4K resolution.
+
+  - Videos import to Index at 1 FPS. 
+  
+  - You can specify specific frames you want imported from your videos. 
+  
+  - Contact us for more information on importing specific video frames to Index.
+</Tip>
+
+| Features                         |                                      Index                                     |
+| :------------------------------- | :-----------------------------------------------------------------------------: |
+| Image types                       |                           `jpg`, `png`, `tiff`                          |
+| Video types                       | `matroska` and `webm` (vp8, vp9, libdav1d), `mov`, `mp4`, `m4a`, `3gp`, `3g2`, `mj2` (libdav1d, h264, h265) |
+| Audio types                       | `mp3`, `.mp4`, `.wav`, `.m4a`, `.flac`, `.eac3` |
+| Number of images                 |                     10,000,000 per Folder (unlimited Folders)                    |
+| Videos *                         |                                 2 hours @ 30fps                                 |
+| Data exploration                 |                                        ✅                                        |
+| Similarity search                |                                        ✅                                        |
+| Off-the-shelf quality metrics    |                                        ✅                                        |
+| Image duplication detection      |                                        ✅                                        |
+| Outlier detection                |                                        ✅                                        |
+| Collections                      |                                        ✅                                        |
+| Integration with Encord Annotate |                                        ✅                                        |
+| Custom metadata                  |                                        ✅                                        |
+
+* Contact Encord to discuss optimal strategies for indexing longer videos.

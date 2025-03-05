@@ -1,0 +1,272 @@
+---
+title: "Register Cloud Data"
+hidden: false
+metadata: 
+  title: "Register Cloud Data"
+  description: "Integrate your private cloud storage with Encord for seamless data management. Learn how to set up integrations for AWS S3, Azure blob, GCP storage, Open Telekom Cloud, Wasabi, MinIO, and Oracle."
+  image: 
+    0: "https://files.readme.io/5cae931-image_16.png"
+---
+
+<Note>
+At least one [data integration](/platform-documentation/General/annotate-data-integrations) is required to register cloud data to Encord. Encord can integrate with the following cloud service providers:
+- [AWS S3](/platform-documentation/General/annotate-data-integrations/annotate-aws-integration).
+- [Azure blob](/platform-documentation/General/annotate-data-integrations/annotate-azure-blob-integration).
+- [GCP storage](/platform-documentation/General/annotate-data-integrations/annotate-gcp-integration).
+- [Open Telekom Cloud](/platform-documentation/General/annotate-data-integrations#open-telecom-cloud).
+- [Wasabi](/platform-documentation/General/annotate-data-integrations/annotate-wasabi-integration)
+- [MinIO](/platform-documentation/General/annotate-data-integrations/annotate-minIO-integration)
+- [Oracle](/platform-documentation/General/annotate-data-integrations/annotate-oracle-integration)
+</Note>
+
+Any files you upload to Encord must be stored in folders. [Click here](/platform-documentation/Index/index-create-folder) to learn how to create a folder to store your files.
+ 
+***
+
+## Register Cloud Data to Files
+
+### STEP 1: Create a JSON or CSV File for Registration 
+
+Before registering your cloud data to Encord you must first create a JSON or CSV file specifying the files you want to register.
+
+#### JSON Format 
+
+<Tip>
+We provide [helpful scripts and examples](#helpful-scripts-and-examples) that automatically generate JSON and CSV files for all the files in a folder or bucket within your cloud storage. This makes importing large datasets easier and more efficient. 
+</Tip>
+
+import JSONformat from '/snippets/JSONformat.mdx';
+
+<JSONformat />
+
+#### CSV Format
+
+import CSVformat from '/snippets/CSVformat.mdx';
+
+<CSVformat />
+
+### STEP 2: Register Your Cloud Data
+
+import UploadDataCloud from '/snippets/Index/Files/UploadDataCloud.mdx';
+
+<UploadDataCloud />
+
+<Tip> You can also register your data directly in the _Datasets_ screen. [Click here](platform-documentation/Annotate/annotate-datasets/annotate-datasets) for instructions.</Tip>
+
+---
+
+
+## Custom Metadata
+
+<Note>
+Custom metadata can only be added through JSON uploads in the Encord Platform or using the Encord SDK. 
+</Note>
+
+Custom metadata, also known as client metadata, is supplementary information you can add to all data imported into Encord. It is provided in the form of a Python dictionary, as shown in examples. Client metadata serves several key functions:
+
+- Filtering and sorting in [Index](/platform-documentation/Index/index-filter-sort#index-filter-and-sort) and [Active](/platform-documentation/Active/active-basics/active-filtering#filter-and-sort). 
+- Creating [custom Label Editor layouts](/platform-documentation/Annotate/annotate-label-editor#editor-layout) based on metadata. 
+
+You can optionally add some custom metadata per data item in the `clientMetadata` field (examples show how this is done) of your JSON file.
+
+<Info>
+We enforce a 10MB limit on the custom metadata for each data item. Internally, we store custom metadata as a PostgreSQL `jsonb` type. Read the [relevant PostgreSQL documentation](https://www.postgresql.org/docs/9.5/datatype-json.html) about the `jsonb` type and its behaviors. For example, `jsonb` type does not preserve key order or duplicate keys.
+</Info>
+
+### Metadata Schema
+
+<Note>
+Metadata schemas, including custom embeddings, can only be imported through the Encord SDK.
+</Note>
+
+import MetadataSchemaGetStarted from '/snippets/Index/Metadata/MetadataSchemaGetStarted.mdx'
+
+<MetadataSchemaGetStarted />
+
+
+### Update Custom Metadata (JSON)
+
+When updating custom metadata using a JSON file, you **MUST** specify `"skip_duplicate_urls": true` and `"upsert_metadata": true`.
+
+Specifying the `"skip_duplicate_urls": true` and `"upsert_metadata": true` flags in the JSON file does the following:
+
+- New files registered with Encord and custom metadata for those files is added.
+
+- Existing files have their existing custom metadata overwritten with the custom metadata specified in the JSON file.
+
+**To update custom metadata with a JSON file:**
+
+1. Create a registration [JSON file](#json-format) with the updated custom metadata. Include the `"skip_duplicate_urls": true` and `"upsert_metadata": true` flags.
+
+<Note>
+- Custom metadata updates require `"skip_duplicate_urls": true` to function. It does not work if `"skip_duplicate_urls": false`.
+- Only custom metadata for pre-existing files is updated. Any new files present in the JSON are uploaded. 
+</Note>
+
+```json Update custom metadata example
+{
+  "videos": [
+    {
+      "objectUrl": "<object url_1>"
+    },
+    {
+      "objectUrl": "<object url_2>",
+      "title": "my-custom-video-title.mp4",
+      "clientMetadata": {"optional": "metadata"}
+    }
+  ],
+  "skip_duplicate_urls": true,
+  "upsert_metadata": true
+}
+```
+
+2. Register your files with Encord using the new JSON file. 
+
+---
+
+## Custom Embeddings
+
+<Note>
+Metadata schemas, including custom embeddings, can only be imported through the Encord SDK.
+</Note>
+
+Encord enables the use of custom embeddings for images, image sequences, image groups, and individual video frames.
+
+<Note>
+To learn how to use custom embeddings in Encord, see our [documentation here](/platform-documentation/Index/index-custom-embeddings).
+</Note>
+
+### Step 1: Create a New Embedding Type
+
+import CustomEmbeddingStep1 from '/snippets/Index/Metadata/CustomEmbeddingStep1.mdx'
+
+
+<CustomEmbeddingStep1 />
+
+
+### Step 2: Upload Embeddings
+
+import CustomEmbeddingStep2 from '/snippets/Index/Metadata/CustomEmbeddingStep2.mdx';
+
+<CustomEmbeddingStep2 />
+
+---
+
+## How To Increase File Registration Speed
+
+To speed up file registration with Encord, you can include metadata for each file in the upload JSON. This metadata is used directly without additional validation and is not stored on our servers. **Ensuring accuracy in the metadata you provide is essential to maintain precise labels.**
+
+<Warning>
+The metadata referenced here is distinct from `clientMetadata` and serves a different purpose. Documentation for `clientMetadata` can be found [here](/sdk-documentation/datasets-sdk/sdk-client-metadata).
+</Warning>
+
+- **`imageMetadata`** for images:
+  - `mimeType`: MIME type of the image (e.g., `image/jpeg`).
+  - `fileSize`: Size of the file in bytes.
+  - `width`: Width of the image in pixels.
+  - `height`: Height of the image in pixels.
+
+- **`audioMetadata`** for audio files:
+  - `duration_seconds` (float): Audio duration in seconds.
+  - `file_size` (int): Size of the audio file in bytes.
+  - `mime_type` (str): MIME type (e.g., `audio/mpeg`, `audio/wav`).
+  - `sample_rate` (int): Sample rate in Hz.
+  - `bit_depth` (int): Size of each sample in bits.
+  - `codec` (str): Codec used (e.g., `mp3`, `pcm`).
+  - `num_channels` (int): Number of audio channels.
+
+- **`videoMetadata`** for videos:
+  - `fps`: Frames per second.
+  - `duration`: Duration in seconds.
+  - `width` / `height`: Dimensions in pixels.
+  - `file_size`: File size in bytes.
+  - `mime_type`: File type (MIME standard).
+
+<CodeGroup>
+
+```json imageMetadata
+{
+  "images": [
+    {
+      "objectUrl": "s3://my_image.jpg",
+      "imageMetadata": {
+        "mimeType": "image/jpg",
+        "fileSize": 124,
+        "width": 640,
+        "height": 480
+      }
+    }
+  ]
+}
+```
+```json audioMetadata
+{
+    "audio": [
+      {
+        "objectUrl": "audio_file.mp3",
+        "audioMetadata": {
+            "duration": 23.98,
+            "file_size": 2900000,
+            "mime_type": "audio/mp3",
+            "sample_rate": 44100,
+            "bit_depth": 24,
+            "codec": "mp3",
+            "num_channels": 2
+        }
+      }
+    ]
+}
+```
+```json videoMetadata
+{
+  "videos": [
+    {
+      "objectUrl": "<object url_1>",
+      "videoMetadata": {
+            "fps": 23.98,
+            "duration": 29.09,
+            "width": 1280,
+            "height": 720,
+            "file_size": 5468354,
+            "mime_type": "video/mp4"
+        }
+    }
+  ]
+}
+```
+
+</CodeGroup>
+
+---
+
+## Check Data Registration Status
+
+You can check the progress of the processing job by clicking the bell icon in the top right corner of the Encord app.
+
+- A spinning progress indicator shows that the processing job is still in progress.
+- If successful, the processing completes with a green tick icon.
+- If unsuccessful, there is  a red cross icon, as seen below.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/datasets/failed-data-upload.png" width="300" />
+</div>
+
+If the upload is unsuccessful, ensure that:
+- Your provider permissions are set correctly 
+- The object data format is supported
+- The upload JSON or CSV file is correctly formatted. 
+
+<Tip>
+Check which files failed to upload by clicking the _Export_ icon to download a CSV log file. Every row in the CSV corresponds to a file which failed to be uploaded.
+</Tip>
+
+<Note>You only see failed uploads if the **Ignore individual file errors** toggle was not enabled during cloud data registration.</Note>
+
+***
+
+## Helpful Scripts and Examples
+
+import HelpfulScriptsAndExamples from '/snippets/HelpfulScriptsAndExamples.mdx';
+
+
+<HelpfulScriptsAndExamples />

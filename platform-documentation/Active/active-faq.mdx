@@ -1,0 +1,152 @@
+---
+title: "Active FAQ"
+slug: "active-faq"
+hidden: false
+metadata: 
+  title: "Active FAQ"
+  description: "FAQs: Get answers to common queries on Encord. Streamline information access."
+  image: 
+    0: "https://files.readme.io/39f46a9-image_16.png"
+category: "6480a3981ed49107a7c6be36"
+---
+
+## Are Annotate and Active Projects the same?
+
+The short answer is no. Here are the differences:
+
+- Annotate Projects are made of Datasets (data), Ontologies, and Workflows. Once Annotation Projects get underway, labels and comments also become part of the Annotate Projects.
+
+Active is integrated with the Encord platform, which by extension means Active is also integrated with Annotate. Active Projects import portions of Annotate Projects. Active Projects import Annotate Project data, Ontologies, labels, and comments but not Workflows. 
+
+---
+
+## What is a quality metric?
+
+A quality metric is a function that can be applied to your data, labels, and model predictions to assess their quality and rank them accordingly.
+
+Encord Active uses these metrics to analyze and decompose your data, labels, and predictions.
+
+Here is a [blog](https://encord.com/blog/ai-production-gap/) post on how we like to think about quality metrics.
+
+To learn more about [quality metrics, go here](/platform-documentation/Active/active-quality-metrics).
+
+Quality metrics are not only limited to those that ship with Encord Active. In fact, the power lies in defining your own quality metrics for indexing your data just right. [Here](/platform-documentation/Active/active-quality-metrics/active-write-custom-quality-metrics) is the documentation for writing your own metrics.
+
+---
+
+## How do I write my own quality metrics?
+
+[See our documentation](/platform-documentation/Active/active-quality-metrics/active-write-custom-quality-metrics) on writing your own metrics.
+
+---
+
+## How do I use Encord Active for active learning?
+
+Encord Active supports the active learning process by allowing you to
+
+1. Explore your data to select what to label next
+2. Employ acquisition functions to automatically select what to label next
+3. Find label errors that potentially harm your model performance
+4. Sending data to Encord's Annotation module for labeling
+5. Automatically decompose your model performance to help you determine where to put your focus for the next model iteration
+6. Tag subsets of data to set aside test sets for specific edge cases for which you want to maintain your model performance between each production model
+
+---
+
+[//]: # (TODO open this question with an answer to a feature that exists)
+[//]: # (## How do I upload my data and labels to Encord Annotate?)
+
+[//]: # ()
+[//]: # (Uploading your data to Encord Annotate is as simple as clicking the _Export to Encord_ button on the [Filter and Export](/platform-documentation/Active/active-how-to/active-export-collection-to-csv) page. This creates an Ontology, a Dataset, and a Project on Encord Annotate as well as provide you with links to all three.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (This action requires an ssh-key associated with Encord Active:)
+
+[//]: # ()
+[//]: # (1. [Add your public ssh key](/platform-documentation/Annotate/annotate-api-keys#set-up-public-key-authentication) to Encord Annotate)
+
+[//]: # ()
+[//]: # (2. Associate the private key with Encord Active.)
+
+[//]: # ()
+[//]: # (  ```shell)
+
+[//]: # (  encord-active config set ssh-key-pash /path/to/private/key)
+
+[//]: # (  ```)
+
+[//]: # ()
+[//]: # (---)
+
+---
+
+## How do I import my model predictions?
+
+Active supports importing predictions in the following ways:
+
+- [Use the Active UI](/platform-documentation/Active/active-how-to/active-import-model-predictions-cloud) to import your model predictions.
+
+- [Use the Active API](/sdk-documentation/api-active/active-api-import-model-predictions-cloud) to import your model predictions.
+
+---
+
+## How can I do dataset management with Encord Active?
+
+[Use Collections](/platform-documentation/Active/active-basics/active-collections) in your Active Projects to handle all your Project data (not just Dataset) needs.
+
+Once you've created a Collection, you can send the Collection to Annotate in the following ways:
+
+- Apply the Collection directly to your existing Annotate Projects
+
+- Create a new Dataset and attached Annotate Project off of your Collection
+
+- Apply classifications to all frames/images in your Collections directly to your existing Annotate Projects
+
+---
+
+## How do I version my data and labels through Encord Active?
+
+While you can version your data and labels using Active, Annotate supports [data versioning](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#save-label-version) and [label versioning](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#saved-versions).
+
+You can use [Collections](/platform-documentation/Active/active-basics/active-collections) to version your Projects using Active.
+
+---
+
+## How do I use Encord Active to find label errors?
+
+Use [Label Overview shortcuts](/platform-documentation/Active/active-basics/active-issue-shortcuts-prediction-types#label-issue-shortcuts) and [Label Quality Metrics](/platform-documentation/Active/active-quality-metrics/active-label-quality-metrics) to find label errors.
+
+---
+
+## Can I use Encord Active without an Encord account
+
+You need an Annotate account to use Active.
+
+---
+
+## Does data stay within my local environment/cloud?
+
+**Yes!**
+
+If your data is stored in cloud storage (AWS, GCP, Azure, OTC), your data remains there.
+
+---
+
+## How do I add my own embeddings?
+
+Contact your Encord representative for more information to add embeddings to Active.
+
+---
+
+## What should I do if I encounter an error?
+
+If you come across an error, don't worry! We're here to assist you.
+Reach out to us on [Slack][slack-join] or shoot us an [email](mailto:active@encord.com), and we'll promptly address your concern.
+
+Additionally, we greatly appreciate it if you could [report the issue](https://github.com/encord-team/encord-active/issues/new/choose) on GitHub. Your feedback and bug reports help us improve Encord Active for everyone.
+
+
+[ea-lib]: https://github.com/encord-team/encord-active/tree/main/src/encord_active/lib
+[ea-server]: https://github.com/encord-team/encord-active/tree/main/src/encord_active/server
+[slack-join]: https://join.slack.com/t/encordactive/shared_invite/zt-1hc2vqur9-Fzj1EEAHoqu91sZ0CX0A7Q

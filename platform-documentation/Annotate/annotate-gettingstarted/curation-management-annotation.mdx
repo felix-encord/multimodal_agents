@@ -1,0 +1,388 @@
+---
+title: "Data Curation, Management, and Annotation"
+slug: "annotate-data-curation-management-annotation"
+metadata: 
+  title: "Data Curation, Management, and Annotation"
+  description: "A step-by-step guide to getting started with Data Curation, Management, and Annotation in Encord."
+  image: 
+    0: "https://files.readme.io/e05e7f6-image_16.png"
+---
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Data-curation-management-annotation-2.png" />
+</div>
+
+
+---
+
+## STEP 1: Import Your Files to Encord
+
+### Create a Cloud Integration
+
+Select your cloud provider.
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Div</title>
+  </head>
+  <div className="container">
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-aws-integration"
+    >
+      AWS Integration
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-gcp-integration"
+    >
+      GCP Integration
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-azure-blob-integration"
+    >
+      Azure Integration
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-otc-integration"
+    >
+      OTC Integration
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-wasabi-integration"
+    >
+      Wasabi Integration
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-oracle-integration"
+    >
+      Oracle Integration
+    </a>
+        <a
+      className="clickable-div"
+      href="/platform-documentation/General/annotate-data-integrations/annotate-direct-access-integration"
+    >
+      Direct Access Integration
+    </a>
+  </div>
+</div>
+
+---
+
+### Create Metadata Schema
+
+import MetadataSchemaGetStarted from '/snippets/Index/Metadata/MetadataSchemaGetStarted.mdx';
+
+
+<MetadataSchemaGetStarted />
+
+---
+
+### Create a Folder
+
+You must create a folder in Index to store your files.
+
+import CreateFolder from '/snippets/Index/Files/CreateFolder.mdx';
+
+<CreateFolder />
+
+---
+
+### Create JSON or CSV for Registration
+
+To register files from cloud storage into Encord, you must create a JSON or CSV file specifying the files you want to register. 
+
+<Tip> 
+Find helpful scripts for creating JSON and CSV files for the data registration process [here](/platform-documentation/Index/add-files/index-register-cloud-data#helpful-scripts-and-examples).
+</Tip>
+
+import CreateJSONorCSV from '/snippets/SDK/CreateJSONorCSV-Intro.mdx';
+
+import CreateJSONIntro from '/snippets/SDK/CreateJSONIntro.mdx';
+
+import CreateJSONAWS from '/snippets/SDK/CreateJSONAWS.mdx';
+
+import CreateJSONGCP from '/snippets/SDK/CreateJSONGCP.mdx';
+
+import CreateJSONAzure from '/snippets/SDK/CreateJSONAzure.mdx';
+
+import CreateJSONOTC from '/snippets/SDK/CreateJSONOTC.mdx';
+
+import CreateJSONAWSMultiRegionAP from '/snippets/SDK/CreateJSONAWSMultiRegionAP.mdx';
+
+import CSVformat from '/snippets/CSVformat.mdx';
+
+<CreateJSONorCSV />
+
+<AccordionGroup>
+  <Accordion title="JSON Format">
+
+#### Create JSON file for Registration
+
+<CreateJSONIntro />
+
+  <Accordion title="JSON for AWS">
+
+#### AWS JSON
+
+<CreateJSONAWS />
+
+
+  </Accordion >
+
+
+  <Accordion title="JSON for GCP">
+
+#### GCP JSON
+
+<CreateJSONGCP />
+
+  </Accordion >
+
+  <Accordion title="JSON for Azure">
+
+#### Azure JSON
+
+<CreateJSONAzure />
+
+  </Accordion >
+
+
+  <Accordion title="JSON for OTC">
+
+#### OTC JSON
+
+<CreateJSONOTC />
+
+</Accordion >
+
+  <Accordion title="JSON for AWS Multi-Region Access Point">
+
+#### Use a Multi-Region Access Point
+
+<CreateJSONAWSMultiRegionAP />
+
+
+</Accordion >
+
+</Accordion >
+
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="CSV Format">
+
+#### Create CSV File for Registration
+
+<CSVformat />
+
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Import your data
+
+import UploadDataCloud from '/snippets/Index/Files/UploadDataCloud.mdx';
+import UploadDataLocal from '/snippets/Index/Files/UploadDataLocal.mdx';
+
+<AccordionGroup>
+  <Accordion title="Import cloud data">
+
+#### Import Cloud Data
+
+
+<UploadDataCloud />
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="Import local data">
+
+
+#### Import Local Data
+
+<UploadDataLocal />
+
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## STEP 2: Curate your Data
+
+### Create a collection
+
+A Collection is a container for data units (images or videos) that you can use to group your data units together.
+
+Creation of a Collection involves [filtering and sorting your data](/platform-documentation/Index/index-filter-sort). Once you have selected a smaller group of images, videos or audio files, [create a Collection](/platform-documentation/Index/index-create-collections).
+
+import CreateCollection from '/snippets/Index/CreateCollection.mdx';
+
+<CreateCollection />
+
+---
+
+## STEP 3: Set Up Your Project
+
+### Create a Dataset from a Collection
+
+Once you have a Collection, you can [create a Dataset from your Collection](/platform-documentation/Index/index-create-dataset-from-collection). 
+
+---
+
+### Create an Ontology
+
+An Ontology is a structured framework that defines the categories, labels, and relationships used to annotate data consistently and accurately. Ontologies define what you want labelled. 
+
+import CreateOntologies from '/snippets/Annotate/Ontologies/CreateOntologies.mdx';
+
+<CreateOntologies />
+
+---
+
+### Create a Task Agent
+
+Task agents enable you to set up custom actions like pre-labeling, leveraging foundation models such as GPT-4, automated quality assurance, or other tailored actions to suit your workflow.
+
+import ConfigureAndTriggerAgents from '/snippets/Agents/ConfigureAndTriggerAgents.mdx';
+
+
+<ConfigureAndTriggerAgents />
+
+---
+
+### Create a Workflow template
+
+_Workflows_ allow you to design and manage the flow of tasks through various stages of a Project. You have control over how tasks progress and how different stages interact.
+
+<AccordionGroup>
+   <Accordion title="Video tutorial - Creating workflow templates">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/dc0152c0cb8f481dac51c3a7eb1c5a0f?sid=f48a872a-f81f-4522-a904-199a9d306c40"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+To set up a Workflow template, navigate to the Annotate section of the Encord platform, and click the **+ New workflow** button
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/new-workflow-template-2.png" width="700" />
+</div>
+
+import CreateWorkflow from '/snippets/Annotate/Projects/CreateWorkflow.mdx';
+
+<CreateWorkflow />
+
+### Create the Project
+
+Projects in Encord bring together Datasets, Ontologies, and Workflows. Datasets are labeled according to the Ontology, while the Workflow defines how tasks progress through the Project from start to finish.
+
+import CreateProject from '/snippets/Annotate/Projects/CreateProject.mdx';
+
+<CreateProject />
+
+#### Add users to the Project
+
+After creating a Project you must invite users to act as annotators, reviewers, team managers, and admins. Collaborators can be added as individuals, or as part of [user groups](/platform-documentation/General/general-your-organization#user-groups).
+
+import AddProjectCollaborators from '/snippets/Annotate/Projects/AddProjectCollaborators.mdx';
+
+<AddProjectCollaborators />
+
+## STEP 4: Label your Data
+
+Now you are ready to label your data. We recommend you and your team watch these introductory videos. 
+
+<Tip>For more details, see our comprehensive [tutorial on labeling here](/platform-documentation/GettingStarted/gettingstarted-labeling).</Tip>
+
+<AccordionGroup>
+   <Accordion title="Video tutorial - Introduction to image annotation">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/44a0c44e350e4900b75b236934880ae0?sid=2bc76a90-40da-4af5-9ec6-253ac27254b1"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Video tutorial - Introduction to video annotation">
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/8e6255f742454694ade6bcf38bee11c0?sid=bb568aff-823f-4e07-bcdf-ae101b3ffbe3"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+## STEP 5: Export your Labels
+
+import ExportLabels from '/snippets/Annotate/Projects/ExportLabels.mdx';
+
+<ExportLabels />

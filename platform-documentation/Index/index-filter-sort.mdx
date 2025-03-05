@@ -1,0 +1,229 @@
+---
+title: "Index Filter and Sort"
+slug: "index-filter-sort"
+hidden: false
+metadata: 
+  title: "Index Filter and Sort"
+  description: "Enhance insights in Index by filtering and sorting data in Encord Index: Identify patterns, remove duplicates. Use filters, sorts, embedding plots, and searches."
+category: "65b3cc20ba5db2007e1a0b43"
+---
+
+Filtering, sorting, and searching data in Encord Index is crucial for various reasons. It enables insights and actionable results on the following key aspects and more:
+
+- Identification of patterns, trends, or anomalies within a subset of the data.
+
+- Recognition of duplicates, outliers, and inconsistencies.
+
+- Removal of irrelevant, noisy, and erroneous data.
+
+- After filtering, sorting, and searching your data, use Collections with Annotate Projects to streamline your annotation process.
+
+Encord Index provides the following methods:
+
+- **Filter:** Refine your searches using quality metrics, custom metadata, Collections, folder, data title, and data types.
+
+- **Sort**: Sort your data, in ascending or descending order, using quality metrics.
+
+- **(Coming soon) Natural language search**: Enter descriptive queries in everyday language to make it easier to find relevant images without the need for specific keywords or complex search parameters.
+
+- **Embedding plot**: A two-dimensional visualization technique used by Encord to represent high-dimensional data in a more interpretable form. Use the plot to select points within a specific rectangular area, thereby focusing on a particular subset of data points for in-depth analysis.
+
+
+# Filters
+
+In the Index Explorer for a Project you can refine searches by data quality metrics, Collections, custom metadata, folders, data titles, and data types.
+
+<Tip>
+Filters provide the ability to include or exclude images based on your filtering criteria.
+</Tip>
+
+<b>Video Quality Metrics:</b> Video quality metrics are calculated as your videos import into Index. Examples include, Area, Clip duration, Frames per second, Number of frames.
+
+<b>Data Quality Metrics:</b> Data quality metrics are calculated as your videos import into Index. Examples include, Area, Frame number, Random value.
+
+<AccordionGroup>
+   <Accordion title="Data Quality Metrics">
+
+For more detailed information on [Data Quality Metrics go here](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics).
+
+| Title                                                                                                                                          | Metric Type | Ontology Type |
+|------------------------------------------------------------------------------------------------------------------------------------------------|-------------|---------------|
+| [Area](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#area) - <small>Ranks images by their area (width/height).</small>                                                                      | `image`     |               |
+| [Aspect Ratio](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#aspect-ratio)- <small>Ranks images by their aspect ratio (width/height).</small>                                              | `image`     |               |
+| [Blue Value](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#blue-value) - <small>Ranks images by how blue the average value of the image is.</small>                                         | `image`     |               |
+| [Brightness](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#brightness) - <small>Ranks images by their brightness.</small>                                                                   | `image`     |               |
+| [Contrast](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#contrast)- <small>Ranks images by their contrast.</small>                                                                         | `image`     |               |
+| [Diversity](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#diversity) - <small>Forms clusters based on the ontology and ranks images from easy samples to annotate to hard samples to annotate.</small>              | `image`     |               |
+| [Frame Number](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#frame-number) - <small>Selects images based on a specified range.</small>                                                      | `image`     |               |
+| [Green Value](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#green-value)- <small>Ranks images by how green the average value of the image is.</small>                                     | `image`     |               |
+| [Height](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#height) - <small>Ranks images by the height of the image.</small>                                                                    | `image`     |               |
+| [Object Count](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#object-count) - <small>Counts number of objects in the image.</small>                                                                                                        | `image`     | `bounding box`, `checklist`, `point`, `polygon`, `polyline`, `radio`, `rotatable bounding box`, `skeleton`, `text` |
+| [Object Density](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#object-density) - <small>Computes the percentage of image area that is occupied by objects.</small>              | `image`     | `bounding box`, `polygon`, `rotatable bounding box`                                                                | 
+| [Randomize Images](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#randomize-images) - <small>Assigns a random value between 0 and 1 to images.</small>                                       | `image`     |               |
+| [Red Value](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#red-value) - <small>Ranks images by how red the average value of the image is.</small>                                           | `image`     |               |
+| [Sharpness](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#sharpness) - <small>Ranks images by their sharpness.</small>                                                                      | `image`     |               |
+| [Uniqueness](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#uniqueness) - <small>Finds duplicate and near-duplicate images.</small>                                                          | `image`     |               |
+| [Width](https://docs.encord.complatform-documentation/Active/active-quality-metrics/active-data-quality-metrics#width) - <small>Ranks images by the width of the image.</small>                                                                       | `image`     |               |
+
+  </Accordion>
+</AccordionGroup>
+
+<b>Collections:</b> Collections are a new way to save interesting groups of data units and labels, to support and guide your downstream workflow.
+
+<b>Custom Metadata:</b> Custom metadata added to data units. The custom metadata added to data units in Folders persist to Annotate Projects and Active.
+
+<Tip>
+For information on importing custom metadata to an Annotate project, refer to [Adding Metadata](/sdk-documentation/datasets-sdk/sdk-client-metadata) in the documentation.
+</Tip>
+
+
+<b>Data title:</b> The file name of the image or video.
+
+<b>Data Types:</b> Data, labels, and Predictions can be filtered by: images, image sequences, image  groups, and videos
+
+<b>File ID:</b> The unique hash assigned to the image or video when the image or video import into Encord.
+
+<b>Folder:</b> The Folder images or videos reside in.
+
+<b>Integration:</b> The integration (if any) your images/videos reside.
+
+<b>Keyframe:</b> Frames of interest you specified on your videos.
+
+<b>MIME type:</b> Also known as _media type_. The file type of an image or video. For example, `video/mp4`.
+
+<b>Storage location:</b> The location where your images/videos reside. Examples include, AWS, GCP, Local.
+
+<b>Uploaded at:</b> The date and time that the image/video uploaded to Index.
+
+**To filter Index data:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a folder.
+   The landing page for the folder appears and the _Explorer_ button is enabled.
+
+   ![Access Index Explorer](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-access-index.gif)
+
+4. Click the **Explorer** button.
+   The _Index Explorer_ page appears.
+
+5. Click the **Filters** dropdown or press <kbd>F</kbd>.
+   The _Filters_ menu appears.
+
+   ![Index Filtering](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-filter.gif)
+
+6. Add and configure the filters you need. 
+   Frame/video/audio files filter in the Explorer workspace.
+
+<Tip>
+- Sort and use the natural language searches (natural language searches coming soon) to further help get the results you want.
+- After filtering, sorting, and searching, create an [Index Collection](/platform-documentation/Index/index-create-collections).
+</Tip>
+
+## Preset Filters
+
+Preset filters provide a way to save your filtering criteria for use and reuse in Index. All preset filters are available everywhere in Index. This means that some preset filters might not return any results. For example, a preset filter might use a specific Folder (Folder A) in the filtering criteria, but if you open Index in a different Folder (Folder B) and the first Folder (Folder A) is not a child of the other Folder (Folder B) no results are returned.
+
+### Create a Preset Filter
+
+Create Presets (Preset Filters and their settings) from the _Filter_ tab.
+
+**To create a Preset (Preset Filter and their settings):**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a folder.
+   The landing page for the folder appears and the _Explorer_ button is enabled.
+
+   ![Access Index Explorer](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-access-index.gif)
+
+4. Click the **Explorer** button.
+   The _Index Explorer_ page appears.
+
+5. Click the **Filters** dropdown or press <kbd>F</kbd>.
+   The _Filters_ menu appears.
+
+6. Add and configure the filters you need. 
+   Frame/video/audio files filter in the Explorer workspace.
+
+   ![Index Filtering](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-filter.gif)
+
+7. Click **Presets > Create Presets** once you have added all the filters you need and specified each filter's settings.
+   After creating the Preset you can use the Preset in this or any other Folder.
+
+   ![Create Presets](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-create-filter.gif)
+
+### Use a Preset Filter in Index
+
+Once you have created one or more Preset Filters, you can apply them to any of your Folders from the _Filter_ tab.
+
+<Note>Global filters apply to any Folder, but Local filters only apply on the Folder where the Preset was created.</Note>
+
+**To use an existing Preset (Preset Filter and their settings):**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a folder.
+   The landing page for the folder appears and the _Explorer_ button is enabled.
+
+   ![Access Index Explorer](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-access-index.gif)
+
+4. Click the **Explorer** button.
+   The _Index Explorer_ page appears.
+
+5. Click the **Filters** dropdown or press <kbd>F</kbd>.
+   The _Filters_ menu appears.
+
+6. Click **Presets**.
+   A menu appears.
+
+   ![Use Preset Filter](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-use-preset-filter.gif)
+
+7. Select the Preset you want to use from the dropdown.
+   Frame/video/audio files filter in the Explorer workspace based on the Preset Filters and their settings.
+
+<Note>Global filters apply to any Folder, but Local filters only apply on the Folder where the Preset was created.</Note>
+
+
+# Sorting
+
+Sort your data, in ascending or descending order, using data quality metrics.
+
+**To sort Index data:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a folder.
+   The landing page for the folder appears and the _Explorer_ button is enabled.
+
+   ![Access Index Explorer](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-access-index.gif)
+
+4. Click the **Explorer** button.
+   The _Index Explorer_ page appears.
+
+5. Select the metric to sort the data.
+
+   ![Index Sort](https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-sort.gif)
+
+6. Specify ascending or descending order.
+
+<Tip>
+- Filter and use the natural language searches (natural language searches coming soon) to further help get the results you want.
+- After filtering, sorting, and searching, create an [Index Collection](/platform-documentation/Index/index-create-collections).
+</Tip>

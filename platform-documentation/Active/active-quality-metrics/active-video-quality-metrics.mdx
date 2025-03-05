@@ -1,0 +1,173 @@
+---  
+title: "Video Quality Metrics"  
+slug: "active-video-quality-metrics"  
+hidden: false  
+metadata:  
+  title: "Video Quality Metrics"  
+  description: "Filter and sort your videos using Video Quality Metrics."
+category: "6480a3981ed49107a7c6be36"  
+---
+
+Video quality metrics work on videos.
+
+## Access Video Quality Metrics
+
+Video Quality Metrics are used for sorting, filtering, and analytics for you videos in your Active Projects.
+
+| Title                                                                                                                                                     | Metric Type | Ontology Type                                                                                                      |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
+| [Area](#area) - <small>Ranks videos by their area (width/height).</small>                                                                                 | `video`     |                                                                                                                    |
+| [Aspect Ratio](#aspect-ratio) - <small>Ranks videos by their aspect ratio (width/height).</small>                                                         | `video`     |                                                                                                                    |
+| [Blue Value](#blue-value) - <small>Ranks videos by how blue the average value of the video is.</small>                                                    | `video`     |                                                                                                                    |
+| [Brightness](#brightness) - <small>Ranks videos by their brightness.</small>                                                                              | `video`     |                                                                                                                    |
+| Clip duration - <small>Ranks videos based on the video's duration</small>                                                                                 | `video`     |                                                                                                                    |
+| [Contrast](#contrast) - <small>Ranks videos by their contrast.</small>                                                                                    | `video`     |                                                                                                                    |
+| [Diversity](#diversity) - <small>Forms clusters based on the ontology and ranks videos from easy samples to annotate to hard samples to annotate.</small> | `video`     |                                                                                                                    |
+| [Frame Number](#frame-number)  - <small>Selects videos based on a specified range.</small>                                                                | `video`     |                                                                                                                    |
+| Frame Label Count                                                                                                                            | `video`     |                                                                                                                    |
+| Frames per second                                                                                                                              | `video`     |                                                                                                                    |
+| [Green Value](#green-value)  - <small>Ranks videos by how green the average value of the video is.</small>                                                | `video`     |                                                                                                                    |
+| [Height](#height)  - <small>Ranks images by the height of the image.</small>                                                                              | `video`     |                                                                                                                    |
+| Instance Label Count - <small>Ranks videos by the number of unique objects in the video.</small>                                                          | `video`     | bounding box`, `checklist`, `point`, `polygon`, `polyline`, `radio`, `rotatable bounding box`, `skeleton`, `text\` |
+| [Red Value](#red-value) - <small>Ranks videos by how red the average value of the image is.</small>                                                       | `video`     |                                                                                                                    |
+| [Sharpness](#sharpness) - <small>Ranks videos by their sharpness.</small>                                                                                 | `video`     |                                                                                                                    |
+| [Uniqueness](#uniqueness)  - <small>Finds duplicate and near-duplicate videos.</small>                                                                    | `video`     |                                                                                                                    |
+| Unlabelled Frames (%) - <small>Ranks videos based on percentage of unlabelled frames in the video.</small>                                                       | `video`     |                                                                                                                    |
+| Unlabelled Frames (#) - <small>Ranks videos based on the number of unlabelled frames in the video.</small>                                                                   | `video`     |                                                                                                                    |
+| [Width](#width) - <small>Ranks videos by the width of the video.</small>                                                                                  | `video`     |                                                                                                                    |
+
+**To access Video Quality Metrics for Explorer:**
+
+1. Click a Project from the _Active_ home page.
+
+2. Click **Explorer**.
+
+3. Click **Video**.
+
+4. Sort and filter the tabular data.
+
+5. Click the Analytics icon.
+
+## Area
+
+Ranks videos by their area. Area is computed as the product of video width and image height (_width x height_).
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/heuristic/img_features.py).
+
+## Aspect Ratio
+
+Ranks videos by their aspect ratio. Aspect ratio is computed as the ratio of video width to image height (_width / height_).
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/heuristic/img_features.py).
+
+## Blue Value
+
+Ranks videos by how blue the average value of the video is.  
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/heuristic/img_features.py).
+
+## Brightness
+
+Ranks videos by their brightness. Brightness is computed as the average (normalized) pixel value across each video. 
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/heuristic/img_features.py).
+
+## Clip Duration
+
+Ranks videos based on their duration.
+
+## Contrast
+
+Ranks videos by their contrast. Contrast is computed as the standard deviation of the pixel values. 
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/heuristic/img_features.py).
+
+## Diversity
+
+For selecting the first samples to annotate when there are no labels in the project. Choosing simple samples that represent those classes well, gives better results. This metric ranks videos from easy samples to annotate to hard samples to annotate. Easy samples have lower scores, while hard samples have higher scores.
+
+### Algorithm
+
+1. [K-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) is applied to video embeddings. The total number of clusters is obtained from the Ontology file (if there are both object and video-level information, total object classes are determined as the total cluster number). If no ontology information exists, _K_ is determined as 10.
+
+2. Samples for each cluster are ranked based on their proximity to cluster centers. Samples closer to the cluster centers refer to easy samples.
+
+3. Different clusters are combined in a way that the result is ordered from easy to hard and the number of samples for each class is balanced for the first _N_ samples.
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/semantic/image_diversity.py).
+
+## Frame Label Count
+
+Ranks videos by the number of labels in the video.
+
+## Frames per second
+
+Ranks videos based on their FPS as they are imported into Active. If you down sample your videos during Project import, the FPS is the value you specified during Active import.
+
+## Green Value
+
+Ranks images by how green the average value of the image is. 
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/heuristic/img_features.py).
+
+## Height
+
+Ranks images by the height of the image.
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/heuristic/img_features.py).
+
+## Instance Label Count
+
+Ranks videos by the number of label occurrences in a video. An object that is tracked across a number of frames counts as a single label occurrence.
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/heuristic/object_counting.py).
+
+## Number of Frames
+
+Ranks videos by the total number of frames in the video.
+
+## Red Value
+
+Ranks images by how red the average value of the video is. 
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/heuristic/img_features.py).
+
+## Sharpness
+
+Ranks videos by their average sharpness.
+
+Sharpness is computed by applying a Laplacian filter to each video and computing the variance of the output. In short, the score computes "the amount of edges" in each video.
+
+```python
+score = cv2.Laplacian(image, cv2.CV_64F).var()
+```
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/heuristic/img_features.py).
+
+## Uniqueness
+
+This metric gives each image a score that shows each video's average uniqueness.  
+
+- A score of zero means that the video has duplicates in the dataset; on the other hand, a score close to one represents that video is quite unique. Among the duplicate videos, we only give a non-zero score to a single video, and the rest will have a score of zero (for example, if there are five identical videos, only four will have a score of zero). This way, these duplicate samples can be easily tagged and removed from the project.    
+- Videos that are near duplicates of each other will be shown side by side. 
+
+### Possible actions
+
+- **To delete duplicate videos:**  Set the quality filter to cover only zero values (that ends up with all the duplicate videos), then use bulk tagging (for example, with a tag like `Duplicate`) to tag all videos.
+- **To mark duplicate videos:** Near-duplicate videos are shown side by side. Navigate through these videos and mark whichever is of interest to you.
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/semantic/image_singularity.py).
+
+## Unlabelled Frames (%)
+
+Ranks videos by the number of unlabelled frames as a percentage of frames across the video.
+
+## Unlabelled Frames (#)
+
+Ranks videos by the direct number of unlabelled frames across the video.
+
+## Width
+
+Ranks videos by the width of the image.
+
+Implementation on [GitHub](https://github.com/encord-team/encord-active/blob/main/src/encord_active/lib/metrics/heuristic/img_features.py).

@@ -1,0 +1,129 @@
+---
+title: "API Keys"
+slug: "annotate-public-keys"
+hidden: false
+metadata: 
+  title: "API keys"
+  description: "Securely access Encord through API Keys. Use the 'API Keys' screen to create, manage, and filter authentication keys for the Encord SDK and API."
+  image: 
+    0: "https://files.readme.io/b96818c-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+
+API keys provide a secure way to authenticate with Encord without needing a user login or password. They are used for [authentication](/sdk-documentation/general-sdk/authentication-sdk) when working with the Encord SDK or API. After registering your public key, you can programmatically create, manage, and query Projects, Datasets, and labels through the SDK or API.
+
+<Note>  
+Encord uses public/private key pairs for API keys. You register a public key with Encord and securely store the private key. The private key is then used for authentication. Learn more about public-key cryptography [here](https://en.wikipedia.org/wiki/Public-key_cryptography).  
+</Note>
+
+## Generating keys in Encord (Recommended)
+
+1. Navigate to the _Public keys_ section of the [_Settings_](/platform-documentation/Annotate/annotate-settings-general) to create, register and manage your public keys.
+
+<div class="flex justify-center">
+   <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/public-key-screen.png" />
+</div>
+
+2. Click the **New Key** button to add or generate a new key.
+
+<div class="flex justify-center">
+   <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/add-key-button.png" />
+</div>
+
+3. Give the public key a meaningful name. 
+
+4. Click **Generate key pair** to generate a new public/private key pair. 
+The public key field is automatically populated, and a `.txt` containing your corresponding private key is downloaded. 
+
+<Warning>
+You must click **Create** to create your API key. The **Create** button becomes available once both fields are populated.
+</Warning>
+
+<div class="flex justify-center">
+   <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/register-public-key.png" width="500"/>
+</div>
+
+5. Click **Create** to add your public key to Encord.
+The key is now listed in the _Public keys_ section along with an ID that serves as a unique identifier.
+
+<Info>
+Key names do not have to be unique, but the keys themselves do. Attempting to upload a duplicate key results in an error. 
+</Info>
+
+---
+
+## Creating keys using Terminal / Powershell
+
+<Tip>
+We strongly recommend using the Encord app to [generate public-private key pairs](#generating-keys-in-encord-recommended).
+</Tip>
+
+Follow the steps below to generate a public-private key pair using an encryption library. Encryption libraries are part of most major operating systems, therefore you can generate this key pair using the appropriate terminal for your OS:
+
+- **Linux/macOS**: the default terminal
+- **Windows 10 & Server 2019/2022**: Powershell
+
+To generate a public-private key pair:
+
+1. Open Terminal or Powershell.
+
+2. Run the following command:
+
+   ```
+   $ ssh-keygen -t ed25519
+   ```
+
+3. Press enter to accept the default file location or modify as required:
+   
+   ```bash Mac
+   > Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM): [Modify / Press ENTER]
+   ```
+   ```bash Windows
+   > Enter a file in which to save the key (C:\Users\YOU/.ssh/id_ALGORITHM): [Modify / Press ENTER]
+   ```
+   ```bash Linux
+   > Enter a file in which to save the key (/home/YOU/.ssh/id_ALGORITHM): [Modify / Press ENTER]
+   ```
+
+4. \[**IMPORTANT**\] Leave the passphrase blank:
+
+   ```
+   > Enter passphrase (empty for no passphrase): [Press ENTER]
+   > Enter same passphrase again: [Press ENTER]
+   ```
+
+<Warning>
+Ensure that the private key you have generated is not protected by a passphrase. Password-protected private keys cannot be [authenticated in Encord](#authenticate-with-your-private-key). All private keys [generated on the Encord platform](#generating-keys-in-encord-recommended) are not password-protected by default.
+</Warning>
+
+You should now have two files:
+
+- `/path/to/your/key/id_ALGORITHM` contains your private key (which you should keep secure);
+- `/path/to/your/key/id_ALGORITHM.pub` contains your public key (usually in a file ending in _.pub_).
+
+The next step is to add your public key to Encord. To add your public key to Encord:
+
+1. Copy the contents of the public key file. For that, execute:
+
+   ```
+   $ cat /path/to/your/key/id_ALGORITHM.pub
+     # Then select and copy the contents of the id_ALGORITHM.pub file
+     # displayed in the terminal to your clipboard
+   ```
+
+2. Navigate to the 'Public keys' section of the [_Settings_](/platform-documentation/Annotate/annotate-settings-general) to create, register and manage your public keys.
+
+<div class="flex justify-center">
+   <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/public-key-screen.png" />
+</div>
+
+3. Enter a title for your public key in the first field, and paste your public key in the second field. The **Create** button will become available once both fields have been populated.
+
+4. Click **Create** to add your public key to Encord. It will now be listed showing the key's name, as well as a signature that serves as a unique identifier.
+
+---
+
+## Authenticate with your private key
+
+After registering your public key with Encord, use your private key as credentials to authenticate the SDK or API. For detailed instructions, refer to the [SDK](/sdk-documentation/general-sdk/authentication-sdk) or [API](/platform-documentation/Annotate/annotate-api-overview) documentation.
+

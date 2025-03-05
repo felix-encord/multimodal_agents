@@ -1,0 +1,41 @@
+---
+title: "Active Crop View"
+slug: "active-crop-view"
+hidden: false
+metadata: 
+  title: "Active Crop View"
+  description: "Explore the basics of Encord Active's Crop View of labels/annotations."
+category: "6480a3981ed49107a7c6be36"
+---
+
+The _Labels_ page in the _Explorer_ displays all the labels/annotations (object and classification) on your images/video frames. The _Crop View_ zooms in on each object's label/annotation providing a better way to view smaller object labels/annotations on a large image/video frame or a better view if there are a lot of object labels/annotations on the image/video frame.
+
+Here is an example. A blueberry has been annotated in a video frame. The video frame has a lot of blueberries in it and the video frame is in HD.
+
+With Crop View off, the entire video frame displays with the label highlighted, but the label is difficult to see on the video frame. With Crop View ON the video frame is zoomed in to the object label/annotation.
+
+
+
+## Turn ON Crop View for all labels/annotations
+
+Crop View is only available from the _Labels_ page in the _Explorer_.
+
+**To turn ON Crop View for all labels:**
+
+1. Click in to a Project in Active.
+   The _Explorer_ page appears.
+
+2. Click **Labels**.
+   The _Labels_ page appears.
+
+3. Click **Display**.
+   The _Display_ tab appears.
+
+   ![Crop View](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-crop-view.gif)
+
+4. Toggle the Crop View switch.
+   Object labels immediately are zoomed in on. Images/video frames with Classifications remain unchanged.
+
+   <Note>Classifications on images/video frames are not affected by the Crop View feature. This is because Classifications apply to the entire image/video frame, while object annotations apply to specific areas/regions of an image/video frame. The following image has a Classification label/annotation `Blueberry or Cherry? Blueberry` and a bitmask object label/annotation `Blueberry`. The bitmask object annotation zooms in, while the classification does not.</Note>
+
+5. Adjust the **Crop View Zoom** as required.

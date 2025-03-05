@@ -1,0 +1,239 @@
+---
+title: "Send Collection to Annotate"
+slug: "active-send-collection-to-annotate"
+hidden: false
+metadata: 
+  title: "Send Collection to Annotate"
+  description: "Learn how to send Collections in Encord Active to Encord Annotate."
+category: "6480a3981ed49107a7c6be36"
+---
+
+When sending a Collection to Annotate, the reason behind it is just as important as the feature.
+
+Here are a few use cases:
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Div</title>
+  </head>
+  <div className="container">
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-tutorials/active-use-cases"
+    >
+      Data Cleansing/Curation
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-tutorials/active-use-cases"
+    >
+      Label Correction/Validation
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-tutorials/active-use-cases"
+    >
+      Model/Prediction Evaluation
+    </a>
+  </div>
+</div>
+
+
+
+Active supports the following ways to send a Collection to Annotate:
+
+- Send to Annotate: The Collection applies directly to the existing Annotate Project.
+- Bulk Classify: Applies Classification to all images/frames in a Collection, to the images/frames in an existing Annotate Project.
+- Create Dataset: A new Dataset is created in Encord with the option of creating a Project in Annotate with the Dataset attached to the Project.
+
+## Send to Annotate
+
+All priorities, comments on individual frames/images, and the comment added for the Collection, are sent to the Annotate Project.
+
+<AccordionGroup>
+   <Accordion title="To send a Collection to Annotate:">
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Click **Collections**.
+   The _Collections_ page appears.
+
+5. Select the checkbox for the Collection to send to Annotate.
+
+6. Click **Send to Annotate**.
+   The _Send to Annotate_ dialog appears.
+   <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/user-guide/active-send-to-annotate.png" width="400" />
+
+7. Specify the following:
+
+   - **Adjust priority of tasks:** Specifies the priority of all the images/frames in the Collection, when the images/frames are sent to Annotate.
+   
+   - **Include model predictions as pre-labels:** Includes model predictions as pre-labels in all frames/images in the Collection
+
+   - **Reopen tasks:** Reopens all annotation tasks on images/frames in the Collection.
+
+     <Info>This action cannot be undone.</Info>
+   
+   - **Leave a comment:** Applies the comment on all frames/images in the Collection.
+
+   <Warning>Comments applied on a Collection cannot be deleted in bulk. We recommend using comments, created on a Collection, in image sequence and video Datasets.</Warning>
+
+8. Click **Submit**.
+   The _Subset created successfully_ dialog appears once creation completes.
+
+9. Click the link in the dialog to go to the Project in Annotate.
+
+10. Users in Annotate can then view the priorities specified on the Collection and [can access comments](/platform-documentation/Annotate/annotate-label-editor#comments) made in the Collection. 
+
+<Note>After annotating the data, sync the Project data between Annotate and Active. To sync the Project data go to **Active > [select the project] > click More > Sync Project Data**.</Note>
+
+  </Accordion>
+</AccordionGroup>
+
+## Create a Dataset
+
+Creating a Dataset from a Collection gives you flexibility handling your annotation Projects. You can create subsets of your entire Project's data to then attach to your existing Annotate Projects or create a new Annotate Project with the new Dataset attached to the Project.
+
+<Note>All Datasets and Annotate Projects created from Collections are created under the user account that sends the Collection to Annotate. This means that that user must provide access to the Datasets and Annotate Projects to other users. Even Collection creators do not have access to Datasets and Annotate Projects until the user who sends the Collection to Annotate (and creates a Dataset or Project) grants access.</Note>
+
+<AccordionGroup>
+  <Accordion title="To create a Dataset, based on a Collection, to Annotate:">
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Click **Collections**.
+   The _Collections_ page appears.
+
+5. Select the checkbox for the Collection to send to Annotate.
+
+6. Click **Create Dataset**.
+   The _Create Dataset_ dialog appears.
+   <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/active/user-guide/active-create-dataset_01.png" width="400" />
+
+7. Specify meaningful content for the following:
+
+   - Dataset Title
+   
+   - Dataset Description
+
+8. Select **Split image groups/sequences** to extract images from the groups or sequences and add each image separately to the Dataset, if your Collection includes images from a group or sequence.
+
+9. Select **Create Project** to create an Annotate Project with the Dataset attached and then provide meaningful content for the following:
+
+   - Project Title
+   
+   - Project Description
+
+10. Select **Reuse ontology of the current project** to use the Ontology of the current Annotate Project in the new project.
+
+11. Click **Create**.
+   The _Subset created successfully_ dialog appears once creation completes.
+
+<Note>After annotating the data, sync the Project data between Annotate and Active. To sync the Project data go to **Active > [select the project] > click More > Sync Project Data**.</Note>
+
+## Next Steps
+
+### Data Cleansing/Curation and Label Correction/Validation
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Div</title>
+  </head>
+  <div className="container">
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-import/active-import-from-annotate"
+    >
+      1. Import from Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-create-collections"
+    >
+      2. Create Collection
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-sync-with-annotate"
+    >
+      4. Sync with Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-update-collections"
+    >
+      5. Update Collection
+    </a>
+  </div>
+</div>
+
+
+### Model and Prediction Validation
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Div</title>
+  </head>
+  <div className="container">
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-import/active-import-from-annotate"
+    >
+      1. Import from Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-import-model-predictions-cloud"
+    >
+      2. Import Predictions
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-model-predictions-eval"
+    >
+      3. Prediction Metrics
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-create-collections"
+    >
+      4. Create Collection
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-sync-with-annotate"
+    >
+      6. Sync with Annotate
+    </a>
+    <a
+      className="clickable-div"
+      href="/platform-documentation/Active/active-how-to/active-update-collections"
+    >
+      7. Update Collection
+    </a>
+  </div>
+</div>
+
+
+</Accordion>
+</AccordionGroup>

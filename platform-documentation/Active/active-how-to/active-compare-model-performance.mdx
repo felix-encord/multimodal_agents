@@ -1,0 +1,105 @@
+---
+title: "Compare Model Performance"
+slug: "active-compare-model-performance"
+hidden: false
+metadata: 
+  title: "Compare Model Prediction Performance"
+  description: "Learn how to compare the predictive performance of your model."
+category: "6480a3981ed49107a7c6be36"
+---
+
+You have trained your model, and now you are ready to see how it performs.  It is time to perform a cycle of the Active model optimization workflow.
+
+![Encord Active workflow](https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-workflow-model-optimization.png)
+
+Now you want to compare your model's performance before using Encord (or maybe after running a number of data curation and label validation cycles). Active supports doing direct model prediction performance comparison from within your Active Project.
+
+<AccordionGroup>
+   <Accordion title="To compare your model's performance:">
+
+This process assumes you have already imported your model's predictions in to Active at least twice.
+
+1. Log in to Encord.
+   The Encord Homepage appears.
+
+2. Create a **Workflow** Project in Annotate.
+
+3. Click **Active**.
+   The Active landing page appears.
+
+4. [Import your Annotate Project](/platform-documentation/Active/active-import/active-import-from-annotate).
+
+5. Click an Active Project.
+   The Project opens on the _Explorer_.
+
+6. Click **Model Evaluation**.
+   The _Model Evaluation_ page appears with _Summary_ displaying.
+
+7. Select an entry from the dropdown under **Prediction Set** under _Overview_.
+
+8. Select an entry from the dropdown under **Compare against** under _Overview_.
+
+9. Click through the various entries on the left side of the Model Evaluation page to view the comparison.
+
+10. Add more data and start the data curation, label validation, and model optimization cycles until the model reaches a performance level that you require.
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="To compare your model's performance from scratch:">
+
+This process assumes you are just getting started with Encord. You have not trained your model yet. You are using Encord to prepare your data for annotation, annotating your data, labeling your data, validating your labels, fixing any label issues, then training your model.
+
+1. Log in to Encord.
+   The Encord Homepage appears.
+
+2. Create a **Workflow** Project in Annotate.
+
+3. Click **Active**.
+   The Active landing page appears.
+
+4. [Import your Annotate Project](/platform-documentation/Active/active-import/active-import-from-annotate).
+
+5. Click an Active Project.
+   The Project opens on the _Explorer_.
+
+6. Click **Model Evaluation**.
+   The _Model Evaluation_ page appears.
+
+7. [Import a Prediction Set](/platform-documentation/Active/active-how-to/active-import-model-predictions-cloud).
+
+8.  [Perform data curation on your Project in Active(/platform-documentation/Active/active-tutorials/active-use-cases#data-cleansingcuration).
+
+9. [Send the Project to Annotate](/platform-documentation/Active/active-how-to/active-send-collection-to-annotate).
+
+10. Label and review your data in Annotate.
+
+11. Sync the Active Project with the updated Annotate Project.
+
+12. Perform label validation on your updated and synced Project.
+
+13. Send the Project to Annotate.
+
+14. Label and review your data in Annotate.
+
+15. Retrain your model using the curated and validated data/labels.
+
+16. Click the Active Project.
+    The Project opens on the _Explorer_.
+
+17. Click **Model Evaluation**.
+   The _Model Evaluation_ page appears.
+
+18. [Import the updated Prediction Set](/platform-documentation/Active/active-how-to/active-import-model-predictions-cloud).
+
+19. Select an entry from the dropdown under **Prediction Set** under _Overview_.
+
+20. Select an entry from the dropdown under **Compare against** under _Overview_.
+
+21. Click through the various entries on the left side of the Model Evaluation page to view the comparison.
+
+22. Add more data and start the data curation, label validation, and model optimization cycles until the model reaches a performance level that you require.
+
+  </Accordion>
+</AccordionGroup>

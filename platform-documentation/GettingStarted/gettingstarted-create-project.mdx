@@ -1,0 +1,107 @@
+---
+title: "6. Create a Project"
+slug: "gettingstarted-create-project"
+hidden: false
+metadata: 
+  title: "Create a Project"
+  description: "Learn how to create a Project and add users in Encord. Labeling activities are organized and managed in Projects."
+  image: 
+    0: "https://files.readme.io/2168cad-image_16.png"
+category: "664ca60715598e0010b53fb8"
+---
+
+Labeling activities are organized and managed in Projects. It brings together Datasets, which store the data to be labeled, and Ontologies, which define the concepts and relationships to be annotated. Within a Project, admins oversee the labeling process, annotators perform the labeling, and reviewers ensure the accuracy of the labels.
+
+### Step 1: Project Details
+
+1. In the Encord platform, select _Projects_ under _Annotate_. 
+2. Click the **+ New annotation project** button to create a new Project.
+
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-create-project-3.png" width="600" />
+
+
+3. Give the Project a meaningful Project title and description.
+
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-name-project.png" width="900" />
+
+
+If you are part of an [Organization](/platform-documentation/General/general-your-organization), an optional [Project tags](/platform-documentation/Annotate/annotate-projects/annotate-project-settings#project-tags) drop-down is visible. Project tags are useful for categorizing and finding your Projects. Select as many tags as are relevant for your Project.
+
+### Step 2: Attach your Ontology
+
+1. Click the **Attach ontology** button. 
+
+2. Select an existing Ontology from the list using the **Select** button, or [create a new Ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-create-ontologies) by clicking the **+ New ontology** button.
+
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-add-ontology.png" width="600" />
+
+
+3. Click **OK** to attach the Ontology to the Project.
+
+### Step 3: Attach Dataset
+
+1. Click the **Attach datasets** button. 
+
+2. Select the Dataset you want to attach to the Project by clicking the **Attach** button next to the Dataset name,  or create a new Dataset by clicking the **+ New Dataset button**. 
+
+<Tip>Multiple Datasets can be attached to the same Project.</Tip>
+
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-add-dataset.png" width="600" />
+
+
+3. Click **OK** to attach the Dataset(s) to the Project.
+
+### Step 4: Add users
+
+Add users to the Project and assign them roles such as Team Managers, Annotators, and Reviewers. As the Project creator, you are automatically assigned the role of Administrator.
+
+<Note>A full list of permission / user-based access controls can be found [here](/platform-documentation/Annotate/annotate-projects/annotate-project-roles-and-permissions). </Note>
+
+**To add users to your Project**: 
+
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/invite-collab-getting-started.png" width="650" />
+
+
+1. Click the **Invite collaborators** button .
+A dialog appears.
+2. Type in the email addresses of users you want to add to the Project.
+3. Select the [role](/platform-documentation/Annotate/annotate-projects/annotate-project-roles-and-permissions) you want to give to the users. 
+4. Click **Add** to add the users to the Project. 
+5. (Optionally) repeat this for all user roles your Project requires. 
+6. Close the dialog when you're done adding users to the Project.
+
+<Tip>You can [add more users and manage all users](/platform-documentation/Annotate/annotate-projects/annotate-project-settings#manage-project-collaborators) after Project creation. </Tip>
+
+By default, all available annotators are assigned to the annotation stage, and all reviewers are assigned to your review stage(s). However, you can specify which annotators or reviewers should be available at each Workflow stage.
+
+<Note>Admins and Project managers can see task in any stage of the Workflow.</Note>
+
+**To add users to specific Workflow stages**:
+
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/add-users-to-workflow-stage.png" width="700" />
+
+
+1. Click the Workflow stage you want to specify users for.
+2. Click **Selective** under the _Add annotators to stage_ heading.
+3. Click the search bar and select the users you want to add to the stage from the list of available users. 
+4. Click **Add** to confirm. 
+
+<Note>Only users who have been added to the Project are available for selection. For annotation stages, you can select users with the _Annotator_ or _Annotator + _Reviewer_ roles. For review stages, you can select users with the _Reviewer_ or _Annotator + Reviewer_ roles.</Note>
+
+### (Optional) Step 5: Specify a Workflow
+
+The Workflow determines how tasks move through your Project from annotation to completion. A simple Workflow containing one Annotation stage and one Review stage is provided by default.
+
+See our documentation on Workflows to:
+- Learn how to [customize Workflows](/platform-documentation/Annotate/annotate-projects/annotate-workflows-and-templates#creating-workflows). 
+- Learn how to [create Workflow templates](/platform-documentation/Annotate/annotate-projects/annotate-workflows-and-templates#templates) that can be seamlessly added to any Project you create.
+
+### Step 6: Create Project
+
+Once you are ready, click the **Create Project** button to finish creating your Project. For documentation on managing and administering your Project see our [documentation here](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects). 

@@ -1,0 +1,217 @@
+---
+title: "Files basics"
+slug: "index-files"
+hidden: false
+metadata: 
+  title: "Files"
+  description: "Explore Encord's Files: Your comprehensive solution for data management in machine learning. Learn how our robust cloud storage integrates with Datasets, offering efficient organization and management options. Discover features such as easy data upload, and advanced search capabilities."
+  image: 
+    0: "https://files.readme.io/7ec1cb2-image_16.png"
+---
+
+_Files_ is your one-stop shop for everything related to data in Encord - offering robust cloud storage capabilities along with intuitive options for managing, organizing, and integrating your data into [Datasets](/platform-documentation/Annotate/annotate-datasets/annotate-datasets).
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/data-relationships-5.png" width="600" />
+</div>
+
+<Note>Data is structured into folders and subfolders. All files must be placed into folders and cannot be added to the top level / root directory. </Note>
+
+---
+
+## What can I see in _Files_? 
+
+Organization admins can see all the files and folders created by users in your Organization. 
+
+Non-admin users can view all folders they create and files they upload. Additionally, they can see any folders they have been added to as a viewer or admin. For more details, refer to [Manage folder collaborators](#manage-folder-collaborators).
+
+---
+
+## Create a folder
+
+import CreateFolder from '/snippets/Index/Files/CreateFolder.mdx';
+
+<CreateFolder />
+
+## Add files to a folder
+
+1. Navigate to _Files_ under the _Index_ heading in the Encord platform. 
+2. Click the **+Upload files** button 
+
+<Tip>You can also right-click a folder to add data.</Tip>
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/add-data-to-folder.png" width="600"/>
+</div>
+
+3. Select a folder to upload your files to. You can click **+New folder** to create a new folder.
+4. Select the type of data you want to add.
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/upload-data-files-2.png" width="500"/>
+</div>
+
+- **A** - _Upload_ : Drag and drop local images and / or videos. Click **Upload** to finish. 
+- **B** - _Batch images as_ : Create an image group or image sequence from local images. See our section on [creating image groups and image sequences](/platform-documentation/Index/index-files#create-image-groups-and-image-sequences) for more information. Click **Upload and batch images** to finish.
+- **C** - _Audio_ Drag and drop local audio files. Click **Upload** to finish.
+- **D** - _DICOM_ : Create a DICOM series from local DICOM files. Click **Upload** to finish.
+
+<Note>
+To import DICOM files, Encord requires the files to have the following [DICOM tags](https://www.dicomlibrary.com/dicom/dicom-tags/):
+
+Rows
+Columns
+StudyInstanceUID
+SeriesInstanceUID
+SOPInstanceUID
+PatientID
+The following DICOM tags are required to render DICOM images in 3D:
+
+ImagePositionPatient
+ImageOrientationPatient
+SliceThickness
+PixelSpacing
+</Note>
+
+- **E** - _Import from private cloud_ : Add any data stored in your cloud storage. At least one [data integration](/platform-documentation/General/annotate-data-integrations) is required to register cloud data. Learn how to upload private cloud data [here](/platform-documentation/Index/add-files/index-register-cloud-data). Click **Import** to finish.
+
+
+### Create image groups and image sequences
+
+Image groups and image sequences are created when you upload files into Encord in _Files_.
+
+1. Open the _Add data_ dialog. 
+2. Select the _Batch images as_ tab.
+3. Select _Image group_ to create an image group. Select _Image sequence_ to create an image sequence.
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/batch-images.png" width="450"/>
+</div>
+
+4. Drag-and-drop the local images you want to batch into an image group or image sequence. Learn how create image groups and image sequences from cloud data [here](#adding-private-cloud-data). 
+
+5. Click **Upload and batch images** to create the image group or image sequence.
+
+6. A file representing the image group or image sequence is created in the folder. A new folder appears containing all the constituent images of the image group or image sequence that was created. 
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/image-grouop-folder.png" width="300"/>
+</div>
+
+<Note>
+- The new folder containing the constituent images is not synced.
+- Adding new images to this folder does not add them to the image group or image sequence.
+- Files contained in the image group or image sequence cannot be deleted from the folder until the image group or image sequence is deleted.
+</Note>
+
+### Register Cloud Data
+
+<Tip>We recommend uploading files in batches not exceeding 2GB, to ensure upload does not exceed 3 hours.</Tip>
+
+To add data from your private cloud you need the following:
+
+- A [private cloud integration](/platform-documentation/General/annotate-data-integrations). 
+
+- A [JSON or CSV file specifying the data](/platform-documentation/Index/add-files/index-register-cloud-data#specify-cloud-data) you want to add from your private cloud.
+
+See our documentation on [data integrations](/platform-documentation/General/annotate-data-integrations), and [adding cloud data](/platform-documentation/Index/add-files/index-register-cloud-data) for comprehensive guides. 
+
+---
+
+## Add data to Datasets
+
+After data is uploaded to _Files_ it can be added to one or multiple Datasets.
+
+1. Locate and select the data you want to add to a Dataset. 
+
+<Tip>To add multiple files to a Dataset, bulk-select files by selecting the first file, and then selecting the last file while holding the <kbd>Shift</kbd> key on your keyboard.</Tip>
+
+2. Right-click your selection and select **Add to dataset**. 
+A dialog appears. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/index-add-to-index.png" width="600" />
+</div>
+
+3. You have the option to:
+  - Add data to an existing Dataset by clicking **Add** next to the Dataset's name on the _Existing datasets_ tab. You can add data to multiple Datasets.
+
+  <div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/add-to-existing-dataset.png" width="500" />
+</div>
+
+  - Create a new Dataset to add your data. Select the _+New dataset_ tab and give the Dataset a meaningful name and description. Click **Add to new dataset** to add the files to the new Dataset. 
+
+  <div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/add-to-new-dataset.png" width="500" />
+</div>
+
+---
+
+## View, search, and manage your files
+
+Files allows you to search for data units, and view which Datasets each data unit is belongs to. 
+
+The global search bar searches all data in Files, irrespective of which folder is currently open.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/storage-search.png" width="600" />
+</div>
+
+Click a data unit to see file specific details. Navigate to the _Linked to_ tab to see which Datasets this file is added to. Click the details icon next to the Dataset to:
+- View the Dataset.
+- Remove the selected file from Datasets. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/storage-data-details.png" width="600" />
+</div>
+
+### Delete and move files and folders
+
+Right-click a file, folder, or a selection of multiple files to see the options available to you. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/delete-or-move.png" width="600" />
+</div>
+
+- To delete files and folders, right-click the selection and select **Delete**.
+
+<Warning>Deleting a file removes it from all Datasets it was added to. </Warning>
+
+- To move files and folders to a different folder, right-click the selection and select **Move to another folder**. A dialog appears. Start typing the name of the folder, select the folder you want to move the selection to, and click **Move** to confirm. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/move-files.png" width="320" />
+</div>
+
+### Folder permissions and activity
+
+Folder details are automatically displayed whenever a folder is:
+- Selected
+- Open and no data unit is selected
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/folder-details.png" width="700" />
+</div>
+
+#### Manage folder collaborators
+
+<Note>Organization admins can see all the files and folders created by users in your Organization. </Note>
+
+Click **Manage access** to manage which users within your [Organization](/platform-documentation/General/general-your-organization) can access the folder. A dialog appears with the _Invite_ tab open by default.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/storage-add-user.png" width="400" />
+</div>
+
+Select the role you want the users to have, and then start typing their email address into the search bar. Select the user(s) you want to give access to the folder and click **Add** to confirm your selection. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/manage-users.png" width="400" />
+</div>
+
+To delete a user from a folder, navigate to the _Manage_ tab and click the _Delete_ button.
+
+Change a user's access permissions by selecting a new role from the dropdown. 
+
+<Note>Users with _Admin_ permissions cannot be deleted, and their role cannot be changed. </Note>

@@ -1,0 +1,65 @@
+---
+title: "Object Detection"
+slug: "apollo-object-detection"
+hidden: false
+metadata: 
+  title: "Object detection"
+  description: "Object detection models identify objects using bounding boxes. Attach them to your project with Encord, set confidence levels, and choose GPUs or CPUs for processing."
+  image: 
+    0: "https://files.readme.io/33abe9c-image_16.png"
+category: "6480a33fc3cb871311030819"
+---
+Object detection models are trained to identify and label specific objects in your data using bounding boxes. For example, an object detection model can be trained to detect apples, and then used within a video project to label instances of apples within videos. 
+
+| **Ontology shape**     | **Supported?** |
+|------------------------|-------------------|
+| Bounding box           | ✅                 | 
+| Rotatable bounding box | ❌                 | 
+| Polygon                | ✅                 |
+| Polyline               | ❌                 | 
+| Primitive              | ❌                 |
+| Keypoint               | ❌                 | 
+| Bitmask                | ✅                 | 
+
+<Note>
+Object detection models assume there are potentially multiple objects in an image that need to be detected and classified.
+</Note>
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/create-object-detection.png" width="500" />
+
+## Framework and models
+
+We support the PyTorch framework for object detection models.
+
+## Creating object detection models
+
+To learn how to create object detection models, head over to our [models](/platform-documentation/Annotate/models#creating-models) page.
+
+
+## Working with object detection models
+
+Once a model has been [attached to a project](/platform-documentation/Annotate/models#attaching-models-to-projects) it can be used to perform the functions it has been trained on. Inside the label editor, click the **Automated labeling** button highlighted in the image below. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/automated-labeling.png" width="600" />
+</div>
+
+Open the 'Detection and segmentation' section, as seen in the screenshot below.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/run-model.png" width="600" />
+</div>
+
+- Select the model you would like to run. You will be able to choose from a list of models previously attached to the project. 
+
+- The 'Detection range' lets you determine the start and end frames you would like the model to run on. 
+
+- Set the _Confidence_. A value ranging from 0 to 1 that represents how confident the model has to be in order for a particular data point to be included in its output. Read more about [confidence values here](/platform-documentation/Annotate/annotate-label-editor#confidence-score).
+
+#### Advanced settings
+
+- Set the _Intersection over union_ threshold. This parameter specifies that any boxes or polygons with an amount of overlap higher than the specified threshold should be deleted.
+
+- Choose between _GPU_ or _CPU_ processing units. CPUs are designed to handle a wide-range of tasks quickly, but are limited in how many tasks can run at the same time. GPUs are designed to quickly render high-resolution images and video concurrently.
+
+- The _Tracking enabled_ toggle determines whether objects are part of the same ‘instance’ or not. In other words, whether the model should attempt to tracking individual instances through frames, or create separate objects for each frame.

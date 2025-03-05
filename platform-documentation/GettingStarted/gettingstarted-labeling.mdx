@@ -1,0 +1,520 @@
+---
+title: "How to Label"
+slug: "gettingstarted-labeling"
+hidden: false
+metadata: 
+  title: "How to label"
+  description: "Learn how to draw objects and create frame classifications in Encord."
+  image: 
+    0: "https://files.readme.io/2168cad-image_16.png"
+---
+
+Labeling your data is what Encord Annotate is about. Labeling is initiated in the [_Queue_ tab of your Project](/platform-documentation/Annotate/annotate-projects/annotate-manage-annotation-projects#task-queue-and-workflow). Annotators use the Project's Ontology to label data from Datasets that are attached to the Project. 
+
+Three types of annotation can be created: 
+- **Objects**: Label specific parts of the data unit using a specified shape. Objects are not supported for audio annotation.
+- **Classifications**: Apply to a whole image or frame. They do not have a specific location. 
+- **Attributes**: Can be nested into objects and classifications to add more details to the annotation.
+
+<Tip>For more information on annotation types, see our documentation on [Ontology structure](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies).</Tip>
+
+## Introduction to Image Annotation
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/44a0c44e350e4900b75b236934880ae0?sid=2bc76a90-40da-4af5-9ec6-253ac27254b1"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+---
+
+## Introduction to Video Annotation
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/8e6255f742454694ade6bcf38bee11c0?sid=bb568aff-823f-4e07-bcdf-ae101b3ffbe3"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+---
+
+## Labeling Audio Files
+
+<Note> Audio file support is available in Encord Labs. Contact [support](mailto:support@encord.com) for more information.</Note>
+
+<Warning>
+You can only use _Audio Region_ objects, and classifications to label audio files. See our [end-to-end guide on labeling audio files](/end-to-end/Modalities/audio) to learn how to set up audio specific Ontologies.
+</Warning>
+
+import LabelAudio from '/snippets/LabelAudio.mdx'
+
+<LabelAudio />
+
+---
+
+## Labeling Text and HTML Files
+
+<Note> Audio file support is available in Encord Labs. Contact [support](mailto:support@encord.com) for more information.</Note>
+
+<Warning>
+You can only use _Text Region_ objects, and classifications to label text files including HTML.
+</Warning>
+
+import LabelText from '/snippets/LabelText.mdx';
+
+<LabelText />
+
+---
+
+## Creating Classification Labels
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/5e8c7462b7874a5f911ad1ab98fc448d?sid=70d5c43d-2f3b-4056-9b6d-2bd27ea351ef"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+1. Navigate to the _Queue_ tab of your Project. 
+
+2. Select the data unit you want to label.
+The task opens in the Label Editor.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/start-labeling-get-started.png" width="700" />
+</div>
+
+3. Select the classification you want to apply to the frame / image from the list of classes on the left side of the Label Editor. 
+
+4. Provide a classification answer.
+    - **Text classification**: Type the classification answer in the text field that appears.
+    - **Radio button**: Select one classification answer from the list of options. Radio buttons can have nested options.
+    - **Checklist**: Select all applicable classification answers.
+
+5. If labeling a video, several options appear above the editor timeline. 
+
+    - **This frame & save** (hotkey <kbd>Z</kbd>): Apply the classification to the current frame and save. 
+    - **This frame** (hotkey <kbd>X</kbd>): Apply the classification to the current frame. 
+    - **Set start to current** (hotkey <kbd>C</kbd>): Defines the current frame as the start of the range to which the classification is applied. 
+    - **Set end to current** (hotkey <kbd>V</kbd>): Defines the current frame as the end of the range to which the classification is applied.
+    - **Add range** (hotkey <kbd>N</kbd>): Applies the classification to the range of frames defined in the bar above the buttons.
+    - **Save** (hotkey <kbd>M</kbd>): Saves the classification.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/apply-classification.png" width="700" />
+</div>
+
+6. Ensure you save the classification. 
+The classification appears in the list of all labels on the left side of the Label Editor.
+
+---
+
+## Creating Object Labels
+
+<Warning>Object labels are not supported for audio files.</Warning>
+
+1. Navigate to the _Queue_ tab of your Project. 
+
+2. Select the data unit you want to label.
+The task opens in the Label Editor.
+
+3. Select the object you want to label from the list of classes on the left side of the Label Editor. 
+
+4. Apply the instance label.
+
+<Tip>We recommend creating automated labels using [SAM](/platform-documentation/Annotate/automated-labeling/annotate-sam) when drawing bounding boxes, bitmasks, and polygons. </Tip>
+
+- **Bounding box**: Click once to start drawing the shape. A second click completes the shape. 
+
+<AccordionGroup>
+   <Accordion title="Watch a tutorial for drawing a bounding box ">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/ee7b0a61b7a74b8f9310e5f9c10e5b35?sid=2b35cb63-bb10-4c5d-981b-699622cc1350"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+- **Rotatable bounding box**: Click once to start drawing the shape. A second click completes the shape. The box can be rotated.
+
+<AccordionGroup>
+   <Accordion title="Watch a tutorial for drawing a rotatable bounding box">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/a8c6260d9d784385ab506957a24df5fa?sid=acfb9cd2-3631-4c9e-a25d-8f9cf838af76"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+- **Polygon**: Click once to start drawing the shape. Click again to add a vertex. Add as many vertices as necessary. To complete the shape, double-click or return to the first vertex.
+
+<AccordionGroup>
+   <Accordion title="Watch a tutorial for working with polygons">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/164b6b90a68441c28db9e1a9d35c51d8?sid=6a6a1d33-fe8a-4ba5-935d-b934c83d06c7"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+
+- **Polyline**: Click once to start drawing the shape. Click again to add a vertex. Add as many vertices as necessary. Double-click to complete the shape.
+
+<AccordionGroup>
+   <Accordion title="Watch a tutorial for drawing a polyline">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/11aad6c491414170b212c840549aa27a?sid=41bc5bf9-99f2-4e06-abfe-a3396f1c35f1"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+- **Keypoint**: Click once to add a keypoint.
+
+<AccordionGroup>
+   <Accordion title="Watch a tutorial for drawing a keypoint">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/53bb4b7e7d5a4621b93c09d083f6b2f1?sid=d496e47f-5a5a-4309-b46e-b5b371fc9793"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+
+- **Bitmask**: Click and hold to draw a bitmask using the brush tool. For detailed information on using bitmasks, see our [documentation here](/platform-documentation/Annotate/annotate-label-editor/annotate-videos#segmentation-masks--bitmasks).
+
+<AccordionGroup>
+   <Accordion title="Watch a tutorial for drawing a bitmask">
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/ea78f206048646088804ae2d705e850a?sid=37185e58-445c-4cba-821b-8806d5414e7f"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+  </Accordion>
+</AccordionGroup>
+
+5. Save the label by clicking the **Save** icon on the [editor header](/platform-documentation/Annotate/annotate-label-editor#editor-header).
+
+---
+
+## Adding Attributes
+
+After creating an object or a classification you can add any attributes defined in your [Ontology](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies). 
+
+1. In the Labels section of the Label Editor, click the **Edit attributes** button to add an attribute to an object or classification label. 
+
+<div class="flex justify-center">
+  <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/edit-attributes.png" width="600" />
+</div>
+
+2. Add an attribute answer.
+    - **Text attribute**: Type the attribute answer in the text field that appears.
+    - **Radio button**: Select one attribute answer from the list of options. May have nested options.
+    - **Checklist**: Select all applicable attribute answers.
+
+### Dynamic Attributes
+
+Attributes marked as _Dynamic_ can change value over the course of a data unit, and are therefore only applicable to videos, image sequences, and DICOM volumes. 
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '56.25%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/d1c0ce0bc3374bc9bf87a980a9b4c280?sid=b9bfd921-33ba-424f-a93f-40c3671a2eb7"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+#### Bulk Apply Dynamic Attributes
+
+You can efficiently apply dynamic attributes in bulk to save time and effort. This is accomplished by identifying frames where the attribute changes value as "keyframes," and then applying attribute values between these keyframes.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/keypoint-based-attribute-propagation1.png" width="700" />
+</div>
+
+1. Apply object labels to **all** relevant frames.
+
+2. Add the [dynamic attribute](/platform-documentation/Annotate/annotate-ontologies/annotate-ontologies#dynamic-attributes) to the label in the first frame that the object appears in.
+
+3. Navigate to the point of the video or image sequence where the dynamic attribute changes value, and apply the attribute to the object here. 
+
+4. Use the **+****, or the keyboard shortcut <kbd>Shift</kbd> + <kbd>L</kbd> to set _keyframes_ on frames where the attribute changes value. 
+
+5. Use the _Play_ icon, or the keyboard shortcut <kbd>Shift</kbd> + <kbd>P</kbd> to apply attribute values to all frames following a _keyframe_, matching the value set in the _keyframe_.
+
+**Apply to new occurrences**:
+
+The _Apply to new occurrences_ checkbox in the Label Editor is available for the first instance of a label with a [dynamic attribute](#dynamic-attributes). Selecting this option propagates the attribute to all future instance labels, meaning all labels created for this instance share the attribute value of the initial instance label.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/apply-to-new-occurences.png" width="350"/>
+</div>
+
+The 'Apply to new occurrences' functionality also holds for instance labels created automatically using [interpolation](/platform-documentation/Annotate/automated-labeling/annotate-interpolation).
+
+### Relation Attributes
+
+The _Relation_ attribute allows you link objects, and specify the relationship between them using text regardless of the annotation type used. 
+
+<Note>Only one of the linked objects need a  _Relation_ attribute for the objects to be considered linked. For example, consider 2 Ontology objects: a chicken, and a chicken wing. To allow these objects to be linked, a _Relation_ attribute must be created for the chicken **or** the chicken wing, while setting up the Ontology. </Note>
+
+All _Relation_ attributes must be text fields. They cannot be radio buttons or checklists. _Relation_ attributes can be applied to object labels of any kind, but not classifications. 
+
+To create a _Relation_ attribute, enable the _Relation_ feature when creating an attribute during Ontology creation. The default name for all _Relation_ attributes is _#relation_.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/relation-attribute-2.png" width="500" alt="Relation Attribute" />
+</div>
+
+<Note>Objects are linked in the Label Editor during annotation, not during Ontology creation.</Note>
+
+**Using _Relation_ attributes in the Label Editor**:
+
+Once an Ontology with _Relation_ attributes has been set up, instances can be linked in the Label Editor during annotation. 
+
+1. Create both instance labels. For example, a chicken and its wing are labeled using bounding boxes. 
+
+2. Click the _Edit classifications_ button for the object with the _Relation_ attribute. For example, to the chicken wing.
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-1.png" width="700"/>
+</div>
+
+3. Click the _Set relation..._ bar and select the instance you want to link the selected instance to. In this example the chicken and the wing appear on the same frame, and therefore appear under the _This frame_ heading. Instances in different frames appear under the heading _Rest_. 
+
+<img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-3.png" width="700"/>
+
+4. Click **Done**. The instances are now linked. This is shown in the _Instance labels_ section with the name of the linked instance being displayed. 
+
+<div class="flex justify-center">
+    <img src="https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-4.png" width="300"/>
+</div>
+
+---
+
+## Object Primitives & Skeletons
+
+The following tutorial covers creating Object Primitives and labeling using skeletons. 
+
+<div
+  style={{
+    height: '0',
+    paddingBottom: '54.93387589013224%',
+    position: 'relative'
+  }}
+>
+  <iframe
+    allowFullScreen
+    frameBorder="0"
+    mozallowfullscreen=""
+    src="https://www.loom.com/embed/1a14e4306b3c4588b6c5636da5bba3d7?sid=309b80c2-67a4-4bc4-9feb-a0b34927f242"
+    style={{
+      height: '100%',
+      left: '0',
+      position: 'absolute',
+      top: '0',
+      width: '100%'
+    }}
+    webkitallowfullscreen=""
+  />
+</div>
+
+**To label using Skeletons**:
+
+1. Select your Skeleton class from the left-hand menu.  
+2. Click on the canvas to place points one by one. The currently active point is highlighted in the left sidebar.  
+   Once the final point is placed, the Skeleton is automatically completed.  
+
+<Info> Alternatively, you can drag and drop the Skeleton onto the canvas and adjust each point individually by dragging them into position. </Info>  
+
+3. Use the toggle next to each point to mark it as _visible_, _invisible_, or _occluded_. By default, all points are set to **_visible_**.  
+
+---
+
+## Automated labeling 
+
+Encord provides several automated labeling techniques to accelerate your labeling. See our documentation on automated labeling [here](/platform-documentation/Annotate/automated-labeling/annotate-interpolation). 
