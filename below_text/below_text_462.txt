@@ -1,0 +1,9 @@
+Click a Dataset to: 
+- Upload additional files to the Dataset.
+- Remove files from the Dataset.
+- Manage who has access to the Dataset.
+
+The dashboard is split into two tabs:
+
+- The _Data_ tab.
+- The _Settings_ tab.

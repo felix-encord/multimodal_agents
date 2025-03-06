@@ -1,0 +1,10 @@
+When _Thresholding_ is enabled, a mask covering the parts of the image that fall above the set threshold appears on the slice. This allows you to preview which parts of the image are labeled when a Bitmask label is applied. The mask color can be changed by clicking the circle icon. 
+
+The eyedropper tool enables you to pick a color or intensity value directly from the image. 
+
+Three different kinds of threshold can be selected using a dropdown: 
+- **Intensity**: Only pixels within the set intensity value range are labeled.
+- **RGB**: Only pixels within the set red, green, and blue range are labeled. The range for each color can be set separately.
+- **HSV**: Only pixels within the set hue, saturation, and value range are labeled. 
+
+When your label is ready, click **Apply label**, or press <kbd>Enter</kbd>.

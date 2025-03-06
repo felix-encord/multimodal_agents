@@ -1,0 +1,6 @@
+'Project task status overview' displays the number of annotation tasks that are in either the Annotate, or Completed state.
+
+- **Annotate**: The task is ready to be annotated.
+- **Completed**: The task has been annotated, and automatically reviewed. There is no further action to be taken. 
+
+---

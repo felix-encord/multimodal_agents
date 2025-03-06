@@ -1,0 +1,8 @@
+Change collaborator role 
+
+To change the role of a collaborator on the Ontology, click the dropdown and select the role you want to apply to the user.
+
+- Users with the _Admin_ role can modify the Ontology
+- Users with the _Viewer_ role cannot make changes to the Ontology. However, a _Viewer_ can copy the Ontology.
+
+<Note>An _Admin_ cannot be reverted to a _Viewer_. To revoke Admin access for a user, contact support@encord.com.</Note>

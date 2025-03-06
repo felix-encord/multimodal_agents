@@ -1,0 +1,13 @@
+All users can configure the Label Editor, and configure the Label Editor to their specific needs. This includes changing the way elements display, drawing settings, and settings related to automated labeling. 
+
+<Note>A user's settings persist and do not reset at the end of a session.</Note>
+
+Editor settings are divided into several sections which can be filtered using the search bar: 
+
+- _Data details_: Details relating to the file currently open in the Label Editor.
+- _General_: General interactions with the Label Editor.
+- _Label display_: Toggle elements to show or hide those elements within the Label Editor.
+- _Drawing_: Control how labels are drawn.
+- _Object tracking_: Settings controlling object tracking. 
+
+<Tip>Use the search bar at the top of the _Editor settings_ to search for specific settings, or keywords. </Tip>

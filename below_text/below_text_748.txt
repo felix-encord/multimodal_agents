@@ -1,0 +1,15 @@
+4. Select **Data**, **Labels**, or **Predictions**.
+
+5. Type a search query or upload an image.
+   The text or image query returns results in the Explorer workspace.
+
+6. Click **Filter**.
+
+7. Adjust the **Distance** to fit your requirements.
+
+<Note>The natural language search feature is available with Encord Active's embeddings or with your own custom embeddings.</Note>
+
+<Tip>
+- Filter and sort to further help get the results you want.
+- After filtering, sorting, and searching, create a Collection.
+</Tip>

@@ -1,0 +1,11 @@
+Edit Labels During Review
+
+It is sometimes faster, more convenient, and less error-prone to have reviewers make edits to annotations, instead of outright rejecting them. Rejection requires the return of the entire set of labels to the annotator. 
+ 
+_Edit review_ allows reviewers to make changes to labels, remove labels, and add new labels. Approved or rejected labels cannot be edited. Only _Pending_ labels can be edited by reviewers. New labels made by editors are automatically approved, and cannot be changed once they have been saved. Once all labels have been approved the task moves to the _Complete_ stage. 
+
+<Tip>We recommend enabling _Strict review_ on Review blocks when configuring Workflows. _Strict review_ allows reviewers to revert approved labels back to _Pending_, giving reviewers the option to make changes to new labels drawn while editing labels. </Tip>
+
+**To edit labels in review mode:**
+
+1. Click the **Edit labels** button.

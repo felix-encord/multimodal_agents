@@ -1,0 +1,7 @@
+Rejected labels
+
+If a reviewer rejects a label during the review stage, it will be marked as *Returned* in the _Queue_ pane of the _Labels_ tab. By default, rejected annotation tasks are returned and assigned to the queue of the person who submitted the task.
+
+Returned tasks are resolved in a purpose-built user interface in the _Mark as resolved_ button to mark it as resolved.
+
+Annotation tasks cannot be re-resubmitted until all issues have been marked as resolved. Once a task is re-submitted, the labels marked as resolved are sent back for an additional review. There is no limit on how many times a label can be rejected and sent back for correction.

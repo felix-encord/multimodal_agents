@@ -1,0 +1,17 @@
+Create a Preset Filter
+
+Create Presets (Preset Filters and their settings) from the _Filter_ tab in your Projects.
+
+<AccordionGroup>
+   <Accordion title="To create a Preset (Preset Filter and their settings):">
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Select **Data**, **Labels**, or **Predictions**.

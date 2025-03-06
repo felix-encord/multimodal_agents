@@ -1,0 +1,5 @@
+Interpolation
+
+Encord's interpolation feature uses a proprietary linear interpolation algorithm that runs without using a representational model or matching pixel information in neighboring frames.
+
+Our interpolation algorithm has been built with pragmatic usage in mind. For example, unlike other linear interpolation methods, Encord's interpolation algorithm does not require a matching number of vertices between objects in set keyframes. Our algorithm also allows you to draw object vertices in arbitrary directions (e.g., clockwise, counterclockwise, and otherwise).

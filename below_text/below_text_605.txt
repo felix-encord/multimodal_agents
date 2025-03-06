@@ -1,0 +1,381 @@
+<AccordionGroup>
+   <Accordion title="File Quality Metrics">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       File Size
+      </td>
+      <td>
+       Filters files (video) based on their size in bytes.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Random Value
+      </td>
+      <td>
+        Filters files (video) based on a random value assigned as the file is added to Index.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Video Quality Metrics">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       Area
+      </td>
+      <td>
+       Filters videos based on the area of the frame.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Aspect Ratio
+      </td>
+      <td>
+        Filters videos based on the aspect ratio of the video.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Clip Duration
+      </td>
+      <td>
+        Filters videos based on the duration of the video by hundredths of seconds.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Frame per Second
+      </td>
+      <td>
+        Filters videos based on the frames per second of the video.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Height
+      </td>
+      <td>
+        Filters videos based on the height of the video frame.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        No. of Video Frames
+      </td>
+      <td>
+        Filters videos based on the number of frames in the video.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Random Value
+      </td>
+      <td>
+        Filters videos based on a random value assigned as the file is added to Index.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Width
+      </td>
+      <td>
+        Filters videos based on the width of the video.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Frame Quality Metrics">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       Area
+      </td>
+      <td>
+       Filters images/video frames based on the area of the frame.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Aspect Ratio
+      </td>
+      <td>
+        Filters images/video frames based on the aspect ratio of the video.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Frame Number
+      </td>
+      <td>
+        Filters images/video frames based on the height of the video frame.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Height
+      </td>
+      <td>
+        Filters images/video frames based on the height of the video frame.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Random Value
+      </td>
+      <td>
+        Filters images/video frames based on a random value assigned as the file is added to Index.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Width
+      </td>
+      <td>
+        Filters images/video frames based on the width of the video.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+
+<AccordionGroup>
+   <Accordion title="Audio Quality Metrics">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       Bit Depth
+      </td>
+      <td>
+       Filters audio files based on the size of each sample (int) in bits.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Duration
+      </td>
+      <td>
+        Filters audio files based on the duration of the audio file by hundredths of seconds.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Number of Channels
+      </td>
+      <td>
+        Filters audio files based on number of audio channels in the audio file.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Random Value
+      </td>
+      <td>
+        Filters audio files based on a random value assigned as the file is added to Index.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Samples per Second
+      </td>
+      <td>
+        Filters audio files based on the number of samples per second.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Custom Metadata, Custom Embeddings, Key Frames">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       Custom Metadata
+      </td>
+      <td>
+       Filters files by any custom metadata available on your data.<br />
+
+       <Tip>For more information about custom metadata with Index, refer to our documentation</Tip>
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Custom Embeddings
+      </td>
+      <td>
+       Filters files by any custom embeddings available on your data.<br />
+
+       <Tip>For more information about custom embeddings with Index, refer to our documentation</Tip>
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Key Frames
+      </td>
+      <td>
+       **VIDEO ONLY** <br />
+       
+       Filters files by any key frames specified on frames in your video data.
+
+       <Note>Specifying key frames on videos significantly speeds up importing videos in to Index. <br /> Index imports videos at 1 FPS by default.</Note>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Other Filtering Criteria">
+
+<table>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+       Collection
+      </td>
+      <td>
+       Filters files by the Collection the files belong to.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Data Title
+      </td>
+      <td>
+       Filters files their file name.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Data Type
+      </td>
+      <td>
+       Filters files their file type: Video, Audio, Image, Image Group, Image Sequence, DICOM Series
+      </td>
+    </tr>
+    <tr>
+      <td>
+       File ID
+      </td>
+      <td>
+       Filters files their unique file ID.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Folder
+      </td>
+      <td>
+       Filters files by the Folders that contain the files.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Integration
+      </td>
+      <td>
+       Filters files by the Integrations that contain the files.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Mime
+      </td>
+      <td>
+       Filters files the file's Mime type.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Storage Location
+      </td>
+      <td>
+       Filters files by the storage location that contains the files.
+      </td>
+    </tr>
+    <tr>
+      <td>
+       Uploaded At
+      </td>
+      <td>
+       Filters files the time and date of their upload.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</Accordion>
+</AccordionGroup>
+
+---
+  </Step>
+  <Step title="Use Custom Analytic Dashboards">
+    You can create custom analytic dashboards using Distribution and Correlation charts. For more information on analytics dashboards, refer to our documentation.
+
+<Tip>Adding custom metadata to your data can significantly improve the insights you can gather from your data. We recommend importing customer metadata with your data, but you can import custom metadata after importing your data.</Tip>

@@ -1,0 +1,4 @@
+**To add collaborators to a Project**:
+
+1. Click the **+ Invite collaborators** button. 
+A dialog appears.

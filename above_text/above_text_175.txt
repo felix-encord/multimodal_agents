@@ -1,0 +1,7 @@
+Attributes
+
+The details pane allows you to modify attributes efficiently. For dynamic attributes, use the 'Preserve chosen state' feature. When this feature is toggled 'ON', any subsequent labels for that instance automatically inherit the same dynamic attribute value as the frame where 'Preserve chosen state' was enabled.
+
+<Tip>See our tutorial on adding attributes for a detailed guide</Tip>
+
+If you have numerous attributes, use the search bar to quickly find specific attributes or attribute values.

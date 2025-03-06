@@ -1,0 +1,5 @@
+**Labeling reconstructed views**
+
+<Note>Only Bitmask labels can be applied to reconstructed views. </Note>
+
+Labels can be applied to primary and reconstructed views. When a label is created it automatically shows up in all other views. You can change the tile currently being annotated using the _Annotate from this tile_ button, however we recommend creating labels in the main annotation window.

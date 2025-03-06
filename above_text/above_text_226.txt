@@ -1,0 +1,4 @@
+Bitmasks
+
+1. Click the **Show text outline** button to enable the feature.
+2. Press the hotkey for the bitmask, and then start labeling.

@@ -1,0 +1,3 @@
+Delete and move files and folders
+
+Right-click a file, folder, or a selection of multiple files to see the options available to you.

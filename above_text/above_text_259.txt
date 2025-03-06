@@ -1,0 +1,3 @@
+Apply to new occurrences
+
+The _Apply to new occurrences_ checkbox in the Label Editor is available for the first instance of a label with a dynamic attribute. Selecting this option propagates the attribute to all future instance labels, meaning all labels created for this instance share the attribute value of the initial instance label.

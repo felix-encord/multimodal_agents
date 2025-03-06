@@ -1,0 +1,4 @@
+5. Send the Collection to Annotate.
+
+  </Accordion>
+</AccordionGroup>

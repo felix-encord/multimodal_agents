@@ -1,0 +1,3 @@
+Creating Manual QA projects
+
+Under in the _Annotate_ section in the navigation bar, select 'Projects'. Select the **Manual QA** tab to start creating a Manual QA Project.

@@ -1,0 +1,5 @@
+Re-Interpolate
+
+Interpolation results can be improved by manually correcting some interpolated labels, and re-running the interpolation. 
+
+Enable the _Interpolation auto adjustments_ toggle in the _Drawing settings_ section of the label editor settings. This ensures that only labels with a confidence score (α) less than 100% are overwritten in successive interpolations, while manual labels (α = 100%) are kept and serve as key frames.

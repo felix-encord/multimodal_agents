@@ -1,0 +1,7 @@
+Project Overview
+
+The Project Overview dashboard has the following components that provide an overview of the Project:
+
+**Project task status overview**:
+
+Displays the number of tasks that are in each state of your workflow project. The number of states and their names reflect the choices made during workflow project creation.

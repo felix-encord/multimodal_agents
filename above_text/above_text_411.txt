@@ -1,0 +1,3 @@
+Creating templates in the _Workflows_ section
+
+Select _Workflow templates_ from the _Annotate_ section of the sidebar in the Encord platform, and click the **+ New workflow template** button. Previously created templates are visible here, and can be edited when selected.

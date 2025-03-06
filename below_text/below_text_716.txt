@@ -1,0 +1,53 @@
+Similar to duplicates, near-duplicate images are images where one image slightly differs from another due to shifts, blurriness, or distortion. Consequently, they should also be eliminated from the dataset. However, in this scenario, a decision is required to determine which sample remains and which is discarded. These images possess scores marginally greater than 0 and are displayed alongside one another in the Explorer grid view workspace, facilitating easy comparison.
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected with _Data_ selected.
+
+4. Click the _Duplicates_ shortcut under the _Overview_ tab.
+   The _Duplicates_ shortcut applies the  filter to all images in the Project. The  filter returns images with a  value between 0 and 0.0001.
+
+5. Sort the filtered data in ascending order by .
+
+6. Adjust the  filter from the default value to **0 to 0.05**.
+
+7. Examine the images in the Explorer workspace and select the images you want removed from the Project. 
+
+8. Click the **Add to a Collection** button to create a Collection.
+
+9. Click **New Collection**.
+
+   <Note>If you already have a Collection called , add the images to the existing Collection and go to _step 11_.</Note>
+
+10. Name the Collection .
+    All selected images have the tag  applied to them.
+
+11. Reset all Filters.
+
+12. Add a Collections filter that excludes .
+
+13. Select one and then all images.
+
+14. Click the **Add to a Collection** button to create a Collection.
+
+15. Click **New Collection**. 
+
+16. Specify a meaningful name for the Collection.
+
+17. Go to the _Collections_ page.
+
+18. Select the Collection that excludes . 
+
+19. Click **Create Dataset**.
+
+20. Specify a meaningful name and description for the Dataset and Project.
+
+21. Click **Submit**.
+    The Dataset and Project appear in Annotate.
+
+With these actions, users can efficiently manage near-duplicate images and improve dataset quality.

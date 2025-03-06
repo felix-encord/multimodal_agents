@@ -1,0 +1,1 @@
+button on the floating toolbar, or by pressing <kbd>alt</kbd> + <kbd>m</kbd> on your keyboard.

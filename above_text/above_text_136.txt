@@ -1,0 +1,3 @@
+Rotate the label editor
+
+Click the _Rotate toolbar_ icon at the top of the label editor to bring up a pop-up enabling you to rotate the label editor by using the slider, as shown below.

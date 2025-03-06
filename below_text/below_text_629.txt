@@ -1,0 +1,5 @@
+2. Give your Dataset a meaningful title and description. A clear title and description keeps your data organized.
+
+3. Hover over **Looking to create a mirrored dataset?** and click **Yes, proceed** to create a Mirrored Dataset.
+
+4. Click **Create dataset** to create the Dataset.

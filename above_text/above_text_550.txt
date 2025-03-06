@@ -1,0 +1,9 @@
+Label Validation and Model Optimization with Encord Active
+
+**Purpose**: Validate labels, assess data quality, and optimize model performance to deliver better results, faster.
+
+**How it works**:
+
+- Label Validation
+    - Detect and validate label errors using label, data, and model quality metrics and Encord Embeddings.
+    - Apply analytics and custom filtering to identify and correct inaccuracies in labeled datasets.

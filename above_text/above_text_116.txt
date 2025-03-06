@@ -1,0 +1,3 @@
+Switching Series in the Label Editor
+
+Use the drop-down menu in the viewport to seamlessly switch between any series in the Project.

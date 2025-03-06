@@ -1,0 +1,9 @@
+2. Expand the _Winner_ Classification.
+
+   The options for the Classification appear.
+
+3. Select the Classifications applied to the audio file.
+
+4. Press  to approve the Classifications on the audio file.
+
+5. Press the **Review from this file** icon.

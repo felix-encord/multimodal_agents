@@ -1,0 +1,5 @@
+3. Enter a title for your public key in the first field, and paste your public key in the second field. The **Create** button will become available once both fields have been populated.
+
+4. Click **Create** to add your public key to Encord. It will now be listed showing the key's name, as well as a signature that serves as a unique identifier.
+
+---

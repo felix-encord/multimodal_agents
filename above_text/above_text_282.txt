@@ -1,0 +1,16 @@
+Reopen/Reassign Consensus Annotate tasks
+
+As annotators work through their queue of annotation tasks, each task is "locked" to the annotator that first opened that specific task. The task is no longer visible to other annotators in the Project. In a Project that uses a Consensus Workflow, tasks get locked once multiple annotators (as specified by the number of annotators required to annotate a task in a Consensus block) open a specific task. All annotators must complete the annotation task before the task can move to the Review stage. Admins and Team Managers can reassign/reopen a task. Reopening the task makes the task visible to all annotators in the Project, and any annotator in the Project can then work on the task. Reassigning the task allows Admins or Team Managers to specify the annotator that works on the task.
+
+**To reopen/reassign an Annotate task:**
+
+1. Log in to Encord.
+   The Encord homepage appears.
+
+2. Go to **Annotate > Projects > Annotate projects**.
+   The _Annotate projects_ page appears.
+
+3. Click a Consensus Project from the Project list.
+   The _Summary_ page for the Project appears.
+
+4. Click the **Annotate** block with the task you want reassigned.

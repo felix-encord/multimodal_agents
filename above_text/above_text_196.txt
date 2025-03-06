@@ -1,0 +1,11 @@
+Primitives
+
+Creating a primitive (f.k.a. skeleton templates) requires an ontology with a primitive annotation type. Use primitives to templatize shapes (e.g., 3D cuboids, pose estimation skeletons ) commonly used by your annotation team.
+
+Instantiate a new primitive instance by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Instantiate existing primitive instances (i.e., primitives that should keep the same identifier in preceding or succeeding frames) by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>, <kbd>w</kbd>, <kbd>e</kbd>). See the bounding box documentation for visual instructions on how to instantiate existing primitives.
+
+Primitives can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>V</kbd> to paste it at the location of the mouse cursor on the desired frame.
+
+Primitives allow you to define properties of edges defined in your template as visible, occluded, or invisible. Toggle the edge property settings for a primitive by highlighting the primitive and clicking the *Show controls* button.

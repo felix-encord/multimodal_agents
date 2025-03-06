@@ -1,0 +1,1 @@
+You can confirm annotators and tasks are ready to go by checking the summary screen. In this case, our source Project had 4 tasks and we have 4 annotators assigned. We should expect a total of 16 tasks.

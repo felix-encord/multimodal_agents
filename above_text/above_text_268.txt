@@ -1,0 +1,7 @@
+Delete Ontology
+
+Use the _Danger zone_ pane to delete an Ontology.
+
+<Note>Ontologies that are attached to one or more Project cannot be deleted. To delete an Ontology, it has to be removed from all Projects it is attached to.</Note>
+
+<Warning>Note that deletion is a permanent action, and deleted Ontologies cannot be restored.</Warning>

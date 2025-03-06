@@ -1,0 +1,11 @@
+3. Click **Reset password**.
+   An email containing a secure link for resetting your password is sent to the email address you provided. 
+
+4. Open your email inbox and open the email with the subject _Reset your Encord password_ sent by info@encord.com. 
+
+5. Click the **Reset my password** button in the email.
+   A new page opens in your browser.
+
+6. Enter a new password for your Encord account. Re-enter the password to confirm your new password. 
+
+7. Click **Submit**.

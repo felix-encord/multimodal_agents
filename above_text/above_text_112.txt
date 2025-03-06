@@ -1,0 +1,9 @@
+Multiplanar Reconstruction (MPR)
+
+Encord's MPR display reconstructs 2D orthogonal images (coronal, sagittal, axial) for enhanced visualization, analysis, and annotation of anatomy. Annotations made in the one view automatically appear in all other views, and cross-reference lines are projected across all three views, assisting with precise anatomy annotation. 
+
+MPR views are toggled on or off in the DICOM editor settings. 
+
+<Tip>All reconstructed views can be rendered in 3D.</Tip>
+
+By default, the primary view is shown in the main annotation window on the left of the Label Editor, and reconstructed images are shown in smaller windows on the right. Use the MPR dropdown to switch between different views in any window - the primary view is always clearly labeled with the word **PRIMARY**.

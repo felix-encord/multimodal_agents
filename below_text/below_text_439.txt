@@ -1,0 +1,9 @@
+The dashboard is split into the following tabs:
+
+- **Project Overview**: High-level view of labeling and productivity statistics.
+- **Explore**: Explore the distribution of instances and labels across data assets in the project.
+- **Queue**: Shows all tasks in the Project by Workflow stage.
+- **Workflow**: Graphically displays the path tasks follow through the Project Workflow.
+- **Labels & Export**: For managing all the Project's labels, including exporting labels.
+- **Analytics**: Detailed Project analytics.
+- **Settings**: Manage your Project Settings, including copying Projects, managing Project tags, customizing editor layouts, and deleting Projects.

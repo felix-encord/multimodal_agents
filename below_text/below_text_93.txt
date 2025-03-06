@@ -1,0 +1,11 @@
+The _Label display_ section of the _Label editor settings_ contains the following components:
+
+| Feature                          | Description |
+|----------------------------------|-------------|
+| **Display object names**         | Toggles visibility of annotation object names in the Label Editor. |
+| **Display object hash**          | Toggles visibility of the label hash (ID) for annotation objects. |
+| **Display object classifications** | Toggles visibility of object attributes in the Label Editor. |
+| **Object label font size**       | Sets the font size (in px) for all label display settings. |
+
+
+---

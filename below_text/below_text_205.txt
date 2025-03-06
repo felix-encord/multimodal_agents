@@ -1,0 +1,5 @@
+Encord currently supports radio, checklist, and free-form text input classification types.
+
+Edit existing classification instances by clicking on the _Plus_ icon for the specified instance in the 'Classifications' pane in the 'All instances' section.
+
+---

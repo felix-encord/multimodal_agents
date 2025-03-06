@@ -1,0 +1,5 @@
+Metric Distribution
+
+Data and label metric or property distributions can be visualized by using _Metric or Property_ drop-down menu within the _Metric Distribution_ section of the _Analytics_ page.
+
+**Data**

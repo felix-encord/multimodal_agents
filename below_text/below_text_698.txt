@@ -1,0 +1,20 @@
+7. Specify meaningful content for the following:
+
+   - Dataset Title
+   
+   - Dataset Description
+
+8. Select **Split image groups/sequences** to extract images from the groups or sequences and add each image separately to the Dataset, if your Collection includes images from a group or sequence.
+
+9. Select **Create Project** to create an Annotate Project with the Dataset attached and then provide meaningful content for the following:
+
+   - Project Title
+   
+   - Project Description
+
+10. Select **Reuse ontology of the current project** to use the Ontology of the current Annotate Project in the new project.
+
+11. Click **Create**.
+   The _Subset created successfully_ dialog appears once creation completes.
+
+<Note>After annotating the data, sync the Project data between Annotate and Active. To sync the Project data go to **Active > [select the project] > click More > Sync Project Data**.</Note>

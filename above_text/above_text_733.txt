@@ -1,0 +1,5 @@
+Active support deleting all labels from data units in a Label Collection.
+
+<Warning>Deleting all labels on data units in a Label Collection **CANNOT BE UNDONE**.</Warning>
+
+<Tip>Use the **Display** settings to help find labels that require action.</Tip>

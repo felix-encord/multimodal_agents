@@ -1,0 +1,5 @@
+Customizing templates 
+
+You can customize/edit a Workflow template to suit a project's specific needs. 
+
+Click the **Save as a new template** button after customizing/editing a template to create a new template.

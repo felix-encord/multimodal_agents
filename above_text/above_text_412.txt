@@ -1,0 +1,5 @@
+Creating templates during Project creation
+
+New templates can be created during the creation of a new annotation Project. 
+
+Once a Workflow has been created, click the **Save as template** button to save the Workflow as a template.

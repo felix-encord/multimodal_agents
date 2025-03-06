@@ -1,0 +1,7 @@
+- **1** - Patient ID
+- **2** - Study ID
+- **3** - Series title
+
+Click a Series title to open the series in the Label Editor.
+
+<Tip>If the _Study level Classifications_ toggle in the Project's Settings is Enabled you can click the Study ID to apply Classifications to the entire study.</Tip>

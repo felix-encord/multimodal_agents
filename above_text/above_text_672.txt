@@ -1,0 +1,5 @@
+Prediction Branches
+
+When importing prediction sets into Encord Active, they are added as branches to individual label rows on your data units (images, videos, audio). Each data unit has the following:
+- A MAIN branch for ground truth annotations or pre-labels.
+- Optional Consensus branches and Prediction branches for different prediction sets.

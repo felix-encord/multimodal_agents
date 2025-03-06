@@ -1,0 +1,15 @@
+User permissions for Folders are configured by selecting a Folder in **Files**. Click **Manage access** after selecting a Folder to add or remove users from the Folder. 
+
+<Note>Only users that are a part of your Organization can be added to your Folders.</Note>
+
+Users added to your Folders have access to all files in the Folder.
+
+<center>
+
+| Permission      | Admin | Viewer |
+|-----------------|-------|--------|
+| View Folder     | ✅     | ✅     |
+| Add data        | ✅     | ❌     |
+| Adjust settings | ✅     | ❌     |
+
+</center>

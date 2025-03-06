@@ -1,0 +1,4 @@
+6. Ensure you save the classification. 
+The classification appears in the list of all labels on the left side of the Label Editor.
+
+---

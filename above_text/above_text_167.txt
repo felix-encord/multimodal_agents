@@ -1,0 +1,7 @@
+Skip or Submit labels
+
+**Submit tasks**
+
+Labels are applied in the Label Editor. Click the **Submit** button to submit your labels for review. 
+
+<Note>All issues need to be resolved before a task can be submitted.</Note>

@@ -1,0 +1,3 @@
+Editor Timeline 
+
+The Editor timeline is a visualization of the times and durations at which objects and instances appear within a video. Every object added by an annotator will automatically appear on the timeline at the point in time when it is added. The colors of an object on the timeline match those used to label the objects in the video.

@@ -1,0 +1,7 @@
+Add collaborators as a group
+
+<Note>To add collaborators as a group, your organization needs to have user groups. Navigate to our documentation on creating user groups for more information.</Note>
+
+Collaborators can be added to a project as a group - which can save time as well as ensure that no individual is forgotten.
+
+In the 'Groups' section of the page, click on **Manage** to make the 'Manage Groups' pop-up appear.

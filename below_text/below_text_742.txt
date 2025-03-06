@@ -1,0 +1,40 @@
+6. Click the Expand image icon.
+   A larger view of the image appears.
+
+7. Click **Comments**.
+   The _Comments_ tab appears.
+
+8. Provide a comment.
+
+9. Add/remove the frame/image to/from a Collection.
+
+10. View the frame/image in Annotate.
+
+11. Perform a similarity search on the image/frame.
+
+12. Add comments to other frames/images as needed.
+
+13. Add those frames/images to the Collection.
+
+14. Send the Collection to Annotate.
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="To add comments to a Collection:">
+
+Comments made when sending a Collection to Annotate appear in every frame in a Collection. 
+
+1. Log in to the Encord platform.
+   The Encord UI appears.
+
+2. Click **Active**.
+   The Active home page appears with all available Projects appearing in the home page.
+
+   <Note>If no Projects appear on the Active home page, import a Project from Annotate.</Note>
+
+3. Click a Project.
+   The Project workspace appears with the _Explorer_ page displaying.
+
+4. Create a Collection.

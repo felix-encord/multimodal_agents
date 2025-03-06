@@ -1,0 +1,13 @@
+6. Select the checkbox for the Collection to create a Dataset.\
+
+7. Click **Add to Dataset**.
+   The _Add to Dataset_ dialog appears.
+
+8. Specify meaningful content for the following:
+
+   - Dataset Title
+   
+   - Dataset Description
+
+9. Click **Submit**.
+   The _Subset created successfully_ dialog appears once creation completes.

@@ -1,0 +1,10 @@
+Uploading Local Data to Files
+
+<Info>
+Any files you upload to Encord must be stored in folders. Click here to learn how to create a folder to store your files.
+</Info>
+
+1. Navigate to _Files_ under the _Index_ heading in the Encord platform.
+2. Click the **+Upload files** button 
+
+<Tip>You can also right-click a folder to add data.</Tip>

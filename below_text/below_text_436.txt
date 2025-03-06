@@ -1,0 +1,1 @@
+Creating labels in a training Project is identical to creating labels in any other Project. Guide your team to the Label Editor documentation to get them started. Once an annotator submits a task, it can not be re-opened.

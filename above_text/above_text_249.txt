@@ -1,0 +1,5 @@
+Ontologies are hierarchical structures that define the top-level concepts and categories in your data, along with nested attributes for detailed annotations. They consist of _Classes_ at the top level, which can be either _Objects_ or _Classifications_.
+
+- **Objects**: Used to label specific locations in a frame, such as a car in a video frame.
+- **Classifications**: Frame-level labels that do not have a specific location, such as indicating if an image is taken during the day or night.
+- **Attributes**: These can be nested under objects, classifications, or other attributes to create detailed, hierarchical structures. For example, the object "horse" can have an attribute "color".

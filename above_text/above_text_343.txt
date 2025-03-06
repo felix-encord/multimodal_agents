@@ -1,0 +1,3 @@
+Task distribution
+
+Annotation and review tasks are distributed automatically using the first in-first out method (illustrated below) - tasks that have been in the queue the longest are served first. Once an annotator or reviewer clicks on the **Start labeling** or **Start reviewing** button, the next available free task in the queue is reserved by that individual, prohibiting other team members from accessing the task. Once the task is fetched, the annotator or reviewer is taken to the <a href="/platform-documentation/Annotate/annotate-label-editor">label editor</a> to complete the task.

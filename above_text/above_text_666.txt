@@ -1,0 +1,10 @@
+Custom Metadata in Active
+
+Once your custom metadata is included your files or label rows, you can create Collections based on your custom metadata and then send those Collections to Annotate.
+
+1. Import your Project that has custom metadata.
+
+2. Open the Project in Active once import completes.  
+   The Project opens with the Explorer page displaying.
+
+3. Filter the Project _Data_, _Labels_, or _Predictions_ in the Explorer using a Custom Metadata filter.

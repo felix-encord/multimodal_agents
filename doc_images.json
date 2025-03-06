@@ -1,0 +1,4668 @@
+{
+    "images": [
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/aws-lambda-container.png",
+            "title": "aws-lambda-container.png",
+            "clientMetadata": {
+                "id": "0",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/create-object-detection.png",
+            "title": "create-object-detection.png",
+            "clientMetadata": {
+                "id": "1",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/automated-labeling.png",
+            "title": "automated-labeling.png",
+            "clientMetadata": {
+                "id": "2",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/run-model.png",
+            "title": "run-model.png",
+            "clientMetadata": {
+                "id": "3",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/create-classification.png",
+            "title": "create-classification.png",
+            "clientMetadata": {
+                "id": "4",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/automated-labeling.png",
+            "title": "automated-labeling.png",
+            "clientMetadata": {
+                "id": "5",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/classification-model.png",
+            "title": "classification-model.png",
+            "clientMetadata": {
+                "id": "6",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/create-model-new.png",
+            "title": "create-model-new.png",
+            "clientMetadata": {
+                "id": "7",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/setting-up-model.png",
+            "title": "setting-up-model.png",
+            "clientMetadata": {
+                "id": "8",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/train-model-2.png",
+            "title": "train-model-2.png",
+            "clientMetadata": {
+                "id": "9",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/set-up-model-for-training.png",
+            "title": "set-up-model-for-training.png",
+            "clientMetadata": {
+                "id": "10",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/set-up-model-for-training.png",
+            "title": "set-up-model-for-training.png",
+            "clientMetadata": {
+                "id": "11",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/delete-model.png",
+            "title": "delete-model.png",
+            "clientMetadata": {
+                "id": "12",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/attach-model.png",
+            "title": "attach-model.png",
+            "clientMetadata": {
+                "id": "13",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/attaching-model-2.png",
+            "title": "attaching-model-2.png",
+            "clientMetadata": {
+                "id": "14",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/detach-model.png",
+            "title": "detach-model.png",
+            "clientMetadata": {
+                "id": "15",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/model-weight-download.png",
+            "title": "model-weight-download.png",
+            "clientMetadata": {
+                "id": "16",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/annotate-settings.png",
+            "title": "annotate-settings.png",
+            "clientMetadata": {
+                "id": "17",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/annotate-settings-mfa.png",
+            "title": "annotate-settings-mfa.png",
+            "clientMetadata": {
+                "id": "18",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/encord-mfa-02.png",
+            "title": "encord-mfa-02.png",
+            "clientMetadata": {
+                "id": "19",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/encord-mfa-totp.png",
+            "title": "encord-mfa-totp.png",
+            "clientMetadata": {
+                "id": "20",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/encord-mfa-03.png",
+            "title": "encord-mfa-03.png",
+            "clientMetadata": {
+                "id": "21",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/mfa-sms.png",
+            "title": "mfa-sms.png",
+            "clientMetadata": {
+                "id": "22",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/annotate-settings-encord-labs.png",
+            "title": "annotate-settings-encord-labs.png",
+            "clientMetadata": {
+                "id": "23",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/annotate.png",
+            "title": "annotate.png",
+            "clientMetadata": {
+                "id": "24",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/process-chart-ea.webp",
+            "title": "process-chart-ea.webp",
+            "clientMetadata": {
+                "id": "25",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/forgot-password.png",
+            "title": "forgot-password.png",
+            "clientMetadata": {
+                "id": "26",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/frogot-password-2.png",
+            "title": "frogot-password-2.png",
+            "clientMetadata": {
+                "id": "27",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/reset-password.png",
+            "title": "reset-password.png",
+            "clientMetadata": {
+                "id": "28",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-001.png",
+            "title": "dns-issue-win-10-001.png",
+            "clientMetadata": {
+                "id": "29",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-002.png",
+            "title": "dns-issue-win-10-002.png",
+            "clientMetadata": {
+                "id": "30",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win10-003-01.png",
+            "title": "dns-issue-win10-003-01.png",
+            "clientMetadata": {
+                "id": "31",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-004.png",
+            "title": "dns-issue-win-10-004.png",
+            "clientMetadata": {
+                "id": "32",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-001.png",
+            "title": "dns-issue-win-11-001.png",
+            "clientMetadata": {
+                "id": "33",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-002-01.png",
+            "title": "dns-issue-win-11-002-01.png",
+            "clientMetadata": {
+                "id": "34",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-003.png",
+            "title": "dns-issue-win-11-003.png",
+            "clientMetadata": {
+                "id": "35",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-001.png",
+            "title": "dns-issue-macos-001.png",
+            "clientMetadata": {
+                "id": "36",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-002.png",
+            "title": "dns-issue-macos-002.png",
+            "clientMetadata": {
+                "id": "37",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-003.png",
+            "title": "dns-issue-macos-003.png",
+            "clientMetadata": {
+                "id": "38",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-004.png",
+            "title": "dns-issue-macos-004.png",
+            "clientMetadata": {
+                "id": "39",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-005.png",
+            "title": "dns-issue-macos-005.png",
+            "clientMetadata": {
+                "id": "40",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-006.png",
+            "title": "dns-issue-macos-006.png",
+            "clientMetadata": {
+                "id": "41",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-007.png",
+            "title": "dns-issue-macos-007.png",
+            "clientMetadata": {
+                "id": "42",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-008.png",
+            "title": "dns-issue-macos-008.png",
+            "clientMetadata": {
+                "id": "43",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-009.png",
+            "title": "dns-issue-macos-009.png",
+            "clientMetadata": {
+                "id": "44",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos-010.png",
+            "title": "dns-issue-macos-010.png",
+            "clientMetadata": {
+                "id": "45",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-001.png",
+            "title": "dns-issue-macos2-001.png",
+            "clientMetadata": {
+                "id": "46",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-002.png",
+            "title": "dns-issue-macos2-002.png",
+            "clientMetadata": {
+                "id": "47",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-003.png",
+            "title": "dns-issue-macos2-003.png",
+            "clientMetadata": {
+                "id": "48",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-004.png",
+            "title": "dns-issue-macos2-004.png",
+            "clientMetadata": {
+                "id": "49",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-005.png",
+            "title": "dns-issue-macos2-005.png",
+            "clientMetadata": {
+                "id": "50",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-006.png",
+            "title": "dns-issue-macos2-006.png",
+            "clientMetadata": {
+                "id": "51",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-007.png",
+            "title": "dns-issue-macos2-007.png",
+            "clientMetadata": {
+                "id": "52",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-008.png",
+            "title": "dns-issue-macos2-008.png",
+            "clientMetadata": {
+                "id": "53",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-009.png",
+            "title": "dns-issue-macos2-009.png",
+            "clientMetadata": {
+                "id": "54",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-010.png",
+            "title": "dns-issue-macos2-010.png",
+            "clientMetadata": {
+                "id": "55",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-macos2-011.png",
+            "title": "dns-issue-macos2-011.png",
+            "clientMetadata": {
+                "id": "56",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/FlowChart.png",
+            "title": "FlowChart.png",
+            "clientMetadata": {
+                "id": "57",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-001.png",
+            "title": "dns-issue-win-10-001.png",
+            "clientMetadata": {
+                "id": "58",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-002.png",
+            "title": "dns-issue-win-10-002.png",
+            "clientMetadata": {
+                "id": "59",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-003.png",
+            "title": "dns-issue-win-10-003.png",
+            "clientMetadata": {
+                "id": "60",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-10-004.png",
+            "title": "dns-issue-win-10-004.png",
+            "clientMetadata": {
+                "id": "61",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-001.png",
+            "title": "dns-issue-win-11-001.png",
+            "clientMetadata": {
+                "id": "62",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-002.png",
+            "title": "dns-issue-win-11-002.png",
+            "clientMetadata": {
+                "id": "63",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/faq/dns-issue-win-11-003.png",
+            "title": "dns-issue-win-11-003.png",
+            "clientMetadata": {
+                "id": "64",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/create-instance-segmentation.png",
+            "title": "create-instance-segmentation.png",
+            "clientMetadata": {
+                "id": "65",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/automated-labeling.png",
+            "title": "automated-labeling.png",
+            "clientMetadata": {
+                "id": "66",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/using-instance-segmentation.png",
+            "title": "using-instance-segmentation.png",
+            "clientMetadata": {
+                "id": "67",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflow-webhook.png",
+            "title": "workflow-webhook.png",
+            "clientMetadata": {
+                "id": "68",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/notifications-tab.png",
+            "title": "notifications-tab.png",
+            "clientMetadata": {
+                "id": "69",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/notification-new-1.png",
+            "title": "notification-new-1.png",
+            "clientMetadata": {
+                "id": "70",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/notification-new-2.png",
+            "title": "notification-new-2.png",
+            "clientMetadata": {
+                "id": "71",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/notification-new-3.png",
+            "title": "notification-new-3.png",
+            "clientMetadata": {
+                "id": "72",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/slack-channel-add.png",
+            "title": "slack-channel-add.png",
+            "clientMetadata": {
+                "id": "73",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admins/settings/notifications/notification-new-4.png",
+            "title": "notification-new-4.png",
+            "clientMetadata": {
+                "id": "74",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/public-key-screen.png",
+            "title": "public-key-screen.png",
+            "clientMetadata": {
+                "id": "75",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-key-button.png",
+            "title": "add-key-button.png",
+            "clientMetadata": {
+                "id": "76",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/register-public-key.png",
+            "title": "register-public-key.png",
+            "clientMetadata": {
+                "id": "77",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/public-key-screen.png",
+            "title": "public-key-screen.png",
+            "clientMetadata": {
+                "id": "78",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/prepopulated-hanging-protocol-views.png",
+            "title": "prepopulated-hanging-protocol-views.png",
+            "clientMetadata": {
+                "id": "79",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/default-layout-button.png",
+            "title": "default-layout-button.png",
+            "clientMetadata": {
+                "id": "81",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/auto-layout-highlight.png",
+            "title": "auto-layout-highlight.png",
+            "clientMetadata": {
+                "id": "82",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/2x2mammo.png",
+            "title": "2x2mammo.png",
+            "clientMetadata": {
+                "id": "83",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/4x1mammo.png",
+            "title": "4x1mammo.png",
+            "clientMetadata": {
+                "id": "84",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/editor-set.png",
+            "title": "editor-set.png",
+            "clientMetadata": {
+                "id": "86",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/dicom-editor-settings.png",
+            "title": "dicom-editor-settings.png",
+            "clientMetadata": {
+                "id": "87",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/study-level-classifications.png",
+            "title": "study-level-classifications.png",
+            "clientMetadata": {
+                "id": "88",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/start-labeling.png",
+            "title": "start-labeling.png",
+            "clientMetadata": {
+                "id": "89",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/apply-study-classification.png",
+            "title": "apply-study-classification.png",
+            "clientMetadata": {
+                "id": "90",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/editor-settings.png",
+            "title": "editor-settings.png",
+            "clientMetadata": {
+                "id": "91",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/general-settings-1.png",
+            "title": "general-settings-1.png",
+            "clientMetadata": {
+                "id": "92",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/label-display-settings.png",
+            "title": "label-display-settings.png",
+            "clientMetadata": {
+                "id": "93",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/drawing-settings-new.png",
+            "title": "drawing-settings-new.png",
+            "clientMetadata": {
+                "id": "94",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/overview/reviewer-view.png",
+            "title": "reviewer-view.png",
+            "clientMetadata": {
+                "id": "95",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/zoom-level-single-label-review.png",
+            "title": "zoom-level-single-label-review.png",
+            "clientMetadata": {
+                "id": "97",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/edit-review.png",
+            "title": "edit-review.png",
+            "clientMetadata": {
+                "id": "98",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/edit-labels-2.png",
+            "title": "edit-labels-2.png",
+            "clientMetadata": {
+                "id": "99",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/strict-review-label-editor.png",
+            "title": "strict-review-label-editor.png",
+            "clientMetadata": {
+                "id": "100",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/dicom_ui.png",
+            "title": "dicom_ui.png",
+            "clientMetadata": {
+                "id": "101",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/dicom-frameskip-interval.png",
+            "title": "dicom-frameskip-interval.png",
+            "clientMetadata": {
+                "id": "103",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/deeplink-dicom.png",
+            "title": "deeplink-dicom.png",
+            "clientMetadata": {
+                "id": "107",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/dicom_1.png",
+            "title": "dicom_1.png",
+            "clientMetadata": {
+                "id": "108",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/voi-lut-function.png",
+            "title": "voi-lut-function.png",
+            "clientMetadata": {
+                "id": "111",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/mpr-views-switch.png",
+            "title": "mpr-views-switch.png",
+            "clientMetadata": {
+                "id": "112",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/mpr-labels.png",
+            "title": "mpr-labels.png",
+            "clientMetadata": {
+                "id": "113",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/turn-off-mpr.png",
+            "title": "turn-off-mpr.png",
+            "clientMetadata": {
+                "id": "114",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/dicom-dropdown-navigation.png",
+            "title": "dicom-dropdown-navigation.png",
+            "clientMetadata": {
+                "id": "116",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/view-multiple-series.png",
+            "title": "view-multiple-series.png",
+            "clientMetadata": {
+                "id": "117",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/default-layout-button.png",
+            "title": "default-layout-button.png",
+            "clientMetadata": {
+                "id": "121",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/auto-layout-highlight.png",
+            "title": "auto-layout-highlight.png",
+            "clientMetadata": {
+                "id": "122",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/meatdata-sequence.png",
+            "title": "meatdata-sequence.png",
+            "clientMetadata": {
+                "id": "124",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/dicom-metadata-private.png",
+            "title": "dicom-metadata-private.png",
+            "clientMetadata": {
+                "id": "125",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/dicom-metadata-standard.png",
+            "title": "dicom-metadata-standard.png",
+            "clientMetadata": {
+                "id": "126",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/dicom-custom-overlay-1.png",
+            "title": "dicom-custom-overlay-1.png",
+            "clientMetadata": {
+                "id": "128",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/custom-overlay-2.png",
+            "title": "custom-overlay-2.png",
+            "clientMetadata": {
+                "id": "129",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/custom-overlay-3.png",
+            "title": "custom-overlay-3.png",
+            "clientMetadata": {
+                "id": "130",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/prepopulated-hanging-protocol-views.png",
+            "title": "prepopulated-hanging-protocol-views.png",
+            "clientMetadata": {
+                "id": "131",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/editor-switch-icon.png",
+            "title": "editor-switch-icon.png",
+            "clientMetadata": {
+                "id": "132",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/multiple-series-view-with-annotation.png",
+            "title": "multiple-series-view-with-annotation.png",
+            "clientMetadata": {
+                "id": "133",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/view-full-study.png",
+            "title": "view-full-study.png",
+            "clientMetadata": {
+                "id": "134",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/hide-full-study.png",
+            "title": "hide-full-study.png",
+            "clientMetadata": {
+                "id": "135",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/dicom-measure-distance-button.png",
+            "title": "dicom-measure-distance-button.png",
+            "clientMetadata": {
+                "id": "137",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/dicom-toolbar-measure-distance.png",
+            "title": "dicom-toolbar-measure-distance.png",
+            "clientMetadata": {
+                "id": "138",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/overview/header-icons/settings-icon.png",
+            "title": "settings-icon.png",
+            "clientMetadata": {
+                "id": "141",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/overview/header-icons/settings-icon.png",
+            "title": "settings-icon.png",
+            "clientMetadata": {
+                "id": "144",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/overview/header-icons/settings-icon.png",
+            "title": "settings-icon.png",
+            "clientMetadata": {
+                "id": "146",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/dicom/dicom-primitives.png",
+            "title": "dicom-primitives.png",
+            "clientMetadata": {
+                "id": "149",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/bitmasks.png",
+            "title": "bitmasks.png",
+            "clientMetadata": {
+                "id": "150",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/cylinder-brush.png",
+            "title": "cylinder-brush.png",
+            "clientMetadata": {
+                "id": "151",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/cylinder-brush-workflow.png",
+            "title": "cylinder-brush-workflow.png",
+            "clientMetadata": {
+                "id": "152",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/panoptic-bitmask-dicom.png",
+            "title": "panoptic-bitmask-dicom.png",
+            "clientMetadata": {
+                "id": "153",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/thresholding-dark.png",
+            "title": "thresholding-dark.png",
+            "clientMetadata": {
+                "id": "154",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/polygon-bitmask.png",
+            "title": "polygon-bitmask.png",
+            "clientMetadata": {
+                "id": "155",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/overlap-settings.png",
+            "title": "overlap-settings.png",
+            "clientMetadata": {
+                "id": "157",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/can-be-drawn-over.png",
+            "title": "can-be-drawn-over.png",
+            "clientMetadata": {
+                "id": "158",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/cant-be-drawn-over.png",
+            "title": "cant-be-drawn-over.png",
+            "clientMetadata": {
+                "id": "159",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/must-be-drawn-over.png",
+            "title": "must-be-drawn-over.png",
+            "clientMetadata": {
+                "id": "160",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/editor-set.png",
+            "title": "editor-set.png",
+            "clientMetadata": {
+                "id": "163",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/overview/annotator-overview.png",
+            "title": "annotator-overview.png",
+            "clientMetadata": {
+                "id": "164",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/overview/delete-operations.png",
+            "title": "delete-operations.png",
+            "clientMetadata": {
+                "id": "166",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/skip-and-submit.png",
+            "title": "skip-and-submit.png",
+            "clientMetadata": {
+                "id": "167",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/skip-task.png",
+            "title": "skip-task.png",
+            "clientMetadata": {
+                "id": "168",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/skip-reason.png",
+            "title": "skip-reason.png",
+            "clientMetadata": {
+                "id": "169",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/annotation-instructions.png",
+            "title": "annotation-instructions.png",
+            "clientMetadata": {
+                "id": "170",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/confidence-model.png",
+            "title": "confidence-model.png",
+            "clientMetadata": {
+                "id": "171",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/labels-pane.png",
+            "title": "labels-pane.png",
+            "clientMetadata": {
+                "id": "172",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/instances-tab-more-actions.png",
+            "title": "instances-tab-more-actions.png",
+            "clientMetadata": {
+                "id": "173",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/attribute-search.png",
+            "title": "attribute-search.png",
+            "clientMetadata": {
+                "id": "175",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/eraser-tool.png",
+            "title": "eraser-tool.png",
+            "clientMetadata": {
+                "id": "177",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/bitmasks.png",
+            "title": "bitmasks.png",
+            "clientMetadata": {
+                "id": "197",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/panoptic-bitmask.png",
+            "title": "panoptic-bitmask.png",
+            "clientMetadata": {
+                "id": "198",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/thresholding-light.png",
+            "title": "thresholding-light.png",
+            "clientMetadata": {
+                "id": "199",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/overlap-settings.png",
+            "title": "overlap-settings.png",
+            "clientMetadata": {
+                "id": "200",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/can-be-drawn-over.png",
+            "title": "can-be-drawn-over.png",
+            "clientMetadata": {
+                "id": "201",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/cant-be-drawn-over.png",
+            "title": "cant-be-drawn-over.png",
+            "clientMetadata": {
+                "id": "202",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/must-be-drawn-over.png",
+            "title": "must-be-drawn-over.png",
+            "clientMetadata": {
+                "id": "203",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/keypoint-based-attribute-propagation1.png",
+            "title": "keypoint-based-attribute-propagation1.png",
+            "clientMetadata": {
+                "id": "207",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-keypoint-icon.png",
+            "title": "add-keypoint-icon.png",
+            "clientMetadata": {
+                "id": "208",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/remove-keypoint-icon.png",
+            "title": "remove-keypoint-icon.png",
+            "clientMetadata": {
+                "id": "209",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/editor-timeline.png",
+            "title": "editor-timeline.png",
+            "clientMetadata": {
+                "id": "210",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/zoom-and-sort-timeline.png",
+            "title": "zoom-and-sort-timeline.png",
+            "clientMetadata": {
+                "id": "213",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/select-timeline.png",
+            "title": "select-timeline.png",
+            "clientMetadata": {
+                "id": "214",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-1.png",
+            "title": "link-attrib-1.png",
+            "clientMetadata": {
+                "id": "216",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-3.png",
+            "title": "link-attrib-3.png",
+            "clientMetadata": {
+                "id": "217",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-4.png",
+            "title": "link-attrib-4.png",
+            "clientMetadata": {
+                "id": "218",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/study-level-workflow.png",
+            "title": "study-level-workflow.png",
+            "clientMetadata": {
+                "id": "220",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/start-label-study.png",
+            "title": "start-label-study.png",
+            "clientMetadata": {
+                "id": "221",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/submit-study-clas.png",
+            "title": "submit-study-clas.png",
+            "clientMetadata": {
+                "id": "222",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/transcription-pane.png",
+            "title": "transcription-pane.png",
+            "clientMetadata": {
+                "id": "228",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/image_1.png",
+            "title": "image_1.png",
+            "clientMetadata": {
+                "id": "229",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/bounding-box.png",
+            "title": "bounding-box.png",
+            "clientMetadata": {
+                "id": "230",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/polygons-and-polylines.png",
+            "title": "polygons-and-polylines.png",
+            "clientMetadata": {
+                "id": "231",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/keypoints-in-image-dataset.png",
+            "title": "keypoints-in-image-dataset.png",
+            "clientMetadata": {
+                "id": "232",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/primitives.png",
+            "title": "primitives.png",
+            "clientMetadata": {
+                "id": "233",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/bitmasks.png",
+            "title": "bitmasks.png",
+            "clientMetadata": {
+                "id": "234",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/panoptic-bitmask.png",
+            "title": "panoptic-bitmask.png",
+            "clientMetadata": {
+                "id": "235",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/thresholding-light.png",
+            "title": "thresholding-light.png",
+            "clientMetadata": {
+                "id": "236",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/overlap-settings.png",
+            "title": "overlap-settings.png",
+            "clientMetadata": {
+                "id": "237",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/can-be-drawn-over.png",
+            "title": "can-be-drawn-over.png",
+            "clientMetadata": {
+                "id": "238",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/cant-be-drawn-over.png",
+            "title": "cant-be-drawn-over.png",
+            "clientMetadata": {
+                "id": "239",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/must-be-drawn-over.png",
+            "title": "must-be-drawn-over.png",
+            "clientMetadata": {
+                "id": "240",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/classifications.png",
+            "title": "classifications.png",
+            "clientMetadata": {
+                "id": "242",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-1.png",
+            "title": "link-attrib-1.png",
+            "clientMetadata": {
+                "id": "243",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-3.png",
+            "title": "link-attrib-3.png",
+            "clientMetadata": {
+                "id": "244",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-4.png",
+            "title": "link-attrib-4.png",
+            "clientMetadata": {
+                "id": "245",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/real-pixel-value-formula.png",
+            "title": "real-pixel-value-formula.png",
+            "clientMetadata": {
+                "id": "246",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-export-screen.png",
+            "title": "workflows-export-screen.png",
+            "clientMetadata": {
+                "id": "247",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/export-notification-1.png",
+            "title": "export-notification-1.png",
+            "clientMetadata": {
+                "id": "248",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/ontology_nested_preview-callout.png",
+            "title": "ontology_nested_preview-callout.png",
+            "clientMetadata": {
+                "id": "249",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/classification_annotation_types.png",
+            "title": "classification_annotation_types.png",
+            "clientMetadata": {
+                "id": "250",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/click_nested_configure-callout.png",
+            "title": "click_nested_configure-callout.png",
+            "clientMetadata": {
+                "id": "251",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/top-level-required.png",
+            "title": "top-level-required.png",
+            "clientMetadata": {
+                "id": "252",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/required-warning.png",
+            "title": "required-warning.png",
+            "clientMetadata": {
+                "id": "253",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/classification_dynamic-callout.png",
+            "title": "classification_dynamic-callout.png",
+            "clientMetadata": {
+                "id": "254",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/relation-attribute-2.png",
+            "title": "relation-attribute-2.png",
+            "clientMetadata": {
+                "id": "255",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-1.png",
+            "title": "link-attrib-1.png",
+            "clientMetadata": {
+                "id": "256",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-3.png",
+            "title": "link-attrib-3.png",
+            "clientMetadata": {
+                "id": "257",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-4.png",
+            "title": "link-attrib-4.png",
+            "clientMetadata": {
+                "id": "258",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/apply-to-new-occurences.png",
+            "title": "apply-to-new-occurences.png",
+            "clientMetadata": {
+                "id": "259",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/transcription-ontology.png",
+            "title": "transcription-ontology.png",
+            "clientMetadata": {
+                "id": "260",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/json-structure-preview.png",
+            "title": "json-structure-preview.png",
+            "clientMetadata": {
+                "id": "261",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/ontology-options.png",
+            "title": "ontology-options.png",
+            "clientMetadata": {
+                "id": "262",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-collabortors-ontology.png",
+            "title": "add-collabortors-ontology.png",
+            "clientMetadata": {
+                "id": "263",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-collaborators-ontology-2.png",
+            "title": "add-collaborators-ontology-2.png",
+            "clientMetadata": {
+                "id": "264",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/chane-role-ontology.png",
+            "title": "chane-role-ontology.png",
+            "clientMetadata": {
+                "id": "265",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/ontologies-object-primitive-labelled.png",
+            "title": "ontologies-object-primitive-labelled.png",
+            "clientMetadata": {
+                "id": "266",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontolo-linked-projects.png",
+            "title": "ontolo-linked-projects.png",
+            "clientMetadata": {
+                "id": "267",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/cant-delete-ontology.png",
+            "title": "cant-delete-ontology.png",
+            "clientMetadata": {
+                "id": "268",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admin-join-ontology.png",
+            "title": "admin-join-ontology.png",
+            "clientMetadata": {
+                "id": "269",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/create-object-detection.png",
+            "title": "create-object-detection.png",
+            "clientMetadata": {
+                "id": "270",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/automated-labeling.png",
+            "title": "automated-labeling.png",
+            "clientMetadata": {
+                "id": "271",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/run-model.png",
+            "title": "run-model.png",
+            "clientMetadata": {
+                "id": "272",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/create-classification.png",
+            "title": "create-classification.png",
+            "clientMetadata": {
+                "id": "273",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/automated-labeling.png",
+            "title": "automated-labeling.png",
+            "clientMetadata": {
+                "id": "274",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/classification-model.png",
+            "title": "classification-model.png",
+            "clientMetadata": {
+                "id": "275",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/create-instance-segmentation.png",
+            "title": "create-instance-segmentation.png",
+            "clientMetadata": {
+                "id": "276",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/automated-labeling.png",
+            "title": "automated-labeling.png",
+            "clientMetadata": {
+                "id": "277",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Apollo/using-instance-segmentation.png",
+            "title": "using-instance-segmentation.png",
+            "clientMetadata": {
+                "id": "278",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-default-workflow-01.png",
+            "title": "consensus-default-workflow-01.png",
+            "clientMetadata": {
+                "id": "279",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-determine-consensus.png",
+            "title": "consensus-determine-consensus.png",
+            "clientMetadata": {
+                "id": "280",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-review-refine-workflow.png",
+            "title": "consensus-review-refine-workflow.png",
+            "clientMetadata": {
+                "id": "281",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-reassign-task.png ",
+            "title": "consensus-reassign-task.png ",
+            "clientMetadata": {
+                "id": "282",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/copy_project_page1.png",
+            "title": "copy_project_page1.png",
+            "clientMetadata": {
+                "id": "283",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/unload-annotation-instructions.png",
+            "title": "unload-annotation-instructions.png",
+            "clientMetadata": {
+                "id": "284",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/annotation-instructions.png",
+            "title": "annotation-instructions.png",
+            "clientMetadata": {
+                "id": "285",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/add_project_tags.png",
+            "title": "add_project_tags.png",
+            "clientMetadata": {
+                "id": "286",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/filter_project_tags.png",
+            "title": "filter_project_tags.png",
+            "clientMetadata": {
+                "id": "287",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/task-media-processing",
+            "title": "task-media-processing",
+            "clientMetadata": {
+                "id": "288",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/Project-settings-team-highlighted.png",
+            "title": "Project-settings-team-highlighted.png",
+            "clientMetadata": {
+                "id": "289",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/team_page.png",
+            "title": "team_page.png",
+            "clientMetadata": {
+                "id": "290",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/invite-collaborators.png",
+            "title": "invite-collaborators.png",
+            "clientMetadata": {
+                "id": "291",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-collaborator-screen.png",
+            "title": "add-collaborator-screen.png",
+            "clientMetadata": {
+                "id": "292",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/Project-settings-manage-groups-highlighted.png",
+            "title": "Project-settings-manage-groups-highlighted.png",
+            "clientMetadata": {
+                "id": "293",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-settings-manage-groups-popup.png",
+            "title": "project-settings-manage-groups-popup.png",
+            "clientMetadata": {
+                "id": "294",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/change_user_role.png",
+            "title": "change_user_role.png",
+            "clientMetadata": {
+                "id": "295",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/change_user_to_admin.png",
+            "title": "change_user_to_admin.png",
+            "clientMetadata": {
+                "id": "296",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/project_delete.png",
+            "title": "project_delete.png",
+            "clientMetadata": {
+                "id": "297",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/create-manualqa.png",
+            "title": "create-manualqa.png",
+            "clientMetadata": {
+                "id": "298",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/manualqa-attach-dataset.png",
+            "title": "manualqa-attach-dataset.png",
+            "clientMetadata": {
+                "id": "299",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/manualqa-attach-ontology.png",
+            "title": "manualqa-attach-ontology.png",
+            "clientMetadata": {
+                "id": "300",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/manaualq-finishproj.png",
+            "title": "manaualq-finishproj.png",
+            "clientMetadata": {
+                "id": "301",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_quality.png",
+            "title": "task_management_quality.png",
+            "clientMetadata": {
+                "id": "302",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_granular_sampling.png",
+            "title": "task_management_granular_sampling.png",
+            "clientMetadata": {
+                "id": "303",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_reviewer_mapping.png",
+            "title": "task_management_reviewer_mapping.png",
+            "clientMetadata": {
+                "id": "304",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/expert_review_sample_config.png",
+            "title": "expert_review_sample_config.png",
+            "clientMetadata": {
+                "id": "305",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/expert_review_sample_workflow.png",
+            "title": "expert_review_sample_workflow.png",
+            "clientMetadata": {
+                "id": "306",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/project-summary-dashboard-tabs.png",
+            "title": "project-summary-dashboard-tabs.png",
+            "clientMetadata": {
+                "id": "307",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/project-summary-dashboard.png",
+            "title": "project-summary-dashboard.png",
+            "clientMetadata": {
+                "id": "308",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/explore/explore-dashboard.png",
+            "title": "explore-dashboard.png",
+            "clientMetadata": {
+                "id": "309",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/activity_screen-callouts.png",
+            "title": "activity_screen-callouts.png",
+            "clientMetadata": {
+                "id": "310",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/activity_screen_reviews_popup.png",
+            "title": "activity_screen_reviews_popup.png",
+            "clientMetadata": {
+                "id": "312",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/queue_tab-callouts.png",
+            "title": "queue_tab-callouts.png",
+            "clientMetadata": {
+                "id": "313",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/queue_tab_assign_popup.png",
+            "title": "queue_tab_assign_popup.png",
+            "clientMetadata": {
+                "id": "314",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/queue_tab_release-callout.png",
+            "title": "queue_tab_release-callout.png",
+            "clientMetadata": {
+                "id": "315",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/data_tab-callouts.png",
+            "title": "data_tab-callouts.png",
+            "clientMetadata": {
+                "id": "316",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/instances_tab.png",
+            "title": "instances_tab.png",
+            "clientMetadata": {
+                "id": "317",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/performance-new-current-toggle.png",
+            "title": "performance-new-current-toggle.png",
+            "clientMetadata": {
+                "id": "318",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-new-performance-dashboard-labeled.png",
+            "title": "projects-new-performance-dashboard-labeled.png",
+            "clientMetadata": {
+                "id": "319",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-new-performance-dashboard-2.png",
+            "title": "projects-new-performance-dashboard-2.png",
+            "clientMetadata": {
+                "id": "320",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-team-collaborators.png",
+            "title": "workflows-team-collaborators.png",
+            "clientMetadata": {
+                "id": "322",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-manual-qa-settings.png",
+            "title": "projects-manual-qa-settings.png",
+            "clientMetadata": {
+                "id": "323",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/copy_project_page1.png",
+            "title": "copy_project_page1.png",
+            "clientMetadata": {
+                "id": "324",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/select_labels_option.png",
+            "title": "select_labels_option.png",
+            "clientMetadata": {
+                "id": "325",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/copy_labels_page2.png",
+            "title": "copy_labels_page2.png",
+            "clientMetadata": {
+                "id": "326",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/annotation-instructions.png",
+            "title": "annotation-instructions.png",
+            "clientMetadata": {
+                "id": "327",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/add_project_tags.png",
+            "title": "add_project_tags.png",
+            "clientMetadata": {
+                "id": "328",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/filter_project_tags.png",
+            "title": "filter_project_tags.png",
+            "clientMetadata": {
+                "id": "329",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/Project-settings-team-highlighted.png",
+            "title": "Project-settings-team-highlighted.png",
+            "clientMetadata": {
+                "id": "330",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/team_page.png",
+            "title": "team_page.png",
+            "clientMetadata": {
+                "id": "331",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/invite-collaborators.png",
+            "title": "invite-collaborators.png",
+            "clientMetadata": {
+                "id": "332",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-collaborator-screen.png",
+            "title": "add-collaborator-screen.png",
+            "clientMetadata": {
+                "id": "333",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/Project-settings-manage-groups-highlighted.png",
+            "title": "Project-settings-manage-groups-highlighted.png",
+            "clientMetadata": {
+                "id": "334",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-settings-manage-groups-popup.png",
+            "title": "project-settings-manage-groups-popup.png",
+            "clientMetadata": {
+                "id": "335",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/settings-delete-button.png",
+            "title": "settings-delete-button.png",
+            "clientMetadata": {
+                "id": "336",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/change_user_role.png",
+            "title": "change_user_role.png",
+            "clientMetadata": {
+                "id": "337",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/change_user_to_admin.png",
+            "title": "change_user_to_admin.png",
+            "clientMetadata": {
+                "id": "338",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/project_delete.png",
+            "title": "project_delete.png",
+            "clientMetadata": {
+                "id": "339",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_queue.png",
+            "title": "task_management_queue.png",
+            "clientMetadata": {
+                "id": "341",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_add_reviews.png",
+            "title": "task_management_add_reviews.png",
+            "clientMetadata": {
+                "id": "342",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_fifo.jpg",
+            "title": "task_management_fifo.jpg",
+            "clientMetadata": {
+                "id": "343",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_bulk_assign.png",
+            "title": "task_management_bulk_assign.png",
+            "clientMetadata": {
+                "id": "344",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_activity.png",
+            "title": "task_management_activity.png",
+            "clientMetadata": {
+                "id": "345",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_editor_preview.png",
+            "title": "task_management_editor_preview.png",
+            "clientMetadata": {
+                "id": "346",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/task_management_review.png",
+            "title": "task_management_review.png",
+            "clientMetadata": {
+                "id": "347",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/returned_task_comments.png",
+            "title": "returned_task_comments.png",
+            "clientMetadata": {
+                "id": "348",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/task_management/submit_missing_label.png",
+            "title": "submit_missing_label.png",
+            "clientMetadata": {
+                "id": "349",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/create-benchmarkqa-proj.png",
+            "title": "create-benchmarkqa-proj.png",
+            "clientMetadata": {
+                "id": "350",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-add-ontology.png",
+            "title": "projects-add-ontology.png",
+            "clientMetadata": {
+                "id": "351",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-add-dataset.png",
+            "title": "projects-add-dataset.png",
+            "clientMetadata": {
+                "id": "352",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/benchmarkqa-project-2.png",
+            "title": "benchmarkqa-project-2.png",
+            "clientMetadata": {
+                "id": "353",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/scoring-function.png",
+            "title": "scoring-function.png",
+            "clientMetadata": {
+                "id": "354",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/create-auto-project.png",
+            "title": "create-auto-project.png",
+            "clientMetadata": {
+                "id": "355",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/project-summary-dashboard-tabs.png",
+            "title": "project-summary-dashboard-tabs.png",
+            "clientMetadata": {
+                "id": "356",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projetcs-auto-qa-summary.png",
+            "title": "projetcs-auto-qa-summary.png",
+            "clientMetadata": {
+                "id": "357",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/explore/explore-dashboard.png",
+            "title": "explore-dashboard.png",
+            "clientMetadata": {
+                "id": "358",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/activity_screen-callouts.png",
+            "title": "activity_screen-callouts.png",
+            "clientMetadata": {
+                "id": "359",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/queue_tab-callouts.png",
+            "title": "queue_tab-callouts.png",
+            "clientMetadata": {
+                "id": "361",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/queue_tab_assign_popup.png",
+            "title": "queue_tab_assign_popup.png",
+            "clientMetadata": {
+                "id": "362",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/queue_tab_release-callout.png",
+            "title": "queue_tab_release-callout.png",
+            "clientMetadata": {
+                "id": "363",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/data_tab-callouts.png",
+            "title": "data_tab-callouts.png",
+            "clientMetadata": {
+                "id": "364",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/instances_tab.png",
+            "title": "instances_tab.png",
+            "clientMetadata": {
+                "id": "365",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/performance-new-current-toggle.png",
+            "title": "performance-new-current-toggle.png",
+            "clientMetadata": {
+                "id": "366",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-new-performance-dashboard-labeled.png",
+            "title": "projects-new-performance-dashboard-labeled.png",
+            "clientMetadata": {
+                "id": "367",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-new-performance-dashboard-2.png",
+            "title": "projects-new-performance-dashboard-2.png",
+            "clientMetadata": {
+                "id": "368",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-team-collaborators.png",
+            "title": "workflows-team-collaborators.png",
+            "clientMetadata": {
+                "id": "370",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/autoqa-details-overview.png",
+            "title": "autoqa-details-overview.png",
+            "clientMetadata": {
+                "id": "371",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/view-button.png",
+            "title": "view-button.png",
+            "clientMetadata": {
+                "id": "372",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/view-button.png",
+            "title": "view-button.png",
+            "clientMetadata": {
+                "id": "373",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotator-session-time.png",
+            "title": "annotator-session-time.png",
+            "clientMetadata": {
+                "id": "374",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/submissions-graph.png",
+            "title": "submissions-graph.png",
+            "clientMetadata": {
+                "id": "375",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-manual-qa-settings.png",
+            "title": "projects-manual-qa-settings.png",
+            "clientMetadata": {
+                "id": "376",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/copy_project_page1.png",
+            "title": "copy_project_page1.png",
+            "clientMetadata": {
+                "id": "377",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/select_labels_option.png",
+            "title": "select_labels_option.png",
+            "clientMetadata": {
+                "id": "378",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/copy_labels_page2.png",
+            "title": "copy_labels_page2.png",
+            "clientMetadata": {
+                "id": "379",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/annotation-instructions.png",
+            "title": "annotation-instructions.png",
+            "clientMetadata": {
+                "id": "380",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/add_project_tags.png",
+            "title": "add_project_tags.png",
+            "clientMetadata": {
+                "id": "381",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/filter_project_tags.png",
+            "title": "filter_project_tags.png",
+            "clientMetadata": {
+                "id": "382",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/auto-qa-settings-location.png",
+            "title": "auto-qa-settings-location.png",
+            "clientMetadata": {
+                "id": "383",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/Project-settings-team-highlighted.png",
+            "title": "Project-settings-team-highlighted.png",
+            "clientMetadata": {
+                "id": "384",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/team_page.png",
+            "title": "team_page.png",
+            "clientMetadata": {
+                "id": "385",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/Project-settings-invite-collaborators-highlighted.png",
+            "title": "Project-settings-invite-collaborators-highlighted.png",
+            "clientMetadata": {
+                "id": "386",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/project_add_collaborator.png",
+            "title": "project_add_collaborator.png",
+            "clientMetadata": {
+                "id": "387",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/Project-settings-manage-groups-highlighted.png",
+            "title": "Project-settings-manage-groups-highlighted.png",
+            "clientMetadata": {
+                "id": "388",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-settings-manage-groups-popup.png",
+            "title": "project-settings-manage-groups-popup.png",
+            "clientMetadata": {
+                "id": "389",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/settings-delete-button.png",
+            "title": "settings-delete-button.png",
+            "clientMetadata": {
+                "id": "390",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/change_user_role.png",
+            "title": "change_user_role.png",
+            "clientMetadata": {
+                "id": "391",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/change_user_to_admin.png",
+            "title": "change_user_to_admin.png",
+            "clientMetadata": {
+                "id": "392",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/settings/project_delete.png",
+            "title": "project_delete.png",
+            "clientMetadata": {
+                "id": "393",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-dashboard.png",
+            "title": "workflows-dashboard.png",
+            "clientMetadata": {
+                "id": "394",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-start-component.png",
+            "title": "workflows-start-component.png",
+            "clientMetadata": {
+                "id": "395",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-annotate-component.png",
+            "title": "workflows-annotate-component.png",
+            "clientMetadata": {
+                "id": "396",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-annotate-card-2.png",
+            "title": "workflows-annotate-card-2.png",
+            "clientMetadata": {
+                "id": "397",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/percentage-router-icon.png",
+            "title": "percentage-router-icon.png",
+            "clientMetadata": {
+                "id": "398",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-percentage-router.png",
+            "title": "workflows-percentage-router.png",
+            "clientMetadata": {
+                "id": "399",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/collaborator-router-icon.png",
+            "title": "collaborator-router-icon.png",
+            "clientMetadata": {
+                "id": "400",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-collaborator-router.png",
+            "title": "workflows-collaborator-router.png",
+            "clientMetadata": {
+                "id": "401",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-review-component.png",
+            "title": "workflows-review-component.png",
+            "clientMetadata": {
+                "id": "402",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflow-review-card.png",
+            "title": "workflow-review-card.png",
+            "clientMetadata": {
+                "id": "403",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-review-add-users.png",
+            "title": "workflows-review-add-users.png",
+            "clientMetadata": {
+                "id": "404",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/strict-review-2.png",
+            "title": "strict-review-2.png",
+            "clientMetadata": {
+                "id": "405",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/annotate-user-restriction.png",
+            "title": "annotate-user-restriction.png",
+            "clientMetadata": {
+                "id": "406",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/agentnode-2.png",
+            "title": "agentnode-2.png",
+            "clientMetadata": {
+                "id": "407",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-complete-component.png",
+            "title": "workflows-complete-component.png",
+            "clientMetadata": {
+                "id": "408",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflows-manage-collaborators.png",
+            "title": "workflows-manage-collaborators.png",
+            "clientMetadata": {
+                "id": "409",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/add-annotator-workflows.png",
+            "title": "add-annotator-workflows.png",
+            "clientMetadata": {
+                "id": "410",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/new-workflow-template-2.png",
+            "title": "new-workflow-template-2.png",
+            "clientMetadata": {
+                "id": "411",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/save-as-new-template.png",
+            "title": "save-as-new-template.png",
+            "clientMetadata": {
+                "id": "412",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/workflow-templates-screen.png",
+            "title": "workflow-templates-screen.png",
+            "clientMetadata": {
+                "id": "413",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/edit-template-button.png",
+            "title": "edit-template-button.png",
+            "clientMetadata": {
+                "id": "414",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/select-template.png",
+            "title": "select-template.png",
+            "clientMetadata": {
+                "id": "415",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/save-as-new-template.png",
+            "title": "save-as-new-template.png",
+            "clientMetadata": {
+                "id": "416",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/template-collaborators.png",
+            "title": "template-collaborators.png",
+            "clientMetadata": {
+                "id": "417",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/template-collaborators-2.png",
+            "title": "template-collaborators-2.png",
+            "clientMetadata": {
+                "id": "418",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/workflows/delete-template.png",
+            "title": "delete-template.png",
+            "clientMetadata": {
+                "id": "419",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-determine-consensus.png",
+            "title": "consensus-determine-consensus.png",
+            "clientMetadata": {
+                "id": "420",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-review-refine-workflow.png",
+            "title": "consensus-review-refine-workflow.png",
+            "clientMetadata": {
+                "id": "421",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus_reviewer-02-01.png",
+            "title": "consensus_reviewer-02-01.png",
+            "clientMetadata": {
+                "id": "422",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-reviewer-01-01.png",
+            "title": "consensus-reviewer-01-01.png",
+            "clientMetadata": {
+                "id": "423",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus_reviewer-02-02.png",
+            "title": "consensus_reviewer-02-02.png",
+            "clientMetadata": {
+                "id": "424",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus_reviewer-01-02.png",
+            "title": "consensus_reviewer-01-02.png",
+            "clientMetadata": {
+                "id": "425",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-review-refine-image.png",
+            "title": "consensus-review-refine-image.png",
+            "clientMetadata": {
+                "id": "426",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/consensus-review-refine-video.png",
+            "title": "consensus-review-refine-video.png",
+            "clientMetadata": {
+                "id": "427",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotator-training-creation.png",
+            "title": "annotator-training-creation.png",
+            "clientMetadata": {
+                "id": "428",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/create_flow/at_create1_enter_details.png",
+            "title": "at_create1_enter_details.png",
+            "clientMetadata": {
+                "id": "429",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/create_flow/at_create2_select_ontology.png",
+            "title": "at_create2_select_ontology.png",
+            "clientMetadata": {
+                "id": "430",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/create_flow/at_create3_config-score-function_select-GT.png",
+            "title": "at_create3_config-score-function_select-GT.png",
+            "clientMetadata": {
+                "id": "431",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/create_flow/at_create4_assign_team-blurred.png",
+            "title": "at_create4_assign_team-blurred.png",
+            "clientMetadata": {
+                "id": "432",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_lifecycle1-add_annotators-blurred.png",
+            "title": "at_lifecycle1-add_annotators-blurred.png",
+            "clientMetadata": {
+                "id": "433",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_working1_start-summary-page_blurred.png",
+            "title": "at_working1_start-summary-page_blurred.png",
+            "clientMetadata": {
+                "id": "434",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_an_working1_summary.png",
+            "title": "at_an_working1_summary.png",
+            "clientMetadata": {
+                "id": "435",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_an_working2_labels-blurred.png",
+            "title": "at_an_working2_labels-blurred.png",
+            "clientMetadata": {
+                "id": "436",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_lifecycle2_evaluate-perf_blurred.png",
+            "title": "at_lifecycle2_evaluate-perf_blurred.png",
+            "clientMetadata": {
+                "id": "437",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/training/working_flow/at_lifecycle2_1-evaluate-perf-submissions_blurred.png",
+            "title": "at_lifecycle2_1-evaluate-perf-submissions_blurred.png",
+            "clientMetadata": {
+                "id": "438",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects-list.png",
+            "title": "projects-list.png",
+            "clientMetadata": {
+                "id": "439",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/project-status.png",
+            "title": "project-status.png",
+            "clientMetadata": {
+                "id": "440",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/queue-priorities.png",
+            "title": "queue-priorities.png",
+            "clientMetadata": {
+                "id": "443",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/update-priority.png",
+            "title": "update-priority.png",
+            "clientMetadata": {
+                "id": "445",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/queue-tab-annotators.png",
+            "title": "queue-tab-annotators.png",
+            "clientMetadata": {
+                "id": "446",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/queue-tab-reviewer.png",
+            "title": "queue-tab-reviewer.png",
+            "clientMetadata": {
+                "id": "447",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/export-and-save-button.png",
+            "title": "export-and-save-button.png",
+            "clientMetadata": {
+                "id": "448",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/save-new-version.png",
+            "title": "save-new-version.png",
+            "clientMetadata": {
+                "id": "449",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/project-dashboard/labels/instances_tab.png",
+            "title": "instances_tab.png",
+            "clientMetadata": {
+                "id": "450",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/admin-join-projects.png",
+            "title": "admin-join-projects.png",
+            "clientMetadata": {
+                "id": "451",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate-new-dataset.png",
+            "title": "annotate-new-dataset.png",
+            "clientMetadata": {
+                "id": "456",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/create-dataset.png",
+            "title": "create-dataset.png",
+            "clientMetadata": {
+                "id": "457",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/attach-existing-files.png",
+            "title": "attach-existing-files.png",
+            "clientMetadata": {
+                "id": "458",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/upload-files-dataset.png",
+            "title": "upload-files-dataset.png",
+            "clientMetadata": {
+                "id": "459",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/import-from-private-cloud.png",
+            "title": "import-from-private-cloud.png",
+            "clientMetadata": {
+                "id": "460",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/upload-json-or-csv.png",
+            "title": "upload-json-or-csv.png",
+            "clientMetadata": {
+                "id": "461",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/datasets-screen-2.png",
+            "title": "datasets-screen-2.png",
+            "clientMetadata": {
+                "id": "462",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/datasets/add-new-dataset-tabs.png",
+            "title": "add-new-dataset-tabs.png",
+            "clientMetadata": {
+                "id": "463",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/datasets/manage-datasets.png",
+            "title": "manage-datasets.png",
+            "clientMetadata": {
+                "id": "464",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/datasets/dataset-settings.png",
+            "title": "dataset-settings.png",
+            "clientMetadata": {
+                "id": "465",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/datasets/dataset-projects.png",
+            "title": "dataset-projects.png",
+            "clientMetadata": {
+                "id": "466",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/datasets/dataset-delete-dataset-highlighted.png",
+            "title": "dataset-delete-dataset-highlighted.png",
+            "clientMetadata": {
+                "id": "467",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/join-org-dataset.png",
+            "title": "join-org-dataset.png",
+            "clientMetadata": {
+                "id": "468",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/pre-labeling-task-agent.png",
+            "title": "pre-labeling-task-agent.png",
+            "clientMetadata": {
+                "id": "469",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/obj-track-slow-normal.png",
+            "title": "obj-track-slow-normal.png",
+            "clientMetadata": {
+                "id": "471",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/obj-track-slow.png",
+            "title": "obj-track-slow.png",
+            "clientMetadata": {
+                "id": "472",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/object-tracking.png",
+            "title": "object-tracking.png",
+            "clientMetadata": {
+                "id": "473",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/auto-seg-bb.png",
+            "title": "auto-seg-bb.png",
+            "clientMetadata": {
+                "id": "474",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/auto-seg-rbb.png",
+            "title": "auto-seg-rbb.png",
+            "clientMetadata": {
+                "id": "475",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/auto-seg-bitmask.png",
+            "title": "auto-seg-bitmask.png",
+            "clientMetadata": {
+                "id": "476",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/auto-seg-polygon.png",
+            "title": "auto-seg-polygon.png",
+            "clientMetadata": {
+                "id": "477",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/instantiate-sam.png",
+            "title": "instantiate-sam.png",
+            "clientMetadata": {
+                "id": "479",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/sam-wand-icon.png",
+            "title": "sam-wand-icon.png",
+            "clientMetadata": {
+                "id": "480",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/quick-interpolate.png",
+            "title": "quick-interpolate.png",
+            "clientMetadata": {
+                "id": "485",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/run-interpolation.png",
+            "title": "run-interpolation.png",
+            "clientMetadata": {
+                "id": "486",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/label-editor-settings.png",
+            "title": "label-editor-settings.png",
+            "clientMetadata": {
+                "id": "487",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate/label_editor/re-interpolate-toggle.png",
+            "title": "re-interpolate-toggle.png",
+            "clientMetadata": {
+                "id": "488",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/editor-agents-register.png",
+            "title": "editor-agents-register.png",
+            "clientMetadata": {
+                "id": "489",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/agent-details.png",
+            "title": "agent-details.png",
+            "clientMetadata": {
+                "id": "490",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/test-agent.png",
+            "title": "test-agent.png",
+            "clientMetadata": {
+                "id": "491",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/automated-label-highlight.png",
+            "title": "automated-label-highlight.png",
+            "clientMetadata": {
+                "id": "492",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/trigger-agent.png",
+            "title": "trigger-agent.png",
+            "clientMetadata": {
+                "id": "493",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Data-curation-management-annotation-2.png",
+            "title": "Data-curation-management-annotation-2.png",
+            "clientMetadata": {
+                "id": "494",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/new-workflow-template-2.png",
+            "title": "new-workflow-template-2.png",
+            "clientMetadata": {
+                "id": "495",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Data-curation-management-annotation-2.png",
+            "title": "Data-curation-management-annotation-2.png",
+            "clientMetadata": {
+                "id": "496",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/new-workflow-template-2.png",
+            "title": "new-workflow-template-2.png",
+            "clientMetadata": {
+                "id": "497",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/python_sdk_model_create.png",
+            "title": "python_sdk_model_create.png",
+            "clientMetadata": {
+                "id": "498",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/python_sdk_model_train.png",
+            "title": "python_sdk_model_train.png",
+            "clientMetadata": {
+                "id": "499",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/python_sdk_model_inference.png",
+            "title": "python_sdk_model_inference.png",
+            "clientMetadata": {
+                "id": "500",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/new-ontology.png",
+            "title": "new-ontology.png",
+            "clientMetadata": {
+                "id": "502",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontology-name.png",
+            "title": "ontology-name.png",
+            "clientMetadata": {
+                "id": "503",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-create-project-2.png",
+            "title": "projects-create-project-2.png",
+            "clientMetadata": {
+                "id": "505",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-name-project.png",
+            "title": "projects-name-project.png",
+            "clientMetadata": {
+                "id": "506",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-add-ontology.png",
+            "title": "projects-add-ontology.png",
+            "clientMetadata": {
+                "id": "507",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-add-dataset.png",
+            "title": "projects-add-dataset.png",
+            "clientMetadata": {
+                "id": "508",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-workflow.png",
+            "title": "projects-workflow.png",
+            "clientMetadata": {
+                "id": "509",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-finalise.png",
+            "title": "projects-finalise.png",
+            "clientMetadata": {
+                "id": "510",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/custom-editor-layouts.png",
+            "title": "custom-editor-layouts.png",
+            "clientMetadata": {
+                "id": "511",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-change-tiles.png",
+            "title": "syn-getting-started-change-tiles.png",
+            "clientMetadata": {
+                "id": "512",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-label-001.png",
+            "title": "syn-getting-started-label-001.png",
+            "clientMetadata": {
+                "id": "514",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-label-002.png",
+            "title": "syn-getting-started-label-002.png",
+            "clientMetadata": {
+                "id": "515",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-label-003.png",
+            "title": "syn-getting-started-label-003.png",
+            "clientMetadata": {
+                "id": "516",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-label-004.png",
+            "title": "syn-getting-started-label-004.png",
+            "clientMetadata": {
+                "id": "517",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-001.png",
+            "title": "syn-getting-started-review-001.png",
+            "clientMetadata": {
+                "id": "519",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-002.png",
+            "title": "syn-getting-started-review-002.png",
+            "clientMetadata": {
+                "id": "520",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-003.png",
+            "title": "syn-getting-started-review-003.png",
+            "clientMetadata": {
+                "id": "521",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-004.png",
+            "title": "syn-getting-started-review-004.png",
+            "clientMetadata": {
+                "id": "522",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-005.png",
+            "title": "syn-getting-started-review-005.png",
+            "clientMetadata": {
+                "id": "523",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-complete-001.png",
+            "title": "syn-getting-started-complete-001.png",
+            "clientMetadata": {
+                "id": "524",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-review-001.png",
+            "title": "syn-getting-started-review-001.png",
+            "clientMetadata": {
+                "id": "525",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-reject-002.png",
+            "title": "syn-getting-started-reject-002.png",
+            "clientMetadata": {
+                "id": "526",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-reject-003.png",
+            "title": "syn-getting-started-reject-003.png",
+            "clientMetadata": {
+                "id": "527",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-reject-004.png",
+            "title": "syn-getting-started-reject-004.png",
+            "clientMetadata": {
+                "id": "528",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-reject-005.png",
+            "title": "syn-getting-started-reject-005.png",
+            "clientMetadata": {
+                "id": "529",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/syn-getting-started/syn-getting-started-complete-001.png",
+            "title": "syn-getting-started-complete-001.png",
+            "clientMetadata": {
+                "id": "530",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/create-dataset-new-2.png",
+            "title": "create-dataset-new-2.png",
+            "clientMetadata": {
+                "id": "531",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/create-dataset.png",
+            "title": "create-dataset.png",
+            "clientMetadata": {
+                "id": "532",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/attach-data.png",
+            "title": "attach-data.png",
+            "clientMetadata": {
+                "id": "533",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/select-data.png",
+            "title": "select-data.png",
+            "clientMetadata": {
+                "id": "534",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/start-labeling-get-started.png",
+            "title": "start-labeling-get-started.png",
+            "clientMetadata": {
+                "id": "535",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/apply-classification.png",
+            "title": "apply-classification.png",
+            "clientMetadata": {
+                "id": "536",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/edit-attributes.png",
+            "title": "edit-attributes.png",
+            "clientMetadata": {
+                "id": "537",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/keypoint-based-attribute-propagation1.png",
+            "title": "keypoint-based-attribute-propagation1.png",
+            "clientMetadata": {
+                "id": "538",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/ontologies/apply-to-new-occurences.png",
+            "title": "apply-to-new-occurences.png",
+            "clientMetadata": {
+                "id": "539",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/relation-attribute-2.png",
+            "title": "relation-attribute-2.png",
+            "clientMetadata": {
+                "id": "540",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-1.png",
+            "title": "link-attrib-1.png",
+            "clientMetadata": {
+                "id": "541",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-3.png",
+            "title": "link-attrib-3.png",
+            "clientMetadata": {
+                "id": "542",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/link-attrib-4.png",
+            "title": "link-attrib-4.png",
+            "clientMetadata": {
+                "id": "543",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-create-project-3.png",
+            "title": "projects-create-project-3.png",
+            "clientMetadata": {
+                "id": "544",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-name-project.png",
+            "title": "projects-name-project.png",
+            "clientMetadata": {
+                "id": "545",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-add-ontology.png",
+            "title": "projects-add-ontology.png",
+            "clientMetadata": {
+                "id": "546",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/projects/projects-add-dataset.png",
+            "title": "projects-add-dataset.png",
+            "clientMetadata": {
+                "id": "547",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/invite-collab-getting-started.png",
+            "title": "invite-collab-getting-started.png",
+            "clientMetadata": {
+                "id": "548",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/add-users-to-workflow-stage.png",
+            "title": "add-users-to-workflow-stage.png",
+            "clientMetadata": {
+                "id": "549",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active-explorer.png",
+            "title": "active-explorer.png",
+            "clientMetadata": {
+                "id": "550",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/model-eval-active.png",
+            "title": "model-eval-active.png",
+            "clientMetadata": {
+                "id": "551",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/encord-intro-graphic.png",
+            "title": "encord-intro-graphic.png",
+            "clientMetadata": {
+                "id": "552",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/encord-overview.png",
+            "title": "encord-overview.png",
+            "clientMetadata": {
+                "id": "553",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/storage-new-folder.png",
+            "title": "storage-new-folder.png",
+            "clientMetadata": {
+                "id": "554",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/storage-new-folder.png",
+            "title": "storage-new-folder.png",
+            "clientMetadata": {
+                "id": "555",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/storage-new-folder.png",
+            "title": "storage-new-folder.png",
+            "clientMetadata": {
+                "id": "556",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/storage-new-folder.png",
+            "title": "storage-new-folder.png",
+            "clientMetadata": {
+                "id": "557",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/storage-new-folder.png",
+            "title": "storage-new-folder.png",
+            "clientMetadata": {
+                "id": "558",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-keyframes-filter-01.png",
+            "title": "index-keyframes-filter-01.png",
+            "clientMetadata": {
+                "id": "573",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-keyframes-show-keyframes.png",
+            "title": "index-keyframes-show-keyframes.png",
+            "clientMetadata": {
+                "id": "574",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-001.png",
+            "title": "index-001.png",
+            "clientMetadata": {
+                "id": "585",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-002.png",
+            "title": "index-002.png",
+            "clientMetadata": {
+                "id": "586",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-03.png",
+            "title": "index-03.png",
+            "clientMetadata": {
+                "id": "587",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-export-to-csv.png",
+            "title": "index-export-to-csv.png",
+            "clientMetadata": {
+                "id": "588",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/data-relationships-5.png",
+            "title": "data-relationships-5.png",
+            "clientMetadata": {
+                "id": "589",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-data-to-folder.png",
+            "title": "add-data-to-folder.png",
+            "clientMetadata": {
+                "id": "590",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/upload-data-files-2.png",
+            "title": "upload-data-files-2.png",
+            "clientMetadata": {
+                "id": "591",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/batch-images.png",
+            "title": "batch-images.png",
+            "clientMetadata": {
+                "id": "592",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/image-grouop-folder.png",
+            "title": "image-grouop-folder.png",
+            "clientMetadata": {
+                "id": "593",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/index-add-to-index.png",
+            "title": "index-add-to-index.png",
+            "clientMetadata": {
+                "id": "594",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-to-existing-dataset.png",
+            "title": "add-to-existing-dataset.png",
+            "clientMetadata": {
+                "id": "595",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-to-new-dataset.png",
+            "title": "add-to-new-dataset.png",
+            "clientMetadata": {
+                "id": "596",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/storage-search.png",
+            "title": "storage-search.png",
+            "clientMetadata": {
+                "id": "597",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/storage-data-details.png",
+            "title": "storage-data-details.png",
+            "clientMetadata": {
+                "id": "598",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/delete-or-move.png",
+            "title": "delete-or-move.png",
+            "clientMetadata": {
+                "id": "599",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/move-files.png",
+            "title": "move-files.png",
+            "clientMetadata": {
+                "id": "600",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/folder-details.png",
+            "title": "folder-details.png",
+            "clientMetadata": {
+                "id": "601",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/storage-add-user.png",
+            "title": "storage-add-user.png",
+            "clientMetadata": {
+                "id": "602",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/manage-users.png",
+            "title": "manage-users.png",
+            "clientMetadata": {
+                "id": "603",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/index-data-curation-management-2.png",
+            "title": "index-data-curation-management-2.png",
+            "clientMetadata": {
+                "id": "604",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-custom-embed-sim-search-001.png",
+            "title": "index-custom-embed-sim-search-001.png",
+            "clientMetadata": {
+                "id": "614",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-custom-embed-sim-search-002.png",
+            "title": "index-custom-embed-sim-search-002.png",
+            "clientMetadata": {
+                "id": "615",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-custom-embed-sim-search-001.png",
+            "title": "index-custom-embed-sim-search-001.png",
+            "clientMetadata": {
+                "id": "616",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-custom-embed-sim-search-002.png",
+            "title": "index-custom-embed-sim-search-002.png",
+            "clientMetadata": {
+                "id": "617",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-similarity-search-distance.png",
+            "title": "index-similarity-search-distance.png",
+            "clientMetadata": {
+                "id": "618",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/index-custom-embed-scatter-004.png",
+            "title": "index-custom-embed-scatter-004.png",
+            "clientMetadata": {
+                "id": "619",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/datasets-annotate.png",
+            "title": "datasets-annotate.png",
+            "clientMetadata": {
+                "id": "626",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/legacy-icon.png",
+            "title": "legacy-icon.png",
+            "clientMetadata": {
+                "id": "627",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/mirrored-icon.png",
+            "title": "mirrored-icon.png",
+            "clientMetadata": {
+                "id": "628",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate-new-dataset.png",
+            "title": "annotate-new-dataset.png",
+            "clientMetadata": {
+                "id": "629",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/looking-to-create-mirrored-dataset.png",
+            "title": "looking-to-create-mirrored-dataset.png",
+            "clientMetadata": {
+                "id": "630",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/storage-new-folder.png",
+            "title": "storage-new-folder.png",
+            "clientMetadata": {
+                "id": "631",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-data-to-folder.png",
+            "title": "add-data-to-folder.png",
+            "clientMetadata": {
+                "id": "632",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/upload-data-files.png",
+            "title": "upload-data-files.png",
+            "clientMetadata": {
+                "id": "633",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate-new-dataset.png",
+            "title": "annotate-new-dataset.png",
+            "clientMetadata": {
+                "id": "634",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/create-dataset.png",
+            "title": "create-dataset.png",
+            "clientMetadata": {
+                "id": "635",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/attach-existing-files.png",
+            "title": "attach-existing-files.png",
+            "clientMetadata": {
+                "id": "636",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/mirrored-dataset-upgrade.png",
+            "title": "mirrored-dataset-upgrade.png",
+            "clientMetadata": {
+                "id": "637",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/storage-new-folder.png",
+            "title": "storage-new-folder.png",
+            "clientMetadata": {
+                "id": "638",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-data-to-folder.png",
+            "title": "add-data-to-folder.png",
+            "clientMetadata": {
+                "id": "639",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/upload-data-files.png",
+            "title": "upload-data-files.png",
+            "clientMetadata": {
+                "id": "640",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/annotate-new-dataset.png",
+            "title": "annotate-new-dataset.png",
+            "clientMetadata": {
+                "id": "641",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/create-dataset.png",
+            "title": "create-dataset.png",
+            "clientMetadata": {
+                "id": "642",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/attach-existing-files.png",
+            "title": "attach-existing-files.png",
+            "clientMetadata": {
+                "id": "643",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/datasets/failed-data-upload.png",
+            "title": "failed-data-upload.png",
+            "clientMetadata": {
+                "id": "645",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/add-data-to-folder.png",
+            "title": "add-data-to-folder.png",
+            "clientMetadata": {
+                "id": "646",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/upload-data-files-2.png",
+            "title": "upload-data-files-2.png",
+            "clientMetadata": {
+                "id": "647",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/storage-linked-datasets.png",
+            "title": "storage-linked-datasets.png",
+            "clientMetadata": {
+                "id": "652",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/view-dataset-storage.png",
+            "title": "view-dataset-storage.png",
+            "clientMetadata": {
+                "id": "653",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/dataset-linked-projects.png",
+            "title": "dataset-linked-projects.png",
+            "clientMetadata": {
+                "id": "654",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/re-encoding-issues.png",
+            "title": "re-encoding-issues.png",
+            "clientMetadata": {
+                "id": "655",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/datasets/datasets-re-encode-highlight.png",
+            "title": "datasets-re-encode-highlight.png",
+            "clientMetadata": {
+                "id": "656",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/re-encode-001.png",
+            "title": "re-encode-001.png",
+            "clientMetadata": {
+                "id": "657",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/re-encode-002.png",
+            "title": "re-encode-002.png",
+            "clientMetadata": {
+                "id": "658",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/Index/re-encode-003.png",
+            "title": "re-encode-003.png",
+            "clientMetadata": {
+                "id": "659",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/mirrored-dataset-upgrade.png",
+            "title": "mirrored-dataset-upgrade.png",
+            "clientMetadata": {
+                "id": "660",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/process-chart-ea.webp",
+            "title": "process-chart-ea.webp",
+            "clientMetadata": {
+                "id": "663",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-workflow-data-curation-label-validation.png",
+            "title": "active-workflow-data-curation-label-validation.png",
+            "clientMetadata": {
+                "id": "664",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-workflow-model-optimization.png",
+            "title": "active-workflow-model-optimization.png",
+            "clientMetadata": {
+                "id": "665",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/user-guide/active-custom-metadata_01.png",
+            "title": "active-custom-metadata_01.png",
+            "clientMetadata": {
+                "id": "666",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-workflow-data-curation-label-validation.png",
+            "title": "active-workflow-data-curation-label-validation.png",
+            "clientMetadata": {
+                "id": "667",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-workflow-model-optimization.png",
+            "title": "active-workflow-model-optimization.png",
+            "clientMetadata": {
+                "id": "668",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/predictions-flow.001.png",
+            "title": "predictions-flow.001.png",
+            "clientMetadata": {
+                "id": "671",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/prediction-branch.png",
+            "title": "prediction-branch.png",
+            "clientMetadata": {
+                "id": "672",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/user-guide/active-set-priorities.png",
+            "title": "active-set-priorities.png",
+            "clientMetadata": {
+                "id": "677",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/user-guide/active-send-to-annotate.png",
+            "title": "active-send-to-annotate.png",
+            "clientMetadata": {
+                "id": "678",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/analytics/active-analytics-data.png",
+            "title": "active-analytics-data.png",
+            "clientMetadata": {
+                "id": "682",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/analytics/active-analytics-labels.png",
+            "title": "active-analytics-labels.png",
+            "clientMetadata": {
+                "id": "683",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/analytics/active-analytics-predictions.png",
+            "title": "active-analytics-predictions.png",
+            "clientMetadata": {
+                "id": "684",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/analytics/active-analytics-navigate.png",
+            "title": "active-analytics-navigate.png",
+            "clientMetadata": {
+                "id": "685",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/workflows/analytics-data-01.png",
+            "title": "analytics-data-01.png",
+            "clientMetadata": {
+                "id": "686",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/workflows/analytics-label-01.png",
+            "title": "analytics-label-01.png",
+            "clientMetadata": {
+                "id": "687",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/workflows/analytics-data-02.png",
+            "title": "analytics-data-02.png",
+            "clientMetadata": {
+                "id": "688",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/workflows/analytics-label-02.png",
+            "title": "analytics-label-02.png",
+            "clientMetadata": {
+                "id": "689",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/workflows/analytics-data-03.png",
+            "title": "analytics-data-03.png",
+            "clientMetadata": {
+                "id": "690",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/workflows/analytics-label-03.png",
+            "title": "analytics-label-03.png",
+            "clientMetadata": {
+                "id": "691",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/user-guide/active-send-to-annotate.png",
+            "title": "active-send-to-annotate.png",
+            "clientMetadata": {
+                "id": "697",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/user-guide/active-create-dataset_01.png",
+            "title": "active-create-dataset_01.png",
+            "clientMetadata": {
+                "id": "698",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/active-workflow-model-optimization.png",
+            "title": "active-workflow-model-optimization.png",
+            "clientMetadata": {
+                "id": "699",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/workflows/active-custom-embedding-import.png",
+            "title": "active-custom-embedding-import.png",
+            "clientMetadata": {
+                "id": "700",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-summary.png",
+            "title": "active-model-eval-summary.png",
+            "clientMetadata": {
+                "id": "701",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-outcome-01.png",
+            "title": "active-model-eval-outcome-01.png",
+            "clientMetadata": {
+                "id": "702",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-avg-accuracy.png",
+            "title": "active-model-eval-avg-accuracy.png",
+            "clientMetadata": {
+                "id": "703",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-precision-01.png",
+            "title": "active-model-eval-precision-01.png",
+            "clientMetadata": {
+                "id": "704",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-val-recall.png",
+            "title": "active-model-val-recall.png",
+            "clientMetadata": {
+                "id": "705",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-f1.png",
+            "title": "active-model-eval-f1.png",
+            "clientMetadata": {
+                "id": "706",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-met-corr.png",
+            "title": "active-model-eval-met-corr.png",
+            "clientMetadata": {
+                "id": "707",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-met-perf.png",
+            "title": "active-model-eval-met-perf.png",
+            "clientMetadata": {
+                "id": "708",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-prc.png",
+            "title": "active-model-eval-prc.png",
+            "clientMetadata": {
+                "id": "709",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-avg-iou.png",
+            "title": "active-model-eval-avg-iou.png",
+            "clientMetadata": {
+                "id": "710",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-model-eval-iou-distrib.png",
+            "title": "active-model-eval-iou-distrib.png",
+            "clientMetadata": {
+                "id": "711",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/images/workflows/improve-your-data-and-labels/remove-duplicate-images/remove-duplicate-images-11.png",
+            "title": "remove-duplicate-images-11.png",
+            "clientMetadata": {
+                "id": "716",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/images/ea-entropy-equation.png",
+            "title": "ea-entropy-equation.png",
+            "clientMetadata": {
+                "id": "717",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/images/ea-least-confidence-equation.png",
+            "title": "ea-least-confidence-equation.png",
+            "clientMetadata": {
+                "id": "718",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/images/ea-variance-equation.png",
+            "title": "ea-variance-equation.png",
+            "clientMetadata": {
+                "id": "719",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/broken-object-tracks.PNG",
+            "title": "broken-object-tracks.PNG",
+            "clientMetadata": {
+                "id": "720",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/inconsistent-object-track.PNG",
+            "title": "inconsistent-object-track.PNG",
+            "clientMetadata": {
+                "id": "721",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/inconsistent-track-id.PNG",
+            "title": "inconsistent-track-id.PNG",
+            "clientMetadata": {
+                "id": "722",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/label_duplicates_01.png",
+            "title": "label_duplicates_01.png",
+            "clientMetadata": {
+                "id": "723",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/label_duplicates_02.png",
+            "title": "label_duplicates_02.png",
+            "clientMetadata": {
+                "id": "724",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/missing-objects.PNG",
+            "title": "missing-objects.PNG",
+            "clientMetadata": {
+                "id": "725",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/formula-03.png",
+            "title": "formula-03.png",
+            "clientMetadata": {
+                "id": "728",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/active-embedding-001.png",
+            "title": "active-embedding-001.png",
+            "clientMetadata": {
+                "id": "737",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/user-guide/active-sync-project-data.png",
+            "title": "active-sync-project-data.png",
+            "clientMetadata": {
+                "id": "744",
+                "Data_Type": "Image"
+            }
+        },
+        {
+            "objectUrl": "https://storage.googleapis.com/docs-media.encord.com/static/img/active/filters-labels-metrics/global-filter.png",
+            "title": "global-filter.png",
+            "clientMetadata": {
+                "id": "751",
+                "Data_Type": "Image"
+            }
+        }
+    ]
+}

@@ -1,0 +1,3 @@
+**Start** represents the beginning an annotation task through your Workflow, and can therefore only be used once in a Project. It must have a connector linking it to the next stage. It displays the Datasets connected to the Project, and the selected ontology.
+
+***

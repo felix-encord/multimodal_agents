@@ -1,0 +1,7 @@
+**Skip tasks**
+
+Users have the option to skip tasks in instances where, for example, the file is blurred, or if they suspect the task was erroneously added.
+
+When a user skips a task, it is automatically unassigned from them, and the task's status is updated to _Skipped_. If another task is available, it automatically opens in the Label Editor and is assigned to the user. 
+
+1. Click the **Skip** button to skip an annotation task.

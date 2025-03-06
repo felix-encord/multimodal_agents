@@ -1,0 +1,7 @@
+Check Data Registration Status
+
+You can check the progress of the processing job by clicking the bell icon in the top right corner of the Encord app.
+
+- A spinning progress indicator shows that the processing job is still in progress.
+- If successful, the processing completes with a green tick icon.
+- If unsuccessful, there is  a red cross icon, as seen below.

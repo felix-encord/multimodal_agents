@@ -1,0 +1,8 @@
+Polyline
+
+Creating a polyline requires an ontology with a polyline annotation type. Enable or disable free-hand drawing mode by pressing <kbd>d</kbd> on your keyboard. Polyline coarseness for polylines drawn free-hand is set in the 'Settings' drawer in the *Drawing settings* drop-down.
+Instantiate a new polyline instance by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Polylines can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>V</kbd> to paste it at the location of the mouse cursor on the desired frame.
+
+Complete a polyline by double-clicking anywhere on the canvas.

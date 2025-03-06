@@ -1,0 +1,3 @@
+Generating keys in Encord (Recommended)
+
+1. Navigate to the _Public keys_ section of the _Settings_ to create, register and manage your public keys.

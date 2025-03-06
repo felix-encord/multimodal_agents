@@ -1,0 +1,13 @@
+The **Agent** component represents a Task Agent. It triggers a custom operation each time a task passes through the Agent stage. The exact operation being triggered is configured using the Encord SDK. 
+
+
+{/*
+You can add a Webhook to this stage to receive notifications whenever a task arrives at the **Agent** stage. Click the Edit icon next to _Webhook_ and add the URL of the server you want to receive notifications on.
+\*/}
+
+
+To fully connect an Agent to other Workflow components you must add pathways that allow you to create connections from the Agent stage to other components. To add a pathway, click **+** next to _Add pathway_ and give the pathway a meaningful name. Repeat this step for each additional pathway you want to add. 
+
+<Tip>Learn more about Task Agents in our Task Agent section</Tip>
+
+***

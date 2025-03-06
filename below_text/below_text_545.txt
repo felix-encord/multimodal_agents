@@ -1,0 +1,1 @@
+If you are part of an Organization, an optional Project tags drop-down is visible. Project tags are useful for categorizing and finding your Projects. Select as many tags as are relevant for your Project.

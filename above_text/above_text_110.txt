@@ -1,0 +1,6 @@
+Use the windowing adjustment functionality by clicking the _Adjust windowing_ button in the toolbar or pressing <kbd>alt</kbd> + <kbd>w</kbd> on your keyboard. Next, press the left mouse button and drag the mouse to change the window width or level:
+
+- **Up**: Increase window level.
+- **Down**: Decrease window level.
+- **Left**: Shrink window width.
+- **Right**: Expand window width.

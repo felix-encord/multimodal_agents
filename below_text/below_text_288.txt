@@ -1,0 +1,11 @@
+Turning on the  feature preloads the next task in the background while the user is working in the Label Editor. This reduces wait times for the next task after submitting a task. This setting is disabled by default.
+
+When enabled, the preloaded task is automatically assigned to the user, preventing others from initiating it.  
+
+<Info>
+- This feature is only supported for single images.
+- Only the image is preloaded. Labels are not preloaded.
+</Info>
+
+
+***

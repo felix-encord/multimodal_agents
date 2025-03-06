@@ -1,0 +1,5 @@
+6. Click **OK** to attach the Ontology to the Project.
+
+7. Click the **Attach datasets** button. 
+
+8. Select the Dataset you created in STEP 4 and click the **Attach** button.

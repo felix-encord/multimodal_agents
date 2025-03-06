@@ -1,0 +1,3 @@
+4. Check the progress of the re-encoding job by clicking the bell icon in the top-right of the app. The number displayed in red signifies how many new notifications you have.
+
+When the process is complete a new video file with the word "normalized" appended to the name appears in the folder. For example, if you re-encoded , the new video is .

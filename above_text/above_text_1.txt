@@ -1,0 +1,16 @@
+Object detection models are trained to identify and label specific objects in your data using bounding boxes. For example, an object detection model can be trained to detect apples, and then used within a video project to label instances of apples within videos. 
+
+| **Ontology shape**     | **Supported?** |
+|------------------------|-------------------|
+| Bounding box           | ✅                 | 
+| Rotatable bounding box | ❌                 | 
+| Polygon                | ✅                 |
+| Polyline               | ❌                 | 
+| Primitive              | ❌                 |
+| Keypoint               | ❌                 | 
+| Bitmask                | ✅                 | 
+
+<Note>
+Object detection models assume there are potentially multiple objects in an image that need to be detected and
+classified. 
+</Note>

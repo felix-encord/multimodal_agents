@@ -1,0 +1,19 @@
+Create a Dataset
+
+Creating a Dataset from an Index Collection gives you flexibility handling your annotation Projects. You can create subsets of your entire Project's data to then attach to your existing Annotate Projects or create a new Annotate Project with the new Dataset attached to the Project.
+
+<Note>All Datasets created from Collections are created under the user account that sends the Collection to Annotate. This means that that user must provide access to the Datasets to other users.</Note>
+
+**To create a Dataset from an Index Collection:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a Folder.
+   The landing page for the Folder appears and the _Explorer_ button is enabled.
+
+4. Click the **Explorer** button.
+   The _Index Explorer_ page appears.

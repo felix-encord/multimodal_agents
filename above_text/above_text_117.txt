@@ -1,0 +1,3 @@
+Multiple Series Viewing
+
+In the drop-down menu of the viewport you can add other series to be viewed at the same time. Annotations will be seen on all the series being viewed, as seen in the screenshot below.

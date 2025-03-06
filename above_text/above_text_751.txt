@@ -1,0 +1,9 @@
+Preset Filters
+
+Preset filters provide a way to save your filtering criteria for use and reuse on other Projects. Preset filters are made up of global and local filter criteria. 
+
+Global filter criteria are filters, and their settings, that can apply to any Project. For example, Data Quality Metrics like Area, Blue Value, and Sharpness or Label Quality Metrics like Annotation Quality, Confidence, or Label Duplicates.
+
+{/*-
+<Note>Global filters have the following icon next to the filter: </Note>
+>

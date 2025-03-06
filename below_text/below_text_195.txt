@@ -1,0 +1,14 @@
+Instantiate existing keypoint instances (i.e., keypoints that should keep the same identifier in preceding or succeeding frames) by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>,
+<kbd>w</kbd>, <kbd>e</kbd>). See the bounding box documentation for visual instructions on how to instantiate existing keypoints.
+
+Keypoints can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>V</kbd> to paste it at the location of the mouse cursor on the desired frame.
+
+Keypoint instances can be assigned static and dynamic attributes should they be defined in your Ontology:
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in
+  the range overview for the specified keypoint.
+
+- Assign classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>,
+  <kbd>u</kbd>).
+
+See the bounding box documentation for visual instructions on how to assign classifications.

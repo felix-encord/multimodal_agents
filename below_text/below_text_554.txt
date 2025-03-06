@@ -1,0 +1,3 @@
+3. Give the folder a meaningful name and description. 
+4. Click **Create** to create the folder. 
+The folder is listed in _Files_.

@@ -1,0 +1,19 @@
+Use a Preset Filter in a Project
+
+Once you have created one or more Preset Filters, you can apply them to any of your Projects from the _Filter_ tab.
+
+<Note>Global filters apply to any Project, but Local filters only apply on the Project where the Preset was created.</Note>
+
+<AccordionGroup>
+   <Accordion title="To use a Preset (Preset Filter and their settings):">
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Select **Data**, **Labels**, or **Predictions**.

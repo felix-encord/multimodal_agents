@@ -1,0 +1,3 @@
+Team
+
+The _Team_ pane shows a list of collaborators on the Dataset.

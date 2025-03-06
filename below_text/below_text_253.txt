@@ -1,0 +1,3 @@
+Click **View issue** to open the _Issues drawer_. From there annotators can seamlessly resolve all _Required_ issues before moving onto the next task.
+
+<Tip>All _Required_ objects and classifications appear as items in the issues drawer of the Label Editor. </Tip>

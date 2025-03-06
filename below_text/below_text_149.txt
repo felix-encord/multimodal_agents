@@ -1,0 +1,15 @@
+*Create a primitive ontology for data labeling*
+
+To instantiate a new primitive instance, click on the specified class in the 'Classes' menu or use the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Instantiate existing primitive instances (i.e., primitives that should keep the same identifier in preceding or succeeding slices) by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>, <kbd>w</kbd>, <kbd>e</kbd>).
+
+Primitives can be copy/pasted between slices using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>c</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>v</kbd> to paste it on the desired slice.
+
+Primitives allow you to define properties of edges defined in your template as visible, occluded, or invisible. Toggle the edge property settings for a primitive by highlighting the primitive and clicking the *Show controls* button.
+
+Object primitive instances can be assigned with static and dynamic attributes should they be defined in your Ontology:
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified primitive.
+
+- Assign classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>).

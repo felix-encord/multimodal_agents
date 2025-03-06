@@ -1,0 +1,5 @@
+Instances
+
+The _Instances_ tab allows Administrators and Team Managers to search within the data to directly find specific instances. Recall that an annotation _instance_ correlates to a unique instantiation of a specific ontology class in a data asset. 
+
+For example, if you have the 'Person' class in your ontology, the first instance of a 'Person' in a given _data asset_ will be indicated in the interface as 'Person (0)', the second as 'Person (1)' and so on. Instances, therefore, can exist in multiple frames of a data asset, and indicate the same object. Use the _Instances_ tab to search for specific instances of _objects_ or _classifications_ using their _Identifier_.

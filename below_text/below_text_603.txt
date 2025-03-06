@@ -1,0 +1,5 @@
+To delete a user from a folder, navigate to the _Manage_ tab and click the _Delete_ button.
+
+Change a user's access permissions by selecting a new role from the dropdown. 
+
+<Note>Users with _Admin_ permissions cannot be deleted, and their role cannot be changed. </Note>

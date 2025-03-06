@@ -1,0 +1,11 @@
+The next time users sign in, users are required to use an authenticator app to sign in to Encord.
+     
+   - **SMS code:**
+     
+     a. To configure an SMS code, provide a device name and the phone number that you want to enrol for SMS, and click **Send SMS Code**.
+
+     b. On enrolling a device for the first time, you must sign out and sign in again to authenticate your verification request.
+
+     c. After signing in again, invoke the _Multi-Factor Authentication_ modal again from the _General_ tab and input your device name and phone number.
+
+     <Note>Only 1 number can be added.</Note>

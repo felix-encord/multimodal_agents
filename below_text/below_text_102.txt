@@ -1,0 +1,1 @@
+The number of slices skipped is determined by the specified _Frameskip interval_. _Frameskip intervals_ can be set using the predefined values, or customized by entering a value in the _New_ input and clicking the _Plus_ icon.

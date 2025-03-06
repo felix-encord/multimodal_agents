@@ -1,0 +1,15 @@
+The 3D cylinder brush lets you apply a Bitmask in 3 dimensions, which means it is applied to multiple slices in a volume. The following two settings are available: 
+- The _Size_ determines the diameter of the Bitmask brush.
+- The _Height_ determines the thickness of the 3D Bitmask, measured in number of slices. 
+
+Adjust the slider to set your desired _Size_ and _Height_. 
+
+After the Bitmask is applied, click **Apply label** or press <kbd>Enter</kbd> to apply the Bitmask.
+
+<Tip>
+We recommend enabling 3D view in one of the windows of the Label Editor when using the 3D cylinder brush. This allows you to see the Bitmask label in 3D.
+
+1. Select the Bitmask object and select the 3D cylinder brush.
+2. Create your label in the main annotation window. 
+3. Click _Additional controls_ and enable the _Full 3D_ toggle on a reconstructed view. 
+</Tip>

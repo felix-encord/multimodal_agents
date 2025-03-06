@@ -1,0 +1,10 @@
+**Freehand edge touchup - Label Editor V1**
+
+If you need to modify the edge of a polygon to account for complicated shapes or other requirements, the freehand edge touchup feature allows you edit the edge of the polygon in a free-hand manner, from one vertex to another.
+
+<Tip>If you need to edit your shape along the edge of the polygon, _in between_ vertices, use the polygon brush tool instead.</Tip>
+
+1. Click the polygon you would like to edit.
+2. Click the _Freehand edge touchup_ icon in the floating toolbar that appears, or use the <kbd>F</kbd> hotkey to activate 'freehand edge touchup' mode.
+3. Mouse over the vertex you would like to start editing from, and click to start the edit process.
+4. Drag the cursor freely to draw out the new polygon edge. Navigate the cursor to the pre-existing vertex you want to finish on, and click to finalize the new edge boundary.

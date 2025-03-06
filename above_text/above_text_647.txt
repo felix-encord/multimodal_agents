@@ -1,0 +1,2 @@
+3. Select a folder to upload your files to. You can click **+New folder** to create a new folder.
+4. Select the type of data you want to add.

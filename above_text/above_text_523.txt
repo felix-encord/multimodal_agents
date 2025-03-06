@@ -1,0 +1,7 @@
+.
+
+7. Select the Classifications applied to the audio file.
+
+8. Press  to approve the Classifications on the audio file.
+
+9. Click **Approve task** to move the task to the next stage.

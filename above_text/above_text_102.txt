@@ -1,0 +1,8 @@
+Move between slices
+
+There are a number of different ways to skip through slices in a DICOM file:
+
+- Using <kbd>Left</kbd> and <kbd>Right</kbd> arrow keys on your keyboard.
+- Using the forward and backward buttons on the editor.
+- By scrolling using your mousewheel or trackpad.
+- By scrubbing through, or clicking anywhere on the progress bar.

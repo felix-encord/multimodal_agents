@@ -1,0 +1,4 @@
+To set a custom overlay: 
+
+1. Navigate to the _Settings_ tab of your Project.
+2. Click **Upload** in the _DICOM_ section.

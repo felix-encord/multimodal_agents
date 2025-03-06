@@ -1,0 +1,3 @@
+The _Least confidence_ (LC) score of a model's prediction is the difference between 1 (100% confidence) and its most confidently predicted class label. The higher the LC score, the more “uncertain” the prediction.
+
+Implementation on GitHub.

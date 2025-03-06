@@ -1,0 +1,4 @@
+2. Select the connection for which you want to configure Google Public DNS. For example:
+   
+      - If you are using Wi-Fi, click **Wi-Fi**, click **Hardware properties**, then click **Edit** next to _DNS server assignment_.
+      - If you are using an ethernet connection, click **Ethernet**, then click **Edit** next to _DNS server assignment_.

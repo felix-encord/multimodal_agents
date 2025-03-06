@@ -1,0 +1,8 @@
+View and join Ontologies in your Org
+
+Organization Admins can search for and join any Ontology that exists within the Organization. 
+
+1. Navigate to _Ontologies_ in the Encord platform. 
+2. Select the _All Encord ontologies_ tab. 
+3. Find the Ontology you want to join.
+4. Click **Join ontology** to join the Ontology.

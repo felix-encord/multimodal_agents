@@ -1,0 +1,2 @@
+3. Click in to a folder.
+   The landing page for the folder appears and the _Explorer_ button is enabled.

@@ -1,0 +1,3 @@
+2. Select labels to be copied
+
+Select the data units with the labels that you want to copy into your new project.

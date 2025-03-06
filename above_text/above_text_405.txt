@@ -1,0 +1,15 @@
+Strict review
+
+<Note>Strict review is enabled by default, but can be disabled under _Advanced settings_.</Note>
+
+_Strict review_ ensures that crucial details are not overlooked during a review stage. Strict review aids in assuring higher accuracy when reviewing annotations. 
+
+_Strict review_ stages do not auto-advance to the next review task after bulk approving or rejecting labels. Reviewers can make adjustments to their review, and add comments when rejecting tasks with missing annotations.
+
+<AccordionGroup>
+   <Accordion title=" Video Tutorial - Strict review & change review judgement ">
+
+
+
+  </Accordion>
+</AccordionGroup>

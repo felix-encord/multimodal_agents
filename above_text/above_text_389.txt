@@ -1,0 +1,1 @@
+Click the 'Select group' drop-down and pick a group you would like to add as collaborators. After selecting a group, click the 'Select Role' drop-down to assign a role to the group of collaborators. Click **Add** to add the group.

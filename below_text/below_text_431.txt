@@ -1,0 +1,7 @@
+Here, a single source Project with 100% annotation progress is selected, and the benchmark function is customized for several ontology classes. Once you're satisfied with your configuration click **Next step** to continue.
+
+<Note>For more information on how trainees are evaluated, contact support@encord.com</Note>
+
+5. The final step is to add trainees and create the Project. Add trainees as a group, or as individuals. Click **Create training program** to create the training Project. 
+
+<Tip>You can add more annotators to the Project later.</Tip>

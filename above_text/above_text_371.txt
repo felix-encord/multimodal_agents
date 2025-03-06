@@ -1,0 +1,5 @@
+Performance - Details
+
+The _Details_ tab of the performance dashboard gives a more detailed view of your team's labeling and productivity. The below details will be displayed for Benchmark QA projects.
+
+<Warning>The _Details_ tab of the performance dashboard only shows information for labels created in the Label Editor. Labels submitted via the SDK **will not be** shown on the _Details_ tab. This includes labels that were submitted using the SDK, and edited in the Label Editor. </Warning>

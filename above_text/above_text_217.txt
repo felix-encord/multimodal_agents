@@ -1,0 +1,1 @@
+3. Click the _Set relation..._ bar and select the instance you want to link the selected instance to. In our example the chicken and the wing appear on the same frame, and therefore appear under the _This frame_ heading. Instances in different frames will appear under the heading _Rest_.

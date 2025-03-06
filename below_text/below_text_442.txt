@@ -1,0 +1,17 @@
+**Instance statistics**
+
+This section provides the total count of all instances across the datasets in your project.
+
+- **Project total**: Shows total instances (both objects and classifications) across the project by default. To get instance statistics for individual data files, click the drop-down to select a data file.
+- **Select class**: Shows the total instances for a particular class. This is a summary of how a given class is distributed across your project's data assets. The pie chart segments show a breakdown of how that class is split across the data assets.
+- **Display timestamps**: Flip the toggle to switch between frame numbers and timestamps for the labels.
+
+**Label statistics**
+
+This is a summary of how your labels are distributed across the project. The pie chart shows a breakdown of how many labels there are for a given class.
+
+- **Project total**: Shows the total number of labels across different datasets in the project. To get label stats for individual data files, click the drop-down to select a data file.
+- **Objects**: Click on the pie chart segment of a class to see the total number of labels and its attributes (sometimes called nested attributes) if available for that class.
+- **Classifications**: Shows the global classification at project or individual video level. For example, location, time of day, etc.
+
+---

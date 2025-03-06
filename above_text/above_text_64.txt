@@ -1,0 +1,4 @@
+3. Using the drop-down menu, select **Manual**, then toggle **IPv4** to **On**. If there are any IP addresses listed in the _Preferred DNS server_ or _Alternate DNS server_, write them down for future reference.
+      Replace those addresses with the IP addresses of the Google DNS servers:
+   
+     - For IPv4: 8.8.8.8 and/or 8.8.4.4.

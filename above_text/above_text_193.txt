@@ -1,0 +1,3 @@
+Editing polygons with the brush tool
+
+You can edit existing polygons with the brush tool. This allows you to create complex shapes in a much faster way than going vertex by vertex. To use the brush tool, select an existing polygon and then click on the brush tool button. This will show the brush tool settings panel where you can choose brush or eraser and change its size. Once you are done editing, click the "x" to go back to the label editor. Use the scissors tool if you'd like to remove vertices.

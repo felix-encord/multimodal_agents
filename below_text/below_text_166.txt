@@ -1,0 +1,17 @@
+**Remove labels of a specific class**:
+1. Select a class to delete from the _Select class menu_.
+2. Specify the frame range.
+3. Click the **Delete** button.
+
+**Delete all labels within a frame range**:
+1. Navigate to the _Delete all labels from range_ section.
+2. Set a range to delete labels from.
+3. Click **Delete**.
+
+**Delete labels below a specified confidence level**:
+1. Navigate to the _Delete labels below confidence_ section.
+2. Set the minimum confidence threshold. All labels with a confidence value below this threshold are deleted.
+3. Specify a range of frames to delete the specified labels from.
+4. Click **Delete**.
+
+---

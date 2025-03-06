@@ -1,0 +1,3 @@
+**How to disable MPR**
+
+MPR views are automatically displayed when a 3D volume is detected. To turn this off, disable the _Default to MPR layout_  toggle in the _DICOM settings_ section of the Editor settings.

@@ -1,0 +1,5 @@
+User assignment restriction
+
+The _User assignment restriction_ feature prevents team members working on tasks in the current stage that they have done in previous stages. This can prevent individuals with the _Annotator & Reviewer_ role from being assigned their own annotations to review. 
+
+This feature does not apply to users with the _Admin_ or _Team Manager_ roles, since they are added to each stage by default and cannot be removed.

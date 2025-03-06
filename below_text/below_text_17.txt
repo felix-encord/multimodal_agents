@@ -1,0 +1,5 @@
+The settings have several tabs:
+
+- **General**: Your user login credentials. Change your password and set up Multi-Factor Authentication for your Encord user account. This is where Encord Labs appears, if available.
+- **Public keys**: creating and managing SDK & API keys.
+- **Notifications**: creating and managing push notifications.

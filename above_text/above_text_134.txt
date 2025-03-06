@@ -1,0 +1,5 @@
+View full study
+
+<Tip>See our documentation on Study-level classifications to learn how to apply classifications to all series in a study.</Tip>
+
+The Label Editor displays how many series are in part of the study currently being viewed. The **View full study** button allows you to view all series belonging to a study side-by-side.

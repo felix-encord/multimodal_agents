@@ -1,0 +1,5 @@
+2. Click **Custom Embeddings** from the menu. 
+
+3. Select your custom embedding to filter your data.
+
+4. Select **True** to display images, frames, or videos with the custom embeddings.

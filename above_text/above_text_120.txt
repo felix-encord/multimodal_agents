@@ -1,0 +1,5 @@
+Hanging protocols
+
+Hanging protocols allow you to select how many entities within a study are displayed at the same time. This allows you to, for example, view the same CT scan slice at different moments in time. 
+
+<Tip>To learn how to set custom editor layouts for the entire Project, see our documentation here.</Tip>

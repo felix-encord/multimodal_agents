@@ -1,0 +1,25 @@
+Create a Dataset
+
+Creating a Dataset from a Collection gives you flexibility handling your annotation Projects. You can create subsets of your entire Project's data to then attach to your existing Annotate Projects or create a new Annotate Project with the new Dataset attached to the Project.
+
+<Note>All Datasets and Annotate Projects created from Collections are created under the user account that sends the Collection to Annotate. This means that that user must provide access to the Datasets and Annotate Projects to other users. Even Collection creators do not have access to Datasets and Annotate Projects until the user who sends the Collection to Annotate (and creates a Dataset or Project) grants access.</Note>
+
+<AccordionGroup>
+  <Accordion title="To create a Dataset, based on a Collection, to Annotate:">
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Click **Collections**.
+   The _Collections_ page appears.
+
+5. Select the checkbox for the Collection to send to Annotate.
+
+6. Click **Create Dataset**.
+   The _Create Dataset_ dialog appears.

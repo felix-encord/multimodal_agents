@@ -1,0 +1,8 @@
+5. Select the metric to sort the data.
+
+6. Specify ascending or descending order.
+
+<Tip>
+- Filter and use the NLP or image searches to further help get the results you want.
+- After filtering, sorting, and searching, create a Collection.
+</Tip>

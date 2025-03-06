@@ -1,0 +1,18 @@
+Filter Nested Attributes
+
+Active supports filtering on the top level Classes and nested attributes on both Objects and Classifications. Supports up to seven levels of depth.
+
+<Info>Images/frames in the Project MUST have labels applied for this filter to return results.</Info>
+
+**To filter nested attributes:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Select **Data**, **Labels**, or **Predictions**.

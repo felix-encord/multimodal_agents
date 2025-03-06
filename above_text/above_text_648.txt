@@ -1,0 +1,14 @@
+Custom Metadata in Index
+
+Once your custom metadata is imported to a Folder, you can create Collections based on your custom metadata and then create Datasets and Projects based on the Collections.
+
+**To create a Dataset from an Index Collection:**  
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears. 
+
+2. Go to **Index > Files**.  
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a folder.  
+   The landing page for the folder appears and the _Explorer_ button is enabled.

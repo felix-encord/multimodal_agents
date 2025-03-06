@@ -1,0 +1,5 @@
+Webhooks for Manual QA Projects
+
+<Info>Manual QA Projects will be deprecated soon. We strongly advise using Workflow Projects.</Info>
+
+Use the _Notifications_ tab in _Settings_ to manage push notifications and webhooks for Manual QA Projects.

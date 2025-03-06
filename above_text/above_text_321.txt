@@ -1,0 +1,5 @@
+- **A**: Set the time period you would like to see displayed by selecting a range of dates.
+- **B**: Download a CSV file of the data. 
+- **C**: Display the data as a bar chart, or a table. While the chart provides a clear visual representation, the table provides exact figures for a more detailed picture of your team's performance. 
+
+Within your specified time period, you can choose which dates to display by using the slider located beneath the graph.

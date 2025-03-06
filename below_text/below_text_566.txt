@@ -1,0 +1,8 @@
+4. Click the **Explorer** button.
+   The _Index Explorer_ page appears.
+
+5. Click the **Filters** dropdown or press <kbd>F</kbd>.
+   The _Filters_ menu appears.
+
+6. Add and configure the filters you need. 
+   Frame/video/audio files filter in the Explorer workspace.

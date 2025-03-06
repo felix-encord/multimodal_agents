@@ -1,0 +1,4 @@
+Polygons
+
+1. Click the **Show text outline** button to enable the feature
+2. Press the hotkey for the polygon, and then start labeling.

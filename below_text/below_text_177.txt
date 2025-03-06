@@ -1,0 +1,9 @@
+1. Right-click the polygon you would like to edit.
+2. Click **Edit with brush** or press the <kbd>G</kbd> hotkey.
+A floating brush tool menu appears.
+3. Select the eraser tool.
+4. Adjust the brush size to suit your needs.
+5. Mouse over location you would like to start editing from, and click and hold to start the edit process.
+6. Drag the cursor freely to draw out the new polygon edge let go of mouse to finish editing.
+
+**Freehand edge touchup**:

@@ -1,0 +1,10 @@
+_Files_ allows you to easily locate data, and learn how it is being used across Datasets and Projects in Encord. 
+
+**To see which Datasets a data unit has been added to**:
+
+1. Navigate to, and select the data unit you want to locate in _Files_.
+
+<Tip>Use the search bar to search for a specific file.  </Tip>
+
+2. Once the data unit is selected, click the _Linked to_ tab on the right of the screen. 
+The total number of Datasets the file is linked to, along with their names is shown.

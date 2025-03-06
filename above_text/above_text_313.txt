@@ -1,0 +1,5 @@
+Queue
+
+The _Queue_ tab is where annotators and reviewers look to find their next task. The **Start labeling** and **Start reviewing** buttons visible throughout the project open the label editor with the next task in the queue according to the relevant task type.  
+
+The _Queue_ tab can be used to assess the number of tasks assigned to you as an annotator or reviewer and therefore estimate your likely workload. Administrators and Team Managers can also use it to quickly verify the current assignments per team member, and change assignments as necessary.

@@ -1,0 +1,9 @@
+3. Define your Ontology structure. 
+  - Click **Add classification**
+  - Type 'Winner?'
+  - Click on **0 options** to configure options
+  - Click **Add option**
+  - Enter the word _Yes_ as an option
+  - Click **Add option**
+  - Enter the word _No_ as an option
+  - Click **Create ontology**

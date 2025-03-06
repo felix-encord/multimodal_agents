@@ -1,0 +1,3 @@
+Polygon
+
+Creating a polygon requires an Ontology with a polygon annotation type. Enable or disable free-hand drawing mode by pressing <kbd>d</kbd> on your keyboard. Polygon coarseness (for polygons drawn free-hand) is set in the *Drawing settings* section of the _Settings_ (

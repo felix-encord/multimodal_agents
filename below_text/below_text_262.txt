@@ -1,0 +1,1 @@
+Copying an ontology copies all object primitives, and you have the option to copy any team members associated with the Ontology. The new Ontology is not attached to any Projects.

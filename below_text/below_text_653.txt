@@ -1,0 +1,6 @@
+4. Select _View dataset_. 
+A view of the Dataset appears. 
+
+5. Navigate to the _Settings_ tab of the Dataset.
+
+6. Select _Linked projects_ to see a list of all Projects the Dataset is attached to.

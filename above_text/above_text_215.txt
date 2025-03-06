@@ -1,0 +1,11 @@
+Merging instances on the timeline
+
+Multiple instances of the same object can be merged into a single instance of your choice, provided they don't appear on the same frame. 
+
+1. Select the instances you want to merge.
+
+  <Note>Hold <kbd>SHIFT</kbd> to select multiple instances.</Note>
+
+2. Right-click your selection. 
+3. Hover on _Merge into_.
+4. Select the instance you want to merge your selection into.

@@ -1,0 +1,12 @@
+4. Select the images/frames/audio files to include in the Collection.
+
+5. Click **Add to a Collection**.
+
+6. Click **New Collection**.
+
+7. Specify a meaningful title and description for the Collection.
+
+    <Note>The title specified here is applied as a tag to every selected image.</Note>
+
+8. Click **Collections**.
+    The _Collections_ page appears.

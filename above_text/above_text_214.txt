@@ -1,0 +1,5 @@
+Selecting objects and instances
+
+One or more objects and instances can be selected using the timeline. Simply click an object or instance on the timeline to select it. To select multiple objects or instances, click while holding down the <kbd>Shift</kbd> key.
+
+Alternatively select an object or instance by right-clicking and choosing **Select**.

@@ -1,0 +1,3 @@
+4. Select a folder to store the files in, or create a new folder.
+
+5. Select the _Import from private cloud_ tab and select the integration you want to use.

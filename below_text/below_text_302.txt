@@ -1,0 +1,5 @@
+A. Sampling Rate
+B. Multi review assignment
+C. Default rejection reasons
+D. Reviewer mapping
+E. Expert review

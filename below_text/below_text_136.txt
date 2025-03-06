@@ -1,0 +1,3 @@
+<Tip>Click the _Rotate 90 degrees_ icon to rotate the pop-up in increments of 90 degrees.</Tip>
+
+---

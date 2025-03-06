@@ -1,0 +1,12 @@
+Display information on Grid view
+
+1. Log on to the Encord platform.
+   The landing page appears.
+
+2. Click **Active**.
+   The Active home page appears.
+
+3. Click into an Active Project.
+   The _Explorer_ page for the Project appears.
+
+4. Click the tab you want to display: **Video**, **Data**, **Labels**, **Predictions**.

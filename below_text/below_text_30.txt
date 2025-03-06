@@ -1,0 +1,3 @@
+3. Select the connection for which you want to configure Google Public DNS. For example:
+      - To change the settings for an Ethernet connection, right-click the Ethernet interface and select Properties.
+      - To change the settings for a wireless connection, right-click the Wi-Fi interface and select Properties.

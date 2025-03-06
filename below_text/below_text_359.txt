@@ -1,0 +1,9 @@
+- File, Search, & Reopen: The name of the specific _data unit_ or _data asset_. This is the same as the name in the dataset to which this data asset is a part of. Use the search box to filter the list by file name, and send tasks back to annotation using the 'Reopen' feature.
+- _Dataset_ : The dataset the _data asset_ belongs to.
+- _Type_ : The type of the data, such as an image or video. For more on our supported data types, see our supported data documentation.
+- Status: The status of this task.
+- _Frames_ : The number of frames in the _data asset_. For a DICOM series, this will be the number of _slices_.
+- _Submitted_ : Indicates when the last submit action, whether for an annotation was made against any of the labels in this _data asset_.
+- _Submitted by_ : Who last submitted the annotations.
+- _Actions_ : Click the **View** link to open the label editor. Note: this feature is only available to Team Managers and Administrators as an extra method of submissions. **We advise extra caution if you decide to edit the labels from this interface. If significant work needs to be done, we strongly recommend to 'Reopen' the task to prevent possible errors from simultaneous edits.**
+- Filter: Use the filter drop-down to only show tasks with the selected status. Only filtered results will be shown in the Label Editor.

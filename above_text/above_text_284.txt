@@ -1,0 +1,5 @@
+Upload Annotation Instructions
+
+1. Navigate to the _Settings_ tab of your Project.
+
+2. Click the **Add instructions** button to upload instructions for your annotators in PDF format.

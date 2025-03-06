@@ -1,0 +1,14 @@
+You can copy any combination of the following assets:
+
+- **Labels**: this will copy the labels within videos and image sequences of your choice.
+- **Models**: this will copy all the models in your project along with their training logs.
+- **Collaborators**: copy all project users with their respective roles. Project admins are copied regardless of whether this is selected.
+- **All datasets**: all datasets will be copied, and new annotation tasks will be created for all videos and image sequences if their labels were not copied over (see next line).
+
+<Tip>Confused about the difference between image groups and image sequences? See our documentation here to learn about different data types in Encord.</Tip>
+
+The new annotation project will use the same ontology as the original. This can be changed in the project settings if required.
+
+- If you do not want to copy labels, press **Copy project**. This creates a copy of your Project, which you can then access in the _Projects_ tab.
+
+- If you choose to copy over labels, you will be asked to select the data assets for which you would like labels copied over. To begin the process, press **Next: configure labels**. Continue to step 2. below.

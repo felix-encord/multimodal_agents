@@ -1,0 +1,5 @@
+Attach Datasets
+
+Click the **Attach datasets** button. 
+
+Select an existing Dataset from the list using the **Attach** button, or create a new Dataset by clicking the **New Dataset** button.

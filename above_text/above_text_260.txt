@@ -1,0 +1,5 @@
+_Transcript_ Attributes
+
+_Transcript_ attributes are text fields specifically designed for transcribing audio files. Apply _Transcript_ attributes to _Audio Region_ objects and input the audio transcription directly into the text field. In the following example an _Audio Region_ object called "Beautiful Voice" has the _Transcription_ text attribute "Lyrics", which can be used to transcribe song lyrics.
+
+<Info>Only Text attributes can be marked _Transcript_</Info>

@@ -1,0 +1,1 @@
+You can also click and drag your cursor to select the part of an image you would like to segment.

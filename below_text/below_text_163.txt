@@ -1,0 +1,5 @@
+- **MRP layout**: Enable or disable reconstructed MPR views for DICOM volumes.
+- **Mammography layout**: Select how mammography files are displayed in the editor.
+- **Cache DICOM files locally**: Choose whether to cache DICOM files locally.
+- **Display DICOM crosshairs**: Shows crosshairs on all windows in the editor when crosshair navigation is enabled.
+- **Native resolution rendering**: Displays DICOM files at their original quality and size. We recommend this setting for mammography files.

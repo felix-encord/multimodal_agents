@@ -1,0 +1,2 @@
+3. You have the option to:
+  - Add data to an existing Dataset by clicking **Add** next to the Dataset's name on the _Existing datasets_ tab. You can add data to multiple Datasets.

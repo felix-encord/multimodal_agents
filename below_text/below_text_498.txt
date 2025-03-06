@@ -1,0 +1,10 @@
+Click on the 'Model API details' button to toggle a code snippet with create model row API details when you are happy with your selected parameters. The feature ID's ( uid) can also be fetched from the project editor information.
+
+
+
+
+
+
+The request returns a model ID ( uid).
+
+The following models are available, and have to be passed as strings.

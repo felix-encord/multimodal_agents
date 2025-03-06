@@ -1,0 +1,58 @@
+Now you want to compare your model's performance before using Encord (or maybe after running a number of data curation and label validation cycles). Active supports doing direct model prediction performance comparison from within your Active Project.
+
+<AccordionGroup>
+   <Accordion title="To compare your model's performance:">
+
+This process assumes you have already imported your model's predictions in to Active at least twice.
+
+1. Log in to Encord.
+   The Encord Homepage appears.
+
+2. Create a **Workflow** Project in Annotate.
+
+3. Click **Active**.
+   The Active landing page appears.
+
+4. Import your Annotate Project.
+
+5. Click an Active Project.
+   The Project opens on the _Explorer_.
+
+6. Click **Model Evaluation**.
+   The _Model Evaluation_ page appears with _Summary_ displaying.
+
+7. Select an entry from the dropdown under **Prediction Set** under _Overview_.
+
+8. Select an entry from the dropdown under **Compare against** under _Overview_.
+
+9. Click through the various entries on the left side of the Model Evaluation page to view the comparison.
+
+10. Add more data and start the data curation, label validation, and model optimization cycles until the model reaches a performance level that you require.
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="To compare your model's performance from scratch:">
+
+This process assumes you are just getting started with Encord. You have not trained your model yet. You are using Encord to prepare your data for annotation, annotating your data, labeling your data, validating your labels, fixing any label issues, then training your model.
+
+1. Log in to Encord.
+   The Encord Homepage appears.
+
+2. Create a **Workflow** Project in Annotate.
+
+3. Click **Active**.
+   The Active landing page appears.
+
+4. Import your Annotate Project.
+
+5. Click an Active Project.
+   The Project opens on the _Explorer_.
+
+6. Click **Model Evaluation**.
+   The _Model Evaluation_ page appears.
+
+7. Import a Prediction Set.
+
+8.  Perform data curation on your Project in Active(/platform-documentation/Active/active-tutorials/active-use-cases

@@ -1,0 +1,3 @@
+Project dashboard
+
+Selecting a project from the list of annotation projects takes you to its 'Project dashboard'.

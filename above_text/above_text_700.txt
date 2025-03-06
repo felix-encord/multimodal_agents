@@ -1,0 +1,23 @@
+Step 4: Import Project with Custom Embeddings
+
+Before you can use your custom embeddings in Encord Active Projects, you need to import the custom embeddings. This is performed while you import your Annotate Project into Active.
+
+For existing Active Projects, you can import custom embeddings for your Project import if your Project imported to **Data** or **Labels**. Importing to **Metrics & Embeddings** requires deleting the Project in Active and re-importing the Project with your custom embeddings.
+
+<Note>After updating your embeddings, sync your Active Project to automatically apply the new embeddings.</Note>
+
+**To import a Project with custom embeddings:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Create a Project (Annotation Project or Training Project) in Encord Annotate.
+
+3. Click **Active** from the main menu.
+   The landing page for Active appears.
+   
+4. Click the **Import Annotate Project** button.
+   The _Import an Annotate Project to Encord Active_ dialog appears.
+
+5. Click the **Import** button for the Annotate Project you want to import.
+   The _Confirm Project Import_ dialog appears.

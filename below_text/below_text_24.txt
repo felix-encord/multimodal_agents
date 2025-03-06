@@ -1,0 +1,5 @@
+<br />
+
+Encord _Annotate_ allows you to efficiently label visual data, manage large-scale annotation teams, and ensure high-quality data for machine learning applications through customizable workflows and quality control tools. Get started with _Annotate_ to streamline your labeling processes and produce top-tier training data.
+
+***

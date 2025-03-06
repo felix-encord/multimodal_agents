@@ -1,0 +1,5 @@
+Creating a new instance label 
+
+Click the wand icon within the Polygon, or Bounding box class when viewing a task in the label editor to make the SAM pop-up appear.
+
+<Tip>Use the <kbd>Shift</kbd> + <kbd>A</kbd> keyboard shortcut to toggle SAM mode.</Tip>

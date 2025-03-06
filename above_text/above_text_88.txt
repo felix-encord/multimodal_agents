@@ -1,0 +1,4 @@
+Apply study level classifications
+
+1. Navigate to the _Settings_ tab of your Project. 
+2. Enable the _Study level classifications_ toggle in the _DICOM_ section.

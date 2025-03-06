@@ -1,0 +1,2 @@
+5. Click the **Similarity Search** icon.
+   Images and Frames sort according to similarity AND a _Distance_ filter appears.

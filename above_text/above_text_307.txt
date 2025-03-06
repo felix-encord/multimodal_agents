@@ -1,0 +1,12 @@
+Project dashboard
+
+
+<AccordionGroup>
+   <Accordion title=" Video Tutorial -  Monitoring annotation progress ">
+
+
+
+  </Accordion>
+</AccordionGroup>
+
+Selecting a project from the list of annotation projects takes you to its 'Project dashboard'.

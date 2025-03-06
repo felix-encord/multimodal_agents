@@ -1,0 +1,4 @@
+12. Restart your Mac for the changes to take immediate effect.
+
+  </Accordion>
+</AccordionGroup>

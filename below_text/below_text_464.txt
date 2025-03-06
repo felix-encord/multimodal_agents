@@ -1,0 +1,11 @@
+- **A** - Click and select (or drag-and-drop) files into the area highlighted below to add files to a Dataset. 
+
+- **B** - Manage files contained in the Dataset.
+
+  - Edit the filename by clicking the _Edit_ icon.
+  - Select a file by clicking the checkbox next to the file name.
+  - Select a file and click the _Delete_ button to delete the file from a Dataset.
+  - Re-encode a file by selecting the file and clicking the **Re-encode(auto)** button.
+
+
+***

@@ -1,0 +1,1 @@
+3. Select the Ontology. Make sure you select the **exact same** Ontology that was used to create the _ground-truth_ labels in the source Project. Click **Next step** to continue.

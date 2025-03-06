@@ -1,0 +1,7 @@
+To enable 3D volume rendering: 
+
+1. Open the Additional controls pane by clicking the _Additional controls_ icon. 
+2. Enable the _Full 3D_ toggle.
+3. (Optional) The 3D volume can be rotated by clicking and moving the mouse while holding down the <kbd>Alt</kbd> key on Windows, or the  <kbd>Option</kbd> key on Mac. 
+
+---

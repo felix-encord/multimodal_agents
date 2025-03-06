@@ -1,0 +1,3 @@
+<Warning>Deleting your project does not delete the datasets in the project, but will delete the project's labels and ontology.</Warning>
+
+---

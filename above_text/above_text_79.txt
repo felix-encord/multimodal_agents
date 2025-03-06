@@ -1,0 +1,13 @@
+Annotating in different views
+
+You can switch the slice that is being annotated in a hanging protocol by switching out the tile being annotated, or by changing which tile can be annotated. 
+
+<Tip>The tile currently being annotated is indicated by a purple toolbar</Tip>
+
+**To select a tile for annotation**
+- Click the _Switch tiles_ icon highlighted in the image below. 
+- Click the three dots icon highlighted in the image below and select **Annotate from this file**.
+
+**To move a tile to the one currently being annotated**
+1. Click the three dots icon highlighted in the image below 
+2. Select **Annotate and swap tiles**.

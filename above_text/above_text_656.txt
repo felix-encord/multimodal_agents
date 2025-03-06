@@ -1,0 +1,5 @@
+Automatically fix detected issue
+
+Auto re-encoding serves common frame synchronization issues and ensures there is no quality loss during re-encoding. If for example the only issue is that audio is present in the video, auto re-encoding only removes the audio while keeping the video as-is.
+
+To automatically re-encode your video, simply select the file in question and click the **Re-encode (auto)** button to prevent any frame synchronization issues from arising. A notification telling you your video is re-encoded should appear at the top of your screen.

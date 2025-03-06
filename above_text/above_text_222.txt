@@ -1,0 +1,5 @@
+4. Optionally, click the **View full study** button to see all the series in your study.
+
+5. Create your labels and classifications as you usually would. 
+
+6. Click the **Submit study** button in the top right corner of the Label Editor.

@@ -1,0 +1,11 @@
+Click the _inference API details_ icon next to the download button to toggle a code snippet with model inference details. The Model inference API accepts a list of base64 encoded strings with an uid.
+
+You can define confidence and intersection-over-union (IoU) thresholds. The default confidence threshold is set to , and the default IoU threshold is set to .
+
+For video inference, you must define a detection frame range.
+
+Object UID allocation (tracking) is disabled by default and is defined by the parameter .
+
+
+
+Equivalently using Node.js with Axios and with a single example file, using the Node  package to parse the file into a base64 string:

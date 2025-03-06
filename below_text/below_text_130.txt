@@ -1,0 +1,10 @@
+**Specifying custom overlays**:
+
+A JSON file is used to define which elements are displayed as overlays in the Label Editor. The following JSON schema includes all possible overlay elements you can configure.
+
+<Tip>Examples of overlay JSON files can be found here.</Tip>
+
+
+
+
+---

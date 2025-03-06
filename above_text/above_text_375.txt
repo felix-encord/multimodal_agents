@@ -1,0 +1,3 @@
+Submissions
+
+The _Submissions_ graph displays there number of submitted labels within a given range of time.

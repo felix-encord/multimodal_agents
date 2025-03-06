@@ -1,0 +1,11 @@
+Label Duplicates
+
+Ranks labels by how likely they are to represent the same object.
+
+> Jaccard similarity coefficient is used to measure closeness of two annotations.
+
+**Example 1:**
+
+An annotator accidentally labels the same thing in a frame twice.
+
+An annotator labeled the same orange twice in a frame. Look carefully at both images and you can see that there are two slightly different labels around the orange.

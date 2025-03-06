@@ -1,0 +1,16 @@
+Upgrade your Top-Level Folder
+
+Before you can perform filtering, use similarity searches, or use embedding plots with your custom embeddings, you need to configure your top-level Folder in _Files_.
+
+**To configure Folders for Embedding Plots:**
+
+1. Go to **Index > Files**.
+
+   A list of Folders available to you appears on the _My Files_ page.
+
+2. Do one of the following: 
+
+   - Select the check box for the Folder.
+   - Click into the Folder.
+
+   The _Upgrade Folder_ button appears.

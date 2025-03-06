@@ -1,0 +1,5 @@
+Measure angles 
+
+Polygon and polyline angles can be displayed in the label editor to provide useful insights into your labels. 
+
+1. Open the label editor _Settings_ by clicking

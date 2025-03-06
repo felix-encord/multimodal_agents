@@ -1,0 +1,10 @@
+---
+  </Step>
+  <Step title="Custom Embeddings and Similarity Search">
+    <Tip>Adding custom embeddings to your data can significantly improve the insights you can gather from your data. We recommend importing customer embeddings with your data, but you can import custom embeddings after importing your data.</Tip>
+
+<Warning>You must **Upgrade** the top-level Folder and select the custom embeddings to use embedding plot graphs and similarity search.</Warning>
+
+For information on upgrading your Folder and importing custom embeddings, refer to our documentation.
+
+**Custom Embeddings**

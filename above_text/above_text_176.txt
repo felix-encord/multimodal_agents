@@ -1,0 +1,17 @@
+Automated Labeling
+
+Automated labeling includes several techniques to quickly create labels and classifications automatically. 
+- models must be created and trained before use.
+- Object tracking and interpolation do not require set up or training, and are always available.
+
+<Tip>For a more detailed explanation of these features, please visit our automated labeling page.</Tip>
+
+1. Click the **Automated labeling** button to open the *Automated labeling* panel.
+2. Select the type of automated labeling you want to use.
+3. Run automated labeling for the selected objects.
+
+<Tip> 
+Alternatively, run object tracking or interpolation on videos, image groups, and image sequences by:
+
+1. Right-clicking a label.
+2. Selecting _Track from this frame_ to initiate object tracking, or select _Interpolate_ to interpolate the selected object instance.

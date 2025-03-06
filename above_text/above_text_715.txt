@@ -1,0 +1,3 @@
+Analytics
+
+In a Project, go to the _Analytics_ page and pick the  quality metric for the _Metric Distribution_ section.

@@ -1,0 +1,3 @@
+Window Width (WW) and Window Level (WL)
+
+Toggle the DICOM windowing settings menu by clicking the _sliders_ icon in the viewer pane. Adjust window width and level using the sliders or setting your required input values. Save custom levels as presets for quick access later.

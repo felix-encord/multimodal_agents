@@ -1,0 +1,15 @@
+2. Click **Manage selection**.
+   A dropdown menu appears.
+
+3. Select **Similarity search**.
+   Active displays similar images/frames of the selected images/frames.
+
+4. Use the **Distance** filter to adjust the search as required.
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="2: Duplicates Shortcut">
+
+Found in the _Overview_ tab, any images that have a  value of 0 to 0.0001 are highlighted as duplicates. You can adjust this value from the _Filter_ tab.

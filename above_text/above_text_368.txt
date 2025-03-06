@@ -1,0 +1,3 @@
+Instance Label actions over time
+
+View the number of instance label actions in a project that have been approved, rejected, and submitted for review over a given period of time.

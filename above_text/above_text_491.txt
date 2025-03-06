@@ -1,0 +1,3 @@
+3. Test the Editor Agent
+
+After an Agent is registered, the Agent can be tested. We strongly recommend testing an Agent before using it in the Label Editor.

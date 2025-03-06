@@ -1,0 +1,3 @@
+Export labels
+
+Select the data units in the Data tab you want to export labels for and click the **Export and save** button highlighted in the screenshot below to export labels. See our documentation on exporting labels for more information.

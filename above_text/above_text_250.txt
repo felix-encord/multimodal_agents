@@ -1,0 +1,11 @@
+Classifications
+
+<Info> Classifications are supported for all modalities </Info>
+
+Since classifications apply to the entire frame, there is no need for specific colors or shapes. _Classification annotation types_ include:
+
+- **Checklist**: Allows multiple values. For example, "Weather" could be both cloudy and rainy.
+- **Radio**: Allows a single value. For example, "Time of day" could be "Day" or "Night."
+- **Text**: Allows freeform input for each situation.
+
+<Note>Radio buttons can nest up to 7 layers deep. Check boxes and text fields do not support nesting.</Note>

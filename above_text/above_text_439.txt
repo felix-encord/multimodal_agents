@@ -1,0 +1,2 @@
+1. In the Encord platform, select _Projects_ under _Annotate_.
+2. Select the Project you want to Manage.

@@ -1,0 +1,1 @@
+7. Click **No consensus** if the labels are not correct OR if not enough of the annotators have labeled the data unit correctly.

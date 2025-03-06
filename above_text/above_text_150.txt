@@ -1,0 +1,3 @@
+Brush tool
+
+The brush tool is selected by clicking the brush icon or by pressing <kbd>f</kbd> on your keyboard while the popup is open.

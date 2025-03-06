@@ -1,0 +1,4 @@
+5. Click **Filters**.
+   A menu appears.
+
+6. Select the class and the nested attribute under **Class**.

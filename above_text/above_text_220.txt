@@ -1,0 +1,4 @@
+Submit a DICOM study
+
+1. Navigate to the _Settings_ tab of your Project. 
+2. Enable the _Study level workflow_ toggles in the _DICOM_ section.

@@ -1,0 +1,6 @@
+Edit templates
+
+You can edit Workflow templates after they have been created.
+
+1. Navigate to _Workflow templates_ under _Annotation_. 
+2. Click the name of the template you want to edit.

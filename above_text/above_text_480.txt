@@ -1,0 +1,3 @@
+3. Press <kbd>Shift</kbd> + <kbd>A</kbd> on your keyboard to enable SAM.
+
+<Tip>SAM mode will remain active when switching to a different annotation class, and will only be deactivated by clicking the

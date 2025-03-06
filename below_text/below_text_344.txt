@@ -1,0 +1,5 @@
+Tasks can be released by pressing the icon next to the task and clicking the **Release task** button. Reserved tasks do not have an expiry and will keep being assigned to an individual until it is submitted, released, or skipped.
+
+<Tip>Annotation tasks can be submitted programmatically using our SDK <a href="/sdk-documentation/getting-started-sdk/installation-sdk" target="none">Encord's Python SDK</a>.</Tip>
+
+---

@@ -1,0 +1,6 @@
+- Invite collaborators by clicking the **+ Invite collaborators** button and adding their emails. 
+- New collaborators are assigned the 'Viewer' role by default. A 'Viewer' cannot make changes to the Dataset, only an 'Admin' can.
+- Collaborators can be upgraded to 'Admin' using the 3 dots to the right of their name. 
+- Click the _Delete_ icon to delete a collaborator.
+
+<Note>An 'Admin' cannot be reverted to a 'Viewer'. To do so you must delete and re-invite the user.</Note>

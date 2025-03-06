@@ -1,0 +1,6 @@
+Bounding Boxes
+
+1. Click the **Show text outline** button to enable the feature.
+2. Press the hotkey for the bounding box, and the label appears around the area you highlight.
+
+<Tip>Bounding boxes are the quickest way to label documents in the Label Editor.</Tip>

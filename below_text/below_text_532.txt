@@ -1,0 +1,5 @@
+3. Click **Create dataset** to create the Dataset. 
+A screen showing the Dataset appears.
+
+4. Click **+Attach existing files**. 
+A dialog appears.

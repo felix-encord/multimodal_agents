@@ -14,6 +14,8 @@ langchain-community = "^0.3.19"
 unstructured = {extras = ["md"], version = "^0.16.23"}
 nltk = "^3.9.1"
 readmdict = "^0.1.1"
+encord = "^0.1.158"
+openai = "^1.65.4"
 
 
 [tool.poetry.group.dev.dependencies]

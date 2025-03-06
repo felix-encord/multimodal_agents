@@ -1,0 +1,4 @@
+2. Add an attribute answer.
+    - **Text attribute**: Type the attribute answer in the text field that appears.
+    - **Radio button**: Select one attribute answer from the list of options. May have nested options.
+    - **Checklist**: Select all applicable attribute answers.

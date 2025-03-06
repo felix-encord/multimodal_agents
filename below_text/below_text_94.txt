@@ -1,0 +1,18 @@
+The _Drawing settings_ section of the _Label editor settings_ contains the following components:
+
+| Feature                               | Description |
+|---------------------------------------|-------------|
+| **Handle size**                       | Adjusts the size of vertices and keypoints (1-10 px). |
+| **Object opacity**                    | Controls label opacity (1% - 100%) for better visibility. |
+| **Selected object opacity**           | Adjusts opacity multiplier (1x - 10x) for selected objects. |
+| **Primitive keypoint sensitivity**    | Sets precision for selecting/moving keypoints (1.00 - 10.00). |
+| **Segment anything RDP parameter**    | Sets RDP parameter for (SAM). |
+| **Drawing line aides**                | Adds crosshairs to improve label accuracy. |
+| **Freehand drawing & Polygon coarseness** | Enables freehand drawing with adjustable coarseness. |
+| **Show polyshape angles**             | Displays angles on polygons and polylines. |
+| **Permanent drawing (new instances)** | Allows continuous drawing of new instances without re-selecting the tool. |
+| **Permanent drawing (existing instances)** | Automatically moves forward and prompts labeling of the same instance on the next frame. |
+| **Skeleton points**           | Toggles visibility of individual object primitive keypoint names. |
+| **Interpolation auto adjustments**    | Keeps manually labeled frames intact while adjusting interpolations with confidence scores below 99%. |
+
+---

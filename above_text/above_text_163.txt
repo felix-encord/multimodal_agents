@@ -1,0 +1,3 @@
+DICOM editor settings
+
+The Label Editor has several DICOM specific settings.

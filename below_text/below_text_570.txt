@@ -1,0 +1,4 @@
+7. Select the Preset you want to use from the dropdown.
+   Frame/video/audio files filter in the Explorer workspace based on the Preset Filters and their settings.
+
+<Note>Global filters apply to any Folder, but Local filters only apply on the Folder where the Preset was created.</Note>

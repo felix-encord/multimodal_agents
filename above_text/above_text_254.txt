@@ -1,0 +1,3 @@
+_Dynamic_ Attributes
+
+Top-level attributes on objects can be marked as _Dynamic_. Normally, attributes are static, but marking one as _Dynamic_ allows it to change value during a video. This is useful for indicating temporary attributes of an object. For example, a single instance of a person can be marked as "moving" in one part of the video and "stationary" in another.

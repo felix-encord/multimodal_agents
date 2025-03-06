@@ -1,0 +1,7 @@
+1. Click **Initiate** next to a file from the Project Queue.
+
+   Two audio files appear in the Label Editor.
+
+2. Press  to select the _Winner_ Classification.
+
+   The options for the Classification appear.

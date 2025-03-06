@@ -1,0 +1,3 @@
+4. If you are prompted for an administrator password or confirmation, type the password or provide confirmation.
+    
+    5. Select the Networking tab. Under This connection uses the following items, select Internet Protocol Version 4 (TCP/IPv4) then click Properties.

@@ -1,0 +1,14 @@
+Create a Preset Filter
+
+Create Presets (Preset Filters and their settings) from the _Filter_ tab.
+
+**To create a Preset (Preset Filter and their settings):**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a folder.
+   The landing page for the folder appears and the _Explorer_ button is enabled.

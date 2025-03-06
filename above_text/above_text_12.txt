@@ -1,0 +1,5 @@
+Deleting models
+
+Navigate to the _Danger zone_ of the _Settings_ tab to delete a model.
+
+<Warning>Deletion is a permanent action and cannot be undone.</Warning>

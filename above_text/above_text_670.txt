@@ -1,0 +1,15 @@
+4. Click the **Import Annotate Project** button.
+   The _Select an Annotation Project_ dialog appears.
+
+5. Click the **Select** button for the Annotate project you want to import.
+
+   The _Import an Annotate Project_ modal appears.
+
+6. Specify the **Sample rate** (in FPS) for the import of videos.
+
+    <Note>	> If you do not specify a value then the entire video imports, without modification to the FPS of the video.</Note>
+
+7. Click **Proceed** to select the import stage for the Project.
+
+8. Click the Project to monitor the status of the import.
+   The landing page for the Project appears with the _Explorer_ tab selected and displaying the stage of the import.

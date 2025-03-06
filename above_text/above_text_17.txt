@@ -1,0 +1,7 @@
+Use the _Settings_ page to change your account's settings. 
+
+To navigate to settings:
+
+1. Click the user icon in the top-right of the Encord platform.
+
+2. Click **Settings**.

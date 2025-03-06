@@ -1,0 +1,3 @@
+Polyline
+
+Creating a polyline requires an Ontology with a polyline annotation type. Enable or disable free-hand drawing mode by pressing <kbd>d</kbd> on your keyboard. Polyline coarseness (for polylines drawn free-hand) is set in the *Drawing settings* section of the _Settings_ (

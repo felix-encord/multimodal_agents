@@ -1,0 +1,3 @@
+Click a data unit to see file specific details. Navigate to the _Linked to_ tab to see which Datasets this file is added to. Click the details icon next to the Dataset to:
+- View the Dataset.
+- Remove the selected file from Datasets.

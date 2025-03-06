@@ -1,0 +1,5 @@
+Slack channels
+
+Click the **Add Slack channel** button to add a Slack channel.
+
+Once redirected to the Slack web page, make sure to first select the correct workspace from the top right drop-down list. Then select the channel you would like to post Slack notifications to.

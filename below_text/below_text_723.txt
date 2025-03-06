@@ -1,0 +1,5 @@
+**Example 2:**
+
+Sometimes the same type of things in a frame are very close to each other and the annotator does not know if the things should be annotated separately or as a group, so they do both. Or perhaps the annotator labels all the things in a group and sometimes they label each individual thing, or they label the group and each individual thing in the group.
+
+An annotator labeled a group of oranges and then labeled individual oranges in the group.

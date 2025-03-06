@@ -1,0 +1,3 @@
+Object tracking can also be run by selecting the option _Track from this frame_ in the object menu. The number of predicted frames is set to *30* by default. The number of predicted frames can be changed in the 'Settings' drawer in the _Single object tracking settings_ drop-down.
+
+Click the *Automated labeling* button to open the 'Automated labeling' drawer to run multiple object tracking.

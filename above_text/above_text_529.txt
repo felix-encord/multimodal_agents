@@ -1,0 +1,7 @@
+.
+
+7. Select the Classifications applied to the audio file.
+
+8. Press  to reject the Classifications on the audio file.
+
+9. Click **Reject task** to reject the tasks.

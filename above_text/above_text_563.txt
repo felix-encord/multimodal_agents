@@ -1,0 +1,11 @@
+**Filter using transcripts**
+
+To filter using transcripts:
+
+1. Click **Filter**.
+
+2. Click **Add filter**.
+   A menu appears.
+
+3. Select _Custom metadata_.
+   A field appears.

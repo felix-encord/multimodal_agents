@@ -1,0 +1,7 @@
+Exporting Labels from Manual QA Projects
+
+Learn how to export data Manual QA Projects by watching this video.
+
+
+
+The _Export_ tab is where you export the labels and classifications created in a Project.

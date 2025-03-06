@@ -1,0 +1,3 @@
+Review
+
+Review tasks are completed in the <a href="/platform-documentation/Annotate/annotate-label-editor">Label Editor</a>.

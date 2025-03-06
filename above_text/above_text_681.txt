@@ -1,0 +1,4 @@
+With the predictions embedding plot, users can:
+
+- Identify predictions and ground truth labels
+- Identify false positive and true positives in model predictions

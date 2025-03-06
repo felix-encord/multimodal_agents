@@ -1,0 +1,9 @@
+Metadata
+
+<Note>Metadata is not supported for NIfTI.</Note>
+
+<Note>Ensure your DICOM files and metadata follow the format outlined in the official DICOM specification.</Note>
+
+The Encord DICOM metadata viewer renders DICOM files natively in the browser, allowing you to access all defined metadata fields and sequences associated with the DICOM file. 
+
+The metadata viewer is displayed by toggling the _View metadata_ button above the series being annotated. The metadata viewer contains a search bar allowing you to search for specific types of metadata.

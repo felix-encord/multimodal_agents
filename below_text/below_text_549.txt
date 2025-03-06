@@ -1,0 +1,6 @@
+1. Click the Workflow stage you want to specify users for.
+2. Click **Selective** under the _Add annotators to stage_ heading.
+3. Click the search bar and select the users you want to add to the stage from the list of available users. 
+4. Click **Add** to confirm. 
+
+<Note>Only users who have been added to the Project are available for selection. For annotation stages, you can select users with the _Annotator_ or _Annotator + _Reviewer_ roles. For review stages, you can select users with the _Reviewer_ or _Annotator + Reviewer_ roles.</Note>

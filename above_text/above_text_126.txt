@@ -1,0 +1,1 @@
+- **Standard fields**: If the fourth character of the group value is an even number and the Content field is empty - for example (0010,2000) - the field is genuinely empty and not a result of data being hidden.

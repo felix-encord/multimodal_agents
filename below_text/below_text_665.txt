@@ -1,0 +1,17 @@
+<Note>Before going any further, you should know what a Collection is in Encord Active. Collections provide a way to save interesting groups of data units and labels, to support and guide your downstream workflow. For more information on Collections go here.</Note>
+
+<div key="1" lang="en">
+  <head>
+    <meta charSet="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clickable Buttons</title>
+    <style
+      dangerouslySetInnerHTML={{
+        __html: ,
+      }}
+    />
+  </head>
+  <div>
+    <a
+      className="clickable-button"
+      href="/platform-documentation/Active/active-tutorials/active-use-cases

@@ -1,0 +1,20 @@
+Filter by keyframes
+
+Index supports filtering video frames by key frames. This speeds up curation of your videos by focusing on frames of interest within your videos.
+
+**To filter data by key frames:**
+
+1. Log in to the Encord platform.  
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.  
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a folder.  
+   The landing page for the folder appears and the _Explorer_ button is enabled.
+
+4. Click the **Explorer** button.  
+   The _Index Explorer_ page appears.
+
+5. Click **Filter**.
+   The _Filter_ tab displays.

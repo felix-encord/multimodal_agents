@@ -1,0 +1,27 @@
+4. Click **Upgrade Folder**.
+
+   The _Folder upgrades_ dialog appears.
+
+5. Expand the **Custom Embeddings** drop down.
+
+6. Select a custom embedding from the list.
+
+7. Click **Add**.
+
+   The custom embedding appears under _Custom Embeddings_.
+
+   <Note>
+   You can add multiple embeddings. Only one embedding can be active in Index at a time.
+   </Note>
+
+8. Expand your selected custom embedding.
+
+9. Select any of the following:
+   - Similarity search
+   - Compute UMAP Embedding Reduction
+   - Compute Advanced Quality Metrics
+
+10. Click **Save and process changes**.
+
+    A dialog appears informing you that the folder upgrade was successful.
+    You are now ready to use your custom embeddings.

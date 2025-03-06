@@ -1,0 +1,3 @@
+JSON Ontology Structure
+
+You can preview a JSON of your Ontology structure when you are setting up or editing your Ontology. Preview the JSON by enabling the _Display JSON_ toggle.

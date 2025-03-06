@@ -1,0 +1,38 @@
+Projects
+
+<AccordionGroup>
+  <Accordion title=" How do I manage teams, or create user groups?">
+    You can create user groups within your organization. These can be added to specific Projects as teams.
+
+  - Our documentation on user groups can be found here.
+
+  - For information on how to create teams for a given Project see the Team Management section in our documentation.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="What does the 'This is being edited' pop-up in the label editor mean">
+    Don't worry, no data has been lost! This is a warning from our system (known as the "editor lock") it occurs when:
+
+- Two different people are editing a task at the same time.
+- Or, that one individual has the task open in two different tabs, or browser windows.
+
+In both cases we recommend to click 'cancel' to prevent any unexpected data overwrites.
+
+See our documentation here for more details.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title=" Why is there a warning sign next to my Project where it's listed">
+
+A warning symbol is displayed when a project is too large - meaning it contains too much data. When selecting the project you should encounter the following message:
+
+> ⚠️ 
+> "This project has exceeded the recommended number of tasks. To avoid performance issues, you need Admin access to manage and reduce the amount of data in this project".
+
+The diagram below illustrates the steps you should take to fix the issue.

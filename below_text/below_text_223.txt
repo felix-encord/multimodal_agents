@@ -1,0 +1,1 @@
+<Tip>Press and hold the <kbd>SHIFT</kbd> key while using your mouse/trackpad to move around each page of a document.</Tip>

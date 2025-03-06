@@ -1,0 +1,5 @@
+Sampling rate
+
+Project administrators can dynamically change the sampling rate applied to submitted annotation tasks. The sampling rate determines the proportion of the submitted labels that a reviewer should review. This can be modified with the slider.
+
+Sampling rates can also be configured by annotation type and annotator (e.g. class Y should have a sampling rate of 50%, class Z should have a sampling rate of 80%, annotator A should have a sampling rate of 70%, annotator B should have a sampling rate of 95%) by clicking the **Configure** button (this feature is only available to paying users).

@@ -1,0 +1,8 @@
+Deleting templates
+
+To delete a template:
+
+1. Navigate to _Workflows_ in the _Annotate_ section of the sidebar.
+2. Select the template you would like to delete.
+3. Click the _Settings_ tab and navigate to 'Danger zone'. 
+4. Click the **Delete template** button to delete the template.

@@ -1,0 +1,3 @@
+Progressive Loading
+
+You don't have to wait for your file to finish loading before navigating to your desired frame! Simply drag the cursor to, or click the progress bar on, the location of the frame you would like to view while it is still loading, and the file will continue loading from the desired location, as seen in the following video. The light-blue color on the progress bar indicates how much of your file has been loaded.

@@ -1,0 +1,12 @@
+View Annotate comments in Active
+
+To view comments made in Annotate, you must sync the Annotate Project data to Active.
+
+<AccordionGroup>
+   <Accordion title="To view Annotate comments in Active:">
+
+1. Log in to the Encord platform.
+   The Encord UI appears.
+
+2. Click **Active**.
+   The Active home page appears with all available Projects appearing in the home page.

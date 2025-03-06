@@ -1,0 +1,1 @@
+If annotators try to submit a task without including a _Required_ object or classification, they will see the following warning message.

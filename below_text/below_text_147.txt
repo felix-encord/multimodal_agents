@@ -1,0 +1,13 @@
+Polylines can be copy/pasted between slices using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>c</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>v</kbd> to paste it on the desired slice.
+
+Complete a polyline by double-clicking anywhere on the canvas.
+
+Instantiate existing polyline instances (i.e., polylines that should keep the same identifier in preceding or succeeding slices) by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>, <kbd>w</kbd>, <kbd>e</kbd>).
+
+Polyline instances can be assigned with static and dynamic attributes should they be defined in your Ontology:
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified polyline.
+
+- Assign a classification by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>).
+
+---

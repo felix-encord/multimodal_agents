@@ -1,0 +1,6 @@
+Distance export
+
+Encord supports copying measured distances using the polyline annotation type, separate from using the measurement tool as detailed above. 
+
+1. Create a polyline annotation. 
+2. Select the newly created polyline and click the three dots on the _Quick toolbar_ to copy the distance to your clipboard.

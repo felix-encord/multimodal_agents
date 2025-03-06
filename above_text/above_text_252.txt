@@ -1,0 +1,7 @@
+_Required_ Attributes
+
+Any object, classification, or attribute can be marked as _Required_. This means annotators must include at least one instance of the required feature in each task before submitting.
+
+<Note>If you specify a dynamic attribute as **required**, specify a **no_value** option in the list of options for the dynamic attribute.</Note>
+
+<Tip>Ontology objects and classifications marked as _Required_ are always listed alongside the red * symbol.</Tip>

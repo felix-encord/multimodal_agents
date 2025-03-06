@@ -1,0 +1,10 @@
+6. Select the checkbox for the Index Collection for export.
+
+7. Click the more icon.
+   A small menu appears.
+
+8. Click **Generate CSV** from the menu.
+   The _Download Generated CSV_ dialog appears when Active finishes generating a CSV file for the Collection.
+
+9. Click **Download CSV**.
+   The CSV file downloads to your local computer.

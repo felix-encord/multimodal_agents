@@ -1,0 +1,11 @@
+Import an Annotate Project
+
+**To import an Annotate Project:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Create a Project (Annotation Project or Training Project) in Encord Annotate.
+
+3. Click **Active** from the main menu.
+   The landing page for Active appears.

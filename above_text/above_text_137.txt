@@ -1,0 +1,9 @@
+Distance measurement
+
+The distance measurement tool can be used to measure real-world distances between any two points on an image.  It uses the 'Pixel spacing' parameter - contained in an entity's metadata - to accurately convert pixels into real-world distances that are displayed in millimeters.
+
+<Note>For accurate measurements in mammography, the 'EstimatedRadiographicMagFactor' needs to be contained within an entity's metadata. It is used as a scale factor to adjust the distance measurement and provide accurate results. The absence of the 'EstimatedRadiographicMagFactor' can result in errors when measuring distances in mammography. </Note>
+
+The Polyline Ontology displays the total length of the line in millimeters, rather than simply the distance between two points. 
+
+Enable the distance measurement functionality by clicking the

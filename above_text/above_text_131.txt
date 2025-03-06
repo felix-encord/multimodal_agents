@@ -1,0 +1,11 @@
+Switch annotation series 
+
+You can seamlessly switch the series you'd like to annotate.
+
+**To select a tile for annotation**
+- Click the _Switch tiles_ icon highlighted in the image below. 
+- Click the three dots icon highlighted in the image below and select **Annotate from this tile**.
+
+**To move a tile to the one currently being annotated**
+1. Click the three dots icon highlighted in the image below 
+2. Select **Annotate and swap tiles**.

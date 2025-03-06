@@ -1,0 +1,5 @@
+Folder permissions and activity
+
+Folder details are automatically displayed whenever a folder is:
+- Selected
+- Open and no data unit is selected

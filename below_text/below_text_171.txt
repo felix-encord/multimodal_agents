@@ -1,0 +1,3 @@
+A _Minimum confidence threshold_ of 0.6, as seen in the image above, states that only labels above a confidence score α = 60% will be accepted as labels.
+
+---

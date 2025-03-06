@@ -1,0 +1,12 @@
+- A. File & Search: The name of the specific _data unit_ or _data asset_. This is the same as the name in the dataset to which this data asset is a part of. Use the search box to filter the list by file name.
+- B. _Dataset_ : The dataset the _data asset_ belongs to.
+- C. _Type_ : The type of the data, such as an image or video. For more on our supported data types, see our documentation here for more details.
+- D. Status: The status of this task.
+- E. _Frames_ : The total frames in this _data asset_. This will apply to videos, image sequences and DICOM. Images always only have 1 frame.
+- F. _FPS_ : the frames per second of the _data asset_. This only applies for data of type video. Others will show a dash ().
+- G. _Created_ : When the task was created. Tasks are created when the dataset containing the _data asset_ is attached to the project.
+- H. _Last edited by_ : the last collaborator to edit the task in any capacity, and when.
+- I. Actions: The _Data_ page allows users to view the task in the label editor, as well as get a code snippet for using the SDK with this task, and confirming the edit actions via the Activity Log.
+- J. _Filter by_ : Use the filter drop-down to view only tasks with the selected Status.
+
+<Tip>Confused about the difference between image groups and image sequences? See our documentation here to learn about different data types in Encord.</Tip>

@@ -1,0 +1,2 @@
+3. Click the **Start labeling study** button. 
+  This button is only visible if the Project contains multiple series belonging to the same study.

@@ -1,0 +1,23 @@
+- **A** - _Upload_ : Drag and drop local images and / or videos. Click **Upload** to finish. 
+- **B** - _Batch images as_ : Create an image group or image sequence from local images. See our section on creating image groups and image sequences for more information. Click **Upload and batch images** to finish.
+- **C** - _Audio_ Drag and drop local audio files. Click **Upload** to finish.
+- **D** - _DICOM_ : Create a DICOM series from local DICOM files. Click **Upload** to finish.
+
+<Note>
+To import DICOM files, Encord requires the files to have the following DICOM tags:
+
+Rows
+Columns
+StudyInstanceUID
+SeriesInstanceUID
+SOPInstanceUID
+PatientID
+The following DICOM tags are required to render DICOM images in 3D:
+
+ImagePositionPatient
+ImageOrientationPatient
+SliceThickness
+PixelSpacing
+</Note>
+
+- **E** - _Import from private cloud_ : Add any data stored in your cloud storage. At least one data integration is required to register cloud data. Learn how to upload private cloud data here. Click **Import** to finish.

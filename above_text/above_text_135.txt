@@ -1,0 +1,1 @@
+You can toggle the **View full study** button. When you toggle that button it turns into the **Hide full study** button.

@@ -1,0 +1,10 @@
+Add data to Datasets
+
+After data is uploaded to _Files_ it can be added to one or multiple Datasets.
+
+1. Locate and select the data you want to add to a Dataset. 
+
+<Tip>To add multiple files to a Dataset, bulk-select files by selecting the first file, and then selecting the last file while holding the <kbd>Shift</kbd> key on your keyboard.</Tip>
+
+2. Right-click your selection and select **Add to dataset**. 
+A dialog appears.

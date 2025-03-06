@@ -1,0 +1,5 @@
+<Tip>
+To ensure the best possible results, provide as much detail as possible about what you would like annotated and how precise bounding boxes should be drawn. For example, instead of saying 'person', consider defining what should constitute a person for your annotators - only a full person? A torso? Or should any part of a person in a frame be labeled as a 'person'? The more specific your annotator instructions, the higher the chances that your annotators perform well.
+</Tip>
+
+<Note>Once uploaded, annotation instructions are be accessible within the Label Editor, and the Workflow tab of your Project.</Note>

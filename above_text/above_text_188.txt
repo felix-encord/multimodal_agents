@@ -1,0 +1,3 @@
+Tracking
+
+Run automated object tracking by highlighting an object and clicking <kbd>shift</kbd> + <kbd>t</kbd> on your keyboard.

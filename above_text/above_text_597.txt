@@ -1,0 +1,5 @@
+View, search, and manage your files
+
+Files allows you to search for data units, and view which Datasets each data unit is belongs to. 
+
+The global search bar searches all data in Files, irrespective of which folder is currently open.

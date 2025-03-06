@@ -1,0 +1,11 @@
+Downloading models
+
+<Note>Only  model weights can be downloaded.</Note>
+
+You can download the learned parameters (known as weights) of a model for each training iteration. These weights are the result of training the model on a specific Dataset.
+
+1. Select the training iteration you want to download model weights for.
+2. Click the **Download** button.
+A file named  is downloaded.
+
+<Tip>The PyTorch documentation provides information on using  files.</Tip>

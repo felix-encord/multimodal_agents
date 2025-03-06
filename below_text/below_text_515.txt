@@ -1,0 +1,7 @@
+3. Press  to select _Yes_.
+
+4. Click and then drag the sections of the audio file that appears at the top of the Label Editor.
+
+5. Press  to save the Classifications on the audio file.
+
+6. Click the **Annotate from this tile** icon to switch to annotating the bottom audio file.

@@ -1,0 +1,5 @@
+Actions
+
+There are two relevant actions that can be done on each task from the _Queue_ tab. Press 'Initiate' to open the label editor and proceed with annotation, depending on the task _type_.
+
+Additionally, Administrators and Team Managers can click the three vertical dots to open the expanded menu, to access the 'Release task' function. Tasks must be explicitly released before they can be reassigned.

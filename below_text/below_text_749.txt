@@ -1,0 +1,12 @@
+4. Select **Data**, **Labels**, or **Predictions**.
+
+5. Click **Filters**.
+   A menu appears.
+
+6. Add and configure the filters you need. 
+   Images/video/audio files filter in the Explorer workspace.
+
+<Tip>
+- Sort and use the NLP or image searches to further help get the results you want.
+- After filtering, sorting, and searching, create a Collection.
+</Tip>

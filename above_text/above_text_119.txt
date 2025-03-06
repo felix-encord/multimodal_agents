@@ -1,0 +1,3 @@
+Maximum intensity projection (MIP)
+
+Clicking the _sliders_ icon in the corresponding viewer pane and then changing the slab thickness (ST) to something greater than 0 enables MIP mode. MIP can be switched on/off for each individual view. Note that annotations are not shown in MIP mode. To disable MIP mode change the ST back to 0.

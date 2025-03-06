@@ -1,0 +1,4 @@
+1. **Import Predictions to Annotate Project:** Everything starts in Annotate. Your labels and predictions must exist in your Annotate Project for the labels and predictions to appear in Active.
+2. **Import/Sync Project in Active:** After importing your predictions, you can then import the Project into Active. Or you can sync an existing Active Project after importing your predictions.
+3. **Analyse the Predictions in Active:** Once the Project import/sync completes, specify the prediction set for Active to analyse.
+4. **Select the Predictions in Active:** Once analysis completes, select the prediction set you want to view in Active.

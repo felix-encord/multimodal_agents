@@ -1,0 +1,5 @@
+First, what happened to my existing data? 
+
+1. Datasets are now in the _Annotate_ section of the application.
+
+**After _Files_ is enabled**:

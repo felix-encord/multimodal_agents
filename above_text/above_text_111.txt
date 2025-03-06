@@ -1,0 +1,13 @@
+VOI LUT Transfer Function  
+
+The **VOI (Value Of Interest) LUT (Look-Up Table) Function**, specified in the DICOM metadata Tag (0028,1056), defines how pixel values are mapped from **Modality LUT output** to **Presentation LUT input**, affecting image contrast and brightness.  
+
+The Encord DICOM viewer supports **Linear** and **Sigmoid** VOI LUT transfer functions.  
+
+<Info>  
+For a detailed explanation of VOI LUT Transfer Functions, refer to the official DICOM documentation here.  
+</Info>  
+
+- By default, the VOI LUT Transfer Function is set to the value provided in the DICOM metadata. If no value is provided the Linear VOI LUT Transfer Function is used. 
+- You can **manually switch between Linear and Sigmoid transfer functions** using the toggle.  
+- This function controls how grayscale values are adjusted for optimal image display, ensuring better visibility of structures in medical imaging.

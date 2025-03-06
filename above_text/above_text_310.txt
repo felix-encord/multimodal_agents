@@ -1,0 +1,3 @@
+Activity
+
+The _Activity_ page allows you to quickly monitor annotation and review activity in your project by showing tasks and  providing a summary interface. The status of reviewed labels inside each task can also be seen. Tasks are displayed in most recently edited order from top to bottom.

@@ -1,0 +1,16 @@
+4. Continue searching, sorting, and filtering your data/labels/predictions until you have the subset of the data you need.
+
+5. Select one or more of the images in the Explorer workspace.  
+   A ribbon appears at the top of the Explorer workspace.
+
+6. Click **Select all** to select all the images.
+
+7. Click **Add to a Collection**.
+
+8. Click **New Collection**.
+
+9. Specify a meaningful title and description for the Collection.
+
+   <Note>
+   The title specified here is applied as a tag/label to every selected image.
+   </Note>

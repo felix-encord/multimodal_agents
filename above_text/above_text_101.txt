@@ -1,0 +1,17 @@
+Encord provides native support for Digital Imaging and Communications in Medicine (DICOM) browser rendering and data annotations. The editor also supports NIfTI (Neuroimaging Informatics Technology Initiative). With the DICOM editor, you can:
+
+- Annotate modalities such as CT, X-ray, and MRI.
+- Label using any annotation type for the Primary view and bitmasks in non-Primary views in 2 and 3 dimensions, and seamlessly toggle between axial, coronal, and sagittal views.
+- Render 20,000 pixel intensities and set custom window widths and levels.
+- Natively display DICOM metadata.
+- Track and interpolate objects between slices.
+- Reduce manual annotations with automation features.
+
+<Note>"Slices" and "Frames" are used interchangeably in our DICOM editor documentation.</Note>
+
+The following video provides a summary of DICOM Label Editor capabilities.
+
+
+
+
+<Warning>**We recommend using the Firefox browser when working with DICOM or NIfTI files**, as it does not have a tab memory limit. Tab memory limits in other browsers such as Chrome may cause issues when loading large DICOM or NIfTI files.</Warning>

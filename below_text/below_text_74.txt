@@ -1,0 +1,6 @@
+In the 'Add triggers' screen, choose what type of events trigger a notification. A notification can have multiple triggers. You can choose from 'Reactive events' and 'Digest events':
+
+- **Reactive events**: notification trigger in reaction to an event
+- **Digest events**: notification trigger at a scheduled times of day
+
+Use the info icon next to the event type to get more detailed explanations on when these events are triggered.

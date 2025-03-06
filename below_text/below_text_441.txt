@@ -1,0 +1,12 @@
+<Tip> Click on the stages in the chart key to remove, or include them from the donut view</Tip>
+
+**Explore tab**
+
+<Warning> The Explore tab is a legacy feature and will be discontinued. </Warning>
+
+<Note>The _Explore_ tab is only visible to project Admins and Team Managers.</Note>
+
+The _Explore_ tab helps you understand how project annotations are distributed among data assets, at both an instance and label level. It allows a deeper exploration through attributes on objects, as well as frame-level classifications.
+
+- Instance statistics: Class distribution across data assets in the given project.
+- Label statistics: Label distributions within data assets, objects and classifications.

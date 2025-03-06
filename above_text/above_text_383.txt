@@ -1,0 +1,3 @@
+Quality Assurance 
+
+The _Automatic QA_ section in the _Options_ tab allows you to configure the way that benchmark quality assurance is implemented.

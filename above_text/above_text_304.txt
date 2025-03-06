@@ -1,0 +1,5 @@
+Reviewer mapping
+
+You can configure rules that automatically assign specific reviewers to classes and annotators (e.g. label X with class Y should always be reviewed by reviewer Z). The setting can be configured by toggling the 'Reviewer mapping enabled' option.
+
+Clicking the **Configure** button opens up a window where you can assign reviewers to specific annotators or classes. Assigning a reviewer to classes (objects or classifications) can be done under the _Class mapping_ tab, and assigning a reviewer to annotators under the _Annotator mapping_ tab. Any number of reviewers can be assigned to annotators and classes. One of them will be selected at a time for each task submitted.

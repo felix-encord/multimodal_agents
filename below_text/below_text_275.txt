@@ -1,0 +1,5 @@
+- Select the model you would like to run. You will be able to choose from a list of models previously attached to the project. 
+
+- Specify the _Classification range_ to set the range of frames over which the model is run. 
+
+- Set the _Confidence_. A value ranging from 0 to 1 that represents how confident the model has to be in order for a particular data point to be included in its output. Read more about confidence values here.

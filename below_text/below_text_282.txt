@@ -1,0 +1,20 @@
+5. Expand the task you want to reassign.
+   The row expands to display the users currently assigned to the task.
+
+6. To reopen the task to any annotator on the Project:
+
+    a. Click the 3 dots icon next to the annotator you want the task reopened from.
+       The _Reopen_ button appears.
+
+    b. Click **Reopen**.
+       The task becomes visible to all annotators in the Annotate queue. Any annotator can then "lock" the task (including the annotator the task was reopened from).
+
+7. To assign a specific annotator to the task:
+   
+    a. Click the down arrow next to the annotator you want the task reassigned from.
+        A drop-down menu appears with all annotators available on the Project
+
+    b. Click the down arrow next to the user you want changed.
+         A drop-down menu appears with other annotators available to perform the task.
+
+    c. Select the annotator you want the task assigned to.

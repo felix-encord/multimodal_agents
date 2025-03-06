@@ -1,0 +1,16 @@
+Use a Preset Filter in Index
+
+Once you have created one or more Preset Filters, you can apply them to any of your Folders from the _Filter_ tab.
+
+<Note>Global filters apply to any Folder, but Local filters only apply on the Folder where the Preset was created.</Note>
+
+**To use an existing Preset (Preset Filter and their settings):**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a folder.
+   The landing page for the folder appears and the _Explorer_ button is enabled.

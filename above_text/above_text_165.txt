@@ -1,0 +1,13 @@
+Bulk Label Operations
+
+Fixing incorrect labels is an important step in producing high-quality datasets. With bulk label operations, annotators can merge labels which should really be one instance, or efficiently delete multiple labels in bulk.
+
+Bulk label operations are accessed in the editor menu. 
+
+**Merge operations**
+
+Merge one or more label objects into a single object.
+
+1. Select all objects to be merged in the _Select objects to be merged_ drop-down menu.
+2. Select the target object in the _Select objects to be merged into_ field. 
+2. Click **Merge**.

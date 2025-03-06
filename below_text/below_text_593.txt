@@ -1,0 +1,5 @@
+<Note>
+- The new folder containing the constituent images is not synced.
+- Adding new images to this folder does not add them to the image group or image sequence.
+- Files contained in the image group or image sequence cannot be deleted from the folder until the image group or image sequence is deleted.
+</Note>

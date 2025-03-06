@@ -1,0 +1,3 @@
+<Warning>In order to prevent any possible issues of annotator work being overwritten, it's critical that all annotations are done via the _Queue_ tab, and only the person assigned to the task makes annotations at any given time.</Warning>
+
+---

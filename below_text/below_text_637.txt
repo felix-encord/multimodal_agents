@@ -1,0 +1,12 @@
+New files are added to and stored in the _Files_ section of the Encord platform. 
+
+<Note>Files must be uploaded to folders.</Note>
+
+<AccordionGroup>
+  <Accordion
+    title="Managing files and folders in the Encord app"
+  >
+
+<Info>The steps below are the recommended method for uploading files to Encord and attaching them to Datasets. However, you can still upload files directly to Datasets as long as you specify a folder.</Info>
+    
+You can upload files to Encord in the Datasets screen and in the _Files_ screen.

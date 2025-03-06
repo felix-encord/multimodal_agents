@@ -1,0 +1,6 @@
+Project level collaborators
+
+Click the **Manage Collaborators** button, as shown in the Managing collaborators section. 
+
+- Add collaborators and select their roles in the _Add_ tab.
+- Remove and manage collaborators in the _Manage_ tab.

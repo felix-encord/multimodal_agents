@@ -1,0 +1,15 @@
+3. Select the Project you would like to train your model on. Make sure to select a Project with accurate labels. High quality labels result in better performing models. 
+
+4. Map each model Ontology to an entity in the Project's Ontology. This step associates the model Ontology to a set of objects or classifications in the Project that it can learn from.
+
+5. Select all Project tasks you would like your model to train on by selecting the checkboxes in the list. A minimum of 5 labels are needed for your model to be trained. 
+
+6. Select the number of epochs you would like to include in this training. Epochs refer to the number of iterations through the entire training dataset that should be included in the training process. The default number of epochs is set to 500. 
+
+7. Select the _batch size_ for this training. The _batch size_ refers to the number of training examples processed by the model in a single forward and backward pass. 
+
+8. Select which _training weights_ should be used. This refers to the model's initialization weights, which determine how many parameters a model has as well as their weights. Training weights are not available for classification models. 
+
+<Note>
+If you want to add training data from a different Project, click the **+ Add training data** tab.
+</Note>

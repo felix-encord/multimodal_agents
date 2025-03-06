@@ -1,0 +1,6 @@
+6. Specify ascending or descending order.
+
+<Tip>
+- Filter and use the natural language searches (natural language searches coming soon) to further help get the results you want.
+- After filtering, sorting, and searching, create an Index Collection.
+</Tip>

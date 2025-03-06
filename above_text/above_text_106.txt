@@ -1,0 +1,5 @@
+Crosshair Navigation 
+
+Crosshair mode can be activated using the _Crosshair_ icon in the floating bar. 
+
+Left-clicking in a view updates the other views automatically so that the displayed image planes match the selected location.

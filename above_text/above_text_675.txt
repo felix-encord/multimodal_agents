@@ -1,0 +1,3 @@
+STEP 4: Select the Predictions
+
+Once analysis completes, select the prediction set to view in Active.

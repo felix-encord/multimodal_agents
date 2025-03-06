@@ -1,0 +1,7 @@
+1. Revert labels to _pending_ :
+- Revert an approved task to _pending_ by clicking the green tick icon next to the instance.
+- Revert a rejected task to _pending_ by clicking the red cross icon next to the instance.
+
+2. Once the reviewer completes their review, they need to click the **Approve task** or **Reject task** to finalize the review.
+
+---

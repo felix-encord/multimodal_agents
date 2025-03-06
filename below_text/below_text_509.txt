@@ -1,0 +1,3 @@
+10. Ensure the default Workflow shown suits your needs. 
+
+11. Click **Create project** to finish creating the Project.

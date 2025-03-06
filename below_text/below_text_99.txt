@@ -1,0 +1,8 @@
+<Warning>
+_Edit review_ is primarily optimized for use in _Workflow_ Projects. It is available for Manual QA Projects, but lacks some functionality.
+- There is no way to edit Classifications. 
+- There is no way to edit approved or rejected labels, as _Strict review_ is not available in _Manual QA_ Projects
+- Labels created during _Edit review_ are not added to the Review stage and can not be seen in the Label Editor.
+</Warning>
+
+---

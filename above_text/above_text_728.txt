@@ -1,0 +1,3 @@
+Find Inconsistent Classes
+
+"Inconsistent classes" are similar to Inconsistent Tracking, but the scoring function cares about classification rather than objectHash:

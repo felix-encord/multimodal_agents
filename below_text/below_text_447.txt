@@ -1,0 +1,24 @@
+- **A** - The list of review stages shows how many data units each stage currently contains. If more than one stage is listed, clicking a stage lets you view the tasks it contains.
+- **B** - Shows the task's priority number. Tasks are listed in descending order of priority by default.
+- **C** - The list of tasks / data units in your queue. Unassigned tasks are also visible and they can be initiated by all Reviewers.
+- **D** - The task status. 
+- **E** - The user a task is assigned to. A blank field indicates an unassigned task.
+- **F** - Click the **Initiate** button next to a task to review it .
+- **G** - The **Start reviewing** button opens the Label Editor, starting with the highest priority task.
+
+The _Queue_ tab lists tasks in the same order they appear in the Label Editor. 
+
+<Note>Initiating an unassigned task automatically assigns the task to the Reviewer.</Note>
+
+ </Accordion>
+</AccordionGroup>
+
+
+**Workflow tab**:
+
+<Note>The _Workflow_ tab is only visible to project Admins and Team Managers.</Note>
+
+The _Workflow_ tab lets you view and edit the Project's Workflow. To begin editing the Workflow, click the **Edit** button on the canvas. 
+
+
+---

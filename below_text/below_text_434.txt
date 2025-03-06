@@ -1,0 +1,3 @@
+<Note>The nature of training Projects is to train annotators. Therefore, tasks are not created for admins assigned to the Project and administrators can not access annotator tasks via the _Label_ > _Queue_ tab. This is to prevent administrators from accidentally completing training tasks meant for annotators. Administrators can still confirm annotator submissions using the _Activity_ and _Data_ tabs in the labels page as needed.</Note>
+
+After preparing the Project, share the Project URL with each of your team members so they can join and start the training.

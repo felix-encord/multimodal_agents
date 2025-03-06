@@ -1,0 +1,6 @@
+Create and configure your Workflow template, then click the **Create workflow template** button when you are done. To learn how to create and configure Workflows, see our documentation here.
+
+The **Create workflow template** button is greyed out until:
+- The nodes in your template have been connected.
+- The workflow contains a **_Complete_** stage. 
+- The template has been given a title.

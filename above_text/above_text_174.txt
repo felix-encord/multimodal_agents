@@ -1,0 +1,11 @@
+**Copy URL**: Copies the URL for the particular object. 
+
+**Copy identifier**: Each object instance is automatically assigned a unique alphanumeric ID, which can be used to identify it within the project. This ID is sometimes known alternately as a _feature hash_, _instance hash_, or _instance identifier_. For objects and classifications, it may also be known as the _object hash_ or _classification hash_. Use this button to copy the _instance identifier_ to your clipboard -- which may help in workflows using specific instances in source code or for other purposes.
+
+**Track from this frame**: Initiates single object tracking. This type of automated labeling creates labels for the specified object from the current frame, according to the Single object tracking settings section in the editor settings.
+
+**Interpolate**: Interpolates this object's location for a range between specified frames. Please see our documentation on interpolation for more details.
+
+**Go to object**: Navigate to the specified object in the data asset. If it is present in more than one frame, the first frame the object appears is shown.
+
+**Split object track**: In some cases, particularly when many objects overlap, labels may be associated with the correct instance in several frames, but later become associated with a different instance. In those cases, use the _Split object track_ feature, which will split the labels from one instance into two at the frame specified.

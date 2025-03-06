@@ -1,0 +1,1 @@
+Use the _Video_ tab to natively view all the videos available in your Project. From the _Video_ tab you can sort and filter all of your videos based on Video Quality Metrics and several Annotation Quality Metrics made exclusively for video (Broken Track, Inconsistent Class, and Inconsistent Track). You can also apply video frame level metrics while in the _Video_ tab.

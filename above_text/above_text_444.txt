@@ -1,0 +1,7 @@
+Assigning and Releasing Tasks
+
+  <Note>Only Admins and Task Managers can assign and release tasks.</Note>
+
+  <Note>Tasks can only be assigned to collaborators that have been added to a given Workflow stage. Find out more in our section on managing collaborators.</Note>
+
+  Tasks can be assigned to specific users by selecting them from the list and clicking the **Assign** button, as shown below. Once a task is assigned, only the assigned user is able to open the task. Alternatively, click the small arrow button in the _Assigned to_ column to assign an individual data unit.

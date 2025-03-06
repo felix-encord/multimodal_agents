@@ -1,0 +1,15 @@
+Step 3: View/Filter in Index
+
+In Index, you can filter and view the transcripts applied to your audio files. 
+
+**View with audio files**
+
+To view transcripts:
+
+1. Click **Display**.
+
+2. Click the field under _Card details_.
+   A menu appears.
+
+3. Select your transcript under _Custom metadata_.
+   Transcripts appear under your audio files.

@@ -1,0 +1,3 @@
+Variance is a measure of dispersion that takes into account the spread of all data points in a data set. The variance is the mean squared difference between each data point and the centre of the distribution measured by the mean. The lower the variance, the more “clustered” the data points.
+
+Implementation on GitHub.

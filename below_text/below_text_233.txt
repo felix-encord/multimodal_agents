@@ -1,0 +1,14 @@
+Creating a primitive (f.k.a. skeleton templates) requires an ontology with a primitive annotation  
+type. Use primitives to templatize shapes (e.g., 3D cuboids, pose estimation skeletons) commonly  
+used by your annotation team.
+
+Instantiate a new primitive label by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Object primitives allow you to define properties of edges defined in your template as visible, occluded, or invisible. Toggle the edge property settings for a primitive by highlighting the primitive and clicking the _Show controls_ button.
+
+Primitive labels can be assigned with static classifications should they be defined in your ontology:
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified primitive
+- Assign classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>)
+
+---

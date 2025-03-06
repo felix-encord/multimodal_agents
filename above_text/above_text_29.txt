@@ -1,0 +1,12 @@
+You can now log into your Encord account using your new password. 
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" I get a blank screen when trying to log in on my Windows computer. How can i fix this? ">
+   Your DNS settings might not be configured correctly.
+
+   **Windows 10**
+
+   1. Go to the **Control Panel**.

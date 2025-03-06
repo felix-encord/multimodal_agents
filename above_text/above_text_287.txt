@@ -1,0 +1,6 @@
+**Filtering Projects by tags**
+
+You can filter your Projects based on the tags they contain.
+1. Click the _Projects_ on the left side navigation
+2. Click the 'Filter by tags' drop-down and select one or more Project tags.
+Only Projects with the selected tags are now displayed.

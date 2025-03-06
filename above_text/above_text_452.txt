@@ -1,0 +1,7 @@
+Org Admin Tasks
+
+Org Admins should:
+
+<Steps>
+  <Step title="Create Restricted Groups">
+    Create role specific (Annotators, Reviewers, Annotator + Reviewers) workforce _Groups_ from the **My organization > Groups** page.

@@ -1,0 +1,1 @@
+Encord is a comprehensive data engine and software stack solution offering a range of features to streamline and optimize your ML workflow. It consists of three main components: Annotate, Active, and Index.

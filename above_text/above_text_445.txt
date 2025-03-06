@@ -1,0 +1,5 @@
+Task priority
+
+  <Note>Only Admins and Task Managers can set task priority.</Note>
+
+  All annotation and review tasks can be assigned a priority level to manage workflow efficiency. Each task is assigned a priority value ranging from 0 to 100, where the default value is set to 50. A value of 100 indicates a high-priority task, requiring immediate attention, where a value of 0 signifies a low-priority task. Annotation and review tasks with higher priority levels are displayed in the label editor in descending order of priority.

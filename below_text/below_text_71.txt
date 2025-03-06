@@ -1,0 +1,1 @@
+In the 'Add projects' screen, select the projects you would like to include in this notification. When you are happy, click **Next**.

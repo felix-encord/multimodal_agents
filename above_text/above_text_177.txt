@@ -1,0 +1,38 @@
+Edit polygons and polylines
+
+Encord provides multiple tools to edit polygon and polyline labels after they have been created.  
+
+**Move vertices**:
+
+Click and drag a vertex to move it to a new location.
+
+**Adding a polygon or polyline vertex**:
+
+You can add more vertices to a polygon after it has been created.
+
+1. Click the polygon you want to add a vertex to
+2. Click the position along the edge of the polygon you want to add a vertex. Repeat to add as many vertices as necessary.
+
+**Removing a polygon or polyline vertex**:
+
+You can remove the last vertex by pressing the <kbd>Backspace</kbd> key while still in _draw_ mode.
+
+**Remove vertices from a polygon as follows**:
+
+1. Click the polygon you want to remove vertices from
+2. Right-click a vertex to delete it
+
+**Polygon and polyline brush tool**:
+
+Use the brush tool to modify the edge of a polygon or polyline in a free-hand manner.
+
+1. Right-click the polygon you would like to edit.
+2. Click **Edit with brush** or press the <kbd>G</kbd> hotkey.
+A floating brush tool menu appears.
+3. Adjust the brush size to suit your needs.
+4. Mouse over location you would like to start editing from, and click and hold to start the edit process.
+5. Drag the cursor freely to draw out the new polygon edge let go of mouse to finish editing.
+
+**Eraser tool**:
+
+Use the eraser tool to remove any part of a polygon in a free-hand manner.

@@ -1,0 +1,7 @@
+Missing Objects
+
+Identifies missing objects by comparing object overlaps based on a running window.
+
+**Example:**
+
+If an intermediate frame (frame _i_) does not include an object in the same region, as the two surrounding frames (_i-1_ and _i+1_), the frame is flagged.

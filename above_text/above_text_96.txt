@@ -1,0 +1,3 @@
+Single Label Review
+
+The normal review mode displays all labels simultaneously, allowing you to quickly approve or reject many labels in bulk actions. Alternately, enter the _Single label review_ mode by toggling the switch at the top left. The single label review mode automatically highlights the selected instance, and hides all other objects. This allows you to carefully review one instance at a time including their attributes, and quickly iterate through the different instances using the *Up* and *Down* keys on your keyboard or by clicking the appropriate buttons in the UI.

@@ -1,0 +1,11 @@
+Encord Active provides the capability to visually explore data and label distributions using pre-defined and custom metrics.
+
+Gaining insights into data distribution across diverse quality metrics allows for the identification of potential data gaps that could influence model performance on outliers or edge cases.
+
+In a Project, access the _Analytics_ page to use the Metric Correlation chart and Class Distribution to explore your data, labels, and model predictions.
+
+Data and label analytics display Metric Correlation and class distribution across your data and labels. You can adjust the X and Y values on the Metric Correlation across a number of data and label metrics. If the Project has no labels, the class distribution graph is empty.
+
+Prediction analytics display Metric Correlation and prediction distribution for your ML model. Prediction distribution provides class and underrepresented class data. You can adjust the X and Y values on the Metric Correlation across a number of data and label metrics. 
+
+**Analytics View - Data**

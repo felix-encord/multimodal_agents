@@ -1,0 +1,6 @@
+Zoom and Pan
+
+- Hold the <kbd>Shift</kbd> key and drag to pan, and move a DICOM slice around on the page. 
+- To zoom in or out of a slice:
+    - Hold <kbd>Shift</kbd> and use the <kbd>Up</kbd> and <kbd>Down</kbd>  keys to zoom into the center of the slice.
+    - Hold <kbd>Shift</kbd>  while scrolling using your laptop's trackpad to zoom into a particular point.

@@ -1,0 +1,3 @@
+Change collaborator roles
+
+Project admins can modify the different roles of collaborators, using the drop-down on the right.

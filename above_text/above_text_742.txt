@@ -1,0 +1,26 @@
+Add comments in Active
+
+How comments are added, in Annotate and in Active, varies slightly:
+
+- Comments in Annotate can be added to a task, to individual frames within a task, or to specific locations within a frame. 
+
+- Comments in Active can be added to individual frames within a Project or to all frames within a Collection.
+
+<AccordionGroup>
+   <Accordion title="To add comments to an individual frame in Active:">
+
+1. Log in to the Encord platform.
+   The Encord UI appears.
+
+2. Click **Active**.
+   The Active home page appears with all available Projects appearing in the home page.
+
+   <Note>If no Projects appear on the Active home page, import a Project from Annotate.</Note>
+
+3. Click a Project.
+   The Project workspace appears with the _Explorer_ page displaying.
+
+4. Filter, sort, and search for the frame/image you want to add comments to.
+
+5. Mouseover the image you want to add a comment to.
+   A few actionable icons appear.

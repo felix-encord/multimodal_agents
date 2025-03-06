@@ -1,0 +1,5 @@
+Add collaborators
+
+To invite collaborators from within your organization to the project: 
+
+1. Click the **+ Invite collaborators** button. This will open a new window where you can enter email addresses of the people you would like to invite.

@@ -1,0 +1,9 @@
+<Note>Objects are linked in the Label Editor during annotation, not during Ontology creation.</Note>
+
+**Using _Relation_ attributes in the Label Editor**:
+
+Once an Ontology with _Relation_ attributes has been set up, instances can be linked in the Label Editor during annotation. 
+
+1. Create both instance labels. In this example a chicken and its wing have been labeled using bounding boxes. 
+
+2. Click the _Edit classifications_ button for the object with the _Relation_ attribute - in this example the chicken wing, as seen below.

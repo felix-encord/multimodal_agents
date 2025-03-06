@@ -1,0 +1,10 @@
+Annotator submissions
+
+<Tip>Click the **+** button next to a user's email address to reveal the Annotator submission details. </Tip>
+
+The _Annotator submissions_ tab lists the following information:
+
+- **Annotator**: The user's email address.
+- **Data Unit**: The task's file name.
+- **Instance**: The ontology instance being referred to.
+- **Benchmark answer**: The benchmark classification and label. To view the label, click

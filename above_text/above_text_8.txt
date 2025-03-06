@@ -1,0 +1,3 @@
+3. Enter a title and optionally a description for your model. Select a Model type, Framework, Model, and set up the model's Ontology. 
+
+4. After all specifications for your model have been set, click the **Create model** button to complete the model creation process.

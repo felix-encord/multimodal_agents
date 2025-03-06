@@ -1,0 +1,10 @@
+The following video goes through the basics of annotating images in the Label Editor.
+
+
+
+Encord provides comprehensive support for image annotation. With the image editor, you can:
+
+- Label using any annotation type such as bounding boxes, rotatable boxes, polygons, polylines, keypoints, and primitives.
+- Create frame-level & object classifications.
+- Object detection and instance segmentation.
+- Reduce manual annotations with automation (e.g., importing model predictions) features.

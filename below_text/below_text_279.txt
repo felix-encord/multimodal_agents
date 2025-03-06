@@ -1,0 +1,3 @@
+The default Consensus Workflow **Consensus** uses 2 Consensus blocks. The first block uses _Determine consensus_ with the second using _Review and Refine_. 
+
+<Note>When using any Consensus Workflow in a Project, do not forget to add your annotators and reviewers to the ANNOTATE and REVIEW sections. Also, if needed, edit the values for **

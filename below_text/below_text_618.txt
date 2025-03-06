@@ -1,0 +1,1 @@
+6. Adjust the **Distance** filter slider to change the similarity search results.

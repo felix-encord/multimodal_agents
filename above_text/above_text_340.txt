@@ -1,0 +1,3 @@
+settings">project settings</a>.
+
+Annotation and review tasks are distributed automatically using the first in, first out method - tasks that have been in the queue the longest are served first. Annotation tasks are generated and added to the label queue when a dataset or a set of datasets is attached to a project and when new data is added to attached datasets. Review tasks are generated and added to the review queue once an annotator submits an annotation task. Conversely, detaching a dataset will remove any associated annotation and review tasks, so you should exercise caution if you proceed.

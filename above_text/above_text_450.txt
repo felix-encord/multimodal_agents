@@ -1,0 +1,3 @@
+Label Instances
+
+The _Label Instances_ tab allows Administrators and Team Managers to search for specific instances within the data. An annotation _instance_ refers to a unique occurrence of an ontology class in a data asset (e.g., 'Person (0)' for the first instance of a 'Person'). Instances span multiple frames of a data asset, representing the same object. Use this tab to locate specific _objects_ or _classifications_ by their _Identifier_.

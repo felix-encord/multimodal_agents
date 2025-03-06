@@ -1,0 +1,10 @@
+4. Select the folders containing the files you want to attach to the Dataset. To select individual files, double-click a folder to see its contents, and select the files you want to add to the Dataset. 
+
+5. Click **Attach data** to attach the selected files to the Dataset.
+
+  </Accordion>
+    <Accordion
+    title="Managing files and folders using the Encord SDK"
+  >
+
+<Info>The steps below are the recommended method for uploading files to Encord and attaching them to Datasets. However, you can still upload files directly to Datasets as long as you specify a folder.</Info>

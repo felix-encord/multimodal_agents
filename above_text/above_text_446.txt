@@ -1,0 +1,3 @@
+Queue (Annotators)
+
+Annotators are presented with the following _Queue_ tab, from which they can manage their annotations.

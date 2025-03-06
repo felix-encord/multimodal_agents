@@ -1,0 +1,3 @@
+Once the router selects a route for a given task, it will be routed the same way until the routing percentages are updated. This means that if a task passes through a percentage router and is routed to _review stage A_ on its first pass, it will be routed to _review stage A_ on each consecutive pass.
+
+<Note>Routing percentages can be changed after Project creation. Changing routing percentages resets the percentage router, and may alter the pathway taken by a given task. </Note>

@@ -1,0 +1,3 @@
+<Note>If an annotator is mapped to a reviewer(s) and they create labels with specific classes also mapped to a reviewer, the class mapping will take precedence over the annotator mapping.</Note>
+
+---

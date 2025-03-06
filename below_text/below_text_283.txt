@@ -1,0 +1,5 @@
+</Tip>
+
+3. Click the **Make a copy** button to copy the Project with the specified components.
+
+---

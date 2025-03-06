@@ -1,0 +1,15 @@
+Attach Data
+
+After a Dataset has been created, you can attach data.
+
+<Tip>You can add data to Datasets from the _Files_ or the _Datasets_ screens.</Tip>
+
+<Tip>
+To ensure smoother uploads and faster completion times, and avoid hitting absolute file limits, we recommend adding smaller batches of data. Limit uploads to 100 videos or up to 1,000 images at a time. You can also create multiple Datasets, all of which can be linked to a single Project. Familiarize yourself with our limits and best practices for data import and registration before adding data to Encord. 
+</Tip>
+
+1. Navigate to the _Datasets_ section under the _Annotate_ heading.
+2. Click the Dataset you want to add data to. 
+3. Click **+Attach existing files**. 
+
+<Tip>If the files you want have not been uploaded into Encord yet, click **+Upload files** to add new files.</Tip>

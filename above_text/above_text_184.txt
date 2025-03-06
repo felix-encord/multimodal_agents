@@ -1,0 +1,1 @@
+Navigate to a particular frame or timestamp by clicking the _compass_ icon. Replace the value(s) with the desired target and click _Go_.

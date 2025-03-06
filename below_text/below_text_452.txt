@@ -1,0 +1,7 @@
+</Step>
+  <Step title="Add Workforce Users">
+  1. Collect the list of workforce users from the workforce company you are using.
+  2. Add those users to your organization as **Workforce** users from the **My organization > Users** page.
+  </Step>
+  <Step title="Add Workforce to Group.">
+    Add the Workforce Team Manager and all workforce members to the required _Groups_ from the **My organization > Groups** page.

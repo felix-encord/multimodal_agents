@@ -1,0 +1,5 @@
+File, Search, and Reopen
+
+The file column shows the name of the _data asset_. For files uploaded via the GUI, they keep the name they were uploaded with. For files added from your cloud storage, this will normally be the path under the bucket they are stored on.
+
+Use the search interface to quickly filter and display only those tasks with file names matching your desired text. Even partial matches will be shown. For example: searching "fly" will return file names containing "flyover" and "flyaround."

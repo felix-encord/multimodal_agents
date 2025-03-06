@@ -1,0 +1,13 @@
+Segmentation models are used to detect and label instances of objects within training data. They work similarly to object detection models, but differ in that the expected input and output of the model are polygons rather than bounding boxes. Consequently, the labels these models produce are associated with polygon annotations from the Project's Ontology.
+
+| **Ontology shape**     | **Supported?** |
+|------------------------|-------------------|
+| Bounding box           | ✅                 | 
+| Rotatable bounding box | ❌                 | 
+| Polygon                | ✅                 |
+| Polyline               | ❌                 | 
+| Primitive              | ❌                 |
+| Keypoint               | ❌                 | 
+| Bitmask                | ✅                 | 
+
+<Note>Segmentation models assume there are potentially multiple objects in an image that need to be segmented and classified. </Note>

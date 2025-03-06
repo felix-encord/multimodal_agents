@@ -1,0 +1,3 @@
+Danger zone
+
+You can delete your project by going to the _Danger zone_ tab at the bottom of the menu, and clicking the red **Delete project** button, shown below.

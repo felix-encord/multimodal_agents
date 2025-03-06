@@ -1,0 +1,4 @@
+Add collaborators
+
+1. Click the **Invite collaborators** button to add users to the Ontology.
+A dialog appears.

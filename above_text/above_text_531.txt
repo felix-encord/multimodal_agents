@@ -1,0 +1,3 @@
+Datasets in Encord are created from the files you upload and define collections of files to be labeled. You can add all files from a single folder to a Dataset or compile a Dataset from files across multiple folders, allowing flexible selection of files for labeling. Each data unit you upload can be included in multiple Datasets.
+
+1. Click the **New dataset** button in the _Datasets_ section under the _Annotate_ heading, to create a new Dataset.

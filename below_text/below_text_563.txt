@@ -1,0 +1,14 @@
+4. Select your transcripts from the field.
+
+5. Type the text you want to search for.
+
+6. Click **Display**.
+
+7. Click the field under _Card details_.
+   A menu appears.
+
+8. Select your transcript under _Custom metadata_.
+   Transcripts appear under your audio files with the filtered text highlighted.
+
+
+*/}

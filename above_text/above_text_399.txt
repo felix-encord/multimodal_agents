@@ -1,0 +1,1 @@
+Pathways that data units take through the Workflow can be split according to a certain percentage of annotation tasks. For example, 50% of tasks get sent to _review stage A_, while the other 50% of tasks get sent to _review stage B_, splitting the workload between two different groups of reviewers.

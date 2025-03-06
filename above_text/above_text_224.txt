@@ -1,0 +1,12 @@
+Label PDFs
+
+Annotate supports the following label types for PDFs:
+
+- Bounding boxes
+- Polygons
+- Bitmasks
+- Classifications
+
+<Note>Classifications support being applied on a range of pages in a PDF.</Note>
+
+Use **Show text outline** button feature when labeling documents to streamline your annotation process. When used with object label hotkeys, labeling becomes a smooth efficient process.

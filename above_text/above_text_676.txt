@@ -1,0 +1,3 @@
+Delete Prediction Sets
+
+You can delete prediction sets from Active from the Predictions page.

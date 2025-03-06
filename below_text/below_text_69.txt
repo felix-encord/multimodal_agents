@@ -1,0 +1,12 @@
+Filter and manage notifications using the:
+
+- **_+ Create notification_ button**: Initiates the notification creation flow.
+- **Search bar**: Typing in the search bar will filter the notifications by title.
+- **List of notifications**: Click the _gear_ button to change a notification's settings and click the _red bin_ button to delete a notification.
+
+You can create a number of event-based or timing-based notifications to help monitor your Project's activity:
+
+- **Email**: send an email when certain events happen.
+- **Slack**: send a Slack message when certain events happen.
+- **Digest**: send regular emails giving a summary of activity over a given time period.
+- **Webhook**: send a JSON payload to a REST endpoint when certain events happen.

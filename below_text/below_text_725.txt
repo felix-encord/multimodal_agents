@@ -1,0 +1,3 @@
+Frame _i_ is flagged as potentially missing an object.
+
+Implementation on GitHub.

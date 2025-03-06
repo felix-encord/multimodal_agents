@@ -1,0 +1,3 @@
+3. Evaluate annotator performance
+
+Submitted tasks are automatically run through the benchmark function, and the annotators performance on the task is computed. Project administrators can confirm annotator progress and performance in the _Summary_ page. Use the _Overview_ tab for quick insights into overall annotator performance. Use the _Annotator submissions_ tab to confirm individual task submissions on a per-label basis.

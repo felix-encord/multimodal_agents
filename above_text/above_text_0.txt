@@ -1,0 +1,40 @@
+Automatically save labels to AWS S3
+
+<Info>We strongly recommend that highly technical users (examples: IT professionals, software developers, or system administrators) are the ones who perform the steps outlined in this process. </Info>
+
+Typically, after labeling your data with Encord, the labels are used to training your ML models. This process typically includes transferring your labels to cloud storage. To streamline this, follow the steps below to automatically save your labels to your cloud storage upon their creation:
+
+1. Create an IAM policy for a Lambda function. 
+2. Paste the following JSON into the JSON policy editor, replacing  with the name of the S3 bucket you want to export your labels to.
+
+
+
+3. Create an IAM role for Lambda, and attach the policy you created in Step 1. 
+
+4. Create a new directory on your computer to store the components for your container image. The directory must include: 
+- The lambda function script provided below. You must replace \<s3_bucket_name\> with your S3 bucket name. We recommend saving the script as .
+- The docker file provided below.
+- A text file named  to store your private key. The key is used for authentication with Encord.
+
+<Warning>
+Creating a file called  to store your private key path is the simplest way, but not a secure way of ensuring the Lambda function can authenticate with Encord. Alternatives include, but are not limited to:
+- Environment variables in AWS. 
+- AWS secrets manager.
+</Warning>
+
+
+
+
+5. Create a private ECR repository in AWS to store your container image. Record the path to the ECR repository you create.
+
+6. Create a Docker container image for the Lambda function. Use the command line to navigate to the directory you created in step 4. The following command shows an example with a tag containing a version number appended to the repository path: 
+
+
+
+7. Push your container image to the private ECR repository you created in step 5. The following command shows an example with a tag containing a version number appended to the repository path:
+
+
+
+8. Create a Lambda function in AWS. 
+
+  - Select the **Container image** option.

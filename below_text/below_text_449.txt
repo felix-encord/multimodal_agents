@@ -1,0 +1,1 @@
+Label versioning allows you to keep track of your label history over time by providing a snapshot of labels at a point in time. Label versions can be exported and analyzed to track annotation performance over time.

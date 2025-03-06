@@ -1,0 +1,3 @@
+2. Give your Dataset a meaningful title and description. A clear title and description keeps your data organized.
+
+<Tip>Toggle **Looking to create a mirrored dataset?** to create a Mirrored Dataset. </Tip>

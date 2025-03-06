@@ -1,0 +1,5 @@
+Correlation charts
+
+Correlation charts display a scatter plot of two attributes to show correlation within your current filtered view. Correlation charts require numeric data.
+
+<Note>Distribution charts support a number of custom metadata types, however Correlation charts ONLY SUPPORT  custom metadata.</Note>

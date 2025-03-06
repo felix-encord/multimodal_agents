@@ -1,0 +1,63 @@
+{
+    "grid": [
+      [0],
+      [1],
+      [2]
+    ],
+    "gridContent": {
+      "1": {
+        "client_metadata_query": {
+          "or_conditions": [
+            {
+              "key": "Data_Type",
+              "operator": "=",
+              "value": "Image"
+            },
+            {
+                "key": "Data_Type",
+                "operator": "=",
+                "value": "Image"
+              }
+          ]
+        }
+      },
+      "0": {
+        "client_metadata_query": {
+          "or_conditions": [
+            {
+              "key": "Data_Type",
+              "operator": "=",
+              "value": "above_text"
+            },
+            {
+                "key": "Data_Type",
+                "operator": "=",
+                "value": "above_text"
+              }
+          ]
+        }
+      },
+      "2": {
+        "client_metadata_query": {
+          "or_conditions": [
+            {
+              "key": "Data_Type",
+              "operator": "=",
+              "value": "below_text"
+            },
+            {
+                "key": "Data_Type",
+                "operator": "=",
+                "value": "below_text"
+              }
+          ]
+        }
+      }
+    },
+    "topLevelGridFilter": {
+      "client_metadata": {
+        "key": "id",
+        "operator": "="
+      }
+    }
+}

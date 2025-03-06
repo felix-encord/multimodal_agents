@@ -1,0 +1,5 @@
+Outliers
+
+In the Outliers section, Active provides a quick summary of data or label outliers that you might want to investigate.
+
+**Data**

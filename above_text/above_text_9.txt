@@ -1,0 +1,7 @@
+Training models
+
+Once a model has been created, it must be trained to learn how to classify, or detect / segment objects within frames or images. 
+
+1. Begin by selecting the model you want to train from the list of models.
+
+2. Click the **Train model** button to begin setting up your model's training.

@@ -1,0 +1,7 @@
+<Tip>We recommend enabling the **Ignore individual file errors** toggle. This ensures that the entire upload does not fail if only one file cannot be added.</Tip>
+
+7. Click **Import** to add your cloud data to the Dataset. 
+
+<Note>The data is be fetched from your cloud storage and processed asynchronously. This involves fetching appropriate metadata and other file information to help us render the files appropriately and to check for any framerate inconsistencies. We do not store your files in any way.</Note>
+
+---

@@ -1,0 +1,1 @@
+<Note>Mirrored Datasets can be upgraded to standard Datasets and folders at any time. We highly recommend upgrading your Mirrored Datasets to standard Datasets and folders to fully unlock the benefits of _Files_.</Note>

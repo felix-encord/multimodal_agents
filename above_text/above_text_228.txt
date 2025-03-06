@@ -1,0 +1,3 @@
+Transcription Pane
+
+The Audio Transcription Pane is available when your Ontology includes at least one _Transcription_ attribute. To access it, click the icon at the top of the Label Editor. The Transcription Pane opens on the right side, displaying all transcriptions in chronological order.

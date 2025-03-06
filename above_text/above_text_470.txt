@@ -1,0 +1,1 @@
+Object tracking follows instance labels through a series of frames in a video or image sequence.

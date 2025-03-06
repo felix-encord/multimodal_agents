@@ -1,0 +1,13 @@
+1. Apply object labels to **all** relevant frames.
+
+2. Add the dynamic attribute to the label in the first frame that the object appears in.
+
+3. Navigate to the point of the video or image sequence where the dynamic attribute changes value, and apply the attribute to the object here. 
+
+4. Use the **+****, or the keyboard shortcut <kbd>Shift</kbd> + <kbd>L</kbd> to set _keyframes_ on frames where the attribute changes value. 
+
+5. Use the _Play_ icon, or the keyboard shortcut <kbd>Shift</kbd> + <kbd>P</kbd> to apply attribute values to all frames following a _keyframe_, matching the value set in the _keyframe_.
+
+**Apply to new occurrences**:
+
+The _Apply to new occurrences_ checkbox in the Label Editor is available for the first instance of a label with a dynamic attribute. Selecting this option propagates the attribute to all future instance labels, meaning all labels created for this instance share the attribute value of the initial instance label.

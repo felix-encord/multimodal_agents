@@ -1,0 +1,7 @@
+Freehand edge touchup lets you refine a polygon by drawing a new edge between two vertices to adjust and close its shape.  
+
+1. Right-click the polygon you want to edit.  
+2. Select **Freehand edge touchup** or press the <kbd>F</kbd> hotkey.  
+3. Click the starting vertex for your new edge.  
+4. Move the cursor to the target vertex where you want to close the shape.  
+5. Click to finalize the edit.

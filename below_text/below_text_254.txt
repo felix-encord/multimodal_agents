@@ -1,0 +1,1 @@
+<Tip>Refer to our this documentation to learn how to use dynamic attributes in the Label Editor, and apply dynamic attributes to a range of frames in a video.</Tip>

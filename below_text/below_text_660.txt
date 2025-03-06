@@ -1,0 +1,7 @@
+You can easily convert your Mirrored Datasets into a standard folder and a corresponding Dataset with the same name. Storing your files in a standard folder enables you to add them flexibly to multiple Datasets, and organize them into different folders.
+
+1. Navigate to _Datasets_ in the _Index_ section of the Encord platform. 
+
+2. Select the Mirrored Dataset you want to upgrade.
+
+3. Click the **Upgrade to standard dataset and folder** button.

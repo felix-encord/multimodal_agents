@@ -1,0 +1,7 @@
+2. Select or add a **Distribution & Summary statistics** chart.
+
+3.  Select the  quality metric for the distribution metric.
+
+4. Adjust the  value for data as required.
+   
+   The chart displays the distribution of data based on the  scores.

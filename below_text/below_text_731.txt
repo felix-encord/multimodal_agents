@@ -1,0 +1,11 @@
+5. Click **Display** on the far right of the screen.
+
+6. Scroll down to _Prediction_ section.
+
+7. Expand the section.
+
+8. Adjust the **IOU Threshold**.
+   Depending on the IOU of the ground truth and prediction labels a TP or FP icon appears on each frame.
+
+9. Adjust the **Min Confidence Threshold**.
+   Frames under the threshold are filtered from view.

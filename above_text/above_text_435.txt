@@ -1,0 +1,3 @@
+2. Annotators proceed through the benchmark tasks
+
+Annotators can access the training Project using the URL you share with them. Annotators see a simplified interface which shows only their tasks in both the summary and labels queue pages. Annotators can start their evaluation tasks by clicking the **Start labelling** button in the upper right or clicking **Initiate** next to any given labeling task.

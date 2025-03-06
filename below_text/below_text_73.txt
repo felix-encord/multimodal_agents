@@ -1,0 +1,2 @@
+Add the channel and make sure to refresh the grid by clicking on the refresh icon above the Slack channels grid.  
+For a given user the available Slack channels are shared between all notifications.

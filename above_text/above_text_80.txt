@@ -1,0 +1,9 @@
+Hanging protocols 
+
+<Note>
+Hanging protocols only apply to the current task. Learn how to set the editor layout for the entire Project here.
+</Note>
+
+Mammography files can be arranged into a variety of different preset, or custom tile layouts.
+
+<Tip>To learn how to set custom editor layouts for the entire Project, see our documentation here.</Tip>

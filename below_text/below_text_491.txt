@@ -1,0 +1,8 @@
+**To test an Agent:**
+
+1. Navigate to the _Agents_ section of the Encord platform. 
+2. Click the Agent you want to test.
+3. Click **Test agent**. 
+   The Test payload is sent to the API endpoint. 
+
+   A notification appears telling you whether the API endpoint was reached appears at the top of your screen.

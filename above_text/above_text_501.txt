@@ -1,0 +1,8 @@
+Create Service accounts
+
+Only Encord Admins (not Project Admins) can create Service Accounts in Encord. 
+
+**To create a Service Account:**
+
+1. Go to **My organization > Service Accounts**.
+   The _Service Accounts_ page appears.

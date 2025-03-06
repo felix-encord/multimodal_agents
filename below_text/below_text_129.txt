@@ -1,0 +1,2 @@
+3. Upload a JSON file specifying the custom overlay you want to display in the Label Editor. 
+4. Click the **Preview** button to see what the custom overlay looks like.

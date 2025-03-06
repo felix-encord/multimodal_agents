@@ -1,0 +1,5 @@
+2. Select a user role for the collaborator you want to add by selecting an option from the list.
+
+3. Type the email address of the user you'd like to add and select the user from the list. 
+
+4. Click the **Add** button to add the user with the specified role.

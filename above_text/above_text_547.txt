@@ -1,0 +1,7 @@
+Step 3: Attach Dataset
+
+1. Click the **Attach datasets** button. 
+
+2. Select the Dataset you want to attach to the Project by clicking the **Attach** button next to the Dataset name,  or create a new Dataset by clicking the **+ New Dataset button**. 
+
+<Tip>Multiple Datasets can be attached to the same Project.</Tip>

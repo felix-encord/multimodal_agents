@@ -1,0 +1,13 @@
+Explorer
+
+The _Explorer_ page has several areas that can help you find images of interest or duplicate images in your Project.
+
+<AccordionGroup>
+   <Accordion title="1: Refine and diversify your similarity search to find images of interest">
+
+There are times when performing a similarity search using only a single image is not enough. For example, you
+want to perform a similarity search for historic buildings. The image you use to perform the search also has a large number of trees in the picture. Some of the images returned from your search might not be historic buildings at all. They might be images that have a large number of trees. To refine your search AND to add diversity to the returned results, select a number of images that are closer to what you want returned. Using the historic building example, select a number of different historic buildings in different lighting and different weather conditions. That way the results returned from your search are more in-line with what you want.
+
+1. From the _Explorer_, filter, sort and search for 1 or more images/frames.
+
+   <Tip>You can select up to 50 images.</Tip>

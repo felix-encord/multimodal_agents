@@ -1,0 +1,1 @@
+2. A dialog appears. Enter a reason for skipping the task - the reason is added as an issue to the task that annotators and reviewers can see. If no reason is entered "This task was skipped" is added by default.

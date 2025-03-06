@@ -1,0 +1,13 @@
+Copy Project
+
+To copy a Project:
+
+1. Click the **Copy project** button in the _Options_ section of the Project's _Settings_. 
+2. Select the parts of the Project to copied into the new Project. The Ontology has to be copied and is therefore always selected. All components of the current Project are selected by default. 
+
+<Tip>
+You can copy any combination of the following assets:
+- **Datasets**: all datasets are copied. New annotation tasks will be created for all videos and image sequences if their labels are not copied over.
+- **Labels**:  copy the labels in specified data units. All labels are copied by default. Change the dropdown to _Selected Labels_ ,as seen in the image below, to only include specific labels in your new Project. Click the **+Advanced settings** button to select the state of the data units labels should be copied for. 
+- **Models**: this will copy all the models in your Project along with their training logs.
+- **Collaborators**: copy all Project users with their respective roles. Project admins are copied regardless of whether this is selected.

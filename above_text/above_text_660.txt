@@ -1,0 +1,1 @@
+<Info>If you are using the SDK, upgrading your Mirrored Dataset can significantly impact your upload process. After upgrading, you must update your SDK scripts to use the  and  classes for uploading and querying data. For more information, please refer to our documentation.</Info>

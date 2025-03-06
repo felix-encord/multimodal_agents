@@ -1,0 +1,4 @@
+</Accordion>
+  
+  <Accordion title="2: Sorting by ">
+    The entire Project can be sorted by . Sort by ascending order to display duplicates first.

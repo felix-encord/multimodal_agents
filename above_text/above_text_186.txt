@@ -1,0 +1,3 @@
+Instantiating existing bounding box instances (i.e., bounding boxes that should keep the same identifier in preceding or succeeding frames) can be done by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>, <kbd>w</kbd>, <kbd>e</kbd>).
+
+Bounding boxes can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard, and <kbd>cmd</kbd>/<kbd>ctrl</kbd>  + <kbd>v</kbd> to paste it at the location of the mouse cursor on the desired frame.

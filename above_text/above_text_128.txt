@@ -1,0 +1,3 @@
+Custom overlay
+
+Create a custom overlay to display specific metadata in the Label Editor by default.

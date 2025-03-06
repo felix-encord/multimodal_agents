@@ -1,0 +1,5 @@
+4. Drag-and-drop the local images you want to batch into an image group or image sequence. Learn how create image groups and image sequences from cloud data here. 
+
+5. Click **Upload and batch images** to create the image group or image sequence.
+
+6. A file representing the image group or image sequence is created in the folder. A new folder appears containing all the constituent images of the image group or image sequence that was created.

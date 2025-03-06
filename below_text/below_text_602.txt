@@ -1,0 +1,1 @@
+Select the role you want the users to have, and then start typing their email address into the search bar. Select the user(s) you want to give access to the folder and click **Add** to confirm your selection.

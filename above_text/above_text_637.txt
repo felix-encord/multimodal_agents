@@ -1,0 +1,13 @@
+Option 3: I want to fully transition to Files
+
+**First, upgrade your Mirrored Datasets:**
+
+<Note>
+Upgrading Mirrored Datasets is a one-way action that changes how files are added to Datasets. We recommend uploading files through the Files interface and then attaching them to Datasets, as outlined below. However, you can still upload files directly to Datasets by specifying the folder in the upload call, as shown in the SDK reference.
+</Note>
+
+1. Navigate to _Datasets_ in the _Index_ section of the Encord platform. 
+
+2. Select the Mirrored Dataset you want to upgrade.
+
+3. Click the **Upgrade to standard dataset and folder** button.

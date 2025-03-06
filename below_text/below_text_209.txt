@@ -1,0 +1,1 @@
+icon, or the keyboard shortcut <kbd>Shift</kbd> + <kbd>S</kbd> to remove a _keypoint_ from a frame.

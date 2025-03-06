@@ -1,0 +1,3 @@
+Detaching models from Projects
+
+Open the Project you want to detach your model from and navigate to the _Models_ tab. Click the _Settings_ icon and select **Detach model**.

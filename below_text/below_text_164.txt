@@ -1,0 +1,13 @@
+**Annotation mode components**:
+
+- **A**. Editor menu
+- **B**. Quick toolbar
+- **C**. Classes
+- **D**. Instances and Frame labels
+- **E**. Automated labeling
+- **F**. Editor timeline (for videos and image sequences only)
+- **G**. Annotation canvas: displays the media asset and provides interface for drawing and editing labels.
+- **H**. Editor header
+- **I**. Skip or Submit
+
+---

@@ -1,0 +1,5 @@
+Multi-Factor Authentication
+
+In addition to your login credentials, Encord recommends that you add the alternate SMS verification to receive SMS for OTP while logging in to the Encord platform. You can enroll single or multiple devices for authentication.
+
+1. From the user menu, click **Settings**.

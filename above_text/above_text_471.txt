@@ -1,0 +1,13 @@
+Quick Object Tracking
+
+1. Create at least one bounding box, bitmask, or polygon instance label on the frame you want to start tracking the instance from. 
+
+<Tip>More manual instance labels on different frames result in high object tracking accuracy.</Tip>
+
+2. Right-click the shape .
+
+3. Click **Track object**. For bounding boxes and rotatable bounding boxes, select the _Standard (fast)_ option to run SAM 2 tracking for 30 consecutive frames.
+
+| **Polyline, Keypoint, Object Primitive**                                             | **Bounding Box, Rotatable Bounding Box**                                             |
+|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+|

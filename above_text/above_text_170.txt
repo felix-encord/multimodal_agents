@@ -1,0 +1,5 @@
+View Annotator Instructions
+
+The **Annotator instructions** button is available in the top-left corner of the Label Editor if annotation instructions are provided by the Admin or Team Manager. 
+
+<Tip> To learn how to upload annotation instructions click here</Tip>

@@ -1,0 +1,12 @@
+**Complete** represents the stage of a Project at which a task is marked as complete, and can therefore only be used once per project.
+
+Having passed though your Workflow, it was deemed to be acceptable data for the training of machine learning algorithms. Complete tasks can still be accessed by admins.
+
+Optionally, add a Webhook to this stage to receive notifications whenever a task arrives at the **Complete** stage.Click the Edit icon next to 'Webhook' and add the URL of the server you would like to receive notifications on.
+
+
+import FinalStageReopen from '/snippets/FinalStageReopen.mdx';
+
+<FinalStageReopen />
+
+---

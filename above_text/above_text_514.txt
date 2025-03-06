@@ -1,0 +1,7 @@
+**To label audio files:**
+
+<Tip>We recommend using hotkeys to speed up and streamline your labelling process. For this example, the Classification hot keys are  and , but for you they might be different.</Tip>
+
+1. Go to **Project > [Your Project Title] > Queue > Annotate**.
+
+   The _Project Annotate Queue_ appears with a list of audio files for labelling.

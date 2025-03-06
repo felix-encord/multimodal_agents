@@ -1,0 +1,3 @@
+Team collaborators
+
+The 'Team collaborators' section shows the duration of time each project collaborator spend working on a given file.

@@ -1,0 +1,7 @@
+Create image groups and image sequences
+
+Image groups and image sequences are created when you upload files into Encord in _Files_.
+
+1. Open the _Add data_ dialog. 
+2. Select the _Batch images as_ tab.
+3. Select _Image group_ to create an image group. Select _Image sequence_ to create an image sequence.

@@ -1,0 +1,7 @@
+4. Attach files to a Dataset
+
+1. Navigate to the _Datasets_ section under the _Annotate_ heading.
+2. Click the Dataset you want to add data to. 
+3. Click **+Attach existing files**. 
+
+<Tip>If the files you want have not been uploaded into Encord yet, click **+Upload files** to upload new files.</Tip>

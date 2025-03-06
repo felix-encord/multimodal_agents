@@ -1,0 +1,5 @@
+Polygon
+
+Creating a polygon requires an ontology with a polygon annotation type. Enable or disable free-hand drawing mode by pressing <kbd>d</kbd> on your keyboard. Polygon coarseness for polygons drawn free-hand is set in the 'Settings' drawer in the *Drawing settings* drop-down. Instantiate a new polygon instance by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+A polygon can be closed by double-clicking anywhere on the canvas. Doing so will "snap" creating an edge between the last vertex to the first vertex drawn.

@@ -1,0 +1,3 @@
+Why is this useful? In some situations, track ids are not relevant but the classification is. For example, if you know there is only ever one instance of an object per frame, then id is implicitly defined. Such situations do not necessarily work with the “Inconsistent Tracks” metric but should with the classification metric.
+
+An example of the is panoptic segmentation where some classes are “stuff classes” (like the dirt class). Stuff classes would usually only have one instance per frame.

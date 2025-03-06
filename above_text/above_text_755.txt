@@ -1,0 +1,11 @@
+Apply Classifications to Collections
+
+<AccordionGroup>
+   <Accordion title="To apply Classifications to Collections and send them to Annotate:">
+
+1. Import your Project that has the Ontology with Classifications.
+
+2. Click the Project once import completes.
+   The Project opens with the Explorer page displaying.
+   
+3. Filter the Project data in _Data_, _Labels_, or _Predictions_ in the Explorer by searching, sorting, and filtering until you have the subset of the data you need.

@@ -1,0 +1,3 @@
+Task completion
+
+An annotation task is completed once all outstanding labels subject to review have been reviewed. Completed annotation tasks and annotation tasks currently in the review stage are visible in the _Activity_ pane of the _Labels_ tab.

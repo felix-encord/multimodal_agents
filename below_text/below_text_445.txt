@@ -1,0 +1,11 @@
+To update task priority:
+
+  1. Click on the number representing the task's current priority. This action opens the priority setting interface for that particular task. Alternatively, select the task and click the **Adjust priority** button.
+
+  2. Adjust the task's priority by either using the slider for quick selection or manually entering a specific number between 0 and 100 in the input field provided. This allows for precise control over the task's priority level.
+
+  3. Once the desired priority level is set, finalize your changes by clicking the **Update** button. This action saves the new priority setting for the task, effectively updating its status in the task queue.
+
+
+ </Accordion>
+<Accordion title = " Queue (Annotators)">

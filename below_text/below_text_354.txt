@@ -1,0 +1,12 @@
+- _Single frame-level classification_ only evaluates classification instances.
+- _Dynamic benchmark_ is used for combinations of objects and classifications and can be calibrated by setting the relative weights of the following evaluation metrics:
+
+     - **_Intersection over Union (IoU)_** is an evaluation metric that assesses the accuracy of labels compared to the benchmark. If labels fully overlap with those in the ground truth full points are awarded. Conversely, if there is no overlap between a label and the ground truth labels then no points are awarded.
+
+     <Note>     For Keypoints the _IoU_ represents a measure of distance between the annotator's point, and the benchmark point. The larger the distance, the lower the _IoU_ score.</Note>
+
+
+    - **_Category_** is an evaluation metric based on correctly identifying the ontology category. In the example above correctly identifying an 'Apple' awards 100 points, while an incorrect or a missing category awards no points. 
+
+> 👍 Tip 
+_IoU_ and _Category_ values can be adjusted in the _Settings_ tab after your project has been created.

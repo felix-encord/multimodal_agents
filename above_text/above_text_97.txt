@@ -1,0 +1,9 @@
+<Note>The _Single label review_ feature can also be considered "turbo review mode," analogous to the "turbo attribute mode" in annotation mode, because it allows the reviewer to quickly step through and review instance attributes. "Turbo attribute mode" in the editor settings can be disabled while in review mode.</Note>
+
+**Single Label Review Settings**
+
+The default zoom level for single label review can be adjusted to suit your needs.
+
+1. Open the editor settings by clicking in the editor header.
+
+2. In the _General settings_ section adjust the _Set the default zoom level for single label view_ value highlighted in the screenshot below. The settings will be applied for the next selected label.

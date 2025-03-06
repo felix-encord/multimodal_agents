@@ -1,0 +1,3 @@
+Click the **Edit** button, as highlighted in the image below. 
+
+<Note>You can not edit the start nodes.</Note>

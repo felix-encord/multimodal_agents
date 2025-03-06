@@ -1,0 +1,1 @@
+To delete existing measurements the distance measurement functionality has to be enabled. Erase measurements by selecting a measurement and pressing <kbd>backspace</kbd> or <kbd>del</kbd> on your keyboard.

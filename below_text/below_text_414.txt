@@ -1,0 +1,6 @@
+Once you have made all desired edits, click the **Save template changes** button. 
+
+The **Save template changes** button will be greyed out until: 
+- The nodes in your template have been connected.
+- The workflow contains a **_Complete_** stage. 
+- The template has been given a title.

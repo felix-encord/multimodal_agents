@@ -1,0 +1,5 @@
+Creating models
+
+To create a model: 
+1. Navigate to _Models_ in the _Agents_ of the Encord platform
+2. Click the **+ New model** button.

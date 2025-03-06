@@ -1,0 +1,5 @@
+3. Create a Dataset
+
+To take advantage of all of the _Files_ functionality you must create a standard Dataset (as opposed to a Mirrored Dataset). 
+
+1. Click the **New dataset** button in the _Datasets_ section in _Annotate_.

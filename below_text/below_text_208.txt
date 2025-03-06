@@ -1,0 +1,2 @@
+icon, or the keyboard shortcut <kbd>Shift</kbd> + <kbd>A</kbd> to add a _keypoint_ to a frame.
+- Use the

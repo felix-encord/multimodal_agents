@@ -1,0 +1,8 @@
+6. Click **Add filter**.
+   A menu appears.
+
+7. Select **Keyframe** from the menu.
+   The Keyframe filter appears in the filter list.
+
+8. Select **True**.
+   The video frames with  specified appear in the Explorer workspace.

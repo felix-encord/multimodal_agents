@@ -1,0 +1,5 @@
+Dynamic attributes
+
+Encord supports dynamic attributes for all object annotation types (i.e., bounding box, polygon, polyline, keypoint, and primitives).
+
+Highlight the desired object to assign dynamic attributes. Dynamic attributes are recognized by the *Dynamic* tag next to the given feature in the ontology. Dynamic attributes are only applied in the frames specifically indicated but can be edited in ranges if they span multiple frames.

@@ -1,0 +1,8 @@
+.
+
+6. Select the custom embeddings you want to import to the Project, under _Metrics & Embeddings_.
+
+7. Select **Import** under _Metrics & Embeddings_.
+
+8. Click **Proceed**.
+   The Annotate Project imports with your custom embeddings.

@@ -1,0 +1,12 @@
+Notice how images are clustered around certain regions. By defining a rectangular area on the plot, users can quickly isolate and analyze data points within that defined region. This approach facilitates the exploration of commonalities among these samples.
+
+Hover over clusters or individual data points on the plot to visually check frames.
+
+Upon selecting a region, the content within the _Explorer_ page adjusts accordingly. Various actions can be executed with the chosen group:
+
+- Use Collections to tag and group images.
+- Establish subsets similar to these and then conduct comparisons.
+
+{/*-
+
+LH: WILL UPDATE WHEN FREDERIK HAS THIS READY FOR INDEX

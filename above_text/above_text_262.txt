@@ -1,0 +1,3 @@
+Copy Ontologies
+
+An Ontology can be copied in the _Options_ page of the Ontology's settings. Click the **Copy ontology** button to copy the Ontology.

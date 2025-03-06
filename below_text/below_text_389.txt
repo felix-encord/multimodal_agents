@@ -1,0 +1,3 @@
+The group you just added appears under the 'Added groups' heading. Repeat the process if you want to add more groups with different roles to the Project. 
+
+To delete a group from the project, simply click the

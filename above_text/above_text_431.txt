@@ -1,0 +1,18 @@
+4. Set up the training data. 
+- Choose the Project(s) that contain the desired _ground-truth_ labels. 
+
+<Tip>We recommend source Project(s) with 100% annotation task progress.</Tip>
+
+- Set up the initial configuration of the benchmark function, which determines how trainees are evaluated against the _ground-truth_ labels.
+
+  - _Single frame-level classification_ only assesses classification instances.
+  - Use _Dynamic benchmark_ for combinations of objects and classifications. Dynamic benchmarks can be calibrated by setting the relative weights of two evaluation metrics.
+
+    - **_Intersection over Union (IoU)_** is an evaluation metric that assesses the accuracy of labels compared to the ground truth / gold standard. If labels fully overlap with those in the ground truth full points are awarded. Conversely, if there's no overlap between a label and the ground truth labels then no points are awarded.
+
+     <Note>     For Keypoints, the _IoU_ represents a measure of distance between the annotator's point, and the benchmark point. The larger the distance, the lower the _IoU_ score.</Note>
+
+
+    - **_Category_** is an evaluation metric based on correctly identifying the Ontology category. In the example above correctly identifying an 'Apple' awards 100 points, while a wrong or a missing category awards no points. 
+
+  <Tip>  The source Project(s) cannot be changed after being attached to a training Project. Only the benchmark function can be amended. _IoU_ and _Category_ values can be adjusted in the _Settings_ tab after Project creation.</Tip>

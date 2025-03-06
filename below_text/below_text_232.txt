@@ -1,0 +1,9 @@
+Creating a keypoint requires an ontology with a keypoint annotation type. Instantiate a new keypoint label by clicking on the specified class in the 'Classes' menu or using the specified  
+hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Keypoints labels can be assigned with static classifications should they be defined in your ontology:
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified keypoint
+- Assign classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>)
+
+---

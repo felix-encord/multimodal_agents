@@ -1,0 +1,5 @@
+3. Give the Agent a meaningful name and description.
+
+4. Enter the API endpoint for the agent. This Endpoint is called when the Agent is run in the Label Editor.
+
+5. Click **Register agent** to register the Agent with Encord.

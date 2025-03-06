@@ -1,0 +1,9 @@
+The _Or else_ option accounts for all collaborators not explicitly added to the router. In the image above they will be directed to _review stage C_.
+
+1. Click **Add pathway** to select a subset of collaborators that will make up a pathway - only collaborators present in the previous stage can be selected. There is no limit on the amount of pathways you can create.
+
+2. Click **Add** to finish a pathway. 
+
+<Note>Collaborators can only be added to the **Router** after an input is connected.</Note>
+
+***

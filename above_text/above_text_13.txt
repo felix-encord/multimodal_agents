@@ -1,0 +1,5 @@
+Attaching models to Projects
+
+<Note>Only Project admins are able to attach models to Projects</Note>
+
+Open the Project you want to attach your model to and navigate to the _Models_ tab. Click **+ Attach a model**.

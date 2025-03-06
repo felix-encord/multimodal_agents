@@ -1,0 +1,13 @@
+- **A.** **Manage Collaborators** allows you to seamlessly add users to your project as collaborators, which can be added to different stages of the workflow. 
+
+- **B.** The _Workflow library_ contains all the components that make up a project. Drag the cards from the workflow library onto the workflow canvas (C) to build the stages a workflow should pass through. Some cards can be used more than once to create complex workflows. The configuration details for each component can be found in the Workflow library components section below.
+
+- **C.** The _Workflow canvas_ is the canvas on which you design your workflow, by connecting cards from the _workflow library_. Set up the stages you'd like your workflow to pass through from left to right, and connect them to suit your needs. Click and drag the canvas to move it. 
+
+- **D.** Zoom in and out of the _Workflow canvas_ for convenience. Large workflow designs will require you to zoom out to see the whole picture. The zoom icon focuses in on your workflow. 
+
+- **E.** Create the Project, or return to the previous step of the project creation process. Click **Create Project** to complete the creation process.
+
+<Warning>Currently, connections between nodes on the canvas can't be edited within a project after its creation. However, workflow templates can be edited and configured even when attached to ongoing projects. Click here.</Warning>
+
+***

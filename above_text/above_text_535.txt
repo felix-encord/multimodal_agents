@@ -1,0 +1,8 @@
+Creating Classification Labels
+
+
+
+1. Navigate to the _Queue_ tab of your Project. 
+
+2. Select the data unit you want to label.
+The task opens in the Label Editor.

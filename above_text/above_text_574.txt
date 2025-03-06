@@ -1,0 +1,20 @@
+Browse videos by keyframes
+
+You can use key frames to sort your data in the _Frames Grid view_, but you can also use key frames to filter the frames displayed in the _Videos_ view.
+
+**To filter videos by keyframes:**
+
+1. Log in to the Encord platform.  
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.  
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a folder.  
+   The landing page for the folder appears and the _Explorer_ button is enabled.
+
+4. Click the **Explorer** button.  
+   The _Index Explorer_ page appears.
+
+5. Click **Video**.
+   All videos in the Folder/Folders appear in a list.

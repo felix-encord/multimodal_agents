@@ -1,0 +1,25 @@
+Review and Refine Consensus Labels
+
+Reviewers working in the Review and Refine block can see all labels from all annotators from a Consensus block. The reviewer is able to select the best labels from each object on a data unit and edit those labels or they can create new labels for the data unit.
+
+The Review and Refine page is different for single images and all other data units. When reviewing and refining single images, expand each user to display their labels and decide on the best labels. When reviewing and refining videos, image groups, image sequences, and DICOM series, a timeline appears under the data unit. Use the timeline to speed up reviewing and refining all the labels on the data unit.
+
+**To review and refine labels from a Consensus Project:**
+
+Only data units for which consensus is not reached can be reviewed and refined.
+
+1. Log in to Encord.
+   Your review and refine task queue appears for the latest Project you are assigned for review and refinement.
+
+2. Go to **Annotate > Projects > Annotate projects**.
+   The _Annotate projects_ page appears displaying a list of Projects you are assigned to review and refine.
+
+3. Click a Consensus Project.
+   The Project opens with _Review and Refine_ populated with tasks.
+
+4. Click **Initiate** on a task.
+   The _Review and refine_ page appears.
+
+5. Review and refine the labels on each data unit.
+
+**Single Image, Image Group**

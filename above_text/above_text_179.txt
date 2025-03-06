@@ -1,0 +1,15 @@
+Label Editor V1 (Legacy)
+
+<Warning>Label Editor V1 has been deprecated.</Warning>
+
+The following actions vary significantly between the legacy Label Editor V1 and the new Label Editor. To see how to perform these in the new Label Editor, see our documentation here.
+
+**Adding a polygon vertex - Label Editor V1**
+
+To add more vertices to a polygon after it has been created:
+
+1. Click the polygon you want to add a vertex to
+2. Click the _Add vertex_ icon in the floating window that appears, or use the <kbd>A</kbd> hotkey to activate 'Add vertex mode'
+3. Move the mouse, which should now be in a '+' icon, over the edge where you wish to add a vertex. The edge in question
+  should highlight indicating you've placed the mouse correctly. Click to place a vertex
+4. Continue placing vertices until you're satisfied. Press <kbd>A</kbd> or click the _Add vertex_ icon on the floating toolbar to turn off add vertex mode

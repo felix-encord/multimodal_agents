@@ -1,0 +1,7 @@
+Keypoint
+
+Creating a keypoint requires an Ontology with a keypoint annotation type. Instantiate a new keypoint instance by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Instantiate existing keypoint instances (i.e., keypoints that should keep the same identifier in preceding or succeeding slices) by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>, <kbd>w</kbd>, <kbd>e</kbd>).
+
+Keypoints can be copy/pasted between slices using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>c</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd> + <kbd>v</kbd> to paste it on the desired slice.

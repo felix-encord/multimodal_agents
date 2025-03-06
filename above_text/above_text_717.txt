@@ -1,0 +1,3 @@
+Metric details
+
+The mathematical formula of entropy is:

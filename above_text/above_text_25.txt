@@ -1,0 +1,3 @@
+When to use Encord Annotate?
+
+Encord Annotate is designed to support your machine learning pipeline by providing tools to efficiently turn unlabeled data into labeled data that can be used to train models.

@@ -1,0 +1,25 @@
+</Step>
+  <Step title="Contact Encord">
+    1. Contact Encord.
+    2. Provide the list of workforce users and their roles to Encord.
+  </Step>
+  <Step title="Import/Register files to Encord">
+    Import/Register your files to Encord:
+    - AWS
+    - GCP
+    - Azure
+    - OTC
+    - Local data import
+  </Step>
+  <Step title="Create Datasets">
+    Create one or more Datasets for your workforce Projects.
+  </Step>
+  <Step title="Create Ontology">
+    Create an Ontology for your workforce Projects.
+  </Step>
+  <Step title="Create Projects">
+    Create one or more workforce Projects.
+  </Step>
+  <Step title="Add Workforce Groups to Projects">
+
+  1. Add the Workforce Team Manager as a **Team Manager** to Projects from the **Project > Settings > Team** page.

@@ -1,0 +1,12 @@
+12. Select the checkbox for the Collection to create a Dataset.
+
+13. Click **Create Dataset**.  
+    The _Create Dataset_ dialog appears.
+
+14. Specify meaningful content for the following:
+
+- Dataset Title
+
+- Dataset Description
+
+15. Select **Split image groups/sequences** to extract images from the groups or sequences and add each image separately to the Dataset, if your Collection includes images from a group or sequence.

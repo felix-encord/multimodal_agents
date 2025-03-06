@@ -1,0 +1,5 @@
+When an Organization Admin joins a Project, they are automatically assigned the _Admin_ user role for that Project.
+
+<Tip>Projects can be filtered by Project owner or Project tags.</Tip>
+
+<Tip>See all Projects you belong to by clicking the _Filter by project owner_ search bar, and selecting _My projects only_. </Tip>

@@ -1,0 +1,1 @@
+3. Select the first **Wi-Fi** or **Ethernet**connection in the list (the connection you are using).

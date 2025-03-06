@@ -1,0 +1,17 @@
+This is where you monitor and manage your project. For example, you can view your project's summary statistics, manage labeling tasks, view your team's productivity, train models and invite collaborators.
+
+The dashboard is split into 7 tabs:
+
+- **Summary**: a high-level view of labeling and productivity statistics.
+- **Explore**: a quick way to explore the distribution of instances and labels across data assets in the project.
+- **Labels**: for managing all the project's labeling activity and tasks.
+- **Performance**: a more detailed view of your team's manual labeling and productivity.
+- **Models**: for administering models in this project.
+- **Export**: for exporting your labeling data.
+- **Settings**: editing project options, ontology, team collaborators, and other general project settings.
+
+Access to each tab is associated with the various project roles as follows:
+
+
+
+***

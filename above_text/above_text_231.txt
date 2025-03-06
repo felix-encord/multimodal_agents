@@ -1,0 +1,13 @@
+Polygon
+
+Polygons are often necessary if you want to train your applications on the tightest object boundaries. Creating a  
+polygon requires an Ontology with a polygon annotation type. Enable or disable free-hand drawing mode by pressing <kbd>d</kbd> on your keyboard. Polygon coarseness for polygons drawn free-hand is set in the 'Settings' drawer in the _Drawing settings_ drop-down. Instantiate a new polygon label by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+A polygon can be closed by double-clicking anywhere on the canvas. Doing so will "snap" creating an edge between the last vertex to the first vertex drawn.
+
+Polygon labels can be assigned static classifications should they be defined in your ontology:
+
+- Highlight an object by clicking on it in the editor canvas or by clicking on the **+** icon or start/end frame in the range overview for the specified polygon
+- Assign a classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>)
+
+Here's an illustration of an image containing polygon and polyline objects.

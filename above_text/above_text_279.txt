@@ -1,0 +1,5 @@
+of annotators required to agree**. The task moves to the next stage based on label correctness and whether consensus is reached.
+
+3. Adding multiple Consensus blocks in sequence, means all labels from all previous Consensus blocks display for the reviewers in each subsequent Consensus block.
+
+Encord provides the following default Consensus Workflow, when creating a Project:

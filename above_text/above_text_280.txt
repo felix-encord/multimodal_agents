@@ -1,0 +1,3 @@
+of annotators required to agree**: 3
+
+The following diagrams follows a task through the Consensus Workflow until the labels on the task are correct and in consensus or incorrect and not in consensus.

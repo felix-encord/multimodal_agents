@@ -1,0 +1,3 @@
+1. Onboard your annotators
+
+You can add annotators during the creation phase, or by going to _Settings > Team_ and inviting new annotators. Remember that unlike in annotation Projects where each piece of data can only be seen by one annotator at a time, training Projects score each annotator against the same set of benchmark tasks. Therefore, a copy of each benchmark task will be added to the Project for each annotator added.

@@ -1,0 +1,6 @@
+<Tip>
+Alternatively:
+1. Right-click the editor canvas.
+2. Click **Trigger agent**.
+3. Select the agent you want to run.
+</Tip>

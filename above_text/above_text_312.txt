@@ -1,0 +1,3 @@
+Reviews
+
+The 'Reviews' column shows a count of how many instances have been reviewed in a given data asset. Click the number to open a panel which shows the last review action taken on each instance, as well as who originally created the annotation and when. Note that unless the review was done by an 'Expert Reviewer', all reviewed annotations must be either 'Approved' or 'Deleted' before a task can be 'Completed.' Read more about the Expert Review feature here.

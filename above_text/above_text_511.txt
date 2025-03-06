@@ -1,0 +1,6 @@
+Import the JSON
+
+1. Navigate to the Project settings.
+2. Click on _Layouts_. 
+3. Click **Upload JSON**. 
+4. Select the JSON file containing the layout you want the Label Editor to have.

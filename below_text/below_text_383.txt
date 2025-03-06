@@ -1,0 +1,9 @@
+<Note>For a precise description of benchmark QA please see our benchmark QA documentation.</Note>
+
+- The **Benchmark project source** allows you to see which project is being used as the gold standard benchmark function against which QA is done.
+
+- Click **Edit** next to the _Benchmark scoring function_ to adjust the relative weight of the IoU and Category evaluation metrics. Click **Save** when you are done. 
+
+<Note>The results of the Benchmark QA can be viewed on the Performance dashboard.</Note>
+
+---

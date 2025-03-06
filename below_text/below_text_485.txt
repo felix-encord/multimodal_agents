@@ -1,0 +1,1 @@
+3. Interpolation is run between the first and last frames the instance is labeled.

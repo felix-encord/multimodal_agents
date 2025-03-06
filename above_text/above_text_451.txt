@@ -1,0 +1,8 @@
+Join Projects in your Org
+
+Organization Admins can search for and join any Projects that exist within the Organization.
+
+1. Navigate to _Projects_ under the _Annotate_ heading in the Encord platform. 
+2. Select the _All Encord projects_ tab. 
+3. Find the Project you want to join.
+4. Click **Join project** to join the Project.

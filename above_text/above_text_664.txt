@@ -1,0 +1,5 @@
+Example use cases
+
+To give you a better idea about how Active and Annotate work together, here are some use cases.
+
+**Data Curation and Label Error Correction**

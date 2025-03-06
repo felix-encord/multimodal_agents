@@ -1,0 +1,1 @@
+Click on the 'Training API details' button to toggle a code snippet with model training API details when you are happy with your selected label rows and parameters. The label row ID's ( uid) can also be fetched from the project information.

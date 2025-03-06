@@ -1,0 +1,3 @@
+Polygon mode
+
+_Polygon mode_ lets you draw bitmasks the same way you draw polygons.

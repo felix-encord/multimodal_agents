@@ -1,0 +1,36 @@
+- **A** - Use the search bar to filter the list of data units being displayed, or to look for a particular data unit.
+  - **B** - Select a task to assign it to a user, release the task, or adjust its priority number.
+  - **C** - Filter the list of data units being displayed by task status by _Dataset_, _User_, _Data Type_, or _Status_. This is the order in which tasks will appear in the Label Editor.
+  - **D** - Sort the task queue.
+  - **E** - Use the **Start labeling** (annotation task) and **Start reviewing** (review task) buttons to begin labeling or reviewing a task.
+  - **F** - The list of all Workflow stages shows how many data units each stage currently contains. Each stage can be selected.
+  - **G** - Shows the task's priority number. Tasks are listed in descending order of priority by default.
+  - **H** - Shows the task's Status.
+  - **I** - Shows the email address of the user the task is assigned to.
+  - **J** - Clicking the **Initiate** button initiates a task. If an annotation stage is selected, an annotation task is initiated. If a Review stage is selected a review task is initiated.
+
+  The _Queue_ tab lists tasks in the same order they appear in the Label Editor. 
+
+  **Filters**
+
+  - _Dataset_ - Filtering by Dataset only displays data units belonging to the selected Dataset(s).
+  - _Assignees_ - Displays tasks assigned to a particular user. 
+  - _Last Actioned By_ - Displays tasks last actioned by the selected user. 
+  - _Data Type_ - Displays data units of a specific type.
+  - _Issue Status_ - Displays tasks with Resolved or Unresolved issues.  
+
+  **Sort by**
+
+  You can sort the task queue by clicking **Sort by** next to the filter button. Select whether you want to sort the task queue by:  
+  - Task priority, or alphabetically by the name of the data unit. 
+  - In ascending or descending order. 
+
+  The default sorting is in descending order of task priority.
+
+  **Task Status**
+
+  The task Status indicates which actions had previously been taken on a task.
+
+  - _New_ - The task has not been worked on since being added to the Project.
+  - _Reopened_ - The task was rejected during the Review stage, and has been returned for re-labeling.
+  - _Skipped_ - The task was skipped by one or more annotators.

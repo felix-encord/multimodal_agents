@@ -1,0 +1,6 @@
+11. Restart your Mac for the changes to take immediate effect.
+
+
+**macOS Monterey, Big Sur, Catalina, Mojave, High Sierra, Sierra, El Capitan, Yosemite**
+
+1. Click the Apple logo and select **System Preferences** in the menu.

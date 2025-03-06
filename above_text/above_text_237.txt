@@ -1,0 +1,3 @@
+Bitmask overlap management
+
+It is possible to prevent a Bitmask label from being overlapped by subsequent Bitmasks after the label is created. Use the toggle in the _Labels_ section of the Label Editor to set the overlap behavior.

@@ -1,0 +1,7 @@
+6. Select one or more of the files in the Explorer workspace.
+
+7. Click **Select all** to select all the images in the subset.
+
+8. Click **Add to a Collection**.
+
+9. Click **New Collection**.

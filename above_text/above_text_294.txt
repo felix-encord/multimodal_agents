@@ -1,0 +1,3 @@
+2. Click the _Select group_ drop-down and pick a group you want to add to the Project.
+3. Click the _Select Role_ drop-down to assign a role to the group of collaborators. 
+4. Click **Add** to add the group to the Project.

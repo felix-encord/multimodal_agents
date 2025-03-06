@@ -1,0 +1,1 @@
+4. Click **Done**. The instances are now linked. This is shown in the _Instance labels_ section with the name of the linked instance being displayed.

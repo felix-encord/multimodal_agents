@@ -1,0 +1,5 @@
+on the editor header.
+2. Navigate to the _Drawing settings_ section and enable the **Show polyshape angles** toggle. Click back on to the slice to display the angles.
+3. Draw a polygon or polyline as you usually would.
+
+<Note>Enabling the toggle will display angles for any existing polyshapes.</Note>

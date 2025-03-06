@@ -1,0 +1,13 @@
+**To add an Index Collection to an existing Dataset:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a Folder.
+   The landing page for the Folder appears and the _Explorer_ button is enabled.
+
+4. Click the **Explorer** button.
+   The _Index Explorer_ page appears.

@@ -1,0 +1,1 @@
+Project administrators and team managers can override the automated distribution of tasks by explicitly assigning tasks to individuals in the _Queue_ pane of the _Labels_ tab. Assignments can be done on a task-by-task basis or in bulk by selecting the relevant tasks and clicking the **Assign** button.

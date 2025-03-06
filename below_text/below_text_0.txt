@@ -1,0 +1,7 @@
+- Give the Lambda function a meaningful name. 
+  - Click **Browse images** and select the container image from your ECR repository.
+  - Select the role you created in step 3 as the Execution role.
+
+9. Add a trigger for the Lambda function. Record the URL. 
+
+10. In Encord, set up a webhook on the _Complete_ stage of your Project to send label information to your Lambda function. Use the URL of the trigger you created in step 8 for the webhook. The payload sent out by the webhook can be seen here.

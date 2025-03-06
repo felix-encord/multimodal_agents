@@ -1,0 +1,45 @@
+Creating keys using Terminal / Powershell
+
+<Tip>
+We strongly recommend using the Encord app to generate public-private key pairs.
+</Tip>
+
+Follow the steps below to generate a public-private key pair using an encryption library. Encryption libraries are part of most major operating systems, therefore you can generate this key pair using the appropriate terminal for your OS:
+
+- **Linux/macOS**: the default terminal
+- **Windows 10 & Server 2019/2022**: Powershell
+
+To generate a public-private key pair:
+
+1. Open Terminal or Powershell.
+
+2. Run the following command:
+
+   
+
+3. Press enter to accept the default file location or modify as required:
+   
+   
+   
+   
+
+4. \[**IMPORTANT**\] Leave the passphrase blank:
+
+   
+
+<Warning>
+Ensure that the private key you have generated is not protected by a passphrase. Password-protected private keys cannot be authenticated in Encord. All private keys generated on the Encord platform are not password-protected by default.
+</Warning>
+
+You should now have two files:
+
+-  contains your private key (which you should keep secure);
+-  contains your public key (usually in a file ending in _.pub_).
+
+The next step is to add your public key to Encord. To add your public key to Encord:
+
+1. Copy the contents of the public key file. For that, execute:
+
+   
+
+2. Navigate to the 'Public keys' section of the _Settings_ to create, register and manage your public keys.

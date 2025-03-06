@@ -1,0 +1,12 @@
+If the upload is unsuccessful, ensure that:
+- Your provider permissions are set correctly 
+- The object data format is supported
+- The upload JSON or CSV file is correctly formatted. 
+
+<Tip>
+Check which files failed to upload by clicking the _Export_ icon to download a CSV log file. Every row in the CSV corresponds to a file which failed to be uploaded.
+</Tip>
+
+<Note>You only see failed uploads if the **Ignore individual file errors** toggle was not enabled during cloud data registration.</Note>
+
+***

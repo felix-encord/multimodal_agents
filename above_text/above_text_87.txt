@@ -1,0 +1,7 @@
+You can choose between the following mammography layouts: 
+
+- **Off**: Only the single mammography file that was opened is displayed in the Label Editor.
+- **2x2**: Shows MLO views in the top row, and the CC views in the bottom row.
+- **4x1**: Shows CC on the left, and MLO on the right. 
+
+<Tip>Hover over a mammography layout setting to see how each file will be displayed in the Label Editor if the setting is selected.</Tip>

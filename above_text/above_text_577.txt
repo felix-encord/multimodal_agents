@@ -1,0 +1,5 @@
+Add Collections to an existing Dataset
+
+You must provide the Dataset's ID to add a Collection to an existing Dataset. You can find the Dataset ID under the Dataset's title.
+
+**Copy Dataset ID**

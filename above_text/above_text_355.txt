@@ -1,0 +1,3 @@
+5. Create Project
+
+To create your Benchmark QA Project, click **Create project** in the top right corner of the screen.

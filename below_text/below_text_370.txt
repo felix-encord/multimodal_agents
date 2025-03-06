@@ -1,0 +1,9 @@
+**A.** 'Data file' displays session time collaborators spent working on individual files. 'Project' displays session time collaborators have spent working on the project.  
+
+**B.** Table entries can be filtered according to dates by clicking the range of dates, and selecting the start and end date of the period you would like to see table entries displayed for.
+
+**C.** Table entries can be downloaded in CSV format by clicking the **Download CSV** button.
+
+**D.** When lots of entries are present they will be split across a number of different pages. The number of table entries per table can be adjusted.
+
+---

@@ -1,0 +1,3 @@
+Linked Projects
+
+The _Projects_ pane shows a list of Projects using the Dataset.

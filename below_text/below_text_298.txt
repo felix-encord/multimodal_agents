@@ -1,0 +1,7 @@
+1. Enter a meaningful title and description.  A clear title and description help keep your Projects organized.
+
+If you part of an Organization, you will see an optional project tags drop-down. Project tags are useful for categorizing your projects. Select as many tags as are relevant to your project.
+
+2. Enter a meaningful title and description.  A clear title and description help keep your Projects organized.
+
+3. Attach one or more Datasets to the Project. Click the **Attach dataset** button and select the Datasets you want to add to the Project. You have the option to create a new Dataset.

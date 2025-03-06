@@ -1,0 +1,3 @@
+Zooming in on the timeline reveals finer time intervals, enabling precise identification of when object instances and classifications occur in the video. Conversely, zooming out provides a broader view of larger time segments.
+
+You have the option to sort object instances and classifications either alphabetically or by their creation order. By default, the most recently created classes are displayed at the top.

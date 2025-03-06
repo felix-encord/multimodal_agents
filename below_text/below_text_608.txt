@@ -1,0 +1,9 @@
+---
+
+  </Step>
+  <Step title="Create a Collection">
+
+  <CreateCollection />
+
+  </Step>
+</Steps>

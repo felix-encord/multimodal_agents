@@ -1,0 +1,3 @@
+In information theory, the entropy of a random variable is the average level of “information”, “surprise”, or “uncertainty” inherent to the variable's possible outcomes. The higher the entropy, the more “uncertain” the variable outcome.
+
+Implementation on GitHub.

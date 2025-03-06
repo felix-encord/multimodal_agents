@@ -1,0 +1,7 @@
+TLDR;
+
+<Tip>Do you already know what you are doing and only want to look over a Jupyter Notebook example? We provide one here.</Tip>
+
+Task Agents are Workflow components in which a custom operation on all tasks in the Agent stage can be triggered. This allows you to set up pre-labeling, such as using foundation models such as GPT-4o, automated quality assurance, or any other custom action you need for your workflow. 
+
+<Info>Tasks in the Agent stage are processed in the order of their task priority.</Info>

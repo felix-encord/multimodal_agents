@@ -1,0 +1,29 @@
+Login
+
+<AccordionGroup>
+  <Accordion title="How can I resolve platform access issues for users in India?">
+
+  Some users in India may experience issues accessing the app due to restrictions imposed by certain ISPs. This is a known issue related to the infrastructure used by our platform. For credibility and real-time updates, you can check the Firebase Status Page to confirm whether there are any ongoing outages or incidents.  
+
+  If you are located in India and encounter problems accessing the app, follow these steps:  
+  1. **Use the India-specific app domain**: Access the app via our India-specific domain: https://app.in.encord.com/login.  
+  2. **Verify CORS Settings**: Ensure that the CORS settings for your cloud storage buckets have been updated correctly. Detailed instructions can be found in our cloud integration documentation: AWS, GCP, Azure.  
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" I see an error when I try to log in to the application. How can I fix this? ">
+    - Ensure you are using the Chrome browser, and that it is up-to-date. 
+    - Try clearing your browser's cache, refresh the page and try again.
+    - If you are still stuck, contact support@encord.com so can help you resolve this issue. 
+
+  </Accordion>
+</AccordionGroup>
+
+
+
+<AccordionGroup>
+   <Accordion title="How do I reset my password?">
+
+1. Click **Forgot password** on the Encord Global login page or Encord US login page.

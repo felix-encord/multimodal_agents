@@ -1,0 +1,1 @@
+<Note>Custom DICOM metadata such as text reports from radiological descriptions can be rendered in popout drawers. To add drawers with custom DICOM metadata, contact support@encord.com with the information you wish to represent.</Note>

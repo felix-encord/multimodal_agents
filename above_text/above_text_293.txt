@@ -1,0 +1,6 @@
+**To add collaborators as a group**:
+
+<Note>To add collaborators as a group, your Organization needs to have user groups. Navigate to our documentation on creating user groups for more information.</Note>
+
+1. In the _Groups_ section, click on **Manage**.
+The _Manage groups_ dialog appears.

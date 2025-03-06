@@ -1,0 +1,5 @@
+d. Click **Send verification code** and solve a CAPTCHA challenge.
+     
+     e. In the next field that appears, enter the SMS code received on your phone, and click **Verify SMS Code**.
+
+<Note>To remove a device, click **Manage Multi-Factor Auth > Remove**. You must log out and log back in to complete the removal process.</Note>

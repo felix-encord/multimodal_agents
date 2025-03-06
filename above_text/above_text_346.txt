@@ -1,0 +1,5 @@
+Annotation
+
+Tasks are labeled in the <a href="/platform-documentation/Annotate/annotate-label-editor">Label Editor</a>. Click **Submit** to submit your labels for review. 
+
+Annotators can skip tasks by clicking the **Skip** button. If a task is skipped, the next available task is automatically displayed and assigned.

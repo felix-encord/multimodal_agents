@@ -1,0 +1,4 @@
+<Note>- Creating a mask segmentation requires an Ontology with the _Bitmask_ annotation type.</Note>
+> - When you initially create a bitmask, the process of bitmask creation does not stop until you press the ESC key. This means that you can create bitmask labels that are connected without any extra effort.
+
+<Tip>Existing Bitmask labels can be updated using the brush tool, threshold brush, and eraser tools.</Tip>

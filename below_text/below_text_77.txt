@@ -1,0 +1,8 @@
+5. Click **Create** to add your public key to Encord.
+The key is now listed in the _Public keys_ section along with an ID that serves as a unique identifier.
+
+<Info>
+Key names do not have to be unique, but the keys themselves do. Attempting to upload a duplicate key results in an error. 
+</Info>
+
+---

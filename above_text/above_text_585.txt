@@ -1,0 +1,19 @@
+Any Index Collection can be exported to CSV. The CSV file contains the following:
+
+- File ID: Specifies the unique data ID for each image, image group, image sequence, or video in the Collection.
+
+- File Name: Specifies the file name for the image or video in the Collection.
+
+- Collection Hash: Specifies the unique ID for the Collection.
+
+**Example:**
+
+
+
+**To export a Collection to CSV:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.
+   The _All folders_ page appears with a list of all folders in Encord.

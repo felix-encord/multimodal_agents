@@ -1,0 +1,6 @@
+e. Scan the code using your authenticator app or manually type the string provided into your authenticator app.
+
+     f. Type the code provided by your authenticator app into the dialog.
+
+     g. Click **Enroll**.
+        A success dialog appears.

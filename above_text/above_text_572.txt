@@ -1,0 +1,4 @@
+4. Click the **Explorer** button.
+   The _Index Explorer_ page appears.
+
+5. Select the metric to sort the data.

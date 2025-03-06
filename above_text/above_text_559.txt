@@ -1,0 +1,3 @@
+Quick Tour
+
+Use the _PDF_ tab to natively view all the PDF documents available in your Folders. From the _PDF_ tab you can sort and filter all of your PDFs based on PDF Quality Metrics. If only PDF files are in your Folders, no _PDF_ tab is available. Your PDF files display in the Index Explorer. If there are a mix of file types (images, videos, audio files, and document files), menu options are available for the various file types (Video, Frames, Audio, PDF, Files).

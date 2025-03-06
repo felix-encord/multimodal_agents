@@ -1,0 +1,1 @@
+4. Attach an Ontology to the Project. Click the **Attach ontology** button and select the Ontology you want to add to the Project. You have the option to create a new Ontology.

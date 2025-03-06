@@ -1,0 +1,3 @@
+Danger Zone (Delete Datasets)
+
+Use the _Danger zone_ pane to delete Datasets.

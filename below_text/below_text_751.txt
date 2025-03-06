@@ -1,0 +1,3 @@
+-*/}
+
+Local filter criteria are filters that can only be applied to a specific Project. For example, the following filters and their settings are likely only applicable to a specific Project: Class, Dataset, or Collection.

@@ -1,0 +1,1 @@
+Team managers and administrators can also assign tasks explicitly to individual annotators and reviewers. Once an annotation or review task is distributed to an annotator or reviewer, it is reserved by that individual, prohibiting other team members from accessing that task. Both annotation and review tasks are accessible in the _Queue_ pane of the _Labels_ tab.

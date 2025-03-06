@@ -1,0 +1,3 @@
+Keypoints instances can be assigned with static and dynamic attributes should they be defined in your Ontology:
+- Highlight an object by clicking on it in the editor canvas or by clicking on the _Plus_ icon or start/end frame in the range overview for the specified keypoint
+- Assign Classifications by clicking on the relevant buttons or using the set hotkeys (e.g., <kbd>q</kbd>, <kbd>u</kbd>)

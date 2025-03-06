@@ -1,0 +1,7 @@
+4. Optionally, click the **View full study** button to see all the series in your study.
+
+5. Select a classification from your list of Ontology classes.
+
+6. Click the **Study** button to apply the classification to all series in the study.
+
+<Tip>Use the <kbd>Shift</kbd> + <kbd>M</kbd> keyboard shortcut to apply classifications to studies.</Tip>

@@ -1,0 +1,9 @@
+Adding and removing tags
+
+You can add tags to your projects in:
+
+- When creating a Project.
+
+- In the _Settings_ page of a project.
+
+To add tags to your Projects in the _Settings_ page, navigate to the _Options_ tab and click the _Project tags_ drop-down. Here you will see the available tags in your organization. Click on a tag to add it to a Project. You can remove a tag from your Project by clicking the same tag again, or clicking the **x** button next to its name.

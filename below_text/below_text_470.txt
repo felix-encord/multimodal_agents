@@ -1,0 +1,5 @@
+By detecting and localizing objects in a frame, their position in subsequent frames is determined based on pixel information enclosed within the label boundary. All labels automatically created using interpolation are assigned a confidence score (α) of 99%.
+
+Since tracking algorithms propagate labels forward through frames, object tracking works if labels are made on lower number frame (for example, near the start of the video).
+
+---

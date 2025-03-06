@@ -1,0 +1,13 @@
+Filter Predictions by IOU and Confidence
+
+1. Log on to the Encord platform.
+   The landing page appears.
+
+2. Click **Active**.
+   The Active home page appears.
+
+3. Click into an Active Project.
+   The _Explorer_ page for the Project appears.
+   
+4. Click **Predictions**.
+   The _Predictions_ page appears.

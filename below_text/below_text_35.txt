@@ -1,0 +1,10 @@
+</Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" I get a blank screen when trying to log in on my Mac computer. How can i fix this? ">
+    Your DNS settings might not be configured correctly.
+
+ **macOS Sequoia, Sonoma, Ventura or later**
+
+1. Click the Apple logo and select **System Settings** in the menu.

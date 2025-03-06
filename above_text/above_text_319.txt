@@ -1,0 +1,6 @@
+Task actions over time
+
+View the number of tasks in a project that have been approved, rejected, and submitted for review over a given period of time.
+
+- The height of a bar represents the total number of tasks.
+- The height of each color within a bar represents the number of approved, rejected, and submitted tasks.

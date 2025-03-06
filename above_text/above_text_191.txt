@@ -1,0 +1,8 @@
+Rotating box
+
+Traditional bounding boxes are great for annotating objects that appear in horizontal or vertical orientation, however, their accuracy may be limited when it comes to annotating objects at an angle. In such cases, use rotatable boxes to
+produce more accurate annotations.
+
+Creating a rotatable bounding box requires an ontology with a rotatable box annotation type. Rotatable box labels can be assigned with static classifications should they be defined in your ontology.
+
+Instantiate a new rotatable box label by clicking on the specified class in the 'Classes' menu or using the specified hotkey. Resize rotatable boxes like normal bounding boxes, and then grab the rotation handle to adjust the position until you're satisfied with the annotation's accuracy, as below.

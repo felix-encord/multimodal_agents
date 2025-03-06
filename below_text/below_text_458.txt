@@ -1,0 +1,5 @@
+4. Select the folders containing the files you want to attach to the Dataset. To select individual files, double-click a folder to see its contents, and select the files you want to add to the Dataset. 
+
+5. Click **Attach data** to attach the selected files to the Dataset.
+
+---

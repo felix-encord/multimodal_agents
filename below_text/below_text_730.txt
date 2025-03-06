@@ -1,0 +1,4 @@
+5. Click **Display** on the far right of the screen.
+
+6. Specify the data required to display on each card/tile under _Card details_.
+   Not all information is available for viewing under every tab (Video, Data, Labels, Prediction).

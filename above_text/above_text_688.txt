@@ -1,0 +1,6 @@
+2D metrics
+
+
+In the _2D Metrics View_, the first metric values are plotted on the x-axis, while the values of the second metric are represented on the y-axis. This visualization allows for an examination of the relationship between these two metrics and their potential interactions within the data and labels.
+
+**Data**

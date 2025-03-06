@@ -1,0 +1,3 @@
+**Change class**: Use the drop-down in the modal to change the current class of an instance. You can only switch within classes of the same annotation type. For example, you cannot switch from a bounding box to a polygon.
+
+**Delete object**: Delete an object from a single frame or a range of frames. To delete labels between frame ranges, move the frame slider to the desired frames, or input the _From_ and _To_ (exclusive) values in the relevant form.

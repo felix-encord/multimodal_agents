@@ -1,0 +1,4 @@
+<Tip>Learn how to resize your videos here.</Tip>
+
+  </Accordion>
+</AccordionGroup>

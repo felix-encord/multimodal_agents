@@ -1,0 +1,3 @@
+Consensus Projects have the following types of reviewers:
+
+- **Determine consensus**: Reviewers in these blocks are responsible for ensuring that labels made by one or more annotators are correct across an entire data unit. This allows for bulk label selection across a data unit.

@@ -1,0 +1,18 @@
+6. Search, sort, and filter your labels until you have the subset of the data you need.
+
+7. Select one or more of the images.
+   A ribbon appears at the bottom of the Explorer workspace.
+
+8. Click **Select all** to select all the images in the subset.
+
+9. Click **Add to a Collection**.
+
+10. Click **New Collection**.
+
+11. Specify the Collection type as **Label**.
+
+12. Specify a meaningful title and description for the Collection.
+
+    <Note> The title specified here applies as a tag/label to every selected image.</Note>
+
+13. Click **Collections** to verify the Collection appears in the Collections list.

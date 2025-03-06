@@ -1,0 +1,12 @@
+Setting up Webhooks
+
+Webhooks can be set up when creating or editing a Workflow. This includes setting up a Workflow while creating a new annotation Project, creating a Workflow template, or editing the Workflow of an existing Project.
+
+<Note>Webhooks can only be added to _Annotate_ and _Complete_ stages. Webhooks on _Annotate_ stages trigger when tasks are submitted for review. Webhooks on _Complete_ stages trigger when a task is completed.</Note>
+
+1. With the Workflow open, click the Workflow stage you want to create a webhook for.
+A pop-up for to configure the Workflow stage appears.
+
+2. In the pop-up, click the _Edit_ symbol under the _Webhook_ heading.
+
+3. Enter the URL you want the JSON payload to be sent to. Press <kbd>Enter</kbd> on your keyboard to confirm.

@@ -1,0 +1,10 @@
+Review mode components:
+
+- **A**. Single label review toggle
+- **B**.  Edit labels 
+- **C**. Pending reviews pane
+- **D**. Completed reviews pane 
+- **E**.  Reject and Approve buttons 
+- **F**.  Approve and Reject all in frame buttons
+
+<Note>All labels are reviewed on an instance level. This means that if an instance is rejected on one frame, it will be rejected across all frames. This includes  using the **Accept all in frame** and the **Reject all in frame** buttons.</Note>

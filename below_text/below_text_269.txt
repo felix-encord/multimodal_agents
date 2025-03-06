@@ -1,0 +1,5 @@
+When an Organization Admin joins an Ontology, they are automatically assigned the _Admin_ user role for that Ontology.
+
+<Tip>Ontologies can be filtered by Ontology owner.</Tip>
+
+<Tip>See all the Ontologies you belong to by clicking the _Filter by_ search bar, and selecting  _My ontologies only_. </Tip>

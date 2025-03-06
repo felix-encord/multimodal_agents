@@ -1,0 +1,3 @@
+Missing labels
+
+If a reviewer determines that a label is missing entirely, they can use the report missing labels feature to indicate labels are missing in a given frame or image. Missing label reports will be sent back to the annotator via the same queue as rejected labels.

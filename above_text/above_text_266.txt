@@ -1,0 +1,13 @@
+Object primitives
+
+Object primitives (formerly called _Skeleton templates_) are customizable Ontology class.
+
+<AccordionGroup>
+   <Accordion title=" Video Tutorial - Creating and using Skeletons ">
+
+
+
+  </Accordion>
+</AccordionGroup>
+
+Object primitives are created in the _Object primitives_ section of the _Settings_ tab of an Ontology. Here you define a configuration of key points, and the vertices between them.

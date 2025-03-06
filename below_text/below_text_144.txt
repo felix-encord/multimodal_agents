@@ -1,0 +1,7 @@
+). 
+
+Instantiate a new polygon instance by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+A polygon can be closed by double-clicking anywhere on the canvas. Doing so will "snap" creating an edge between the last vertex to the first vertex drawn.
+
+Instantiate existing polygon instances (i.e., polygons that should keep the same identifier in preceding or succeeding slices) by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>, <kbd>w</kbd>, <kbd>e</kbd>). See the <a href="/platform-documentation/Annotate/annotate-label-editor/annotate-dicom

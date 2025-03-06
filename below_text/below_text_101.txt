@@ -1,0 +1,12 @@
+DICOM editor components:
+
+- **A**. Load previous/next DICOM file.
+- **B**. Toolbar with scissors (bulk vertex removal), measurement tools, windowing adjustment, image centering, and zoom.
+- **C**. Editor menu.
+- **D**. Slice slider and sliceskip interval.
+- **E**. Instances and frame labels.
+- **F**. Classes.
+
+<Note>The following sections describe general functionality for all DICOM modalities. If you are looking for Mammography specific features on the Encord platform please have a look here</Note>
+
+If you have questions regarding a specific modality or datatype, please reach out to us at support@encord.com.

@@ -1,0 +1,3 @@
+Encord Labs allow you to toggle advanced, early access, or experimental features on or off to gain access to powerful functionality or features used in very specific use-cases.
+
+<Note>Contact support@encord.com to gain access to Encord Labs</Note>

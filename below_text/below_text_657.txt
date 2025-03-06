@@ -1,0 +1,1 @@
+- Select one or more videos and click **Actions > Re-encode** and select the type of re-encoding to perform.

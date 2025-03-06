@@ -1,0 +1,7 @@
+Moving bitmasks
+
+Bitmask labels can be moved to another location after being created. 
+
+1. Click the bitmask label you want to move. 
+2. Click and drag the bitmask to the desired location. 
+3. Release the bitmask to confirm the new location.

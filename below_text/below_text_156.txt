@@ -1,0 +1,1 @@
+<Tip>Double-clicking while drawing your bitmask completes the shape by drawing a straight line between the first and last vertices. </Tip>

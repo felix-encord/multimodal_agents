@@ -1,0 +1,9 @@
+File, Search, and Assign
+
+The file column shows the name of the _data asset_. For files uploaded via the GUI, they keep the name they were uploaded with. For files added from your cloud storage, this will normally be the path under the bucket they are stored on.
+
+Use the search interface to quickly filter and display only those tasks with file names matching your desired text. Even partial matches will be shown. For example: searching "fly" will return file names containing "flyover" and "flyaround."
+
+The 'Assign' button allows Administrators and Team Managers to allocate unassigned tasks to specific collaborators for annotation. Select your target tasks using the checkboxes in the File column to select individual assets, or select the checkbox in the column header to select all tasks, and press the 'Assign' button open the task assignment popup. 
+
+Confirm the selected tasks are as intended, then select the target collaborator from the drop-down and press assign. Tasks which have already been assigned to another collaborator, as indicated by the email in the 'Reserved by' column, can not be reassigned until they have first been released.

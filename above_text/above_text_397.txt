@@ -1,0 +1,9 @@
+**Annotate** represents an annotation stage, during which a group of annotators adds labels to tasks assigned to them.
+
+Click an **Annotate** card on the canvas to edit. Click **x** next to the name to exit edit mode.
+
+Click the _Edit_ icon to edit the name of the annotation stage.
+
+<Tip> 
+Annotation instructions can be added in the Project's _Settings_ after the Project is created.
+</Tip>

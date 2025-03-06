@@ -1,0 +1,5 @@
+Inference
+
+To get started with Model inference, make sure you have created a project API key with  added to access scopes. The easiest way to get started with model inference is to navigate to the _Models_ tab in your Project.
+
+Open the model training log for the model you would like to use for inference.

@@ -1,0 +1,3 @@
+Releasing a task is the opposite of assigning a task, and removes any user the task was assigned to. To release any number of tasks, select them from the list and click the **Release button** located next to the **Assign** button shown above.
+
+  <Tip>Unassigned tasks can be initiated by all users.</Tip>

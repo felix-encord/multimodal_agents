@@ -1,0 +1,3 @@
+Encord promotes an iterative approach towards developing optimal computer vision models. By leveraging the capabilities of Annotate, Active, and Index, you can continuously refine your models and labels. 
+
+As changes to data are made, the impact on the model's performance is tracked, enabling you to assess the effectiveness of your modifications. Incorporating these insights results in improved models and more accurate labeling. This feedback loop allows you to build the optimal computer vision model for any use-case.

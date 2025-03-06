@@ -1,0 +1,2 @@
+.
+- **Score**: A score measuring the annotator's label when compared to the benchmark label.

@@ -1,0 +1,6 @@
+The _Annotator session time_ table displays the duration of time each annotator spent labeling the tasks in their queue. 
+
+- **Data file**: The task's file name.
+- **User**: The user's email address.
+- **User role**: The user's role.
+- **Session time**: Time spent labeling tasks.

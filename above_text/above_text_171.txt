@@ -1,0 +1,9 @@
+Confidence Score
+
+Each instance or label is assigned a confidence score (denoted with the symbol α) that appears next to the label name. 
+
+The confidence score is a measure of a machine learning model's certainty that a given prediction is accurate. The higher the confidence score, the more certain a model is about its prediction.
+
+Manual labels are always assigned α = 100%, while label predictions created via models and automated methods such as interpolation will have a confidence score below 100% (α < 100%).
+
+Models allow you to select a _Minimum confidence threshold_ that determines the lowest confidence that label predictions can have to appear as annotations. It ranges from 0 to 1.

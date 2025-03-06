@@ -1,0 +1,16 @@
+Fine Tune Object Tracking
+
+1. Create at least one instance label on the frame you want to start tracking the instance from. 
+
+<Tip>More manual instance labels result in higher tracking accuracy.</Tip>
+
+2. Click the **Automated labelling** button in the bottom left corner of the Label Editor to bring up options for automated labeling.
+
+3. The _Tracking and interpolation_ section is open by default.
+   - Under the _Method_ heading, select _Tracking_.
+   - Select the object instance you want to track.
+   - The _Tracking annotation interval_ lets you specify how many frames after a manual label the object is tracked for.
+   - _Tracking range_ specifies the total range of frames instances are tracked across.
+   - The _Advanced settings_ lets you choose between the _Advanced_ and _Standard_ tracking models. The _Advanced_ model provides higher accuracy, but takes longer to run. 
+
+4. Click **Run tracking** to track the instance.

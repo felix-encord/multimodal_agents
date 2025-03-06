@@ -1,0 +1,11 @@
+3. Mouseover the Project.
+   The More **...** icon appears.
+
+4. Click the More **...** icon.
+   A menu appears.
+
+5. Click **Sync Project Data**.
+   All the Annotate Project data (including comments) syncs to the Project in Active.
+
+  </Accordion>
+</AccordionGroup>

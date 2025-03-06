@@ -1,0 +1,13 @@
+STEP 2: Curate your Data
+
+Curation of your data consists of sorting, filtering, using analytics, and embedding plots to create one or more Collections. Collections can then be made into a Dataset for use with your Annotate and Active Projects.
+
+
+
+<Steps titleSize="h3">
+  <Step title="Filter and Sort Data">
+    You can sort your data using a number of data unit metrics. The metrics available to sort your data depends on the data available in the Folder. You can sort your data in ascending and descending order.
+
+Index has a number of criteria available to filter your data. You can only access filtering criteria that is available from the top-level Folder. For example, if you do not have any video or audio data in the top-level Folder or any sub-Folders, you cannot filter your data using those filtering criteria.
+
+<Tip>Adding key frames (for videos), custom metadata, and custom embeddings) to your data can all significantly improve the speed and effectiveness when filtering your data. We recommend importing customer metadata and custom embeddings with your data, but you can import custom metadata and embeddings after importing your data.</Tip>

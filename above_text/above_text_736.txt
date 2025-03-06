@@ -1,0 +1,16 @@
+Analytics view provides at-a-glance insights into your data (images, videos, and video frames), your labels, and your model predictions. Filtering video, data, labels, and predictions affects the metrics that appear in the Analytics view.
+
+Data and label analytics display Metric Correlation and class distribution across your data and labels. You can adjust the X and Y values on the Metric Correlation across a number of data and label metrics. If the Project has no labels, the class distribution graph is empty.
+
+Prediction analytics display Metric Correlation and prediction distribution for your ML model. Prediction distribution provides class and underrepresented class data. You can adjust the X and Y values on the Metric Correlation across a number of data and label metrics. 
+
+**To access the Analytics view:**
+
+1. Log in to the Encord platform.
+   The Encord home page appears.
+
+2. Click **Active**.
+   The Active page appears displaying all Active Projects you have access to.
+
+3. Click an Active Project.
+   The _Explorer_ page for the Project appears.

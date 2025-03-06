@@ -1,0 +1,5 @@
+Save Label Version
+
+Select the data units you'd like to save label version for and click the **Save new version button** highlighted in the screenshot below. It will be listed in the _Saved versions_ tab.
+
+<Note>A new label version is saved each time you export labels.</Note>

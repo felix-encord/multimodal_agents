@@ -1,0 +1,1 @@
+<Note>The editor timeline is available in both the _Annotation_ and _Review_ states for videos.</Note>

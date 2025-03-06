@@ -1,0 +1,7 @@
+<Tip>To delete a group from the Project, click the _Delete_ button next to the group name.</Tip>
+
+**To change collaborator roles**:
+
+<Note>
+Only Project admins can modify collaborator roles. Admin roles cannot be changed, not even by other admins.
+</Note>

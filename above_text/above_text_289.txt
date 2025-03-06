@@ -1,0 +1,3 @@
+Manage Project Collaborators
+
+To manage Project collaborators, select the _Team_ pane in your project _Settings_. Collaborators can be added individually or as groups of users.

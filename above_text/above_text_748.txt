@@ -1,0 +1,18 @@
+The natural language and image search feature enables users to enter descriptive queries in everyday language, such as "images that contain baseball items". The system intelligently processes the query and retrieves images that match the description. This feature simplifies and greatly enhances the search experience within Encord Active, allowing finding relevant images without the need for specific keywords or complex search parameters.
+
+**Video Tutorial - Natural language search in Active**
+
+
+
+
+
+**To use natural language or image search on data, labels, or predictions:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.

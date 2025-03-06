@@ -1,0 +1,5 @@
+Performance - Summary
+
+The _Summary_ tab of the performance dashboard provides an overview of your team's manual labeling and productivity.
+
+<Warning>The _Summary_ tab only displays actions taken in the Label Editor. Actions taken in the SDK **will not** be displayed.</Warning>

@@ -1,0 +1,7 @@
+Default layouts
+
+You can specify any preset, including _Auto layout_, as the default layout for studies in the Label Editor.
+
+Click the tick icon next to a preset in the hanging protocols menu, to select the preset as your default layout.
+
+You can reset the Label Editor to the default layout by clicking the _Reset layout to default_ icon.

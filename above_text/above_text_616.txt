@@ -1,0 +1,6 @@
+Adjust Similarity Search Distance
+
+1. Click the **Embeddings** icon in the Explorer.
+   The Embeddings screen appears.
+
+2. Select the embedding you want to use from the **Select custom embeddings** menu.

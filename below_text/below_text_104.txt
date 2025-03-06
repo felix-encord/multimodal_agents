@@ -1,0 +1,3 @@
+<Tip>You can zoom and pan on every slice / view in a series.</Tip>
+
+---

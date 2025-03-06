@@ -1,0 +1,17 @@
+**Prediction Issues Overview**
+
+| Title                                                                                                                                                                          | Metric Type | Ontology Type                                                                        |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|--------------------------------------------------------------------------------------|
+| **Shape Outliers** -  Duplicate and near-duplicate images. Images with a **Polygon Shape Anomaly** score of 0.0 to 0.02 are flagged as duplicates.                             |      |                                                                                      |
+| **Border Proximity** - Identifies annotations that are too close to image borders. Images with a **Border Proximity** score of 1 are flagged as being too close to the border. |      | , , , , ,  |
+| **Aspect Ratio** - Identifies objects with a low aspect ratio value. Images with an **Aspect Ratio** score of 0.0 to 0.1 are flagged as having an issue.                       |      | , ,                                   |
+
+**Prediction Types**
+
+| Title                                                                                                          | Metric Type | Ontology Type |
+|----------------------------------------------------------------------------------------------------------------|-------------|---------------|
+| **All** -  All model outcomes.                                                                                 |      |               |
+| **All Positives** - All model outcomes that are True Positive and False Positive.                              |      |               |
+| **True Positives** - All model outcomes where the model correctly identified objects.                          |      |               |
+| **False Positives** - All model outcomes where the model incorrectly identified objects as the correct object. |      |               |
+| **False Negatives** - All model outcomes where the model incorrectly identified objects as the wrong object.   |      |               |

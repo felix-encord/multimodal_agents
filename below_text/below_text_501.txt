@@ -1,0 +1,25 @@
+2. Click **Create service account**.
+
+3. Provide a meaningful name for the service account. The name provided is appended into the email address used by the service account.
+
+4. Provide a meaningful description for the service account.
+
+5. Click **Create service account**.
+   A new service account appears in the Service Account list.
+
+6. Click into the service account.
+
+7. Click **New API key**.
+
+8. Type a meaningful title for the key.
+
+9. Click **Add API key**.
+   A file downloads to your computer containing the key.
+
+10. Return to the **Service Accounts** page.
+
+6. Apply a role to the service account: 
+   - **Admin:** Executive privileges over the Organization such as adding and removing users, and the ability to view all Projects in the Organization.
+   - **Member:** No administrative privileges over your Organization. Can only view Projects they create, or have been invited to.
+
+<Note>Encord Admins can create 1 Service Account per organization. Contact us at support@encord.com if you need more than 1 Service Account.</Note>

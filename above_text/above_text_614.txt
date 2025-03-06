@@ -1,0 +1,9 @@
+Similarity Searches with Custom Embeddings
+
+Upgrade your top-level folder before trying to perform a similarity search.
+
+1. Click the **Embeddings** icon in the Explorer.
+
+   The Embeddings screen appears.
+
+2. Select the embedding you want to use from the **Select custom embeddings** menu.

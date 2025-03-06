@@ -1,0 +1,3 @@
+Bounding box
+
+Creating a bounding box requires an Ontology with a bounding box annotation type. Instantiate a new bounding box instance by clicking on the specified class in the 'Classes' menu, or by using the specified hotkey (for example: <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).

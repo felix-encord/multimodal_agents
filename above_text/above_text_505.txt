@@ -1,0 +1,4 @@
+STEP 6: Create a Project
+
+1. In the Encord platform, select _Projects_ under _Annotate_. 
+2. Click the **+ New annotation project** button to create a new Project.

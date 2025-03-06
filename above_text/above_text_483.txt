@@ -1,0 +1,7 @@
+3. Including / Excluding Areas from Selection
+
+Once the prediction has run, a part of the image or frame will be highlighted in blue.
+
+- You can add to the selected area by left-clicking the part of the image you'd like to add to the label. This is shown in the following video.
+- You can exclude parts of the selected area by right-clicking the part you'd like to exclude from the label. 
+- If you've made a mistake and want to re-start, simply click **Reset** on the SAM pop-up to start again.

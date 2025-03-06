@@ -1,0 +1,3 @@
+Linked Projects
+
+The _Linked projects_ pane shows a list of Projects using the Ontology. You can jump to any of the projects displayed by clicking the **View** link.

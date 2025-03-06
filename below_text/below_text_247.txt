@@ -1,0 +1,17 @@
+**A.** Select the files you want to export labels for by clicking the checkboxes next to the files to be included in your export. Click the **Export** to export the selected data.
+
+**B.** Select the format for your exported data; COCO or JSON.
+
+**C.** Toggle this switch if you want to include signed URLs in your export.
+
+**D.** Select the label status of the annotations you want to be included in the export.
+
+**E.** Select the objects you want to include in the export.
+
+**F.** Select which classifications to include in the export. 
+
+<Note>Download files are tagged with a unique id for the Project they are exported from and the time at which the export is made.</Note>
+
+After the **Export** button is pressed, progress can be monitored using the notification bell icon in the top-right of the page.
+
+Once the process completes a notification appears in the top-right corner of your screen telling you the export is complete. Click **Click to download** to download your labels.

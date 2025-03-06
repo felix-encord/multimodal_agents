@@ -1,0 +1,7 @@
+**Review** represents a review stage where tasks labeled in an annotation stage are reviewed. 
+
+<Note>To attach the _Rejected_ node of the review stage to another review stage, contact support@encord.com</Note>
+
+Click a **Review** card that has been added to the canvas to edit. Click **x** next to the name to exit edit mode.
+
+Click the _Edit_ icon to edit the name of the review stage. This is particularly useful when your Project has multiple review stages.

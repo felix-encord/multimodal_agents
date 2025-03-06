@@ -1,0 +1,10 @@
+Distribution charts
+
+Distribution charts display distributions and summaries of the selected metrics and custom metadata.
+
+Here are some examples:
+
+- Data unit: Frame number, random value, area 
+- Metadata: Enum with their enum options, numeric, date time, and boolean
+
+<Note> (previously ),  (previously ), and  are NOT SUPPORTED for use in Distribution charts.</Note>

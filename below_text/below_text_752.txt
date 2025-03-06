@@ -1,0 +1,11 @@
+5. Click **Filters**.
+   A menu appears.
+
+6. Add and configure the filters you need. 
+   Images/video/audio files filter in the Explorer workspace.
+
+7. Click **Create preset** once you have added all the filters you need and specified each filter's settings.
+   After creating the Preset you can use the Preset in this or any other Project.
+
+  </Accordion>
+</AccordionGroup>

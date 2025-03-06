@@ -1,0 +1,9 @@
+Rotatable Bounding Box
+
+1. Create at least one rotatable bounding box instance label on the frame you want to start tracking the instance from. 
+
+2. Right-click the shape.
+
+3. Click **Track object** to run tracking for 30 consecutive frames.
+
+<Tip>Use the keyboard shortcut <kbd> Shift </kbd> + <kbd> T </kbd> to run SAM 2 tracking for 30 consecutive frames.</Tip>

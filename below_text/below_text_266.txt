@@ -1,0 +1,33 @@
+- **A**. 'Add a primitive': Start creating a new object primitive template.
+- **B**. 'Names hidden': Show or hide the vertex names in the canvas.
+- **C**. 'Add a point': Add more points on the canvas. Points are added to the list of points as they are made.
+- **D**. 'Add an edge': Add more edges. Mouseover the first point and click once before clicking over the  
+  end point of the edge. Edges are added to the list of edges as they are created.
+- **E**. 'Move/edit': Move vertices. Mouseover the vertex you wish to move. Click and drag to move the target vertex to the new desired location.
+- **F**. 'Save current state': Save the template. If you exit the editor screen without saving all your work will be lost.
+- **G**. 'Name': Enter a name for this object primitive. This name will be displayed in the ontology structure _object annotation type_ selection.
+- **H**. 'Delete template': Delete this object primitive. Please ensure you've removed this object primitives from  
+  all connected _objects_ before deleting, or the ontology structure may enter an unstable state.
+- **I**. 'Points': List of points with their coordinates and names. Coordinates are defined as (0, 0) in the  
+  upper left. You can also add points using the **+ Add a point** button at the bottom of the list.
+- **J**. 'Edges': List of edges. You can also add edges by using the **+ Add an edge** button at the bottom of the list.
+
+**To create an object primitive**:
+
+1. Click **Add a primitive** (A). 
+2. Give your primitive a meaningful name. 
+3. Click **Add**. You are now ready to set up your primitive.
+2. Click _Add a point_ (C). Add as many points as you need. 
+3. Click _Add an edge_ (D). Connect your points as needed. 
+4. Click _Save current state_ (F) to save your primitive.
+
+<Tip>You can adjust the color of points and edges by clicking the color circle next to their names in the list of points and edges.</Tip>
+
+**To use your object primitive:**
+
+1. Return to the _Schema_ tab of your Ontology. 
+2. Click **+ Add object**.
+3. Select your object primitive from the list of Object classes.
+4. Save your Ontology. 
+
+<Tip> Learn how to work with Skeletons [here]() </Tip>

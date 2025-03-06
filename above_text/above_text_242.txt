@@ -1,0 +1,5 @@
+Frame classification
+
+Creating frame classification(s) requires an ontology with a classification annotation type. Frame-level classifications consider the frame as a whole, not any given object's localization. Instantiate a frame-level classification label by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Encord currently supports radio, checklist, and free-form text input classification types. Edit existing classification labels by clicking on the **+** icon for the specified label.

@@ -1,0 +1,9 @@
+2. Register an Editor Agent
+
+<Note>Only HTTPS endpoints are supported.</Note>
+
+**To register an Agent in Encord:** 
+
+1. Navigate to the _Agents_ section of the Encord platform. 
+2. Ensure you are in the _Editor Agents_ screen. 
+2. Click **+ Register agent** to set up a new editor Agent.

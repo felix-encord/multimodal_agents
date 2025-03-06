@@ -1,0 +1,14 @@
+6. Click **Edit approved labels** to add new labels to the data unit.
+
+7. Select the best labels for each object on the data unit.
+
+8. Click **Approve labels**.
+   The labels appear in the _Approved labels_ list.
+
+9. Select a label from the Approved labels list.
+
+10. Click **Edit approved labels** if the labels need to be adjusted.
+
+12. Click **Approve task** after selecting, refining, and creating the labels needed for the data unit.
+
+11. Click **Reject task** if the labels on the data unit cannot be added or corrected so the labels on the data unit meet your needs.

@@ -1,0 +1,6 @@
+4. Toggle the Crop View switch.
+   Object labels immediately are zoomed in on. Images/video frames with Classifications remain unchanged.
+
+   <Note>Classifications on images/video frames are not affected by the Crop View feature. This is because Classifications apply to the entire image/video frame, while object annotations apply to specific areas/regions of an image/video frame. The following image has a Classification label/annotation  and a bitmask object label/annotation . The bitmask object annotation zooms in, while the classification does not.</Note>
+
+5. Adjust the **Crop View Zoom** as required.

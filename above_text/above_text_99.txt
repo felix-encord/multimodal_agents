@@ -1,0 +1,5 @@
+2. Add or remove labels, or edit existing labels as necessary using the same interface annotators use to create labels.
+
+3. Click the **Save and return to review** button to save your edits and return to review mode.
+
+<Note>The **Save and return to review** button replaces the **Save** and **Cancel** buttons used in earlier versions of this feature.</Note>

@@ -1,0 +1,12 @@
+Re-encode from Datasets
+
+<Info>Re-encoding is only available to Enterprise customers. Contact sales@encord.com for more information.</Info>
+
+1. Go to **Index > Datasets**.
+   A list of all Datasets available appears on the _Datasets_ page.
+
+2. Go into the Dataset where the video you want to re-encode resides.
+
+3. Select one or more videos and 
+
+4. Click **Re-encode** and select the type of re-encoding to perform.

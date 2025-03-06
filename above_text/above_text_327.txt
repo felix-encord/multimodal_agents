@@ -1,0 +1,17 @@
+Upload annotation instructions
+
+<AccordionGroup>
+   <Accordion title=" Video Tutorial -  Uploading annotator instructions ">
+
+
+
+  </Accordion>
+</AccordionGroup>
+
+- Click the **Add instructions** button to upload instructions for your annotators in PDF format. 
+
+- To ensure the best possible results, provide as much detail as possible about what you would like annotated and how precise bounding boxes should be drawn. For example, instead of saying 'person', consider defining what should constitute a person for your annotators - only a full person? A torso? Or should any part of a person in a frame be labeled as a 'person'? 
+
+<Note>The more specific your annotator instructions, the higher the chances that your annotators will perform well.</Note>
+
+- Once uploaded, annotation instructions will be accessible within the Label Editor.

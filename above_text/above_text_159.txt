@@ -1,0 +1,1 @@
+- **Can be drawn over** -  If the Bitmask is drawn over, any part of the image beneath the existing Bitmask that falls within the specified threshold range is included in the next label.

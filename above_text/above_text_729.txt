@@ -1,0 +1,14 @@
+Use video specific Annotation Metrics
+
+Remember your videos must have labels on some frames for the Annotation Quality Metrics to be useful.
+
+1. Log into Encord.  
+   The Encord home page appears.
+
+2. Click **Active**.  
+   The _Active_ landing page appears with a list of all available Active Projects.
+
+3. Click a Project that contains videos.  
+   The _Frames_ tab appears on _Summary_ page for the Project.
+
+4. Click **Video**.

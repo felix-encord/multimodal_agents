@@ -1,0 +1,5 @@
+**Index:** Index provides Encord's storage for your images, image groups, image sequences, videos, and DICOM. Once your local data imports into, or cloud data registers with, Encord you can create Datasets for your Projects based on your data. Your data can belong to multiple Datasets and Projects. Learn more about Index here.
+
+**Annotate:** Annotate is a powerful tool that enables users to create labeling workflows and transform unlabeled data into labeled data. Label data with object boundaries and classification labels, and review labels using manual or automatic quality assurance methods. Annotate simplifies the process of creating high-quality labeled datasets, which are essential for training ML models. Learn more about Annotate here.
+
+**Active:** Active facilitates the validation and debugging of datasets through systematic active-learning cycles. Analyze your annotated data sets to hone in on the best labels, while rejecting those hindering a model's performance. By iteratively refining your training data, Active helps improve the quality and performance of ML models over time. Learn more about Active here.

@@ -1,0 +1,10 @@
+**To access the Analytics view:**
+
+1. Log in to the Encord platform.
+   The Encord home page appears.
+
+2. Click **Active**.
+   The Active page appears displaying all Active Projects you have access to.
+
+3. Click an Active Project.
+   The _Explorer_ page for the Project appears.

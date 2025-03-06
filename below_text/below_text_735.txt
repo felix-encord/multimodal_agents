@@ -1,0 +1,11 @@
+7. Select one or more **Label Collections** from the Collection list.
+
+8. Click **Bulk Actions**.
+   A menu appears.
+
+9. Select **Delete Labels**.
+   A dialog appears.
+
+10. Click **Delete labels forever**.
+
+11. Click **Proceed to Delete**.

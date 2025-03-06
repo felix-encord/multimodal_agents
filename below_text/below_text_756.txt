@@ -1,0 +1,19 @@
+9. Select a Collection from the Collections list.
+
+10. Click **Bulk Classify**.
+    The _Bulk Classify_ dialog box appears.
+
+11. Click the dropdown to select a Classification to apply to the Collection when the Collection is sent to Annotate.
+
+12. Select your required settings from the Classification.
+
+13. OPTIONAL: Click the **Override existing classification** to overwrite the existing Classifications on the images/frames in the Collection in Annotate.
+
+   <Info>This action cannot be undone. Applying Classifications in a Collection affects images/frames in every status of a Workflow (Annotate, Review, and Complete). This means that images/frames that have been annotated and reviewed can have changes made directly to the images/frames without any further review.</Info>
+
+14. Click **Initiate Bulk Classify Job**.
+    Once the job completes successfully a dialog appears with a link that can take you directly to the Project.
+
+15. Annotators, Reviewers, and Admins can then see and take action on the Classification and the Classification settings in Annotate.
+  </Accordion>
+</AccordionGroup>

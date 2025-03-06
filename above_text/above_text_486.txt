@@ -1,0 +1,16 @@
+Advanced Interpolation
+
+1. Create instance labels on at least two non-consecutive frames.
+
+<Tip>Increase the accuracy of interpolated labels by adding more manual instance labels to different frames as references. </Tip>
+
+2. Click the **Automated labelling** button in the bottom left corner of the label editor to bring up the options for automated labeling. The _Tracking and interpolation_ section is open by default.
+
+3. The _Tracking and interpolation_ section is open by default.
+   - Select _Interpolation_ under the _Method_ heading.
+   - Select the object instance(s) you want to interpolate.
+   - _Interpolation range_ specifies the range of frames for interpolation.
+
+<Note>Only Organizations on 'Enterprise' pricing can interpolate over a range larger than 1000 frames.</Note>
+
+4. Click **Run interpolation** to interpolate the selected object instances.

@@ -1,0 +1,7 @@
+Bounding box
+
+Creating a bounding box requires an Ontology with a bounding box annotation type. Instantiate a new bounding box instance by clicking on the specified class in the 'Classes' menu, or by using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Instantiating existing bounding box instances (i.e., bounding boxes that should keep the same identifier in preceding or succeeding slices) can be done by clicking on the _Highlight_ icon for the specified object or using the assigned hotkey (e.g., <kbd>q</kbd>, <kbd>w</kbd>, <kbd>e</kbd>).
+
+Bounding boxes can be copy/pasted between slices using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>c</kbd> to copy the object to the clipboard and <kbd>cmd</kbd>/<kbd>ctrl</kbd>  + <kbd>v</kbd> to paste it on the desired slice. See this visual illustration.

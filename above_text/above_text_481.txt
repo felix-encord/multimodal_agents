@@ -1,0 +1,3 @@
+2. Using SAM to Segment a Frame or Image
+
+Click the area on the image or frame you would like to segment - the pop-up will indicate that auto-segmentation is running, as shown below.

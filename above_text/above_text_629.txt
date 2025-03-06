@@ -1,0 +1,7 @@
+Option 1: I want to keep using Encord as I always have
+
+Your Datasets are now referred to as Mirrored Datasets. The process for adding data to Mirrored Datasets remains unchanged in both the platform and the SDK. There are only minor adjustments to how Mirrored Datasets are created within the Encord platform. SDK users can continue creating Datasets and adding data as they have been accustomed to.
+
+**1. Create Mirrored Datasets using the Encord app:**
+
+1. Click the **New dataset** button in the _Datasets_ section in _Annotate_.

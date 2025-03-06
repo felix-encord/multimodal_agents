@@ -1,0 +1,5 @@
+<Info>Re-encoding is only available to Enterprise customers. Contact sales@encord.com for more information.</Info>
+
+Encord performs automatic checks on all uploaded videos uploaded to _Files_ to see if the video needs to be re-encoded. Re-encoding means bringing the video in line with Encord's requirements to avoid frame synchronization issues and ensure accurate labels.
+
+If a video needs re-encoding, a red number appears on the file icon showing the number of issues found. Each issue is listed next to the yellow caution icon in the details pane when the file is selected, or when hovering on the number.

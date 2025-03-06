@@ -1,0 +1,5 @@
+Adding Attributes
+
+After creating an object or a classification you can add any attributes defined in your Ontology. 
+
+1. In the Labels section of the Label Editor, click the **Edit attributes** button to add an attribute to an object or classification label.

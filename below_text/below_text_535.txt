@@ -1,0 +1,15 @@
+3. Select the classification you want to apply to the frame / image from the list of classes on the left side of the Label Editor. 
+
+4. Provide a classification answer.
+    - **Text classification**: Type the classification answer in the text field that appears.
+    - **Radio button**: Select one classification answer from the list of options. Radio buttons can have nested options.
+    - **Checklist**: Select all applicable classification answers.
+
+5. If labeling a video, several options appear above the editor timeline. 
+
+    - **This frame & save** (hotkey <kbd>Z</kbd>): Apply the classification to the current frame and save. 
+    - **This frame** (hotkey <kbd>X</kbd>): Apply the classification to the current frame. 
+    - **Set start to current** (hotkey <kbd>C</kbd>): Defines the current frame as the start of the range to which the classification is applied. 
+    - **Set end to current** (hotkey <kbd>V</kbd>): Defines the current frame as the end of the range to which the classification is applied.
+    - **Add range** (hotkey <kbd>N</kbd>): Applies the classification to the range of frames defined in the bar above the buttons.
+    - **Save** (hotkey <kbd>M</kbd>): Saves the classification.

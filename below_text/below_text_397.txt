@@ -1,0 +1,7 @@
+The stage will contain all available annotators selected by default. Specific annotators can be selected by clicking the **Annotate** component, and choosing the **Selective** tab seen above. Type the email address of a user you'd like to add and select them from the list. Only collaborators that have been added via Manage collaborators on the Project level will be available. Click **Add** to confirm the selection. 
+
+<Note>Only collaborators with the _Annotator_ or the _Annotator & Reviewer_ roles are available for selection. All Admins and Team Managers will be part of all annotation stages and therefore can't be added, or removed.</Note>
+
+A Webhook can optionally be added to an annotation stage to send out notifications whenever a task is submitted. Click the _Edit_ icon next to _Webhook_ and add the URL of the server you would like to receive notifications on.
+
+***

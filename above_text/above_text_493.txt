@@ -1,0 +1,5 @@
+2. Open the _Agents_ section of the automated labeling drawer.
+
+3. Select the Agent you want to use from the dropdown.
+
+4. Click **Trigger agent** to trigger the Agent and call the API endpoint.

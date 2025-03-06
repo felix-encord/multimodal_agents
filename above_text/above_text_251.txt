@@ -1,0 +1,5 @@
+Attributes
+
+**_Attributes_** can be nested under objects or any classification with a _Radio_ annotation type. To nest attributes, set the type to _Radio_, then click the **Configure** button next to the value where you want to add a new _attribute_.
+
+<Tip>Attributes can be marked as _Required_, _Dynamic_, or _Relation_.</Tip>

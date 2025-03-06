@@ -1,0 +1,10 @@
+**Removing a polygon or polyline vertex - Label Editor V1**
+
+To remove vertices from a polygon::
+
+1. Click on the polygon you want to remove a vertex from.
+2. Click the _Remove vertex_ icon in the toolbar that appears, or use the <kbd>S</kbd> hotkey to activate 'Remove vertex mode'.
+3. Move the cursor to the vertex you want to remove. The cursor should have a 'cancel' icon attached.
+4. Click the vertex you want to remove.
+5. Continue removing any vertices until you are satisfied.
+5. Click the icon from step 2 again, or press the <kbd>S</kbd> hotkey again to exit 'Remove vertex mode'.

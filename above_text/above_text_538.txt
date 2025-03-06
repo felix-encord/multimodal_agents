@@ -1,0 +1,3 @@
+Bulk Apply Dynamic Attributes
+
+You can efficiently apply dynamic attributes in bulk to save time and effort. This is accomplished by identifying frames where the attribute changes value as "keyframes," and then applying attribute values between these keyframes.

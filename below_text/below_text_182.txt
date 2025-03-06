@@ -1,0 +1,1 @@
+Navigate through the video by scrubbing through or clicking anywhere on the progress bar.

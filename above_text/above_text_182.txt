@@ -1,0 +1,5 @@
+Navigation
+
+Play/pause the video by clicking the *play/pause* button or by pressing <kbd>Space</kbd>. Skip through frames in the video with the <kbd>Left</kbd> and <kbd>Right</kbd> arrow keys or the forward and backward buttons. The number of frames skipped is determined by the specified _Frameskip interval_. _Frameskip intervals_ can be set using the predefined values or customized by entering a value in the _New_ input and clicking the **+** icon.
+
+Control video playback speeds with the playback speed drop-down. _1x_ is the set playback speed in the below example.

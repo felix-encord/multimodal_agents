@@ -1,0 +1,15 @@
+Expert review
+
+<Tip>Set up _Expert review_ in the QA section of the _Settings_ tab of your Manual QA project</Tip>
+
+Many industries and domains require years of training or experience to accurately recognize and classify examples — and an expert’s time can often be expensive or hard to schedule. In other cases, there may be additional requirements on your data quality assurance processes depending on the regulatory environment. 
+
+To help customers speed up their data annotation processes in these complex environments, Encord provides an expert review feature which empowers expert reviewers you designate to have an additional layer of oversight in the review process.
+
+Expert reviews differ from normal reviews in the following ways:
+ - Expert reviews are initiated following a normal review, not direct annotator submission.
+   - Rules for forwarding to expert review do not clash with normal annotator or class reviewer mappings.
+   - Sample rate for expert review is configured according to the expert review stage config, not normal annotation sample rates. Sample rates apply to the review judgments indicated in the expert review configuration.
+ - Instance annotations rejected by an expert are _permanently rejected_ instead of being returned to the annotator.
+
+The expert review configuration resembles as follows:

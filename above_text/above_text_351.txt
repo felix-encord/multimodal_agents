@@ -1,0 +1,5 @@
+Attach Ontology
+
+Click the **Attach ontology** button. 
+
+Select an existing Ontology from the list using the **Attach** button, or create a new Ontology by clicking the **New ontology** button.

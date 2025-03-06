@@ -1,0 +1,8 @@
+**Label Issues Overview**
+
+| Title                                                                                                                                                                                          | Metric Type | Ontology Type                                                                        |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|--------------------------------------------------------------------------------------|
+| **Aspect Ratio** - Identifies objects with a low aspect ratio value. Images with an **Aspect Ratio** score of 0.0 to 0.1 are flagged as having an issue.                                       |      | , ,                                   |
+| **Border Proximity** - Identifies annotations that are too close to image borders. Images with a **Border Proximity** score of 1 are flagged as being too close to the border.                 |      | , , , , ,  |
+| **Low Annotation Quality** - Compares image classifications against the 60 most similar images. Images with a **Classification Quality** score of 0.0 to 0.02 are flagged as having an issue.  |      |                                                                               |
+| **Relative Area** - Identifies annotations that are relatively too small compared to the size of the image. Images with a **Relative Area** score of 0.0 to 0.003 are flagged being too small. |      | , ,                                   |

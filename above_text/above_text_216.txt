@@ -1,0 +1,7 @@
+Linking Object Instances 
+
+<Note>Object instances are linked using _Relation_ attributes, which are set up in the Ontology. See our documentation on _Relation_ attributes to learn more.</Note>
+
+1. Create both instance labels. In this example a chicken and its wing have been labeled using bounding boxes. 
+
+2. Click the _Edit classifications_ button for the object with the _Relation_ attribute. In the example this object is the wing, as seen below.

@@ -1,0 +1,1 @@
+In the 'Enter details' screen, enter a notification title and optional description. A clear title and description helps keep your notifications organized and helps collaborators find what they are looking for. When you are happy, click **Next**.

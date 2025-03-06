@@ -1,0 +1,5 @@
+Inconsistent Object Class
+
+This algorithm looks for overlapping objects in consecutive frames that have different classes.
+
+**Example:**

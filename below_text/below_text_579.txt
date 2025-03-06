@@ -1,0 +1,10 @@
+6. Select the checkbox for the Collection to create a Dataset.
+
+7. Click **Add to Dataset**.
+   The _Add to Dataset_ dialog appears.
+
+8. Click **Existing Dataset**.
+
+9. Provide the Dataset's ID in the _Dataset UUID_ field.
+
+10. Click **Submit**.

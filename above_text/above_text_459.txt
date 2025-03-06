@@ -1,0 +1,9 @@
+Register Cloud Data to Datasets
+
+<Tip>We recommend registering files in batches not exceeding 2GB, to ensure upload does not exceed 3 hours.</Tip>
+
+1. Create a Dataset. 
+
+2. Select the Dataset you want to add data to. 
+
+3. Click **+Upload files**.

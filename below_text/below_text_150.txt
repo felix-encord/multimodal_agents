@@ -1,0 +1,7 @@
+When using the brush tool, the 2D brush tool is selected by default. The 2D brush tool on creates bitmasks on the slice they are drawn on. In comparison, the 3D cylinder brush is applied to multiple slices, giving it depth in addition to width. 
+
+You can adjust the brush tool by: 
+- Changing the size of the brush.
+- Changing between 2D and 3D cylinder brush modes.
+
+Click **Apply label** or press <kbd>Enter</kbd> to apply the Bitmask.

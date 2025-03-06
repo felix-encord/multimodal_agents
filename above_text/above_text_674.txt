@@ -1,0 +1,3 @@
+STEP 3: Analyse the Predictions
+
+Active MUST analyse the predictions before you can view the predictions in Active.

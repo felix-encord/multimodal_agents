@@ -1,0 +1,8 @@
+Study-wise navigation
+
+<Tip>See our documentation on Study-level workflows for a comprehensive tutorial of working with studies.</Tip>
+
+Encord supports navigation on a study and series-level. Click the three dots icon to the submit button to choose between them. 
+
+- **Submit series** will submit the selected entity for review. For example - this means a single image for mammography, and a single volume for CT scans.
+- **Submit study** will submit all series or entities in the study for review.

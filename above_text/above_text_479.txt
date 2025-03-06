@@ -1,0 +1,6 @@
+Creating labels for existing instances
+
+You can use SAM to create labels for an existing object instance. 
+
+1. Navigate to the frame you want to add the instance. 
+2. Click **Instantiate object** next to the instance, or press the instance's hotkey on your keyboard (<kbd>W</kbd> in the example below).

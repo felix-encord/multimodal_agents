@@ -1,0 +1,5 @@
+3. Select the benchmark Project
+
+Benchmark QA Projects rely on Manual QA Projects that share the same Ontology as a benchmark that provides ground-truth labels. To create a Benchmark QA Project, you must first complete a Manual QA Project with the same Ontology.
+
+Select the Manual QA Project you want to use as a benchmark source.

@@ -1,0 +1,3 @@
+Transcription for Document Files
+
+First update the custom metadata schema to include a  (formally ) data type for your transcripts. Then register data with the appropriately named metadata field. When you display that field, using the _Display_ control section of the app, a resizable text field displays, so transcripts can be previewed directly under the relevant audio waveform.

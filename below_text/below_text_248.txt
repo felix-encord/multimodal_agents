@@ -1,0 +1,1 @@
+<Tip>You can also download your labels in the notification menu (accessed using the bell icon in the top left corner of the platform) and clicking the export icon next to the export you want to download.</Tip>

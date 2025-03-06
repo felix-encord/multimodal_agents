@@ -1,0 +1,14 @@
+7. Select one or more **Label Collections** from the Collection list.
+
+8. Click **Bulk Actions**.
+   A menu appears.
+
+9. Select **Edit Object Class**.
+   A dialog appears.
+
+10. Select the object label classes you want to change under **Classes to change**.
+
+11. Select the object label class you want to change to under **Change to**.
+
+12. Click **Initiate Bulk Edit Object Class**.
+    The process begins. A success messages once the action completes.

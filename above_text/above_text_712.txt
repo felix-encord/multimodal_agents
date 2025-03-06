@@ -1,0 +1,7 @@
+Explorer
+
+The _Explorer_ page has several areas that can help you find duplicate images in your Project.
+
+<AccordionGroup>
+  <Accordion title="1: Duplicates Shortcut">
+    Found in the _Overview_ tab, any images that have a  value of 0 to 0.0001 are highlighted as duplicates. You can adjust this value from the _Filter_ tab.

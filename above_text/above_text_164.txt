@@ -1,0 +1,13 @@
+Introductory Video Tutorials
+
+The following video goes through the basics of annotating images in the Label Editor.
+
+
+
+The following video goes through the basics of annotating videos in the Label Editor.
+
+
+
+<Tip>Check out our Video Tutorials page for more introductory videos!</Tip>
+
+---

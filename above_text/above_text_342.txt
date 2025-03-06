@@ -1,0 +1,5 @@
+Task generation
+
+Annotation tasks are generated and added to the label queue when a dataset or a set of datasets is attached to a project and when a new data asset is added to attached datasets. Review tasks are generated and added to the review queue once an annotator submits an annotation task. Conversely, detaching a dataset will remove any associated annotation and review tasks, so you should exercise caution if you proceed.
+
+By default, each data asset will be labeled once, and each label submitted for review will be reviewed once. You can create additional review tasks by clicking the **+ Add reviews** button and following the steps in the window. You can reopen submitted annotation tasks if you wish to send the data asset back into the queue for further labeling by selecting the relevant assets and clicking the **Reopen** button.

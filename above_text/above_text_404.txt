@@ -1,0 +1,3 @@
+The stage contains all available reviewers selected by default. Specific reviewers can be selected by clicking the **Review** component, and choosing the **Selective** tab seen above. Type the email address of a user you'd like to add and select them from the list. Only collaborators that have been added to the Workflow or the Project. Click **Add** to confirm the selection.
+
+<Note>Only collaborators with the _Reviewer_ and _Annotator & Reviewer_ roles are available for selection. All Admins and Team Managers are part of all review stages and cannot be removed.</Note>

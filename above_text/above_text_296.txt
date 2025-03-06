@@ -1,0 +1,7 @@
+You can assign the following roles to collaborators:
+
+- **Annotator**: annotators are responsible for labeling. This is the default role for all collaborators.
+- **Reviewer**: for reviewing labeled tasks.
+- **Annotator & reviewer**: a combination of annotator and reviewer.
+- **Team manager**: a team manager can assign tasks to other users, and add collaborators to the project.
+- **Admin**: gives this collaborator full administrative control over this Project. This is an irreversible action.

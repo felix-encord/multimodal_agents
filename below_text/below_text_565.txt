@@ -1,0 +1,7 @@
+6. Add and configure the filters you need. 
+   Frame/video/audio files filter in the Explorer workspace.
+
+<Tip>
+- Sort and use the natural language searches (natural language searches coming soon) to further help get the results you want.
+- After filtering, sorting, and searching, create an Index Collection.
+</Tip>

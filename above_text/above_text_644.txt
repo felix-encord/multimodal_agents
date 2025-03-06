@@ -1,0 +1,5 @@
+How do I re-index Index data?
+
+<Info>Please provide a reason why you are re-indexing. The more information you provide, the more prepared we can be with a follow-up.</Info>
+
+Click the **Re-index** button in Index.

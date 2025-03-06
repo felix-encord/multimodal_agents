@@ -1,0 +1,3 @@
+Quick Tour
+
+Use the _Audio_ tab to natively view all the audio files available in your Folders. From the _Audio_ tab you can sort and filter all of your audio files based on Audio Quality Metrics. If only audio files are in your Folders, no _Audio_ tab displays. Your audio files display in the Index Explorer. If there are a mix of file types (images, videos, and audio files), tabs display for the various file types (Video, Frames, Audio).

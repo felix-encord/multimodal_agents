@@ -1,0 +1,17 @@
+Admins and Team Managers can change the status of a Project to any of the following:
+
+- Not started
+- In progress
+- Paused
+- Completed
+- Cancelled
+
+<Info>Updating the Project status changes the Project icon accordingly.</Info>
+
+When the Project status is changed to either _Paused_, _Completed_, or _Cancelled_ then Annotators, Reviewers, and Annotator + Reviewers are prevented from opening tasks, and the **Initiate** button is greyed out. Admins and Team Managers are able to annotate and review tasks as usual, regardless of the Project status. 
+
+<Note> 
+Tasks can still be opened using back door access. For example if an Admin shares a specific URL of a task with an Annotator, Reviewer, or Annotator + Reviewer.
+</Note>
+
+---

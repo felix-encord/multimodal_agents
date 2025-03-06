@@ -1,0 +1,9 @@
+Set up an expert review configuration by specifying the parameters.
+1. **After X reviews**: Choose X such that after X cycles of submission and rejection by a normal reviewer, all rejected reviews are forwarded to expert review. This may sometimes be known as the _review count threshold_. Because 2 is the review count threshold in the above sample configuration, all reviews rejected for a second time will be sent to expert review.
+
+2. **Expert reviewers**: Choose the pool of possible expert reviewers. There is no requirement to designate a user as an expert reviewer, other than they have at least _reviewer_ permissions inside in the project. Users can be made expert reviewers regardless of their placement within normal annotator or class reviewer mappings.
+
+3. **Expert review stages**: Stages or iterations, indicate how to forward review results to expert review after each normal review. In the above sample configuration, 10% of all first reviews will be sent to expert review, and 50% of approved second reviews will be sent to expert review.
+   - At each stage you configure the review iteration, the sampling rate, and the action for which to apply the sampling rate. Note that because all rejected reviews are always forwarded to expert review at the _threshold count_, you can only choose 'Approved' for the possible extra action when configuring the final stage.
+
+The above configuration can be visualized as follows:

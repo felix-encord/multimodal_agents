@@ -1,0 +1,3 @@
+4. Set up your scoring function
+
+Click the **Scoring function** tab to customize the scoring function. The scoring function determines how your automated labels are evaluated.

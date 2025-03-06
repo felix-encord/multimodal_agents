@@ -1,0 +1,9 @@
+9. Once all the above has been set and selected click the **Train model** button. 
+
+Your model is now being trained. 
+
+<Tip>
+You can monitor the progress by clicking the bell icon in the top right corner of the Encord app. The green tick icon appears next to the task when the process has completed.
+</Tip>
+
+---

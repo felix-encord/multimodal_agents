@@ -1,0 +1,5 @@
+3. Create the training Project
+
+After labeling a _ground-truth_ Project, it is time to create the annotator training Project. The following example only uses a single source Project, but the process is extensible for as many source Projects as necessary.
+
+1. Click **+New training project**, on the **Training projects** tab of the **Projects** section.

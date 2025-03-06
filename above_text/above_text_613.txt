@@ -1,0 +1,6 @@
+Filtering with Custom Embeddings
+
+Upgrade your top-level folder before trying to filter.
+
+1. Click the **Filters** dropdown or press <kbd>F</kbd>.
+   The _Filters_ menu appears.

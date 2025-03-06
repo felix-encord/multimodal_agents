@@ -1,0 +1,6 @@
+4. Use the Editor Agent in the Label Editor
+
+**To use the registered Agent during annotation:**
+
+1. Click **Automated labeling** in the bottom left of the screen. 
+   The automated labeling drawer appears.

@@ -1,0 +1,3 @@
+- **Must be drawn over** - If the Bitmask is drawn over, any part of the Bitmask label is included in the new Bitmask, regardless of threshold values set.
+
+<Note>The  **Must be drawn over**  setting for _Bitmask overlap_ is only available to select customers. Contact support@encord.com for more information.</Note>

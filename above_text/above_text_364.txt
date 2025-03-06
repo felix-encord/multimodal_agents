@@ -1,0 +1,3 @@
+Data
+
+The _Data_ tab gives a complete overview of all the data asset tasks in the project, regardless of their progress. Therefore, this is the first place Administrators and Team Managers should check if they want to confirm the status of a given task.

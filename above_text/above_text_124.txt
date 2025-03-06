@@ -1,0 +1,9 @@
+<Note>A note appears warning the user if 'Pixel spacing' is missing from an entity's metadata. Pixel spacing is essential for making accurate distance measurements.</Note>
+
+The metadata is organized into the following columns for easy interpretation:
+
+- **Field Name**: This column displays the name of the metadata field.
+- **Tag**: Represented in the format (group, element), the Tag column consists of two hexadecimal values enclosed in brackets. These values uniquely identify the metadata field.
+- **Content**: This column shows the data or value associated with the field.
+
+Metadata sequences provide additional layers of information and can be identified by the presence of the **+** icon. Clicking the **+** icon expands the sequence, revealing nested fields and changing to a **-** icon. Clicking the **-** icon collapses the sequence.

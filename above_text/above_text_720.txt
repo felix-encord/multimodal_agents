@@ -1,0 +1,7 @@
+Broken Object Tracks
+
+Identifies broken object tracks by comparing object overlaps based on a running window.
+
+**Example:**
+
+If objects of the same class overlap in three consecutive frames (_i-1_, _i_, and _i+1_) but do not share object hash, the frames are flagged as a potentially broken track.

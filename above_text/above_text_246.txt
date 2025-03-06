@@ -1,0 +1,8 @@
+Label Coordinates
+
+In the JSON format, label coordinates are normalized to be between 0 and 1. This means that the corners of the frame or image correspond to the coordinates (1,1), (1,0), (0,0), (0,1) regardless of frame dimensions. 
+
+To get the pixel values of normalized coordinates:
+
+- The  and  coordinates of a label should be multiplied by the pixel width of the frame or image.
+- The  and  coordinates of a label should be multiplied by the pixel height of the frame or image.

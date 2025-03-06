@@ -1,0 +1,1 @@
+2. Add the workforce groups to Projects from the **Project > Settings > Team** page.

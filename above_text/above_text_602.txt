@@ -1,0 +1,5 @@
+Manage folder collaborators
+
+<Note>Organization admins can see all the files and folders created by users in your Organization. </Note>
+
+Click **Manage access** to manage which users within your Organization can access the folder. A dialog appears with the _Invite_ tab open by default.

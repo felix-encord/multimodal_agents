@@ -1,0 +1,1 @@
+<Tip>You can specify a range of dates, as well as whether statistics should be displayed for labels, or instances. More information on instances and labels can be found here.</Tip>

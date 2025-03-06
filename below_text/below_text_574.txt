@@ -1,0 +1,2 @@
+6. Toggle the **Show only Keyframes** switch.
+   Only video frames with  appear when moving through the video.

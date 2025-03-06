@@ -1,0 +1,7 @@
+Step 4: Add users
+
+Add users to the Project and assign them roles such as Team Managers, Annotators, and Reviewers. As the Project creator, you are automatically assigned the role of Administrator.
+
+<Note>A full list of permission / user-based access controls can be found here. </Note>
+
+**To add users to your Project**:

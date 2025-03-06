@@ -1,0 +1,24 @@
+- **A**. Project task status overview: summary of your task statuses.
+- **B**. Instance label task status: summary of the labels in your tasks.
+
+<AccordionGroup>
+  <Accordion title="Project task status overview">
+    Displays the number of annotation tasks that are in each state: Annotate, Review or Completed.
+
+    - **Annotate**: The task is ready to be annotated.
+    - **Review**: The task is ready to be reviewed.
+    - **Completed**: The task has been annotated, and reviewed. There is no further action to be taken.
+  </Accordion>
+
+  <Accordion title="Instance label task status">
+    Displays the number of labels / instances that have been created, and their assigned status.
+
+    - **Approved**: The instance has been approved by a reviewer.
+    - **Returned for annotation**: The instance has been returned to the annotator by the reviewer.
+    - **In review**: The instance needs to be reviewed.
+  </Accordion>
+</AccordionGroup>
+
+For a more comprehensive summary of how a task moves from annotation through instance review and full completion, reference the Status section below.
+
+---

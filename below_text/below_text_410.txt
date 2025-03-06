@@ -1,0 +1,16 @@
+Learn how to add collaborators to different stages of a Project by visiting the relevant sections in this document:
+
+- **Annotate** collaborators.
+- **Review** collaborators. 
+- Collaborator type **Router**.
+
+If no collaborators are specified at a given stage, all users with permissions are added by default. 
+
+For example, if no collaborators are specified at an **Annotate** stage then all collaborators with the following roles will be added by default: 
+
+- Annotator
+- Annotator & Reviewer
+- Team Manager
+- Admin
+
+---

@@ -1,0 +1,11 @@
+Simple Interpolation
+
+The video tutorial below goes through the basics of using interpolation in the Label Editor.
+
+
+
+1. Create instance labels on at least two non-consecutive frames. 
+
+<Tip>The more instance labels are manually added throughout the video, the more accurate the resulting interpolation becomes. </Tip>
+
+2. Click the three dots icon on the instance to be interpolated, and click **Interpolate**.

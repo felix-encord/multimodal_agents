@@ -1,0 +1,8 @@
+For example, the timeline in the image above shows that:
+- The 'lake' object was added at the start of the video (0:00), and is present in all frames in the first 7 seconds of the video. 
+
+- There are 3 separate instances of a 'boat' object - the times in the video at which they appear, and the duration of the annotations. 
+
+<Tip>Hover over an object on the timeline to see the frame range of frames it appears in, and the values of any attributes the object  has. Clicking a frame number navigates to that frame. </Tip>
+
+The timeline moves as the video is played, so that the location of the cursor on the timeline always corresponds to the frame currently being displayed.

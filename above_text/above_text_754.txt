@@ -1,0 +1,78 @@
+Sorting
+
+Sort your data, in ascending or descending order, using data quality metrics.
+Sort your labels or predictions, in ascending or descending order, using label quality metrics.
+
+<AccordionGroup>
+   <Accordion title="Data Quality Metrics">
+
+For more detailed information on Data Quality Metrics go here.
+
+| Title                                                                                                                                          | Metric Type | Ontology Type |
+|------------------------------------------------------------------------------------------------------------------------------------------------|-------------|---------------|
+| Area - <small>Ranks images by their area (width/height).</small>                                                                      |      |               |
+| Aspect Ratio - <small>Ranks images by their aspect ratio (width/height).</small>                                              |      |               |
+| Blue Value - <small>Ranks images by how blue the average value of the image is.</small>                                         |      |               |
+| Brightness - <small>Ranks images by their brightness.</small>                                                                   |      |               |
+| Contrast - <small>Ranks images by their contrast.</small>                                                                         |      |               |
+| Diversity - <small> Forms clusters based on the ontology and ranks images from easy samples to hard samples.</small>             |      |               |
+| Green Value - <small>Ranks images by how green the average value of the image is.</small>                                     |      |               |
+| Height - <small>Ranks images by the height of the image.</small>                                                                    |      |               |
+| Object Count - <small>Counts number of objects in the image.</small>                                                                                                        |      | , , , , , , , ,  |
+| Object Density - <small>Computes the percentage of image area that is occupied by objects.</small>              |      | , ,                                                                 | 
+| Randomize Images - <small>Assigns a random value between 0 and 1 to images.</small>                                       |      |               |
+| Red Value - <small>Ranks images by how red the average value of the image is.</small>                                           |      |               |
+| Sharpness - <small>Ranks images by their sharpness.</small>                                                                      |      |               |
+| Uniqueness - <small>Finds duplicate and near-duplicate images.</small>                                                          |      |               |
+| Width - <small>Ranks images by the width of the image.</small>                                                                       |      |               |
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Label Quality Metrics">
+
+For more detailed information on Label Quality Metrics go here.
+
+| Title                                                                                                                                                                                        | Metric Type | Ontology Type                                                                                                          |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|--------------------------------------------------------------------------------------------------------------------|
+| Absolute Area - <small>Computes object size in amount of pixels.</small>                                                                                 |      | , ,                                                                 |
+| Aspect Ratio - <small>Computes aspect ratios of objects.</small>                                                                                              |      | , ,                                                                 |
+| Blue Value - <small>Ranks annotated objects by how blue the average value of the object is.</small>                                                                                 |      | , ,                                                                 |
+| Brightness - <small>Ranks annotated objects by their brightness.</small>                                                                                 |      | , ,                                                                 |
+| Border Proximity - <small>Ranks annotations by how close they are to image borders.</small>                                   |      | , , , , ,                                |
+| Broken Object Tracks - <small>Identifies broken object tracks based on object overlaps.</small>                              | ,   | , ,                                                                 |
+| Brightness - <small>Ranks annotated objects by their brightness.</small>                                                                                 |      | , ,                                                                 |
+| Confidence - <small>The confidence that an object was annotated correctly. While arguably not making much sense when annotated by a human, this value is very important for objects that were automatically labeled.</small>                                                                                 |      | , ,                                                                 |
+| Contrast - <small>Ranks annotated objects by their contrast.</small>                                                                                 |      | , ,                                                                 |
+| Classification Quality - <small>Compares image classifications against similar images.</small>                                                    |      |                                                                                                             |
+| Green Value - <small>Ranks annotated objects by how green the average value of the object is.</small>                                                                                 |      | , ,                                                                 |
+| Height - <small>Ranks annotated objects by the height of the object.</small>                                                                                 |      | , ,                                                                 |
+| Inconsistent Object Class - <small>Looks for overlapping objects with different classes (across frames).</small> | ,   | , ,                                                                 |
+| Inconsistent Track ID - <small>Looks for overlapping objects with different track-ids (across frames).</small> | ,   | , ,                                                                 |
+| Label Duplicates - <small>Ranks labels by how likely they are to represent the same object.</small>                                                      |      | , ,                                                                 |
+| Missing Objects - <small>Identifies missing objects based on object overlaps.</small>                              | ,   | , ,                                                                 |
+| Object Classification Quality - <small>Compares object annotations against similar image crops.</small>                                                            |      | , ,                                                                 |
+| Occlusion Risk - <small>Tracks objects and detect outliers in videos.</small>                                                                                 | ,   | ,                                                                            |
+| Polygon Shape Anomaly - <small>Calculates potential outliers by polygon shape.</small>                                                                         |      |                                                                                                           |
+| Randomize Objects - <small>Assigns a random value between 0 and 1 to objects.</small>                                                                    |      | , ,                                                                 |
+| Red Value - <small>Ranks annotated objects by how red the average value of the object is.</small>                                                                                 |      | , ,                                                                 |
+| Relative Area - <small>Computes object size as a percentage of total image size.</small>                                                                 |      | , ,                                                                 |
+| Sharpness - <small>Ranks annotated objects by their sharpness.</small>                                                                                 |      | , ,                                                                 |
+| Width - <small>Ranks annotated objects by the width of the object.</small>                                                                                 |      | , ,                                                                 |
+
+  </Accordion>
+</AccordionGroup>
+
+**To sort data, labels, or predictions:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Select **Data**, **Labels**, or **Predictions**.

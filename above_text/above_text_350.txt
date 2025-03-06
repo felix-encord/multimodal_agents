@@ -1,0 +1,3 @@
+1. Enter details
+
+Ensure you select the _Automated QA_ Project type. Then give your Project a meaningful title and description.

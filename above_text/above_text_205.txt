@@ -1,0 +1,5 @@
+Frame classification
+
+Creating frame classification(s) requires an ontology with a classification annotation type. Frame-level classifications consider the frame as a whole, not the objects' localization. Instantiate a frame-level classification instance by clicking on the specified class in the 'Classes' menu or using the specified hotkey (e.g., <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>).
+
+Set the desired start and end frame by clicking the **Set start to current** and **Set end to current** buttons or using the set hotkeys <kbd>c</kbd> and <kbd>v</kbd>, respectively. Click the **This frame** button or the <kbd>x</kbd> hotkey to set the slider to only the current frame (e.g., frame 100). Add additional ranges by clicking the *Add range* button or pressing the <kbd>n</kbd> hotkey to add a frame range (e.g., if a car enters and leaves the frame throughout a video). Click the *Save* button or the <kbd>m</kbd> hotkey to save the instance. Use the **This frame & save** button or the <kbd>z</kbd> hotkey to classify and save the results for a single frame quickly.

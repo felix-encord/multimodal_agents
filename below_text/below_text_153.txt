@@ -1,0 +1,5 @@
+Panoptic settings allow you to determine how different bitmasks interact with one another. 
+
+- **None**: Overlapping bitmasks are allowed. The bitmask will overlap with existing bitmasks.
+- **Exclude**: Areas already covered by a bitmask will be excluded from the bitmask.
+- **Overwrite**: Areas already covered by a bitmask will be overwritten by the new bitmask.

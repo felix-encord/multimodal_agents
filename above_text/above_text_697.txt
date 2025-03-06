@@ -1,0 +1,23 @@
+Send to Annotate
+
+All priorities, comments on individual frames/images, and the comment added for the Collection, are sent to the Annotate Project.
+
+<AccordionGroup>
+   <Accordion title="To send a Collection to Annotate:">
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+   
+2. Click **Active** in the main menu.
+   The landing page for Active appears.
+
+3. Click the Project.
+   The landing page for the Project appears with the _Explorer_ tab selected.
+
+4. Click **Collections**.
+   The _Collections_ page appears.
+
+5. Select the checkbox for the Collection to send to Annotate.
+
+6. Click **Send to Annotate**.
+   The _Send to Annotate_ dialog appears.

@@ -1,0 +1,51 @@
+Annotate
+
+<AccordionGroup>
+  <Accordion title=" Why can't I see all classifications/annotations when reviewing? ">
+    Check the sampling rate. 
+
+It's possible that you are seeing a different number of classifications/annotations than expected because you have the sampling rate set too high/low.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" What is causing the error I'm seeing in the Label Editor? ">
+    There might be several possible causes if you see a "Something Went Wrong" error message in the Label Editor:
+
+1. CORS issues - when rendering an image or video from remote storage solutions (AWS S3, GCP, Azure) it is important to set up a valid Cross-Origin Request Sharing (CORS) Policy and failure to do so will result in errors when trying to load that remote content in the Encord application. 
+
+To resolve these, check that a valid CORS policy is applied to the remote storage bucket, which allows Encord's domains. This varies between providers. For AWS the corresponding JSON looks like this:
+
+<CodeGroup>
+
+
+
+
+</CodeGroup>
+
+2. Connectivity issues - Check that your local connection is fast and performant. We also recommend that, when configuring your remote storage, you choose a location geographically proximate to your annotators to ensure the smoothest loading experience.
+3. Occasionally, you might notice an error loading from remote storage if the remote storage bucket itself is newly provisioned. This is because the cloud provider sometimes provisions in any region first (to improve provisioning speed) then moves it to the requested region afterwards. If the issue is not resolver after ~1hr, contact Encord support.
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="Why is the Label Editor crashing, and what can I do about it?">
+    If the Label Editor crashes after attempting to load your cloud data file, it is likely that the signed URL is expiring. Refreshing the Label Editor re-signs the URL. 
+
+We recommend increasing the expiration time for signed URLs on your integration. 
+
+
+  </Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title=" The Label Editor does not appear when I try and label a task? ">
+   Your DNS settings might not be configured correctly.
+
+   **Windows 10**
+
+   1. Go to the **Control Panel**.

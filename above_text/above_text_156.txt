@@ -1,0 +1,6 @@
+To draw a bitmask using _Polygon mode_ : 
+
+1. Select _Polygon mode_ in the bitmask pop up. 
+2. Click the editor canvas to start drawing your bitmask. 
+3. Draw your shape by clicking each time you want to create a vertex.
+4. Click the first vertex to complete the shape.

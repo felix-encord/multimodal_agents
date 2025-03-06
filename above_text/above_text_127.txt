@@ -1,0 +1,3 @@
+Data overlay toggle
+
+The _Data overlay_ toggle, located in the _Additional controls_, allows you to display or hide metadata overlay. When toggled on, metadata displays in the bottom left corner of the series being annotated.

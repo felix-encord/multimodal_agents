@@ -1,0 +1,5 @@
+**To approve labels on audio files:**
+
+1. Go to **Project > [Your Project Title] > Queue > Review**.
+
+   The _Project Review Queue_ appears with a list of audio files for labelling.

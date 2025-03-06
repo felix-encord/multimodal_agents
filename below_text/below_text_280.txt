@@ -1,0 +1,11 @@
+</Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="Consensus - Review and Refine - Workflow">
+
+In this Consensus Workflow:
+
+Consensus Block:
+
+- Total

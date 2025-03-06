@@ -1,0 +1,7 @@
+<Tip> 
+In addition to selecting points within a rectangular area, you can use filters (but not sort or natural language or image search) on the data, labels, or predictions.
+</Tip>
+
+After using the embedding plot and filtering create a Collection.
+
+**Data Embedding Plot**

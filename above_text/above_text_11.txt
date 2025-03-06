@@ -1,0 +1,5 @@
+Training log
+
+After a model has finished training, the _Training log_ allows you to study each training iteration and determine how differences in training data affect the model's performance over time. 
+
+It displays the _batch size_, the number of _epochs_, and a graph showing how the model's loss evolved during the course of each training iteration. Training loss will not be recorded for classification models.

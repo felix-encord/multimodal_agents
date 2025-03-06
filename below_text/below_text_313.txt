@@ -1,0 +1,8 @@
+- A. File, Search, & Assign: The name of the specific _data unit_ or _data asset_. This is the same as the name in the dataset to which this data asset is a part of. Use the search box to filter the list by file name, and send tasks back to annotation using the 'Reopen' feature.
+- B. _Dataset_ : The dataset the _data asset_ belongs to.
+- C. _Type_ : The type of the data, such as an image or video. For more on our supported data types, see our documentation here.
+- D. Status and Task: The status and category of this task within the task management system.
+- E. _Last Edited_ : When the task was last edited
+- F. _Reserved by_ : Who the task has been assigned to or reserved by
+- G. Actions: Depending on your collaborator role, you can initiate or reassign the task.
+- H. Filter: Use the filter drop-down to only show tasks of the selected status. Only filtered results will be shown in the Label Editor.

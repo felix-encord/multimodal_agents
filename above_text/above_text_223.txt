@@ -1,0 +1,3 @@
+Label Documents
+
+**Label display** settings can help provide a better labeling experience for each annotator.

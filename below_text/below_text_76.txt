@@ -1,0 +1,8 @@
+3. Give the public key a meaningful name. 
+
+4. Click **Generate key pair** to generate a new public/private key pair. 
+The public key field is automatically populated, and a  containing your corresponding private key is downloaded. 
+
+<Warning>
+You must click **Create** to create your API key. The **Create** button becomes available once both fields are populated.
+</Warning>

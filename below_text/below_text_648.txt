@@ -1,0 +1,6 @@
+4. Click the **Explorer** button.  
+   The _Index Explorer_ page appears.
+
+5. Search, sort, and filter your data until you have the subset of the data you need.
+
+    <Note>Filtering by  can narrow your search to frames of interest.</Note>

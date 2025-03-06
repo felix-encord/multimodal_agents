@@ -1,0 +1,14 @@
+Turn ON Crop View for all labels/annotations
+
+Crop View is only available from the _Labels_ page in the _Explorer_.
+
+**To turn ON Crop View for all labels:**
+
+1. Click in to a Project in Active.
+   The _Explorer_ page appears.
+
+2. Click **Labels**.
+   The _Labels_ page appears.
+
+3. Click **Display**.
+   The _Display_ tab appears.

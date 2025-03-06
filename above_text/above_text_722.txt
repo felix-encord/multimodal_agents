@@ -1,0 +1,5 @@
+Inconsistent Track ID
+
+This algorithm looks for overlapping objects with different track-ids. Overlapping objects with different track-ids are flagged as potential inconsistencies in tracks.
+
+**Example:**

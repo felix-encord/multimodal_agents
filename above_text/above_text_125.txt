@@ -1,0 +1,5 @@
+Understanding the Tag column
+
+The Tag column plays a vital role in identifying the type of metadata field:
+
+- **Private fields**: If the fourth character of the group value in the Tag is an odd number - for example (0013,1001) - the field is considered private. Private fields may or may not display accurate Field Name and Content. In many cases, these fields have the Field Name listed as 'Unknown' and may contain empty or nonsensical content.

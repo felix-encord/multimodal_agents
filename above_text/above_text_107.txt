@@ -1,0 +1,3 @@
+Deeplinking - Copy and share URLs
+
+Seamlessly copy the URL of the slice currently being viewed by clicking the _Share_ icon, shown below.

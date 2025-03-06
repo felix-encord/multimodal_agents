@@ -1,0 +1,6 @@
+2. Adding files to folders
+
+1. Navigate to _Files_ under the _Index_ heading in the Encord platform. 
+2. Click the **+Upload files** button.
+
+<Tip>You can also right-click a folder to add data.</Tip>

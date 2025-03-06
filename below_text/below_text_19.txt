@@ -1,0 +1,12 @@
+3. Click one of the following:
+
+   - **Authenticator:**
+
+     a. To configure an authenticator, sign out from Encord.
+
+     b. Log back into Encord.
+
+     c. Navigate back to the _General_ tab.
+
+     d. Click the **Manage Multi-Factor Auth** button.
+        An _Authenticator_ configuration dialog appears.

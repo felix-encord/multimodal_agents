@@ -1,0 +1,11 @@
+Manual Quality Assurance
+
+Manual quality assurance for annotation projects means that annotation tasks have to be reviewed before they can be marked as _Complete_.
+
+You can set the following parameters for manual quality control in the _Settings_ tab in your annotation project shown in the screenshot below:
+
+- The percentage of labels that are to be manually reviewed.
+- Rules for distribution of review tasks.
+- Common rejection reasons that can be used to identify and systematize errors in your labels.
+- Reviewer to class and annotator mapping (e.g. label X with class Y should always be reviewed by reviewer Z).
+- Assign tasks that are rejected after a specific number of review cycles for expert reviews.

@@ -1,0 +1,3 @@
+1. Add a collaborator
+
+To invite collaborators to your project, click the **+ Invite collaborators** button. This opens a new window where you can enter email addresses of the people you want to invite.

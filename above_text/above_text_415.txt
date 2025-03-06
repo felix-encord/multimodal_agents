@@ -1,0 +1,7 @@
+Creating annotation Projects from templates
+
+
+
+---
+
+Workflow templates can be used during Project creation. To use a template during Project creation, choose the template you would like to use and click the <kbd>Select</kbd> button during the workflow setup.

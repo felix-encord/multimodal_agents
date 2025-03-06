@@ -1,0 +1,7 @@
+4. Confirming the Label
+
+Once the correct section is highlighted, click **Apply Label** on the SAM pop-up, or press <kbd>Enter</kbd> on your keyboard to confirm the selection. 
+
+A label appears outlining the area that was highlighted - the label shape depends on whether the selection was made using a bounding box, a bitmask, or a polygon.
+
+<Note>SAM works in conjunction with the 'Permanent drawing' setting which can increase the speed at which SAM labels are created in video frames. </Note>

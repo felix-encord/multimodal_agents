@@ -1,0 +1,1 @@
+Select the model you want to attach to the Project, and map each model ontology to the entity in the Project's ontology you would like to associate it with. In the following example we want the 'Apple' model Ontology to correspond with 'Apple' in the Project's Ontology.

@@ -1,0 +1,25 @@
+Project Tags
+
+<Note>Tags are created and managed on the Organization level. Once created they can be added to individual Projects.</Note>
+
+You can add tags to a Project if you are part of an Organization.  
+
+Project tags allow you to: 
+- Flexibly categorize and group your Projects.
+- Filter your Projects.
+
+You can add tags to your Projects in:
+
+- When creating a Project.
+
+- In the _Settings_ page of a Project.
+
+**To add or remove Project tags**:
+
+1. Navigate to the _Options_ tab and click the _Project tags_ drop-down.
+All available tags in your Organization are shown. 
+2. Click on a tag to add it to a Project. 
+
+<Tip>
+Remove a tag from your Project by clicking the same tag again, or clicking the **x** button next to its name.
+</Tip>

@@ -1,0 +1,29 @@
+Determine Consensus
+
+Reviewers on Consensus Projects have a different goal from Reviewers on other types of Encord Projects. Reviewers on Consensus Projects review ALL the labels on a data unit, made by a specified number of annotators. The reviewers then make a decision on whether there is agreement/consensus on ALL the labels on a task (data unit).
+
+If the reviewer decides that ALL the labels on a data unit are correct/in agreement, the reviewer selects the annotators that are in agreement and clicks **Consensus reached**. If the reviewer decides that there is no agreement on the labels or that the labels are incorrect, the reviewer clicks **No Consensus**.
+
+Currently, Object labels and Classifications are supported for consensus review on all data unit types. Data units are images, image groups, image sequences, videos, and DICOM series.
+
+**To review labels on a Consensus Project:**
+
+1. Log in to Encord.
+   Your review task queue appears for the latest Project you are assigned for review.
+
+2. Go to **Annotate > Projects > Annotate projects**.
+   The _Annotate projects_ page appears displaying a list of Projects you are assigned to review.
+
+3. Click a Consensus Project.
+   The Project opens with the _Review_ populated with review tasks.
+
+4. Click **Initiate** on a task.
+   The _Reviewing_ page appears.
+
+5. Review the labels from each annotator.
+
+<Info>Consensus in Encord is based on Consensus for ALL labels on a data unit. A data unit being an image, an image group, an image sequence, a video, or a DICOM series. Encord Consensus is not granular to the label itself (yet). This means reviewers must ensure ALL labels on a data unit are in consensus before deciding consensus is reached.</Info>
+
+The Reviewing page is different for single images and all other data units. When reviewing single images, expand each user to display their labels and decide on consensus. When reviewing videos, image groups, image sequences, and DICOM series a timeline appears under the data unit. Use the timeline to speed up reviewing all the labels on the data unit.
+
+**Single Image, Image Group**

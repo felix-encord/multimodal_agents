@@ -1,0 +1,3 @@
+Encord Active incorporates embedding plots — a two-dimensional visualization technique employed to represent intricate, high-dimensional data in a more comprehensible and visually coherent manner. This technique reduces data dimensionality while preserving the inherent structure and patterns within the original data.
+
+The embedding plot aids in identifying interesting/noteworthy clusters, inspecting outliers, and excluding unwanted samples. Accessible on the **Project > Explorer** page, the embedding plot is adaptable to data, labels, and predictions.

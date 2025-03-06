@@ -1,0 +1,9 @@
+Instance identifiers are unique within a project and can be found in several ways:  
+
+- **In the Label Editor:** Click on an instance, then select **Copy identifier** from the instance action menu.  
+- **In Exported Labels:** Look for  or  in the exported data.  
+- **Using the SDK:** Specify your own  or  during label uploads.  
+
+Once you have an identifier, use the **Search instance** interface to filter and locate the specific instance. This is especially useful for visually confirming annotations linked to an identifier.  
+
+After finding your instance, click **View** in the **Actions** column to jump directly to the first annotation of that instance in the dataset.

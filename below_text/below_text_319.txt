@@ -1,0 +1,4 @@
+- **A**:  Set the time period you would like to see displayed by selecting a range of dates.
+- **B**: The **Hide days without any actions** toggle removes all days at which no actions were taken from the view. 
+- **C**: Download a CSV file of the data. 
+- **D**: Display the data as a bar chart, or a table. While the chart provides a clear visual representation, the table provides exact figures for a more detailed picture of your team's performance.

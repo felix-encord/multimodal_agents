@@ -1,0 +1,3 @@
+Summary
+
+Clicking an annotation project takes you to its _Summary_ dashboard. This dashboard has 2 components and gives you a rich visual display of your project's progress at a high level.

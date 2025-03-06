@@ -1,0 +1,2 @@
+2. In the _General_ tab, click the **Manage Multi-Factor Auth** button.
+   The **Enroll new Multi-Factor Authentication** dialog appears.

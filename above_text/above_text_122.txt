@@ -1,0 +1,5 @@
+Auto layouts
+
+Auto layouts are common layouts for viewing DICOM studies in the Label Editor. Auto layouts are set in the DICOM editor settings. This includes the _MPR layout_ setting and the _Mammography layout_ setting for mammography files. 
+
+Selecting the **Auto layout** option resets the Label Editor to your auto layout. You can specify the  **Auto layout** option as your default layout.

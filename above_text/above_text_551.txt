@@ -1,0 +1,9 @@
+- Model Evaluation
+    1. Train your model on exported annotations.
+    2. Import model predictions into Encord Active.
+    3. Use advanced analytics and quality metrics to:
+        - Discover weak spots in your model.
+        - Improve performance with actionable insights.
+        - Leverage embedding plots to visualize model outputs and identify improvement areas.
+
+<Tip>Use custom filtering to refine your data and label exploration, just as in Encord Index, to focus on areas that can enhance your model's performance.</Tip>

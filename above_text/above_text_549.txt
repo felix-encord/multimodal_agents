@@ -1,0 +1,15 @@
+1. Click the **Invite collaborators** button .
+A dialog appears.
+2. Type in the email addresses of users you want to add to the Project.
+3. Select the role you want to give to the users. 
+4. Click **Add** to add the users to the Project. 
+5. (Optionally) repeat this for all user roles your Project requires. 
+6. Close the dialog when you're done adding users to the Project.
+
+<Tip>You can add more users and manage all users after Project creation. </Tip>
+
+By default, all available annotators are assigned to the annotation stage, and all reviewers are assigned to your review stage(s). However, you can specify which annotators or reviewers should be available at each Workflow stage.
+
+<Note>Admins and Project managers can see task in any stage of the Workflow.</Note>
+
+**To add users to specific Workflow stages**:

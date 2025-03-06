@@ -1,0 +1,4 @@
+1. Creating folders 
+
+1. Navigate to _Files_ under the _Index_ heading in the Encord platform. 
+2. Click the **+ New folder** button to create a new folder. A dialog to create a new folder appears.

@@ -1,0 +1,12 @@
+6. If the labels are correct:
+  
+  a. Select the annotators that have done the best job of labeling the data unit.
+     The _Consensus reached_ button becomes clickable once the required number of annotators required are selected.
+
+  b. Click the **Consensus reached** button.
+
+  c. Select the annotator that did the best job. That annotator's work on the data unit is used if an Admin or Team Manager export the labels for the data unit.
+
+  d. Click **Submit**.
+
+   **Single Image, Image Group**

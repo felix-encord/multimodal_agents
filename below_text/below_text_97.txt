@@ -1,0 +1,8 @@
+<Note>
+- Initially, the default is set to 60%
+- 20% corresponds to no zoom. It's the magnification at which the image or frame is displayed in the Label Editor.
+- To zoom in, increase the percentage value.
+- To zoom out, decrease the percentage value. The minimum value is 1%.
+</Note>
+
+---

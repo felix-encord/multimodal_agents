@@ -1,0 +1,17 @@
+Notice how images are clustered around certain regions. By defining a rectangular area on the plot, users can quickly isolate and analyze data points within that defined region. This approach facilitates the exploration of commonalities among these samples.
+
+Hover over clusters or individual data points on the plot to visually check frames.
+
+Upon selecting a region, the content within the _Explorer_ page adjusts accordingly. Various actions can be executed with the chosen group:
+
+- Use Collections to tag and group images.
+- Investigate the performance of the selected samples within the _Predictions_ page.
+- Establish subsets similar to these and then conduct comparisons.
+
+<Tip> The embedding plot is adaptable to data, labels, and predictions. In addition to selecting points within a rectangular area, the label embedding plot offers the functionality to filter data points based on the label classes.</Tip>
+
+
+With the data and label embedding plot, users can:
+- Identify classes that are often confused with each other.
+- Detect samples with incorrect labeling, such as instances of a different class embedded within a larger cluster of another class.
+- Spot outliers and subsequently eliminate them from the dataset.

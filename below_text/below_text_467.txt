@@ -1,0 +1,5 @@
+Click the **Delete dataset** button to delete the entire Dataset. You are prompted to type the word 'delete' into the resulting pop-up to delete the Dataset.
+
+<Warning>Deleting a Dataset cannot be undone. Make sure you want to perform this action before continuing.</Warning>
+
+---

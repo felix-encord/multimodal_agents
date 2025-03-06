@@ -1,0 +1,7 @@
+Intensity values
+
+The Encord DICOM viewer renders DICOM files natively in the browser, enabling the display of the full range of the intensity values (i.e., 20,000+ pixel intensities). 
+
+<Note>Intensity values take the form of Hounsfield units for CT scans.</Note>
+
+Intensity values are projected directly on the image. The example below has the cursor pointing to Hounsfield Value 1591 o.

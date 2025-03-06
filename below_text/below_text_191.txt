@@ -1,0 +1,3 @@
+Rotatable bounding boxes can be copy/pasted between frames using <kbd>cmd</kbd> (MacOS)/<kbd>ctrl</kbd> (Windows) + <kbd>C</kbd> to copy the object to the clipboard, and <kbd>cmd</kbd>/<kbd>ctrl</kbd>  + <kbd>v</kbd> to paste it at the location of the mouse cursor on the desired frame.
+
+---

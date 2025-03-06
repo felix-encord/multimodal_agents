@@ -1,0 +1,3 @@
+Team
+
+To manage project collaborators, select the 'Team' pane in your project _Settings_.

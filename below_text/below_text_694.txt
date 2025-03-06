@@ -1,0 +1,11 @@
+</Accordion>
+</AccordionGroup>
+
+<AccordionGroup>
+   <Accordion title="4: Filtering by ">
+
+Filter the entire project using . 
+
+Go to **Filter** tab > **Add Filter** > **Data Quality Metrics** > **Uniqueness** A small histogram diagram appears above the filter.
+
+You can then change the filter settings to specify a range closer to 0.

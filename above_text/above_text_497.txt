@@ -1,0 +1,13 @@
+Create a Workflow template
+
+_Workflows_ allow you to design and manage the flow of tasks through various stages of a Project. You have control over how tasks progress and how different stages interact.
+
+<AccordionGroup>
+   <Accordion title="Video tutorial - Creating workflow templates">
+
+
+
+  </Accordion>
+</AccordionGroup>
+
+To set up a Workflow template, navigate to the Annotate section of the Encord platform, and click the **+ New workflow** button

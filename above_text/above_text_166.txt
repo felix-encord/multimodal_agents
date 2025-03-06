@@ -1,0 +1,3 @@
+**Delete operations**
+
+Encord lets you perform bulk delete operations as follows:

@@ -1,0 +1,4 @@
+2. All data on Encord is now managed through _Files_. Your existing Datasets have been converted into Mirrored Datasets, which automatically track their corresponding folders without displaying them in the _Files_ interface. These Mirrored Datasets are visible in the _Datasets_ section of the Encord platform and can be used just as you have always used Datasets. While this provides a simpler experience, it comes with some reduced flexibility. Mirrored Datasets are identifiable by the **M** on the Dataset icon.
+
+
+**Before _Files_ is enabled**:

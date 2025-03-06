@@ -1,0 +1,5 @@
+3D Volume Rendering 
+
+Medical scans can be explored in 3 dimensions, allowing for a more intuitive assessment of anatomical structures.
+
+<Note>3D volume rendering is only available for volumes - which Encord determines through  file tags.</Note>

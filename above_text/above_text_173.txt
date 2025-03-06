@@ -1,0 +1,16 @@
+- **A**: Toggle between showing displaying all labels, or only labels in the current frame. 
+- **B**: Show / Hide details for this instance. 
+- **C**: The range of frames the instances appears on.
+- **D**: Attributes the object has and the frames they appear on. 
+- **E**: Filter by frame range.
+- **F**: Sort label instances.
+- **G**: Search for an instance.
+- **H**: Show / Hide labels.
+- **I**: Show / Hide labels for this instance.
+- **J**: Additional actions. Described below.
+- **K**: Keyboard shortcut to create a label for this instance.
+- **L**:Edit attributes for this instance.
+- **M**: Add a new label for this instance.
+- **N**: Toggle auto-annotation for SAM. 
+
+**Click the _three dots_ icon to access additional actions:**

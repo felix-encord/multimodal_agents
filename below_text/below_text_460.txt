@@ -1,0 +1,1 @@
+6. Click **Add JSON or CSV files** to upload a JSON or CSV file specifying the cloud data that is to be added to the Dataset. Turn on the **Ignore individual file errors** toggle to ignore errors caused by files not supported by Encord.

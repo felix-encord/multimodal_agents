@@ -1,0 +1,76 @@
+Filters
+
+In the Index Explorer for a Project you can refine searches by data quality metrics, Collections, custom metadata, folders, data titles, and data types.
+
+<Tip>
+Filters provide the ability to include or exclude images based on your filtering criteria.
+</Tip>
+
+<b>Video Quality Metrics:</b> Video quality metrics are calculated as your videos import into Index. Examples include, Area, Clip duration, Frames per second, Number of frames.
+
+<b>Data Quality Metrics:</b> Data quality metrics are calculated as your videos import into Index. Examples include, Area, Frame number, Random value.
+
+<AccordionGroup>
+   <Accordion title="Data Quality Metrics">
+
+For more detailed information on Data Quality Metrics go here.
+
+| Title                                                                                                                                          | Metric Type | Ontology Type |
+|------------------------------------------------------------------------------------------------------------------------------------------------|-------------|---------------|
+| Area - <small>Ranks images by their area (width/height).</small>                                                                      |      |               |
+| Aspect Ratio- <small>Ranks images by their aspect ratio (width/height).</small>                                              |      |               |
+| Blue Value - <small>Ranks images by how blue the average value of the image is.</small>                                         |      |               |
+| Brightness - <small>Ranks images by their brightness.</small>                                                                   |      |               |
+| Contrast- <small>Ranks images by their contrast.</small>                                                                         |      |               |
+| Diversity - <small>Forms clusters based on the ontology and ranks images from easy samples to annotate to hard samples to annotate.</small>              |      |               |
+| Frame Number - <small>Selects images based on a specified range.</small>                                                      |      |               |
+| Green Value- <small>Ranks images by how green the average value of the image is.</small>                                     |      |               |
+| Height - <small>Ranks images by the height of the image.</small>                                                                    |      |               |
+| Object Count - <small>Counts number of objects in the image.</small>                                                                                                        |      | , , , , , , , ,  |
+| Object Density - <small>Computes the percentage of image area that is occupied by objects.</small>              |      | , ,                                                                 | 
+| Randomize Images - <small>Assigns a random value between 0 and 1 to images.</small>                                       |      |               |
+| Red Value - <small>Ranks images by how red the average value of the image is.</small>                                           |      |               |
+| Sharpness - <small>Ranks images by their sharpness.</small>                                                                      |      |               |
+| Uniqueness - <small>Finds duplicate and near-duplicate images.</small>                                                          |      |               |
+| Width - <small>Ranks images by the width of the image.</small>                                                                       |      |               |
+
+  </Accordion>
+</AccordionGroup>
+
+<b>Collections:</b> Collections are a new way to save interesting groups of data units and labels, to support and guide your downstream workflow.
+
+<b>Custom Metadata:</b> Custom metadata added to data units. The custom metadata added to data units in Folders persist to Annotate Projects and Active.
+
+<Tip>
+For information on importing custom metadata to an Annotate project, refer to Adding Metadata in the documentation.
+</Tip>
+
+
+<b>Data title:</b> The file name of the image or video.
+
+<b>Data Types:</b> Data, labels, and Predictions can be filtered by: images, image sequences, image  groups, and videos
+
+<b>File ID:</b> The unique hash assigned to the image or video when the image or video import into Encord.
+
+<b>Folder:</b> The Folder images or videos reside in.
+
+<b>Integration:</b> The integration (if any) your images/videos reside.
+
+<b>Keyframe:</b> Frames of interest you specified on your videos.
+
+<b>MIME type:</b> Also known as _media type_. The file type of an image or video. For example, .
+
+<b>Storage location:</b> The location where your images/videos reside. Examples include, AWS, GCP, Local.
+
+<b>Uploaded at:</b> The date and time that the image/video uploaded to Index.
+
+**To filter Index data:**
+
+1. Log in to the Encord platform.
+   The landing page for the Encord platform appears.
+
+2. Go to **Index > Files**.
+   The _All folders_ page appears with a list of all folders in Encord.
+
+3. Click in to a folder.
+   The landing page for the folder appears and the _Explorer_ button is enabled.

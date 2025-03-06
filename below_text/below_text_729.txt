@@ -1,0 +1,15 @@
+5. Sort and filter the videos using the Label Quality Metrics to find the video you want.
+
+6. Apply one of following Annotation Quality Metric filters to your video:
+
+   - Broken track
+   - Inconsistent track
+   - Inconsistent class
+
+7. Click the **Expand image** button.  
+   A larger version of the image appears.
+
+8. Click **Edit in Annotate**.  
+   The frame opens in the Label Editor in Annotate.
+
+9. Move forward and backward a few frames in the video to see the labeling error.

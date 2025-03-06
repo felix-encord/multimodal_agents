@@ -1,0 +1,3 @@
+STEP 8: Label and Submit Audio Data
+
+More than a single file appears in the Label Editor. Switch back and forth between the files you are labeling or reviewing using the **Annotate from this tile** icon.

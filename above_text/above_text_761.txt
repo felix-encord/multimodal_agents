@@ -1,0 +1,5 @@
+Active supports bulk changes made to the object label classes on data units in **Label Collections** to an Annotate Project.
+
+<Note>Active Label Collections support editing object label classes of one object label type to the same label type. For example, bounding box to bounding box or bitmask to bitmask.</Note>
+
+<Tip>Use the **Display** settings to help find labels that require action.</Tip>

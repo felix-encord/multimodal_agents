@@ -1,0 +1,3 @@
+<Note>Data is structured into folders and subfolders. All files must be placed into folders and cannot be added to the top level / root directory. </Note>
+
+---

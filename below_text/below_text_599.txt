@@ -1,0 +1,5 @@
+- To delete files and folders, right-click the selection and select **Delete**.
+
+<Warning>Deleting a file removes it from all Datasets it was added to. </Warning>
+
+- To move files and folders to a different folder, right-click the selection and select **Move to another folder**. A dialog appears. Start typing the name of the folder, select the folder you want to move the selection to, and click **Move** to confirm.

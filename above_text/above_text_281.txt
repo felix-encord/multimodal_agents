@@ -1,0 +1,4 @@
+of annotators required for task**: 1
+- Expert reviewers see labels from all 5 annotators (4 from Consensus Block 1 and 1 from Consensus Block 2).
+
+The following diagrams follow a task through the Consensus Workflow until the labels on the task are correct and in consensus or incorrect and not in consensus. If consensus happens in the first Consensus block, the task goes directly to Complete.

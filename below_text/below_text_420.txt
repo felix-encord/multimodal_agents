@@ -1,0 +1,1 @@
+- **Review and refine**: Reviewers can select and edit the best specific label on an object or frame, from one or more annotators.

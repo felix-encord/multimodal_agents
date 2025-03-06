@@ -1,0 +1,5 @@
+Common mammography hanging protocols are available as presets in the editor settings. You can choose between the following mammography layouts: 
+
+- **Off**: Only the single mammography file that was opened is displayed in the Label Editor.
+
+- **2x2**: Shows MLO views in the top row, and the CC views in the bottom row.

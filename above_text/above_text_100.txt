@@ -1,0 +1,13 @@
+Change Review Judgement 
+
+<AccordionGroup>
+   <Accordion title=" Video Tutorial - Strict review & change review judgement ">
+
+
+
+  </Accordion>
+</AccordionGroup>
+
+<Note>This feature is not available for Manual QA projects.</Note>
+
+Reviewed instances can be reverted to _pending_. Reverting a review allows reviewers to make adjustments to one or more instances after making their initial review.

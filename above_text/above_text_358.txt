@@ -1,0 +1,6 @@
+Explore
+
+The _Explore_ page provides interfaces to help you understand how project's  annotations are distributed amongst the data assets at both an instance and label level. It allows a deeper exploration through attributes on objects, as well as frame-level classifications.
+
+- Instance statistics: Class distribution across data assets in the given project.
+- Label statistics: Label distributions within data assets, objects and classifications.
