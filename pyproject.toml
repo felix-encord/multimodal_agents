@@ -16,6 +16,14 @@ nltk = "^3.9.1"
 readmdict = "^0.1.1"
 encord = "^0.1.158"
 openai = "^1.65.4"
+torch = "^2.6.0"
+transformers = "^4.49.0"
+pillow = "^11.1.0"
+ipywidgets = "^8.1.5"
+peft = "^0.14.0"
+datasets = "^3.3.2"
+matplotlib = "^3.10.1"
+
 
 
 [tool.poetry.group.dev.dependencies]

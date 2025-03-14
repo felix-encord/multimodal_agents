@@ -26,7 +26,7 @@ integration = integrations[integration_idx].id
 
 
 # Find the storage folder by name
-folder_name = "Encord Documentation Images"  # Replace with your folder's name
+folder_name = "Encord Documentation Images test set"  # Replace with your folder's name
 folders = list(user_client.find_storage_folders(search=folder_name, dataset_synced=None, order=FoldersSortBy.NAME, desc=False, page_size=1000))
 
 # Ensure the folder was found
@@ -39,7 +39,7 @@ if folders:
     )
 
     # timeout_seconds determines how long the code waits after initiating upload before checking the upload status
-    res = storage_folder.add_private_data_to_folder_get_result(upload_job_id, timeout_seconds=5)
+    res = storage_folder.add_private_data_to_folder_get_result(upload_job_id, timeout_seconds=20)
     print(f"Execution result: {res}")
 
     if res.status == LongPollingStatus.PENDING:

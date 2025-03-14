@@ -30,7 +30,7 @@ from encord_agents.tasks import Depends, Runner
 import numpy as np
 import csv
 
-PROJECT_HASH = "3e76063b-a411-48a8-91b7-46af627e7333"
+PROJECT_HASH = "41c9b219-141b-488b-804f-2991692a5d6a"
 runner = Runner(project_hash=PROJECT_HASH)
 user_client = EncordUserClient.create_with_ssh_private_key(ssh_private_key_path = os.environ.get('ENCORD_SSH_KEY_FILE'))
 openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
@@ -65,21 +65,25 @@ def generate_qa_candidates(
     below_text : str
 ) -> list[ClassificationInstance] :
     
-    prompt = f"""Help me create a question-answer dataset for my application. You have access to a screenshot of the application from the documentation and the surrounding documention text above and below it:
+    prompt = f"""
+You are tasked with generating a visual question-answer dataset for training a multimodal assistant. The assistant sees the user's screen when they interact with our SaaS product and answers user questions based on the visible context. 
 
-=== documentation text above image ===
+To help you create this dataset you are provided with a screenshot in the product's documentation and its surrounding text:
+
+- Documentation text immediately **above** the screenshot:
 {above_text}
 
-=== documentation text below image ===
+- Documentation text immediately **below** the screenshot:
 {below_text}
 
-==== instructions ===
-Thoroughly review the screenshot, imagining you are a user interacting with the application in a context similar to what is shown. Based on that situation, propose three realistic questions that such a user might ask, and then provide accurate answers to each question based on the documentation text. If the documentation text is not informative enough, come up with question-answer pairs using the screenshot only. Ensure the questions are realistic but sufficiently diverse. The questions and answers ***must*** refer to the screenshot.
+### Task Instructions:
+1. Thoroughly analyze the provided screenshot, imagining you are a user interacting with the application as depicted.
+2. Generate **three realistic, diverse questions** a user might ask in this scenario. Ensure at least one question is framed as a "next-step" question, such as "What do I do next to achieve [a specific task]?"
+3. For each question, provide an accurate and concise answer explicitly referencing visual details from the screenshot. If possible provide information from the documentation in your answer - but if the documentation is insufficient then derive answers directly from the screenshot.
+4. Ensure all questions and answers explicitly reference visual details from the screenshot.
 
-Please follow the JSON Schema to indicate your response.
-Don't respond with anything but valid json.
-
-=== JSON Schema ===
+### Response Format:
+Respond strictly using the following JSON Schema.
 {{
     "QA pair 1 : {{
     "Question" : <question>,
@@ -95,7 +99,7 @@ Don't respond with anything but valid json.
     }}  
 }}
 """
-    ont_schema = ont_data_model.model_json_schema
+
     candidate_qas = prompt_image_input_to_openai(prompt,frame)
     # candidate_qas = "FElix"
 
@@ -207,7 +211,7 @@ def dep_get_above_text(lr : LabelRowV2)-> str:
     text_lr = above_text_db[id]
     # data_hash = above_text_db[id].data_hash
     with download_asset(text_lr) as asset_fp:
-        print(asset_fp)
+   
         text_contents = asset_fp.read_text()
     
     return text_contents
@@ -246,62 +250,75 @@ def agent_make_qa_candidates(
 
     return "To Review"
 
+'''run this to generate qa pairs'''
+# make_lr_db()
+# runner()
 
-make_lr_db()
-runner()
+''' run this after reviewing qa pairs to save to csv file (index matches up with original image-docs dataset'''
+
+caption_file = Path('qa_results_2.csv')
+has_content = caption_file.is_file()
+
+if not has_content:
+    with caption_file.open("a" if has_content else "w", newline="", encoding="utf-8") as csvfile:
+        writer = csv.writer(csvfile)
+        cols = ['index','Question 1','Answer 1','Question 2','Answer 2','Question 3','Answer 3']
+        writer.writerow(cols)  # Writes the header
+
+data_transfer_runner = Runner(PROJECT_HASH)
+
+@data_transfer_runner.stage(stage='Save Results',label_row_metadata_include_args=args)
+def transfer_data(
+    lr: LabelRowV2, 
+) -> str:
+
+    metadata = lr.client_metadata
 
 
-# caption_file = Path('qa_results.csv')
-# has_content = caption_file.is_file()
+    id = metadata['id']
+  
 
-# with caption_file.open("a" if has_content else "w", newline="", encoding="utf-8") as csvfile:
-#     writer = csv.writer(csvfile)
-#     cols = ['index','Question 1','Answer 1','Question 2','Answer 2','Question 3','Answer 3']
-#     writer.writerow(cols)  # Writes the header
-
-# data_transfer_runner = Runner(PROJECT_HASH)
-
-# @data_transfer_runner.stage(stage='Save Results',label_row_metadata_include_args=args)
-# def transfer_data(
-#     lr: LabelRowV2, asset: Annotated[Path, Depends(dep_asset)],
-# ) -> str:
-
-#     metadata = lr.client_metadata
-
-
-#     id = metadata['id']
-#     name = asset.name
-
-#     if metadata['Data_Type'] != 'Image':
-#         lr.save()
-#         return "transferred"
+    if metadata['Data_Type'] != 'Image':
+        lr.save()
+        return "transferred"
     
-#     root = Path('qa_pairs')
-#     instances = lr.get_classification_instances()
+    root = Path('qa_pairs')
+    instances = lr.get_classification_instances()
 
-#     qlist = []
-#     alist = []
-#     for i,instance in enumerate(sorted(instances, key = lambda x: x.classification_name)):
+    qlist = []
+    alist = []
+    qa_set = set()
+    for i,instance in enumerate(sorted(instances, key = lambda x: x.classification_name)):
         
-#         for ans in instance.get_all_static_answers():
-#             ans = ans.to_encord_dict()
-#             if ans['name'] == 'Question':
-#                 qlist.append(ans['answers'])
-#             if ans['name'] == 'Answer':
-#                 alist.append(ans['answers'])
+        for ans in instance.get_all_static_answers():
+            ans = ans.to_encord_dict()
 
-#     write_list = [id]
-#     for q,a in zip(qlist,alist):
-#         write_list.append(q)
-#         write_list.append(a)
+            # due to latency issue some LRs were input into agent twice, so need to skip double inputs
+            if 'Question Answer Pair' in ans['name']:
+                if ans['name'] in qa_set:
+                    continue
+                else:
+                    qa_set.add(ans['name'])
+
+            if ans['name'] == 'Question':
+                qlist.append(ans['answers'])
+            if ans['name'] == 'Answer':
+                alist.append(ans['answers'])
+
+    write_list = [id]
+    for q,a in zip(qlist,alist):
+        write_list.append(q)
+        write_list.append(a)
     
-#     with caption_file.open("a" if has_content else "w", newline="", encoding="utf-8") as csvfile:
-#         writer = csv.writer(csvfile)
-#         writer.writerow(write_list)
+    if len(write_list) == 7:
+        print(f'writing {id}')
+        with caption_file.open("a", newline="", encoding="utf-8") as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(write_list)
 
 
 
-#     return "transferred"
+    return "transferred"
 
-# data_transfer_runner()
+data_transfer_runner()
 
